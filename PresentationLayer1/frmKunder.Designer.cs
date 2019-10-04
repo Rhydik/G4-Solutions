@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -41,10 +42,19 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(364, 91);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(752, 457);
+            this.dataGridView1.TabIndex = 5;
             // 
             // panel1
             // 
@@ -60,144 +70,162 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(27, 21);
+            this.panel1.Location = new System.Drawing.Point(13, 14);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 406);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(282, 664);
+            this.panel1.TabIndex = 6;
             // 
             // btnResultat
             // 
-            this.btnResultat.Location = new System.Drawing.Point(33, 382);
+            this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResultat.Location = new System.Drawing.Point(22, 586);
+            this.btnResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(75, 23);
+            this.btnResultat.Size = new System.Drawing.Size(112, 35);
             this.btnResultat.TabIndex = 2;
             this.btnResultat.Text = "Resultat";
             this.btnResultat.UseVisualStyleBackColor = true;
             // 
             // btnPrognostiseringIntäkter
             // 
-            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(32, 353);
+            this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(22, 541);
+            this.btnPrognostiseringIntäkter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
+            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(212, 35);
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
             // 
             // btnBudgeteratResultat
             // 
-            this.btnBudgeteratResultat.Location = new System.Drawing.Point(33, 324);
+            this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBudgeteratResultat.Location = new System.Drawing.Point(22, 496);
+            this.btnBudgeteratResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
+            this.btnBudgeteratResultat.Size = new System.Drawing.Size(184, 35);
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
             // 
             // btnKostnadsbudgetering
             // 
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 280);
+            this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(22, 422);
+            this.btnKostnadsbudgetering.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
-            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
+            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(237, 35);
             this.btnKostnadsbudgetering.TabIndex = 2;
             this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
             // 
             // btnIntäktsbudgeteringProdukt
             // 
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 251);
+            this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(22, 377);
+            this.btnIntäktsbudgeteringProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
-            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
+            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(237, 35);
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
             this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
             this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
             // 
             // btnIntäktsbudgeteringKund
             // 
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 222);
+            this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(22, 332);
+            this.btnIntäktsbudgeteringKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
-            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
+            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(237, 35);
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
             this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
             this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
             // 
             // btnBehörighet
             // 
-            this.btnBehörighet.Location = new System.Drawing.Point(33, 183);
+            this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBehörighet.Location = new System.Drawing.Point(22, 260);
+            this.btnBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
+            this.btnBehörighet.Size = new System.Drawing.Size(160, 35);
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
             // 
             // btnSchablonkostnad
             // 
-            this.btnSchablonkostnad.Location = new System.Drawing.Point(33, 154);
+            this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchablonkostnad.Location = new System.Drawing.Point(22, 215);
+            this.btnSchablonkostnad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
+            this.btnSchablonkostnad.Size = new System.Drawing.Size(160, 35);
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
             // 
             // btnAktiviteter
             // 
-            this.btnAktiviteter.Location = new System.Drawing.Point(33, 125);
+            this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAktiviteter.Location = new System.Drawing.Point(22, 170);
+            this.btnAktiviteter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
+            this.btnAktiviteter.Size = new System.Drawing.Size(160, 35);
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
             // 
             // btnPersonal
             // 
-            this.btnPersonal.Location = new System.Drawing.Point(33, 96);
+            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonal.Location = new System.Drawing.Point(22, 126);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
+            this.btnPersonal.Size = new System.Drawing.Size(160, 35);
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
             // 
             // btnProdukter
             // 
-            this.btnProdukter.Location = new System.Drawing.Point(33, 67);
+            this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdukter.Location = new System.Drawing.Point(22, 81);
+            this.btnProdukter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
+            this.btnProdukter.Size = new System.Drawing.Size(160, 35);
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
             // 
             // btnKunder
             // 
-            this.btnKunder.Location = new System.Drawing.Point(33, 38);
+            this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKunder.Location = new System.Drawing.Point(22, 36);
+            this.btnKunder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(107, 23);
+            this.btnKunder.Size = new System.Drawing.Size(160, 35);
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(243, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(501, 297);
-            this.dataGridView1.TabIndex = 5;
-            // 
             // frmKunder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmKunder";
             this.Text = "frmKunder";
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -211,6 +239,5 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

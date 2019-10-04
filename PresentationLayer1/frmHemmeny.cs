@@ -16,5 +16,12 @@ namespace PresentationLayer1
         {
             InitializeComponent();
         }
+
+        private void btnKunder_Click(object sender, EventArgs e)
+        {
+            frmKunder frmKunder = new frmKunder();
+            Hide();
+            frmKunder.Show();
+        }
     }
 }

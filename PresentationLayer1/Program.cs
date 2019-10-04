@@ -16,7 +16,7 @@ namespace PresentationLayer1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoggaIn());
+            Application.Run(new frmHemmeny());
         }
     }
 }

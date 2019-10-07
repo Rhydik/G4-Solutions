@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="875c10f7070742448df30cf20bca69c7" Name="Diagram1" ZoomLevel="63" >
+        <EntityTypeShape EntityType="DatabaseModel.Prognos" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DatabaseModel.Intäktsbudget" Width="1.5" PointX="5.25" PointY="2.375" />
+        <AssociationConnector Association="DatabaseModel.PrognosIntäktsbudget" />
+        <EntityTypeShape EntityType="DatabaseModel.Kund" Width="1.5" PointX="2.375" PointY="3.75" />
+        <AssociationConnector Association="DatabaseModel.KundIntäktsbudget" />
+        <EntityTypeShape EntityType="DatabaseModel.KundKategori" Width="1.5" PointX="2.375" PointY="6.25" />
+        <AssociationConnector Association="DatabaseModel.KundKategoriKund" />
+        <EntityTypeShape EntityType="DatabaseModel.Produkt" Width="1.5" PointX="5.75" PointY="6.75" />
+        <AssociationConnector Association="DatabaseModel.ProduktIntäktsbudget" />
+        <AssociationConnector Association="DatabaseModel.ProduktPrognos" />
+        <EntityTypeShape EntityType="DatabaseModel.Personal" Width="1.5" PointX="2.875" PointY="8.625" />
+        <EntityTypeShape EntityType="DatabaseModel.AntalTimmar" Width="1.5" PointX="6.5" PointY="9.625" />
+        <AssociationConnector Association="DatabaseModel.AntalTimmarPersonal" />
+        <AssociationConnector Association="DatabaseModel.PersonalProdukt" />
+        <EntityTypeShape EntityType="DatabaseModel.Avdelning" Width="1.5" PointX="1.75" PointY="12.25" />
+        <AssociationConnector Association="DatabaseModel.AvdelningPersonal" />
+        <EntityTypeShape EntityType="DatabaseModel.Produktgrupp" Width="1.5" PointX="8.25" PointY="5.625" />
+        <EntityTypeShape EntityType="DatabaseModel.Produktkategori" Width="1.5" PointX="9" PointY="7.625" />
+        <AssociationConnector Association="DatabaseModel.ProduktProduktkategori" />
+        <AssociationConnector Association="DatabaseModel.ProduktgruppProdukt" />
+        <EntityTypeShape EntityType="DatabaseModel.Aktivitet" Width="1.5" PointX="9.375" PointY="10.25" />
+        <AssociationConnector Association="DatabaseModel.AktivitetAvdelning" />
+        <EntityTypeShape EntityType="DatabaseModel.Direktkostnad" Width="1.5" PointX="12.375" PointY="9.375" />
+        <EntityTypeShape EntityType="DatabaseModel.Konto" Width="1.5" PointX="12.25" PointY="11.75" />
+        <EntityTypeShape EntityType="DatabaseModel.schablonkostnad" Width="1.5" PointX="11.75" PointY="14.25" />
+        <AssociationConnector Association="DatabaseModel.schablonkostnadKonto" />
+        <AssociationConnector Association="DatabaseModel.KontoDirektkostnad" />
+        <AssociationConnector Association="DatabaseModel.KontoAvdelning" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

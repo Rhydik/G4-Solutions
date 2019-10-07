@@ -8,5 +8,12 @@ namespace DataLayer
 {
     public class Class1
     {
+        public static List<Kund> GetKunder()
+        {
+            using (var db = new Database())
+            {
+                return db.Kund.ToList();
+            }
+        }
     }
 }

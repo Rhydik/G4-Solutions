@@ -46,33 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLoggaIn.cs">
+    <Compile Include="Forms\frmLoggaIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoggaIn.Designer.cs">
+    <Compile Include="Forms\frmLoggaIn.Designer.cs">
       <DependentUpon>frmLoggaIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHemmeny.cs">
+    <Compile Include="Forms\frmHemmeny.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHemmeny.Designer.cs">
+    <Compile Include="Forms\frmHemmeny.Designer.cs">
       <DependentUpon>frmHemmeny.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKunder.cs">
+    <Compile Include="Forms\frmKunder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKunder.Designer.cs">
+    <Compile Include="Forms\frmKunder.Designer.cs">
       <DependentUpon>frmKunder.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLoggaIn.resx">
+    <EmbeddedResource Include="Forms\frmLoggaIn.resx">
       <DependentUpon>frmLoggaIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHemmeny.resx">
+    <EmbeddedResource Include="Forms\frmHemmeny.resx">
       <DependentUpon>frmHemmeny.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKunder.resx">
+    <EmbeddedResource Include="Forms\frmKunder.resx">
       <DependentUpon>frmKunder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -56,13 +56,14 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\AktivitetRepository.cs" />
     <Compile Include="AntalTimmar.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Avdelning.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -94,9 +95,11 @@
     <Compile Include="KundKategori.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\KundRepository.cs" />
     <Compile Include="Personal.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\PersonalRepository.cs" />
     <Compile Include="Produkt.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -106,13 +109,16 @@
     <Compile Include="Produktkategori.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ProduktRepository.cs" />
     <Compile Include="Prognos.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RepositoryFacade.cs" />
     <Compile Include="schablonkostnad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\SchablonRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

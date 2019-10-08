@@ -19,7 +19,7 @@ namespace PresentationLayer1
         public frmKunder()
         {
             InitializeComponent();
-            bindingSource.DataSource = BusinessManager.GetKunder();
+            //bindingSource.DataSource = BusinessManager.GetKunder();
             dataGridView1.DataSource = bindingSource.DataSource;
         }
     }

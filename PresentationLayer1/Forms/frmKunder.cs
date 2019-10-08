@@ -13,14 +13,9 @@ namespace PresentationLayer1
 {
     public partial class frmKunder : Form
     {
-        BindingSource bindingSource = new BindingSource();
-        BusinessManager BusinessManager = new BusinessManager();
-
         public frmKunder()
         {
             InitializeComponent();
-            //bindingSource.DataSource = BusinessManager.GetKunder();
-            dataGridView1.DataSource = bindingSource.DataSource;
         }
     }
 }

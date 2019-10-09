@@ -9,9 +9,10 @@ namespace BusinessLayer
 {
     public class BusinessManager
     {
-        public object Login(string användarnamn, string lösenord)
+        RepositoryFacade repositoryFacade = new RepositoryFacade();
+        public Personal Login(string användarnamn, string lösenord)
         {
-            throw new NotImplementedException();
+            return repositoryFacade.personalRepository.Login(användarnamn, lösenord);
         }
     }
 }

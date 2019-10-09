@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    class PersonalRepository
+    public class PersonalRepository
     {
+        public Personal Login(string användarnamn, string lösenord)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Personal
+                            where x.PersonNr == användarnamn && x.Lösenord == lösenord
+                            select x;
+                return query.FirstOrDefault();
+            }
+        }
     }
 }

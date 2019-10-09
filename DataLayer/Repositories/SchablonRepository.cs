@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    class SchablonRepository
+    public class SchablonRepository
     {
     }
 }

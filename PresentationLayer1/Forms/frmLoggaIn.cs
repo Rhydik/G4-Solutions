@@ -26,8 +26,8 @@ namespace PresentationLayer1
             string lösenord = txtLösenord.Text;
             if (businessManager.Login(användarnamn, lösenord) != null)
             {
-                //PresentationLayer.Globals.CurrentPersonal = businessManager.Login(användarnamn, lösenord);
-                //this.Visible = !this.Visible;
+                Globals.CurrentPersonal = businessManager.Login(användarnamn, lösenord);
+                this.Visible = !this.Visible;
                 frmHemmeny frmHemmeny = new frmHemmeny();
                 frmHemmeny.Show();
             }
@@ -42,6 +42,13 @@ namespace PresentationLayer1
         {
             txtAnvändarnamn.Clear();
             txtLösenord.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmHemmeny frmHemmeny = new frmHemmeny();
+            frmHemmeny.Show();
         }
     }
 }

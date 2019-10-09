@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    class ProduktRepository
+    public class ProduktRepository
     {
     }
 }

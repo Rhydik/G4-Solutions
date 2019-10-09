@@ -36,6 +36,7 @@
             this.lblAnvändarnamn = new System.Windows.Forms.Label();
             this.btnAvbrytLoggaIn = new System.Windows.Forms.Button();
             this.btnLoggaIn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,14 +52,14 @@
             // 
             // txtLösenord
             // 
-            this.txtLösenord.Location = new System.Drawing.Point(382, 311);
+            this.txtLösenord.Location = new System.Drawing.Point(382, 292);
             this.txtLösenord.Name = "txtLösenord";
             this.txtLösenord.Size = new System.Drawing.Size(100, 20);
             this.txtLösenord.TabIndex = 12;
             // 
             // txtAnvändarnamn
             // 
-            this.txtAnvändarnamn.Location = new System.Drawing.Point(382, 276);
+            this.txtAnvändarnamn.Location = new System.Drawing.Point(382, 257);
             this.txtAnvändarnamn.Name = "txtAnvändarnamn";
             this.txtAnvändarnamn.Size = new System.Drawing.Size(100, 20);
             this.txtAnvändarnamn.TabIndex = 11;
@@ -66,7 +67,7 @@
             // lblLösenord
             // 
             this.lblLösenord.AutoSize = true;
-            this.lblLösenord.Location = new System.Drawing.Point(297, 314);
+            this.lblLösenord.Location = new System.Drawing.Point(325, 295);
             this.lblLösenord.Name = "lblLösenord";
             this.lblLösenord.Size = new System.Drawing.Size(51, 13);
             this.lblLösenord.TabIndex = 10;
@@ -75,16 +76,16 @@
             // lblAnvändarnamn
             // 
             this.lblAnvändarnamn.AutoSize = true;
-            this.lblAnvändarnamn.Location = new System.Drawing.Point(297, 276);
+            this.lblAnvändarnamn.Location = new System.Drawing.Point(219, 260);
             this.lblAnvändarnamn.Name = "lblAnvändarnamn";
-            this.lblAnvändarnamn.Size = new System.Drawing.Size(79, 13);
+            this.lblAnvändarnamn.Size = new System.Drawing.Size(157, 13);
             this.lblAnvändarnamn.TabIndex = 9;
-            this.lblAnvändarnamn.Text = "Avnändarnamn";
+            this.lblAnvändarnamn.Text = "Personnummer (yyyymmdd-xxxx)";
             // 
             // btnAvbrytLoggaIn
             // 
             this.btnAvbrytLoggaIn.BackColor = System.Drawing.Color.DarkRed;
-            this.btnAvbrytLoggaIn.Location = new System.Drawing.Point(410, 371);
+            this.btnAvbrytLoggaIn.Location = new System.Drawing.Point(407, 337);
             this.btnAvbrytLoggaIn.Name = "btnAvbrytLoggaIn";
             this.btnAvbrytLoggaIn.Size = new System.Drawing.Size(134, 39);
             this.btnAvbrytLoggaIn.TabIndex = 8;
@@ -94,7 +95,7 @@
             // 
             // btnLoggaIn
             // 
-            this.btnLoggaIn.Location = new System.Drawing.Point(260, 371);
+            this.btnLoggaIn.Location = new System.Drawing.Point(257, 337);
             this.btnLoggaIn.Name = "btnLoggaIn";
             this.btnLoggaIn.Size = new System.Drawing.Size(134, 39);
             this.btnLoggaIn.TabIndex = 7;
@@ -102,11 +103,22 @@
             this.btnLoggaIn.UseVisualStyleBackColor = true;
             this.btnLoggaIn.Click += new System.EventHandler(this.btnLoggaIn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(332, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 39);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Fortsätt utan inlogg";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmLoggaIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtLösenord);
             this.Controls.Add(this.txtAnvändarnamn);
@@ -116,7 +128,7 @@
             this.Controls.Add(this.btnLoggaIn);
             this.Name = "frmLoggaIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "G4-Solutions";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Label lblAnvändarnamn;
         private System.Windows.Forms.Button btnAvbrytLoggaIn;
         private System.Windows.Forms.Button btnLoggaIn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

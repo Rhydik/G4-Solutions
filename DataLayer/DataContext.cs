@@ -4,12 +4,11 @@
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using SqlProviderServices = System.Data.Entity.SqlServer.SqlProviderServices;
 
-    public partial class Database : DbContext
+    public partial class DataContext : DbContext
     {
-        public Database()
-            : base("name=Database")
+        public DataContext()
+            : base("name=DataContext")
         {
         }
 

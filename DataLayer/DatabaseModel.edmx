@@ -137,6 +137,7 @@
       <PropertyRef Name="ProduktID" />
     </Key>
     <Property Name="ProduktID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProduktKod" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="false" />
     <Property Name="Prognos_PrognosID" Type="int" Nullable="false" />
@@ -587,12 +588,13 @@
             <PropertyRef Name="ProduktID" />
           </Key>
           <Property Name="ProduktID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="ProduktKod" Type="String" Nullable="false" />
           <NavigationProperty Name="Intäktsbudget" Relationship="DatabaseModel.ProduktIntäktsbudget" FromRole="Produkt" ToRole="Intäktsbudget" />
           <NavigationProperty Name="Prognos" Relationship="DatabaseModel.ProduktPrognos" FromRole="Produkt" ToRole="Prognos" />
           <NavigationProperty Name="Personal" Relationship="DatabaseModel.PersonalProdukt" FromRole="Produkt" ToRole="Personal" />
           <NavigationProperty Name="Produktkategori" Relationship="DatabaseModel.ProduktProduktkategori" FromRole="Produkt" ToRole="Produktkategori" />
           <NavigationProperty Name="Produktgrupp" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produkt" ToRole="Produktgrupp" />
+          <Property Name="Namn" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="1" />
@@ -778,6 +780,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Produkt)">
         <MappingFragment StoreEntitySet="Produkt">
           <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
+          <ScalarProperty Name="ProduktKod" ColumnName="ProduktKod" />
           <ScalarProperty Name="Namn" ColumnName="Namn" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/07/2019 12:52:40
--- Generated from EDMX file: C:\Users\look_\source\repos\G4-Solutions\DataLayer\DatabaseModel.edmx
+-- Date Created: 10/09/2019 12:24:47
+-- Generated from EDMX file: C:\Users\Jonas\source\repos\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -18,22 +18,22 @@ GO
 -- --------------------------------------------------
 
 IF OBJECT_ID(N'[dbo].[FK_PrognosIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[IntäktsbudgetSet] DROP CONSTRAINT [FK_PrognosIntäktsbudget];
+    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_PrognosIntäktsbudget];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[IntäktsbudgetSet] DROP CONSTRAINT [FK_KundIntäktsbudget];
+    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KundKategoriKund]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[KundSet] DROP CONSTRAINT [FK_KundKategoriKund];
+    ALTER TABLE [dbo].[Kund] DROP CONSTRAINT [FK_KundKategoriKund];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProduktSet] DROP CONSTRAINT [FK_ProduktIntäktsbudget];
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktIntäktsbudget];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProduktPrognos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProduktSet] DROP CONSTRAINT [FK_ProduktPrognos];
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktPrognos];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AntalTimmarPersonal]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[AntalTimmarSet] DROP CONSTRAINT [FK_AntalTimmarPersonal];
+    ALTER TABLE [dbo].[AntalTimmar] DROP CONSTRAINT [FK_AntalTimmarPersonal];
 GO
 IF OBJECT_ID(N'[dbo].[FK_PersonalProdukt_Personal]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PersonalProdukt] DROP CONSTRAINT [FK_PersonalProdukt_Personal];
@@ -48,19 +48,19 @@ IF OBJECT_ID(N'[dbo].[FK_AvdelningPersonal_Personal]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AvdelningPersonal] DROP CONSTRAINT [FK_AvdelningPersonal_Personal];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProduktProduktkategori]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProduktSet] DROP CONSTRAINT [FK_ProduktProduktkategori];
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktProduktkategori];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ProduktgruppProdukt]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProduktSet] DROP CONSTRAINT [FK_ProduktgruppProdukt];
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktgruppProdukt];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AktivitetAvdelning]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[AktivitetSet] DROP CONSTRAINT [FK_AktivitetAvdelning];
+    ALTER TABLE [dbo].[Aktivitet] DROP CONSTRAINT [FK_AktivitetAvdelning];
 GO
 IF OBJECT_ID(N'[dbo].[FK_schablonkostnadKonto]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[schablonkostnadSet] DROP CONSTRAINT [FK_schablonkostnadKonto];
+    ALTER TABLE [dbo].[schablonkostnad] DROP CONSTRAINT [FK_schablonkostnadKonto];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KontoDirektkostnad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DirektkostnadSet] DROP CONSTRAINT [FK_KontoDirektkostnad];
+    ALTER TABLE [dbo].[Direktkostnad] DROP CONSTRAINT [FK_KontoDirektkostnad];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Konto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[KontoAvdelning] DROP CONSTRAINT [FK_KontoAvdelning_Konto];
@@ -73,47 +73,47 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[PrognosSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PrognosSet];
+IF OBJECT_ID(N'[dbo].[Prognos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Prognos];
 GO
-IF OBJECT_ID(N'[dbo].[IntäktsbudgetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[IntäktsbudgetSet];
+IF OBJECT_ID(N'[dbo].[Intäktsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Intäktsbudget];
 GO
-IF OBJECT_ID(N'[dbo].[KundSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KundSet];
+IF OBJECT_ID(N'[dbo].[Kund]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Kund];
 GO
-IF OBJECT_ID(N'[dbo].[KundKategoriSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KundKategoriSet];
+IF OBJECT_ID(N'[dbo].[KundKategori]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KundKategori];
 GO
-IF OBJECT_ID(N'[dbo].[ProduktSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProduktSet];
+IF OBJECT_ID(N'[dbo].[Produkt]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produkt];
 GO
-IF OBJECT_ID(N'[dbo].[PersonalSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PersonalSet];
+IF OBJECT_ID(N'[dbo].[Personal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Personal];
 GO
-IF OBJECT_ID(N'[dbo].[AntalTimmarSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AntalTimmarSet];
+IF OBJECT_ID(N'[dbo].[AntalTimmar]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AntalTimmar];
 GO
-IF OBJECT_ID(N'[dbo].[AvdelningSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AvdelningSet];
+IF OBJECT_ID(N'[dbo].[Avdelning]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Avdelning];
 GO
-IF OBJECT_ID(N'[dbo].[ProduktgruppSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProduktgruppSet];
+IF OBJECT_ID(N'[dbo].[Produktgrupp]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produktgrupp];
 GO
-IF OBJECT_ID(N'[dbo].[ProduktkategoriSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProduktkategoriSet];
+IF OBJECT_ID(N'[dbo].[Produktkategori]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produktkategori];
 GO
-IF OBJECT_ID(N'[dbo].[AktivitetSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AktivitetSet];
+IF OBJECT_ID(N'[dbo].[Aktivitet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Aktivitet];
 GO
-IF OBJECT_ID(N'[dbo].[DirektkostnadSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DirektkostnadSet];
+IF OBJECT_ID(N'[dbo].[Direktkostnad]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Direktkostnad];
 GO
-IF OBJECT_ID(N'[dbo].[KontoSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KontoSet];
+IF OBJECT_ID(N'[dbo].[Konto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Konto];
 GO
-IF OBJECT_ID(N'[dbo].[schablonkostnadSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[schablonkostnadSet];
+IF OBJECT_ID(N'[dbo].[schablonkostnad]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[schablonkostnad];
 GO
 IF OBJECT_ID(N'[dbo].[PersonalProdukt]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PersonalProdukt];
@@ -172,6 +172,7 @@ GO
 -- Creating table 'Produkt'
 CREATE TABLE [dbo].[Produkt] (
     [ProduktID] int IDENTITY(1,1) NOT NULL,
+    [ProduktKod] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
     [Intäktsbudget_IntäktsbudgetID] int  NOT NULL,
     [Prognos_PrognosID] int  NOT NULL,

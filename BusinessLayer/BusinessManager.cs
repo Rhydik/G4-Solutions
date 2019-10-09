@@ -9,5 +9,9 @@ namespace BusinessLayer
 {
     public class BusinessManager
     {
+        public object Login(string användarnamn, string lösenord)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

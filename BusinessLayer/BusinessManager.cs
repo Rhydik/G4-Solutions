@@ -21,6 +21,7 @@ namespace BusinessLayer
         //Kunder
         public List<KundDTO> GetAllKunder()
         {
+            //repositoryFacade.kundRepository.AddKund();   för testning//Leo
             return repositoryFacade.kundRepository.GetAllKunder();
         }
         public List<KundDTO> GetKunderByID(int id)

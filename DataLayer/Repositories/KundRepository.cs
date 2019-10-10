@@ -53,5 +53,19 @@ namespace DataLayer
                 return query.ToList();
             }                
         }
+
+        //public void AddKund()  för testning//Leo
+        //{
+        //    using (var db = new DataContext())
+        //    {
+        //       var namn = "testperson";
+        //        var kat = 1;
+
+        //        var kund = new Kund {Namn = namn, KundKategori_KundKategoriID = kat};
+        //        db.Kund.Add(kund);
+        //        db.SaveChanges();
+
+        //    }
+        //}
     }
 }

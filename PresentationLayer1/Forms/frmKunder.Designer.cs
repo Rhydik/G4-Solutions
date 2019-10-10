@@ -41,21 +41,21 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtKundID = new System.Windows.Forms.TextBox();
+            this.txtKund = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSök = new System.Windows.Forms.Button();
+            this.btnRensa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,14 +197,13 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(243, 119);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(501, 237);
-            this.dataGridView2.TabIndex = 7;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(243, 119);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(501, 237);
+            this.dataGridView.TabIndex = 7;
             // 
             // button1
             // 
@@ -214,7 +213,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Skriv ut";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // button2
             // 
@@ -243,20 +242,20 @@
             this.button4.Text = "Redigera kund";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtKundID
             // 
-            this.textBox1.Location = new System.Drawing.Point(242, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtKundID.Location = new System.Drawing.Point(242, 52);
+            this.txtKundID.Name = "txtKundID";
+            this.txtKundID.Size = new System.Drawing.Size(128, 20);
+            this.txtKundID.TabIndex = 12;
+            this.txtKundID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtKund
             // 
-            this.textBox2.Location = new System.Drawing.Point(399, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtKund.Location = new System.Drawing.Point(399, 52);
+            this.txtKund.Name = "txtKund";
+            this.txtKund.Size = new System.Drawing.Size(128, 20);
+            this.txtKund.TabIndex = 13;
             // 
             // comboBox1
             // 
@@ -268,23 +267,23 @@
             this.comboBox1.Text = "Välj kundkategori";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button5
+            // btnSök
             // 
-            this.button5.Location = new System.Drawing.Point(243, 83);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 23);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Sök";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSök.Location = new System.Drawing.Point(243, 83);
+            this.btnSök.Name = "btnSök";
+            this.btnSök.Size = new System.Drawing.Size(60, 23);
+            this.btnSök.TabIndex = 15;
+            this.btnSök.Text = "Sök";
+            this.btnSök.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnRensa
             // 
-            this.button6.Location = new System.Drawing.Point(310, 83);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 23);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Rensa";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRensa.Location = new System.Drawing.Point(310, 83);
+            this.btnRensa.Name = "btnRensa";
+            this.btnRensa.Size = new System.Drawing.Size(60, 23);
+            this.btnRensa.TabIndex = 16;
+            this.btnRensa.Text = "Rensa";
+            this.btnRensa.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -322,22 +321,22 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnRensa);
+            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtKund);
+            this.Controls.Add(this.txtKundID);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "frmKunder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKunder";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,16 +356,16 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtKundID;
+        private System.Windows.Forms.TextBox txtKund;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.Button btnRensa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

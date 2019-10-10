@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using DataLayer.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,24 +14,39 @@ namespace PresentationLayer1
 {
     public partial class frmKunder : Form
     {
+        BusinessManager businessManager;
+        private List<KundDTO> kunder;
+
         public frmKunder()
         {
             InitializeComponent();
+            businessManager = new BusinessManager();
+
+            kunder = businessManager.GetAllKunder();
+
+            dataGridView.DataSource = kunder;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRensa_Click(object sender, EventArgs e)
         {
-
+            dataGridView.DataSource = kunder;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSök_Click(object sender, EventArgs e)
         {
+            int id = Int32.Parse(txtKundID.Text);
 
+            string kund = txtKund.Text;
+            string kundKategori = comboBox1.Text;
+
+            var kunder = businessManager.GetKunderByID(id);
+
+            dataGridView.DataSource = kunder;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

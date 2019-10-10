@@ -16,5 +16,19 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
         }
+
+        private void btnKunder_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmKunder frmKunder = new frmKunder();
+            frmKunder.Show();
+        }
+
+        private void btnProdukter_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            Forms.frmProdukter frmProdukter = new frmProdukter();
+            Hide();
+        }
     }
 }

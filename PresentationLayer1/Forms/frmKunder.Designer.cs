@@ -214,13 +214,13 @@
             // 
             // dataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(364, 183);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView2.Name = "dataGridView";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.Size = new System.Drawing.Size(752, 365);
-            this.dataGridView2.TabIndex = 7;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(364, 183);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.Size = new System.Drawing.Size(752, 365);
+            this.dataGridView.TabIndex = 7;
             // 
             // button1
             // 
@@ -264,19 +264,19 @@
             // 
             // txtKundID
             // 
-            this.textBox1.Location = new System.Drawing.Point(363, 80);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "txtKundID";
-            this.textBox1.Size = new System.Drawing.Size(190, 26);
-            this.textBox1.TabIndex = 12;
+            this.txtKundID.Location = new System.Drawing.Point(363, 80);
+            this.txtKundID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtKundID.Name = "txtKundID";
+            this.txtKundID.Size = new System.Drawing.Size(190, 26);
+            this.txtKundID.TabIndex = 12;
             // 
             // txtKund
             // 
-            this.textBox2.Location = new System.Drawing.Point(598, 80);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "txtKund";
-            this.textBox2.Size = new System.Drawing.Size(190, 26);
-            this.textBox2.TabIndex = 13;
+            this.txtKund.Location = new System.Drawing.Point(598, 80);
+            this.txtKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtKund.Name = "txtKund";
+            this.txtKund.Size = new System.Drawing.Size(190, 26);
+            this.txtKund.TabIndex = 13;
             // 
             // comboBox1
             // 
@@ -290,23 +290,23 @@
             // 
             // btnSök
             // 
-            this.button5.Location = new System.Drawing.Point(364, 128);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "btnSök";
-            this.button5.Size = new System.Drawing.Size(90, 35);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Sök";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSök.Location = new System.Drawing.Point(364, 128);
+            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSök.Name = "btnSök";
+            this.btnSök.Size = new System.Drawing.Size(90, 35);
+            this.btnSök.TabIndex = 15;
+            this.btnSök.Text = "Sök";
+            this.btnSök.UseVisualStyleBackColor = true;
             // 
             // btnRensa
             // 
-            this.button6.Location = new System.Drawing.Point(465, 128);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "btnRensa";
-            this.button6.Size = new System.Drawing.Size(90, 35);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Rensa";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRensa.Location = new System.Drawing.Point(465, 128);
+            this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRensa.Name = "btnRensa";
+            this.btnRensa.Size = new System.Drawing.Size(90, 35);
+            this.btnRensa.TabIndex = 16;
+            this.btnRensa.Text = "Rensa";
+            this.btnRensa.UseVisualStyleBackColor = true;
             // 
             // label1
             // 

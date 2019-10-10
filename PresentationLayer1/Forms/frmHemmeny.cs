@@ -23,5 +23,12 @@ namespace PresentationLayer1
             Hide();
             frmKunder.Show();
         }
+
+        private void btnProdukter_Click(object sender, EventArgs e)
+        {
+            Forms.frmProdukter frmProdukter = new Forms.frmProdukter();
+            Hide();
+            frmProdukter.Show();
+        }
     }
 }

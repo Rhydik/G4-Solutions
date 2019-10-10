@@ -27,9 +27,22 @@ namespace PresentationLayer1
             dataGridView.DataSource = kunder;
         }
 
-        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnKunder_Click(object sender, EventArgs e)
         {
+            frmKunder frmKunder = new frmKunder();
+            Hide();
+            frmKunder.Show();
+        }
 
+
+
+
+        private void btnProdukter_Click(object sender, EventArgs e)
+        {
+            Forms.frmProdukter frmProdukter = new Forms.frmProdukter();
+            Hide();
+            frmProdukter.Show();
+            
         }
 
         private void btnRensa_Click(object sender, EventArgs e)
@@ -49,19 +62,6 @@ namespace PresentationLayer1
             dataGridView.DataSource = kunder;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

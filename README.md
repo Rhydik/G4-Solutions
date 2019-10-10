@@ -16,4 +16,6 @@ Label - Döps med “lbl” först och sen kamelnotation på resterande, och vi 
 
 Gridview - Döps med “gv” först och sen kamelnotation på resterande, och vi använder bara singular. Tex “gvProdukt” “gvKund”
 
+TextBox - Döps med “txt” först och sen kamelnotation på resterande, och vi använder bara singular. Tex “txtProdukt” “txtKund”
+
 Funktioner - Döps med stor bokstav först och sen kamelnotation på resterande, och vi använder engelska för allt förutom det specifika svenska ordet. Tex “AddIntäktsbudget” “SortByKategori”

@@ -64,6 +64,12 @@
     <Compile Include="Forms\frmKunder.Designer.cs">
       <DependentUpon>frmKunder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmProdukter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmProdukter.Designer.cs">
+      <DependentUpon>frmProdukter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKunder.resx">
       <DependentUpon>frmKunder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProdukter.resx">
+      <DependentUpon>frmProdukter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

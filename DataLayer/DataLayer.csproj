@@ -57,6 +57,7 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataContext.cs" />
+    <Compile Include="DTO\ProduktDTO.cs" />
     <Compile Include="DTO\KundDTO.cs" />
     <Compile Include="Repositories\AktivitetRepository.cs" />
     <Compile Include="AntalTimmar.cs">

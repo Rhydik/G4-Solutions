@@ -36,5 +36,11 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
         }
+
+        //Produkter
+        public List<ProduktDTO> GetAllProdukter()
+        {
+            return repositoryFacade.produktRepository.GetAllProdukter();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using DataLayer.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,18 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmProdukter : Form
     {
+        BusinessManager businessManager;
+        private List<ProduktDTO> produkter;
+
         public frmProdukter()
         {
             InitializeComponent();
+            businessManager = new BusinessManager();
+
+            produkter = businessManager.GetAllProdukter();
+
+            dataGridView2.DataSource = produkter;
+
         }
 
         private void btnKunder_Click(object sender, EventArgs e)

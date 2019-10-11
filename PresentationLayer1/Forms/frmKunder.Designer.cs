@@ -225,6 +225,7 @@
             this.btnExportera.TabIndex = 9;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
+            this.btnExportera.Click += new System.EventHandler(this.btnExportera_Click);
             // 
             // button3
             // 

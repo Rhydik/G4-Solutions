@@ -279,6 +279,7 @@
             this.btnSök.TabIndex = 15;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
+            this.btnSök.Click += new System.EventHandler(this.btnSök_Click);
             // 
             // btnRensa
             // 
@@ -288,6 +289,7 @@
             this.btnRensa.TabIndex = 16;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // label1
             // 

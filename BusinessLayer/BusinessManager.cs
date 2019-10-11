@@ -37,7 +37,10 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
         }
-
+        public List<KundDTO> GetKunderBySearch(int? id, string namn, string kategori)
+        {
+            return repositoryFacade.kundRepository.GetKunderBySearch(id, namn, kategori);
+        }
         public void AddKund(int id, string namn, string kategori)
         {
             repositoryFacade.kundRepository.AddKund(id, namn, kategori);

@@ -34,19 +34,17 @@ namespace PresentationLayer1
             frmKunder.Show();
         }
 
-
-
-
         private void btnProdukter_Click(object sender, EventArgs e)
         {
             Forms.frmProdukter frmProdukter = new Forms.frmProdukter();
             Hide();
-            frmProdukter.Show();
-            
+            frmProdukter.Show();            
         }
 
         private void btnRensa_Click(object sender, EventArgs e)
         {
+            kunder = businessManager.GetAllKunder();
+
             dataGridView.DataSource = kunder;
         }
 
@@ -57,11 +55,21 @@ namespace PresentationLayer1
             string kund = txtKund.Text;
             string kundKategori = comboBox1.Text;
 
-            var kunder = businessManager.GetKunderByID(id);
+            var kunderID = businessManager.GetKunderByID(id);
+            var kunderNamn = businessManager.GetKunderByNamn(kund);
+            //var kunderKategori = businessManager.GetKunderByKategori(kundKategori);
 
-            dataGridView.DataSource = kunder;
+            var combinedData = kunderID.Union(kunderNamn);
+
+            dataGridView.DataSource = combinedData;
+        }
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
         }
 
-
+        private void Exportera<T>(List<T> data)
+        {
+            
+        } 
     }
 }

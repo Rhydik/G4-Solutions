@@ -19,5 +19,19 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public void AddProdukt()
+        {
+                using (var db = new DataContext())
+                {
+                    var namn = "produkttest2000";
+                    var produkt = new Produkt {Namn = namn,};
+               
+                    db.Produkt.Add(produkt);
+                    db.SaveChanges();
+
+                }
+        }
+
     }
 }

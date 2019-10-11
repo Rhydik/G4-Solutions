@@ -33,7 +33,7 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
-        public List<KundDTO> GetKunderByKategori(KundKategori kategori)
+        public List<KundDTO> GetKunderByKategori(string kategori)
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
         }

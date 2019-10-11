@@ -57,9 +57,9 @@ namespace PresentationLayer1
 
             var kunderID = businessManager.GetKunderByID(id);
             var kunderNamn = businessManager.GetKunderByNamn(kund);
-            //var kunderKategori = businessManager.GetKunderByKategori(kundKategori);
+            var kunderKategori = businessManager.GetKunderByKategori(kundKategori);
 
-            var combinedData = kunderID.Union(kunderNamn);
+            var combinedData = kunderID.Union(kunderNamn).Union(kunderKategori);
 
             dataGridView.DataSource = combinedData;
         }

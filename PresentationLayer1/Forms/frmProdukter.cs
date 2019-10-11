@@ -41,5 +41,15 @@ namespace PresentationLayer1.Forms
             Forms.frmProdukter frmProdukter = new frmProdukter();
             Hide();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

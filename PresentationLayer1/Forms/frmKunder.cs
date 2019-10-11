@@ -75,6 +75,6 @@ namespace PresentationLayer1
         private void Exportera<T>(List<T> data)
         {
             
-        } 
+        }
     }
 }

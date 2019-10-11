@@ -51,5 +51,25 @@ namespace BusinessLayer
         {
             return repositoryFacade.produktRepository.GetAllProdukter();
         }
+
+        public List<ProduktKategoriDTO> GetProduktByKategori()
+        {
+            return repositoryFacade.produktRepository.GetProduktByKategori();
+        }
+
+        public List<ProduktgruppDTO> GetProduktByGrupp()
+        {
+            return repositoryFacade.produktRepository.GetProduktByGrupp();
+        }
+
+        public List<AvdelningDTO> GetProduktByAvdelning()
+        {
+            return repositoryFacade.produktRepository.GetProduktByAvdelning();
+        }
+
+        public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
+        {
+            repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp);
+        }
     }
 }

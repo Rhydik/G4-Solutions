@@ -38,6 +38,11 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
         }
 
+        public void AddKund(int id, string namn, string kategori)
+        {
+            repositoryFacade.kundRepository.AddKund(id, namn, kategori);
+        }
+
         //Produkter
         public List<ProduktDTO> GetAllProdukter()
         {

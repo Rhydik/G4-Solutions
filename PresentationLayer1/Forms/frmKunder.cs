@@ -65,6 +65,13 @@ namespace PresentationLayer1
         }
         private void btnExportera_Click(object sender, EventArgs e)
         {
+            //Console.WriteLine("hej");
+            //
+            //businessManager.AddKund(4, "jacob", "Offentlig");
+            //
+            //kunder = businessManager.GetAllKunder();
+            //
+            //dataGridView.DataSource = kunder;
         }
 
         private void Exportera<T>(List<T> data)

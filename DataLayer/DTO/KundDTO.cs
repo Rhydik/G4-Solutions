@@ -11,6 +11,6 @@ namespace DataLayer.DTO
     {
         public int KundID { get; set; }
         public string Namn { get; set; }
-        public KundKategori KundKategori { get; set; }
+        public string KundKategori { get; set; }
     }
 }

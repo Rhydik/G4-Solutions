@@ -100,6 +100,7 @@
     <Compile Include="KundKategori.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\IntäktsbudgetRepository.cs" />
     <Compile Include="Repositories\KundRepository.cs" />
     <Compile Include="Personal.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>

@@ -32,12 +32,28 @@ namespace DataLayer
                                        where x.Namn == grupp
                                        select x).FirstOrDefault();
 
+
+
+                //List<KundDTO> getkundnamn = new List<KundDTO>();
+
+                //getkundnamn.FirstOrDefault(x => x.Namn == "").KundID;
+
+                //var hämtakundid =(from x in db.Kund
+                //                  where x.KundID ==)
+
+                //var intäktsbudget = (from x in db.Intäktsbudget
+                //                     where x.Kund_KundID == 
+                //                     select x).FirstOrDefault();
+
+                //var nyintäktsbudget = new Intäktsbudget {Kund_KundID = }
                 var produkt = new Produkt { ProduktKod = produktKod, Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp };
+
                 db.Produkt.Add(produkt);
 
                 db.SaveChanges();
             }
         }
+
 
         //Produktkategori
 
@@ -76,6 +92,9 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        //Kund
+        //public List <KundDTO>
 
     }
 }

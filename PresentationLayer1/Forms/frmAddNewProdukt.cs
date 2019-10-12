@@ -44,6 +44,13 @@ namespace PresentationLayer1.Forms
             comboBox3.DataSource = avd;
             comboBox3.ValueMember = "Namn";
             comboBox3.DisplayMember = "Namn";
+
+            //Combobox från kund
+
+            var kund = businessManager.GetAllKunder();
+            comboBox4.DataSource = kund;
+            comboBox4.ValueMember = "Namn";
+            comboBox4.DisplayMember = "Namn";
         }
 
         private void newProduktNametxt_TextChanged(object sender, EventArgs e)
@@ -105,13 +112,23 @@ namespace PresentationLayer1.Forms
             var valgrupp = comboBox2.GetItemText(comboBox2.SelectedItem);
             Console.WriteLine(valgrupp);
 
+            var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
+            Console.WriteLine(valavd);
+
+            var valkund = comboBox4.GetItemText(comboBox4.SelectedItem);
+            Console.WriteLine(valkund);
+
+
+
+
+
+
             //finns inte än, missat att lägga in avdelning till produkt
 
-            //var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
-            //Console.WriteLine(valavd);
 
-            
-            businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
+
+
+            //businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
 
 
 
@@ -127,5 +144,14 @@ namespace PresentationLayer1.Forms
 
         }
 
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

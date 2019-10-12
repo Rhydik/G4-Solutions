@@ -53,8 +53,9 @@ namespace DataLayer
                 if (id.HasValue)
                     query = query.Where(KundDTO => KundDTO.KundID == id);
 
+                //Ändrat så att sökningen inte behöver vara exakt namnet, utan kan börja med det. Fungerar även med korrekta namn ///Leonard
                 if (!string.IsNullOrEmpty(namn))
-                    query = query.Where(KundDTO => KundDTO.Namn == namn);
+                    query = query.Where(KundDTO => KundDTO.Namn.StartsWith(namn)); 
 
                 if (!string.IsNullOrEmpty(kategori))
                     query = query.Where(KundDTO => KundDTO.KundKategori == kategori);

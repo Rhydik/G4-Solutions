@@ -25,6 +25,7 @@ namespace PresentationLayer1.Forms
             produkter = businessManager.GetAllProdukter();
 
             dataGridView2.DataSource = produkter;
+           
 
         }
 
@@ -44,7 +45,8 @@ namespace PresentationLayer1.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            frmAddNewProdukt newinstans = new frmAddNewProdukt();
+            newinstans.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace DataLayer.DTO
             public int ProduktID { get; set; }
             public string Namn { get; set;}
             public Produktgrupp Produktgrupp { get; set; }
-            public Produktkategori ProduktKategori { get; set; }
+            public Produktkategori Produktkategori { get; set; }
 
     }
 }

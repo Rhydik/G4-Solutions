@@ -48,5 +48,13 @@ namespace DataLayer
             }
         }
 
+        public static List<Produktkategori> GetProduktkategori()
+        {
+            using (var db = new DataContext())
+            {
+                return db.Produktkategori.ToList();
+            }
+        }
+
     }
 }

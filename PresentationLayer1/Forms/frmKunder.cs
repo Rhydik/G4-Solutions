@@ -15,7 +15,8 @@ namespace PresentationLayer1
     public partial class frmKunder : Form
     {
         BusinessManager businessManager;
-        private List<KundDTO> kunder;
+        private List<KundDTO> kunder; 
+
 
         public frmKunder()
         {
@@ -24,7 +25,10 @@ namespace PresentationLayer1
 
             kunder = businessManager.GetAllKunder();
 
-            dataGridView.DataSource = kunder;
+            dataGridView.DataSource = kunder; 
+            //dataGridView.CellBeginEdit += dgv_CellBeginEdit;
+            //dataGridView.CellValidating += dgv_CellValidating;
+            //dataGridView.CellEndEdit += dgv_CellEndEdit;
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -75,6 +79,42 @@ namespace PresentationLayer1
         private void Exportera<T>(List<T> data)
         {
             
-        } 
+        }
+        //private void dgv_CellBeginEdit(Object sender, DataGridViewCellCancelEventArgs e)
+        //{
+        //    //Here we save a current value of cell to some variable, that later we can compare with a new value
+        //    //For example using of dgv.Tag property
+        //    if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+        //    {
+        //        this.dataGridView.Tag = this.dataGridView.CurrentCell.Value;
+        //        //Or cast sender to DataGridView variable-> than this handler can be used in another datagridview
+        //    }
+        //}
+        //
+        //private void dgv_CellValidating(Object sender, DataGridViewCellValidatingEventArgs e)
+        //{
+        //    //Here you can add all kind of checks for new value
+        //    //For exapmle simple compare with old value and check for be more than 0
+        //    if (dataGridView.Tag == dataGridView.CurrentCell.Value)
+        //        e.Cancel = true;    //Cancel changes of current cell
+        //                            //For example used Integer check
+        //
+        //    ;
+        //    int iTemp;
+        //    //if (dataGridView.CurrentCell.Value.GetType() == iTemp == > 0)
+        //    //{
+        //    //    //value is ok
+        //    //}
+        //    else
+        //    {
+        //        e.Cancel = true;
+        //    }
+        //}
+        //
+        //private void dgv_CellEndEdit(Object sender, DataGridViewCellEventArgs e)
+        //{
+        //    //Because CellEndEdit event occurs after CellValidating event(if not cancelled)
+        //    //Here you can update new value to database
+        //}
     }
 }

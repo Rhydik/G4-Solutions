@@ -24,7 +24,7 @@ namespace PresentationLayer1.Forms
 
             produkter = businessManager.GetAllProdukter();
 
-            dataGridView2.DataSource = produkter;
+            gvProdukter.DataSource = produkter;
            
 
         }

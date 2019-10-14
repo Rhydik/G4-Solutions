@@ -38,7 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnRegistreraNyProdukt = new System.Windows.Forms.Button();
             this.btnRedigeraProdukt = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gvProdukter = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.btnKunder = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProdukter)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,14 +145,14 @@
             this.btnRedigeraProdukt.Text = "Redigera produkt";
             this.btnRedigeraProdukt.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // gvProdukter
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(246, 118);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.Size = new System.Drawing.Size(501, 237);
-            this.dataGridView2.TabIndex = 20;
+            this.gvProdukter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvProdukter.Location = new System.Drawing.Point(246, 118);
+            this.gvProdukter.Name = "gvProdukter";
+            this.gvProdukter.RowHeadersWidth = 62;
+            this.gvProdukter.Size = new System.Drawing.Size(501, 237);
+            this.gvProdukter.TabIndex = 20;
             // 
             // panel1
             // 
@@ -329,11 +329,11 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnRegistreraNyProdukt);
             this.Controls.Add(this.btnRedigeraProdukt);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.gvProdukter);
             this.Name = "frmProdukter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProdukter";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProdukter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -352,7 +352,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnRegistreraNyProdukt;
         private System.Windows.Forms.Button btnRedigeraProdukt;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gvProdukter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;

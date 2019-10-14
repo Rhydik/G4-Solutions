@@ -41,7 +41,7 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.gvKunder = new System.Windows.Forms.DataGridView();
             this.btnRegistreraNyKund = new System.Windows.Forms.Button();
             this.btnRedigeraKund = new System.Windows.Forms.Button();
             this.txtKundID = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKunder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,15 +197,15 @@
             this.btnKunder.UseVisualStyleBackColor = true;
             this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
-            // dataGridView
+            // gvKunder
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(243, 119);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersWidth = 62;
-            this.dataGridView.Size = new System.Drawing.Size(501, 237);
-            this.dataGridView.TabIndex = 7;
+            this.gvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvKunder.Location = new System.Drawing.Point(243, 119);
+            this.gvKunder.Name = "gvKunder";
+            this.gvKunder.ReadOnly = true;
+            this.gvKunder.RowHeadersWidth = 62;
+            this.gvKunder.Size = new System.Drawing.Size(501, 237);
+            this.gvKunder.TabIndex = 7;
             // 
             // btnRegistreraNyKund
             // 
@@ -315,13 +315,13 @@
             this.Controls.Add(this.txtKundID);
             this.Controls.Add(this.btnRegistreraNyKund);
             this.Controls.Add(this.btnRedigeraKund);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.gvKunder);
             this.Controls.Add(this.panel1);
             this.Name = "frmKunder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmKunder";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKunder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,7 +341,7 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView gvKunder;
         private System.Windows.Forms.Button btnRegistreraNyKund;
         private System.Windows.Forms.Button btnRedigeraKund;
         private System.Windows.Forms.TextBox txtKundID;

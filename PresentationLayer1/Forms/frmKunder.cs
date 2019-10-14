@@ -25,7 +25,7 @@ namespace PresentationLayer1
 
             kunder = businessManager.GetAllKunder();
 
-            dataGridView.DataSource = kunder; 
+            gvKunder.DataSource = kunder; 
             //dataGridView.CellBeginEdit += dgv_CellBeginEdit;
             //dataGridView.CellValidating += dgv_CellValidating;
             //dataGridView.CellEndEdit += dgv_CellEndEdit;
@@ -49,7 +49,7 @@ namespace PresentationLayer1
         {
             kunder = businessManager.GetAllKunder();
 
-            dataGridView.DataSource = kunder;
+            gvKunder.DataSource = kunder;
         }
 
         private void btnSök_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace PresentationLayer1
 
             var data = businessManager.GetKunderBySearch(id, kund, kundKategori);
 
-            dataGridView.DataSource = data;
+            gvKunder.DataSource = data;
         }
 
         private void btnRegistreraNyKund_Click(object sender, EventArgs e)

@@ -134,7 +134,7 @@
             this.btnRegistreraNyProdukt.TabIndex = 24;
             this.btnRegistreraNyProdukt.Text = "Registrera ny produkt";
             this.btnRegistreraNyProdukt.UseVisualStyleBackColor = true;
-            this.btnRegistreraNyProdukt.Click += new System.EventHandler(this.button3_Click);
+            this.btnRegistreraNyProdukt.Click += new System.EventHandler(this.btnRegistreraNyProdukt_Click);
             // 
             // btnRedigeraProdukt
             // 
@@ -144,7 +144,6 @@
             this.btnRedigeraProdukt.TabIndex = 23;
             this.btnRedigeraProdukt.Text = "Redigera produkt";
             this.btnRedigeraProdukt.UseVisualStyleBackColor = true;
-            this.btnRedigeraProdukt.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView2
             // 

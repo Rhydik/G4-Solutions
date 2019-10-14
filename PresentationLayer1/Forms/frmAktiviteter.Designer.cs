@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmRedigeraProdukt
+    partial class frmAktiviteter
     {
         /// <summary>
         /// Required designer variable.
@@ -41,22 +41,21 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.cmbAvdelning = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSkapaNyProduktgrupp = new System.Windows.Forms.Button();
-            this.cmbProduktgrupp = new System.Windows.Forms.ComboBox();
-            this.lblProduktgrupp = new System.Windows.Forms.Label();
-            this.btnSkapaNyProduktkategori = new System.Windows.Forms.Button();
-            this.cmbKundkategori = new System.Windows.Forms.ComboBox();
-            this.tbProdukt = new System.Windows.Forms.TextBox();
-            this.tbProduktID = new System.Windows.Forms.TextBox();
-            this.lblKundkategori = new System.Windows.Forms.Label();
-            this.lblProdukt = new System.Windows.Forms.Label();
-            this.lblProduktID = new System.Windows.Forms.Label();
-            this.btnAvbrytProdukt1 = new System.Windows.Forms.Button();
-            this.btnSparaProdukt1 = new System.Windows.Forms.Button();
-            this.btnTaBortProdukt = new System.Windows.Forms.Button();
+            this.lblAvdelning = new System.Windows.Forms.Label();
+            this.lblBenämning = new System.Windows.Forms.Label();
+            this.lblAktivitetsID = new System.Windows.Forms.Label();
+            this.btnRensa = new System.Windows.Forms.Button();
+            this.btnSök = new System.Windows.Forms.Button();
+            this.cmbVäljAvdelning = new System.Windows.Forms.ComboBox();
+            this.tbBenämning = new System.Windows.Forms.TextBox();
+            this.tbAktivitetsID = new System.Windows.Forms.TextBox();
+            this.btnRegistreraNyAktivitet = new System.Windows.Forms.Button();
+            this.btnRedigeraAktivitet = new System.Windows.Forms.Button();
+            this.dgvAktiviteter = new System.Windows.Forms.DataGridView();
+            this.btnSkrivUt = new System.Windows.Forms.Button();
+            this.btnExportera = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,11 +72,11 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(1, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 665);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 4;
             // 
             // btnResultat
             // 
@@ -211,168 +210,156 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // cmbAvdelning
+            // lblAvdelning
             // 
-            this.cmbAvdelning.FormattingEnabled = true;
-            this.cmbAvdelning.Items.AddRange(new object[] {
-            "Drift",
-            "Utveckling/Förvaltning"});
-            this.cmbAvdelning.Location = new System.Drawing.Point(361, 422);
-            this.cmbAvdelning.Name = "cmbAvdelning";
-            this.cmbAvdelning.Size = new System.Drawing.Size(142, 28);
-            this.cmbAvdelning.TabIndex = 55;
-            this.cmbAvdelning.Text = "Välj Avdelning";
+            this.lblAvdelning.AutoSize = true;
+            this.lblAvdelning.Location = new System.Drawing.Point(656, 53);
+            this.lblAvdelning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvdelning.Name = "lblAvdelning";
+            this.lblAvdelning.Size = new System.Drawing.Size(78, 20);
+            this.lblAvdelning.TabIndex = 46;
+            this.lblAvdelning.Text = "Avdelning";
             // 
-            // label1
+            // lblBenämning
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(357, 387);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "Avdelning";
+            this.lblBenämning.AutoSize = true;
+            this.lblBenämning.Location = new System.Drawing.Point(497, 53);
+            this.lblBenämning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBenämning.Name = "lblBenämning";
+            this.lblBenämning.Size = new System.Drawing.Size(90, 20);
+            this.lblBenämning.TabIndex = 45;
+            this.lblBenämning.Text = "Benämning";
             // 
-            // btnSkapaNyProduktgrupp
+            // lblAktivitetsID
             // 
-            this.btnSkapaNyProduktgrupp.Location = new System.Drawing.Point(535, 247);
-            this.btnSkapaNyProduktgrupp.Name = "btnSkapaNyProduktgrupp";
-            this.btnSkapaNyProduktgrupp.Size = new System.Drawing.Size(204, 52);
-            this.btnSkapaNyProduktgrupp.TabIndex = 53;
-            this.btnSkapaNyProduktgrupp.Text = "Skapa ny produktgrupp";
-            this.btnSkapaNyProduktgrupp.UseVisualStyleBackColor = true;
+            this.lblAktivitetsID.AutoSize = true;
+            this.lblAktivitetsID.Location = new System.Drawing.Point(347, 53);
+            this.lblAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAktivitetsID.Name = "lblAktivitetsID";
+            this.lblAktivitetsID.Size = new System.Drawing.Size(90, 20);
+            this.lblAktivitetsID.TabIndex = 44;
+            this.lblAktivitetsID.Text = "AktivitetsID";
             // 
-            // cmbProduktgrupp
+            // btnRensa
             // 
-            this.cmbProduktgrupp.FormattingEnabled = true;
-            this.cmbProduktgrupp.Location = new System.Drawing.Point(358, 256);
-            this.cmbProduktgrupp.Name = "cmbProduktgrupp";
-            this.cmbProduktgrupp.Size = new System.Drawing.Size(146, 28);
-            this.cmbProduktgrupp.TabIndex = 52;
+            this.btnRensa.Location = new System.Drawing.Point(454, 130);
+            this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRensa.Name = "btnRensa";
+            this.btnRensa.Size = new System.Drawing.Size(90, 35);
+            this.btnRensa.TabIndex = 43;
+            this.btnRensa.Text = "Rensa";
+            this.btnRensa.UseVisualStyleBackColor = true;
             // 
-            // lblProduktgrupp
+            // btnSök
             // 
-            this.lblProduktgrupp.AutoSize = true;
-            this.lblProduktgrupp.Location = new System.Drawing.Point(354, 221);
-            this.lblProduktgrupp.Name = "lblProduktgrupp";
-            this.lblProduktgrupp.Size = new System.Drawing.Size(105, 20);
-            this.lblProduktgrupp.TabIndex = 51;
-            this.lblProduktgrupp.Text = "Produktgrupp";
+            this.btnSök.Location = new System.Drawing.Point(353, 130);
+            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSök.Name = "btnSök";
+            this.btnSök.Size = new System.Drawing.Size(90, 35);
+            this.btnSök.TabIndex = 42;
+            this.btnSök.Text = "Sök";
+            this.btnSök.UseVisualStyleBackColor = true;
             // 
-            // btnSkapaNyProduktkategori
+            // cmbVäljAvdelning
             // 
-            this.btnSkapaNyProduktkategori.Location = new System.Drawing.Point(535, 327);
-            this.btnSkapaNyProduktkategori.Name = "btnSkapaNyProduktkategori";
-            this.btnSkapaNyProduktkategori.Size = new System.Drawing.Size(204, 52);
-            this.btnSkapaNyProduktkategori.TabIndex = 50;
-            this.btnSkapaNyProduktkategori.Text = "Skapa ny produktkategori";
-            this.btnSkapaNyProduktkategori.UseVisualStyleBackColor = true;
+            this.cmbVäljAvdelning.FormattingEnabled = true;
+            this.cmbVäljAvdelning.Location = new System.Drawing.Point(660, 83);
+            this.cmbVäljAvdelning.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
+            this.cmbVäljAvdelning.Size = new System.Drawing.Size(286, 28);
+            this.cmbVäljAvdelning.TabIndex = 41;
+            this.cmbVäljAvdelning.Text = "Välj avdelning";
             // 
-            // cmbKundkategori
+            // tbBenämning
             // 
-            this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Location = new System.Drawing.Point(358, 336);
-            this.cmbKundkategori.Name = "cmbKundkategori";
-            this.cmbKundkategori.Size = new System.Drawing.Size(146, 28);
-            this.cmbKundkategori.TabIndex = 49;
+            this.tbBenämning.Location = new System.Drawing.Point(502, 82);
+            this.tbBenämning.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbBenämning.Name = "tbBenämning";
+            this.tbBenämning.Size = new System.Drawing.Size(139, 26);
+            this.tbBenämning.TabIndex = 40;
             // 
-            // tbProdukt
+            // tbAktivitetsID
             // 
-            this.tbProdukt.Location = new System.Drawing.Point(358, 181);
-            this.tbProdukt.Name = "tbProdukt";
-            this.tbProdukt.Size = new System.Drawing.Size(146, 26);
-            this.tbProdukt.TabIndex = 48;
+            this.tbAktivitetsID.Location = new System.Drawing.Point(352, 82);
+            this.tbAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbAktivitetsID.Name = "tbAktivitetsID";
+            this.tbAktivitetsID.Size = new System.Drawing.Size(139, 26);
+            this.tbAktivitetsID.TabIndex = 39;
             // 
-            // tbProduktID
+            // btnRegistreraNyAktivitet
             // 
-            this.tbProduktID.Location = new System.Drawing.Point(358, 94);
-            this.tbProduktID.Name = "tbProduktID";
-            this.tbProduktID.Size = new System.Drawing.Size(146, 26);
-            this.tbProduktID.TabIndex = 47;
+            this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(936, 561);
+            this.btnRegistreraNyAktivitet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRegistreraNyAktivitet.Name = "btnRegistreraNyAktivitet";
+            this.btnRegistreraNyAktivitet.Size = new System.Drawing.Size(168, 62);
+            this.btnRegistreraNyAktivitet.TabIndex = 38;
+            this.btnRegistreraNyAktivitet.Text = "Registrera ny aktivitet";
+            this.btnRegistreraNyAktivitet.UseVisualStyleBackColor = true;
             // 
-            // lblKundkategori
+            // btnRedigeraAktivitet
             // 
-            this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(354, 301);
-            this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(121, 20);
-            this.lblKundkategori.TabIndex = 46;
-            this.lblKundkategori.Text = "Produktkategori";
+            this.btnRedigeraAktivitet.Location = new System.Drawing.Point(748, 559);
+            this.btnRedigeraAktivitet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRedigeraAktivitet.Name = "btnRedigeraAktivitet";
+            this.btnRedigeraAktivitet.Size = new System.Drawing.Size(180, 63);
+            this.btnRedigeraAktivitet.TabIndex = 37;
+            this.btnRedigeraAktivitet.Text = "Redigera aktivitet";
+            this.btnRedigeraAktivitet.UseVisualStyleBackColor = true;
             // 
-            // lblProdukt
+            // dgvAktiviteter
             // 
-            this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Location = new System.Drawing.Point(354, 145);
-            this.lblProdukt.Name = "lblProdukt";
-            this.lblProdukt.Size = new System.Drawing.Size(64, 20);
-            this.lblProdukt.TabIndex = 45;
-            this.lblProdukt.Text = "Produkt";
+            this.dgvAktiviteter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAktiviteter.Location = new System.Drawing.Point(353, 186);
+            this.dgvAktiviteter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvAktiviteter.Name = "dgvAktiviteter";
+            this.dgvAktiviteter.RowHeadersWidth = 62;
+            this.dgvAktiviteter.Size = new System.Drawing.Size(752, 365);
+            this.dgvAktiviteter.TabIndex = 36;
             // 
-            // lblProduktID
+            // btnSkrivUt
             // 
-            this.lblProduktID.AutoSize = true;
-            this.lblProduktID.Location = new System.Drawing.Point(354, 63);
-            this.lblProduktID.Name = "lblProduktID";
-            this.lblProduktID.Size = new System.Drawing.Size(81, 20);
-            this.lblProduktID.TabIndex = 44;
-            this.lblProduktID.Text = "ProduktID";
+            this.btnSkrivUt.Location = new System.Drawing.Point(352, 561);
+            this.btnSkrivUt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSkrivUt.Name = "btnSkrivUt";
+            this.btnSkrivUt.Size = new System.Drawing.Size(180, 63);
+            this.btnSkrivUt.TabIndex = 47;
+            this.btnSkrivUt.Text = "Skriv ut";
+            this.btnSkrivUt.UseVisualStyleBackColor = true;
             // 
-            // btnAvbrytProdukt1
+            // btnExportera
             // 
-            this.btnAvbrytProdukt1.Location = new System.Drawing.Point(971, 594);
-            this.btnAvbrytProdukt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAvbrytProdukt1.Name = "btnAvbrytProdukt1";
-            this.btnAvbrytProdukt1.Size = new System.Drawing.Size(180, 63);
-            this.btnAvbrytProdukt1.TabIndex = 43;
-            this.btnAvbrytProdukt1.Text = "Avbryt";
-            this.btnAvbrytProdukt1.UseVisualStyleBackColor = true;
+            this.btnExportera.Location = new System.Drawing.Point(540, 561);
+            this.btnExportera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExportera.Name = "btnExportera";
+            this.btnExportera.Size = new System.Drawing.Size(180, 63);
+            this.btnExportera.TabIndex = 48;
+            this.btnExportera.Text = "Exportera";
+            this.btnExportera.UseVisualStyleBackColor = true;
             // 
-            // btnSparaProdukt1
-            // 
-            this.btnSparaProdukt1.Location = new System.Drawing.Point(737, 594);
-            this.btnSparaProdukt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSparaProdukt1.Name = "btnSparaProdukt1";
-            this.btnSparaProdukt1.Size = new System.Drawing.Size(180, 63);
-            this.btnSparaProdukt1.TabIndex = 42;
-            this.btnSparaProdukt1.Text = "Spara";
-            this.btnSparaProdukt1.UseVisualStyleBackColor = true;
-            // 
-            // btnTaBortProdukt
-            // 
-            this.btnTaBortProdukt.BackColor = System.Drawing.Color.Red;
-            this.btnTaBortProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaBortProdukt.Location = new System.Drawing.Point(346, 517);
-            this.btnTaBortProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnTaBortProdukt.Name = "btnTaBortProdukt";
-            this.btnTaBortProdukt.Size = new System.Drawing.Size(180, 63);
-            this.btnTaBortProdukt.TabIndex = 56;
-            this.btnTaBortProdukt.Text = "Ta bort produkt";
-            this.btnTaBortProdukt.UseVisualStyleBackColor = false;
-            // 
-            // frmRedigeraProdukt
+            // frmAktiviteter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 671);
-            this.Controls.Add(this.btnTaBortProdukt);
-            this.Controls.Add(this.cmbAvdelning);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSkapaNyProduktgrupp);
-            this.Controls.Add(this.cmbProduktgrupp);
-            this.Controls.Add(this.lblProduktgrupp);
-            this.Controls.Add(this.btnSkapaNyProduktkategori);
-            this.Controls.Add(this.cmbKundkategori);
-            this.Controls.Add(this.tbProdukt);
-            this.Controls.Add(this.tbProduktID);
-            this.Controls.Add(this.lblKundkategori);
-            this.Controls.Add(this.lblProdukt);
-            this.Controls.Add(this.lblProduktID);
-            this.Controls.Add(this.btnAvbrytProdukt1);
-            this.Controls.Add(this.btnSparaProdukt1);
+            this.ClientSize = new System.Drawing.Size(1161, 665);
+            this.Controls.Add(this.btnExportera);
+            this.Controls.Add(this.btnSkrivUt);
+            this.Controls.Add(this.lblAvdelning);
+            this.Controls.Add(this.lblBenämning);
+            this.Controls.Add(this.lblAktivitetsID);
+            this.Controls.Add(this.btnRensa);
+            this.Controls.Add(this.btnSök);
+            this.Controls.Add(this.cmbVäljAvdelning);
+            this.Controls.Add(this.tbBenämning);
+            this.Controls.Add(this.tbAktivitetsID);
+            this.Controls.Add(this.btnRegistreraNyAktivitet);
+            this.Controls.Add(this.btnRedigeraAktivitet);
+            this.Controls.Add(this.dgvAktiviteter);
             this.Controls.Add(this.panel1);
-            this.Name = "frmRedigeraProdukt";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraProdukt";
+            this.Name = "frmAktiviteter";
+            this.Text = "frmAktiviteter";
+      
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,20 +380,18 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.ComboBox cmbAvdelning;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSkapaNyProduktgrupp;
-        private System.Windows.Forms.ComboBox cmbProduktgrupp;
-        private System.Windows.Forms.Label lblProduktgrupp;
-        private System.Windows.Forms.Button btnSkapaNyProduktkategori;
-        private System.Windows.Forms.ComboBox cmbKundkategori;
-        private System.Windows.Forms.TextBox tbProdukt;
-        private System.Windows.Forms.TextBox tbProduktID;
-        private System.Windows.Forms.Label lblKundkategori;
-        private System.Windows.Forms.Label lblProdukt;
-        private System.Windows.Forms.Label lblProduktID;
-        private System.Windows.Forms.Button btnAvbrytProdukt1;
-        private System.Windows.Forms.Button btnSparaProdukt1;
-        private System.Windows.Forms.Button btnTaBortProdukt;
+        private System.Windows.Forms.Label lblAvdelning;
+        private System.Windows.Forms.Label lblBenämning;
+        private System.Windows.Forms.Label lblAktivitetsID;
+        private System.Windows.Forms.Button btnRensa;
+        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.ComboBox cmbVäljAvdelning;
+        private System.Windows.Forms.TextBox tbBenämning;
+        private System.Windows.Forms.TextBox tbAktivitetsID;
+        private System.Windows.Forms.Button btnRegistreraNyAktivitet;
+        private System.Windows.Forms.Button btnRedigeraAktivitet;
+        private System.Windows.Forms.DataGridView dgvAktiviteter;
+        private System.Windows.Forms.Button btnSkrivUt;
+        private System.Windows.Forms.Button btnExportera;
     }
 }

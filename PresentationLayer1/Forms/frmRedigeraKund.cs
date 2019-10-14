@@ -12,11 +12,42 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmRedigeraKund : Form
     {
-        public frmRedigeraKund()
+        BusinessLayer.BusinessManager businessManager;
+        public DataLayer.Kund kunden { get; set; }
+
+        public frmRedigeraKund(DataLayer.Kund kund)
         {
             InitializeComponent();
+            businessManager = new BusinessLayer.BusinessManager();
+            this.kunden = kund;
         }
 
-        
+        public void load()
+        {
+            tbKundID2.Text = kunden.KundID.ToString();
+            tbKund2.Text = kunden.Namn;
+            cmbKundkategori2.Text = kunden.KundKategori.ToString();
+        }
+
+        public void btnTaBortKund_Click(object sender, EventArgs e)
+        {
+            businessManager.RemoveKund(kunden.KundID);
+        }
+
+        private void btnAvbrytKund2_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmKunder frmKunder = new frmKunder();
+            frmKunder.Show();
+        }
+
+        private void btnSparaKund_Click(object sender, EventArgs e)
+        {
+            var kundId = int.Parse(tbKundID2.Text);
+            var kundNamn = tbKund2.Text;
+            var kundKategori = cmbKundkategori2.Text;
+
+            businessManager.UpdateKund(kundId, kundNamn, kundKategori);
+        }
     }
 }

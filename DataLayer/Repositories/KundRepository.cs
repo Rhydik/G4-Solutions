@@ -32,6 +32,17 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public void RemoveKund(int kundId)
+        {
+            using (var db = new Databas())
+            {
+                var kunden = db.Kund.Where(x => x.KundID == kundId).FirstOrDefault();
+                db.Kund.Remove(kunden);
+                db.SaveChanges();
+            }
+        }
+
         public List<KundDTO> GetKunderByKategori(string kategori)
         {
             using (var db = new Databas())
@@ -82,7 +93,7 @@ namespace DataLayer
                                     where x.Namn == kategori
                                     select x).FirstOrDefault();
 
-                var kund = new Kund {KundID = id, Namn = namn, KundKategori = kundKategori };
+                var kund = new Kund {KundID = id, Namn = namn, KundKategori = kundKategori};
                 db.Kund.Add(kund);
 
                 db.SaveChanges();

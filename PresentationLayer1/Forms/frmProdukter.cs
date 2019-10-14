@@ -24,7 +24,7 @@ namespace PresentationLayer1.Forms
 
             produkter = businessManager.GetAllProdukter();
 
-            gvProdukter.DataSource = produkter;
+            dgvProdukter.DataSource = produkter;
            
 
         }
@@ -49,5 +49,7 @@ namespace PresentationLayer1.Forms
             Forms.frmAddNewProdukt frmAddNewProdukt = new frmAddNewProdukt();
             Hide();
         }
+
+       
     }
 }

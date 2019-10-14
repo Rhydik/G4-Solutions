@@ -24,6 +24,12 @@ namespace BusinessLayer
             //repositoryFacade.kundRepository.AddKund();   för testning//Leo
             return repositoryFacade.kundRepository.GetAllKunder();
         }
+
+        public void RemoveKund(int kundId)
+        {
+            repositoryFacade.kundRepository.RemoveKund(kundId);
+        }
+
         public List<KundDTO> GetKunderByID(int id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
@@ -41,6 +47,12 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderBySearch(id, namn, kategori);
         }
+
+        public void UpdateKund(int kundId, string kundNamn, string kundKategori)
+        {
+            repositoryFacade.kundRepository.UpdateKund(kundId, kundNamn, kundKategori);
+        }
+
         public void AddKund(int id, string namn, string kategori)
         {
             repositoryFacade.kundRepository.AddKund(id, namn, kategori);

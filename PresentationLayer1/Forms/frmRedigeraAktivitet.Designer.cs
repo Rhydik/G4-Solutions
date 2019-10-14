@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmRegistreraNyKund
+    partial class frmRedigeraAktivitet
     {
         /// <summary>
         /// Required designer variable.
@@ -41,15 +41,14 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.lblKund1 = new System.Windows.Forms.Label();
-            this.lblKund2 = new System.Windows.Forms.Label();
+            this.cmbAvdelning = new System.Windows.Forms.ComboBox();
+            this.tbBenämning = new System.Windows.Forms.TextBox();
+            this.tbAktivitetsID = new System.Windows.Forms.TextBox();
             this.lblKundkategori = new System.Windows.Forms.Label();
-            this.tbKundID = new System.Windows.Forms.TextBox();
-            this.tbKundNamn = new System.Windows.Forms.TextBox();
-            this.cmbKundkategori = new System.Windows.Forms.ComboBox();
-            this.btnSpara = new System.Windows.Forms.Button();
-            this.btnAvbryt = new System.Windows.Forms.Button();
-            this.btnSkapaNyKundkategori = new System.Windows.Forms.Button();
+            this.lblBenämning = new System.Windows.Forms.Label();
+            this.lblKundID = new System.Windows.Forms.Label();
+            this.btnAvbrytAktivitet = new System.Windows.Forms.Button();
+            this.btnSparaKund = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,17 +66,19 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(9, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 5;
+            this.panel1.Size = new System.Drawing.Size(282, 665);
+            this.panel1.TabIndex = 4;
             // 
             // btnResultat
             // 
             this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResultat.Location = new System.Drawing.Point(15, 381);
+            this.btnResultat.Location = new System.Drawing.Point(22, 586);
+            this.btnResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(75, 23);
+            this.btnResultat.Size = new System.Drawing.Size(112, 35);
             this.btnResultat.TabIndex = 2;
             this.btnResultat.Text = "Resultat";
             this.btnResultat.UseVisualStyleBackColor = true;
@@ -85,9 +86,10 @@
             // btnPrognostiseringIntäkter
             // 
             this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(15, 352);
+            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(22, 542);
+            this.btnPrognostiseringIntäkter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
+            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(212, 35);
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
@@ -95,9 +97,10 @@
             // btnBudgeteratResultat
             // 
             this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudgeteratResultat.Location = new System.Drawing.Point(15, 322);
+            this.btnBudgeteratResultat.Location = new System.Drawing.Point(22, 495);
+            this.btnBudgeteratResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
+            this.btnBudgeteratResultat.Size = new System.Drawing.Size(184, 35);
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@
             // btnKostnadsbudgetering
             // 
             this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 274);
+            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(22, 422);
+            this.btnKostnadsbudgetering.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
-            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
+            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(237, 35);
             this.btnKostnadsbudgetering.TabIndex = 2;
             this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
@@ -115,9 +119,10 @@
             // btnIntäktsbudgeteringProdukt
             // 
             this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 245);
+            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(22, 377);
+            this.btnIntäktsbudgeteringProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
-            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
+            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(237, 35);
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
             this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
             this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
@@ -125,9 +130,10 @@
             // btnIntäktsbudgeteringKund
             // 
             this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 216);
+            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(22, 332);
+            this.btnIntäktsbudgeteringKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
-            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
+            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(237, 35);
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
             this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
             this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
@@ -135,9 +141,10 @@
             // btnBehörighet
             // 
             this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBehörighet.Location = new System.Drawing.Point(15, 169);
+            this.btnBehörighet.Location = new System.Drawing.Point(22, 260);
+            this.btnBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
+            this.btnBehörighet.Size = new System.Drawing.Size(160, 35);
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
@@ -145,9 +152,10 @@
             // btnSchablonkostnad
             // 
             this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchablonkostnad.Location = new System.Drawing.Point(15, 140);
+            this.btnSchablonkostnad.Location = new System.Drawing.Point(22, 215);
+            this.btnSchablonkostnad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
+            this.btnSchablonkostnad.Size = new System.Drawing.Size(160, 35);
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
@@ -155,9 +163,10 @@
             // btnAktiviteter
             // 
             this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktiviteter.Location = new System.Drawing.Point(15, 110);
+            this.btnAktiviteter.Location = new System.Drawing.Point(22, 169);
+            this.btnAktiviteter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
+            this.btnAktiviteter.Size = new System.Drawing.Size(160, 35);
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
@@ -165,9 +174,10 @@
             // btnPersonal
             // 
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Location = new System.Drawing.Point(15, 82);
+            this.btnPersonal.Location = new System.Drawing.Point(22, 126);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
+            this.btnPersonal.Size = new System.Drawing.Size(160, 35);
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
@@ -175,9 +185,10 @@
             // btnProdukter
             // 
             this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdukter.Location = new System.Drawing.Point(15, 53);
+            this.btnProdukter.Location = new System.Drawing.Point(22, 82);
+            this.btnProdukter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
+            this.btnProdukter.Size = new System.Drawing.Size(160, 35);
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
@@ -185,122 +196,99 @@
             // btnKunder
             // 
             this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKunder.Location = new System.Drawing.Point(15, 23);
+            this.btnKunder.Location = new System.Drawing.Point(22, 35);
+            this.btnKunder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(107, 23);
+            this.btnKunder.Size = new System.Drawing.Size(160, 35);
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // lblKund1
+            // cmbAvdelning
             // 
-            this.lblKund1.AutoSize = true;
-            this.lblKund1.Location = new System.Drawing.Point(249, 42);
-            this.lblKund1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKund1.Name = "lblKund1";
-            this.lblKund1.Size = new System.Drawing.Size(43, 13);
-            this.lblKund1.TabIndex = 6;
-            this.lblKund1.Text = "KundID";
+            this.cmbAvdelning.FormattingEnabled = true;
+            this.cmbAvdelning.Location = new System.Drawing.Point(423, 290);
+            this.cmbAvdelning.Name = "cmbAvdelning";
+            this.cmbAvdelning.Size = new System.Drawing.Size(121, 28);
+            this.cmbAvdelning.TabIndex = 41;
             // 
-            // lblKund2
+            // tbBenämning
             // 
-            this.lblKund2.AutoSize = true;
-            this.lblKund2.Location = new System.Drawing.Point(249, 95);
-            this.lblKund2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKund2.Name = "lblKund2";
-            this.lblKund2.Size = new System.Drawing.Size(32, 13);
-            this.lblKund2.TabIndex = 7;
-            this.lblKund2.Text = "Kund";
+            this.tbBenämning.Location = new System.Drawing.Point(423, 201);
+            this.tbBenämning.Name = "tbBenämning";
+            this.tbBenämning.Size = new System.Drawing.Size(100, 26);
+            this.tbBenämning.TabIndex = 40;
+            // 
+            // tbAktivitetsID
+            // 
+            this.tbAktivitetsID.Location = new System.Drawing.Point(423, 114);
+            this.tbAktivitetsID.Name = "tbAktivitetsID";
+            this.tbAktivitetsID.Size = new System.Drawing.Size(100, 26);
+            this.tbAktivitetsID.TabIndex = 39;
             // 
             // lblKundkategori
             // 
             this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(249, 153);
-            this.lblKundkategori.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKundkategori.Location = new System.Drawing.Point(419, 254);
             this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(70, 13);
-            this.lblKundkategori.TabIndex = 8;
-            this.lblKundkategori.Text = "Kundkategori";
+            this.lblKundkategori.Size = new System.Drawing.Size(78, 20);
+            this.lblKundkategori.TabIndex = 38;
+            this.lblKundkategori.Text = "Avdelning";
             // 
-            // tbKundID
+            // lblBenämning
             // 
-            this.tbKundID.Location = new System.Drawing.Point(251, 62);
-            this.tbKundID.Margin = new System.Windows.Forms.Padding(2);
-            this.tbKundID.Name = "tbKundID";
-            this.tbKundID.Size = new System.Drawing.Size(114, 20);
-            this.tbKundID.TabIndex = 9;
+            this.lblBenämning.AutoSize = true;
+            this.lblBenämning.Location = new System.Drawing.Point(419, 165);
+            this.lblBenämning.Name = "lblBenämning";
+            this.lblBenämning.Size = new System.Drawing.Size(90, 20);
+            this.lblBenämning.TabIndex = 37;
+            this.lblBenämning.Text = "Benämning";
             // 
-            // tbKundNamn
+            // lblKundID
             // 
-            this.tbKundNamn.Location = new System.Drawing.Point(251, 118);
-            this.tbKundNamn.Margin = new System.Windows.Forms.Padding(2);
-            this.tbKundNamn.Name = "tbKundNamn";
-            this.tbKundNamn.Size = new System.Drawing.Size(114, 20);
-            this.tbKundNamn.TabIndex = 10;
+            this.lblKundID.AutoSize = true;
+            this.lblKundID.Location = new System.Drawing.Point(419, 83);
+            this.lblKundID.Name = "lblKundID";
+            this.lblKundID.Size = new System.Drawing.Size(90, 20);
+            this.lblKundID.TabIndex = 36;
+            this.lblKundID.Text = "AktivitetsID";
             // 
-            // cmbKundkategori
+            // btnAvbrytAktivitet
             // 
-            this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Items.AddRange(new object[] {
-            "Offentlig",
-            "Näringsliv"});
-            this.cmbKundkategori.Location = new System.Drawing.Point(251, 176);
-            this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbKundkategori.Name = "cmbKundkategori";
-            this.cmbKundkategori.Size = new System.Drawing.Size(114, 21);
-            this.cmbKundkategori.TabIndex = 11;
+            this.btnAvbrytAktivitet.Location = new System.Drawing.Point(784, 587);
+            this.btnAvbrytAktivitet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAvbrytAktivitet.Name = "btnAvbrytAktivitet";
+            this.btnAvbrytAktivitet.Size = new System.Drawing.Size(180, 63);
+            this.btnAvbrytAktivitet.TabIndex = 44;
+            this.btnAvbrytAktivitet.Text = "Avbryt";
+            this.btnAvbrytAktivitet.UseVisualStyleBackColor = true;
             // 
-            // btnSpara
+            // btnSparaKund
             // 
-            this.btnSpara.Location = new System.Drawing.Point(525, 345);
-            this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(67, 24);
-            this.btnSpara.TabIndex = 12;
-            this.btnSpara.Text = "Spara";
-            this.btnSpara.UseVisualStyleBackColor = true;
-            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
+            this.btnSparaKund.Location = new System.Drawing.Point(990, 587);
+            this.btnSparaKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSparaKund.Name = "btnSparaKund";
+            this.btnSparaKund.Size = new System.Drawing.Size(180, 63);
+            this.btnSparaKund.TabIndex = 43;
+            this.btnSparaKund.Text = "Spara";
+            this.btnSparaKund.UseVisualStyleBackColor = true;
             // 
-            // btnAvbryt
+            // frmRedigeraAktivitet
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(633, 345);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(62, 24);
-            this.btnAvbryt.TabIndex = 13;
-            this.btnAvbryt.Text = "Avbryt";
-            this.btnAvbryt.UseVisualStyleBackColor = true;
-            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
-            // 
-            // btnSkapaNyKundkategori
-            // 
-            this.btnSkapaNyKundkategori.Location = new System.Drawing.Point(369, 170);
-            this.btnSkapaNyKundkategori.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSkapaNyKundkategori.Name = "btnSkapaNyKundkategori";
-            this.btnSkapaNyKundkategori.Size = new System.Drawing.Size(79, 34);
-            this.btnSkapaNyKundkategori.TabIndex = 14;
-            this.btnSkapaNyKundkategori.Text = "Skapa ny kundkategori";
-            this.btnSkapaNyKundkategori.UseVisualStyleBackColor = true;
-            this.btnSkapaNyKundkategori.Click += new System.EventHandler(this.btnSkapaNyKundkategori_Click);
-            // 
-            // frmRegistreraNyKund
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 445);
-            this.Controls.Add(this.btnSkapaNyKundkategori);
-            this.Controls.Add(this.btnAvbryt);
-            this.Controls.Add(this.btnSpara);
-            this.Controls.Add(this.cmbKundkategori);
-            this.Controls.Add(this.tbKundNamn);
-            this.Controls.Add(this.tbKundID);
+            this.ClientSize = new System.Drawing.Size(1183, 662);
+            this.Controls.Add(this.btnAvbrytAktivitet);
+            this.Controls.Add(this.btnSparaKund);
+            this.Controls.Add(this.cmbAvdelning);
+            this.Controls.Add(this.tbBenämning);
+            this.Controls.Add(this.tbAktivitetsID);
             this.Controls.Add(this.lblKundkategori);
-            this.Controls.Add(this.lblKund2);
-            this.Controls.Add(this.lblKund1);
+            this.Controls.Add(this.lblBenämning);
+            this.Controls.Add(this.lblKundID);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmRegistreraNyKund";
-            this.Text = "frmRegistreraNyKund";
+            this.Name = "frmRedigeraAktivitet";
+            this.Text = "frmRedigeraAktivitet";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,14 +310,13 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.Label lblKund1;
-        private System.Windows.Forms.Label lblKund2;
+        private System.Windows.Forms.ComboBox cmbAvdelning;
+        private System.Windows.Forms.TextBox tbBenämning;
+        private System.Windows.Forms.TextBox tbAktivitetsID;
         private System.Windows.Forms.Label lblKundkategori;
-        private System.Windows.Forms.TextBox tbKundID;
-        private System.Windows.Forms.TextBox tbKundNamn;
-        private System.Windows.Forms.ComboBox cmbKundkategori;
-        private System.Windows.Forms.Button btnSpara;
-        private System.Windows.Forms.Button btnAvbryt;
-        private System.Windows.Forms.Button btnSkapaNyKundkategori;
+        private System.Windows.Forms.Label lblBenämning;
+        private System.Windows.Forms.Label lblKundID;
+        private System.Windows.Forms.Button btnAvbrytAktivitet;
+        private System.Windows.Forms.Button btnSparaKund;
     }
 }

@@ -10,7 +10,7 @@ namespace DataLayer
     {
         public Personal Login(string användarnamn, string lösenord)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Personal
                             where x.PersonNr == användarnamn && x.Lösenord == lösenord

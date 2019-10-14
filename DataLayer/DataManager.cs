@@ -10,7 +10,7 @@ namespace DataLayer
     {
         public static List<Kund> GetKunder()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.Kund.ToList();
             }
@@ -18,7 +18,7 @@ namespace DataLayer
 
         public static List<Produkt> GetProdukter()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.Produkt.ToList();
             }
@@ -26,7 +26,7 @@ namespace DataLayer
 
         public static List<Personal> GetPersonal()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.Personal.ToList();
             }
@@ -34,7 +34,7 @@ namespace DataLayer
 
         public static List<Aktivitet> GetAktiviteter()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.Aktivitet.ToList();
             }
@@ -42,7 +42,7 @@ namespace DataLayer
 
         public static List<schablonkostnad> GetSchablonkostnader()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.schablonkostnad.ToList();
             }
@@ -50,7 +50,7 @@ namespace DataLayer
 
         public static List<Produktkategori> GetProduktkategori()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 return db.Produktkategori.ToList();
             }

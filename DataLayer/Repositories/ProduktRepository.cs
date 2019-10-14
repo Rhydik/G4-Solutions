@@ -11,7 +11,7 @@ namespace DataLayer
     {
         public List<ProduktDTO> GetAllProdukter()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Produkt
                             select new ProduktDTO {ProduktID = x.ProduktID, Namn = x.Namn, Produktgrupp = x.Produktgrupp, Produktkategori = x.Produktkategori};
@@ -22,7 +22,7 @@ namespace DataLayer
 
         public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var produktKategori = (from x in db.Produktkategori
                                     where x.Namn == kategori
@@ -43,7 +43,7 @@ namespace DataLayer
 
         public List<ProduktKategoriDTO> GetProduktByKategori()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Produktkategori
                             select new ProduktKategoriDTO {ProduktkategoriID = x.ProduktkategoriID, Namn = x.Namn};
@@ -56,7 +56,7 @@ namespace DataLayer
 
         public List<ProduktgruppDTO> GetProduktByGrupp()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Produktgrupp
                             select new ProduktgruppDTO { ProduktgruppID = x.ProduktgruppID, Namn = x.Namn };
@@ -68,7 +68,7 @@ namespace DataLayer
         //Avdelning
         public List<AvdelningDTO> GetProduktByAvdelning()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Avdelning
                             select new AvdelningDTO { AvdelningsID = x.AvdelningID, Namn = x.Namn };

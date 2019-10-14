@@ -32,7 +32,6 @@ namespace DataLayer
                 return query.ToList();
             }
         }
-
         public List<KundDTO> GetKunderByKategori(string kategori)
         {
             using (var db = new DataContext())

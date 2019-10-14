@@ -225,7 +225,7 @@
             // tbKundID
             // 
             this.tbKundID.Location = new System.Drawing.Point(251, 62);
-            this.tbKundID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbKundID.Margin = new System.Windows.Forms.Padding(2);
             this.tbKundID.Name = "tbKundID";
             this.tbKundID.Size = new System.Drawing.Size(114, 20);
             this.tbKundID.TabIndex = 9;
@@ -233,7 +233,7 @@
             // tbKundNamn
             // 
             this.tbKundNamn.Location = new System.Drawing.Point(251, 118);
-            this.tbKundNamn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbKundNamn.Margin = new System.Windows.Forms.Padding(2);
             this.tbKundNamn.Name = "tbKundNamn";
             this.tbKundNamn.Size = new System.Drawing.Size(114, 20);
             this.tbKundNamn.TabIndex = 10;
@@ -241,8 +241,11 @@
             // cmbKundkategori
             // 
             this.cmbKundkategori.FormattingEnabled = true;
+            this.cmbKundkategori.Items.AddRange(new object[] {
+            "Offentlig",
+            "Näringsliv"});
             this.cmbKundkategori.Location = new System.Drawing.Point(251, 176);
-            this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(2);
             this.cmbKundkategori.Name = "cmbKundkategori";
             this.cmbKundkategori.Size = new System.Drawing.Size(114, 21);
             this.cmbKundkategori.TabIndex = 11;
@@ -250,7 +253,7 @@
             // btnSpara
             // 
             this.btnSpara.Location = new System.Drawing.Point(525, 345);
-            this.btnSpara.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSpara.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(67, 24);
             this.btnSpara.TabIndex = 12;
@@ -261,7 +264,7 @@
             // btnAvbryt
             // 
             this.btnAvbryt.Location = new System.Drawing.Point(633, 345);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(62, 24);
             this.btnAvbryt.TabIndex = 13;
@@ -272,7 +275,7 @@
             // btnSkapaNyKundkategori
             // 
             this.btnSkapaNyKundkategori.Location = new System.Drawing.Point(369, 170);
-            this.btnSkapaNyKundkategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkapaNyKundkategori.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkapaNyKundkategori.Name = "btnSkapaNyKundkategori";
             this.btnSkapaNyKundkategori.Size = new System.Drawing.Size(79, 34);
             this.btnSkapaNyKundkategori.TabIndex = 14;
@@ -295,7 +298,7 @@
             this.Controls.Add(this.lblKund2);
             this.Controls.Add(this.lblKund1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistreraNyKund";
             this.Text = "frmRegistreraNyKund";
             this.panel1.ResumeLayout(false);

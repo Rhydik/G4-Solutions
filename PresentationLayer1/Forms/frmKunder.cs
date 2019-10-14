@@ -55,15 +55,15 @@ namespace PresentationLayer1
         private void btnSök_Click(object sender, EventArgs e)
         {
             int? id = null; 
-            string kund = txtKund.Text;
-            string kundKategori = comboBox1.Text;
+            string kund = tbKund.Text;
+            string kundKategori = cmbKundkategori.Text;
 
-            if (txtKundID.Text.Length != 0)
+            if (tbKundID.Text.Length != 0)
             {
-                id = Int32.Parse(txtKundID.Text); 
+                id = Int32.Parse(tbKundID.Text); 
             }
 
-            if (comboBox1.Text == "Välj kundkategori")
+            if (cmbKundkategori.Text == "Välj kundkategori")
             {
                 kundKategori = "";
             }
@@ -82,10 +82,10 @@ namespace PresentationLayer1
 
         private void btnRedigeraKund_Click(object sender, EventArgs e)
         {
-            if (dataGridView.CurrentRow.DataBoundItem != null)
+            if (dgvKunder.CurrentRow.DataBoundItem != null)
             {
                 this.Visible = !this.Visible;
-                Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dataGridView.CurrentRow.DataBoundItem);
+                Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dgvKunder.CurrentRow.DataBoundItem);
                 frmRedigeraKund.Show();
             }
             else

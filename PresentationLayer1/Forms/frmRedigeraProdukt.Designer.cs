@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmRegistreraNyKund
+    partial class frmRedigeraProdukt
     {
         /// <summary>
         /// Required designer variable.
@@ -41,15 +41,21 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.lblKund1 = new System.Windows.Forms.Label();
-            this.lblKund2 = new System.Windows.Forms.Label();
-            this.lblKundkategori = new System.Windows.Forms.Label();
-            this.tbKundID1 = new System.Windows.Forms.TextBox();
-            this.tbKund1 = new System.Windows.Forms.TextBox();
+            this.cmbAvdelning1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSkapaNyProduktgrupp1 = new System.Windows.Forms.Button();
+            this.cmbProduktgrupp1 = new System.Windows.Forms.ComboBox();
+            this.lblProduktgrupp = new System.Windows.Forms.Label();
+            this.btnSkapaNyProduktkategori1 = new System.Windows.Forms.Button();
             this.cmbKundkategori1 = new System.Windows.Forms.ComboBox();
-            this.btnSkapaNyKundkategori = new System.Windows.Forms.Button();
-            this.btnAvbrytKund = new System.Windows.Forms.Button();
-            this.btnSparaKund2 = new System.Windows.Forms.Button();
+            this.tbProdukt1 = new System.Windows.Forms.TextBox();
+            this.tbProduktID1 = new System.Windows.Forms.TextBox();
+            this.lblKundkategori = new System.Windows.Forms.Label();
+            this.lblProdukt = new System.Windows.Forms.Label();
+            this.lblProduktID = new System.Windows.Forms.Label();
+            this.btnAvbrytProdukt1 = new System.Windows.Forms.Button();
+            this.btnSparaProdukt1 = new System.Windows.Forms.Button();
+            this.btnTaBortProdukt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,11 +73,11 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(13, 5);
+            this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 665);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 7;
             // 
             // btnResultat
             // 
@@ -205,102 +211,167 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // lblKund1
+            // cmbAvdelning1
             // 
-            this.lblKund1.AutoSize = true;
-            this.lblKund1.Location = new System.Drawing.Point(373, 64);
-            this.lblKund1.Name = "lblKund1";
-            this.lblKund1.Size = new System.Drawing.Size(63, 20);
-            this.lblKund1.TabIndex = 6;
-            this.lblKund1.Text = "KundID";
+            this.cmbAvdelning1.FormattingEnabled = true;
+            this.cmbAvdelning1.Items.AddRange(new object[] {
+            "Drift",
+            "Utveckling/Förvaltning"});
+            this.cmbAvdelning1.Location = new System.Drawing.Point(361, 422);
+            this.cmbAvdelning1.Name = "cmbAvdelning1";
+            this.cmbAvdelning1.Size = new System.Drawing.Size(142, 28);
+            this.cmbAvdelning1.TabIndex = 55;
+            this.cmbAvdelning1.Text = "Välj Avdelning";
             // 
-            // lblKund2
+            // label1
             // 
-            this.lblKund2.AutoSize = true;
-            this.lblKund2.Location = new System.Drawing.Point(373, 146);
-            this.lblKund2.Name = "lblKund2";
-            this.lblKund2.Size = new System.Drawing.Size(46, 20);
-            this.lblKund2.TabIndex = 7;
-            this.lblKund2.Text = "Kund";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(357, 387);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Avdelning";
             // 
-            // lblKundkategori
+            // btnSkapaNyProduktgrupp1
             // 
-            this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(373, 235);
-            this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(103, 20);
-            this.lblKundkategori.TabIndex = 8;
-            this.lblKundkategori.Text = "Kundkategori";
+            this.btnSkapaNyProduktgrupp1.Location = new System.Drawing.Point(535, 247);
+            this.btnSkapaNyProduktgrupp1.Name = "btnSkapaNyProduktgrupp1";
+            this.btnSkapaNyProduktgrupp1.Size = new System.Drawing.Size(204, 52);
+            this.btnSkapaNyProduktgrupp1.TabIndex = 53;
+            this.btnSkapaNyProduktgrupp1.Text = "Skapa ny produktgrupp";
+            this.btnSkapaNyProduktgrupp1.UseVisualStyleBackColor = true;
             // 
-            // tbKundID1
+            // cmbProduktgrupp1
             // 
-            this.tbKundID1.Location = new System.Drawing.Point(377, 95);
-            this.tbKundID1.Name = "tbKundID1";
-            this.tbKundID1.Size = new System.Drawing.Size(100, 26);
-            this.tbKundID1.TabIndex = 9;
+            this.cmbProduktgrupp1.FormattingEnabled = true;
+            this.cmbProduktgrupp1.Location = new System.Drawing.Point(358, 256);
+            this.cmbProduktgrupp1.Name = "cmbProduktgrupp1";
+            this.cmbProduktgrupp1.Size = new System.Drawing.Size(146, 28);
+            this.cmbProduktgrupp1.TabIndex = 52;
             // 
-            // tbKund1
+            // lblProduktgrupp
             // 
-            this.tbKund1.Location = new System.Drawing.Point(377, 182);
-            this.tbKund1.Name = "tbKund1";
-            this.tbKund1.Size = new System.Drawing.Size(100, 26);
-            this.tbKund1.TabIndex = 10;
+            this.lblProduktgrupp.AutoSize = true;
+            this.lblProduktgrupp.Location = new System.Drawing.Point(354, 221);
+            this.lblProduktgrupp.Name = "lblProduktgrupp";
+            this.lblProduktgrupp.Size = new System.Drawing.Size(105, 20);
+            this.lblProduktgrupp.TabIndex = 51;
+            this.lblProduktgrupp.Text = "Produktgrupp";
+            // 
+            // btnSkapaNyProduktkategori1
+            // 
+            this.btnSkapaNyProduktkategori1.Location = new System.Drawing.Point(535, 327);
+            this.btnSkapaNyProduktkategori1.Name = "btnSkapaNyProduktkategori1";
+            this.btnSkapaNyProduktkategori1.Size = new System.Drawing.Size(204, 52);
+            this.btnSkapaNyProduktkategori1.TabIndex = 50;
+            this.btnSkapaNyProduktkategori1.Text = "Skapa ny produktkategori";
+            this.btnSkapaNyProduktkategori1.UseVisualStyleBackColor = true;
             // 
             // cmbKundkategori1
             // 
             this.cmbKundkategori1.FormattingEnabled = true;
-            this.cmbKundkategori1.Location = new System.Drawing.Point(377, 271);
+            this.cmbKundkategori1.Location = new System.Drawing.Point(358, 336);
             this.cmbKundkategori1.Name = "cmbKundkategori1";
-            this.cmbKundkategori1.Size = new System.Drawing.Size(121, 28);
-            this.cmbKundkategori1.TabIndex = 11;
+            this.cmbKundkategori1.Size = new System.Drawing.Size(146, 28);
+            this.cmbKundkategori1.TabIndex = 49;
             // 
-            // btnSkapaNyKundkategori
+            // tbProdukt1
             // 
-            this.btnSkapaNyKundkategori.Location = new System.Drawing.Point(554, 262);
-            this.btnSkapaNyKundkategori.Name = "btnSkapaNyKundkategori";
-            this.btnSkapaNyKundkategori.Size = new System.Drawing.Size(190, 52);
-            this.btnSkapaNyKundkategori.TabIndex = 14;
-            this.btnSkapaNyKundkategori.Text = "Skapa ny kundkategori";
-            this.btnSkapaNyKundkategori.UseVisualStyleBackColor = true;
+            this.tbProdukt1.Location = new System.Drawing.Point(358, 181);
+            this.tbProdukt1.Name = "tbProdukt1";
+            this.tbProdukt1.Size = new System.Drawing.Size(146, 26);
+            this.tbProdukt1.TabIndex = 48;
             // 
-            // btnAvbrytKund
+            // tbProduktID1
             // 
-            this.btnAvbrytKund.Location = new System.Drawing.Point(767, 577);
-            this.btnAvbrytKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAvbrytKund.Name = "btnAvbrytKund";
-            this.btnAvbrytKund.Size = new System.Drawing.Size(180, 63);
-            this.btnAvbrytKund.TabIndex = 27;
-            this.btnAvbrytKund.Text = "Avbryt";
-            this.btnAvbrytKund.UseVisualStyleBackColor = true;
+            this.tbProduktID1.Location = new System.Drawing.Point(358, 94);
+            this.tbProduktID1.Name = "tbProduktID1";
+            this.tbProduktID1.Size = new System.Drawing.Size(146, 26);
+            this.tbProduktID1.TabIndex = 47;
             // 
-            // btnSparaKund2
+            // lblKundkategori
             // 
-            this.btnSparaKund2.Location = new System.Drawing.Point(971, 577);
-            this.btnSparaKund2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSparaKund2.Name = "btnSparaKund2";
-            this.btnSparaKund2.Size = new System.Drawing.Size(180, 63);
-            this.btnSparaKund2.TabIndex = 26;
-            this.btnSparaKund2.Text = "Spara";
-            this.btnSparaKund2.UseVisualStyleBackColor = true;
+            this.lblKundkategori.AutoSize = true;
+            this.lblKundkategori.Location = new System.Drawing.Point(354, 301);
+            this.lblKundkategori.Name = "lblKundkategori";
+            this.lblKundkategori.Size = new System.Drawing.Size(121, 20);
+            this.lblKundkategori.TabIndex = 46;
+            this.lblKundkategori.Text = "Produktkategori";
             // 
-            // frmRegistreraNyKund
+            // lblProdukt
+            // 
+            this.lblProdukt.AutoSize = true;
+            this.lblProdukt.Location = new System.Drawing.Point(354, 145);
+            this.lblProdukt.Name = "lblProdukt";
+            this.lblProdukt.Size = new System.Drawing.Size(64, 20);
+            this.lblProdukt.TabIndex = 45;
+            this.lblProdukt.Text = "Produkt";
+            // 
+            // lblProduktID
+            // 
+            this.lblProduktID.AutoSize = true;
+            this.lblProduktID.Location = new System.Drawing.Point(354, 63);
+            this.lblProduktID.Name = "lblProduktID";
+            this.lblProduktID.Size = new System.Drawing.Size(81, 20);
+            this.lblProduktID.TabIndex = 44;
+            this.lblProduktID.Text = "ProduktID";
+            // 
+            // btnAvbrytProdukt1
+            // 
+            this.btnAvbrytProdukt1.Location = new System.Drawing.Point(971, 594);
+            this.btnAvbrytProdukt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAvbrytProdukt1.Name = "btnAvbrytProdukt1";
+            this.btnAvbrytProdukt1.Size = new System.Drawing.Size(180, 63);
+            this.btnAvbrytProdukt1.TabIndex = 43;
+            this.btnAvbrytProdukt1.Text = "Avbryt";
+            this.btnAvbrytProdukt1.UseVisualStyleBackColor = true;
+            // 
+            // btnSparaProdukt1
+            // 
+            this.btnSparaProdukt1.Location = new System.Drawing.Point(737, 594);
+            this.btnSparaProdukt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSparaProdukt1.Name = "btnSparaProdukt1";
+            this.btnSparaProdukt1.Size = new System.Drawing.Size(180, 63);
+            this.btnSparaProdukt1.TabIndex = 42;
+            this.btnSparaProdukt1.Text = "Spara";
+            this.btnSparaProdukt1.UseVisualStyleBackColor = true;
+            // 
+            // btnTaBortProdukt
+            // 
+            this.btnTaBortProdukt.BackColor = System.Drawing.Color.Red;
+            this.btnTaBortProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaBortProdukt.Location = new System.Drawing.Point(346, 517);
+            this.btnTaBortProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTaBortProdukt.Name = "btnTaBortProdukt";
+            this.btnTaBortProdukt.Size = new System.Drawing.Size(180, 63);
+            this.btnTaBortProdukt.TabIndex = 56;
+            this.btnTaBortProdukt.Text = "Ta bort produkt";
+            this.btnTaBortProdukt.UseVisualStyleBackColor = false;
+            // 
+            // frmRedigeraProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 684);
-            this.Controls.Add(this.btnAvbrytKund);
-            this.Controls.Add(this.btnSparaKund2);
-            this.Controls.Add(this.btnSkapaNyKundkategori);
+            this.ClientSize = new System.Drawing.Size(1164, 671);
+            this.Controls.Add(this.btnTaBortProdukt);
+            this.Controls.Add(this.cmbAvdelning1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSkapaNyProduktgrupp1);
+            this.Controls.Add(this.cmbProduktgrupp1);
+            this.Controls.Add(this.lblProduktgrupp);
+            this.Controls.Add(this.btnSkapaNyProduktkategori1);
             this.Controls.Add(this.cmbKundkategori1);
-            this.Controls.Add(this.tbKund1);
-            this.Controls.Add(this.tbKundID1);
+            this.Controls.Add(this.tbProdukt1);
+            this.Controls.Add(this.tbProduktID1);
             this.Controls.Add(this.lblKundkategori);
-            this.Controls.Add(this.lblKund2);
-            this.Controls.Add(this.lblKund1);
+            this.Controls.Add(this.lblProdukt);
+            this.Controls.Add(this.lblProduktID);
+            this.Controls.Add(this.btnAvbrytProdukt1);
+            this.Controls.Add(this.btnSparaProdukt1);
             this.Controls.Add(this.panel1);
-            this.Name = "frmRegistreraNyKund";
+            this.Name = "frmRedigeraProdukt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRegistreraNyKund";
+            this.Text = "frmRedigeraProdukt";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,14 +393,20 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.Label lblKund1;
-        private System.Windows.Forms.Label lblKund2;
-        private System.Windows.Forms.Label lblKundkategori;
-        private System.Windows.Forms.TextBox tbKundID1;
-        private System.Windows.Forms.TextBox tbKund1;
+        private System.Windows.Forms.ComboBox cmbAvdelning1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSkapaNyProduktgrupp1;
+        private System.Windows.Forms.ComboBox cmbProduktgrupp1;
+        private System.Windows.Forms.Label lblProduktgrupp;
+        private System.Windows.Forms.Button btnSkapaNyProduktkategori1;
         private System.Windows.Forms.ComboBox cmbKundkategori1;
-        private System.Windows.Forms.Button btnSkapaNyKundkategori;
-        private System.Windows.Forms.Button btnAvbrytKund;
-        private System.Windows.Forms.Button btnSparaKund2;
+        private System.Windows.Forms.TextBox tbProdukt1;
+        private System.Windows.Forms.TextBox tbProduktID1;
+        private System.Windows.Forms.Label lblKundkategori;
+        private System.Windows.Forms.Label lblProdukt;
+        private System.Windows.Forms.Label lblProduktID;
+        private System.Windows.Forms.Button btnAvbrytProdukt1;
+        private System.Windows.Forms.Button btnSparaProdukt1;
+        private System.Windows.Forms.Button btnTaBortProdukt;
     }
 }

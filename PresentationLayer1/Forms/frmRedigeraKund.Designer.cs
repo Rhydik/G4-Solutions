@@ -56,7 +56,7 @@
             // 
             // btnSparaKund
             // 
-            this.btnSparaKund.Location = new System.Drawing.Point(633, 587);
+            this.btnSparaKund.Location = new System.Drawing.Point(881, 595);
             this.btnSparaKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSparaKund.Name = "btnSparaKund";
             this.btnSparaKund.Size = new System.Drawing.Size(180, 63);
@@ -66,7 +66,7 @@
             // 
             // btnAvbrytKund2
             // 
-            this.btnAvbrytKund2.Location = new System.Drawing.Point(867, 587);
+            this.btnAvbrytKund2.Location = new System.Drawing.Point(675, 595);
             this.btnAvbrytKund2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAvbrytKund2.Name = "btnAvbrytKund2";
             this.btnAvbrytKund2.Size = new System.Drawing.Size(180, 63);
@@ -315,6 +315,7 @@
             this.Name = "frmRedigeraKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRedigeraKund";
+          
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

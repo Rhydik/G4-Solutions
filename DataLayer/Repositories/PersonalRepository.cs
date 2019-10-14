@@ -18,5 +18,13 @@ namespace DataLayer
                 return query.FirstOrDefault();
             }
         }
+
+        public List<Personal> GetAllPersonal()
+        {
+            using (var db = new Databas())
+            {
+                return db.Personal.ToList();
+            }
+        }
     }
 }

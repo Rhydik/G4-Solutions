@@ -25,6 +25,11 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
+        public List<Personal> GetAllPersonal()
+        {
+            return repositoryFacade.personalRepository.GetAllPersonal();
+        }
+
         public void RemoveKund(int kundId)
         {
             repositoryFacade.kundRepository.RemoveKund(kundId);

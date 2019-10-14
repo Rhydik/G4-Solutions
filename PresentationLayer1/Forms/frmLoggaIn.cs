@@ -50,5 +50,10 @@ namespace PresentationLayer1
             frmHemmeny frmHemmeny = new frmHemmeny();
             frmHemmeny.Show();
         }
+
+        private void frmLoggaIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

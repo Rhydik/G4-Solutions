@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer1
+﻿namespace PresentationLayer1.Forms
 {
-    partial class frmKunder
+    partial class frmBehörighet
     {
         /// <summary>
         /// Required designer variable.
@@ -41,19 +41,18 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.dgvKunder = new System.Windows.Forms.DataGridView();
-            this.btnRegistreraNyKund = new System.Windows.Forms.Button();
-            this.btnRedigeraKund = new System.Windows.Forms.Button();
-            this.tbKundID = new System.Windows.Forms.TextBox();
-            this.tbKund = new System.Windows.Forms.TextBox();
-            this.cmbKundkategori = new System.Windows.Forms.ComboBox();
-            this.btnSök = new System.Windows.Forms.Button();
+            this.lblAvdelning = new System.Windows.Forms.Label();
+            this.lblNamn = new System.Windows.Forms.Label();
+            this.lblPersonnummer = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.lblKundID = new System.Windows.Forms.Label();
-            this.lblKund = new System.Windows.Forms.Label();
-            this.lblKundkategori = new System.Windows.Forms.Label();
+            this.btnSök = new System.Windows.Forms.Button();
+            this.cmbAvdelning = new System.Windows.Forms.ComboBox();
+            this.tbNamn = new System.Windows.Forms.TextBox();
+            this.tbKundID = new System.Windows.Forms.TextBox();
+            this.btnRedigeraBehörighet = new System.Windows.Forms.Button();
+            this.dgvBehörighet = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKunder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,11 +69,11 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(14, 14);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 665);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 4;
             // 
             // btnResultat
             // 
@@ -196,7 +195,6 @@
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
-            this.btnProdukter.Click += new System.EventHandler(this.btnProdukter_Click);
             // 
             // btnKunder
             // 
@@ -208,152 +206,135 @@
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
-            // dgvKunder
+            // lblAvdelning
             // 
-            this.dgvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKunder.Location = new System.Drawing.Point(364, 183);
-            this.dgvKunder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvKunder.Name = "dgvKunder";
-            this.dgvKunder.ReadOnly = true;
-            this.dgvKunder.RowHeadersWidth = 62;
-            this.dgvKunder.Size = new System.Drawing.Size(752, 365);
-            this.dgvKunder.TabIndex = 7;
+            this.lblAvdelning.AutoSize = true;
+            this.lblAvdelning.Location = new System.Drawing.Point(810, 53);
+            this.lblAvdelning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvdelning.Name = "lblAvdelning";
+            this.lblAvdelning.Size = new System.Drawing.Size(78, 20);
+            this.lblAvdelning.TabIndex = 30;
+            this.lblAvdelning.Text = "Avdelning";
             // 
-            // btnRegistreraNyKund
+            // lblNamn
             // 
-            this.btnRegistreraNyKund.Location = new System.Drawing.Point(948, 558);
-            this.btnRegistreraNyKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnRegistreraNyKund.Name = "btnRegistreraNyKund";
-            this.btnRegistreraNyKund.Size = new System.Drawing.Size(168, 62);
-            this.btnRegistreraNyKund.TabIndex = 11;
-            this.btnRegistreraNyKund.Text = "Registrera ny kund";
-            this.btnRegistreraNyKund.UseVisualStyleBackColor = true;
-            this.btnRegistreraNyKund.Click += new System.EventHandler(this.btnRegistreraNyKund_Click);
+            this.lblNamn.AutoSize = true;
+            this.lblNamn.Location = new System.Drawing.Point(580, 53);
+            this.lblNamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNamn.Name = "lblNamn";
+            this.lblNamn.Size = new System.Drawing.Size(51, 20);
+            this.lblNamn.TabIndex = 29;
+            this.lblNamn.Text = "Namn";
             // 
-            // btnRedigeraKund
+            // lblPersonnummer
             // 
-            this.btnRedigeraKund.Location = new System.Drawing.Point(759, 557);
-            this.btnRedigeraKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnRedigeraKund.Name = "btnRedigeraKund";
-            this.btnRedigeraKund.Size = new System.Drawing.Size(180, 63);
-            this.btnRedigeraKund.TabIndex = 10;
-            this.btnRedigeraKund.Text = "Redigera kund";
-            this.btnRedigeraKund.UseVisualStyleBackColor = true;
-            this.btnRedigeraKund.Click += new System.EventHandler(this.btnRedigeraKund_Click);
-            // 
-            // tbKundID
-            // 
-            this.tbKundID.Location = new System.Drawing.Point(363, 80);
-            this.tbKundID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbKundID.Name = "tbKundID";
-            this.tbKundID.Size = new System.Drawing.Size(190, 26);
-            this.tbKundID.TabIndex = 12;
-            // 
-            // tbKund
-            // 
-            this.tbKund.Location = new System.Drawing.Point(598, 80);
-            this.tbKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbKund.Name = "tbKund";
-            this.tbKund.Size = new System.Drawing.Size(190, 26);
-            this.tbKund.TabIndex = 13;
-            // 
-            // cmbKundkategori
-            // 
-            this.cmbKundkategori.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Items.AddRange(new object[] {
-            "Offentlig",
-            "Näringsliv"});
-            this.cmbKundkategori.Location = new System.Drawing.Point(828, 80);
-            this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmbKundkategori.Name = "cmbKundkategori";
-            this.cmbKundkategori.Size = new System.Drawing.Size(286, 28);
-            this.cmbKundkategori.TabIndex = 14;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(364, 128);
-            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(90, 35);
-            this.btnSök.TabIndex = 15;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
-            this.btnSök.Click += new System.EventHandler(this.btnSök_Click);
+            this.lblPersonnummer.AutoSize = true;
+            this.lblPersonnummer.Location = new System.Drawing.Point(349, 53);
+            this.lblPersonnummer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPersonnummer.Name = "lblPersonnummer";
+            this.lblPersonnummer.Size = new System.Drawing.Size(117, 20);
+            this.lblPersonnummer.TabIndex = 28;
+            this.lblPersonnummer.Text = "Personnummer";
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(465, 128);
+            this.btnRensa.Location = new System.Drawing.Point(451, 132);
             this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(90, 35);
-            this.btnRensa.TabIndex = 16;
+            this.btnRensa.TabIndex = 27;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
-            // lblKundID
+            // btnSök
             // 
-            this.lblKundID.AutoSize = true;
-            this.lblKundID.Location = new System.Drawing.Point(363, 49);
-            this.lblKundID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKundID.Name = "lblKundID";
-            this.lblKundID.Size = new System.Drawing.Size(63, 20);
-            this.lblKundID.TabIndex = 17;
-            this.lblKundID.Text = "KundID";
+            this.btnSök.Location = new System.Drawing.Point(350, 132);
+            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSök.Name = "btnSök";
+            this.btnSök.Size = new System.Drawing.Size(90, 35);
+            this.btnSök.TabIndex = 26;
+            this.btnSök.Text = "Sök";
+            this.btnSök.UseVisualStyleBackColor = true;
             // 
-            // lblKund
+            // cmbAvdelning
             // 
-            this.lblKund.AutoSize = true;
-            this.lblKund.Location = new System.Drawing.Point(594, 49);
-            this.lblKund.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKund.Name = "lblKund";
-            this.lblKund.Size = new System.Drawing.Size(46, 20);
-            this.lblKund.TabIndex = 18;
-            this.lblKund.Text = "Kund";
+            this.cmbAvdelning.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAvdelning.FormattingEnabled = true;
+            this.cmbAvdelning.Items.AddRange(new object[] {
+            "Offentlig",
+            "Näringsliv"});
+            this.cmbAvdelning.Location = new System.Drawing.Point(814, 84);
+            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbAvdelning.Name = "cmbAvdelning";
+            this.cmbAvdelning.Size = new System.Drawing.Size(286, 28);
+            this.cmbAvdelning.TabIndex = 25;
             // 
-            // lblKundkategori
+            // tbNamn
             // 
-            this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(824, 49);
-            this.lblKundkategori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(103, 20);
-            this.lblKundkategori.TabIndex = 19;
-            this.lblKundkategori.Text = "Kundkategori";
+            this.tbNamn.Location = new System.Drawing.Point(584, 84);
+            this.tbNamn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbNamn.Name = "tbNamn";
+            this.tbNamn.Size = new System.Drawing.Size(190, 26);
+            this.tbNamn.TabIndex = 24;
             // 
-            // frmKunder
+            // tbKundID
+            // 
+            this.tbKundID.Location = new System.Drawing.Point(349, 84);
+            this.tbKundID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbKundID.Name = "tbKundID";
+            this.tbKundID.Size = new System.Drawing.Size(190, 26);
+            this.tbKundID.TabIndex = 23;
+            // 
+            // btnRedigeraBehörighet
+            // 
+            this.btnRedigeraBehörighet.Location = new System.Drawing.Point(920, 562);
+            this.btnRedigeraBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRedigeraBehörighet.Name = "btnRedigeraBehörighet";
+            this.btnRedigeraBehörighet.Size = new System.Drawing.Size(180, 63);
+            this.btnRedigeraBehörighet.TabIndex = 21;
+            this.btnRedigeraBehörighet.Text = "Redigera behörighet";
+            this.btnRedigeraBehörighet.UseVisualStyleBackColor = true;
+            // 
+            // dgvBehörighet
+            // 
+            this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBehörighet.Location = new System.Drawing.Point(350, 187);
+            this.dgvBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvBehörighet.Name = "dgvBehörighet";
+            this.dgvBehörighet.ReadOnly = true;
+            this.dgvBehörighet.RowHeadersWidth = 62;
+            this.dgvBehörighet.Size = new System.Drawing.Size(752, 365);
+            this.dgvBehörighet.TabIndex = 20;
+            // 
+            // frmBehörighet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
-            this.Controls.Add(this.lblKundkategori);
-            this.Controls.Add(this.lblKund);
-            this.Controls.Add(this.lblKundID);
+            this.ClientSize = new System.Drawing.Size(1170, 657);
+            this.Controls.Add(this.lblAvdelning);
+            this.Controls.Add(this.lblNamn);
+            this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.btnRensa);
             this.Controls.Add(this.btnSök);
-            this.Controls.Add(this.cmbKundkategori);
-            this.Controls.Add(this.tbKund);
+            this.Controls.Add(this.cmbAvdelning);
+            this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.tbKundID);
-            this.Controls.Add(this.btnRegistreraNyKund);
-            this.Controls.Add(this.btnRedigeraKund);
-            this.Controls.Add(this.dgvKunder);
+            this.Controls.Add(this.btnRedigeraBehörighet);
+            this.Controls.Add(this.dgvBehörighet);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmKunder";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmKunder";
+            this.Name = "frmBehörighet";
+            this.Text = "frmBehörighet";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKunder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -367,16 +348,15 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.DataGridView dgvKunder;
-        private System.Windows.Forms.Button btnRegistreraNyKund;
-        private System.Windows.Forms.Button btnRedigeraKund;
-        private System.Windows.Forms.TextBox tbKundID;
-        private System.Windows.Forms.TextBox tbKund;
-        private System.Windows.Forms.ComboBox cmbKundkategori;
-        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.Label lblAvdelning;
+        private System.Windows.Forms.Label lblNamn;
+        private System.Windows.Forms.Label lblPersonnummer;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Label lblKundID;
-        private System.Windows.Forms.Label lblKund;
-        private System.Windows.Forms.Label lblKundkategori;
+        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.ComboBox cmbAvdelning;
+        private System.Windows.Forms.TextBox tbNamn;
+        private System.Windows.Forms.TextBox tbKundID;
+        private System.Windows.Forms.Button btnRedigeraBehörighet;
+        private System.Windows.Forms.DataGridView dgvBehörighet;
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer1
+﻿namespace PresentationLayer1.Forms
 {
-    partial class frmHemmeny
+    partial class frmPersonal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHemmeny));
+            this.lblNamn = new System.Windows.Forms.Label();
+            this.lblPersonnummer = new System.Windows.Forms.Label();
+            this.btnRensa = new System.Windows.Forms.Button();
+            this.btnSök = new System.Windows.Forms.Button();
+            this.txtKund = new System.Windows.Forms.TextBox();
+            this.txtKundID = new System.Windows.Forms.TextBox();
+            this.btnRegistreraNyPersonal = new System.Windows.Forms.Button();
+            this.btnRedigeraPersonal = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -42,11 +50,87 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.splitter1 = new System.Windows.Forms.Splitter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblNamn
+            // 
+            this.lblNamn.AutoSize = true;
+            this.lblNamn.Location = new System.Drawing.Point(397, 32);
+            this.lblNamn.Name = "lblNamn";
+            this.lblNamn.Size = new System.Drawing.Size(35, 13);
+            this.lblNamn.TabIndex = 30;
+            this.lblNamn.Text = "Namn";
+            // 
+            // lblPersonnummer
+            // 
+            this.lblPersonnummer.AutoSize = true;
+            this.lblPersonnummer.Location = new System.Drawing.Point(243, 32);
+            this.lblPersonnummer.Name = "lblPersonnummer";
+            this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
+            this.lblPersonnummer.TabIndex = 29;
+            this.lblPersonnummer.Text = "Personnummer";
+            // 
+            // btnRensa
+            // 
+            this.btnRensa.Location = new System.Drawing.Point(311, 83);
+            this.btnRensa.Name = "btnRensa";
+            this.btnRensa.Size = new System.Drawing.Size(60, 23);
+            this.btnRensa.TabIndex = 28;
+            this.btnRensa.Text = "Rensa";
+            this.btnRensa.UseVisualStyleBackColor = true;
+            // 
+            // btnSök
+            // 
+            this.btnSök.Location = new System.Drawing.Point(244, 83);
+            this.btnSök.Name = "btnSök";
+            this.btnSök.Size = new System.Drawing.Size(60, 23);
+            this.btnSök.TabIndex = 27;
+            this.btnSök.Text = "Sök";
+            this.btnSök.UseVisualStyleBackColor = true;
+            // 
+            // txtKund
+            // 
+            this.txtKund.Location = new System.Drawing.Point(400, 52);
+            this.txtKund.Name = "txtKund";
+            this.txtKund.Size = new System.Drawing.Size(128, 20);
+            this.txtKund.TabIndex = 25;
+            // 
+            // txtKundID
+            // 
+            this.txtKundID.Location = new System.Drawing.Point(243, 52);
+            this.txtKundID.Name = "txtKundID";
+            this.txtKundID.Size = new System.Drawing.Size(128, 20);
+            this.txtKundID.TabIndex = 24;
+            // 
+            // btnRegistreraNyPersonal
+            // 
+            this.btnRegistreraNyPersonal.Location = new System.Drawing.Point(633, 363);
+            this.btnRegistreraNyPersonal.Name = "btnRegistreraNyPersonal";
+            this.btnRegistreraNyPersonal.Size = new System.Drawing.Size(112, 40);
+            this.btnRegistreraNyPersonal.TabIndex = 23;
+            this.btnRegistreraNyPersonal.Text = "Registrera ny personal";
+            this.btnRegistreraNyPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnRedigeraPersonal
+            // 
+            this.btnRedigeraPersonal.Location = new System.Drawing.Point(507, 362);
+            this.btnRedigeraPersonal.Name = "btnRedigeraPersonal";
+            this.btnRedigeraPersonal.Size = new System.Drawing.Size(120, 41);
+            this.btnRedigeraPersonal.TabIndex = 22;
+            this.btnRedigeraPersonal.Text = "Redigera personal";
+            this.btnRedigeraPersonal.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(244, 119);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.Size = new System.Drawing.Size(501, 237);
+            this.dataGridView.TabIndex = 21;
             // 
             // panel1
             // 
@@ -62,10 +146,10 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(7, 6);
+            this.panel1.Location = new System.Drawing.Point(10, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 20;
             // 
             // btnResultat
             // 
@@ -176,7 +260,6 @@
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
-            this.btnProdukter.Click += new System.EventHandler(this.btnProdukter_Click);
             // 
             // btnKunder
             // 
@@ -187,46 +270,43 @@
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(277, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(454, 221);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 450);
-            this.splitter1.TabIndex = 4;
-            this.splitter1.TabStop = false;
-            // 
-            // frmHemmeny
+            // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.lblNamn);
+            this.Controls.Add(this.lblPersonnummer);
+            this.Controls.Add(this.btnRensa);
+            this.Controls.Add(this.btnSök);
+            this.Controls.Add(this.txtKund);
+            this.Controls.Add(this.txtKundID);
+            this.Controls.Add(this.btnRegistreraNyPersonal);
+            this.Controls.Add(this.btnRedigeraPersonal);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "frmHemmeny";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHemmeny";
+            this.Name = "frmPersonal";
+            this.Text = "frmPersonal";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblNamn;
+        private System.Windows.Forms.Label lblPersonnummer;
+        private System.Windows.Forms.Button btnRensa;
+        private System.Windows.Forms.Button btnSök;
+        private System.Windows.Forms.TextBox txtKund;
+        private System.Windows.Forms.TextBox txtKundID;
+        private System.Windows.Forms.Button btnRegistreraNyPersonal;
+        private System.Windows.Forms.Button btnRedigeraPersonal;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnBudgeteratResultat;
         private System.Windows.Forms.Button btnKostnadsbudgetering;
@@ -238,8 +318,5 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button btnResultat;
     }
 }

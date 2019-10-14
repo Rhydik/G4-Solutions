@@ -56,7 +56,7 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataContext.cs" />
+    <Compile Include="Databas.cs" />
     <Compile Include="DTO\AvdelningDTO.cs" />
     <Compile Include="DTO\ProduktgruppDTO.cs" />
     <Compile Include="DTO\ProduktDTO.cs" />

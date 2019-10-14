@@ -12,7 +12,7 @@ namespace DataLayer
 
         public List<KundDTO> GetKunderByID(int id) 
         { 
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Kund
                             where x.KundID == id
@@ -23,7 +23,7 @@ namespace DataLayer
         }
         public List<KundDTO> GetKunderByNamn(string namn)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Kund
                             where x.Namn == namn
@@ -34,7 +34,7 @@ namespace DataLayer
         }
         public List<KundDTO> GetKunderByKategori(string kategori)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Kund
                             where x.KundKategori.Namn == kategori
@@ -45,7 +45,7 @@ namespace DataLayer
         }
         public List<KundDTO> GetKunderBySearch(int? id, string namn, string kategori)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Kund
                             select new KundDTO { KundID = x.KundID, Namn = x.Namn, KundKategori = x.KundKategori.Namn };
@@ -65,7 +65,7 @@ namespace DataLayer
         }
         public List<KundDTO> GetAllKunder()
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var query = from x in db.Kund
                             select new KundDTO { KundID = x.KundID, Namn = x.Namn, KundKategori = x.KundKategori.Namn };
@@ -76,7 +76,7 @@ namespace DataLayer
 
         public void AddKund(int id, string namn, string kategori)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var kundKategori = (from x in db.KundKategori
                                     where x.Namn == kategori
@@ -90,7 +90,7 @@ namespace DataLayer
         }
         public void UpdateKund(int id, string namn, string kategori)
         {
-            using (var db = new DataContext())
+            using (var db = new Databas())
             {
                 var kundKategori = (from x in db.KundKategori
                                     where x.Namn == kategori

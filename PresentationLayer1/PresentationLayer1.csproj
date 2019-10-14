@@ -70,6 +70,12 @@
     <Compile Include="Forms\frmKunder.Designer.cs">
       <DependentUpon>frmKunder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPersonal.Designer.cs">
+      <DependentUpon>frmPersonal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProdukter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +88,35 @@
     <Compile Include="Forms\frmRedigeraKund.Designer.cs">
       <DependentUpon>frmRedigeraKund.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmRedigeraPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraPersonal.Designer.cs">
+      <DependentUpon>frmRedigeraPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraProdukt.Designer.cs">
+      <DependentUpon>frmRedigeraProdukt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmRegistreraNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmRegistreraNyKund.Designer.cs">
       <DependentUpon>frmRegistreraNyKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyPersonal.Designer.cs">
+      <DependentUpon>frmRegistreraNyPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProdukt.Designer.cs">
+      <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
     </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
@@ -103,14 +133,29 @@
     <EmbeddedResource Include="Forms\frmKunder.resx">
       <DependentUpon>frmKunder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPersonal.resx">
+      <DependentUpon>frmPersonal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProdukter.resx">
       <DependentUpon>frmProdukter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRedigeraKund.resx">
       <DependentUpon>frmRedigeraKund.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraPersonal.resx">
+      <DependentUpon>frmRedigeraPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraProdukt.resx">
+      <DependentUpon>frmRedigeraProdukt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyKund.resx">
       <DependentUpon>frmRegistreraNyKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistreraNyPersonal.resx">
+      <DependentUpon>frmRegistreraNyPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistreraNyProdukt.resx">
+      <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

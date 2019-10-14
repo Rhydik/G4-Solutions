@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer1
+﻿namespace PresentationLayer1.Forms
 {
-    partial class frmHemmeny
+    partial class frmRegistreraNyPersonal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHemmeny));
+            this.lblVakansavdrag = new System.Windows.Forms.Label();
+            this.lblMånadslön = new System.Windows.Forms.Label();
+            this.tbProdukt = new System.Windows.Forms.TextBox();
+            this.tbNamn = new System.Windows.Forms.TextBox();
+            this.lblSysselsättningsgrad = new System.Windows.Forms.Label();
+            this.lblPersonnummer = new System.Windows.Forms.Label();
+            this.lblNamn = new System.Windows.Forms.Label();
+            this.btnAvbrytPersonal = new System.Windows.Forms.Button();
+            this.btnSparaPersonal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -42,11 +50,95 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblVakansavdrag
+            // 
+            this.lblVakansavdrag.AutoSize = true;
+            this.lblVakansavdrag.Location = new System.Drawing.Point(240, 273);
+            this.lblVakansavdrag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVakansavdrag.Name = "lblVakansavdrag";
+            this.lblVakansavdrag.Size = new System.Drawing.Size(76, 13);
+            this.lblVakansavdrag.TabIndex = 55;
+            this.lblVakansavdrag.Text = "Vakansavdrag";
+            // 
+            // lblMånadslön
+            // 
+            this.lblMånadslön.AutoSize = true;
+            this.lblMånadslön.Location = new System.Drawing.Point(240, 169);
+            this.lblMånadslön.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMånadslön.Name = "lblMånadslön";
+            this.lblMånadslön.Size = new System.Drawing.Size(59, 13);
+            this.lblMånadslön.TabIndex = 52;
+            this.lblMånadslön.Text = "Månadslön";
+            // 
+            // tbProdukt
+            // 
+            this.tbProdukt.Location = new System.Drawing.Point(243, 135);
+            this.tbProdukt.Margin = new System.Windows.Forms.Padding(2);
+            this.tbProdukt.Name = "tbProdukt";
+            this.tbProdukt.Size = new System.Drawing.Size(99, 20);
+            this.tbProdukt.TabIndex = 49;
+            // 
+            // tbNamn
+            // 
+            this.tbNamn.Location = new System.Drawing.Point(243, 81);
+            this.tbNamn.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNamn.Name = "tbNamn";
+            this.tbNamn.Size = new System.Drawing.Size(99, 20);
+            this.tbNamn.TabIndex = 48;
+            // 
+            // lblSysselsättningsgrad
+            // 
+            this.lblSysselsättningsgrad.AutoSize = true;
+            this.lblSysselsättningsgrad.Location = new System.Drawing.Point(240, 221);
+            this.lblSysselsättningsgrad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSysselsättningsgrad.Name = "lblSysselsättningsgrad";
+            this.lblSysselsättningsgrad.Size = new System.Drawing.Size(100, 13);
+            this.lblSysselsättningsgrad.TabIndex = 47;
+            this.lblSysselsättningsgrad.Text = "Sysselsättningsgrad";
+            // 
+            // lblPersonnummer
+            // 
+            this.lblPersonnummer.AutoSize = true;
+            this.lblPersonnummer.Location = new System.Drawing.Point(240, 120);
+            this.lblPersonnummer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonnummer.Name = "lblPersonnummer";
+            this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
+            this.lblPersonnummer.TabIndex = 46;
+            this.lblPersonnummer.Text = "Personnummer";
+            // 
+            // lblNamn
+            // 
+            this.lblNamn.AutoSize = true;
+            this.lblNamn.Location = new System.Drawing.Point(240, 66);
+            this.lblNamn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNamn.Name = "lblNamn";
+            this.lblNamn.Size = new System.Drawing.Size(35, 13);
+            this.lblNamn.TabIndex = 45;
+            this.lblNamn.Text = "Namn";
+            // 
+            // btnAvbrytPersonal
+            // 
+            this.btnAvbrytPersonal.Location = new System.Drawing.Point(513, 384);
+            this.btnAvbrytPersonal.Name = "btnAvbrytPersonal";
+            this.btnAvbrytPersonal.Size = new System.Drawing.Size(120, 41);
+            this.btnAvbrytPersonal.TabIndex = 44;
+            this.btnAvbrytPersonal.Text = "Avbryt";
+            this.btnAvbrytPersonal.UseVisualStyleBackColor = true;
+            // 
+            // btnSparaPersonal
+            // 
+            this.btnSparaPersonal.Location = new System.Drawing.Point(648, 384);
+            this.btnSparaPersonal.Name = "btnSparaPersonal";
+            this.btnSparaPersonal.Size = new System.Drawing.Size(120, 41);
+            this.btnSparaPersonal.TabIndex = 43;
+            this.btnSparaPersonal.Text = "Spara";
+            this.btnSparaPersonal.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -62,10 +154,10 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(7, 6);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 42;
             // 
             // btnResultat
             // 
@@ -176,7 +268,6 @@
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
-            this.btnProdukter.Click += new System.EventHandler(this.btnProdukter_Click);
             // 
             // btnKunder
             // 
@@ -187,46 +278,70 @@
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
-            // pictureBox1
+            // textBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(277, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(454, 221);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.textBox1.Location = new System.Drawing.Point(243, 184);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(99, 20);
+            this.textBox1.TabIndex = 56;
             // 
-            // splitter1
+            // textBox2
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 450);
-            this.splitter1.TabIndex = 4;
-            this.splitter1.TabStop = false;
+            this.textBox2.Location = new System.Drawing.Point(243, 236);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(99, 20);
+            this.textBox2.TabIndex = 57;
             // 
-            // frmHemmeny
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(243, 288);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(99, 20);
+            this.textBox3.TabIndex = 58;
+            // 
+            // frmRegistreraNyPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblVakansavdrag);
+            this.Controls.Add(this.lblMånadslön);
+            this.Controls.Add(this.tbProdukt);
+            this.Controls.Add(this.tbNamn);
+            this.Controls.Add(this.lblSysselsättningsgrad);
+            this.Controls.Add(this.lblPersonnummer);
+            this.Controls.Add(this.lblNamn);
+            this.Controls.Add(this.btnAvbrytPersonal);
+            this.Controls.Add(this.btnSparaPersonal);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "frmHemmeny";
+            this.Name = "frmRegistreraNyPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHemmeny";
+            this.Text = "frmRegistreraNyPersonal";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblVakansavdrag;
+        private System.Windows.Forms.Label lblMånadslön;
+        private System.Windows.Forms.TextBox tbProdukt;
+        private System.Windows.Forms.TextBox tbNamn;
+        private System.Windows.Forms.Label lblSysselsättningsgrad;
+        private System.Windows.Forms.Label lblPersonnummer;
+        private System.Windows.Forms.Label lblNamn;
+        private System.Windows.Forms.Button btnAvbrytPersonal;
+        private System.Windows.Forms.Button btnSparaPersonal;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnBudgeteratResultat;
         private System.Windows.Forms.Button btnKostnadsbudgetering;
@@ -238,8 +353,8 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button btnResultat;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

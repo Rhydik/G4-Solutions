@@ -52,6 +52,12 @@
     <Compile Include="Forms\frmAddNewProdukt.Designer.cs">
       <DependentUpon>frmAddNewProdukt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmAktiviteter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAktiviteter.Designer.cs">
+      <DependentUpon>frmAktiviteter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLoggaIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="Forms\frmProdukter.Designer.cs">
       <DependentUpon>frmProdukter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmRedigeraAktivitet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraAktivitet.Designer.cs">
+      <DependentUpon>frmRedigeraAktivitet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmRedigeraKund.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </Compile>
     <Compile Include="Forms\frmRedigeraProdukt.Designer.cs">
       <DependentUpon>frmRedigeraProdukt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyAktivitet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyAktivitet.Designer.cs">
+      <DependentUpon>frmRegistreraNyAktivitet.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmRegistreraNyKund.cs">
       <SubType>Form</SubType>
@@ -106,6 +124,9 @@
     <EmbeddedResource Include="Forms\frmAddNewProdukt.resx">
       <DependentUpon>frmAddNewProdukt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAktiviteter.resx">
+      <DependentUpon>frmAktiviteter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLoggaIn.resx">
       <DependentUpon>frmLoggaIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,11 +139,17 @@
     <EmbeddedResource Include="Forms\frmProdukter.resx">
       <DependentUpon>frmProdukter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraAktivitet.resx">
+      <DependentUpon>frmRedigeraAktivitet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRedigeraKund.resx">
       <DependentUpon>frmRedigeraKund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRedigeraProdukt.resx">
       <DependentUpon>frmRedigeraProdukt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistreraNyAktivitet.resx">
+      <DependentUpon>frmRegistreraNyAktivitet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyKund.resx">
       <DependentUpon>frmRegistreraNyKund.cs</DependentUpon>

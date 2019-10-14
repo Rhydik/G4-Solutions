@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace PresentationLayer1.Forms
 {
-    public partial class frmRedigeraKund : Form
+    public partial class frmRegistreraNyAktivitet : Form
     {
-        public frmRedigeraKund()
+        public frmRegistreraNyAktivitet()
         {
             InitializeComponent();
         }
-
-       
     }
 }

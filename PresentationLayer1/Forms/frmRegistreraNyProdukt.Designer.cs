@@ -47,14 +47,14 @@
             this.cmbKundkategori = new System.Windows.Forms.ComboBox();
             this.tbProdukt = new System.Windows.Forms.TextBox();
             this.tbProduktID = new System.Windows.Forms.TextBox();
-            this.lblKundkategori = new System.Windows.Forms.Label();
+            this.lblProduktkategori = new System.Windows.Forms.Label();
             this.lblProdukt = new System.Windows.Forms.Label();
             this.lblProduktID = new System.Windows.Forms.Label();
             this.btnSkapaNyProduktgrupp = new System.Windows.Forms.Button();
             this.cmbProduktgrupp = new System.Windows.Forms.ComboBox();
             this.lblProduktgrupp = new System.Windows.Forms.Label();
             this.cmbAvdelning = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAvdelning = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,14 +261,14 @@
             this.tbProduktID.Size = new System.Drawing.Size(146, 26);
             this.tbProduktID.TabIndex = 33;
             // 
-            // lblKundkategori
+            // lblProduktkategori
             // 
-            this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(344, 323);
-            this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(121, 20);
-            this.lblKundkategori.TabIndex = 32;
-            this.lblKundkategori.Text = "Produktkategori";
+            this.lblProduktkategori.AutoSize = true;
+            this.lblProduktkategori.Location = new System.Drawing.Point(344, 323);
+            this.lblProduktkategori.Name = "lblProduktkategori";
+            this.lblProduktkategori.Size = new System.Drawing.Size(121, 20);
+            this.lblProduktkategori.TabIndex = 32;
+            this.lblProduktkategori.Text = "Produktkategori";
             // 
             // lblProdukt
             // 
@@ -326,14 +326,14 @@
             this.cmbAvdelning.TabIndex = 41;
             this.cmbAvdelning.Text = "Välj Avdelning";
             // 
-            // label1
+            // lblAvdelning
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(348, 424);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Avdelning";
+            this.lblAvdelning.AutoSize = true;
+            this.lblAvdelning.Location = new System.Drawing.Point(348, 424);
+            this.lblAvdelning.Name = "lblAvdelning";
+            this.lblAvdelning.Size = new System.Drawing.Size(78, 20);
+            this.lblAvdelning.TabIndex = 40;
+            this.lblAvdelning.Text = "Avdelning";
             // 
             // frmRegistreraNyProdukt
             // 
@@ -341,7 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 670);
             this.Controls.Add(this.cmbAvdelning);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAvdelning);
             this.Controls.Add(this.btnSkapaNyProduktgrupp);
             this.Controls.Add(this.cmbProduktgrupp);
             this.Controls.Add(this.lblProduktgrupp);
@@ -349,7 +349,7 @@
             this.Controls.Add(this.cmbKundkategori);
             this.Controls.Add(this.tbProdukt);
             this.Controls.Add(this.tbProduktID);
-            this.Controls.Add(this.lblKundkategori);
+            this.Controls.Add(this.lblProduktkategori);
             this.Controls.Add(this.lblProdukt);
             this.Controls.Add(this.lblProduktID);
             this.Controls.Add(this.btnAvbrytProdukt);
@@ -385,13 +385,13 @@
         private System.Windows.Forms.ComboBox cmbKundkategori;
         private System.Windows.Forms.TextBox tbProdukt;
         private System.Windows.Forms.TextBox tbProduktID;
-        private System.Windows.Forms.Label lblKundkategori;
+        private System.Windows.Forms.Label lblProduktkategori;
         private System.Windows.Forms.Label lblProdukt;
         private System.Windows.Forms.Label lblProduktID;
         private System.Windows.Forms.Button btnSkapaNyProduktgrupp;
         private System.Windows.Forms.ComboBox cmbProduktgrupp;
         private System.Windows.Forms.Label lblProduktgrupp;
         private System.Windows.Forms.ComboBox cmbAvdelning;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAvdelning;
     }
 }

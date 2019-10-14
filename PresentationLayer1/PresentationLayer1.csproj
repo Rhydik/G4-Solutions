@@ -76,6 +76,12 @@
     <Compile Include="Forms\frmProdukter.Designer.cs">
       <DependentUpon>frmProdukter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmRedigeraKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraKund.Designer.cs">
+      <DependentUpon>frmRedigeraKund.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmRegistreraNyKund.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProdukter.resx">
       <DependentUpon>frmProdukter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraKund.resx">
+      <DependentUpon>frmRedigeraKund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyKund.resx">
       <DependentUpon>frmRegistreraNyKund.cs</DependentUpon>

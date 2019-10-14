@@ -42,8 +42,8 @@
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRegistreraNyKund = new System.Windows.Forms.Button();
+            this.btnRedigeraKund = new System.Windows.Forms.Button();
             this.txtKundID = new System.Windows.Forms.TextBox();
             this.txtKund = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -207,23 +207,24 @@
             this.dataGridView.Size = new System.Drawing.Size(501, 237);
             this.dataGridView.TabIndex = 7;
             // 
-            // button3
+            // btnRegistreraNyKund
             // 
-            this.button3.Location = new System.Drawing.Point(632, 363);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 40);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Registrera ny kund";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyKund.Location = new System.Drawing.Point(632, 363);
+            this.btnRegistreraNyKund.Name = "btnRegistreraNyKund";
+            this.btnRegistreraNyKund.Size = new System.Drawing.Size(112, 40);
+            this.btnRegistreraNyKund.TabIndex = 11;
+            this.btnRegistreraNyKund.Text = "Registrera ny kund";
+            this.btnRegistreraNyKund.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyKund.Click += new System.EventHandler(this.btnRegistreraNyKund_Click);
             // 
-            // button4
+            // btnRedigeraKund
             // 
-            this.button4.Location = new System.Drawing.Point(506, 362);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 41);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Redigera kund";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnRedigeraKund.Location = new System.Drawing.Point(506, 362);
+            this.btnRedigeraKund.Name = "btnRedigeraKund";
+            this.btnRedigeraKund.Size = new System.Drawing.Size(120, 41);
+            this.btnRedigeraKund.TabIndex = 10;
+            this.btnRedigeraKund.Text = "Redigera kund";
+            this.btnRedigeraKund.UseVisualStyleBackColor = true;
             // 
             // txtKundID
             // 
@@ -312,8 +313,8 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtKund);
             this.Controls.Add(this.txtKundID);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnRegistreraNyKund);
+            this.Controls.Add(this.btnRedigeraKund);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "frmKunder";
@@ -341,8 +342,8 @@
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRegistreraNyKund;
+        private System.Windows.Forms.Button btnRedigeraKund;
         private System.Windows.Forms.TextBox txtKundID;
         private System.Windows.Forms.TextBox txtKund;
         private System.Windows.Forms.ComboBox comboBox1;

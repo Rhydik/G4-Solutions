@@ -43,15 +43,11 @@ namespace PresentationLayer1.Forms
             Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnRegistreraNyProdukt_Click(object sender, EventArgs e)
         {
-            frmAddNewProdukt newinstans = new frmAddNewProdukt();
-            newinstans.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
+            this.Visible = !this.Visible;
+            Forms.frmAddNewProdukt frmAddNewProdukt = new frmAddNewProdukt();
+            Hide();
         }
     }
 }

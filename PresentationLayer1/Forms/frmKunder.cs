@@ -72,13 +72,12 @@ namespace PresentationLayer1
 
             dataGridView.DataSource = data;
         }
-        private void btnExportera_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void Exportera<T>(List<T> data)
+        private void btnRegistreraNyKund_Click(object sender, EventArgs e)
         {
-            
+            this.Visible = !this.Visible;
+            Forms.frmRegistreraNyKund frmRegistreraNyKund = new Forms.frmRegistreraNyKund();
+            frmRegistreraNyKund.Show();
         }
         //private void dgv_CellBeginEdit(Object sender, DataGridViewCellCancelEventArgs e)
         //{

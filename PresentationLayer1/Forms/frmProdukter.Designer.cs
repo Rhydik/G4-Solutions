@@ -36,10 +36,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegistreraNyProdukt = new System.Windows.Forms.Button();
+            this.btnRedigeraProdukt = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
@@ -128,43 +126,25 @@
             this.textBox1.Size = new System.Drawing.Size(94, 20);
             this.textBox1.TabIndex = 25;
             // 
-            // button3
+            // btnRegistreraNyProdukt
             // 
-            this.button3.Location = new System.Drawing.Point(635, 362);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 40);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Registrera ny produkt";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(635, 362);
+            this.btnRegistreraNyProdukt.Name = "btnRegistreraNyProdukt";
+            this.btnRegistreraNyProdukt.Size = new System.Drawing.Size(112, 40);
+            this.btnRegistreraNyProdukt.TabIndex = 24;
+            this.btnRegistreraNyProdukt.Text = "Registrera ny produkt";
+            this.btnRegistreraNyProdukt.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyProdukt.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnRedigeraProdukt
             // 
-            this.button4.Location = new System.Drawing.Point(509, 361);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 41);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Redigera produkt";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(372, 362);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 40);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Exportera";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(246, 361);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 41);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Skriv ut";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRedigeraProdukt.Location = new System.Drawing.Point(509, 361);
+            this.btnRedigeraProdukt.Name = "btnRedigeraProdukt";
+            this.btnRedigeraProdukt.Size = new System.Drawing.Size(120, 41);
+            this.btnRedigeraProdukt.TabIndex = 23;
+            this.btnRedigeraProdukt.Text = "Redigera produkt";
+            this.btnRedigeraProdukt.UseVisualStyleBackColor = true;
+            this.btnRedigeraProdukt.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView2
             // 
@@ -348,10 +328,8 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegistreraNyProdukt);
+            this.Controls.Add(this.btnRedigeraProdukt);
             this.Controls.Add(this.dataGridView2);
             this.Name = "frmProdukter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -373,10 +351,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegistreraNyProdukt;
+        private System.Windows.Forms.Button btnRedigeraProdukt;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;

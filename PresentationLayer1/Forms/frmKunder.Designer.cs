@@ -42,8 +42,6 @@
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnExportera = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.txtKundID = new System.Windows.Forms.TextBox();
@@ -209,25 +207,6 @@
             this.dataGridView.Size = new System.Drawing.Size(501, 237);
             this.dataGridView.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(243, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 41);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Skriv ut";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnExportera
-            // 
-            this.btnExportera.Location = new System.Drawing.Point(369, 363);
-            this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(112, 40);
-            this.btnExportera.TabIndex = 9;
-            this.btnExportera.Text = "Exportera";
-            this.btnExportera.UseVisualStyleBackColor = true;
-            this.btnExportera.Click += new System.EventHandler(this.btnExportera_Click);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(632, 363);
@@ -335,8 +314,6 @@
             this.Controls.Add(this.txtKundID);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnExportera);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "frmKunder";
@@ -364,8 +341,6 @@
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnExportera;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox txtKundID;

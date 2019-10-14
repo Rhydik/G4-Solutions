@@ -79,6 +79,23 @@ namespace PresentationLayer1
             Forms.frmRegistreraNyKund frmRegistreraNyKund = new Forms.frmRegistreraNyKund();
             frmRegistreraNyKund.Show();
         }
+
+        private void btnRedigeraKund_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.CurrentRow.DataBoundItem != null)
+            {
+                this.Visible = !this.Visible;
+                Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dataGridView.CurrentRow.DataBoundItem);
+                frmRedigeraKund.Show();
+            }
+            else
+            {
+                return;
+            }
+            //this.Visible = !this.Visible;
+            //Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dataGridView.CurrentRow.DataBoundItem);
+            //frmRedigeraKund.Show();
+        }
         //private void dgv_CellBeginEdit(Object sender, DataGridViewCellCancelEventArgs e)
         //{
         //    //Here we save a current value of cell to some variable, that later we can compare with a new value

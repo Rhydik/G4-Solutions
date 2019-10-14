@@ -225,6 +225,7 @@
             this.btnRedigeraKund.TabIndex = 10;
             this.btnRedigeraKund.Text = "Redigera kund";
             this.btnRedigeraKund.UseVisualStyleBackColor = true;
+            this.btnRedigeraKund.Click += new System.EventHandler(this.btnRedigeraKund_Click);
             // 
             // txtKundID
             // 

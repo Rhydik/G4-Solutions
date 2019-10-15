@@ -128,5 +128,9 @@ namespace PresentationLayer1.Forms
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

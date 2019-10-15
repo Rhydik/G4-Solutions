@@ -4,453 +4,453 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="DatabaseModelStoreContainer">
-    <EntitySet Name="Prognos" EntityType="DatabaseModel.Store.Prognos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Intäktsbudget" EntityType="DatabaseModel.Store.Intäktsbudget" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Kund" EntityType="DatabaseModel.Store.Kund" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="KundKategori" EntityType="DatabaseModel.Store.KundKategori" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Produkt" EntityType="DatabaseModel.Store.Produkt" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Personal" EntityType="DatabaseModel.Store.Personal" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AntalTimmar" EntityType="DatabaseModel.Store.AntalTimmar" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Avdelning" EntityType="DatabaseModel.Store.Avdelning" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Produktgrupp" EntityType="DatabaseModel.Store.Produktgrupp" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Produktkategori" EntityType="DatabaseModel.Store.Produktkategori" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Aktivitet" EntityType="DatabaseModel.Store.Aktivitet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Direktkostnad" EntityType="DatabaseModel.Store.Direktkostnad" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Konto" EntityType="DatabaseModel.Store.Konto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="schablonkostnad" EntityType="DatabaseModel.Store.schablonkostnad" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="PersonalProdukt" EntityType="DatabaseModel.Store.PersonalProdukt" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="AvdelningPersonal" EntityType="DatabaseModel.Store.AvdelningPersonal" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="KontoAvdelning" EntityType="DatabaseModel.Store.KontoAvdelning" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="PrognosIntäktsbudget" Association="DatabaseModel.Store.PrognosIntäktsbudget">
-      <End Role="Prognos" EntitySet="Prognos" />
-      <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
-    </AssociationSet>
-    <AssociationSet Name="KundIntäktsbudget" Association="DatabaseModel.Store.KundIntäktsbudget">
-      <End Role="Kund" EntitySet="Kund" />
-      <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
-    </AssociationSet>
-    <AssociationSet Name="KundKategoriKund" Association="DatabaseModel.Store.KundKategoriKund">
-      <End Role="KundKategori" EntitySet="KundKategori" />
-      <End Role="Kund" EntitySet="Kund" />
-    </AssociationSet>
-    <AssociationSet Name="ProduktIntäktsbudget" Association="DatabaseModel.Store.ProduktIntäktsbudget">
-      <End Role="Produkt" EntitySet="Produkt" />
-      <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
-    </AssociationSet>
-    <AssociationSet Name="ProduktPrognos" Association="DatabaseModel.Store.ProduktPrognos">
-      <End Role="Produkt" EntitySet="Produkt" />
-      <End Role="Prognos" EntitySet="Prognos" />
-    </AssociationSet>
-    <AssociationSet Name="AntalTimmarPersonal" Association="DatabaseModel.Store.AntalTimmarPersonal">
-      <End Role="AntalTimmar" EntitySet="AntalTimmar" />
-      <End Role="Personal" EntitySet="Personal" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonalProdukt_Personal" Association="DatabaseModel.Store.FK_PersonalProdukt_Personal">
-      <End Role="Personal" EntitySet="Personal" />
-      <End Role="PersonalProdukt" EntitySet="PersonalProdukt" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PersonalProdukt_Produkt" Association="DatabaseModel.Store.FK_PersonalProdukt_Produkt">
-      <End Role="Produkt" EntitySet="Produkt" />
-      <End Role="PersonalProdukt" EntitySet="PersonalProdukt" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AvdelningPersonal_Avdelning" Association="DatabaseModel.Store.FK_AvdelningPersonal_Avdelning">
-      <End Role="Avdelning" EntitySet="Avdelning" />
-      <End Role="AvdelningPersonal" EntitySet="AvdelningPersonal" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AvdelningPersonal_Personal" Association="DatabaseModel.Store.FK_AvdelningPersonal_Personal">
-      <End Role="Personal" EntitySet="Personal" />
-      <End Role="AvdelningPersonal" EntitySet="AvdelningPersonal" />
-    </AssociationSet>
-    <AssociationSet Name="ProduktProduktkategori" Association="DatabaseModel.Store.ProduktProduktkategori">
-      <End Role="Produkt" EntitySet="Produkt" />
-      <End Role="Produktkategori" EntitySet="Produktkategori" />
-    </AssociationSet>
-    <AssociationSet Name="ProduktgruppProdukt" Association="DatabaseModel.Store.ProduktgruppProdukt">
-      <End Role="Produktgrupp" EntitySet="Produktgrupp" />
-      <End Role="Produkt" EntitySet="Produkt" />
-    </AssociationSet>
-    <AssociationSet Name="AktivitetAvdelning" Association="DatabaseModel.Store.AktivitetAvdelning">
-      <End Role="Aktivitet" EntitySet="Aktivitet" />
-      <End Role="Avdelning" EntitySet="Avdelning" />
-    </AssociationSet>
-    <AssociationSet Name="schablonkostnadKonto" Association="DatabaseModel.Store.schablonkostnadKonto">
-      <End Role="schablonkostnad" EntitySet="schablonkostnad" />
-      <End Role="Konto" EntitySet="Konto" />
-    </AssociationSet>
-    <AssociationSet Name="KontoDirektkostnad" Association="DatabaseModel.Store.KontoDirektkostnad">
-      <End Role="Konto" EntitySet="Konto" />
-      <End Role="Direktkostnad" EntitySet="Direktkostnad" />
-    </AssociationSet>
-    <AssociationSet Name="FK_KontoAvdelning_Konto" Association="DatabaseModel.Store.FK_KontoAvdelning_Konto">
-      <End Role="Konto" EntitySet="Konto" />
-      <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
-    </AssociationSet>
-    <AssociationSet Name="FK_KontoAvdelning_Avdelning" Association="DatabaseModel.Store.FK_KontoAvdelning_Avdelning">
-      <End Role="Avdelning" EntitySet="Avdelning" />
-      <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Prognos">
-    <Key>
-      <PropertyRef Name="PrognosID" />
-    </Key>
-    <Property Name="PrognosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Datum" Type="datetime" Nullable="false" />
-    <Property Name="Belopp" Type="decimal" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Intäktsbudget">
-    <Key>
-      <PropertyRef Name="IntäktsbudgetID" />
-    </Key>
-    <Property Name="IntäktsbudgetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Låst" Type="bit" Nullable="false" />
-    <Property Name="Avtal" Type="decimal" Nullable="false" />
-    <Property Name="GradA" Type="bit" Nullable="false" />
-    <Property Name="Tillägg" Type="decimal" Nullable="false" />
-    <Property Name="GradT" Type="bit" Nullable="false" />
-    <Property Name="Budget" Type="decimal" Nullable="false" />
-    <Property Name="Tim" Type="int" Nullable="false" />
-    <Property Name="Kommentar" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Prognos_PrognosID" Type="int" Nullable="false" />
-    <Property Name="Kund_KundID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Kund">
-    <Key>
-      <PropertyRef Name="KundID" />
-    </Key>
-    <Property Name="KundID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="KundKategori_KundKategoriID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="KundKategori">
-    <Key>
-      <PropertyRef Name="KundKategoriID" />
-    </Key>
-    <Property Name="KundKategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Produkt">
-    <Key>
-      <PropertyRef Name="ProduktID" />
-    </Key>
-    <Property Name="ProduktID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProduktKod" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="false" />
-    <Property Name="Prognos_PrognosID" Type="int" Nullable="false" />
-    <Property Name="Produktkategori_ProduktkategoriID" Type="int" Nullable="false" />
-    <Property Name="Produktgrupp_ProduktgruppID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Personal">
-    <Key>
-      <PropertyRef Name="PersonalID" />
-    </Key>
-    <Property Name="PersonalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PersonNr" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Månadslön" Type="int" Nullable="false" />
-    <Property Name="Sysselsättningsgrad" Type="int" Nullable="false" />
-    <Property Name="Vakansavdrag" Type="int" Nullable="false" />
-    <Property Name="Lösenord" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Behörighet" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="AntalTimmar">
-    <Key>
-      <PropertyRef Name="AntalTimmarID" />
-    </Key>
-    <Property Name="AntalTimmarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Adm" Type="int" Nullable="false" />
-    <Property Name="FörsMark" Type="int" Nullable="false" />
-    <Property Name="UtvFörv" Type="int" Nullable="false" />
-    <Property Name="Drift" Type="int" Nullable="false" />
-    <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Avdelning">
-    <Key>
-      <PropertyRef Name="AvdelningID" />
-    </Key>
-    <Property Name="AvdelningID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Produktgrupp">
-    <Key>
-      <PropertyRef Name="ProduktgruppID" />
-    </Key>
-    <Property Name="ProduktgruppID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Produktkategori">
-    <Key>
-      <PropertyRef Name="ProduktkategoriID" />
-    </Key>
-    <Property Name="ProduktkategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Aktivitet">
-    <Key>
-      <PropertyRef Name="AktivitetID" />
-    </Key>
-    <Property Name="AktivitetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Direktkostnad">
-    <Key>
-      <PropertyRef Name="DirektkostnadID" />
-    </Key>
-    <Property Name="DirektkostnadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Belopp" Type="decimal" Nullable="false" />
-    <Property Name="Konto_KontoID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Konto">
-    <Key>
-      <PropertyRef Name="KontoID" />
-    </Key>
-    <Property Name="KontoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="schablonkostnad">
-    <Key>
-      <PropertyRef Name="schablonkostnadID" />
-    </Key>
-    <Property Name="schablonkostnadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Belopp" Type="decimal" Nullable="false" />
-    <Property Name="Konto_KontoID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="PersonalProdukt">
-    <Key>
-      <PropertyRef Name="Personal_PersonalID" />
-      <PropertyRef Name="Produkt_ProduktID" />
-    </Key>
-    <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
-    <Property Name="Produkt_ProduktID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="AvdelningPersonal">
-    <Key>
-      <PropertyRef Name="Avdelning_AvdelningID" />
-      <PropertyRef Name="Personal_PersonalID" />
-    </Key>
-    <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
-    <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="KontoAvdelning">
-    <Key>
-      <PropertyRef Name="Konto_KontoID" />
-      <PropertyRef Name="Avdelning_AvdelningID" />
-    </Key>
-    <Property Name="Konto_KontoID" Type="int" Nullable="false" />
-    <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="PrognosIntäktsbudget">
-    <End Role="Prognos" Type="DatabaseModel.Store.Prognos" Multiplicity="1" />
-    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Prognos">
-        <PropertyRef Name="PrognosID" />
-      </Principal>
-      <Dependent Role="Intäktsbudget">
-        <PropertyRef Name="Prognos_PrognosID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="KundIntäktsbudget">
-    <End Role="Kund" Type="DatabaseModel.Store.Kund" Multiplicity="1" />
-    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kund">
-        <PropertyRef Name="KundID" />
-      </Principal>
-      <Dependent Role="Intäktsbudget">
-        <PropertyRef Name="Kund_KundID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="KundKategoriKund">
-    <End Role="KundKategori" Type="DatabaseModel.Store.KundKategori" Multiplicity="1" />
-    <End Role="Kund" Type="DatabaseModel.Store.Kund" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KundKategori">
-        <PropertyRef Name="KundKategoriID" />
-      </Principal>
-      <Dependent Role="Kund">
-        <PropertyRef Name="KundKategori_KundKategoriID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProduktIntäktsbudget">
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
-    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Intäktsbudget">
-        <PropertyRef Name="IntäktsbudgetID" />
-      </Principal>
-      <Dependent Role="Produkt">
-        <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProduktPrognos">
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
-    <End Role="Prognos" Type="DatabaseModel.Store.Prognos" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Prognos">
-        <PropertyRef Name="PrognosID" />
-      </Principal>
-      <Dependent Role="Produkt">
-        <PropertyRef Name="Prognos_PrognosID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="AntalTimmarPersonal">
-    <End Role="AntalTimmar" Type="DatabaseModel.Store.AntalTimmar" Multiplicity="*" />
-    <End Role="Personal" Type="DatabaseModel.Store.Personal" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Personal">
-        <PropertyRef Name="PersonalID" />
-      </Principal>
-      <Dependent Role="AntalTimmar">
-        <PropertyRef Name="Personal_PersonalID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProduktProduktkategori">
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
-    <End Role="Produktkategori" Type="DatabaseModel.Store.Produktkategori" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Produktkategori">
-        <PropertyRef Name="ProduktkategoriID" />
-      </Principal>
-      <Dependent Role="Produkt">
-        <PropertyRef Name="Produktkategori_ProduktkategoriID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProduktgruppProdukt">
-    <End Role="Produktgrupp" Type="DatabaseModel.Store.Produktgrupp" Multiplicity="1" />
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Produktgrupp">
-        <PropertyRef Name="ProduktgruppID" />
-      </Principal>
-      <Dependent Role="Produkt">
-        <PropertyRef Name="Produktgrupp_ProduktgruppID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="AktivitetAvdelning">
-    <End Role="Aktivitet" Type="DatabaseModel.Store.Aktivitet" Multiplicity="*" />
-    <End Role="Avdelning" Type="DatabaseModel.Store.Avdelning" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Avdelning">
-        <PropertyRef Name="AvdelningID" />
-      </Principal>
-      <Dependent Role="Aktivitet">
-        <PropertyRef Name="Avdelning_AvdelningID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="schablonkostnadKonto">
-    <End Role="schablonkostnad" Type="DatabaseModel.Store.schablonkostnad" Multiplicity="*" />
-    <End Role="Konto" Type="DatabaseModel.Store.Konto" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Konto">
-        <PropertyRef Name="KontoID" />
-      </Principal>
-      <Dependent Role="schablonkostnad">
-        <PropertyRef Name="Konto_KontoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="KontoDirektkostnad">
-    <End Role="Konto" Type="DatabaseModel.Store.Konto" Multiplicity="1" />
-    <End Role="Direktkostnad" Type="DatabaseModel.Store.Direktkostnad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Konto">
-        <PropertyRef Name="KontoID" />
-      </Principal>
-      <Dependent Role="Direktkostnad">
-        <PropertyRef Name="Konto_KontoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonalProdukt_Personal">
-    <End Role="Personal" Type="DatabaseModel.Store.Personal" Multiplicity="1" />
-    <End Role="PersonalProdukt" Type="DatabaseModel.Store.PersonalProdukt" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Personal">
-        <PropertyRef Name="PersonalID" />
-      </Principal>
-      <Dependent Role="PersonalProdukt">
-        <PropertyRef Name="Personal_PersonalID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PersonalProdukt_Produkt">
-    <End Role="PersonalProdukt" Type="DatabaseModel.Store.PersonalProdukt" Multiplicity="*" />
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Produkt">
-        <PropertyRef Name="ProduktID" />
-      </Principal>
-      <Dependent Role="PersonalProdukt">
-        <PropertyRef Name="Produkt_ProduktID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AvdelningPersonal_Avdelning">
-    <End Role="Avdelning" Type="DatabaseModel.Store.Avdelning" Multiplicity="1" />
-    <End Role="AvdelningPersonal" Type="DatabaseModel.Store.AvdelningPersonal" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Avdelning">
-        <PropertyRef Name="AvdelningID" />
-      </Principal>
-      <Dependent Role="AvdelningPersonal">
-        <PropertyRef Name="Avdelning_AvdelningID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AvdelningPersonal_Personal">
-    <End Role="AvdelningPersonal" Type="DatabaseModel.Store.AvdelningPersonal" Multiplicity="*" />
-    <End Role="Personal" Type="DatabaseModel.Store.Personal" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Personal">
-        <PropertyRef Name="PersonalID" />
-      </Principal>
-      <Dependent Role="AvdelningPersonal">
-        <PropertyRef Name="Personal_PersonalID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_KontoAvdelning_Konto">
-    <End Role="Konto" Type="DatabaseModel.Store.Konto" Multiplicity="1" />
-    <End Role="KontoAvdelning" Type="DatabaseModel.Store.KontoAvdelning" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Konto">
-        <PropertyRef Name="KontoID" />
-      </Principal>
-      <Dependent Role="KontoAvdelning">
-        <PropertyRef Name="Konto_KontoID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_KontoAvdelning_Avdelning">
-    <End Role="KontoAvdelning" Type="DatabaseModel.Store.KontoAvdelning" Multiplicity="*" />
-    <End Role="Avdelning" Type="DatabaseModel.Store.Avdelning" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Avdelning">
-        <PropertyRef Name="AvdelningID" />
-      </Principal>
-      <Dependent Role="KontoAvdelning">
-        <PropertyRef Name="Avdelning_AvdelningID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aktivitet">
+          <Key>
+            <PropertyRef Name="AktivitetID" />
+          </Key>
+          <Property Name="AktivitetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AntalTimmar">
+          <Key>
+            <PropertyRef Name="AntalTimmarID" />
+          </Key>
+          <Property Name="AntalTimmarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adm" Type="int" Nullable="false" />
+          <Property Name="FörsMark" Type="int" Nullable="false" />
+          <Property Name="UtvFörv" Type="int" Nullable="false" />
+          <Property Name="Drift" Type="int" Nullable="false" />
+          <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Avdelning">
+          <Key>
+            <PropertyRef Name="AvdelningID" />
+          </Key>
+          <Property Name="AvdelningID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AvdelningPersonal">
+          <Key>
+            <PropertyRef Name="Avdelning_AvdelningID" />
+            <PropertyRef Name="Personal_PersonalID" />
+          </Key>
+          <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
+          <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direktkostnad">
+          <Key>
+            <PropertyRef Name="DirektkostnadID" />
+          </Key>
+          <Property Name="DirektkostnadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Belopp" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Konto_KontoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Intäktsbudget">
+          <Key>
+            <PropertyRef Name="IntäktsbudgetID" />
+          </Key>
+          <Property Name="IntäktsbudgetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Låst" Type="bit" Nullable="false" />
+          <Property Name="Avtal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GradA" Type="bit" Nullable="false" />
+          <Property Name="Tillägg" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GradT" Type="bit" Nullable="false" />
+          <Property Name="Budget" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Tim" Type="int" Nullable="false" />
+          <Property Name="Kommentar" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Prognos_PrognosID" Type="int" Nullable="false" />
+          <Property Name="Kund_KundID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Konto">
+          <Key>
+            <PropertyRef Name="KontoID" />
+          </Key>
+          <Property Name="KontoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KontoAvdelning">
+          <Key>
+            <PropertyRef Name="Konto_KontoID" />
+            <PropertyRef Name="Avdelning_AvdelningID" />
+          </Key>
+          <Property Name="Konto_KontoID" Type="int" Nullable="false" />
+          <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kund">
+          <Key>
+            <PropertyRef Name="KundID" />
+          </Key>
+          <Property Name="KundID" Type="int" StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="KundKategori_KundKategoriID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KundKategori">
+          <Key>
+            <PropertyRef Name="KundKategoriID" />
+          </Key>
+          <Property Name="KundKategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personal">
+          <Key>
+            <PropertyRef Name="PersonalID" />
+          </Key>
+          <Property Name="PersonalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonNr" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Månadslön" Type="int" Nullable="false" />
+          <Property Name="Sysselsättningsgrad" Type="int" Nullable="false" />
+          <Property Name="Vakansavdrag" Type="int" Nullable="false" />
+          <Property Name="Lösenord" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Behörighet" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonalProdukt">
+          <Key>
+            <PropertyRef Name="Personal_PersonalID" />
+            <PropertyRef Name="Produkt_ProduktID" />
+          </Key>
+          <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
+          <Property Name="Produkt_ProduktID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produkt">
+          <Key>
+            <PropertyRef Name="ProduktID" />
+          </Key>
+          <Property Name="ProduktID" Type="int" StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="ProduktKod" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="false" />
+          <Property Name="Prognos_PrognosID" Type="int" Nullable="false" />
+          <Property Name="Produktkategori_ProduktkategoriID" Type="int" Nullable="false" />
+          <Property Name="Produktgrupp_ProduktgruppID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produktgrupp">
+          <Key>
+            <PropertyRef Name="ProduktgruppID" />
+          </Key>
+          <Property Name="ProduktgruppID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Produktkategori">
+          <Key>
+            <PropertyRef Name="ProduktkategoriID" />
+          </Key>
+          <Property Name="ProduktkategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prognos">
+          <Key>
+            <PropertyRef Name="PrognosID" />
+          </Key>
+          <Property Name="PrognosID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Datum" Type="datetime" Nullable="false" />
+          <Property Name="Belopp" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="schablonkostnad">
+          <Key>
+            <PropertyRef Name="schablonkostnadID" />
+          </Key>
+          <Property Name="schablonkostnadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Belopp" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Konto_KontoID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AktivitetAvdelning">
+          <End Role="Avdelning" Type="Self.Avdelning" Multiplicity="1" />
+          <End Role="Aktivitet" Type="Self.Aktivitet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avdelning">
+              <PropertyRef Name="AvdelningID" />
+            </Principal>
+            <Dependent Role="Aktivitet">
+              <PropertyRef Name="Avdelning_AvdelningID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AntalTimmarPersonal">
+          <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+          <End Role="AntalTimmar" Type="Self.AntalTimmar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personal">
+              <PropertyRef Name="PersonalID" />
+            </Principal>
+            <Dependent Role="AntalTimmar">
+              <PropertyRef Name="Personal_PersonalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvdelningPersonal_Avdelning">
+          <End Role="Avdelning" Type="Self.Avdelning" Multiplicity="1" />
+          <End Role="AvdelningPersonal" Type="Self.AvdelningPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avdelning">
+              <PropertyRef Name="AvdelningID" />
+            </Principal>
+            <Dependent Role="AvdelningPersonal">
+              <PropertyRef Name="Avdelning_AvdelningID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvdelningPersonal_Personal">
+          <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+          <End Role="AvdelningPersonal" Type="Self.AvdelningPersonal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personal">
+              <PropertyRef Name="PersonalID" />
+            </Principal>
+            <Dependent Role="AvdelningPersonal">
+              <PropertyRef Name="Personal_PersonalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KontoAvdelning_Avdelning">
+          <End Role="Avdelning" Type="Self.Avdelning" Multiplicity="1" />
+          <End Role="KontoAvdelning" Type="Self.KontoAvdelning" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Avdelning">
+              <PropertyRef Name="AvdelningID" />
+            </Principal>
+            <Dependent Role="KontoAvdelning">
+              <PropertyRef Name="Avdelning_AvdelningID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KontoAvdelning_Konto">
+          <End Role="Konto" Type="Self.Konto" Multiplicity="1" />
+          <End Role="KontoAvdelning" Type="Self.KontoAvdelning" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konto">
+              <PropertyRef Name="KontoID" />
+            </Principal>
+            <Dependent Role="KontoAvdelning">
+              <PropertyRef Name="Konto_KontoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KontoDirektkostnad">
+          <End Role="Konto" Type="Self.Konto" Multiplicity="1" />
+          <End Role="Direktkostnad" Type="Self.Direktkostnad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konto">
+              <PropertyRef Name="KontoID" />
+            </Principal>
+            <Dependent Role="Direktkostnad">
+              <PropertyRef Name="Konto_KontoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KundIntäktsbudget">
+          <End Role="Kund" Type="Self.Kund" Multiplicity="1" />
+          <End Role="Intäktsbudget" Type="Self.Intäktsbudget" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kund">
+              <PropertyRef Name="KundID" />
+            </Principal>
+            <Dependent Role="Intäktsbudget">
+              <PropertyRef Name="Kund_KundID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KundKategoriKund">
+          <End Role="KundKategori" Type="Self.KundKategori" Multiplicity="1" />
+          <End Role="Kund" Type="Self.Kund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KundKategori">
+              <PropertyRef Name="KundKategoriID" />
+            </Principal>
+            <Dependent Role="Kund">
+              <PropertyRef Name="KundKategori_KundKategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalProdukt_Personal">
+          <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+          <End Role="PersonalProdukt" Type="Self.PersonalProdukt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personal">
+              <PropertyRef Name="PersonalID" />
+            </Principal>
+            <Dependent Role="PersonalProdukt">
+              <PropertyRef Name="Personal_PersonalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalProdukt_Produkt">
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="1" />
+          <End Role="PersonalProdukt" Type="Self.PersonalProdukt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produkt">
+              <PropertyRef Name="ProduktID" />
+            </Principal>
+            <Dependent Role="PersonalProdukt">
+              <PropertyRef Name="Produkt_ProduktID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProduktgruppProdukt">
+          <End Role="Produktgrupp" Type="Self.Produktgrupp" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produktgrupp">
+              <PropertyRef Name="ProduktgruppID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="Produktgrupp_ProduktgruppID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProduktIntäktsbudget">
+          <End Role="Intäktsbudget" Type="Self.Intäktsbudget" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Intäktsbudget">
+              <PropertyRef Name="IntäktsbudgetID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProduktProduktkategori">
+          <End Role="Produktkategori" Type="Self.Produktkategori" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Produktkategori">
+              <PropertyRef Name="ProduktkategoriID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="Produktkategori_ProduktkategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProduktPrognos">
+          <End Role="Prognos" Type="Self.Prognos" Multiplicity="1" />
+          <End Role="Produkt" Type="Self.Produkt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prognos">
+              <PropertyRef Name="PrognosID" />
+            </Principal>
+            <Dependent Role="Produkt">
+              <PropertyRef Name="Prognos_PrognosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrognosIntäktsbudget">
+          <End Role="Prognos" Type="Self.Prognos" Multiplicity="1" />
+          <End Role="Intäktsbudget" Type="Self.Intäktsbudget" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prognos">
+              <PropertyRef Name="PrognosID" />
+            </Principal>
+            <Dependent Role="Intäktsbudget">
+              <PropertyRef Name="Prognos_PrognosID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_schablonkostnadKonto">
+          <End Role="Konto" Type="Self.Konto" Multiplicity="1" />
+          <End Role="schablonkostnad" Type="Self.schablonkostnad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konto">
+              <PropertyRef Name="KontoID" />
+            </Principal>
+            <Dependent Role="schablonkostnad">
+              <PropertyRef Name="Konto_KontoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Aktivitet" EntityType="Self.Aktivitet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AntalTimmar" EntityType="Self.AntalTimmar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Avdelning" EntityType="Self.Avdelning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AvdelningPersonal" EntityType="Self.AvdelningPersonal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direktkostnad" EntityType="Self.Direktkostnad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Intäktsbudget" EntityType="Self.Intäktsbudget" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Konto" EntityType="Self.Konto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KontoAvdelning" EntityType="Self.KontoAvdelning" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kund" EntityType="Self.Kund" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KundKategori" EntityType="Self.KundKategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalProdukt" EntityType="Self.PersonalProdukt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produkt" EntityType="Self.Produkt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produktgrupp" EntityType="Self.Produktgrupp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produktkategori" EntityType="Self.Produktkategori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prognos" EntityType="Self.Prognos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="schablonkostnad" EntityType="Self.schablonkostnad" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AktivitetAvdelning" Association="Self.FK_AktivitetAvdelning">
+            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End Role="Aktivitet" EntitySet="Aktivitet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AntalTimmarPersonal" Association="Self.FK_AntalTimmarPersonal">
+            <End Role="Personal" EntitySet="Personal" />
+            <End Role="AntalTimmar" EntitySet="AntalTimmar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvdelningPersonal_Avdelning" Association="Self.FK_AvdelningPersonal_Avdelning">
+            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End Role="AvdelningPersonal" EntitySet="AvdelningPersonal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvdelningPersonal_Personal" Association="Self.FK_AvdelningPersonal_Personal">
+            <End Role="Personal" EntitySet="Personal" />
+            <End Role="AvdelningPersonal" EntitySet="AvdelningPersonal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KontoAvdelning_Avdelning" Association="Self.FK_KontoAvdelning_Avdelning">
+            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KontoAvdelning_Konto" Association="Self.FK_KontoAvdelning_Konto">
+            <End Role="Konto" EntitySet="Konto" />
+            <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KontoDirektkostnad" Association="Self.FK_KontoDirektkostnad">
+            <End Role="Konto" EntitySet="Konto" />
+            <End Role="Direktkostnad" EntitySet="Direktkostnad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KundIntäktsbudget" Association="Self.FK_KundIntäktsbudget">
+            <End Role="Kund" EntitySet="Kund" />
+            <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KundKategoriKund" Association="Self.FK_KundKategoriKund">
+            <End Role="KundKategori" EntitySet="KundKategori" />
+            <End Role="Kund" EntitySet="Kund" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalProdukt_Personal" Association="Self.FK_PersonalProdukt_Personal">
+            <End Role="Personal" EntitySet="Personal" />
+            <End Role="PersonalProdukt" EntitySet="PersonalProdukt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalProdukt_Produkt" Association="Self.FK_PersonalProdukt_Produkt">
+            <End Role="Produkt" EntitySet="Produkt" />
+            <End Role="PersonalProdukt" EntitySet="PersonalProdukt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProduktgruppProdukt" Association="Self.FK_ProduktgruppProdukt">
+            <End Role="Produktgrupp" EntitySet="Produktgrupp" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProduktIntäktsbudget" Association="Self.FK_ProduktIntäktsbudget">
+            <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProduktProduktkategori" Association="Self.FK_ProduktProduktkategori">
+            <End Role="Produktkategori" EntitySet="Produktkategori" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProduktPrognos" Association="Self.FK_ProduktPrognos">
+            <End Role="Prognos" EntitySet="Prognos" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrognosIntäktsbudget" Association="Self.FK_PrognosIntäktsbudget">
+            <End Role="Prognos" EntitySet="Prognos" />
+            <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
+          </AssociationSet>
+          <AssociationSet Name="FK_schablonkostnadKonto" Association="Self.FK_schablonkostnadKonto">
+            <End Role="Konto" EntitySet="Konto" />
+            <End Role="schablonkostnad" EntitySet="schablonkostnad" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -475,10 +475,6 @@
           <AssociationSet Name="ProduktIntäktsbudget" Association="DatabaseModel.ProduktIntäktsbudget">
             <End Role="Produkt" EntitySet="Produkt" />
             <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
-          </AssociationSet>
-          <AssociationSet Name="ProduktPrognos" Association="DatabaseModel.ProduktPrognos">
-            <End Role="Produkt" EntitySet="Produkt" />
-            <End Role="Prognos" EntitySet="Prognos" />
           </AssociationSet>
           <EntitySet Name="Personal" EntityType="DatabaseModel.Personal" />
           <EntitySet Name="AntalTimmar" EntityType="DatabaseModel.AntalTimmar" />
@@ -531,11 +527,10 @@
             <PropertyRef Name="PrognosID" />
           </Key>
           <Property Name="PrognosID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
-          <Property Name="Datum" Type="DateTime" Nullable="false" />
-          <Property Name="Belopp" Type="Decimal" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Belopp" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <NavigationProperty Name="Intäktsbudget" Relationship="DatabaseModel.PrognosIntäktsbudget" FromRole="Prognos" ToRole="Intäktsbudget" />
-          <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktPrognos" FromRole="Prognos" ToRole="Produkt" />
         </EntityType>
         <EntityType Name="Intäktsbudget">
           <Key>
@@ -543,40 +538,40 @@
           </Key>
           <Property Name="IntäktsbudgetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Låst" Type="Boolean" Nullable="false" />
-          <Property Name="Avtal" Type="Decimal" Nullable="false" />
+          <Property Name="Avtal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="GradA" Type="Boolean" Nullable="false" />
-          <Property Name="Tillägg" Type="Decimal" Nullable="false" />
+          <Property Name="Tillägg" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="GradT" Type="Boolean" Nullable="false" />
-          <Property Name="Budget" Type="Decimal" Nullable="false" />
+          <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <Property Name="Tim" Type="Int32" Nullable="false" />
-          <Property Name="Kommentar" Type="String" Nullable="false" />
+          <Property Name="Kommentar" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Prognos" Relationship="DatabaseModel.PrognosIntäktsbudget" FromRole="Intäktsbudget" ToRole="Prognos" />
           <NavigationProperty Name="Kund" Relationship="DatabaseModel.KundIntäktsbudget" FromRole="Intäktsbudget" ToRole="Kund" />
           <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktIntäktsbudget" FromRole="Intäktsbudget" ToRole="Produkt" />
         </EntityType>
         <Association Name="PrognosIntäktsbudget">
-          <End Type="DatabaseModel.Prognos" Role="Prognos" Multiplicity="1" />
-          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="*" />
+          <End Type="DatabaseModel.Prognos" Role="Prognos" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="1" />
         </Association>
         <EntityType Name="Kund">
           <Key>
             <PropertyRef Name="KundID" />
           </Key>
-          <Property Name="KundID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="KundID" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Intäktsbudget" Relationship="DatabaseModel.KundIntäktsbudget" FromRole="Kund" ToRole="Intäktsbudget" />
           <NavigationProperty Name="KundKategori" Relationship="DatabaseModel.KundKategoriKund" FromRole="Kund" ToRole="KundKategori" />
         </EntityType>
         <Association Name="KundIntäktsbudget">
           <End Type="DatabaseModel.Kund" Role="Kund" Multiplicity="1" />
-          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="*" />
+          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="0..1" />
         </Association>
         <EntityType Name="KundKategori">
           <Key>
             <PropertyRef Name="KundKategoriID" />
           </Key>
           <Property Name="KundKategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Kund" Relationship="DatabaseModel.KundKategoriKund" FromRole="KundKategori" ToRole="Kund" />
         </EntityType>
         <Association Name="KundKategoriKund">
@@ -587,35 +582,29 @@
           <Key>
             <PropertyRef Name="ProduktID" />
           </Key>
-          <Property Name="ProduktID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProduktKod" Type="String" Nullable="false" />
+          <Property Name="ProduktID" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <NavigationProperty Name="Intäktsbudget" Relationship="DatabaseModel.ProduktIntäktsbudget" FromRole="Produkt" ToRole="Intäktsbudget" />
-          <NavigationProperty Name="Prognos" Relationship="DatabaseModel.ProduktPrognos" FromRole="Produkt" ToRole="Prognos" />
           <NavigationProperty Name="Personal" Relationship="DatabaseModel.PersonalProdukt" FromRole="Produkt" ToRole="Personal" />
           <NavigationProperty Name="Produktkategori" Relationship="DatabaseModel.ProduktProduktkategori" FromRole="Produkt" ToRole="Produktkategori" />
           <NavigationProperty Name="Produktgrupp" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produkt" ToRole="Produktgrupp" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
-          <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="1" />
-          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="1" />
-        </Association>
-        <Association Name="ProduktPrognos">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
-          <End Type="DatabaseModel.Prognos" Role="Prognos" Multiplicity="1" />
+          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="0..1" />
         </Association>
         <EntityType Name="Personal">
           <Key>
             <PropertyRef Name="PersonalID" />
           </Key>
           <Property Name="PersonalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PersonNr" Type="String" Nullable="false" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="PersonNr" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Månadslön" Type="Int32" Nullable="false" />
           <Property Name="Sysselsättningsgrad" Type="Int32" Nullable="false" />
           <Property Name="Vakansavdrag" Type="Int32" Nullable="false" />
-          <Property Name="Lösenord" Type="String" Nullable="false" />
-          <Property Name="Behörighet" Type="String" Nullable="false" />
+          <Property Name="Lösenord" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Behörighet" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="AntalTimmar" Relationship="DatabaseModel.AntalTimmarPersonal" FromRole="Personal" ToRole="AntalTimmar" />
           <NavigationProperty Name="Produkt" Relationship="DatabaseModel.PersonalProdukt" FromRole="Personal" ToRole="Produkt" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.AvdelningPersonal" FromRole="Personal" ToRole="Avdelning" />
@@ -644,7 +633,7 @@
             <PropertyRef Name="AvdelningID" />
           </Key>
           <Property Name="AvdelningID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Personal" Relationship="DatabaseModel.AvdelningPersonal" FromRole="Avdelning" ToRole="Personal" />
           <NavigationProperty Name="Aktivitet" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Avdelning" ToRole="Aktivitet" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoAvdelning" FromRole="Avdelning" ToRole="Konto" />
@@ -658,7 +647,7 @@
             <PropertyRef Name="ProduktgruppID" />
           </Key>
           <Property Name="ProduktgruppID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produktgrupp" ToRole="Produkt" />
         </EntityType>
         <EntityType Name="Produktkategori">
@@ -667,7 +656,7 @@
           </Key>
           <Property Name="ProduktkategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktProduktkategori" FromRole="Produktkategori" ToRole="Produkt" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
         </EntityType>
         <Association Name="ProduktProduktkategori">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
@@ -682,7 +671,7 @@
             <PropertyRef Name="AktivitetID" />
           </Key>
           <Property Name="AktivitetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Aktivitet" ToRole="Avdelning" />
         </EntityType>
         <Association Name="AktivitetAvdelning">
@@ -694,8 +683,8 @@
             <PropertyRef Name="DirektkostnadID" />
           </Key>
           <Property Name="DirektkostnadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
-          <Property Name="Belopp" Type="Decimal" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Belopp" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoDirektkostnad" FromRole="Direktkostnad" ToRole="Konto" />
         </EntityType>
         <EntityType Name="Konto">
@@ -703,7 +692,7 @@
             <PropertyRef Name="KontoID" />
           </Key>
           <Property Name="KontoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="schablonkostnad" Relationship="DatabaseModel.schablonkostnadKonto" FromRole="Konto" ToRole="schablonkostnad" />
           <NavigationProperty Name="Direktkostnad" Relationship="DatabaseModel.KontoDirektkostnad" FromRole="Konto" ToRole="Direktkostnad" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.KontoAvdelning" FromRole="Konto" ToRole="Avdelning" />
@@ -713,8 +702,8 @@
             <PropertyRef Name="schablonkostnadID" />
           </Key>
           <Property Name="schablonkostnadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" />
-          <Property Name="Belopp" Type="Decimal" Nullable="false" />
+          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Belopp" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.schablonkostnadKonto" FromRole="schablonkostnad" ToRole="Konto" />
         </EntityType>
         <Association Name="schablonkostnadKonto">
@@ -780,7 +769,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Produkt)">
         <MappingFragment StoreEntitySet="Produkt">
           <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
-          <ScalarProperty Name="ProduktKod" ColumnName="ProduktKod" />
           <ScalarProperty Name="Namn" ColumnName="Namn" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -875,6 +863,7 @@
       <EndProperty Name="Intäktsbudget">
         <ScalarProperty Name="IntäktsbudgetID" ColumnName="IntäktsbudgetID" />
       </EndProperty>
+            <Condition ColumnName="Prognos_PrognosID" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="KundIntäktsbudget" TypeName="DatabaseModel.KundIntäktsbudget" StoreEntitySet="Intäktsbudget">
       <EndProperty Name="Kund">
@@ -883,6 +872,7 @@
       <EndProperty Name="Intäktsbudget">
         <ScalarProperty Name="IntäktsbudgetID" ColumnName="IntäktsbudgetID" />
       </EndProperty>
+            <Condition ColumnName="Kund_KundID" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="KundKategoriKund" TypeName="DatabaseModel.KundKategoriKund" StoreEntitySet="Kund">
       <EndProperty Name="KundKategori">
@@ -899,14 +889,7 @@
       <EndProperty Name="Produkt">
         <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
       </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProduktPrognos" TypeName="DatabaseModel.ProduktPrognos" StoreEntitySet="Produkt">
-      <EndProperty Name="Prognos">
-        <ScalarProperty Name="PrognosID" ColumnName="Prognos_PrognosID" />
-      </EndProperty>
-      <EndProperty Name="Produkt">
-        <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
-      </EndProperty>
+            <Condition ColumnName="Intäktsbudget_IntäktsbudgetID" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="AntalTimmarPersonal" TypeName="DatabaseModel.AntalTimmarPersonal" StoreEntitySet="AntalTimmar">
       <EndProperty Name="Personal">
@@ -996,6 +979,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

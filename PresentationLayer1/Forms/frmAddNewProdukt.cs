@@ -112,7 +112,7 @@ namespace PresentationLayer1.Forms
             Console.WriteLine(valavd);
 
 
-            //businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
+            businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
 
 
 

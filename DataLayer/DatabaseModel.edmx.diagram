@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="875c10f7070742448df30cf20bca69c7" Name="Diagram1" ZoomLevel="93" >
+      <Diagram DiagramId="875c10f7070742448df30cf20bca69c7" Name="Diagram1" ZoomLevel="98" >
         <EntityTypeShape EntityType="DatabaseModel.Prognos" Width="1.5" PointX="2.75" PointY="0.5" />
         <EntityTypeShape EntityType="DatabaseModel.Intäktsbudget" Width="1.5" PointX="5.25" PointY="2.375" />
         <AssociationConnector Association="DatabaseModel.PrognosIntäktsbudget" />
@@ -14,7 +14,6 @@
         <AssociationConnector Association="DatabaseModel.KundKategoriKund" />
         <EntityTypeShape EntityType="DatabaseModel.Produkt" Width="1.5" PointX="5.75" PointY="6.75" />
         <AssociationConnector Association="DatabaseModel.ProduktIntäktsbudget" />
-        <AssociationConnector Association="DatabaseModel.ProduktPrognos" />
         <EntityTypeShape EntityType="DatabaseModel.Personal" Width="1.5" PointX="2.875" PointY="8.625" />
         <EntityTypeShape EntityType="DatabaseModel.AntalTimmar" Width="1.5" PointX="6.5" PointY="9.625" />
         <AssociationConnector Association="DatabaseModel.AntalTimmarPersonal" />

@@ -61,7 +61,7 @@ namespace DataLayer
                 var query = from x in db.Kund
                             select new KundDTO { KundID = x.KundID, Namn = x.Namn, KundKategori = x.KundKategori.Namn };
 
-                if (id.HasValue)
+                if (!string.IsNullOrEmpty(id))
                     query = query.Where(KundDTO => KundDTO.KundID == id);
 
                 //Ändrat så att sökningen inte behöver vara exakt namnet, utan kan börja med det. Fungerar även med korrekta namn ///Leonard

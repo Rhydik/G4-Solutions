@@ -28,7 +28,7 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            int kundId = int.Parse(tbKundID.Text);
+            var kundId = tbKundID.Text;
             var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
 

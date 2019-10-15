@@ -43,7 +43,7 @@ namespace PresentationLayer1.Forms
 
         private void btnSparaKund_Click(object sender, EventArgs e)
         {
-            var kundId = int.Parse(tbKundID2.Text);
+            var kundId = tbKundID2.Text;
             var kundNamn = tbKund2.Text;
             var kundKategori = cmbKundkategori2.Text;
 

@@ -105,13 +105,14 @@ namespace PresentationLayer1.Forms
             var valgrupp = comboBox2.GetItemText(comboBox2.SelectedItem);
             Console.WriteLine(valgrupp);
 
-            //finns inte än, missat att lägga in avdelning till produkt
 
-            //var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
-            //Console.WriteLine(valavd);
+           // finns inte än, missat att lägga in avdelning till produkt
 
-            
-            businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
+            var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
+            Console.WriteLine(valavd);
+
+
+            //businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
 
 
 

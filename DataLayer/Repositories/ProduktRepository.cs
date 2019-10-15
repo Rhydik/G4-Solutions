@@ -32,7 +32,9 @@ namespace DataLayer
                                        where x.Namn == grupp
                                        select x).FirstOrDefault();
 
-                var produkt = new Produkt { ProduktKod = produktKod, Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp };
+
+
+                var produkt = new Produkt { ProduktKod = produktKod, Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp};
                 db.Produkt.Add(produkt);
 
                 db.SaveChanges();

@@ -30,12 +30,12 @@ namespace BusinessLayer
             return repositoryFacade.personalRepository.GetAllPersonal();
         }
 
-        public void RemoveKund(int kundId)
+        public void RemoveKund(string kundId)
         {
             repositoryFacade.kundRepository.RemoveKund(kundId);
         }
 
-        public List<KundDTO> GetKunderByID(int id)
+        public List<KundDTO> GetKunderByID(string id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
         }
@@ -48,17 +48,17 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
         }
-        public List<KundDTO> GetKunderBySearch(int? id, string namn, string kategori)
+        public List<KundDTO> GetKunderBySearch(string id, string namn, string kategori)
         {
             return repositoryFacade.kundRepository.GetKunderBySearch(id, namn, kategori);
         }
 
-        public void UpdateKund(int kundId, string kundNamn, string kundKategori)
+        public void UpdateKund(string kundId, string kundNamn, string kundKategori)
         {
             repositoryFacade.kundRepository.UpdateKund(kundId, kundNamn, kundKategori);
         }
 
-        public void AddKund(int id, string namn, string kategori)
+        public void AddKund(string id, string namn, string kategori)
         {
             repositoryFacade.kundRepository.AddKund(id, namn, kategori);
         }

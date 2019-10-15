@@ -54,13 +54,13 @@ namespace PresentationLayer1
 
         private void btnSök_Click(object sender, EventArgs e)
         {
-            int? id = null; 
+            string id = null; 
             string kund = tbKund.Text;
             string kundKategori = cmbKundkategori.Text;
 
             if (tbKundID.Text.Length != 0)
             {
-                id = Int32.Parse(tbKundID.Text); 
+                id = tbKundID.Text; 
             }
 
             if (cmbKundkategori.Text == "Välj kundkategori")

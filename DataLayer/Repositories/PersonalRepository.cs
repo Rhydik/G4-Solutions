@@ -10,7 +10,7 @@ namespace DataLayer
     {
         public Personal Login(string användarnamn, string lösenord)
         {
-            using (var db = new Databas())
+            using (var db = new DataContext())
             {
                 var query = from x in db.Personal
                             where x.PersonNr == användarnamn && x.Lösenord == lösenord
@@ -21,7 +21,7 @@ namespace DataLayer
 
         public List<Personal> GetAllPersonal()
         {
-            using (var db = new Databas())
+            using (var db = new DataContext())
             {
                 return db.Personal.ToList();
             }

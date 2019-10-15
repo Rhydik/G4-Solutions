@@ -8,7 +8,7 @@ namespace DataLayer.DTO
 {
     public class ProduktDTO
     {
-            public int ProduktID { get; set; }
+            public string ProduktID { get; set; }
             public string Namn { get; set;}
             public Produktgrupp Produktgrupp { get; set; }
             public Produktkategori Produktkategori { get; set; }

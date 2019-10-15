@@ -6,20 +6,17 @@ namespace DataLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("AntalTimmar")]
-    public partial class AntalTimmar
+    [Table("PersonalProdukt")]
+    public partial class PersonalProdukt
     {
-        public int AntalTimmarID { get; set; }
-
-        public int Adm { get; set; }
-
-        public int FörsMark { get; set; }
-
-        public int UtvFörv { get; set; }
-
-        public int Drift { get; set; }
-
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Personal_PersonalID { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        public string Produkt_ProduktID { get; set; }
 
         public virtual Personal Personal { get; set; }
     }

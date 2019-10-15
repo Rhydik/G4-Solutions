@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/14/2019 12:53:14
--- Generated from EDMX file: C:\Users\marcu\source\repos\G4-Solutions\DataLayer\DatabaseModel.edmx
+-- Date Created: 10/15/2019 15:14:12
+-- Generated from EDMX file: C:\Users\look_\source\repos\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,29 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_PrognosIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_PrognosIntäktsbudget];
-GO
-IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget];
-GO
-IF OBJECT_ID(N'[dbo].[FK_KundKategoriKund]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Kund] DROP CONSTRAINT [FK_KundKategoriKund];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktIntäktsbudget];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProduktPrognos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktPrognos];
+IF OBJECT_ID(N'[dbo].[FK_AktivitetAvdelning]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Aktivitet] DROP CONSTRAINT [FK_AktivitetAvdelning];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AntalTimmarPersonal]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AntalTimmar] DROP CONSTRAINT [FK_AntalTimmarPersonal];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PersonalProdukt_Personal]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PersonalProdukt] DROP CONSTRAINT [FK_PersonalProdukt_Personal];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PersonalProdukt_Produkt]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PersonalProdukt] DROP CONSTRAINT [FK_PersonalProdukt_Produkt];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AvdelningPersonal_Avdelning]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AvdelningPersonal] DROP CONSTRAINT [FK_AvdelningPersonal_Avdelning];
@@ -47,49 +29,52 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_AvdelningPersonal_Personal]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AvdelningPersonal] DROP CONSTRAINT [FK_AvdelningPersonal_Personal];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProduktProduktkategori]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktProduktkategori];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProduktgruppProdukt]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktgruppProdukt];
-GO
-IF OBJECT_ID(N'[dbo].[FK_AktivitetAvdelning]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Aktivitet] DROP CONSTRAINT [FK_AktivitetAvdelning];
-GO
-IF OBJECT_ID(N'[dbo].[FK_schablonkostnadKonto]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[schablonkostnad] DROP CONSTRAINT [FK_schablonkostnadKonto];
-GO
-IF OBJECT_ID(N'[dbo].[FK_KontoDirektkostnad]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Direktkostnad] DROP CONSTRAINT [FK_KontoDirektkostnad];
+IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Avdelning]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KontoAvdelning] DROP CONSTRAINT [FK_KontoAvdelning_Avdelning];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Konto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[KontoAvdelning] DROP CONSTRAINT [FK_KontoAvdelning_Konto];
 GO
-IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Avdelning]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[KontoAvdelning] DROP CONSTRAINT [FK_KontoAvdelning_Avdelning];
+IF OBJECT_ID(N'[dbo].[FK_KontoDirektkostnad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Direktkostnad] DROP CONSTRAINT [FK_KontoDirektkostnad];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KundKategoriKund]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Kund] DROP CONSTRAINT [FK_KundKategoriKund];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonalProdukt_Personal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PersonalProdukt] DROP CONSTRAINT [FK_PersonalProdukt_Personal];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonalProdukt_Produkt]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PersonalProdukt] DROP CONSTRAINT [FK_PersonalProdukt_Produkt];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktgruppProdukt]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktgruppProdukt];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktIntäktsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktProduktkategori]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktProduktkategori];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktPrognos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktPrognos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PrognosIntäktsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_PrognosIntäktsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_schablonkostnadKonto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[schablonkostnad] DROP CONSTRAINT [FK_schablonkostnadKonto];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Prognos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Prognos];
-GO
-IF OBJECT_ID(N'[dbo].[Intäktsbudget]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Intäktsbudget];
-GO
-IF OBJECT_ID(N'[dbo].[Kund]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Kund];
-GO
-IF OBJECT_ID(N'[dbo].[KundKategori]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KundKategori];
-GO
-IF OBJECT_ID(N'[dbo].[Produkt]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Produkt];
-GO
-IF OBJECT_ID(N'[dbo].[Personal]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Personal];
+IF OBJECT_ID(N'[dbo].[Aktivitet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Aktivitet];
 GO
 IF OBJECT_ID(N'[dbo].[AntalTimmar]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AntalTimmar];
@@ -97,32 +82,47 @@ GO
 IF OBJECT_ID(N'[dbo].[Avdelning]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Avdelning];
 GO
+IF OBJECT_ID(N'[dbo].[AvdelningPersonal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AvdelningPersonal];
+GO
+IF OBJECT_ID(N'[dbo].[Direktkostnad]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Direktkostnad];
+GO
+IF OBJECT_ID(N'[dbo].[Intäktsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Intäktsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[Konto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Konto];
+GO
+IF OBJECT_ID(N'[dbo].[KontoAvdelning]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KontoAvdelning];
+GO
+IF OBJECT_ID(N'[dbo].[Kund]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Kund];
+GO
+IF OBJECT_ID(N'[dbo].[KundKategori]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KundKategori];
+GO
+IF OBJECT_ID(N'[dbo].[Personal]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Personal];
+GO
+IF OBJECT_ID(N'[dbo].[PersonalProdukt]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PersonalProdukt];
+GO
+IF OBJECT_ID(N'[dbo].[Produkt]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Produkt];
+GO
 IF OBJECT_ID(N'[dbo].[Produktgrupp]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Produktgrupp];
 GO
 IF OBJECT_ID(N'[dbo].[Produktkategori]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Produktkategori];
 GO
-IF OBJECT_ID(N'[dbo].[Aktivitet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Aktivitet];
-GO
-IF OBJECT_ID(N'[dbo].[Direktkostnad]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Direktkostnad];
-GO
-IF OBJECT_ID(N'[dbo].[Konto]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Konto];
+IF OBJECT_ID(N'[dbo].[Prognos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Prognos];
 GO
 IF OBJECT_ID(N'[dbo].[schablonkostnad]', 'U') IS NOT NULL
     DROP TABLE [dbo].[schablonkostnad];
-GO
-IF OBJECT_ID(N'[dbo].[PersonalProdukt]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PersonalProdukt];
-GO
-IF OBJECT_ID(N'[dbo].[AvdelningPersonal]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AvdelningPersonal];
-GO
-IF OBJECT_ID(N'[dbo].[KontoAvdelning]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[KontoAvdelning];
 GO
 
 -- --------------------------------------------------
@@ -134,7 +134,8 @@ CREATE TABLE [dbo].[Prognos] (
     [PrognosID] int IDENTITY(1,1) NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
     [Datum] datetime  NOT NULL,
-    [Belopp] decimal(18,0)  NOT NULL
+    [Belopp] decimal(18,0)  NOT NULL,
+    [Intäktsbudget_IntäktsbudgetID] int  NOT NULL
 );
 GO
 
@@ -149,14 +150,13 @@ CREATE TABLE [dbo].[Intäktsbudget] (
     [Budget] decimal(18,0)  NOT NULL,
     [Tim] int  NOT NULL,
     [Kommentar] nvarchar(max)  NOT NULL,
-    [Prognos_PrognosID] int  NOT NULL,
-    [Kund_KundID] int  NOT NULL
+    [Kund_KundID] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'Kund'
 CREATE TABLE [dbo].[Kund] (
-    [KundID] int IDENTITY(1,1) NOT NULL,
+    [KundID] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
     [KundKategori_KundKategoriID] int  NOT NULL
 );
@@ -171,11 +171,9 @@ GO
 
 -- Creating table 'Produkt'
 CREATE TABLE [dbo].[Produkt] (
-    [ProduktID] int IDENTITY(1,1) NOT NULL,
-    [ProduktKod] nvarchar(max)  NOT NULL,
+    [ProduktID] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
-    [Intäktsbudget_IntäktsbudgetID] int  NOT NULL,
-    [Prognos_PrognosID] int  NOT NULL,
+    [Intäktsbudget_IntäktsbudgetID] int  NULL,
     [Produktkategori_ProduktkategoriID] int  NOT NULL,
     [Produktgrupp_ProduktgruppID] int  NOT NULL
 );
@@ -262,7 +260,7 @@ GO
 -- Creating table 'PersonalProdukt'
 CREATE TABLE [dbo].[PersonalProdukt] (
     [Personal_PersonalID] int  NOT NULL,
-    [Produkt_ProduktID] int  NOT NULL
+    [Produkt_ProduktID] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -390,19 +388,19 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Prognos_PrognosID] in table 'Intäktsbudget'
-ALTER TABLE [dbo].[Intäktsbudget]
+-- Creating foreign key on [Intäktsbudget_IntäktsbudgetID] in table 'Prognos'
+ALTER TABLE [dbo].[Prognos]
 ADD CONSTRAINT [FK_PrognosIntäktsbudget]
-    FOREIGN KEY ([Prognos_PrognosID])
-    REFERENCES [dbo].[Prognos]
-        ([PrognosID])
+    FOREIGN KEY ([Intäktsbudget_IntäktsbudgetID])
+    REFERENCES [dbo].[Intäktsbudget]
+        ([IntäktsbudgetID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PrognosIntäktsbudget'
 CREATE INDEX [IX_FK_PrognosIntäktsbudget]
-ON [dbo].[Intäktsbudget]
-    ([Prognos_PrognosID]);
+ON [dbo].[Prognos]
+    ([Intäktsbudget_IntäktsbudgetID]);
 GO
 
 -- Creating foreign key on [Kund_KundID] in table 'Intäktsbudget'
@@ -448,21 +446,6 @@ GO
 CREATE INDEX [IX_FK_ProduktIntäktsbudget]
 ON [dbo].[Produkt]
     ([Intäktsbudget_IntäktsbudgetID]);
-GO
-
--- Creating foreign key on [Prognos_PrognosID] in table 'Produkt'
-ALTER TABLE [dbo].[Produkt]
-ADD CONSTRAINT [FK_ProduktPrognos]
-    FOREIGN KEY ([Prognos_PrognosID])
-    REFERENCES [dbo].[Prognos]
-        ([PrognosID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ProduktPrognos'
-CREATE INDEX [IX_FK_ProduktPrognos]
-ON [dbo].[Produkt]
-    ([Prognos_PrognosID]);
 GO
 
 -- Creating foreign key on [Personal_PersonalID] in table 'AntalTimmar'

@@ -62,7 +62,7 @@
     <Compile Include="Avdelning.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Databas.cs" />
+    <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -86,6 +86,7 @@
     <Compile Include="Personal.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PersonalProdukt.cs" />
     <Compile Include="Produkt.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>

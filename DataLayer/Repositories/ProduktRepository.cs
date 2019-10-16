@@ -20,7 +20,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
+        public void AddProdukt(string produktKod, string namn, string kategori, string grupp, string avdelning)
         {
             using (var db = new DataContext())
             {
@@ -31,6 +31,10 @@ namespace DataLayer
                 var produktGrupp = (from x in db.Produktgrupp
                                        where x.Namn == grupp
                                        select x).FirstOrDefault();
+
+                var produktAvdelning = (from x in db.Avdelning
+                                        where x.Namn == avdelning
+                                        select x).FirstOrDefault();
 
 
 

@@ -503,6 +503,10 @@
             <End Role="Konto" EntitySet="Konto" />
             <End Role="Avdelning" EntitySet="Avdelning" />
           </AssociationSet>
+          <AssociationSet Name="ProduktAvdelning" Association="DatabaseModel.ProduktAvdelning">
+            <End Role="Produkt" EntitySet="Produkt" />
+            <End Role="Avdelning" EntitySet="Avdelning" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Prognos">
           <Key>
@@ -570,6 +574,7 @@
           <NavigationProperty Name="Produktkategori" Relationship="DatabaseModel.ProduktProduktkategori" FromRole="Produkt" ToRole="Produktkategori" />
           <NavigationProperty Name="Produktgrupp" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produkt" ToRole="Produktgrupp" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.ProduktAvdelning" FromRole="Produkt" ToRole="Avdelning" />
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
@@ -619,6 +624,7 @@
           <NavigationProperty Name="Personal" Relationship="DatabaseModel.AvdelningPersonal" FromRole="Avdelning" ToRole="Personal" />
           <NavigationProperty Name="Aktivitet" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Avdelning" ToRole="Aktivitet" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoAvdelning" FromRole="Avdelning" ToRole="Konto" />
+          <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktAvdelning" FromRole="Avdelning" ToRole="Produkt" />
         </EntityType>
         <Association Name="AvdelningPersonal">
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="*" />
@@ -699,6 +705,10 @@
         <Association Name="KontoAvdelning">
           <End Type="DatabaseModel.Konto" Role="Konto" Multiplicity="*" />
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="*" />
+        </Association>
+        <Association Name="ProduktAvdelning">
+          <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
+          <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>

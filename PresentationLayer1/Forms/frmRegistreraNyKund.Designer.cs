@@ -241,9 +241,6 @@
             // cmbKundkategori
             // 
             this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Items.AddRange(new object[] {
-            "Offentlig",
-            "Näringsliv"});
             this.cmbKundkategori.Location = new System.Drawing.Point(251, 176);
             this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(2);
             this.cmbKundkategori.Name = "cmbKundkategori";

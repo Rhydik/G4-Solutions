@@ -37,7 +37,9 @@ namespace PresentationLayer1.Forms
 
         private void btnSkapaNyKundkategori_Click(object sender, EventArgs e)
         {
-            // Fråga på kundmöte om vi ska ha med det här
+            //Ta in Data från textbox
+
+            //Skapa kund kategori
         }
 
      

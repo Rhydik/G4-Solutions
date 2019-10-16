@@ -45,6 +45,11 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.RemovePersonal(personal);
         }
 
+        public void AddPersonal(Personal personal)
+        {
+            repositoryFacade.personalRepository.AddPersonal(personal);
+        }
+
         public List<KundDTO> GetKunderByID(string id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);

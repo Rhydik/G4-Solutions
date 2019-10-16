@@ -42,6 +42,8 @@
             this.lblRegistreaNyPersonal = new System.Windows.Forms.Label();
             this.tbNamn = new System.Windows.Forms.TextBox();
             this.tbPersonnummer = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbLösenord = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblVakansavdrag
@@ -104,6 +106,7 @@
             this.btnAvbryt.TabIndex = 65;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 
@@ -122,6 +125,7 @@
             this.btnSpara.TabIndex = 63;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // lblPersonnummer
             // 
@@ -149,9 +153,9 @@
             this.lblRegistreaNyPersonal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistreaNyPersonal.Location = new System.Drawing.Point(11, 23);
             this.lblRegistreaNyPersonal.Name = "lblRegistreaNyPersonal";
-            this.lblRegistreaNyPersonal.Size = new System.Drawing.Size(168, 22);
+            this.lblRegistreaNyPersonal.Size = new System.Drawing.Size(153, 22);
             this.lblRegistreaNyPersonal.TabIndex = 60;
-            this.lblRegistreaNyPersonal.Text = "Redigera Personal";
+            this.lblRegistreaNyPersonal.Text = "Lägg till personal";
             // 
             // tbNamn
             // 
@@ -167,12 +171,31 @@
             this.tbPersonnummer.Size = new System.Drawing.Size(239, 20);
             this.tbPersonnummer.TabIndex = 58;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Lösenord";
+            // 
+            // tbLösenord
+            // 
+            this.tbLösenord.Location = new System.Drawing.Point(15, 366);
+            this.tbLösenord.Name = "tbLösenord";
+            this.tbLösenord.Size = new System.Drawing.Size(239, 20);
+            this.tbLösenord.TabIndex = 73;
+            // 
             // frmRegistreraNyPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(272, 543);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbLösenord);
             this.Controls.Add(this.lblVakansavdrag);
             this.Controls.Add(this.tbVakansavdrag);
             this.Controls.Add(this.lblSysselsättningsgrad);
@@ -211,5 +234,7 @@
         private System.Windows.Forms.Label lblRegistreaNyPersonal;
         private System.Windows.Forms.TextBox tbNamn;
         private System.Windows.Forms.TextBox tbPersonnummer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbLösenord;
     }
 }

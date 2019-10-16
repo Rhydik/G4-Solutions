@@ -307,6 +307,7 @@
             this.Controls.Add(this.gvSchablonkostnad);
             this.Controls.Add(this.panel1);
             this.Name = "frmSchablonkostnad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSchablonkostnad";
             ((System.ComponentModel.ISupportInitialize)(this.gvSchablonkostnad)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -9,7 +9,7 @@
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=Database")
+            : base("name=dbContext")
         {
         }
 
@@ -33,6 +33,12 @@
         {
             modelBuilder.Entity<Avdelning>()
                 .HasMany(e => e.Aktivitet)
+                .WithRequired(e => e.Avdelning)
+                .HasForeignKey(e => e.Avdelning_AvdelningID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Avdelning>()
+                .HasMany(e => e.Produkt)
                 .WithRequired(e => e.Avdelning)
                 .HasForeignKey(e => e.Avdelning_AvdelningID)
                 .WillCascadeOnDelete(false);

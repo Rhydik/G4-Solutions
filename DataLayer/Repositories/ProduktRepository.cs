@@ -14,13 +14,13 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produkt
-                            select new ProduktDTO {ProduktID = x.ProduktID, Namn = x.Namn, Produktgrupp = x.Produktgrupp, Produktkategori = x.Produktkategori};
+                            select new ProduktDTO {ProduktID = x.ProduktID, Namn = x.Namn, Produktgrupp = x.Produktgrupp.Namn, Produktkategori = x.Produktkategori.Namn, Avdelning = x.Avdelning.Namn};
 
                 return query.ToList();
             }
         }
 
-        public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
+        public void AddProdukt(string produktID, string namn, string kategori, string grupp, string avdelning)
         {
             using (var db = new DataContext())
             {
@@ -32,9 +32,11 @@ namespace DataLayer
                                        where x.Namn == grupp
                                        select x).FirstOrDefault();
 
+                var produktAvdelning = (from x in db.Avdelning
+                                        where x.Namn == avdelning
+                                        select x).FirstOrDefault();
 
-
-                var produkt = new Produkt {Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp};
+                var produkt = new Produkt {ProduktID = produktID , Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp, Avdelning = produktAvdelning};
                 db.Produkt.Add(produkt);
 
                 db.SaveChanges();

@@ -39,11 +39,9 @@ namespace PresentationLayer1.Forms
             comboBox2.ValueMember = "Namn";
             comboBox2.DisplayMember = "Namn";
 
-            //Combobox hämtas från avdelningar
-            var avd = businessManager.GetProduktByAvdelning();
-            comboBox3.DataSource = avd;
-            comboBox3.ValueMember = "Namn";
-            comboBox3.DisplayMember = "Namn";
+            comboBox3.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
+            comboBox3.Items.Insert(1, "Driftavdelning");
+            comboBox3.SelectedIndex = 0;
         }
 
         private void newProduktNametxt_TextChanged(object sender, EventArgs e)
@@ -94,27 +92,16 @@ namespace PresentationLayer1.Forms
         {
 
 
-            string kod = newProduktkodtxt.Text;
+            string produktID = newProduktkodtxt.Text;
             string namn = newProduktNametxt.Text;
-            Console.WriteLine(kod);
-            Console.WriteLine(namn);
 
-            var valkategori = comboBox1.GetItemText(comboBox1.SelectedItem);
-            Console.WriteLine(valkategori);
+            var kategori = comboBox1.GetItemText(comboBox1.SelectedItem);
 
-            var valgrupp = comboBox2.GetItemText(comboBox2.SelectedItem);
-            Console.WriteLine(valgrupp);
+            var grupp = comboBox2.GetItemText(comboBox2.SelectedItem);
 
+            var avdelning = comboBox3.GetItemText(comboBox3.SelectedItem);
 
-           // finns inte än, missat att lägga in avdelning till produkt
-
-            var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
-            Console.WriteLine(valavd);
-
-
-            businessManager.AddProdukt(kod, namn, valkategori, valgrupp);
-
-
+            businessManager.AddProdukt(produktID, namn, kategori, grupp, avdelning);
 
         }
 
@@ -131,6 +118,21 @@ namespace PresentationLayer1.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

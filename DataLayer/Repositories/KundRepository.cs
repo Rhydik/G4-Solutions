@@ -93,7 +93,7 @@ namespace DataLayer
                                     where x.Namn == kategori
                                     select x).FirstOrDefault();
 
-                var kund = new Kund {KundID = id, Namn = namn, KundKategori = kundKategori};
+                var kund = new Kund {KundID = id, Namn = namn, KundKategori = kundKategori,};
                 db.Kund.Add(kund);
 
                 db.SaveChanges();

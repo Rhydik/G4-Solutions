@@ -87,6 +87,10 @@
       <End Role="Avdelning" EntitySet="Avdelning" />
       <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
     </AssociationSet>
+    <AssociationSet Name="ProduktAvdelning" Association="DatabaseModel.Store.ProduktAvdelning">
+      <End Role="Produkt" EntitySet="Produkt" />
+      <End Role="Avdelning" EntitySet="Avdelning" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Prognos">
     <Key>
@@ -137,6 +141,7 @@
     <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="true" />
     <Property Name="Produktkategori_ProduktkategoriID" Type="int" Nullable="false" />
     <Property Name="Produktgrupp_ProduktgruppID" Type="int" Nullable="false" />
+    <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personal">
     <Key>
@@ -360,6 +365,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ProduktAvdelning">
+    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
+    <End Role="Avdelning" Type="DatabaseModel.Store.Avdelning" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Avdelning">
+        <PropertyRef Name="AvdelningID" />
+      </Principal>
+      <Dependent Role="Produkt">
+        <PropertyRef Name="Avdelning_AvdelningID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PersonalProdukt_Personal">
     <End Role="Personal" Type="DatabaseModel.Store.Personal" Multiplicity="1" />
     <End Role="PersonalProdukt" Type="DatabaseModel.Store.PersonalProdukt" Multiplicity="*" />
@@ -503,6 +520,10 @@
             <End Role="Konto" EntitySet="Konto" />
             <End Role="Avdelning" EntitySet="Avdelning" />
           </AssociationSet>
+          <AssociationSet Name="ProduktAvdelning" Association="DatabaseModel.ProduktAvdelning">
+            <End Role="Produkt" EntitySet="Produkt" />
+            <End Role="Avdelning" EntitySet="Avdelning" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Prognos">
           <Key>
@@ -570,6 +591,7 @@
           <NavigationProperty Name="Produktkategori" Relationship="DatabaseModel.ProduktProduktkategori" FromRole="Produkt" ToRole="Produktkategori" />
           <NavigationProperty Name="Produktgrupp" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produkt" ToRole="Produktgrupp" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.ProduktAvdelning" FromRole="Produkt" ToRole="Avdelning" />
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
@@ -619,6 +641,7 @@
           <NavigationProperty Name="Personal" Relationship="DatabaseModel.AvdelningPersonal" FromRole="Avdelning" ToRole="Personal" />
           <NavigationProperty Name="Aktivitet" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Avdelning" ToRole="Aktivitet" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoAvdelning" FromRole="Avdelning" ToRole="Konto" />
+          <NavigationProperty Name="Produkt" Relationship="DatabaseModel.ProduktAvdelning" FromRole="Avdelning" ToRole="Produkt" />
         </EntityType>
         <Association Name="AvdelningPersonal">
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="*" />
@@ -699,6 +722,10 @@
         <Association Name="KontoAvdelning">
           <End Type="DatabaseModel.Konto" Role="Konto" Multiplicity="*" />
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="*" />
+        </Association>
+        <Association Name="ProduktAvdelning">
+          <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
+          <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -941,6 +968,14 @@
       </EndProperty>
       <EndProperty Name="Avdelning">
         <ScalarProperty Name="AvdelningID" ColumnName="Avdelning_AvdelningID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProduktAvdelning" TypeName="DatabaseModel.ProduktAvdelning" StoreEntitySet="Produkt">
+      <EndProperty Name="Avdelning">
+        <ScalarProperty Name="AvdelningID" ColumnName="Avdelning_AvdelningID" />
+      </EndProperty>
+      <EndProperty Name="Produkt">
+        <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

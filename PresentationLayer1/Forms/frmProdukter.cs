@@ -50,6 +50,14 @@ namespace PresentationLayer1.Forms
             frmAddNewProdukt.Show();
         }
 
-       
+        private void dgvProdukter_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmProdukter_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

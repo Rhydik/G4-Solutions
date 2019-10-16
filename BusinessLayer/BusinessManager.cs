@@ -45,6 +45,11 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.RemovePersonal(personal);
         }
 
+        public void AddPersonal(Personal personal)
+        {
+            repositoryFacade.personalRepository.AddPersonal(personal);
+        }
+
         public List<KundDTO> GetKunderByID(string id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
@@ -116,9 +121,9 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
 
-        public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
+        public void AddProdukt(string produktID, string namn, string kategori, string grupp, string avdelning)
         {
-            repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp);
+            repositoryFacade.produktRepository.AddProdukt(produktID, namn, kategori, grupp, avdelning);
         }
     }
 }

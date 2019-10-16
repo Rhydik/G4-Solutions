@@ -29,6 +29,13 @@ namespace DataLayer
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Produktgrupp_ProduktgruppID { get; set; }
 
+        [Key]
+        [Column(Order = 4)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int Avdelning_AvdelningID { get; set; }
+
+        public virtual Avdelning Avdelning { get; set; }
+
         public virtual Intäktsbudget Intäktsbudget { get; set; }
 
         public virtual Produktgrupp Produktgrupp { get; set; }

@@ -49,6 +49,29 @@ namespace DataLayer
             }
         }
 
+        public void AddPersonal(Personal personal)
+        {
+            using (var db = new DataContext())
+            {
+                var personalen = new Personal();
+                personalen.Sysselsättningsgrad = personal.Sysselsättningsgrad;
+                personalen.Namn = personal.Namn;
+                personalen.PersonNr = personal.PersonNr;
+                personalen.Vakansavdrag = personal.Vakansavdrag;
+                personalen.Behörighet = personal.Behörighet;
+                personalen.Lösenord = personal.Lösenord;
+                personalen.Avdelning = personal.Avdelning;
+                personalen.AntalTimmar = personal.AntalTimmar;
+                personalen.Behörighet = personal.Behörighet;
+                personalen.Månadslön = personal.Månadslön;
+                personalen.PersonalProdukt = personal.PersonalProdukt;
+                personalen.PersonalID = personal.PersonalID;
+
+                db.Personal.Add(personalen);
+                db.SaveChanges();
+            }
+        }
+
         public void RemovePersonal(Personal personal)
         {
             using (var db = new DataContext())

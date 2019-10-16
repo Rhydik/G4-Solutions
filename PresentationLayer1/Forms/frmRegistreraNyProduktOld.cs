@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentationLayer1.Forms
 {
-    public partial class frmRegistreraNyProdukt : Form
+    public partial class frmRegistreraNyProduktOld : Form
     {
-        public frmRegistreraNyProdukt()
+        public frmRegistreraNyProduktOld()
         {
             InitializeComponent();
         }

@@ -221,7 +221,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmHemmeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmHemmeny";
+            this.Text = "G4 Solutions Economy System";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

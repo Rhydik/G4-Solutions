@@ -35,6 +35,16 @@ namespace BusinessLayer
             repositoryFacade.kundRepository.RemoveKund(kundId);
         }
 
+        public List<Personal> GetPersonalByPersNr(string persNr)
+        {
+            return repositoryFacade.personalRepository.GetPersonalByPersNr(persNr);
+        }
+
+        public void RemovePersonal(Personal personal)
+        {
+            repositoryFacade.personalRepository.RemovePersonal(personal);
+        }
+
         public List<KundDTO> GetKunderByID(string id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
@@ -44,6 +54,17 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
+
+        public List<Personal> GetPersonalByNamn(string namn)
+        {
+            return repositoryFacade.personalRepository.GetPersonalByNamn(namn);
+        }
+
+        public void UpdatePersonal(Personal personal)
+        {
+            repositoryFacade.personalRepository.UpdatePersonal(personal);
+        }
+
         public List<KundDTO> GetKunderByKategori(string kategori)
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);

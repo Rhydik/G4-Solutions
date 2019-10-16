@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbKund2 = new System.Windows.Forms.TextBox();
-            this.tbKundID2 = new System.Windows.Forms.TextBox();
+            this.tbPersNr = new System.Windows.Forms.TextBox();
+            this.tbNamn = new System.Windows.Forms.TextBox();
             this.lblMånadslön = new System.Windows.Forms.Label();
             this.lblPersonnummer = new System.Windows.Forms.Label();
             this.lblNamn = new System.Windows.Forms.Label();
@@ -50,28 +50,28 @@
             this.btnAvbrytPersonal = new System.Windows.Forms.Button();
             this.btnSparaPersonal = new System.Windows.Forms.Button();
             this.tbMånadslön = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSysselsättningsgrad = new System.Windows.Forms.TextBox();
             this.lblSysselsättningsgrad = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbVakansavdrag = new System.Windows.Forms.TextBox();
             this.lblVakansavdrag = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbKund2
+            // tbPersNr
             // 
-            this.tbKund2.Location = new System.Drawing.Point(244, 106);
-            this.tbKund2.Margin = new System.Windows.Forms.Padding(2);
-            this.tbKund2.Name = "tbKund2";
-            this.tbKund2.Size = new System.Drawing.Size(109, 20);
-            this.tbKund2.TabIndex = 43;
+            this.tbPersNr.Location = new System.Drawing.Point(244, 106);
+            this.tbPersNr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPersNr.Name = "tbPersNr";
+            this.tbPersNr.Size = new System.Drawing.Size(109, 20);
+            this.tbPersNr.TabIndex = 43;
             // 
-            // tbKundID2
+            // tbNamn
             // 
-            this.tbKundID2.Location = new System.Drawing.Point(244, 60);
-            this.tbKundID2.Margin = new System.Windows.Forms.Padding(2);
-            this.tbKundID2.Name = "tbKundID2";
-            this.tbKundID2.Size = new System.Drawing.Size(109, 20);
-            this.tbKundID2.TabIndex = 42;
+            this.tbNamn.Location = new System.Drawing.Point(244, 60);
+            this.tbNamn.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNamn.Name = "tbNamn";
+            this.tbNamn.Size = new System.Drawing.Size(109, 20);
+            this.tbNamn.TabIndex = 42;
             // 
             // lblMånadslön
             // 
@@ -246,12 +246,13 @@
             // 
             this.btnTaBortPersonal.BackColor = System.Drawing.Color.Red;
             this.btnTaBortPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaBortPersonal.Location = new System.Drawing.Point(246, 307);
+            this.btnTaBortPersonal.Location = new System.Drawing.Point(244, 307);
             this.btnTaBortPersonal.Name = "btnTaBortPersonal";
             this.btnTaBortPersonal.Size = new System.Drawing.Size(120, 41);
             this.btnTaBortPersonal.TabIndex = 37;
             this.btnTaBortPersonal.Text = "Ta bort Personal";
             this.btnTaBortPersonal.UseVisualStyleBackColor = false;
+            this.btnTaBortPersonal.Click += new System.EventHandler(this.btnTaBortPersonal_Click);
             // 
             // btnAvbrytPersonal
             // 
@@ -261,6 +262,7 @@
             this.btnAvbrytPersonal.TabIndex = 36;
             this.btnAvbrytPersonal.Text = "Avbryt";
             this.btnAvbrytPersonal.UseVisualStyleBackColor = true;
+            this.btnAvbrytPersonal.Click += new System.EventHandler(this.btnAvbrytPersonal_Click);
             // 
             // btnSparaPersonal
             // 
@@ -270,6 +272,7 @@
             this.btnSparaPersonal.TabIndex = 35;
             this.btnSparaPersonal.Text = "Spara";
             this.btnSparaPersonal.UseVisualStyleBackColor = true;
+            this.btnSparaPersonal.Click += new System.EventHandler(this.btnSparaPersonal_Click);
             // 
             // tbMånadslön
             // 
@@ -279,13 +282,13 @@
             this.tbMånadslön.Size = new System.Drawing.Size(109, 20);
             this.tbMånadslön.TabIndex = 44;
             // 
-            // textBox1
+            // tbSysselsättningsgrad
             // 
-            this.textBox1.Location = new System.Drawing.Point(244, 194);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 20);
-            this.textBox1.TabIndex = 46;
+            this.tbSysselsättningsgrad.Location = new System.Drawing.Point(244, 194);
+            this.tbSysselsättningsgrad.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSysselsättningsgrad.Name = "tbSysselsättningsgrad";
+            this.tbSysselsättningsgrad.Size = new System.Drawing.Size(109, 20);
+            this.tbSysselsättningsgrad.TabIndex = 46;
             // 
             // lblSysselsättningsgrad
             // 
@@ -297,13 +300,13 @@
             this.lblSysselsättningsgrad.TabIndex = 45;
             this.lblSysselsättningsgrad.Text = "Sysselsättningsgrad %";
             // 
-            // textBox2
+            // tbVakansavdrag
             // 
-            this.textBox2.Location = new System.Drawing.Point(245, 241);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(109, 20);
-            this.textBox2.TabIndex = 48;
+            this.tbVakansavdrag.Location = new System.Drawing.Point(245, 241);
+            this.tbVakansavdrag.Margin = new System.Windows.Forms.Padding(2);
+            this.tbVakansavdrag.Name = "tbVakansavdrag";
+            this.tbVakansavdrag.Size = new System.Drawing.Size(109, 20);
+            this.tbVakansavdrag.TabIndex = 48;
             // 
             // lblVakansavdrag
             // 
@@ -320,13 +323,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbVakansavdrag);
             this.Controls.Add(this.lblVakansavdrag);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSysselsättningsgrad);
             this.Controls.Add(this.lblSysselsättningsgrad);
             this.Controls.Add(this.tbMånadslön);
-            this.Controls.Add(this.tbKund2);
-            this.Controls.Add(this.tbKundID2);
+            this.Controls.Add(this.tbPersNr);
+            this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.lblMånadslön);
             this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.lblNamn);
@@ -344,8 +347,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbKund2;
-        private System.Windows.Forms.TextBox tbKundID2;
+        private System.Windows.Forms.TextBox tbPersNr;
+        private System.Windows.Forms.TextBox tbNamn;
         private System.Windows.Forms.Label lblMånadslön;
         private System.Windows.Forms.Label lblPersonnummer;
         private System.Windows.Forms.Label lblNamn;
@@ -366,9 +369,9 @@
         private System.Windows.Forms.Button btnAvbrytPersonal;
         private System.Windows.Forms.Button btnSparaPersonal;
         private System.Windows.Forms.TextBox tbMånadslön;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSysselsättningsgrad;
         private System.Windows.Forms.Label lblSysselsättningsgrad;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbVakansavdrag;
         private System.Windows.Forms.Label lblVakansavdrag;
     }
 }

@@ -96,6 +96,7 @@
             this.tbPersonal.Name = "tbPersonal";
             this.tbPersonal.Size = new System.Drawing.Size(128, 20);
             this.tbPersonal.TabIndex = 25;
+            this.tbPersonal.TextChanged += new System.EventHandler(this.tbPersonal_TextChanged);
             // 
             // tbPersonnummer
             // 
@@ -103,6 +104,7 @@
             this.tbPersonnummer.Name = "tbPersonnummer";
             this.tbPersonnummer.Size = new System.Drawing.Size(128, 20);
             this.tbPersonnummer.TabIndex = 24;
+            this.tbPersonnummer.TextChanged += new System.EventHandler(this.tbPersonnummer_TextChanged);
             // 
             // btnRegistreraNyPersonal
             // 
@@ -112,6 +114,7 @@
             this.btnRegistreraNyPersonal.TabIndex = 23;
             this.btnRegistreraNyPersonal.Text = "Registrera ny personal";
             this.btnRegistreraNyPersonal.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyPersonal.Click += new System.EventHandler(this.btnRegistreraNyPersonal_Click);
             // 
             // btnRedigeraPersonal
             // 
@@ -121,6 +124,7 @@
             this.btnRedigeraPersonal.TabIndex = 22;
             this.btnRedigeraPersonal.Text = "Redigera personal";
             this.btnRedigeraPersonal.UseVisualStyleBackColor = true;
+            this.btnRedigeraPersonal.Click += new System.EventHandler(this.btnRedigeraPersonal_Click);
             // 
             // gvPersonal
             // 

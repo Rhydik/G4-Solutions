@@ -60,6 +60,7 @@
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 

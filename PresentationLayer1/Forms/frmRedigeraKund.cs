@@ -28,12 +28,12 @@ namespace PresentationLayer1.Forms
         {
             tbKundID2.Text = kunden.KundID;
             tbKund2.Text = kunden.Namn;
-            cmbKundkategori2.Text = kunden.KundKategori;
+            cmbKundkategori.Text = kunden.KundKategori;
 
             var kategori = businessManager.GetAllKundKategori();
-            cmbKundkategori2.DataSource = kategori;
-            cmbKundkategori2.ValueMember = "Namn";
-            cmbKundkategori2.DisplayMember = "Namn";
+            cmbKundkategori.DataSource = kategori;
+            cmbKundkategori.ValueMember = "Namn";
+            cmbKundkategori.DisplayMember = "Namn";
         }
 
         public void btnTaBortKund_Click(object sender, EventArgs e)
@@ -52,9 +52,16 @@ namespace PresentationLayer1.Forms
         {
             var kundId = tbKundID2.Text;
             var kundNamn = tbKund2.Text;
-            var kundKategori = cmbKundkategori2.Text;
+            var kundKategori = cmbKundkategori.Text;
 
             businessManager.UpdateKund(kunden, kundId, kundNamn, kundKategori);
+        }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmKunder frmKunder = new frmKunder();
+            frmKunder.Show();
         }
     }
 }

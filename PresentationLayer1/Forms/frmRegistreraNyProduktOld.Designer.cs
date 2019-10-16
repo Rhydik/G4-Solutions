@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmRegistreraNyProdukt
+    partial class frmRegistreraNyProduktOld
     {
         /// <summary>
         /// Required designer variable.

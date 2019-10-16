@@ -37,5 +37,12 @@ namespace PresentationLayer1
             Hide();
             frmPersonal.Show();
         }
+
+        private void btnAktiviteter_Click(object sender, EventArgs e)
+        {
+            Forms.frmAktiviteter frmAktiviteter = new Forms.frmAktiviteter();
+                Hide();
+            frmAktiviteter.Show();
+        }
     }
 }

@@ -156,6 +156,7 @@
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
+            this.btnAktiviteter.Click += new System.EventHandler(this.btnAktiviteter_Click);
             // 
             // btnPersonal
             // 

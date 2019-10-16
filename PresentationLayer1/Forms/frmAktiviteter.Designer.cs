@@ -307,8 +307,9 @@
             this.Controls.Add(this.btnRedigeraAktivitet);
             this.Controls.Add(this.dgvAktiviteter);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAktiviteter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAktiviteter";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).EndInit();

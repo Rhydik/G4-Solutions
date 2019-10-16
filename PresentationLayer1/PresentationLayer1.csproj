@@ -100,6 +100,18 @@
     <Compile Include="Forms\frmRedigeraAktivitet.Designer.cs">
       <DependentUpon>frmRedigeraAktivitet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmRedigeraBehörighet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraBehörighet.Designer.cs">
+      <DependentUpon>frmRedigeraBehörighet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraKonto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRedigeraKonto.Designer.cs">
+      <DependentUpon>frmRedigeraKonto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmRedigeraKund.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +196,12 @@
     <EmbeddedResource Include="Forms\frmRedigeraAktivitet.resx">
       <DependentUpon>frmRedigeraAktivitet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraBehörighet.resx">
+      <DependentUpon>frmRedigeraBehörighet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRedigeraKonto.resx">
+      <DependentUpon>frmRedigeraKonto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRedigeraKund.resx">
       <DependentUpon>frmRedigeraKund.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyProdukt.resx">
       <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistreraNyttKonto.resx">
+      <DependentUpon>frmRegistreraNyttKonto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSchablonkostnad.resx">
       <DependentUpon>frmSchablonkostnad.cs</DependentUpon>

@@ -26,7 +26,7 @@ namespace PresentationLayer1.Forms
         {
             tbKundID2.Text = kunden.KundID.ToString();
             tbKund2.Text = kunden.Namn;
-            cmbKundkategori2.Text = kunden.KundKategori.ToString();
+            lblKundkategori.Text = kunden.KundKategori.ToString();
         }
 
         public void btnTaBortKund_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace PresentationLayer1.Forms
         {
             var kundId = tbKundID2.Text;
             var kundNamn = tbKund2.Text;
-            var kundKategori = cmbKundkategori2.Text;
+            var kundKategori = lblKundkategori.Text;
 
             businessManager.UpdateKund(kundId, kundNamn, kundKategori);
         }

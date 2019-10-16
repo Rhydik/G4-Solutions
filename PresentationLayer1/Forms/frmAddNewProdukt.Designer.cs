@@ -156,9 +156,6 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Utvecklings- och förvaltningsavdelning",
-            "Driftavdelning"});
             this.comboBox3.Location = new System.Drawing.Point(16, 345);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(239, 21);
@@ -189,9 +186,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(273, 223);
+            this.button2.Location = new System.Drawing.Point(273, 226);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 29);
+            this.button2.Size = new System.Drawing.Size(145, 26);
             this.button2.TabIndex = 15;
             this.button2.Text = "Skapa ny Produktkategori";
             this.button2.UseVisualStyleBackColor = true;
@@ -201,7 +198,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(273, 280);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 28);
+            this.button3.Size = new System.Drawing.Size(145, 26);
             this.button3.TabIndex = 16;
             this.button3.Text = "Skapa ny Produktgrupp";
             this.button3.UseVisualStyleBackColor = true;

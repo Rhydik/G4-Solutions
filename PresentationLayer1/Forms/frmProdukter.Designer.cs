@@ -63,49 +63,44 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(828, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(552, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 32;
             this.label3.Text = "Avdelning";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(513, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(342, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 31;
             this.label2.Text = "Produkt";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(363, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(242, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 30;
             this.label1.Text = "ProduktID";
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(470, 126);
-            this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRensa.Location = new System.Drawing.Point(313, 82);
             this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(90, 35);
+            this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 29;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(369, 126);
-            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSök.Location = new System.Drawing.Point(246, 82);
             this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(90, 35);
+            this.btnSök.Size = new System.Drawing.Size(60, 23);
             this.btnSök.TabIndex = 28;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
@@ -113,35 +108,31 @@
             // cmbVäljAvdelning
             // 
             this.cmbVäljAvdelning.FormattingEnabled = true;
-            this.cmbVäljAvdelning.Location = new System.Drawing.Point(832, 78);
-            this.cmbVäljAvdelning.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbVäljAvdelning.Location = new System.Drawing.Point(555, 51);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
-            this.cmbVäljAvdelning.Size = new System.Drawing.Size(286, 28);
+            this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 27;
             this.cmbVäljAvdelning.Text = "Välj avdelning";
             // 
             // tbProdukt
             // 
-            this.tbProdukt.Location = new System.Drawing.Point(518, 78);
-            this.tbProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbProdukt.Location = new System.Drawing.Point(345, 51);
             this.tbProdukt.Name = "tbProdukt";
-            this.tbProdukt.Size = new System.Drawing.Size(139, 26);
+            this.tbProdukt.Size = new System.Drawing.Size(94, 20);
             this.tbProdukt.TabIndex = 26;
             // 
             // tbProduktID
             // 
-            this.tbProduktID.Location = new System.Drawing.Point(368, 78);
-            this.tbProduktID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbProduktID.Location = new System.Drawing.Point(245, 51);
             this.tbProduktID.Name = "tbProduktID";
-            this.tbProduktID.Size = new System.Drawing.Size(139, 26);
+            this.tbProduktID.Size = new System.Drawing.Size(94, 20);
             this.tbProduktID.TabIndex = 25;
             // 
             // btnRegistreraNyProdukt
             // 
-            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(953, 555);
-            this.btnRegistreraNyProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(635, 361);
             this.btnRegistreraNyProdukt.Name = "btnRegistreraNyProdukt";
-            this.btnRegistreraNyProdukt.Size = new System.Drawing.Size(168, 62);
+            this.btnRegistreraNyProdukt.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyProdukt.TabIndex = 24;
             this.btnRegistreraNyProdukt.Text = "Registrera ny produkt";
             this.btnRegistreraNyProdukt.UseVisualStyleBackColor = true;
@@ -149,10 +140,9 @@
             // 
             // btnRedigeraProdukt
             // 
-            this.btnRedigeraProdukt.Location = new System.Drawing.Point(764, 555);
-            this.btnRedigeraProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRedigeraProdukt.Location = new System.Drawing.Point(509, 361);
             this.btnRedigeraProdukt.Name = "btnRedigeraProdukt";
-            this.btnRedigeraProdukt.Size = new System.Drawing.Size(180, 63);
+            this.btnRedigeraProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraProdukt.TabIndex = 23;
             this.btnRedigeraProdukt.Text = "Redigera produkt";
             this.btnRedigeraProdukt.UseVisualStyleBackColor = true;
@@ -160,12 +150,12 @@
             // dgvProdukter
             // 
             this.dgvProdukter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdukter.Location = new System.Drawing.Point(369, 182);
-            this.dgvProdukter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvProdukter.Location = new System.Drawing.Point(246, 118);
             this.dgvProdukter.Name = "dgvProdukter";
             this.dgvProdukter.RowHeadersWidth = 62;
-            this.dgvProdukter.Size = new System.Drawing.Size(752, 365);
+            this.dgvProdukter.Size = new System.Drawing.Size(564, 237);
             this.dgvProdukter.TabIndex = 20;
+            this.dgvProdukter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdukter_CellContentClick);
             // 
             // panel1
             // 
@@ -181,19 +171,17 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(14, 14);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(9, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(282, 665);
+            this.panel1.Size = new System.Drawing.Size(188, 432);
             this.panel1.TabIndex = 33;
             // 
             // btnResultat
             // 
             this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResultat.Location = new System.Drawing.Point(22, 586);
-            this.btnResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnResultat.Location = new System.Drawing.Point(15, 381);
             this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(112, 35);
+            this.btnResultat.Size = new System.Drawing.Size(75, 23);
             this.btnResultat.TabIndex = 2;
             this.btnResultat.Text = "Resultat";
             this.btnResultat.UseVisualStyleBackColor = true;
@@ -201,10 +189,9 @@
             // btnPrognostiseringIntäkter
             // 
             this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(22, 542);
-            this.btnPrognostiseringIntäkter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(15, 352);
             this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(212, 35);
+            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
@@ -212,10 +199,9 @@
             // btnBudgeteratResultat
             // 
             this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudgeteratResultat.Location = new System.Drawing.Point(22, 495);
-            this.btnBudgeteratResultat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBudgeteratResultat.Location = new System.Drawing.Point(15, 322);
             this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(184, 35);
+            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
@@ -223,10 +209,9 @@
             // btnKostnadsbudgetering
             // 
             this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(22, 422);
-            this.btnKostnadsbudgetering.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 274);
             this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
-            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(237, 35);
+            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
             this.btnKostnadsbudgetering.TabIndex = 2;
             this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
@@ -234,10 +219,9 @@
             // btnIntäktsbudgeteringProdukt
             // 
             this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(22, 377);
-            this.btnIntäktsbudgeteringProdukt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 245);
             this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
-            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(237, 35);
+            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
             this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
             this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
@@ -245,10 +229,9 @@
             // btnIntäktsbudgeteringKund
             // 
             this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(22, 332);
-            this.btnIntäktsbudgeteringKund.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 216);
             this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
-            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(237, 35);
+            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
             this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
             this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
@@ -256,10 +239,9 @@
             // btnBehörighet
             // 
             this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBehörighet.Location = new System.Drawing.Point(22, 260);
-            this.btnBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBehörighet.Location = new System.Drawing.Point(15, 169);
             this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(160, 35);
+            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
@@ -267,10 +249,9 @@
             // btnSchablonkostnad
             // 
             this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchablonkostnad.Location = new System.Drawing.Point(22, 215);
-            this.btnSchablonkostnad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSchablonkostnad.Location = new System.Drawing.Point(15, 140);
             this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(160, 35);
+            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
@@ -278,10 +259,9 @@
             // btnAktiviteter
             // 
             this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktiviteter.Location = new System.Drawing.Point(22, 169);
-            this.btnAktiviteter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAktiviteter.Location = new System.Drawing.Point(15, 110);
             this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(160, 35);
+            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
@@ -289,10 +269,9 @@
             // btnPersonal
             // 
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Location = new System.Drawing.Point(22, 126);
-            this.btnPersonal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPersonal.Location = new System.Drawing.Point(15, 82);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(160, 35);
+            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
@@ -300,10 +279,9 @@
             // btnProdukter
             // 
             this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdukter.Location = new System.Drawing.Point(22, 82);
-            this.btnProdukter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnProdukter.Location = new System.Drawing.Point(15, 53);
             this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(160, 35);
+            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
@@ -312,10 +290,9 @@
             // btnKunder
             // 
             this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKunder.Location = new System.Drawing.Point(22, 35);
-            this.btnKunder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKunder.Location = new System.Drawing.Point(15, 23);
             this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(160, 35);
+            this.btnKunder.Size = new System.Drawing.Size(107, 23);
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
@@ -323,47 +300,43 @@
             // 
             // tbProduktgrupp
             // 
-            this.tbProduktgrupp.Location = new System.Drawing.Point(668, 78);
-            this.tbProduktgrupp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbProduktgrupp.Location = new System.Drawing.Point(445, 51);
             this.tbProduktgrupp.Name = "tbProduktgrupp";
-            this.tbProduktgrupp.Size = new System.Drawing.Size(139, 26);
+            this.tbProduktgrupp.Size = new System.Drawing.Size(94, 20);
             this.tbProduktgrupp.TabIndex = 34;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(663, 49);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(442, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 35;
             this.label4.Text = "Produktgrupp";
             // 
             // btnExportera
             // 
-            this.btnExportera.Location = new System.Drawing.Point(555, 557);
-            this.btnExportera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnExportera.Location = new System.Drawing.Point(370, 362);
             this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(180, 63);
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 50;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
             // 
             // btnSkrivUt
             // 
-            this.btnSkrivUt.Location = new System.Drawing.Point(367, 557);
-            this.btnSkrivUt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSkrivUt.Location = new System.Drawing.Point(245, 362);
             this.btnSkrivUt.Name = "btnSkrivUt";
-            this.btnSkrivUt.Size = new System.Drawing.Size(180, 63);
+            this.btnSkrivUt.Size = new System.Drawing.Size(120, 41);
             this.btnSkrivUt.TabIndex = 49;
             this.btnSkrivUt.Text = "Skriv ut";
             this.btnSkrivUt.UseVisualStyleBackColor = true;
             // 
             // frmProdukter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(825, 450);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnSkrivUt);
             this.Controls.Add(this.label4);
@@ -380,10 +353,10 @@
             this.Controls.Add(this.btnRegistreraNyProdukt);
             this.Controls.Add(this.btnRedigeraProdukt);
             this.Controls.Add(this.dgvProdukter);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmProdukter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProdukter";
+            this.Text = "Produkter || G4 Solutions Economy System";
+            this.Load += new System.EventHandler(this.frmProdukter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

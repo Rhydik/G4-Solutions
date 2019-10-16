@@ -38,6 +38,10 @@ namespace PresentationLayer1.Forms
             comboBox2.DataSource = grupp;
             comboBox2.ValueMember = "Namn";
             comboBox2.DisplayMember = "Namn";
+
+            comboBox3.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
+            comboBox3.Items.Insert(1, "Driftavdelning");
+            comboBox3.SelectedIndex = 0;
         }
 
         private void newProduktNametxt_TextChanged(object sender, EventArgs e)
@@ -88,23 +92,16 @@ namespace PresentationLayer1.Forms
         {
 
 
-            string kod = newProduktkodtxt.Text;
+            string produktID = newProduktkodtxt.Text;
             string namn = newProduktNametxt.Text;
-            Console.WriteLine(kod);
-            Console.WriteLine(namn);
 
-            var valkategori = comboBox1.GetItemText(comboBox1.SelectedItem);
-            Console.WriteLine(valkategori);
+            var kategori = comboBox1.GetItemText(comboBox1.SelectedItem);
 
-            var valgrupp = comboBox2.GetItemText(comboBox2.SelectedItem);
-            Console.WriteLine(valgrupp);
+            var grupp = comboBox2.GetItemText(comboBox2.SelectedItem);
 
-            var valavd = comboBox3.GetItemText(comboBox3.SelectedItem);
-            Console.WriteLine(valavd);
+            var avdelning = comboBox3.GetItemText(comboBox3.SelectedItem);
 
-            businessManager.AddProdukt(kod, namn, valkategori, valgrupp, valavd);
-
-
+            businessManager.AddProdukt(produktID, namn, kategori, grupp, avdelning);
 
         }
 

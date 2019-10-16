@@ -118,7 +118,7 @@ namespace BusinessLayer
 
         public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
         {
-            repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp);
+            //repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp);
         }
     }
 }

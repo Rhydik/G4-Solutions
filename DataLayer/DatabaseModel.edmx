@@ -87,6 +87,10 @@
       <End Role="Avdelning" EntitySet="Avdelning" />
       <End Role="KontoAvdelning" EntitySet="KontoAvdelning" />
     </AssociationSet>
+    <AssociationSet Name="ProduktAvdelning" Association="DatabaseModel.Store.ProduktAvdelning">
+      <End Role="Produkt" EntitySet="Produkt" />
+      <End Role="Avdelning" EntitySet="Avdelning" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Prognos">
     <Key>
@@ -137,6 +141,7 @@
     <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="true" />
     <Property Name="Produktkategori_ProduktkategoriID" Type="int" Nullable="false" />
     <Property Name="Produktgrupp_ProduktgruppID" Type="int" Nullable="false" />
+    <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personal">
     <Key>
@@ -357,6 +362,18 @@
       </Principal>
       <Dependent Role="Direktkostnad">
         <PropertyRef Name="Konto_KontoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProduktAvdelning">
+    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
+    <End Role="Avdelning" Type="DatabaseModel.Store.Avdelning" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Avdelning">
+        <PropertyRef Name="AvdelningID" />
+      </Principal>
+      <Dependent Role="Produkt">
+        <PropertyRef Name="Avdelning_AvdelningID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -951,6 +968,14 @@
       </EndProperty>
       <EndProperty Name="Avdelning">
         <ScalarProperty Name="AvdelningID" ColumnName="Avdelning_AvdelningID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProduktAvdelning" TypeName="DatabaseModel.ProduktAvdelning" StoreEntitySet="Produkt">
+      <EndProperty Name="Avdelning">
+        <ScalarProperty Name="AvdelningID" ColumnName="Avdelning_AvdelningID" />
+      </EndProperty>
+      <EndProperty Name="Produkt">
+        <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

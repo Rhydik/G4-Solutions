@@ -264,9 +264,6 @@
             this.cmbKundkategori.BackColor = System.Drawing.SystemColors.Window;
             this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Items.AddRange(new object[] {
-            "Offentlig",
-            "Näringsliv"});
             this.cmbKundkategori.Location = new System.Drawing.Point(828, 80);
             this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbKundkategori.Name = "cmbKundkategori";

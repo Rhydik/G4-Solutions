@@ -40,6 +40,7 @@
             this.btnTillsätt = new System.Windows.Forms.Button();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
+            this.lblRedigeraBehörighet = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,12 +156,23 @@
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
             // 
+            // lblRedigeraBehörighet
+            // 
+            this.lblRedigeraBehörighet.AutoSize = true;
+            this.lblRedigeraBehörighet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedigeraBehörighet.Location = new System.Drawing.Point(26, 21);
+            this.lblRedigeraBehörighet.Name = "lblRedigeraBehörighet";
+            this.lblRedigeraBehörighet.Size = new System.Drawing.Size(183, 22);
+            this.lblRedigeraBehörighet.TabIndex = 33;
+            this.lblRedigeraBehörighet.Text = "Redigera behörighet";
+            // 
             // frmRedigeraBehörighet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(641, 386);
+            this.Controls.Add(this.lblRedigeraBehörighet);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnTillsätt);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button btnTillsätt;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Button btnSpara;
+        private System.Windows.Forms.Label lblRedigeraBehörighet;
     }
 }

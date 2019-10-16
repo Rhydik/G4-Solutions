@@ -39,7 +39,7 @@
             this.btnSpara = new System.Windows.Forms.Button();
             this.lblPersonnummer = new System.Windows.Forms.Label();
             this.lblNamn = new System.Windows.Forms.Label();
-            this.lblRegistreaNyPersonal = new System.Windows.Forms.Label();
+            this.lblRegistreraNyPersonal = new System.Windows.Forms.Label();
             this.tbNamn = new System.Windows.Forms.TextBox();
             this.tbPersonnummer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -147,15 +147,15 @@
             this.lblNamn.TabIndex = 61;
             this.lblNamn.Text = "Namn";
             // 
-            // lblRegistreaNyPersonal
+            // lblRegistreraNyPersonal
             // 
-            this.lblRegistreaNyPersonal.AutoSize = true;
-            this.lblRegistreaNyPersonal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistreaNyPersonal.Location = new System.Drawing.Point(11, 23);
-            this.lblRegistreaNyPersonal.Name = "lblRegistreaNyPersonal";
-            this.lblRegistreaNyPersonal.Size = new System.Drawing.Size(153, 22);
-            this.lblRegistreaNyPersonal.TabIndex = 60;
-            this.lblRegistreaNyPersonal.Text = "Lägg till personal";
+            this.lblRegistreraNyPersonal.AutoSize = true;
+            this.lblRegistreraNyPersonal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistreraNyPersonal.Location = new System.Drawing.Point(11, 23);
+            this.lblRegistreraNyPersonal.Name = "lblRegistreraNyPersonal";
+            this.lblRegistreraNyPersonal.Size = new System.Drawing.Size(200, 22);
+            this.lblRegistreraNyPersonal.TabIndex = 60;
+            this.lblRegistreraNyPersonal.Text = "Registrera ny personal";
             // 
             // tbNamn
             // 
@@ -207,7 +207,7 @@
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.lblNamn);
-            this.Controls.Add(this.lblRegistreaNyPersonal);
+            this.Controls.Add(this.lblRegistreraNyPersonal);
             this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.tbPersonnummer);
             this.Name = "frmRegistreraNyPersonal";
@@ -231,7 +231,7 @@
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Label lblPersonnummer;
         private System.Windows.Forms.Label lblNamn;
-        private System.Windows.Forms.Label lblRegistreaNyPersonal;
+        private System.Windows.Forms.Label lblRegistreraNyPersonal;
         private System.Windows.Forms.TextBox tbNamn;
         private System.Windows.Forms.TextBox tbPersonnummer;
         private System.Windows.Forms.Label label1;

@@ -44,5 +44,19 @@ namespace PresentationLayer1
                 Hide();
             frmAktiviteter.Show();
         }
+
+        private void btnSchablonkostnad_Click(object sender, EventArgs e)
+        {
+            Forms.frmSchablonkostnad frmSchablonkostnad = new Forms.frmSchablonkostnad();
+            Hide();
+            frmSchablonkostnad.Show();
+        }
+
+        private void btnBehörighet_Click(object sender, EventArgs e)
+        {
+            Forms.frmBehörighet frmbehörighet = new Forms.frmBehörighet();
+            Hide();
+            frmbehörighet.Show();
+        }
     }
 }

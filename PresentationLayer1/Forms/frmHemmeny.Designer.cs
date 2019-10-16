@@ -136,6 +136,7 @@
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
+            this.btnBehörighet.Click += new System.EventHandler(this.btnBehörighet_Click);
             // 
             // btnSchablonkostnad
             // 
@@ -146,6 +147,7 @@
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
+            this.btnSchablonkostnad.Click += new System.EventHandler(this.btnSchablonkostnad_Click);
             // 
             // btnAktiviteter
             // 

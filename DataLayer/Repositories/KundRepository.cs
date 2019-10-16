@@ -113,5 +113,26 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-    }
+
+        public List<KundKategoriDTO> GetAllKundKategori()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.KundKategori
+                            select new KundKategoriDTO { KundKategoriID = x.KundKategoriID, Namn = x.Namn };
+
+                return query.ToList();
+            }
+        }
+
+        public void AddKundKategori(string namn)
+        {
+            using (var db = new DataContext())
+            {
+                var kundKategori = new KundKategori { Namn = namn };
+                db.KundKategori.Add(kundKategori);
+                db.SaveChanges();
+            }
+        }
+    } 
 }

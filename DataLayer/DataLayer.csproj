@@ -67,6 +67,7 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\AvdelningDTO.cs" />
+    <Compile Include="DTO\KundKategoriDTO.cs" />
     <Compile Include="DTO\ProduktgruppDTO.cs" />
     <Compile Include="DTO\ProduktDTO.cs" />
     <Compile Include="DTO\KundDTO.cs" />

@@ -63,6 +63,17 @@ namespace BusinessLayer
             repositoryFacade.kundRepository.AddKund(id, namn, kategori);
         }
 
+        //KundKategori
+        public void AddKundKategori(string namn)
+        {
+            repositoryFacade.kundRepository.AddKundKategori(namn);
+        }
+
+        public List<KundKategoriDTO> GetAllKundKategori()
+        {
+            return repositoryFacade.kundRepository.GetAllKundKategori();
+        }
+
         //Produkter
         public List<ProduktDTO> GetAllProdukter()
         {

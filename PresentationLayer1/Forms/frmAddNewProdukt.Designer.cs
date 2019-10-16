@@ -156,10 +156,14 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Utvecklings- och förvaltningsavdelning",
+            "Driftavdelning"});
             this.comboBox3.Location = new System.Drawing.Point(16, 345);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(239, 21);
             this.comboBox3.TabIndex = 12;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // label7
             // 

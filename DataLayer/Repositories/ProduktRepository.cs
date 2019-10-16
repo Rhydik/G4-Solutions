@@ -36,9 +36,7 @@ namespace DataLayer
                                         where x.Namn == avdelning
                                         select x).FirstOrDefault();
 
-
-
-                var produkt = new Produkt {Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp};
+                var produkt = new Produkt {Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp, Avdelning = produktAvdelning};
                 db.Produkt.Add(produkt);
 
                 db.SaveChanges();

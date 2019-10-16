@@ -121,9 +121,9 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
 
-        public void AddProdukt(string produktKod, string namn, string kategori, string grupp)
+        public void AddProdukt(string produktKod, string namn, string kategori, string grupp, string avdelning)
         {
-            //repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp);
+            repositoryFacade.produktRepository.AddProdukt(produktKod, namn, kategori, grupp, avdelning);
         }
     }
 }

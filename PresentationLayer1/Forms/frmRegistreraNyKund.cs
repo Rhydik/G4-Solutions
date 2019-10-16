@@ -17,6 +17,11 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
             businessManager = new BusinessLayer.BusinessManager();
+
+            var kategori = businessManager.GetAllKundKategori();
+            cmbKundkategori.DataSource = kategori;
+            cmbKundkategori.ValueMember = "Namn";
+            cmbKundkategori.DisplayMember = "Namn";
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
@@ -37,9 +42,9 @@ namespace PresentationLayer1.Forms
 
         private void btnSkapaNyKundkategori_Click(object sender, EventArgs e)
         {
-            //Ta in Data från textbox
+            var kundKategori = cmbKundkategori.Text;
 
-            //Skapa kund kategori
+            businessManager.AddKundKategori(kundKategori);
         }
 
      

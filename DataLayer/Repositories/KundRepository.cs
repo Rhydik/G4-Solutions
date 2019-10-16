@@ -131,6 +131,7 @@ namespace DataLayer
             {
                 var kundKategori = new KundKategori { Namn = namn };
                 db.KundKategori.Add(kundKategori);
+                db.SaveChanges();
             }
         }
     } 

@@ -53,9 +53,9 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetKunderBySearch(id, namn, kategori);
         }
 
-        public void UpdateKund(string kundId, string kundNamn, string kundKategori)
+        public void UpdateKund(KundDTO oldKund, string kundId, string kundNamn, string kundKategori)
         {
-            repositoryFacade.kundRepository.UpdateKund(kundId, kundNamn, kundKategori);
+            repositoryFacade.kundRepository.UpdateKund(oldKund, kundId, kundNamn, kundKategori);
         }
 
         public void AddKund(string id, string namn, string kategori)

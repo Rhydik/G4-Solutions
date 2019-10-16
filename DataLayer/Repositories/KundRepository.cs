@@ -99,7 +99,7 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-        public void UpdateKund(string id, string namn, string kategori)
+        public void UpdateKund(KundDTO oldKund, string id, string namn, string kategori)
         {
             using (var db = new DataContext())
             {
@@ -107,7 +107,12 @@ namespace DataLayer
                                     where x.Namn == kategori
                                     select x).FirstOrDefault();
 
+                var tempKund = (from x in db.Kund
+                               where x.KundID == oldKund.KundID
+                               select x).FirstOrDefault();
+
                 var kund = new Kund { KundID = id, Namn = namn, KundKategori = kundKategori };
+                db.Kund.Remove(tempKund);
                 db.Kund.Add(kund);
 
                 db.SaveChanges();

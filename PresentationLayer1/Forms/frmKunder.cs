@@ -25,10 +25,15 @@ namespace PresentationLayer1
 
             kunder = businessManager.GetAllKunder();
 
-            dgvKunder.DataSource = kunder; 
+            dgvKunder.DataSource = kunder;
             //dataGridView.CellBeginEdit += dgv_CellBeginEdit;
             //dataGridView.CellValidating += dgv_CellValidating;
             //dataGridView.CellEndEdit += dgv_CellEndEdit;
+
+            var kategori = businessManager.GetAllKundKategori();
+            cmbKundkategori.DataSource = kategori;
+            cmbKundkategori.ValueMember = "Namn";
+            cmbKundkategori.DisplayMember = "Namn";
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -85,7 +90,7 @@ namespace PresentationLayer1
             if (dgvKunder.CurrentRow.DataBoundItem != null)
             {
                 this.Visible = !this.Visible;
-                Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dgvKunder.CurrentRow.DataBoundItem);
+                Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((KundDTO)dgvKunder.CurrentRow.DataBoundItem);
                 frmRedigeraKund.Show();
             }
             else

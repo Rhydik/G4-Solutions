@@ -20,11 +20,11 @@ namespace PresentationLayer1.Forms
         public frmRedigeraPersonal(PersonalDTO personalen)
         {
             InitializeComponent();
-            Load();
             personal = personalen;
+            Load();
         }
 
-        public void Load()
+        private void Load()
         {
             tbNamn.Text = personal.Namn;
             tbPersNr.Text = personal.PersonNr;

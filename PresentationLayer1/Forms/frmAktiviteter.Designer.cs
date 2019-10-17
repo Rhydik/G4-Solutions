@@ -194,6 +194,7 @@
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
+            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
             // lblAvdelning
             // 
@@ -209,9 +210,9 @@
             this.lblBenämning.AutoSize = true;
             this.lblBenämning.Location = new System.Drawing.Point(331, 34);
             this.lblBenämning.Name = "lblBenämning";
-            this.lblBenämning.Size = new System.Drawing.Size(60, 13);
+            this.lblBenämning.Size = new System.Drawing.Size(35, 13);
             this.lblBenämning.TabIndex = 45;
-            this.lblBenämning.Text = "Benämning";
+            this.lblBenämning.Text = "Namn";
             // 
             // lblAktivitetsID
             // 
@@ -248,6 +249,7 @@
             this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 41;
             this.cmbVäljAvdelning.Text = "Välj avdelning";
+            this.cmbVäljAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbVäljAvdelning_SelectedIndexChanged);
             // 
             // tbBenämning
             // 
@@ -255,6 +257,7 @@
             this.tbBenämning.Name = "tbBenämning";
             this.tbBenämning.Size = new System.Drawing.Size(94, 20);
             this.tbBenämning.TabIndex = 40;
+            this.tbBenämning.TextChanged += new System.EventHandler(this.tbBenämning_TextChanged);
             // 
             // tbAktivitetsID
             // 
@@ -262,6 +265,7 @@
             this.tbAktivitetsID.Name = "tbAktivitetsID";
             this.tbAktivitetsID.Size = new System.Drawing.Size(94, 20);
             this.tbAktivitetsID.TabIndex = 39;
+            this.tbAktivitetsID.TextChanged += new System.EventHandler(this.tbAktivitetsID_TextChanged);
             // 
             // btnRegistreraNyAktivitet
             // 
@@ -271,6 +275,7 @@
             this.btnRegistreraNyAktivitet.TabIndex = 38;
             this.btnRegistreraNyAktivitet.Text = "Registrera ny aktivitet";
             this.btnRegistreraNyAktivitet.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyAktivitet.Click += new System.EventHandler(this.btnRegistreraNyAktivitet_Click);
             // 
             // btnRedigeraAktivitet
             // 
@@ -280,6 +285,7 @@
             this.btnRedigeraAktivitet.TabIndex = 37;
             this.btnRedigeraAktivitet.Text = "Redigera aktivitet";
             this.btnRedigeraAktivitet.UseVisualStyleBackColor = true;
+            this.btnRedigeraAktivitet.Click += new System.EventHandler(this.btnRedigeraAktivitet_Click);
             // 
             // dgvAktiviteter
             // 

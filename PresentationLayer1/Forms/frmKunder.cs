@@ -95,7 +95,7 @@ namespace PresentationLayer1
             }
             else
             {
-                return;
+                MessageBox.Show("Du måste välja en kund");
             }
             //this.Visible = !this.Visible;
             //Forms.frmRedigeraKund frmRedigeraKund = new Forms.frmRedigeraKund((DataLayer.Kund)dataGridView.CurrentRow.DataBoundItem);

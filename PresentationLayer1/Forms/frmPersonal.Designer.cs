@@ -135,6 +135,7 @@
             this.gvPersonal.RowHeadersWidth = 62;
             this.gvPersonal.Size = new System.Drawing.Size(501, 237);
             this.gvPersonal.TabIndex = 21;
+            this.gvPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPersonal_CellContentClick);
             // 
             // panel1
             // 

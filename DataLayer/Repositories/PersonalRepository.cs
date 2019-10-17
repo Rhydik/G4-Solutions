@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,60 +20,69 @@ namespace DataLayer
             }
         }
 
-        public List<Personal> GetAllPersonal()
+        public List<PersonalDTO> GetAllPersonal()
         {
             using (var db = new DataContext())
             {
-                return db.Personal.ToList();
+                var query = from x in db.Personal
+                               select new PersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, PersonNr = x.PersonNr, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag };
+                               
+
+                return query.ToList();
             }
         }
 
-        public List<Personal> GetPersonalByPersNr(string persNr)
+        public List<PersonalDTO> GetPersonalByPersNr(string persNr)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.Personal
                             where x.PersonNr.StartsWith(persNr)
-                            select x;
+                            select new PersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, PersonNr = x.PersonNr, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag };
+
                 return query.ToList();
             }
         }
 
-        public List<Personal> GetPersonalByNamn(string namn)
+        public List<PersonalDTO> GetPersonalByNamn(string namn)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.Personal
                             where x.Namn.StartsWith(namn)
-                            select x;
+                            select new PersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, PersonNr = x.PersonNr, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag };
+
                 return query.ToList();
             }
         }
 
-        public void AddPersonal(Personal personal)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön)
         {
             using (var db = new DataContext())
             {
-                var personalen = new Personal();
-                personalen.Sysselsättningsgrad = personal.Sysselsättningsgrad;
-                personalen.Namn = personal.Namn;
-                personalen.PersonNr = personal.PersonNr;
-                personalen.Vakansavdrag = personal.Vakansavdrag;
-                personalen.Behörighet = personal.Behörighet;
-                personalen.Lösenord = personal.Lösenord;
-                personalen.Avdelning = personal.Avdelning;
-                personalen.AntalTimmar = personal.AntalTimmar;
-                personalen.Behörighet = personal.Behörighet;
-                personalen.Månadslön = personal.Månadslön;
-                personalen.PersonalProdukt = personal.PersonalProdukt;
-                personalen.PersonalID = personal.PersonalID;
+                
 
-                db.Personal.Add(personalen);
+                var personal = new Personal() { 
+                    Sysselsättningsgrad = sysselsättningsgrad,
+                    Namn = namn,
+                    PersonNr = personNr,
+                    Vakansavdrag = vakansavdrag,
+                    Behörighet = "Basanvändare",
+                    Lösenord = lösenord,
+                    //Avdelning = personal.Avdelning,
+                    //AntalTimmar = personal.AntalTimmar,
+                    Månadslön = månadslön,
+                    //PersonalProdukt = personal.PersonalProdukt,
+                    //PersonalID = personal.PersonalID
+                };
+
+
+                db.Personal.Add(personal);
                 db.SaveChanges();
             }
         }
 
-        public void RemovePersonal(Personal personal)
+        public void RemovePersonal(PersonalDTO personal)
         {
             using (var db = new DataContext())
             {
@@ -82,11 +92,11 @@ namespace DataLayer
             }
         }
 
-        public void UpdatePersonal(Personal personal)
+        public void UpdatePersonal(PersonalDTO personal)
         {
             using (var db = new DataContext())
             {
-                var query = db.Personal.Where(x => x.PersonNr == personal.PersonNr).FirstOrDefault();
+                var query = db.Personal.Where(x => x.PersonalID == personal.PersonalID).FirstOrDefault();
 
                 query.PersonNr = personal.PersonNr;
                 query.Namn = personal.Namn;

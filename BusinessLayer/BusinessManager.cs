@@ -25,7 +25,7 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
-        public List<Personal> GetAllPersonal()
+        public List<PersonalDTO> GetAllPersonal()
         {
             return repositoryFacade.personalRepository.GetAllPersonal();
         }
@@ -35,19 +35,19 @@ namespace BusinessLayer
             repositoryFacade.kundRepository.RemoveKund(kundId);
         }
 
-        public List<Personal> GetPersonalByPersNr(string persNr)
+        public List<PersonalDTO> GetPersonalByPersNr(string persNr)
         {
             return repositoryFacade.personalRepository.GetPersonalByPersNr(persNr);
         }
 
-        public void RemovePersonal(Personal personal)
+        public void RemovePersonal(PersonalDTO personal)
         {
             repositoryFacade.personalRepository.RemovePersonal(personal);
         }
 
-        public void AddPersonal(Personal personal)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön)
         {
-            repositoryFacade.personalRepository.AddPersonal(personal);
+            repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
         }
 
         public List<KundDTO> GetKunderByID(string id)
@@ -60,12 +60,12 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
 
-        public List<Personal> GetPersonalByNamn(string namn)
+        public List<PersonalDTO> GetPersonalByNamn(string namn)
         {
             return repositoryFacade.personalRepository.GetPersonalByNamn(namn);
         }
 
-        public void UpdatePersonal(Personal personal)
+        public void UpdatePersonal(PersonalDTO personal)
         {
             repositoryFacade.personalRepository.UpdatePersonal(personal);
         }

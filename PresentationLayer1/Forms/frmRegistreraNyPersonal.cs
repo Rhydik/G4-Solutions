@@ -29,16 +29,15 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            Personal personal = new Personal();
+            var personNr = tbPersonnummer.Text;
+            var namn = tbNamn.Text;
+            var månadslön = int.Parse(tbMånadslön.Text);
+            var sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
+            var vakansavdrag = int.Parse(tbVakansavdrag.Text);
+            var lösenord = tbLösenord.Text;
 
-            personal.PersonNr = tbPersonnummer.Text;
-            personal.Namn = tbNamn.Text;
-            personal.Månadslön = int.Parse(tbMånadslön.Text);
-            personal.Sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
-            personal.Vakansavdrag = int.Parse(tbVakansavdrag.Text);
-            personal.Lösenord = tbLösenord.Text;
 
-            businessManager.AddPersonal(personal);
+            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
         }
     }
 }

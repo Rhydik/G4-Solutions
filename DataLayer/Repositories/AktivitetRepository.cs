@@ -30,6 +30,16 @@ namespace DataLayer
             }
         }
 
+        public void RemoveAktivitet(AktivitetDTO aktivitet)
+        {
+            using (var db = new DataContext())
+            {
+                var aktiviteten = db.Aktivitet.Where(x => x.AktivitetID == aktivitet.AktivitetID).FirstOrDefault();
+                db.Aktivitet.Remove(aktiviteten);
+                db.SaveChanges();
+            }
+        }
+
         public object GetAktivitetByNamn(string aktivitetNamn)
         {
             using (var db = new DataContext())
@@ -40,6 +50,11 @@ namespace DataLayer
 
                 return query.ToList();
             }
+        }
+
+        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
+        {
+            return;
         }
 
         public void AddAktivitet(string aktvitetsId, string namn, string avdelning)

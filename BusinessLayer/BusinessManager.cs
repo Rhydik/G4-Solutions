@@ -25,6 +25,11 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
+        public void RemoveAktivitet(AktivitetDTO aktivitet)
+        {
+            repositoryFacade.aktivitetRepository.RemoveAktivitet(aktivitet);
+        }
+
         public List<AktivitetDTO> GetAllAktiviteter()
         {
             return repositoryFacade.aktivitetRepository.GetAllAktiviteter();
@@ -43,6 +48,11 @@ namespace BusinessLayer
         public void RemoveKund(string kundId)
         {
             repositoryFacade.kundRepository.RemoveKund(kundId);
+        }
+
+        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
+        {
+            repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
         }
 
         public object GetAktivitetById(string aktivitetId)

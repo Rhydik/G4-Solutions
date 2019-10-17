@@ -71,7 +71,7 @@ namespace PresentationLayer1.Forms
         private void btnRedigeraAktivitet_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            frmRedigeraAktivitet frmRedigeraAktivitet = new frmRedigeraAktivitet();
+            frmRedigeraAktivitet frmRedigeraAktivitet = new frmRedigeraAktivitet((AktivitetDTO)dgvAktiviteter.CurrentRow.DataBoundItem);
             frmRedigeraAktivitet.Show();
         }
 

@@ -56,13 +56,14 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataContext.cs" />
+    <Compile Include="DTO\AktivitetDTO.cs" />
     <Compile Include="AntalTimmar.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Avdelning.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>

@@ -25,7 +25,17 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
-        public List<PersonalDTO> GetAllPersonal()
+        public List<AktivitetDTO> GetAllAktiviteter()
+        {
+            return repositoryFacade.aktivitetRepository.GetAllAktiviteter();
+        }
+
+        public void AddAktivitet(string aktvitetsId, string namn, string avdelning)
+        {
+            repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
+        }
+
+        public List<Personal> GetAllPersonal()
         {
             return repositoryFacade.personalRepository.GetAllPersonal();
         }
@@ -35,7 +45,12 @@ namespace BusinessLayer
             repositoryFacade.kundRepository.RemoveKund(kundId);
         }
 
-        public List<PersonalDTO> GetPersonalByPersNr(string persNr)
+        public object GetAktivitetById(string aktivitetId)
+        {
+            return repositoryFacade.aktivitetRepository.GetAktivitetById(aktivitetId);
+        }
+
+        public List<Personal> GetPersonalByPersNr(string persNr)
         {
             return repositoryFacade.personalRepository.GetPersonalByPersNr(persNr);
         }
@@ -50,6 +65,11 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
         }
 
+        public object GetAktivitetByNamn(string aktivitetNamn)
+        {
+            return repositoryFacade.aktivitetRepository.GetAktivitetByNamn(aktivitetNamn);
+        }
+
         public List<KundDTO> GetKunderByID(string id)
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
@@ -60,7 +80,12 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
 
-        public List<PersonalDTO> GetPersonalByNamn(string namn)
+        public object GetAktivitetByAvdelning(string avdelning)
+        {
+            return repositoryFacade.aktivitetRepository.GetAktivitetByAvdelning(avdelning);
+        }
+
+        public List<Personal> GetPersonalByNamn(string namn)
         {
             return repositoryFacade.personalRepository.GetPersonalByNamn(namn);
         }

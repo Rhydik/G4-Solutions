@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/16/2019 16:25:36
--- Generated from EDMX file: C:\Users\look_\source\repos\G4-Solutions\DataLayer\DatabaseModel.edmx
+-- Date Created: 10/17/2019 14:54:12
+-- Generated from EDMX file: C:\Users\look_\source\repos\Rhydik\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -64,6 +64,9 @@ IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Konto]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_KontoAvdelning_Avdelning]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[KontoAvdelning] DROP CONSTRAINT [FK_KontoAvdelning_Avdelning];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktAvdelning]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktAvdelning];
 GO
 
 -- --------------------------------------------------
@@ -224,7 +227,7 @@ GO
 
 -- Creating table 'Aktivitet'
 CREATE TABLE [dbo].[Aktivitet] (
-    [AktivitetID] int IDENTITY(1,1) NOT NULL,
+    [AktivitetID] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
     [Avdelning_AvdelningID] int  NOT NULL
 );

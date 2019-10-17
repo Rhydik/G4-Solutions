@@ -9,11 +9,10 @@
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=dbContext")
+            : base("name=DataContext2")
         {
         }
 
-        public virtual DbSet<Aktivitet> Aktivitet { get; set; }
         public virtual DbSet<AntalTimmar> AntalTimmar { get; set; }
         public virtual DbSet<Avdelning> Avdelning { get; set; }
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
@@ -25,6 +24,7 @@
         public virtual DbSet<Produktkategori> Produktkategori { get; set; }
         public virtual DbSet<Prognos> Prognos { get; set; }
         public virtual DbSet<schablonkostnad> schablonkostnad { get; set; }
+        public virtual DbSet<Aktivitet> Aktivitet { get; set; }
         public virtual DbSet<Kund> Kund { get; set; }
         public virtual DbSet<PersonalProdukt> PersonalProdukt { get; set; }
         public virtual DbSet<Produkt> Produkt { get; set; }

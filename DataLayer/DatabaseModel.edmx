@@ -192,7 +192,7 @@
     <Key>
       <PropertyRef Name="AktivitetID" />
     </Key>
-    <Property Name="AktivitetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AktivitetID" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
   </EntityType>
@@ -502,8 +502,8 @@
           </AssociationSet>
           <EntitySet Name="Aktivitet" EntityType="DatabaseModel.Aktivitet" />
           <AssociationSet Name="AktivitetAvdelning" Association="DatabaseModel.AktivitetAvdelning">
-            <End Role="Aktivitet" EntitySet="Aktivitet" />
-            <End Role="Avdelning" EntitySet="Avdelning" />
+            <End EntitySet="Aktivitet" Role="Aktivitet" />
+            <End EntitySet="Avdelning" Role="Avdelning" />
           </AssociationSet>
           <EntitySet Name="Direktkostnad" EntityType="DatabaseModel.Direktkostnad" />
           <EntitySet Name="Konto" EntityType="DatabaseModel.Konto" />
@@ -675,13 +675,13 @@
           <Key>
             <PropertyRef Name="AktivitetID" />
           </Key>
-          <Property Name="AktivitetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AktivitetID" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Aktivitet" ToRole="Avdelning" />
         </EntityType>
         <Association Name="AktivitetAvdelning">
-          <End Type="DatabaseModel.Aktivitet" Role="Aktivitet" Multiplicity="*" />
-          <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="1" />
+          <End Type="DatabaseModel.Aktivitet" Multiplicity="*" Role="Aktivitet" />
+          <End Type="DatabaseModel.Avdelning" Multiplicity="1" Role="Avdelning" />
         </Association>
         <EntityType Name="Direktkostnad">
           <Key>

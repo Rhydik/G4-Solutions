@@ -67,12 +67,14 @@
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // cmbAvdelning
             // 
             this.cmbAvdelning.FormattingEnabled = true;
             this.cmbAvdelning.Items.AddRange(new object[] {
-            "dwwd"});
+            "Försäljnings- och Marknadsavdelning(FO)",
+            "Administrativa avdelningen(AO)"});
             this.cmbAvdelning.Location = new System.Drawing.Point(12, 279);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(239, 21);
@@ -148,7 +150,7 @@
             this.Controls.Add(this.lblRegistreraNyAktivitet);
             this.Controls.Add(this.tbBenämning);
             this.Controls.Add(this.tbAktivitetsID);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistreraNyAktivitet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRegistreraNyAktivitet";

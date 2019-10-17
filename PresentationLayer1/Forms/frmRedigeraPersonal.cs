@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
+using DataLayer.DTO;
 
 namespace PresentationLayer1.Forms
 {
     public partial class frmRedigeraPersonal : Form
     {
         BusinessManager businessManager = new BusinessManager();
-        Personal personal = new Personal();
-        public frmRedigeraPersonal(Personal personalen)
+        PersonalDTO personal = new PersonalDTO();
+        public frmRedigeraPersonal(PersonalDTO personalen)
         {
             InitializeComponent();
             Load();

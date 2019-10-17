@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
+using DataLayer.DTO;
 
 namespace PresentationLayer1.Forms
 {
     public partial class frmPersonal : Form
     {
         BusinessManager businessManager = new BusinessManager();
-        private List<Personal> personal;
+        private List<PersonalDTO> personal;
 
         public frmPersonal()
         {
@@ -56,7 +57,7 @@ namespace PresentationLayer1.Forms
         private void btnRedigeraPersonal_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            Forms.frmRedigeraPersonal frmRedigeraPersonal = new Forms.frmRedigeraPersonal((Personal)gvPersonal.CurrentRow.DataBoundItem);
+            Forms.frmRedigeraPersonal frmRedigeraPersonal = new Forms.frmRedigeraPersonal((PersonalDTO)gvPersonal.CurrentRow.DataBoundItem);
             frmRedigeraPersonal.Show();
         }
 
@@ -65,6 +66,11 @@ namespace PresentationLayer1.Forms
             this.Visible = !this.Visible;
             Forms.frmRegistreraNyPersonal frmRegistreraNyPersonal = new Forms.frmRegistreraNyPersonal();
             frmRegistreraNyPersonal.Show();
+        }
+
+        private void gvPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -48,20 +48,20 @@ namespace PresentationLayer1.Forms
             frmKunder.Show();
         }
 
-        private void btnSparaKund_Click(object sender, EventArgs e)
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmKunder frmKunder = new frmKunder();
+            frmKunder.Show();
+        }
+
+        private void btnSpara_Click(object sender, EventArgs e)
         {
             var kundId = tbKundID2.Text;
             var kundNamn = tbKund2.Text;
             var kundKategori = cmbKundkategori.Text;
 
             businessManager.UpdateKund(kunden, kundId, kundNamn, kundKategori);
-        }
-
-        private void btnAvbryt_Click(object sender, EventArgs e)
-        {
-            this.Visible = !this.Visible;
-            frmKunder frmKunder = new frmKunder();
-            frmKunder.Show();
         }
     }
 }

@@ -50,6 +50,7 @@
             this.btnTaBortKund.TabIndex = 40;
             this.btnTaBortKund.Text = "Ta bort kund";
             this.btnTaBortKund.UseVisualStyleBackColor = false;
+            this.btnTaBortKund.Click += new System.EventHandler(this.btnTaBortKund_Click);
             // 
             // btnAvbryt
             // 
@@ -79,6 +80,7 @@
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // cmbKundkategori
             // 

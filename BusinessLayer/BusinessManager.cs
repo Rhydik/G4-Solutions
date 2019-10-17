@@ -35,7 +35,7 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
-        public List<Personal> GetAllPersonal()
+        public List<PersonalDTO> GetAllPersonal()
         {
             return repositoryFacade.personalRepository.GetAllPersonal();
         }
@@ -50,7 +50,7 @@ namespace BusinessLayer
             return repositoryFacade.aktivitetRepository.GetAktivitetById(aktivitetId);
         }
 
-        public List<Personal> GetPersonalByPersNr(string persNr)
+        public List<PersonalDTO> GetPersonalByPersNr(string persNr)
         {
             return repositoryFacade.personalRepository.GetPersonalByPersNr(persNr);
         }
@@ -85,7 +85,7 @@ namespace BusinessLayer
             return repositoryFacade.aktivitetRepository.GetAktivitetByAvdelning(avdelning);
         }
 
-        public List<Personal> GetPersonalByNamn(string namn)
+        public List<PersonalDTO> GetPersonalByNamn(string namn)
         {
             return repositoryFacade.personalRepository.GetPersonalByNamn(namn);
         }

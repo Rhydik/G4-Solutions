@@ -133,7 +133,7 @@
             this.gvPersonal.Name = "gvPersonal";
             this.gvPersonal.ReadOnly = true;
             this.gvPersonal.RowHeadersWidth = 62;
-            this.gvPersonal.Size = new System.Drawing.Size(501, 237);
+            this.gvPersonal.Size = new System.Drawing.Size(569, 237);
             this.gvPersonal.TabIndex = 21;
             this.gvPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPersonal_CellContentClick);
             // 
@@ -280,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 450);
             this.Controls.Add(this.lblNamn);
             this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.btnRensa);

@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace PresentationLayer1.Forms
 {
-    public partial class frmAddNewProdukt : Form
+    public partial class frmRegistreraNyProdukt : Form
     {
         BusinessManager businessManager;
         private List<ProduktDTO> produkter;
 
-        public frmAddNewProdukt()
+        public frmRegistreraNyProdukt()
         {
             InitializeComponent();
             this.Text = "Registrera ny Produkt";
@@ -131,6 +131,11 @@ namespace PresentationLayer1.Forms
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

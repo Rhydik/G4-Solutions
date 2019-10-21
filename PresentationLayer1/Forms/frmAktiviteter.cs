@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
 using DataLayer;
+using DataLayer.DTO;
 
 namespace PresentationLayer1.Forms
 {
@@ -24,6 +25,11 @@ namespace PresentationLayer1.Forms
 
             aktiviteter = businessManager.GetAllAktiviteter();
             dgvAktiviteter.DataSource = aktiviteter;
+
+            var avdelning = businessManager.GetAllAvdelningar();
+            cmbVäljAvdelning.DataSource = avdelning;
+            cmbVäljAvdelning.ValueMember = "Namn";
+            cmbVäljAvdelning.DisplayMember = "Namn";
         }
 
         private void tbAktivitetsID_TextChanged(object sender, EventArgs e)

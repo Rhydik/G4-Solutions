@@ -244,14 +244,12 @@
             // cmbVäljAvdelning
             // 
             this.cmbVäljAvdelning.FormattingEnabled = true;
-            this.cmbVäljAvdelning.Items.AddRange(new object[] {
-            "Försäljnings- och Marknadsavdelning(FO)",
-            "Administrativa avdelningen(AO)"});
             this.cmbVäljAvdelning.Location = new System.Drawing.Point(440, 54);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
             this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 41;
             this.cmbVäljAvdelning.Text = "Välj avdelning";
+            this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVäljAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbVäljAvdelning_SelectedIndexChanged);
             // 
             // tbBenämning

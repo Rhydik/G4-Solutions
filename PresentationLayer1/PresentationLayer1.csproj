@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frmAddNewProdukt.cs">
+    <Compile Include="Forms\frmRegistreraNyProdukt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmAddNewProdukt.Designer.cs">
-      <DependentUpon>frmAddNewProdukt.cs</DependentUpon>
+    <Compile Include="Forms\frmRegistreraNyProdukt.Designer.cs">
+      <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAktiviteter.cs">
       <SubType>Form</SubType>
@@ -172,12 +172,6 @@
     <Compile Include="Forms\frmRegistreraNyPersonal.Designer.cs">
       <DependentUpon>frmRegistreraNyPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmRegistreraNyProduktOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmRegistreraNyProduktOld.Designer.cs">
-      <DependentUpon>frmRegistreraNyProduktOld.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmRegistreraNyttKonto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,8 +187,8 @@
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmAddNewProdukt.resx">
-      <DependentUpon>frmAddNewProdukt.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmRegistreraNyProdukt.resx">
+      <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAktiviteter.resx">
       <DependentUpon>frmAktiviteter.cs</DependentUpon>
@@ -255,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyPersonal.resx">
       <DependentUpon>frmRegistreraNyPersonal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmRegistreraNyProduktOld.resx">
-      <DependentUpon>frmRegistreraNyProduktOld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyttKonto.resx">
       <DependentUpon>frmRegistreraNyttKonto.cs</DependentUpon>

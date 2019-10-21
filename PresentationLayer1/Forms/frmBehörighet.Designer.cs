@@ -48,7 +48,7 @@
             this.btnSök = new System.Windows.Forms.Button();
             this.cmbAvdelning = new System.Windows.Forms.ComboBox();
             this.tbNamn = new System.Windows.Forms.TextBox();
-            this.tbKundID = new System.Windows.Forms.TextBox();
+            this.tbPersonNr = new System.Windows.Forms.TextBox();
             this.btnRedigeraBehörighet = new System.Windows.Forms.Button();
             this.dgvBehörighet = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -258,13 +258,15 @@
             this.tbNamn.Name = "tbNamn";
             this.tbNamn.Size = new System.Drawing.Size(128, 20);
             this.tbNamn.TabIndex = 24;
+            this.tbNamn.TextChanged += new System.EventHandler(this.tbNamn_TextChanged);
             // 
-            // tbKundID
+            // tbPersonNr
             // 
-            this.tbKundID.Location = new System.Drawing.Point(233, 55);
-            this.tbKundID.Name = "tbKundID";
-            this.tbKundID.Size = new System.Drawing.Size(128, 20);
-            this.tbKundID.TabIndex = 23;
+            this.tbPersonNr.Location = new System.Drawing.Point(233, 55);
+            this.tbPersonNr.Name = "tbPersonNr";
+            this.tbPersonNr.Size = new System.Drawing.Size(128, 20);
+            this.tbPersonNr.TabIndex = 23;
+            this.tbPersonNr.TextChanged += new System.EventHandler(this.tbPersonNr_TextChanged);
             // 
             // btnRedigeraBehörighet
             // 
@@ -274,6 +276,7 @@
             this.btnRedigeraBehörighet.TabIndex = 21;
             this.btnRedigeraBehörighet.Text = "Redigera behörighet";
             this.btnRedigeraBehörighet.UseVisualStyleBackColor = true;
+            this.btnRedigeraBehörighet.Click += new System.EventHandler(this.btnRedigeraBehörighet_Click);
             // 
             // dgvBehörighet
             // 
@@ -297,11 +300,11 @@
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.cmbAvdelning);
             this.Controls.Add(this.tbNamn);
-            this.Controls.Add(this.tbKundID);
+            this.Controls.Add(this.tbPersonNr);
             this.Controls.Add(this.btnRedigeraBehörighet);
             this.Controls.Add(this.dgvBehörighet);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBehörighet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBehörighet";
@@ -334,7 +337,7 @@
         private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.ComboBox cmbAvdelning;
         private System.Windows.Forms.TextBox tbNamn;
-        private System.Windows.Forms.TextBox tbKundID;
+        private System.Windows.Forms.TextBox tbPersonNr;
         private System.Windows.Forms.Button btnRedigeraBehörighet;
         private System.Windows.Forms.DataGridView dgvBehörighet;
     }

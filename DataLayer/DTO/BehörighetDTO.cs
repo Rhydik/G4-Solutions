@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.DTO
+namespace DataLayer
 {
-    public class AktivitetDTO
+    public class BehörighetDTO
     {
-        public string AktivitetID { get; set; }
+        public string Personnummer { get; set; }
         public string Namn { get; set; }
+        public string Behörighet { get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace PresentationLayer1.Forms
         private void btnRegistreraNyProdukt_Click(object sender, EventArgs e)
         {
             //this.Visible = !this.Visible;
-            Forms.frmAddNewProdukt frmAddNewProdukt = new frmAddNewProdukt();
+            Forms.frmRegistreraNyProdukt frmAddNewProdukt = new frmRegistreraNyProdukt();
 
             frmAddNewProdukt.Show();
         }
@@ -58,6 +58,20 @@ namespace PresentationLayer1.Forms
         private void frmProdukter_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRedigeraProdukt_Click(object sender, EventArgs e)
+        {
+            if (dgvProdukter.CurrentRow.DataBoundItem != null)
+            {
+                this.Visible = !this.Visible;
+                Forms.frmRedigeraProdukt frmRedigeraProdukt= new Forms.frmRedigeraProdukt((ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem);
+                frmRedigeraProdukt.Show();
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja en kund");
+            }
         }
     }
 }

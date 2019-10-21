@@ -37,7 +37,9 @@ namespace PresentationLayer1.Forms
             var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
 
-            businessManager.AddKund(kundId, kundNamn, kundKategori);
+            string id = SkapaID(kundId, kundKategori);
+
+            businessManager.AddKund(id, kundNamn, kundKategori);
         }
 
         private void btnSkapaNyKundkategori_Click(object sender, EventArgs e)
@@ -47,6 +49,26 @@ namespace PresentationLayer1.Forms
             businessManager.AddKundKategori(kundKategori);
         }
 
+        private string SkapaID(string kundId, string kundKategori)
+        {
+            string idEnd = "";
+
+            if (kundKategori.Equals("Näringsliv"))
+            {
+                idEnd = "NL";
+            }
+
+            if (kundKategori.Equals("Offentlig"))
+            {
+                idEnd = "OF";
+            }
+
+            string id = kundId + idEnd; 
+
+
+
+            return id;
+        }
      
     }
 }

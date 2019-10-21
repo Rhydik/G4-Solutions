@@ -16,6 +16,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager;
         private List<ProduktDTO> produkter;
+        private List<ProduktDTO> produkterupdated;
 
         public frmProdukter()
         {
@@ -25,7 +26,6 @@ namespace PresentationLayer1.Forms
             produkter = businessManager.GetAllProdukter();
 
             dgvProdukter.DataSource = produkter;
-           
 
         }
 
@@ -73,5 +73,17 @@ namespace PresentationLayer1.Forms
                 MessageBox.Show("Du måste välja en kund");
             }
         }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            RefreshProducts();
+        }
+
+        public void RefreshProducts()
+        {
+            produkterupdated = businessManager.GetAllProdukter();
+            dgvProdukter.DataSource = produkterupdated;
+        }
     }
-}
+    }
+

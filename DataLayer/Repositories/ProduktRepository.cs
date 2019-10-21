@@ -38,7 +38,6 @@ namespace DataLayer
 
                 var produkt = new Produkt {ProduktID = produktID , Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp, Avdelning = produktAvdelning};
                 db.Produkt.Add(produkt);
-
                 db.SaveChanges();
             }
         }

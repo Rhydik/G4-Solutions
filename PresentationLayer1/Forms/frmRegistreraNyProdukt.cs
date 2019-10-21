@@ -90,8 +90,6 @@ namespace PresentationLayer1.Forms
 
         private void btnAddProdukt_Click(object sender, EventArgs e)
         {
-
-
             string produktID = newProduktkodtxt.Text;
             string namn = newProduktNametxt.Text;
 
@@ -103,6 +101,12 @@ namespace PresentationLayer1.Forms
 
             businessManager.AddProdukt(produktID, namn, kategori, grupp, avdelning);
 
+            if (System.Windows.Forms.Application.OpenForms["frmProdukter"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["frmProdukter"] as frmProdukter).RefreshProducts();
+            }
+
+            this.Close();
         }
 
         private void label5_Click(object sender, EventArgs e)

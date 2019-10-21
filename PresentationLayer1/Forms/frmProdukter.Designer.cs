@@ -95,6 +95,7 @@
             this.btnRensa.TabIndex = 29;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // btnSök
             // 
@@ -377,7 +378,6 @@
         private System.Windows.Forms.TextBox tbProduktID;
         private System.Windows.Forms.Button btnRegistreraNyProdukt;
         private System.Windows.Forms.Button btnRedigeraProdukt;
-        private System.Windows.Forms.DataGridView dgvProdukter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -395,5 +395,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExportera;
         private System.Windows.Forms.Button btnSkrivUt;
+        public System.Windows.Forms.DataGridView dgvProdukter;
     }
 }

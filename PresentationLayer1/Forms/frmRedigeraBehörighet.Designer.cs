@@ -104,7 +104,7 @@
             // dgvBehörighet
             // 
             this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBehörighet.Location = new System.Drawing.Point(284, 79);
+            this.dgvBehörighet.Location = new System.Drawing.Point(284, 83);
             this.dgvBehörighet.Name = "dgvBehörighet";
             this.dgvBehörighet.Size = new System.Drawing.Size(240, 150);
             this.dgvBehörighet.TabIndex = 6;
@@ -122,6 +122,13 @@
             // cmbBehörighet
             // 
             this.cmbBehörighet.FormattingEnabled = true;
+            this.cmbBehörighet.Items.AddRange(new object[] {
+            "Ekonomichef",
+            "Driftavdelningschef",
+            "Utvecklingsavdelningsschef",
+            "Marknadsavdelningsschef",
+            "Kundavdelningschef",
+            "Försäljningsavdelningschef"});
             this.cmbBehörighet.Location = new System.Drawing.Point(284, 235);
             this.cmbBehörighet.Name = "cmbBehörighet";
             this.cmbBehörighet.Size = new System.Drawing.Size(159, 21);
@@ -145,6 +152,7 @@
             this.btnAvbryt.TabIndex = 30;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // btnSpara
             // 

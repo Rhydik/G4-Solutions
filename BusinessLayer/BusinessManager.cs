@@ -25,6 +25,16 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
+        public List<BehörighetDTO> GetAllBehörighet()
+        {
+            return repositoryFacade.behörighetRepository.GetAllBehörighet();
+        }
+
+        public List<VisaBehörighetDTO> GetBehörighet(string persnr)
+        {
+            return repositoryFacade.behörighetRepository.GetBehörighet(persnr);
+        }
+
         public List<SchablonDTO> GetAllSchablon()
         {
             return repositoryFacade.schablonRepository.GetAllSchablon();
@@ -45,6 +55,11 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
+        public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)
+        {
+            return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);
+        }
+
         public List<PersonalDTO> GetAllPersonal()
         {
             return repositoryFacade.personalRepository.GetAllPersonal();
@@ -53,6 +68,11 @@ namespace BusinessLayer
         public object GetSchablonById(string id)
         {
             return repositoryFacade.schablonRepository.GetSchablonById(id);
+        }
+
+        public List<BehörighetDTO> GetBehörighetByNamn(string namn)
+        {
+            return repositoryFacade.behörighetRepository.GetBehörighetByNamn(namn);
         }
 
         public void RemoveKund(string kundId)

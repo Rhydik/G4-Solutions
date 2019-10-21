@@ -56,6 +56,8 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BehörighetDTO.cs" />
+    <Compile Include="Repositories\BehörighetRepository.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DTO\AktivitetDTO.cs" />
     <Compile Include="AntalTimmar.cs">
@@ -129,6 +131,7 @@
     <Compile Include="schablonkostnad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="VisaBehörighetDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

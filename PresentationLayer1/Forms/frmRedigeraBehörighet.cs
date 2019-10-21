@@ -7,14 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
+using BusinessLayer;
 
 namespace PresentationLayer1.Forms
 {
     public partial class frmRedigeraBehörighet : Form
     {
-        public frmRedigeraBehörighet()
+        BusinessManager businessManager = new BusinessManager();
+        BindingSource bindingSource = new BindingSource();
+        BehörighetDTO behörighet = new BehörighetDTO();
+        private List<VisaBehörighetDTO> visaBehörighet;
+        public frmRedigeraBehörighet(BehörighetDTO behörighetDTO)
         {
             InitializeComponent();
+            behörighet = behörighetDTO;
+            visaBehörighet = businessManager.GetBehörighet(behörighetDTO.Personnummer);
+            dgvBehörighet.DataSource = visaBehörighet;
+            Load();
+        }
+
+        private void Load()
+        {
+            lblNamn.Text = behörighet.Namn;
+            lblPnr.Text = behörighet.Personnummer;
+            dgvBehörighet.DataSource = visaBehörighet;
+        }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmBehörighet frmBehörighet = new frmBehörighet();
+            frmBehörighet.Show();
         }
     }
 }

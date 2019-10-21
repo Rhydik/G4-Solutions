@@ -10,7 +10,7 @@ namespace BusinessLayer
 {
     public class BusinessManager
     {
-        RepositoryFacade repositoryFacade = new RepositoryFacade();
+        RepositoryFacade repositoryFacade = RepositoryFacade.Instance();
 
         //Personal
         public Personal Login(string användarnamn, string lösenord)

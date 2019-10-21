@@ -7,21 +7,40 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class RepositoryFacade
+    public sealed class RepositoryFacade
     {
+        private static RepositoryFacade instance = null;
+        private static readonly object padlock = new object();
+
         public KundRepository kundRepository { get; set; }
         public AktivitetRepository aktivitetRepository { get; set; }
         public PersonalRepository personalRepository { get; set; }
         public ProduktRepository produktRepository { get; set; }
         public SchablonRepository schablonRepository { get; set; }
 
-        public RepositoryFacade()
+        private RepositoryFacade()
         {
             kundRepository = new KundRepository();
             aktivitetRepository = new AktivitetRepository();
             personalRepository = new PersonalRepository();
             produktRepository = new ProduktRepository();
             schablonRepository = new SchablonRepository();
+        }
+
+        public static RepositoryFacade Instance()
+        {
+            if (instance == null)
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new RepositoryFacade();
+                    }
+                }
+                
+            }
+            return instance;
         }
     }
 }

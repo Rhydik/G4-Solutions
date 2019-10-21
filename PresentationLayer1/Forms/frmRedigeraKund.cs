@@ -21,10 +21,9 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             businessManager = new BusinessLayer.BusinessManager();
             this.kunden = kund;
-            Load();
         }
 
-        public void Load()
+        public new void Load()
         {
             tbKundID2.Text = kunden.KundID;
             tbKund2.Text = kunden.Namn;

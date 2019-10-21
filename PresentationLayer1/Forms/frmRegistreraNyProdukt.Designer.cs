@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmAddNewProdukt
+    partial class frmRegistreraNyProdukt
     {
         /// <summary>
         /// Required designer variable.
@@ -133,6 +133,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(239, 21);
             this.comboBox2.TabIndex = 9;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -204,7 +205,7 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // frmAddNewProdukt
+            // frmRegistreraNyProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,7 +228,7 @@
             this.Controls.Add(this.newProduktkodtxt);
             this.Controls.Add(this.newProduktNametxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmAddNewProdukt";
+            this.Name = "frmRegistreraNyProdukt";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddNewProdukt";

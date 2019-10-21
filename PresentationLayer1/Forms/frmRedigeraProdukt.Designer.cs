@@ -39,7 +39,7 @@
             this.lblProduktID = new System.Windows.Forms.Label();
             this.lblRedigeraProdukt = new System.Windows.Forms.Label();
             this.tbProduktID = new System.Windows.Forms.TextBox();
-            this.tbPersonnummer = new System.Windows.Forms.TextBox();
+            this.tbProduktNamn = new System.Windows.Forms.TextBox();
             this.cmbProduktgrupp = new System.Windows.Forms.ComboBox();
             this.cmbProduktkategori = new System.Windows.Forms.ComboBox();
             this.cmbAvdelning = new System.Windows.Forms.ComboBox();
@@ -86,6 +86,7 @@
             this.btnTaBortProdukt.TabIndex = 66;
             this.btnTaBortProdukt.Text = "Ta bort produkt";
             this.btnTaBortProdukt.UseVisualStyleBackColor = false;
+            this.btnTaBortProdukt.Click += new System.EventHandler(this.btnTaBortProdukt_Click_1);
             // 
             // btnAvbryt
             // 
@@ -151,13 +152,15 @@
             this.tbProduktID.Name = "tbProduktID";
             this.tbProduktID.Size = new System.Drawing.Size(239, 20);
             this.tbProduktID.TabIndex = 59;
+            this.tbProduktID.TextChanged += new System.EventHandler(this.tbProduktID_TextChanged);
             // 
-            // tbPersonnummer
+            // tbProduktNamn
             // 
-            this.tbPersonnummer.Location = new System.Drawing.Point(12, 144);
-            this.tbPersonnummer.Name = "tbPersonnummer";
-            this.tbPersonnummer.Size = new System.Drawing.Size(239, 20);
-            this.tbPersonnummer.TabIndex = 58;
+            this.tbProduktNamn.Location = new System.Drawing.Point(12, 144);
+            this.tbProduktNamn.Name = "tbProduktNamn";
+            this.tbProduktNamn.Size = new System.Drawing.Size(239, 20);
+            this.tbProduktNamn.TabIndex = 58;
+            this.tbProduktNamn.TextChanged += new System.EventHandler(this.tbProduktNamn_TextChanged);
             // 
             // cmbProduktgrupp
             // 
@@ -166,6 +169,7 @@
             this.cmbProduktgrupp.Name = "cmbProduktgrupp";
             this.cmbProduktgrupp.Size = new System.Drawing.Size(131, 21);
             this.cmbProduktgrupp.TabIndex = 73;
+            this.cmbProduktgrupp.SelectedIndexChanged += new System.EventHandler(this.cmbProduktgrupp_SelectedIndexChanged);
             // 
             // cmbProduktkategori
             // 
@@ -174,6 +178,7 @@
             this.cmbProduktkategori.Name = "cmbProduktkategori";
             this.cmbProduktkategori.Size = new System.Drawing.Size(131, 21);
             this.cmbProduktkategori.TabIndex = 74;
+            this.cmbProduktkategori.SelectedIndexChanged += new System.EventHandler(this.cmbProduktkategori_SelectedIndexChanged);
             // 
             // cmbAvdelning
             // 
@@ -182,6 +187,7 @@
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(239, 21);
             this.cmbAvdelning.TabIndex = 75;
+            this.cmbAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbAvdelning_SelectedIndexChanged);
             // 
             // btnSkapaNyProdukGrupp
             // 
@@ -223,8 +229,8 @@
             this.Controls.Add(this.lblProduktID);
             this.Controls.Add(this.lblRedigeraProdukt);
             this.Controls.Add(this.tbProduktID);
-            this.Controls.Add(this.tbPersonnummer);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.tbProduktNamn);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRedigeraProdukt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRedigeraProdukt";
@@ -246,7 +252,7 @@
         private System.Windows.Forms.Label lblProduktID;
         private System.Windows.Forms.Label lblRedigeraProdukt;
         private System.Windows.Forms.TextBox tbProduktID;
-        private System.Windows.Forms.TextBox tbPersonnummer;
+        private System.Windows.Forms.TextBox tbProduktNamn;
         private System.Windows.Forms.ComboBox cmbProduktgrupp;
         private System.Windows.Forms.ComboBox cmbProduktkategori;
         private System.Windows.Forms.ComboBox cmbAvdelning;

@@ -175,5 +175,16 @@ namespace BusinessLayer
         {
             repositoryFacade.produktRepository.AddProdukt(produktID, namn, kategori, grupp, avdelning);
         }
+
+        public void RemoveProdukt(ProduktDTO produkt)
+        {
+            repositoryFacade.produktRepository.RemoveProdukt(produkt);
+        }
+
+        public void UpdateProdukt(ProduktDTO oldProdukt, string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        {
+            repositoryFacade.produktRepository.UpdateProdukt(oldProdukt, produktID, namn, produktKategori, produktGrupp, produktAvdelning);
+        }
+
     }
 }

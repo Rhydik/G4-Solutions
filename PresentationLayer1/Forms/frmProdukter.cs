@@ -59,5 +59,19 @@ namespace PresentationLayer1.Forms
         {
 
         }
+
+        private void btnRedigeraProdukt_Click(object sender, EventArgs e)
+        {
+            if (dgvProdukt.CurrentRow.DataBoundItem != null)
+            {
+                this.Visible = !this.Visible;
+                Forms.frmRedigeraProdukt frmRedigeraProdukt= new Forms.frmRedigeraProdukt((ProduktDTO)dgvProdukt.CurrentRow.DataBoundItem);
+                frmRedigeraProdukt.Show();
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja en kund");
+            }
+        }
     }
 }

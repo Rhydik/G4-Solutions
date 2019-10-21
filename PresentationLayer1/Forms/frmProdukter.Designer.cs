@@ -146,6 +146,7 @@
             this.btnRedigeraProdukt.TabIndex = 23;
             this.btnRedigeraProdukt.Text = "Redigera produkt";
             this.btnRedigeraProdukt.UseVisualStyleBackColor = true;
+            this.btnRedigeraProdukt.Click += new System.EventHandler(this.btnRedigeraProdukt_Click);
             // 
             // dgvProdukter
             // 

@@ -108,5 +108,12 @@ namespace PresentationLayer1.Forms
         {
 
         }
+
+        private void btnAvbryt_Click_1(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            frmProdukter frmProdukter = new frmProdukter();
+            frmProdukter.Show();
+        }
     }
 }

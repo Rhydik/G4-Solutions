@@ -43,6 +43,49 @@ namespace DataLayer
             }
         }
 
+
+        //Uppdatera produkt
+        public void UpdateProdukt(ProduktDTO oldProdukt, string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        {
+            using (var db = new DataContext())
+            {
+                var prodKat = (from x in db.Produktkategori
+                                    where x.Namn == produktKategori
+                                    select x).FirstOrDefault();
+
+                var prodGrupp = (from x in db.Produktgrupp
+                                    where x.Namn == produktGrupp
+                                    select x).FirstOrDefault();
+
+                var prodAvdelning = (from x in db.Avdelning
+                                     where x.Namn == produktAvdelning
+                                     select x).FirstOrDefault();
+
+                var tempProdukt = (from x in db.Produkt
+                                where x.ProduktID == oldProdukt.ProduktID
+                                select x).FirstOrDefault();
+
+                var produkt = new Produkt { ProduktID = produktID, Namn = namn, Produktkategori = prodKat, Produktgrupp = prodGrupp, Avdelning = prodAvdelning };
+                db.Produkt.Remove(tempProdukt);
+                db.Produkt.Add(produkt);
+
+
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveProdukt(ProduktDTO produkt)
+        {
+            using (var db = new DataContext())
+            {
+                var produkten = db.Produkt.Where(x => x.ProduktID == produkt.ProduktID).FirstOrDefault();
+                db.Produkt.Remove(produkten);
+                db.SaveChanges();
+            }
+        }
+
+
+
         //Produktkategori
 
         public List<ProduktKategoriDTO> GetProduktByKategori()

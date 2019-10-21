@@ -19,6 +19,11 @@ namespace PresentationLayer1.Forms
         public frmRegistreraNyAktivitet()
         {
             InitializeComponent();
+
+            var avdelning = businessManager.GetAllAvdelningar();
+            cmbAvdelning.DataSource = avdelning;
+            cmbAvdelning.ValueMember = "Namn";
+            cmbAvdelning.DisplayMember = "Namn";
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
@@ -28,6 +33,13 @@ namespace PresentationLayer1.Forms
             var avdelning = cmbAvdelning.Text;
 
             businessManager.AddAktivitet(aktvitetsId, namn, avdelning);
+        }
+
+        private void btnSparaAvdelning_Click(object sender, EventArgs e)
+        {
+            var avdelning = cmbAvdelning.Text;
+
+            businessManager.AddAvdelning(avdelning);
         }
     }
 }

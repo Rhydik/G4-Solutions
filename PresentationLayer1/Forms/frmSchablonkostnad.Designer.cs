@@ -98,6 +98,7 @@
             this.tbKontobenämning.Name = "tbKontobenämning";
             this.tbKontobenämning.Size = new System.Drawing.Size(128, 20);
             this.tbKontobenämning.TabIndex = 36;
+            this.tbKontobenämning.TextChanged += new System.EventHandler(this.tbKontobenämning_TextChanged);
             // 
             // tbKonto
             // 
@@ -105,6 +106,7 @@
             this.tbKonto.Name = "tbKonto";
             this.tbKonto.Size = new System.Drawing.Size(128, 20);
             this.tbKonto.TabIndex = 35;
+            this.tbKonto.TextChanged += new System.EventHandler(this.tbKonto_TextChanged);
             // 
             // btnRegistreraNyttKonto
             // 
@@ -114,6 +116,7 @@
             this.btnRegistreraNyttKonto.TabIndex = 34;
             this.btnRegistreraNyttKonto.Text = "Registrera nytt konto";
             this.btnRegistreraNyttKonto.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyttKonto.Click += new System.EventHandler(this.btnRegistreraNyttKonto_Click);
             // 
             // btnRedigeraKonto
             // 

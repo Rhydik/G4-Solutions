@@ -23,7 +23,7 @@ namespace PresentationLayer1.Forms
             var avdelning = businessManager.GetAllAvdelningar();
             cmbAvdelning.DataSource = avdelning;
             cmbAvdelning.ValueMember = "Namn";
-            cmbAvdelning.DisplayMember = "Avdelning";
+            cmbAvdelning.DisplayMember = "Namn";
         }
 
         private void btnSpara_Click(object sender, EventArgs e)

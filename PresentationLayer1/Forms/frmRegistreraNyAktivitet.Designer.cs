@@ -73,13 +73,11 @@
             // cmbAvdelning
             // 
             this.cmbAvdelning.FormattingEnabled = true;
-            this.cmbAvdelning.Items.AddRange(new object[] {
-            "Försäljnings- och Marknadsavdelning(FO)",
-            "Administrativa avdelningen(AO)"});
             this.cmbAvdelning.Location = new System.Drawing.Point(12, 279);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(164, 21);
             this.cmbAvdelning.TabIndex = 36;
+            this.cmbAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // lblAvdelning
             // 

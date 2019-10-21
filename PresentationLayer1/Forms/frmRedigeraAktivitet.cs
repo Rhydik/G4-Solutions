@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
+using DataLayer.DTO;
 
 namespace PresentationLayer1.Forms
 {

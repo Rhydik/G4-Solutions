@@ -70,7 +70,7 @@ namespace BusinessLayer
             return repositoryFacade.schablonRepository.GetSchablonByBenämning(benämning);
         }
 
-        public object GetAktivitetById(string aktivitetId)
+        public List<AktivitetDTO> GetAktivitetById(string aktivitetId)
         {
             return repositoryFacade.aktivitetRepository.GetAktivitetById(aktivitetId);
         }
@@ -90,7 +90,7 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
         }
 
-        public object GetAktivitetByNamn(string aktivitetNamn)
+        public List<AktivitetDTO> GetAktivitetByNamn(string aktivitetNamn)
         {
             return repositoryFacade.aktivitetRepository.GetAktivitetByNamn(aktivitetNamn);
         }
@@ -105,7 +105,7 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
 
-        public object GetAktivitetByAvdelning(string avdelning)
+        public List<AktivitetDTO> GetAktivitetByAvdelning(string avdelning)
         {
             return repositoryFacade.aktivitetRepository.GetAktivitetByAvdelning(avdelning);
         }
@@ -171,6 +171,15 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
 
+        public void AddAvdelning(string namn)
+        {
+            repositoryFacade.aktivitetRepository.AddAvdelning(namn);
+        }
+
+        public List<AvdelningDTO> GetAllAvdelningar()
+        {
+            return repositoryFacade.aktivitetRepository.GetAllAvdelningar();
+        }
         public void AddProdukt(string produktID, string namn, string kategori, string grupp, string avdelning)
         {
             repositoryFacade.produktRepository.AddProdukt(produktID, namn, kategori, grupp, avdelning);

@@ -64,6 +64,30 @@
     <Compile Include="Forms\frmBehörighet.Designer.cs">
       <DependentUpon>frmBehörighet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringKund.Designer.cs">
+      <DependentUpon>frmIntäktsbudgeteringKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringLäggTillKund.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringLäggTillKund.Designer.cs">
+      <DependentUpon>frmIntäktsbudgeteringLäggTillKund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringLäggTillProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringLäggTillProdukt.Designer.cs">
+      <DependentUpon>frmIntäktsbudgeteringLäggTillProdukt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmIntäktsbudgeteringProdukt.Designer.cs">
+      <DependentUpon>frmIntäktsbudgeteringProdukt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLoggaIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +201,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBehörighet.resx">
       <DependentUpon>frmBehörighet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIntäktsbudgeteringKund.resx">
+      <DependentUpon>frmIntäktsbudgeteringKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIntäktsbudgeteringLäggTillKund.resx">
+      <DependentUpon>frmIntäktsbudgeteringLäggTillKund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIntäktsbudgeteringLäggTillProdukt.resx">
+      <DependentUpon>frmIntäktsbudgeteringLäggTillProdukt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmIntäktsbudgeteringProdukt.resx">
+      <DependentUpon>frmIntäktsbudgeteringProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLoggaIn.resx">
       <DependentUpon>frmLoggaIn.cs</DependentUpon>

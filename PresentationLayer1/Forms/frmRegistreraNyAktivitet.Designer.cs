@@ -38,6 +38,7 @@
             this.lblRegistreraNyAktivitet = new System.Windows.Forms.Label();
             this.tbBenämning = new System.Windows.Forms.TextBox();
             this.tbAktivitetsID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAvbryt
@@ -77,7 +78,7 @@
             "Administrativa avdelningen(AO)"});
             this.cmbAvdelning.Location = new System.Drawing.Point(12, 279);
             this.cmbAvdelning.Name = "cmbAvdelning";
-            this.cmbAvdelning.Size = new System.Drawing.Size(239, 21);
+            this.cmbAvdelning.Size = new System.Drawing.Size(164, 21);
             this.cmbAvdelning.TabIndex = 36;
             // 
             // lblAvdelning
@@ -134,12 +135,23 @@
             this.tbAktivitetsID.Size = new System.Drawing.Size(239, 20);
             this.tbAktivitetsID.TabIndex = 30;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Spara";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnSparaAvdelning_Click);
+            // 
             // frmRegistreraNyAktivitet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(272, 543);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label lblRegistreraNyAktivitet;
         private System.Windows.Forms.TextBox tbBenämning;
         private System.Windows.Forms.TextBox tbAktivitetsID;
+        private System.Windows.Forms.Button button1;
     }
 }

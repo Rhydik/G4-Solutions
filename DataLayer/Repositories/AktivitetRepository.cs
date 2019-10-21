@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace DataLayer
             }
         }
 
-        public object GetAktivitetById(string aktivitetId)
+        public List<AktivitetDTO> GetAktivitetById(string aktivitetId)
         {
             using (var db = new DataContext())
             {
@@ -40,7 +41,7 @@ namespace DataLayer
             }
         }
 
-        public object GetAktivitetByNamn(string aktivitetNamn)
+        public List<AktivitetDTO> GetAktivitetByNamn(string aktivitetNamn)
         {
             using (var db = new DataContext())
             {
@@ -71,13 +72,38 @@ namespace DataLayer
             }
         }
 
-        public object GetAktivitetByAvdelning(string avdelning)
+        public List<AktivitetDTO> GetAktivitetByAvdelning(string avdelning)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.Aktivitet
                             where x.Avdelning.ToString().StartsWith(avdelning)
                             select new AktivitetDTO { AktivitetID = x.AktivitetID, Namn = x.Namn };
+
+                return query.ToList();
+            }
+        }
+
+        public void AddAvdelning(string namn)
+        {
+            using (var db = new DataContext())
+            {
+                //var Avdelning = (from x in db.Avdelning
+                //                 where x.Namn == avdelning
+                //                 select x).FirstOrDefault();
+
+                var avdelning = new Avdelning { Namn = namn };
+                db.Avdelning.Add(avdelning);
+                db.SaveChanges();
+            }
+        }
+
+        public List<AvdelningDTO> GetAllAvdelningar()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Avdelning
+                            select new AvdelningDTO { AvdelningsID = x.AvdelningID, Namn = x.Namn };
 
                 return query.ToList();
             }

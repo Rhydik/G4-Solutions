@@ -25,6 +25,11 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
+        public List<SchablonDTO> GetAllSchablon()
+        {
+            return repositoryFacade.schablonRepository.GetAllSchablon();
+        }
+
         public void RemoveAktivitet(AktivitetDTO aktivitet)
         {
             repositoryFacade.aktivitetRepository.RemoveAktivitet(aktivitet);
@@ -45,6 +50,11 @@ namespace BusinessLayer
             return repositoryFacade.personalRepository.GetAllPersonal();
         }
 
+        public object GetSchablonById(string id)
+        {
+            return repositoryFacade.schablonRepository.GetSchablonById(id);
+        }
+
         public void RemoveKund(string kundId)
         {
             repositoryFacade.kundRepository.RemoveKund(kundId);
@@ -53,6 +63,11 @@ namespace BusinessLayer
         public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
         {
             repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
+        }
+
+        public object GetSchablonByBenämning(string benämning)
+        {
+            return repositoryFacade.schablonRepository.GetSchablonByBenämning(benämning);
         }
 
         public object GetAktivitetById(string aktivitetId)

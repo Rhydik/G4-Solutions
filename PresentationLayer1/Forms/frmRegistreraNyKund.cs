@@ -27,8 +27,6 @@ namespace PresentationLayer1.Forms
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            //frmKunder frmKunder = new frmKunder();
-            //frmKunder.Show();
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
@@ -40,6 +38,10 @@ namespace PresentationLayer1.Forms
             string id = businessManager.SkapaID(kundId, kundKategori);
 
             businessManager.AddKund(id, kundNamn, kundKategori);
+
+            MessageBox.Show(kundNamn + " sparad.", "Spara kund", MessageBoxButtons.OK);
+
+            this.Visible = !this.Visible;
         }
 
         private void btnSkapaNyKundkategori_Click(object sender, EventArgs e)
@@ -47,6 +49,8 @@ namespace PresentationLayer1.Forms
             var kundKategori = cmbKundkategori.Text;
 
             businessManager.AddKundKategori(kundKategori);
+
+            MessageBox.Show(kundKategori + " sparad.", "Spara kundkategori", MessageBoxButtons.OK);
         }
      
     }

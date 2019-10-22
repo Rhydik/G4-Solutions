@@ -199,6 +199,10 @@
             // 
             // dgvKunder
             // 
+            this.dgvKunder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvKunder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKunder.Location = new System.Drawing.Point(243, 119);
             this.dgvKunder.Name = "dgvKunder";
@@ -209,7 +213,8 @@
             // 
             // btnRegistreraNyKund
             // 
-            this.btnRegistreraNyKund.Location = new System.Drawing.Point(632, 363);
+            this.btnRegistreraNyKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistreraNyKund.Location = new System.Drawing.Point(632, 362);
             this.btnRegistreraNyKund.Name = "btnRegistreraNyKund";
             this.btnRegistreraNyKund.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyKund.TabIndex = 11;
@@ -219,7 +224,8 @@
             // 
             // btnRedigeraKund
             // 
-            this.btnRedigeraKund.Location = new System.Drawing.Point(506, 362);
+            this.btnRedigeraKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRedigeraKund.Location = new System.Drawing.Point(506, 361);
             this.btnRedigeraKund.Name = "btnRedigeraKund";
             this.btnRedigeraKund.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraKund.TabIndex = 10;

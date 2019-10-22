@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,13 +14,23 @@ namespace PresentationLayer1
 {
     public partial class frmLoggaIn : Form
     {
-        BusinessLayer.BusinessManager businessManager;
+
+        BusinessManager businessManager;
 
         public frmLoggaIn()
         {
+            Thread t = new Thread(new ThreadStart(Load)) { IsBackground = true };
+            t.Start();
+
             InitializeComponent();
-            businessManager = new BusinessLayer.BusinessManager();
         }
+
+        public void Load()
+        {
+            businessManager = new BusinessManager();
+            var aktiviter = businessManager.GetAllKunder();
+        }
+
 
         private void btnLoggaIn_Click(object sender, EventArgs e)
         {

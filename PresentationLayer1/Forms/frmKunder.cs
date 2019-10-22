@@ -52,6 +52,9 @@ namespace PresentationLayer1
 
         private void btnRensa_Click(object sender, EventArgs e)
         {
+            tbKundID.Text = "";
+            tbKund.Text = "";
+
             kunder = businessManager.GetAllKunder();
 
             dgvKunder.DataSource = kunder;

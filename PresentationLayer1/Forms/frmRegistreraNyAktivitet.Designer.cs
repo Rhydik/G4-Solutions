@@ -50,6 +50,7 @@
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 
@@ -72,12 +73,12 @@
             // 
             // cmbAvdelning
             // 
+            this.cmbAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAvdelning.FormattingEnabled = true;
             this.cmbAvdelning.Location = new System.Drawing.Point(12, 279);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(164, 21);
             this.cmbAvdelning.TabIndex = 36;
-            this.cmbAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // lblAvdelning
             // 

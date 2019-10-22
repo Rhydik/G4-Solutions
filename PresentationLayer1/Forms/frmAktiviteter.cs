@@ -76,14 +76,12 @@ namespace PresentationLayer1.Forms
 
         private void btnRedigeraAktivitet_Click(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
             frmRedigeraAktivitet frmRedigeraAktivitet = new frmRedigeraAktivitet((AktivitetDTO)dgvAktiviteter.CurrentRow.DataBoundItem);
             frmRedigeraAktivitet.Show();
         }
 
         private void btnRegistreraNyAktivitet_Click(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
             frmRegistreraNyAktivitet frmRegistreraNyAktivitet = new frmRegistreraNyAktivitet();
             frmRegistreraNyAktivitet.Show();
         }

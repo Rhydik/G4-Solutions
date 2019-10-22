@@ -14,6 +14,7 @@ namespace PresentationLayer1
 {
     public partial class frmLoggaIn : Form
     {
+        Thread t;
 
         BusinessManager businessManager;
 
@@ -21,7 +22,7 @@ namespace PresentationLayer1
         {
             Thread t = new Thread(new ThreadStart(Load)) { IsBackground = true };
             t.Start();
-
+            t.Join();
             InitializeComponent();
         }
 
@@ -58,6 +59,7 @@ namespace PresentationLayer1
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             this.Visible = !this.Visible;
             frmHemmeny frmHemmeny = new frmHemmeny();
             frmHemmeny.Show();

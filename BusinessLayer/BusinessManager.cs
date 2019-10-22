@@ -215,5 +215,24 @@ namespace BusinessLayer
             repositoryFacade.produktRepository.UpdateProdukt(oldProdukt, produktID, namn, produktKategori, produktGrupp, produktAvdelning);
         }
 
+        public string SkapaID(string kundId, string kundKategori)
+        {
+            string idEnd = "";
+
+            if (kundKategori.Equals("Näringsliv"))
+            {
+                idEnd = "NL";
+            }
+
+            if (kundKategori.Equals("Offentlig"))
+            {
+                idEnd = "OF";
+            }
+
+            string id = kundId + idEnd;
+
+            return id;
+        }
+
     }
 }

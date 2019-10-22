@@ -36,9 +36,10 @@ namespace PresentationLayer1.Forms
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
-            frmBehörighet frmBehörighet = new frmBehörighet();
-            frmBehörighet.Show();
+            Close();
+            //this.Visible = !this.Visible;
+            //frmBehörighet frmBehörighet = new frmBehörighet();
+            //frmBehörighet.Show();
         }
     }
 }

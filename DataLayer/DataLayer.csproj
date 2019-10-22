@@ -131,7 +131,7 @@
     <Compile Include="schablonkostnad.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="VisaBehörighetDTO.cs" />
+    <Compile Include="DTO\VisaBehörighetDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -27,8 +27,8 @@ namespace PresentationLayer1.Forms
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            frmKunder frmKunder = new frmKunder();
-            frmKunder.Show();
+            //frmKunder frmKunder = new frmKunder();
+            //frmKunder.Show();
         }
 
         private void btnSpara_Click(object sender, EventArgs e)

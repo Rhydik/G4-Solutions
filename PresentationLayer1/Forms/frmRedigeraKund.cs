@@ -39,11 +39,14 @@ namespace PresentationLayer1.Forms
         public void btnTaBortKund_Click(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Vill du ta bort " + kund.Namn + "?", "Borttagning av kund", MessageBoxButtons.YesNo);
+            DialogResult resultat = MessageBox.Show("Vill du ta bort " + kund.Namn + "?", "Borttagning av kund", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes)
+            if (resultat == DialogResult.Yes)
             {
                 businessManager.RemoveKund(kund.KundID);
+
+                DialogResult tabortResultat = MessageBox.Show(kund.Namn + " borttagen", "Borttagning lyckad", MessageBoxButtons.OK);
+
                 this.Visible = !this.Visible;
             }
 
@@ -70,6 +73,11 @@ namespace PresentationLayer1.Forms
             var kundKategori = cmbKundkategori.Text;
 
             businessManager.UpdateKund(kund, kundId, kundNamn, kundKategori);
+
+
+            DialogResult resultat = MessageBox.Show(kund.Namn + " uppdaterad.", "Uppdatera kund", MessageBoxButtons.OK);
+
+            this.Visible = !this.Visible;
         }
 
     }

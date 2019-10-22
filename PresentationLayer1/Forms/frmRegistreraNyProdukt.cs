@@ -106,7 +106,12 @@ namespace PresentationLayer1.Forms
                 (System.Windows.Forms.Application.OpenForms["frmProdukter"] as frmProdukter).RefreshProducts();
             }
 
-            this.Close();
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            newProduktkodtxt.Clear();
+            newProduktNametxt.Clear();
+
         }
 
         private void label5_Click(object sender, EventArgs e)

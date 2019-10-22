@@ -14,20 +14,21 @@ namespace PresentationLayer1.Forms
     public partial class frmRedigeraKund : Form
     {
         BusinessLayer.BusinessManager businessManager;
-        public KundDTO kunden { get; set; }
+        private KundDTO kund;
 
         public frmRedigeraKund(KundDTO kund)
         {
             InitializeComponent();
             businessManager = new BusinessLayer.BusinessManager();
-            this.kunden = kund;
+            this.kund = kund;
+            Load();
         }
 
         public new void Load()
         {
-            tbKundID2.Text = kunden.KundID;
-            tbKund2.Text = kunden.Namn;
-            cmbKundkategori.Text = kunden.KundKategori;
+            tbKundID2.Text = kund.KundID;
+            tbKund2.Text = kund.Namn;
+            cmbKundkategori.Text = kund.KundKategori;
 
             var kategori = businessManager.GetAllKundKategori();
             cmbKundkategori.DataSource = kategori;
@@ -37,7 +38,7 @@ namespace PresentationLayer1.Forms
 
         public void btnTaBortKund_Click(object sender, EventArgs e)
         {
-            businessManager.RemoveKund(kunden.KundID);
+            businessManager.RemoveKund(kund.KundID);
         }
 
         private void btnAvbrytKund2_Click(object sender, EventArgs e)
@@ -60,7 +61,8 @@ namespace PresentationLayer1.Forms
             var kundNamn = tbKund2.Text;
             var kundKategori = cmbKundkategori.Text;
 
-            businessManager.UpdateKund(kunden, kundId, kundNamn, kundKategori);
+            businessManager.UpdateKund(kund, kundId, kundNamn, kundKategori);
         }
+
     }
 }

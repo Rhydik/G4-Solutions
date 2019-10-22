@@ -13,7 +13,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Personal
-                            select new BehörighetDTO { Personnummer = x.PersonNr, Behörighet = x.Behörighet, Namn = x.Namn };
+                            select new BehörighetDTO { Personnummer = x.PersonNr, Behörighet = x.Behörighet, Namn = x.Namn, };
 
                 return query.ToList();
             }

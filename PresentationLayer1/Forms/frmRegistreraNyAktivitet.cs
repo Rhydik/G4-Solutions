@@ -33,6 +33,8 @@ namespace PresentationLayer1.Forms
             var avdelning = cmbAvdelning.Text;
 
             businessManager.AddAktivitet(aktvitetsId, namn, avdelning);
+
+            this.Visible = !this.Visible;
         }
 
         private void btnSparaAvdelning_Click(object sender, EventArgs e)
@@ -40,6 +42,11 @@ namespace PresentationLayer1.Forms
             var avdelning = cmbAvdelning.Text;
 
             businessManager.AddAvdelning(avdelning);
+        }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
         }
     }
 }

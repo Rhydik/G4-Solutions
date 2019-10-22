@@ -90,8 +90,6 @@ namespace PresentationLayer1.Forms
 
         private void btnAddProdukt_Click(object sender, EventArgs e)
         {
-
-
             string produktID = newProduktkodtxt.Text;
             string namn = newProduktNametxt.Text;
 
@@ -102,6 +100,17 @@ namespace PresentationLayer1.Forms
             var avdelning = comboBox3.GetItemText(comboBox3.SelectedItem);
 
             businessManager.AddProdukt(produktID, namn, kategori, grupp, avdelning);
+
+            if (System.Windows.Forms.Application.OpenForms["frmProdukter"] != null)
+            {
+                (System.Windows.Forms.Application.OpenForms["frmProdukter"] as frmProdukter).RefreshProducts();
+            }
+
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            newProduktkodtxt.Clear();
+            newProduktNametxt.Clear();
 
         }
 

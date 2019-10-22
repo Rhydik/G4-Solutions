@@ -28,7 +28,7 @@ namespace PresentationLayer1.Forms
 
         private void btnRedigeraBehörighet_Click(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
+            //this.Visible = !this.Visible;
             frmRedigeraBehörighet frmRedigeraBehörighet = new frmRedigeraBehörighet((BehörighetDTO)dgvBehörighet.CurrentRow.DataBoundItem);
             frmRedigeraBehörighet.Show();
         }

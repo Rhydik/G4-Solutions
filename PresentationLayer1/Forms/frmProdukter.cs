@@ -16,6 +16,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager;
         private List<ProduktDTO> produkter;
+        private List<ProduktDTO> produkterupdated;
 
         public frmProdukter()
         {
@@ -25,7 +26,6 @@ namespace PresentationLayer1.Forms
             produkter = businessManager.GetAllProdukter();
 
             dgvProdukter.DataSource = produkter;
-           
 
         }
 
@@ -44,7 +44,6 @@ namespace PresentationLayer1.Forms
 
         private void btnRegistreraNyProdukt_Click(object sender, EventArgs e)
         {
-            //this.Visible = !this.Visible;
             Forms.frmRegistreraNyProdukt frmAddNewProdukt = new frmRegistreraNyProdukt();
 
             frmAddNewProdukt.Show();
@@ -62,16 +61,20 @@ namespace PresentationLayer1.Forms
 
         private void btnRedigeraProdukt_Click(object sender, EventArgs e)
         {
-            if (dgvProdukter.CurrentRow.DataBoundItem != null)
-            {
-                this.Visible = !this.Visible;
-                Forms.frmRedigeraProdukt frmRedigeraProdukt= new Forms.frmRedigeraProdukt((ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem);
-                frmRedigeraProdukt.Show();
-            }
-            else
-            {
-                MessageBox.Show("Du måste välja en kund");
-            }
+            Forms.frmRedigeraProdukt frmRedigeraProdukt= new Forms.frmRedigeraProdukt((ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem);
+            frmRedigeraProdukt.Show();
+        }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            RefreshProducts();
+        }
+
+        public void RefreshProducts()
+        {
+            produkterupdated = businessManager.GetAllProdukter();
+            dgvProdukter.DataSource = produkterupdated;
         }
     }
-}
+    }
+

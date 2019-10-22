@@ -54,8 +54,6 @@
             this.btnKunder = new System.Windows.Forms.Button();
             this.tbProduktgrupp = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnExportera = new System.Windows.Forms.Button();
-            this.btnSkrivUt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +93,7 @@
             this.btnRensa.TabIndex = 29;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // btnSök
             // 
@@ -315,31 +314,11 @@
             this.label4.TabIndex = 35;
             this.label4.Text = "Produktgrupp";
             // 
-            // btnExportera
-            // 
-            this.btnExportera.Location = new System.Drawing.Point(371, 362);
-            this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(120, 41);
-            this.btnExportera.TabIndex = 50;
-            this.btnExportera.Text = "Exportera";
-            this.btnExportera.UseVisualStyleBackColor = true;
-            // 
-            // btnSkrivUt
-            // 
-            this.btnSkrivUt.Location = new System.Drawing.Point(245, 362);
-            this.btnSkrivUt.Name = "btnSkrivUt";
-            this.btnSkrivUt.Size = new System.Drawing.Size(120, 41);
-            this.btnSkrivUt.TabIndex = 49;
-            this.btnSkrivUt.Text = "Skriv ut";
-            this.btnSkrivUt.UseVisualStyleBackColor = true;
-            // 
             // frmProdukter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 450);
-            this.Controls.Add(this.btnExportera);
-            this.Controls.Add(this.btnSkrivUt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbProduktgrupp);
             this.Controls.Add(this.panel1);
@@ -377,7 +356,6 @@
         private System.Windows.Forms.TextBox tbProduktID;
         private System.Windows.Forms.Button btnRegistreraNyProdukt;
         private System.Windows.Forms.Button btnRedigeraProdukt;
-        private System.Windows.Forms.DataGridView dgvProdukter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -393,7 +371,6 @@
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.TextBox tbProduktgrupp;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnExportera;
-        private System.Windows.Forms.Button btnSkrivUt;
+        public System.Windows.Forms.DataGridView dgvProdukter;
     }
 }

@@ -33,13 +33,13 @@ namespace PresentationLayer1.Forms
         private void btnTaBortAktivitet_Click(object sender, EventArgs e)
         {
             businessManager.RemoveAktivitet(aktivitet);
+
+            this.Visible = !this.Visible;
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            Forms.frmAktiviteter frmAktiviteter = new frmAktiviteter();
-            frmAktiviteter.Show();
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
@@ -47,7 +47,9 @@ namespace PresentationLayer1.Forms
             var aktiId = tbAktivitetsID.Text;
             var aktinamn = tbBenämning.Text;
             var aktiAvdelning = cmbAvdelning.Text;
-            businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
+            businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning); 
+            
+            this.Visible = !this.Visible;
         }
     }
 }

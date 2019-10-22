@@ -38,7 +38,15 @@ namespace PresentationLayer1.Forms
 
         public void btnTaBortKund_Click(object sender, EventArgs e)
         {
-            businessManager.RemoveKund(kund.KundID);
+
+            DialogResult result = MessageBox.Show("Vill du ta bort " + kund.Namn + "?", "Borttagning av kund", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                businessManager.RemoveKund(kund.KundID);
+                this.Visible = !this.Visible;
+            }
+
         }
 
         private void btnAvbrytKund2_Click(object sender, EventArgs e)

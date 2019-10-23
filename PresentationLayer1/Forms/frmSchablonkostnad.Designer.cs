@@ -52,6 +52,7 @@
             this.btnKunder = new System.Windows.Forms.Button();
             this.tbAvkastningskrav = new System.Windows.Forms.TextBox();
             this.lblAvkastningskrav = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvSchablonkostnad)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +127,7 @@
             this.btnRedigeraKonto.TabIndex = 33;
             this.btnRedigeraKonto.Text = "Redigera konto";
             this.btnRedigeraKonto.UseVisualStyleBackColor = true;
+            this.btnRedigeraKonto.Click += new System.EventHandler(this.btnRedigeraKonto_Click);
             // 
             // gvSchablonkostnad
             // 
@@ -278,7 +280,7 @@
             // 
             // tbAvkastningskrav
             // 
-            this.tbAvkastningskrav.Location = new System.Drawing.Point(635, 320);
+            this.tbAvkastningskrav.Location = new System.Drawing.Point(635, 273);
             this.tbAvkastningskrav.Name = "tbAvkastningskrav";
             this.tbAvkastningskrav.Size = new System.Drawing.Size(112, 20);
             this.tbAvkastningskrav.TabIndex = 41;
@@ -286,17 +288,28 @@
             // lblAvkastningskrav
             // 
             this.lblAvkastningskrav.AutoSize = true;
-            this.lblAvkastningskrav.Location = new System.Drawing.Point(635, 304);
+            this.lblAvkastningskrav.Location = new System.Drawing.Point(635, 257);
             this.lblAvkastningskrav.Name = "lblAvkastningskrav";
             this.lblAvkastningskrav.Size = new System.Drawing.Size(86, 13);
             this.lblAvkastningskrav.TabIndex = 42;
             this.lblAvkastningskrav.Text = "Avkastningskrav";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(753, 273);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Spara";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmSchablonkostnad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAvkastningskrav);
             this.Controls.Add(this.tbAvkastningskrav);
             this.Controls.Add(this.lblKontobenämning);
@@ -345,5 +358,6 @@
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.TextBox tbAvkastningskrav;
         private System.Windows.Forms.Label lblAvkastningskrav;
+        private System.Windows.Forms.Button button1;
     }
 }

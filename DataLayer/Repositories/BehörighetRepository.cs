@@ -54,5 +54,27 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public void Addbehörighet(string tempBehör, string tempPersnr)
+        {
+            using (var db = new DataContext())
+            {
+                var personen = db.Personal.Where(x => x.PersonNr == tempPersnr).FirstOrDefault();
+
+                personen.Behörighet = tempBehör;
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveBehörighet(string tempBehör, string tempPersnr)
+        {
+            using (var db = new DataContext())
+            {
+                var personen = db.Personal.Where(x => x.PersonNr == tempPersnr).FirstOrDefault();
+
+                personen.Behörighet = "Basanvändare";
+                db.SaveChanges();
+            }
+        }
     }
 }

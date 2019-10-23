@@ -55,6 +55,16 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
+        public void AddBehörighet(string tempBehör, string tempPersnr)
+        {
+            repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
+        }
+
+        public void RemoveBehörighet(string tempBehör, string tempPersnr)
+        {
+            repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
+        }
+
         public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)
         {
             return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);

@@ -37,9 +37,26 @@ namespace PresentationLayer1.Forms
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             Close();
-            //this.Visible = !this.Visible;
-            //frmBehörighet frmBehörighet = new frmBehörighet();
-            //frmBehörighet.Show();
+        }
+
+        private void btnTillsätt_Click(object sender, EventArgs e)
+        {
+            var tempBehör = cmbBehörighet.Text;
+            var tempPersnr = behörighet.Personnummer;
+            businessManager.AddBehörighet(tempBehör, tempPersnr);
+            visaBehörighet = businessManager.GetBehörighet(behörighet.Personnummer);
+            dgvBehörighet.DataSource = visaBehörighet;
+            dgvBehörighet.Update();
+        }
+
+        private void btnTaBortBehörighet_Click(object sender, EventArgs e)
+        {
+            var tempBehör = cmbBehörighet.Text;
+            var tempPersnr = behörighet.Personnummer;
+            businessManager.RemoveBehörighet(tempBehör, tempPersnr);
+            visaBehörighet = businessManager.GetBehörighet(behörighet.Personnummer);
+            dgvBehörighet.DataSource = visaBehörighet;
+            dgvBehörighet.Update();
         }
     }
 }

@@ -34,5 +34,10 @@ namespace PresentationLayer1.Forms
             }
             MessageBox.Show(ProduktGruppNamn + " sparad!", "Sparad", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
         }
+
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

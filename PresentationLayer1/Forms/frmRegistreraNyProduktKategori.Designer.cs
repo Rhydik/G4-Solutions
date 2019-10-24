@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmRegistreraNyProduktGrupp
+    partial class frmRegistreraNyProduktKategori
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbNyProduktGrupp = new System.Windows.Forms.TextBox();
+            this.btnSparaNyProduktKategori = new System.Windows.Forms.Button();
             this.lbNyProduktgrupp = new System.Windows.Forms.Label();
-            this.btnSparaNyProduktGrupp = new System.Windows.Forms.Button();
+            this.tbNyProduktKategori = new System.Windows.Forms.TextBox();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tbNyProduktGrupp
+            // btnSparaNyProduktKategori
             // 
-            this.tbNyProduktGrupp.Location = new System.Drawing.Point(102, 71);
-            this.tbNyProduktGrupp.Name = "tbNyProduktGrupp";
-            this.tbNyProduktGrupp.Size = new System.Drawing.Size(322, 22);
-            this.tbNyProduktGrupp.TabIndex = 0;
-            this.tbNyProduktGrupp.TextChanged += new System.EventHandler(this.tbNyProduktGrupp_TextChanged);
+            this.btnSparaNyProduktKategori.Location = new System.Drawing.Point(306, 135);
+            this.btnSparaNyProduktKategori.Name = "btnSparaNyProduktKategori";
+            this.btnSparaNyProduktKategori.Size = new System.Drawing.Size(110, 36);
+            this.btnSparaNyProduktKategori.TabIndex = 5;
+            this.btnSparaNyProduktKategori.Text = "Spara";
+            this.btnSparaNyProduktKategori.UseVisualStyleBackColor = true;
+            this.btnSparaNyProduktKategori.Click += new System.EventHandler(this.btnSparaNyProduktKategori_Click);
             // 
             // lbNyProduktgrupp
             // 
             this.lbNyProduktgrupp.AutoSize = true;
             this.lbNyProduktgrupp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNyProduktgrupp.Location = new System.Drawing.Point(26, 67);
+            this.lbNyProduktgrupp.Location = new System.Drawing.Point(24, 67);
             this.lbNyProduktgrupp.Name = "lbNyProduktgrupp";
             this.lbNyProduktgrupp.Size = new System.Drawing.Size(70, 25);
-            this.lbNyProduktgrupp.TabIndex = 1;
+            this.lbNyProduktgrupp.TabIndex = 4;
             this.lbNyProduktgrupp.Text = "Namn:";
             // 
-            // btnSparaNyProduktGrupp
+            // tbNyProduktKategori
             // 
-            this.btnSparaNyProduktGrupp.Location = new System.Drawing.Point(311, 136);
-            this.btnSparaNyProduktGrupp.Name = "btnSparaNyProduktGrupp";
-            this.btnSparaNyProduktGrupp.Size = new System.Drawing.Size(100, 36);
-            this.btnSparaNyProduktGrupp.TabIndex = 2;
-            this.btnSparaNyProduktGrupp.Text = "Spara";
-            this.btnSparaNyProduktGrupp.UseVisualStyleBackColor = true;
-            this.btnSparaNyProduktGrupp.Click += new System.EventHandler(this.btnSparaNyProduktGrupp_Click);
+            this.tbNyProduktKategori.Location = new System.Drawing.Point(100, 71);
+            this.tbNyProduktKategori.Name = "tbNyProduktKategori";
+            this.tbNyProduktKategori.Size = new System.Drawing.Size(316, 22);
+            this.tbNyProduktKategori.TabIndex = 3;
+            this.tbNyProduktKategori.TextChanged += new System.EventHandler(this.tbNyProduktKategori_TextChanged);
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(203, 136);
+            this.btnAvbryt.Location = new System.Drawing.Point(198, 135);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(86, 36);
-            this.btnAvbryt.TabIndex = 3;
+            this.btnAvbryt.TabIndex = 6;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = true;
             this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
-            // frmRegistreraNyProduktGrupp
+            // frmRegistreraNyProduktKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(452, 205);
+            this.ClientSize = new System.Drawing.Size(451, 205);
             this.Controls.Add(this.btnAvbryt);
-            this.Controls.Add(this.btnSparaNyProduktGrupp);
+            this.Controls.Add(this.btnSparaNyProduktKategori);
             this.Controls.Add(this.lbNyProduktgrupp);
-            this.Controls.Add(this.tbNyProduktGrupp);
-            this.Name = "frmRegistreraNyProduktGrupp";
+            this.Controls.Add(this.tbNyProduktKategori);
+            this.Name = "frmRegistreraNyProduktKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registrera Ny Produktgrupp";
+            this.Text = "Registrera Ny Produktkategori";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbNyProduktGrupp;
+        private System.Windows.Forms.Button btnSparaNyProduktKategori;
         private System.Windows.Forms.Label lbNyProduktgrupp;
-        private System.Windows.Forms.Button btnSparaNyProduktGrupp;
+        private System.Windows.Forms.TextBox tbNyProduktKategori;
         private System.Windows.Forms.Button btnAvbryt;
     }
 }

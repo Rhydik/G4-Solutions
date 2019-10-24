@@ -42,14 +42,14 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnSkapaNyProduktgrupp = new System.Windows.Forms.Button();
+            this.btnRegistreraNyProduktKategori = new System.Windows.Forms.Button();
+            this.btnRegistreraNyProduktgrupp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // newProduktNametxt
             // 
             this.newProduktNametxt.Location = new System.Drawing.Point(21, 181);
-            this.newProduktNametxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newProduktNametxt.Margin = new System.Windows.Forms.Padding(4);
             this.newProduktNametxt.Name = "newProduktNametxt";
             this.newProduktNametxt.Size = new System.Drawing.Size(317, 22);
             this.newProduktNametxt.TabIndex = 0;
@@ -58,7 +58,7 @@
             // newProduktkodtxt
             // 
             this.newProduktkodtxt.Location = new System.Drawing.Point(21, 114);
-            this.newProduktkodtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newProduktkodtxt.Margin = new System.Windows.Forms.Padding(4);
             this.newProduktkodtxt.Name = "newProduktkodtxt";
             this.newProduktkodtxt.Size = new System.Drawing.Size(317, 22);
             this.newProduktkodtxt.TabIndex = 1;
@@ -83,9 +83,9 @@
             this.label2.Location = new System.Drawing.Point(17, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "ProduktID";
+            this.label2.Text = "Del-ProduktID";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -117,7 +117,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "dwwd"});
             this.comboBox1.Location = new System.Drawing.Point(21, 284);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(317, 24);
             this.comboBox1.TabIndex = 7;
@@ -125,8 +125,8 @@
             // btnAddProdukt
             // 
             this.btnAddProdukt.BackColor = System.Drawing.Color.Yellow;
-            this.btnAddProdukt.Location = new System.Drawing.Point(183, 582);
-            this.btnAddProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddProdukt.Location = new System.Drawing.Point(364, 582);
+            this.btnAddProdukt.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProdukt.Name = "btnAddProdukt";
             this.btnAddProdukt.Size = new System.Drawing.Size(164, 71);
             this.btnAddProdukt.TabIndex = 8;
@@ -138,7 +138,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(21, 353);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(317, 24);
             this.comboBox2.TabIndex = 9;
@@ -169,7 +169,7 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(21, 425);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(317, 24);
             this.comboBox3.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(21, 582);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 71);
             this.button1.TabIndex = 14;
@@ -199,27 +199,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnRegistreraNyProduktKategori
             // 
-            this.button2.Location = new System.Drawing.Point(364, 278);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(193, 32);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Skapa ny Produktkategori";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRegistreraNyProduktKategori.Location = new System.Drawing.Point(364, 278);
+            this.btnRegistreraNyProduktKategori.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistreraNyProduktKategori.Name = "btnRegistreraNyProduktKategori";
+            this.btnRegistreraNyProduktKategori.Size = new System.Drawing.Size(215, 32);
+            this.btnRegistreraNyProduktKategori.TabIndex = 15;
+            this.btnRegistreraNyProduktKategori.Text = "Registrera ny Produktkategori";
+            this.btnRegistreraNyProduktKategori.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyProduktKategori.Click += new System.EventHandler(this.btnRegistreraNyProduktKategori_Click);
             // 
-            // btnSkapaNyProduktgrupp
+            // btnRegistreraNyProduktgrupp
             // 
-            this.btnSkapaNyProduktgrupp.Location = new System.Drawing.Point(364, 345);
-            this.btnSkapaNyProduktgrupp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSkapaNyProduktgrupp.Name = "btnSkapaNyProduktgrupp";
-            this.btnSkapaNyProduktgrupp.Size = new System.Drawing.Size(193, 32);
-            this.btnSkapaNyProduktgrupp.TabIndex = 16;
-            this.btnSkapaNyProduktgrupp.Text = "Skapa ny Produktgrupp";
-            this.btnSkapaNyProduktgrupp.UseVisualStyleBackColor = true;
-            this.btnSkapaNyProduktgrupp.Click += new System.EventHandler(this.btnskapaNyProduktGrupp_Click);
+            this.btnRegistreraNyProduktgrupp.Location = new System.Drawing.Point(364, 345);
+            this.btnRegistreraNyProduktgrupp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistreraNyProduktgrupp.Name = "btnRegistreraNyProduktgrupp";
+            this.btnRegistreraNyProduktgrupp.Size = new System.Drawing.Size(215, 32);
+            this.btnRegistreraNyProduktgrupp.TabIndex = 16;
+            this.btnRegistreraNyProduktgrupp.Text = "Registrera ny Produktgrupp";
+            this.btnRegistreraNyProduktgrupp.UseVisualStyleBackColor = true;
+            this.btnRegistreraNyProduktgrupp.Click += new System.EventHandler(this.btnRegistreraNyProduktGrupp_Click);
             // 
             // frmRegistreraNyProdukt
             // 
@@ -227,8 +227,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(592, 668);
-            this.Controls.Add(this.btnSkapaNyProduktgrupp);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRegistreraNyProduktgrupp);
+            this.Controls.Add(this.btnRegistreraNyProduktKategori);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox3);
@@ -244,7 +244,7 @@
             this.Controls.Add(this.newProduktkodtxt);
             this.Controls.Add(this.newProduktNametxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegistreraNyProdukt";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -272,7 +272,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnSkapaNyProduktgrupp;
+        private System.Windows.Forms.Button btnRegistreraNyProduktKategori;
+        private System.Windows.Forms.Button btnRegistreraNyProduktgrupp;
     }
 }

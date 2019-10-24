@@ -135,6 +135,15 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-
+        
+        public void AddProduktKategori(string namn)
+        {
+            using (var db = new DataContext())
+            {
+                var produktkategori = new Produktkategori { Namn = namn };
+                db.Produktkategori.Add(produktkategori);
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -222,6 +222,11 @@ namespace BusinessLayer
             repositoryFacade.produktRepository.AddProduktGrupp(namn);
         }
 
+        public void AddProduktKategori(string namn)
+        {
+            repositoryFacade.produktRepository.AddProduktKategori(namn);
+        }
+
 
 
             //avdelningar?

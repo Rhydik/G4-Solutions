@@ -130,12 +130,14 @@ namespace PresentationLayer1.Forms
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnRegistreraNyProduktKategori_Click(object sender, EventArgs e)
         {
-
+            Forms.frmRegistreraNyProduktKategori frmAddNewProduktKategori = new frmRegistreraNyProduktKategori();
+            frmAddNewProduktKategori.TopMost = true;
+            frmAddNewProduktKategori.Show();
         }
 
-        private void btnskapaNyProduktGrupp_Click(object sender, EventArgs e)
+        private void btnRegistreraNyProduktGrupp_Click(object sender, EventArgs e)
         {
             Forms.frmRegistreraNyProduktGrupp frmAddNewProduktgrupp = new frmRegistreraNyProduktGrupp();
             frmAddNewProduktgrupp.TopMost = true;
@@ -158,6 +160,14 @@ namespace PresentationLayer1.Forms
             comboBox2.DataSource = produktGruppUpdated;
             comboBox2.ValueMember = "Namn";
             comboBox2.DisplayMember = "Namn";
+        }
+
+        public void RefreshProduktKategori()
+        {
+            var produktKategoriUpdated = businessManager.GetProduktByKategori();
+            comboBox1.DataSource = produktKategoriUpdated;
+            comboBox1.ValueMember = "Namn";
+            comboBox1.DisplayMember = "Namn";
         }
     }
 }

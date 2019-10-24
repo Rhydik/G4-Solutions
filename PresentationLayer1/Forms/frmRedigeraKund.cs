@@ -45,6 +45,11 @@ namespace PresentationLayer1.Forms
             {
                 businessManager.RemoveKund(kund.KundID);
 
+                if (Application.OpenForms["frmKunder"] != null)
+                {
+                    (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
+                }
+
                 DialogResult tabortResultat = MessageBox.Show(kund.Namn + " borttagen", "Borttagning lyckad", MessageBoxButtons.OK);
 
                 this.Visible = !this.Visible;
@@ -55,15 +60,11 @@ namespace PresentationLayer1.Forms
         private void btnAvbrytKund2_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            //frmKunder frmKunder = new frmKunder();
-            //frmKunder.Show();
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;
-            //frmKunder frmKunder = new frmKunder();
-            //frmKunder.Show();
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
@@ -74,6 +75,10 @@ namespace PresentationLayer1.Forms
 
             businessManager.UpdateKund(kund, kundId, kundNamn, kundKategori);
 
+            if (Application.OpenForms["frmKunder"] != null)
+            {
+                (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
+            }
 
             DialogResult resultat = MessageBox.Show(kund.Namn + " uppdaterad.", "Uppdatera kund", MessageBoxButtons.OK);
 

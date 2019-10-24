@@ -23,17 +23,7 @@ namespace PresentationLayer1
             InitializeComponent();
             businessManager = new BusinessManager();
 
-            kunder = businessManager.GetAllKunder();
-
-            dgvKunder.DataSource = kunder;
-            //dataGridView.CellBeginEdit += dgv_CellBeginEdit;
-            //dataGridView.CellValidating += dgv_CellValidating;
-            dgvKunder.CellEndEdit += dataGridView_CellEndEdit;
-
-            var kategori = businessManager.GetAllKundKategori();
-            cmbKundkategori.DataSource = kategori;
-            cmbKundkategori.ValueMember = "Namn";
-            cmbKundkategori.DisplayMember = "Namn";
+            RefreshData();
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -55,9 +45,7 @@ namespace PresentationLayer1
             tbKundID.Text = "";
             tbKund.Text = "";
 
-            kunder = businessManager.GetAllKunder();
-
-            dgvKunder.DataSource = kunder;
+            RefreshData();
         }
 
         private void btnSök_Click(object sender, EventArgs e)
@@ -104,6 +92,18 @@ namespace PresentationLayer1
             kunder = businessManager.GetAllKunder();
 
             dgvKunder.DataSource = kunder;
+        }
+
+        public void RefreshData()
+        {
+            kunder = businessManager.GetAllKunder();
+
+            dgvKunder.DataSource = kunder;
+
+            var kategori = businessManager.GetAllKundKategori();
+            cmbKundkategori.DataSource = kategori;
+            cmbKundkategori.ValueMember = "Namn";
+            cmbKundkategori.DisplayMember = "Namn";
         }
     }
 }

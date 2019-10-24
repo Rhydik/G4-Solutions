@@ -55,6 +55,16 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
+        public void AddBehörighet(string tempBehör, string tempPersnr)
+        {
+            repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
+        }
+
+        public void RemoveBehörighet(string tempBehör, string tempPersnr)
+        {
+            repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
+        }
+
         public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)
         {
             return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);
@@ -85,10 +95,26 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
         }
 
+        public void UpdateKonto(SchablonDTO oldSchablon, string kontoId, string kontoNamn, string schablonkostnad)
+        {
+            repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, int.Parse(kontoId), kontoNamn, int.Parse(schablonkostnad));
+        }
+        
+        public void CreateKonto(int konto, string namn, int schablonKostnad)
+        {
+            repositoryFacade.schablonRepository.CreateKonto(konto, namn, schablonKostnad);
+        }
+
+        public void CreateAvkastning(int avkastning)
+        {
+            repositoryFacade.schablonRepository.CreateAvkastning(avkastning);
+        }
+
         public object GetSchablonByBenämning(string benämning)
         {
             return repositoryFacade.schablonRepository.GetSchablonByBenämning(benämning);
         }
+
 
         public List<AktivitetDTO> GetAktivitetById(string aktivitetId)
         {
@@ -191,6 +217,20 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
 
+        public void AddProduktGrupp(string namn)
+        {
+            repositoryFacade.produktRepository.AddProduktGrupp(namn);
+        }
+
+        public void AddProduktKategori(string namn)
+        {
+            repositoryFacade.produktRepository.AddProduktKategori(namn);
+        }
+
+
+
+            //avdelningar?
+
         public void AddAvdelning(string namn)
         {
             repositoryFacade.aktivitetRepository.AddAvdelning(namn);
@@ -208,6 +248,11 @@ namespace BusinessLayer
         public void RemoveProdukt(ProduktDTO produkt)
         {
             repositoryFacade.produktRepository.RemoveProdukt(produkt);
+        }
+
+        public void RemoveKonto(SchablonDTO schablon)
+        {
+            repositoryFacade.schablonRepository.RemoveKonto(schablon);
         }
 
         public void UpdateProdukt(ProduktDTO oldProdukt, string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)

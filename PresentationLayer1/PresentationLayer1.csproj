@@ -46,6 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmRegistreraNyProduktKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProduktKategori.Designer.cs">
+      <DependentUpon>frmRegistreraNyProduktKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProduktGrupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProduktGrupp.Designer.cs">
+      <DependentUpon>frmRegistreraNyProduktGrupp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBudgeteratResultat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBudgeteratResultat.Designer.cs">
+      <DependentUpon>frmBudgeteratResultat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDirektaKostnaderAktvitet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDirektaKostnaderAktvitet.Designer.cs">
+      <DependentUpon>frmDirektaKostnaderAktvitet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDirektaKostnaderProdukt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDirektaKostnaderProdukt.Designer.cs">
+      <DependentUpon>frmDirektaKostnaderProdukt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmKostnadsbudgetering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmKostnadsbudgetering.Designer.cs">
+      <DependentUpon>frmKostnadsbudgetering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrognostiseringIntäkter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrognostiseringIntäkter.Designer.cs">
+      <DependentUpon>frmPrognostiseringIntäkter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmRegistreraNyProdukt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +220,12 @@
     <Compile Include="Forms\frmRegistreraNyttKonto.Designer.cs">
       <DependentUpon>frmRegistreraNyttKonto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmResultat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmResultat.Designer.cs">
+      <DependentUpon>frmResultat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmSchablonkostnad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +235,27 @@
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmRegistreraNyProduktKategori.resx">
+      <DependentUpon>frmRegistreraNyProduktKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRegistreraNyProduktGrupp.resx">
+      <DependentUpon>frmRegistreraNyProduktGrupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBudgeteratResultat.resx">
+      <DependentUpon>frmBudgeteratResultat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDirektaKostnaderAktvitet.resx">
+      <DependentUpon>frmDirektaKostnaderAktvitet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDirektaKostnaderProdukt.resx">
+      <DependentUpon>frmDirektaKostnaderProdukt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmKostnadsbudgetering.resx">
+      <DependentUpon>frmKostnadsbudgetering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrognostiseringIntäkter.resx">
+      <DependentUpon>frmPrognostiseringIntäkter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyProdukt.resx">
       <DependentUpon>frmRegistreraNyProdukt.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRegistreraNyttKonto.resx">
       <DependentUpon>frmRegistreraNyttKonto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmResultat.resx">
+      <DependentUpon>frmResultat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSchablonkostnad.resx">
       <DependentUpon>frmSchablonkostnad.cs</DependentUpon>

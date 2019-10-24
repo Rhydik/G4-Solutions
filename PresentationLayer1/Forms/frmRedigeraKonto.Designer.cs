@@ -48,8 +48,9 @@
             this.btnTaBortAktivitet.Name = "btnTaBortAktivitet";
             this.btnTaBortAktivitet.Size = new System.Drawing.Size(239, 41);
             this.btnTaBortAktivitet.TabIndex = 40;
-            this.btnTaBortAktivitet.Text = "Ta bort aktivitet";
+            this.btnTaBortAktivitet.Text = "Ta bort Konto";
             this.btnTaBortAktivitet.UseVisualStyleBackColor = false;
+            this.btnTaBortAktivitet.Click += new System.EventHandler(this.btnTaBortAktivitet_Click_1);
             // 
             // btnAvbryt
             // 
@@ -60,6 +61,7 @@
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 
@@ -78,6 +80,7 @@
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click_1);
             // 
             // lblSchablonkostnad
             // 

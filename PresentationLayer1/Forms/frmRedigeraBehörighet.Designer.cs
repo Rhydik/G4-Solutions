@@ -39,6 +39,7 @@
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.btnSpara = new System.Windows.Forms.Button();
             this.lblRedigeraBehörighet = new System.Windows.Forms.Label();
+            this.btnTaBortBehörighet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,10 +47,9 @@
             // 
             this.Namn.AutoSize = true;
             this.Namn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Namn.Location = new System.Drawing.Point(128, 128);
-            this.Namn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Namn.Location = new System.Drawing.Point(85, 83);
             this.Namn.Name = "Namn";
-            this.Namn.Size = new System.Drawing.Size(57, 20);
+            this.Namn.Size = new System.Drawing.Size(39, 13);
             this.Namn.TabIndex = 0;
             this.Namn.Text = "Namn";
             // 
@@ -57,51 +57,46 @@
             // 
             this.Pnr.AutoSize = true;
             this.Pnr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pnr.Location = new System.Drawing.Point(128, 166);
-            this.Pnr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Pnr.Location = new System.Drawing.Point(85, 108);
             this.Pnr.Name = "Pnr";
-            this.Pnr.Size = new System.Drawing.Size(38, 20);
+            this.Pnr.Size = new System.Drawing.Size(26, 13);
             this.Pnr.TabIndex = 1;
             this.Pnr.Text = "Pnr";
             // 
             // lblNamn
             // 
             this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(231, 128);
-            this.lblNamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNamn.Location = new System.Drawing.Point(154, 83);
             this.lblNamn.Name = "lblNamn";
-            this.lblNamn.Size = new System.Drawing.Size(51, 20);
+            this.lblNamn.Size = new System.Drawing.Size(35, 13);
             this.lblNamn.TabIndex = 3;
             this.lblNamn.Text = "label1";
             // 
             // lblPnr
             // 
             this.lblPnr.AutoSize = true;
-            this.lblPnr.Location = new System.Drawing.Point(231, 166);
-            this.lblPnr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPnr.Location = new System.Drawing.Point(154, 108);
             this.lblPnr.Name = "lblPnr";
-            this.lblPnr.Size = new System.Drawing.Size(51, 20);
+            this.lblPnr.Size = new System.Drawing.Size(35, 13);
             this.lblPnr.TabIndex = 4;
             this.lblPnr.Text = "label2";
             // 
             // dgvBehörighet
             // 
             this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBehörighet.Location = new System.Drawing.Point(426, 128);
-            this.dgvBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvBehörighet.Location = new System.Drawing.Point(284, 83);
             this.dgvBehörighet.Name = "dgvBehörighet";
             this.dgvBehörighet.RowHeadersWidth = 62;
-            this.dgvBehörighet.Size = new System.Drawing.Size(360, 231);
+            this.dgvBehörighet.Size = new System.Drawing.Size(240, 150);
             this.dgvBehörighet.TabIndex = 6;
             // 
             // lblBehörighet
             // 
             this.lblBehörighet.AutoSize = true;
             this.lblBehörighet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBehörighet.Location = new System.Drawing.Point(422, 97);
-            this.lblBehörighet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBehörighet.Location = new System.Drawing.Point(281, 63);
             this.lblBehörighet.Name = "lblBehörighet";
-            this.lblBehörighet.Size = new System.Drawing.Size(100, 20);
+            this.lblBehörighet.Size = new System.Drawing.Size(68, 13);
             this.lblBehörighet.TabIndex = 7;
             this.lblBehörighet.Text = "Behörighet";
             // 
@@ -114,30 +109,29 @@
             "Utvecklingsavdelningsschef",
             "Marknadsavdelningsschef",
             "Kundavdelningschef",
-            "Försäljningsavdelningschef"});
-            this.cmbBehörighet.Location = new System.Drawing.Point(426, 362);
-            this.cmbBehörighet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            "Försäljningsavdelningschef",
+            "Basanvändare"});
+            this.cmbBehörighet.Location = new System.Drawing.Point(284, 235);
             this.cmbBehörighet.Name = "cmbBehörighet";
-            this.cmbBehörighet.Size = new System.Drawing.Size(236, 28);
+            this.cmbBehörighet.Size = new System.Drawing.Size(113, 21);
             this.cmbBehörighet.TabIndex = 8;
             // 
             // btnTillsätt
             // 
-            this.btnTillsätt.Location = new System.Drawing.Point(674, 362);
-            this.btnTillsätt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTillsätt.Location = new System.Drawing.Point(403, 235);
             this.btnTillsätt.Name = "btnTillsätt";
-            this.btnTillsätt.Size = new System.Drawing.Size(112, 35);
+            this.btnTillsätt.Size = new System.Drawing.Size(58, 23);
             this.btnTillsätt.TabIndex = 9;
             this.btnTillsätt.Text = "Tillsätt";
             this.btnTillsätt.UseVisualStyleBackColor = true;
+            this.btnTillsätt.Click += new System.EventHandler(this.btnTillsätt_Click);
             // 
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(426, 462);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAvbryt.Location = new System.Drawing.Point(284, 300);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(92, 89);
+            this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
             this.btnAvbryt.TabIndex = 30;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
@@ -146,10 +140,9 @@
             // btnSpara
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(602, 462);
-            this.btnSpara.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSpara.Location = new System.Drawing.Point(401, 300);
             this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(184, 89);
+            this.btnSpara.Size = new System.Drawing.Size(123, 58);
             this.btnSpara.TabIndex = 29;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
@@ -158,19 +151,29 @@
             // 
             this.lblRedigeraBehörighet.AutoSize = true;
             this.lblRedigeraBehörighet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedigeraBehörighet.Location = new System.Drawing.Point(39, 32);
-            this.lblRedigeraBehörighet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRedigeraBehörighet.Location = new System.Drawing.Point(26, 21);
             this.lblRedigeraBehörighet.Name = "lblRedigeraBehörighet";
-            this.lblRedigeraBehörighet.Size = new System.Drawing.Size(278, 33);
+            this.lblRedigeraBehörighet.Size = new System.Drawing.Size(183, 22);
             this.lblRedigeraBehörighet.TabIndex = 33;
             this.lblRedigeraBehörighet.Text = "Redigera behörighet";
             // 
+            // btnTaBortBehörighet
+            // 
+            this.btnTaBortBehörighet.Location = new System.Drawing.Point(467, 235);
+            this.btnTaBortBehörighet.Name = "btnTaBortBehörighet";
+            this.btnTaBortBehörighet.Size = new System.Drawing.Size(57, 23);
+            this.btnTaBortBehörighet.TabIndex = 34;
+            this.btnTaBortBehörighet.Text = "Ta bort";
+            this.btnTaBortBehörighet.UseVisualStyleBackColor = true;
+            this.btnTaBortBehörighet.Click += new System.EventHandler(this.btnTaBortBehörighet_Click);
+            // 
             // frmRedigeraBehörighet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(962, 594);
+            this.ClientSize = new System.Drawing.Size(641, 386);
+            this.Controls.Add(this.btnTaBortBehörighet);
             this.Controls.Add(this.lblRedigeraBehörighet);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnSpara);
@@ -182,7 +185,6 @@
             this.Controls.Add(this.lblNamn);
             this.Controls.Add(this.Pnr);
             this.Controls.Add(this.Namn);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmRedigeraBehörighet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRedigeraBehörighet";
@@ -205,5 +207,6 @@
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Label lblRedigeraBehörighet;
+        private System.Windows.Forms.Button btnTaBortBehörighet;
     }
 }

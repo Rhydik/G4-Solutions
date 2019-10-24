@@ -67,10 +67,10 @@ namespace PresentationLayer1.Forms
 
         private void btnRensa_Click(object sender, EventArgs e)
         {
-            RefreshProducts();
+            RefreshProdukter();
         }
 
-        public void RefreshProducts()
+        public void RefreshProdukter()
         {
             produkterupdated = businessManager.GetAllProdukter();
             dgvProdukter.DataSource = produkterupdated;

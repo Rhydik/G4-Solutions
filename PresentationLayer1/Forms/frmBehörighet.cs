@@ -60,5 +60,17 @@ namespace PresentationLayer1.Forms
                 dgvBehörighet.DataSource = behörighets;
             }
         }
+
+        private void frmBehörighet_Activated(object sender, EventArgs e)
+        {
+            behörighets = businessManager.GetAllBehörighet();
+            dgvBehörighet.DataSource = behörighets;
+        }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            tbNamn.Clear();
+            tbPersonNr.Clear();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmPersonal
+    partial class frmDirektaKostnaderAktvitet
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNamn = new System.Windows.Forms.Label();
-            this.lblPersonnummer = new System.Windows.Forms.Label();
-            this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
-            this.tbPersonal = new System.Windows.Forms.TextBox();
-            this.tbPersonnummer = new System.Windows.Forms.TextBox();
-            this.btnRegistreraNyPersonal = new System.Windows.Forms.Button();
-            this.btnRedigeraPersonal = new System.Windows.Forms.Button();
-            this.gvPersonal = new System.Windows.Forms.DataGridView();
+            this.btnSpara = new System.Windows.Forms.Button();
+            this.btnExportera = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -50,92 +43,33 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).BeginInit();
+            this.dgvDirektaKostnaderAktivitet = new System.Windows.Forms.DataGridView();
+            this.btnLåsBudget = new System.Windows.Forms.Button();
+            this.btnPlacering = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDirektaKostnaderProdukt = new System.Windows.Forms.Button();
+            this.btnDirektaKostnaderAktivitet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDirektaKostnaderAktivitet)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNamn
+            // btnSpara
             // 
-            this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(397, 32);
-            this.lblNamn.Name = "lblNamn";
-            this.lblNamn.Size = new System.Drawing.Size(35, 13);
-            this.lblNamn.TabIndex = 30;
-            this.lblNamn.Text = "Namn";
+            this.btnSpara.Location = new System.Drawing.Point(641, 397);
+            this.btnSpara.Name = "btnSpara";
+            this.btnSpara.Size = new System.Drawing.Size(120, 41);
+            this.btnSpara.TabIndex = 89;
+            this.btnSpara.Text = "Spara";
+            this.btnSpara.UseVisualStyleBackColor = true;
             // 
-            // lblPersonnummer
+            // btnExportera
             // 
-            this.lblPersonnummer.AutoSize = true;
-            this.lblPersonnummer.Location = new System.Drawing.Point(243, 32);
-            this.lblPersonnummer.Name = "lblPersonnummer";
-            this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
-            this.lblPersonnummer.TabIndex = 29;
-            this.lblPersonnummer.Text = "Personnummer";
-            // 
-            // btnRensa
-            // 
-            this.btnRensa.Location = new System.Drawing.Point(311, 83);
-            this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 23);
-            this.btnRensa.TabIndex = 28;
-            this.btnRensa.Text = "Rensa";
-            this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(244, 83);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 27;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
-            // 
-            // tbPersonal
-            // 
-            this.tbPersonal.Location = new System.Drawing.Point(400, 52);
-            this.tbPersonal.Name = "tbPersonal";
-            this.tbPersonal.Size = new System.Drawing.Size(128, 20);
-            this.tbPersonal.TabIndex = 25;
-            this.tbPersonal.TextChanged += new System.EventHandler(this.tbPersonal_TextChanged);
-            // 
-            // tbPersonnummer
-            // 
-            this.tbPersonnummer.Location = new System.Drawing.Point(243, 52);
-            this.tbPersonnummer.Name = "tbPersonnummer";
-            this.tbPersonnummer.Size = new System.Drawing.Size(128, 20);
-            this.tbPersonnummer.TabIndex = 24;
-            this.tbPersonnummer.TextChanged += new System.EventHandler(this.tbPersonnummer_TextChanged);
-            // 
-            // btnRegistreraNyPersonal
-            // 
-            this.btnRegistreraNyPersonal.Location = new System.Drawing.Point(701, 398);
-            this.btnRegistreraNyPersonal.Name = "btnRegistreraNyPersonal";
-            this.btnRegistreraNyPersonal.Size = new System.Drawing.Size(112, 40);
-            this.btnRegistreraNyPersonal.TabIndex = 23;
-            this.btnRegistreraNyPersonal.Text = "Registrera ny personal";
-            this.btnRegistreraNyPersonal.UseVisualStyleBackColor = true;
-            this.btnRegistreraNyPersonal.Click += new System.EventHandler(this.btnRegistreraNyPersonal_Click);
-            // 
-            // btnRedigeraPersonal
-            // 
-            this.btnRedigeraPersonal.Location = new System.Drawing.Point(575, 397);
-            this.btnRedigeraPersonal.Name = "btnRedigeraPersonal";
-            this.btnRedigeraPersonal.Size = new System.Drawing.Size(120, 41);
-            this.btnRedigeraPersonal.TabIndex = 22;
-            this.btnRedigeraPersonal.Text = "Redigera personal";
-            this.btnRedigeraPersonal.UseVisualStyleBackColor = true;
-            this.btnRedigeraPersonal.Click += new System.EventHandler(this.btnRedigeraPersonal_Click);
-            // 
-            // gvPersonal
-            // 
-            this.gvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPersonal.Location = new System.Drawing.Point(244, 119);
-            this.gvPersonal.Name = "gvPersonal";
-            this.gvPersonal.ReadOnly = true;
-            this.gvPersonal.RowHeadersWidth = 62;
-            this.gvPersonal.Size = new System.Drawing.Size(569, 273);
-            this.gvPersonal.TabIndex = 21;
-            this.gvPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPersonal_CellContentClick);
+            this.btnExportera.Location = new System.Drawing.Point(244, 397);
+            this.btnExportera.Name = "btnExportera";
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
+            this.btnExportera.TabIndex = 91;
+            this.btnExportera.Text = "Exportera";
+            this.btnExportera.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -151,10 +85,10 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(10, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 87;
             // 
             // btnResultat
             // 
@@ -276,41 +210,88 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // frmPersonal
+            // dgvDirektaKostnaderAktivitet
+            // 
+            this.dgvDirektaKostnaderAktivitet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDirektaKostnaderAktivitet.Location = new System.Drawing.Point(244, 94);
+            this.dgvDirektaKostnaderAktivitet.Name = "dgvDirektaKostnaderAktivitet";
+            this.dgvDirektaKostnaderAktivitet.ReadOnly = true;
+            this.dgvDirektaKostnaderAktivitet.RowHeadersWidth = 62;
+            this.dgvDirektaKostnaderAktivitet.Size = new System.Drawing.Size(517, 293);
+            this.dgvDirektaKostnaderAktivitet.TabIndex = 88;
+            // 
+            // btnLåsBudget
+            // 
+            this.btnLåsBudget.Location = new System.Drawing.Point(515, 397);
+            this.btnLåsBudget.Name = "btnLåsBudget";
+            this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
+            this.btnLåsBudget.TabIndex = 90;
+            this.btnLåsBudget.Text = "Lås Budget";
+            this.btnLåsBudget.UseVisualStyleBackColor = true;
+            // 
+            // btnPlacering
+            // 
+            this.btnPlacering.Location = new System.Drawing.Point(244, 17);
+            this.btnPlacering.Name = "btnPlacering";
+            this.btnPlacering.Size = new System.Drawing.Size(120, 41);
+            this.btnPlacering.TabIndex = 92;
+            this.btnPlacering.Text = "Placering";
+            this.btnPlacering.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(493, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "label1";
+            // 
+            // btnDirektaKostnaderProdukt
+            // 
+            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(370, 17);
+            this.btnDirektaKostnaderProdukt.Name = "btnDirektaKostnaderProdukt";
+            this.btnDirektaKostnaderProdukt.Size = new System.Drawing.Size(120, 41);
+            this.btnDirektaKostnaderProdukt.TabIndex = 93;
+            this.btnDirektaKostnaderProdukt.Text = "Direkta kostnader produkt";
+            this.btnDirektaKostnaderProdukt.UseVisualStyleBackColor = true;
+            // 
+            // btnDirektaKostnaderAktivitet
+            // 
+            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(496, 17);
+            this.btnDirektaKostnaderAktivitet.Name = "btnDirektaKostnaderAktivitet";
+            this.btnDirektaKostnaderAktivitet.Size = new System.Drawing.Size(120, 41);
+            this.btnDirektaKostnaderAktivitet.TabIndex = 94;
+            this.btnDirektaKostnaderAktivitet.Text = "Direkta kostnader aktivitet";
+            this.btnDirektaKostnaderAktivitet.UseVisualStyleBackColor = true;
+            // 
+            // frmDirektaKostnaderAktvitet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 450);
-            this.Controls.Add(this.lblNamn);
-            this.Controls.Add(this.lblPersonnummer);
-            this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
-            this.Controls.Add(this.tbPersonal);
-            this.Controls.Add(this.tbPersonnummer);
-            this.Controls.Add(this.btnRegistreraNyPersonal);
-            this.Controls.Add(this.btnRedigeraPersonal);
-            this.Controls.Add(this.gvPersonal);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSpara);
+            this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.panel1);
-            this.Name = "frmPersonal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPersonal";
-            ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).EndInit();
+            this.Controls.Add(this.dgvDirektaKostnaderAktivitet);
+            this.Controls.Add(this.btnLåsBudget);
+            this.Controls.Add(this.btnPlacering);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnDirektaKostnaderProdukt);
+            this.Controls.Add(this.btnDirektaKostnaderAktivitet);
+            this.Name = "frmDirektaKostnaderAktvitet";
+            this.Text = "frmDirektaKostnaderAktvitet";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDirektaKostnaderAktivitet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNamn;
-        private System.Windows.Forms.Label lblPersonnummer;
-        private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
-        private System.Windows.Forms.TextBox tbPersonal;
-        private System.Windows.Forms.TextBox tbPersonnummer;
-        private System.Windows.Forms.Button btnRegistreraNyPersonal;
-        private System.Windows.Forms.Button btnRedigeraPersonal;
-        private System.Windows.Forms.DataGridView gvPersonal;
+
+        private System.Windows.Forms.Button btnSpara;
+        private System.Windows.Forms.Button btnExportera;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -324,5 +305,11 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
+        private System.Windows.Forms.DataGridView dgvDirektaKostnaderAktivitet;
+        private System.Windows.Forms.Button btnLåsBudget;
+        private System.Windows.Forms.Button btnPlacering;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDirektaKostnaderProdukt;
+        private System.Windows.Forms.Button btnDirektaKostnaderAktivitet;
     }
 }

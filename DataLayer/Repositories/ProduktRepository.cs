@@ -14,6 +14,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produkt
+                            orderby x.Namn
                             select new ProduktDTO {ProduktID = x.ProduktID, Namn = x.Namn, Produktgrupp = x.Produktgrupp.Namn, Produktkategori = x.Produktkategori.Namn, Avdelning = x.Avdelning.Namn};
 
                 return query.ToList();
@@ -92,6 +93,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produktkategori
+                            orderby x.Namn
                             select new ProduktKategoriDTO {ProduktkategoriID = x.ProduktkategoriID, Namn = x.Namn};
                 Console.WriteLine(query);
                 return query.ToList();
@@ -105,6 +107,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produktgrupp
+                            orderby x.Namn
                             select new ProduktgruppDTO { ProduktgruppID = x.ProduktgruppID, Namn = x.Namn };
                 Console.WriteLine(query);
                 return query.ToList();
@@ -123,5 +126,24 @@ namespace DataLayer
             }
         }
 
+        public void AddProduktGrupp(string namn)
+        {
+            using (var db = new DataContext())
+            {               
+                var produktgrupp = new Produktgrupp {Namn = namn};
+                db.Produktgrupp.Add(produktgrupp);
+                db.SaveChanges();
+            }
+        }
+        
+        public void AddProduktKategori(string namn)
+        {
+            using (var db = new DataContext())
+            {
+                var produktkategori = new Produktkategori { Namn = namn };
+                db.Produktkategori.Add(produktkategori);
+                db.SaveChanges();
+            }
+        }
     }
 }

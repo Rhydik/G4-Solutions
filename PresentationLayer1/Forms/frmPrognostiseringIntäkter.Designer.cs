@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class frmPersonal
+    partial class frmPrognostiseringIntäkter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNamn = new System.Windows.Forms.Label();
-            this.lblPersonnummer = new System.Windows.Forms.Label();
-            this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
-            this.tbPersonal = new System.Windows.Forms.TextBox();
-            this.tbPersonnummer = new System.Windows.Forms.TextBox();
-            this.btnRegistreraNyPersonal = new System.Windows.Forms.Button();
-            this.btnRedigeraPersonal = new System.Windows.Forms.Button();
-            this.gvPersonal = new System.Windows.Forms.DataGridView();
+            this.btnExportera = new System.Windows.Forms.Button();
+            this.cmbMånad = new System.Windows.Forms.ComboBox();
+            this.lblMånad = new System.Windows.Forms.Label();
+            this.dgvPrognostiseringIntäkter = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
@@ -50,92 +45,48 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).BeginInit();
+            this.btnLås = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNamn
+            // btnExportera
             // 
-            this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(397, 32);
-            this.lblNamn.Name = "lblNamn";
-            this.lblNamn.Size = new System.Drawing.Size(35, 13);
-            this.lblNamn.TabIndex = 30;
-            this.lblNamn.Text = "Namn";
+            this.btnExportera.Location = new System.Drawing.Point(246, 393);
+            this.btnExportera.Name = "btnExportera";
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
+            this.btnExportera.TabIndex = 92;
+            this.btnExportera.Text = "Exportera";
+            this.btnExportera.UseVisualStyleBackColor = true;
             // 
-            // lblPersonnummer
+            // cmbMånad
             // 
-            this.lblPersonnummer.AutoSize = true;
-            this.lblPersonnummer.Location = new System.Drawing.Point(243, 32);
-            this.lblPersonnummer.Name = "lblPersonnummer";
-            this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
-            this.lblPersonnummer.TabIndex = 29;
-            this.lblPersonnummer.Text = "Personnummer";
+            this.cmbMånad.FormattingEnabled = true;
+            this.cmbMånad.Location = new System.Drawing.Point(245, 43);
+            this.cmbMånad.Name = "cmbMånad";
+            this.cmbMånad.Size = new System.Drawing.Size(121, 21);
+            this.cmbMånad.TabIndex = 91;
+            this.cmbMånad.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
-            // btnRensa
+            // lblMånad
             // 
-            this.btnRensa.Location = new System.Drawing.Point(311, 83);
-            this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 23);
-            this.btnRensa.TabIndex = 28;
-            this.btnRensa.Text = "Rensa";
-            this.btnRensa.UseVisualStyleBackColor = true;
+            this.lblMånad.AutoSize = true;
+            this.lblMånad.Location = new System.Drawing.Point(243, 27);
+            this.lblMånad.Name = "lblMånad";
+            this.lblMånad.Size = new System.Drawing.Size(40, 13);
+            this.lblMånad.TabIndex = 89;
+            this.lblMånad.Text = "Månad";
+            this.lblMånad.Click += new System.EventHandler(this.lblKategori_Click);
             // 
-            // btnSök
+            // dgvPrognostiseringIntäkter
             // 
-            this.btnSök.Location = new System.Drawing.Point(244, 83);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 27;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
-            // 
-            // tbPersonal
-            // 
-            this.tbPersonal.Location = new System.Drawing.Point(400, 52);
-            this.tbPersonal.Name = "tbPersonal";
-            this.tbPersonal.Size = new System.Drawing.Size(128, 20);
-            this.tbPersonal.TabIndex = 25;
-            this.tbPersonal.TextChanged += new System.EventHandler(this.tbPersonal_TextChanged);
-            // 
-            // tbPersonnummer
-            // 
-            this.tbPersonnummer.Location = new System.Drawing.Point(243, 52);
-            this.tbPersonnummer.Name = "tbPersonnummer";
-            this.tbPersonnummer.Size = new System.Drawing.Size(128, 20);
-            this.tbPersonnummer.TabIndex = 24;
-            this.tbPersonnummer.TextChanged += new System.EventHandler(this.tbPersonnummer_TextChanged);
-            // 
-            // btnRegistreraNyPersonal
-            // 
-            this.btnRegistreraNyPersonal.Location = new System.Drawing.Point(701, 398);
-            this.btnRegistreraNyPersonal.Name = "btnRegistreraNyPersonal";
-            this.btnRegistreraNyPersonal.Size = new System.Drawing.Size(112, 40);
-            this.btnRegistreraNyPersonal.TabIndex = 23;
-            this.btnRegistreraNyPersonal.Text = "Registrera ny personal";
-            this.btnRegistreraNyPersonal.UseVisualStyleBackColor = true;
-            this.btnRegistreraNyPersonal.Click += new System.EventHandler(this.btnRegistreraNyPersonal_Click);
-            // 
-            // btnRedigeraPersonal
-            // 
-            this.btnRedigeraPersonal.Location = new System.Drawing.Point(575, 397);
-            this.btnRedigeraPersonal.Name = "btnRedigeraPersonal";
-            this.btnRedigeraPersonal.Size = new System.Drawing.Size(120, 41);
-            this.btnRedigeraPersonal.TabIndex = 22;
-            this.btnRedigeraPersonal.Text = "Redigera personal";
-            this.btnRedigeraPersonal.UseVisualStyleBackColor = true;
-            this.btnRedigeraPersonal.Click += new System.EventHandler(this.btnRedigeraPersonal_Click);
-            // 
-            // gvPersonal
-            // 
-            this.gvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPersonal.Location = new System.Drawing.Point(244, 119);
-            this.gvPersonal.Name = "gvPersonal";
-            this.gvPersonal.ReadOnly = true;
-            this.gvPersonal.RowHeadersWidth = 62;
-            this.gvPersonal.Size = new System.Drawing.Size(569, 273);
-            this.gvPersonal.TabIndex = 21;
-            this.gvPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPersonal_CellContentClick);
+            this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(247, 94);
+            this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
+            this.dgvPrognostiseringIntäkter.ReadOnly = true;
+            this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
+            this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(524, 284);
+            this.dgvPrognostiseringIntäkter.TabIndex = 85;
             // 
             // panel1
             // 
@@ -151,10 +102,10 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(10, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 20;
+            this.panel1.TabIndex = 84;
             // 
             // btnResultat
             // 
@@ -276,25 +227,29 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // frmPersonal
+            // btnLås
+            // 
+            this.btnLås.Location = new System.Drawing.Point(651, 384);
+            this.btnLås.Name = "btnLås";
+            this.btnLås.Size = new System.Drawing.Size(120, 41);
+            this.btnLås.TabIndex = 93;
+            this.btnLås.Text = "Lås";
+            this.btnLås.UseVisualStyleBackColor = true;
+            // 
+            // frmPrognostiseringIntäkter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 450);
-            this.Controls.Add(this.lblNamn);
-            this.Controls.Add(this.lblPersonnummer);
-            this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
-            this.Controls.Add(this.tbPersonal);
-            this.Controls.Add(this.tbPersonnummer);
-            this.Controls.Add(this.btnRegistreraNyPersonal);
-            this.Controls.Add(this.btnRedigeraPersonal);
-            this.Controls.Add(this.gvPersonal);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLås);
+            this.Controls.Add(this.btnExportera);
+            this.Controls.Add(this.cmbMånad);
+            this.Controls.Add(this.lblMånad);
+            this.Controls.Add(this.dgvPrognostiseringIntäkter);
             this.Controls.Add(this.panel1);
-            this.Name = "frmPersonal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPersonal";
-            ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).EndInit();
+            this.Name = "frmPrognostiseringIntäkter";
+            this.Text = "frmPrognostiseringIntäkter";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,15 +257,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblNamn;
-        private System.Windows.Forms.Label lblPersonnummer;
-        private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
-        private System.Windows.Forms.TextBox tbPersonal;
-        private System.Windows.Forms.TextBox tbPersonnummer;
-        private System.Windows.Forms.Button btnRegistreraNyPersonal;
-        private System.Windows.Forms.Button btnRedigeraPersonal;
-        private System.Windows.Forms.DataGridView gvPersonal;
+
+        private System.Windows.Forms.Button btnExportera;
+        private System.Windows.Forms.ComboBox cmbMånad;
+        private System.Windows.Forms.Label lblMånad;
+        private System.Windows.Forms.DataGridView dgvPrognostiseringIntäkter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
@@ -324,5 +275,6 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
+        private System.Windows.Forms.Button btnLås;
     }
 }

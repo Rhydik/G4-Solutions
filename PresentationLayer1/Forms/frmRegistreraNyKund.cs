@@ -41,6 +41,9 @@ namespace PresentationLayer1.Forms
 
             MessageBox.Show(kundNamn + " sparad.", "Spara kund", MessageBoxButtons.OK);
 
+            Form frmKunder = new Form();
+            frmKunder.Hide();
+
             this.Visible = !this.Visible;
         }
 

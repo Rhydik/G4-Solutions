@@ -28,7 +28,7 @@ namespace PresentationLayer1
             dgvKunder.DataSource = kunder;
             //dataGridView.CellBeginEdit += dgv_CellBeginEdit;
             //dataGridView.CellValidating += dgv_CellValidating;
-            //dataGridView.CellEndEdit += dgv_CellEndEdit;
+            dgvKunder.CellEndEdit += dataGridView_CellEndEdit;
 
             var kategori = businessManager.GetAllKundKategori();
             cmbKundkategori.DataSource = kategori;
@@ -98,6 +98,12 @@ namespace PresentationLayer1
             {
                 MessageBox.Show("Du måste välja en kund");
             }
+        }
+        private void dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            kunder = businessManager.GetAllKunder();
+
+            dgvKunder.DataSource = kunder;
         }
     }
 }

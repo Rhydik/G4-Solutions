@@ -16,6 +16,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager;
         private List<ProduktDTO> produkter;
+        private List<ProduktDTO> produktGruppUpdated;
 
         public frmRegistreraNyProdukt()
         {
@@ -103,7 +104,7 @@ namespace PresentationLayer1.Forms
 
             if (System.Windows.Forms.Application.OpenForms["frmProdukter"] != null)
             {
-                (System.Windows.Forms.Application.OpenForms["frmProdukter"] as frmProdukter).RefreshProducts();
+                (System.Windows.Forms.Application.OpenForms["frmProdukter"] as frmProdukter).RefreshProdukter();
             }
 
             comboBox1.SelectedIndex = -1;
@@ -134,9 +135,11 @@ namespace PresentationLayer1.Forms
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnskapaNyProduktGrupp_Click(object sender, EventArgs e)
         {
-
+            Forms.frmRegistreraNyProduktGrupp frmAddNewProduktgrupp = new frmRegistreraNyProduktGrupp();
+            frmAddNewProduktgrupp.TopMost = true;
+            frmAddNewProduktgrupp.Show();
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,6 +150,14 @@ namespace PresentationLayer1.Forms
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void RefreshProduktGrupp()
+        {
+            var produktGruppUpdated = businessManager.GetProduktByGrupp();
+            comboBox2.DataSource = produktGruppUpdated;
+            comboBox2.ValueMember = "Namn";
+            comboBox2.DisplayMember = "Namn";
         }
     }
 }

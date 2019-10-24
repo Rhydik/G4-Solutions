@@ -217,6 +217,15 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
 
+        public void AddProduktGrupp(string namn)
+        {
+            repositoryFacade.produktRepository.AddProduktGrupp(namn);
+        }
+
+
+
+            //avdelningar?
+
         public void AddAvdelning(string namn)
         {
             repositoryFacade.aktivitetRepository.AddAvdelning(namn);

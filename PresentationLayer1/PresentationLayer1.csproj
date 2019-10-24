@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\frmRegistreraNyProduktGrupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRegistreraNyProduktGrupp.Designer.cs">
+      <DependentUpon>frmRegistreraNyProduktGrupp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmBudgeteratResultat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmRegistreraNyProduktGrupp.resx">
+      <DependentUpon>frmRegistreraNyProduktGrupp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBudgeteratResultat.resx">
       <DependentUpon>frmBudgeteratResultat.cs</DependentUpon>
     </EmbeddedResource>

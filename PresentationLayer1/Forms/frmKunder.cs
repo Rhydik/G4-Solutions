@@ -59,11 +59,6 @@ namespace PresentationLayer1
                 id = tbKundID.Text; 
             }
 
-            if (cmbKundkategori.Text == "Välj kundkategori")
-            {
-                kundKategori = "";
-            }
-
             var data = businessManager.GetKunderBySearch(id, kund, kundKategori);
 
             dgvKunder.DataSource = data;
@@ -104,6 +99,7 @@ namespace PresentationLayer1
             cmbKundkategori.DataSource = kategori;
             cmbKundkategori.ValueMember = "Namn";
             cmbKundkategori.DisplayMember = "Namn";
+            cmbKundkategori.SelectedIndex = -1;
         }
     }
 }

@@ -28,12 +28,12 @@ namespace PresentationLayer1.Forms
         {
             tbKundID2.Text = kund.KundID;
             tbKund2.Text = kund.Namn;
-            cmbKundkategori.Text = kund.KundKategori;
 
             var kategori = businessManager.GetAllKundKategori();
             cmbKundkategori.DataSource = kategori;
             cmbKundkategori.ValueMember = "Namn";
             cmbKundkategori.DisplayMember = "Namn";
+            cmbKundkategori.SelectedIndex = cmbKundkategori.FindStringExact(kund.KundKategori);
         }
 
         public void btnTaBortKund_Click(object sender, EventArgs e)

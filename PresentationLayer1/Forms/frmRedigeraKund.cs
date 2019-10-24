@@ -26,8 +26,8 @@ namespace PresentationLayer1.Forms
 
         public new void Load()
         {
-            tbKundID2.Text = kund.KundID;
-            tbKund2.Text = kund.Namn;
+            tbKundID.Text = kund.KundID.Substring(0, kund.KundID.Length - 2);
+            tbKundNamn.Text = kund.Namn;
 
             var kategori = businessManager.GetAllKundKategori();
             cmbKundkategori.DataSource = kategori;
@@ -50,7 +50,7 @@ namespace PresentationLayer1.Forms
                     (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
                 }
 
-                DialogResult tabortResultat = MessageBox.Show(kund.Namn + " borttagen", "Borttagning lyckad", MessageBoxButtons.OK);
+                MessageBox.Show(kund.Namn + " borttagen", "Borttagning lyckad", MessageBoxButtons.OK);
 
                 this.Visible = !this.Visible;
             }
@@ -69,20 +69,37 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            var kundId = tbKundID2.Text;
-            var kundNamn = tbKund2.Text;
+            var kundId = tbKundID.Text.ToUpper();
+            var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
 
-            businessManager.UpdateKund(kund, kundId, kundNamn, kundKategori);
+            string id = businessManager.SkapaID(kundId, kundKategori);
 
-            if (Application.OpenForms["frmKunder"] != null)
+            try
             {
-                (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
+                if (kundId.Length == 4)
+                {
+                    businessManager.UpdateKund(kund, id, kundNamn, kundKategori);
+
+                    DialogResult resultat = MessageBox.Show(kund.Namn + " uppdaterad.", "Uppdatera kund", MessageBoxButtons.OK);
+
+                    if (Application.OpenForms["frmKunder"] != null)
+                    {
+                        (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
+                    }
+
+                    this.Visible = !this.Visible;
+
+                } 
+                else
+                {
+                    MessageBox.Show("KundID måste vara 4 tecken", "KundID för lång.", MessageBoxButtons.OK);
+                }
+            } 
+            catch (Exception exception)
+            {
+
             }
-
-            DialogResult resultat = MessageBox.Show(kund.Namn + " uppdaterad.", "Uppdatera kund", MessageBoxButtons.OK);
-
-            this.Visible = !this.Visible;
         }
 
     }

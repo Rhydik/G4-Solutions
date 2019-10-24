@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRedigeraKund = new System.Windows.Forms.Label();
-            this.tbKundID2 = new System.Windows.Forms.TextBox();
-            this.tbKund2 = new System.Windows.Forms.TextBox();
+            this.tbKundID = new System.Windows.Forms.TextBox();
+            this.tbKundNamn = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnTaBortKund
@@ -134,17 +134,17 @@
             // 
             // tbKundID2
             // 
-            this.tbKundID2.Location = new System.Drawing.Point(12, 92);
-            this.tbKundID2.Name = "tbKundID2";
-            this.tbKundID2.Size = new System.Drawing.Size(239, 20);
-            this.tbKundID2.TabIndex = 31;
+            this.tbKundID.Location = new System.Drawing.Point(12, 92);
+            this.tbKundID.Name = "tbKundID";
+            this.tbKundID.Size = new System.Drawing.Size(239, 20);
+            this.tbKundID.TabIndex = 31;
             // 
             // tbKund2
             // 
-            this.tbKund2.Location = new System.Drawing.Point(12, 146);
-            this.tbKund2.Name = "tbKund2";
-            this.tbKund2.Size = new System.Drawing.Size(239, 20);
-            this.tbKund2.TabIndex = 30;
+            this.tbKundNamn.Location = new System.Drawing.Point(12, 146);
+            this.tbKundNamn.Name = "tbKundNamn";
+            this.tbKundNamn.Size = new System.Drawing.Size(239, 20);
+            this.tbKundNamn.TabIndex = 30;
             // 
             // frmRedigeraKund
             // 
@@ -161,8 +161,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRedigeraKund);
-            this.Controls.Add(this.tbKundID2);
-            this.Controls.Add(this.tbKund2);
+            this.Controls.Add(this.tbKundID);
+            this.Controls.Add(this.tbKundNamn);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRedigeraKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRedigeraKund;
-        private System.Windows.Forms.TextBox tbKundID2;
-        private System.Windows.Forms.TextBox tbKund2;
+        private System.Windows.Forms.TextBox tbKundID;
+        private System.Windows.Forms.TextBox tbKundNamn;
     }
 }

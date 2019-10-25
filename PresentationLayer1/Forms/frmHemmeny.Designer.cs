@@ -126,6 +126,7 @@
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
             this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
             this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
+            this.btnIntäktsbudgeteringKund.Click += new System.EventHandler(this.btnIntäktsbudgeteringKund_Click);
             // 
             // btnBehörighet
             // 

@@ -60,6 +60,7 @@
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 
@@ -266,8 +267,8 @@
             this.Controls.Add(this.lblLäggTillProdulktFör);
             this.Controls.Add(this.tbProduktID);
             this.Name = "frmIntäktsbudgeteringLäggTillProdukt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIntäktsbudgeteringLäggTillProdukt";
-            this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillProdukt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

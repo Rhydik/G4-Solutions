@@ -48,6 +48,7 @@ namespace PresentationLayer1
             {
                 MessageBox.Show("Felaktigt användarnamn eller lösenord, var god försök igen");
                 txtLösenord.Clear();
+                txtLösenord.Focus();
             }
         }
 

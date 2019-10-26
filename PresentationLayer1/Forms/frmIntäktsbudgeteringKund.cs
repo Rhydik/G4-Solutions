@@ -126,7 +126,7 @@ namespace PresentationLayer1.Forms
 
         private void btnLäggTillProdukt_Click(object sender, EventArgs e)
         {
-            frmIntäktsbudgeteringLäggTillProdukt frmIntäktsbudgeteringLäggTillProdukt = new frmIntäktsbudgeteringLäggTillProdukt((ProduktDTO)dgvIntäktsbudgeteringKund.CurrentRow.DataBoundItem, lblKund.Text);
+            frmIntäktsbudgeteringLäggTillProdukt frmIntäktsbudgeteringLäggTillProdukt = new frmIntäktsbudgeteringLäggTillProdukt(lblValdKundNamn.Text);
             frmIntäktsbudgeteringLäggTillProdukt.Show();
         }
     }

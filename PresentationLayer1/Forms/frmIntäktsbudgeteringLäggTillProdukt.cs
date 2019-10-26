@@ -14,10 +14,12 @@ namespace PresentationLayer1.Forms
     public partial class frmIntäktsbudgeteringLäggTillProdukt : Form
     {
         string kund;
-        public frmIntäktsbudgeteringLäggTillProdukt(ProduktDTO produkten, string kundNamn)
+        public frmIntäktsbudgeteringLäggTillProdukt(string kundNamn)
         {
             InitializeComponent();
             kund = kundNamn;
+            lblKund.Text = kund;
+            Load();
         }
 
         public void Load()

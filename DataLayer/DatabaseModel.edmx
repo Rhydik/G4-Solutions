@@ -20,6 +20,8 @@
     <EntitySet Name="Direktkostnad" EntityType="DatabaseModel.Store.Direktkostnad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Konto" EntityType="DatabaseModel.Store.Konto" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="schablonkostnad" EntityType="DatabaseModel.Store.schablonkostnad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KundIntäktsbudget" EntityType="DatabaseModel.Store.KundIntäktsbudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProduktIntäktsbudget" EntityType="DatabaseModel.Store.ProduktIntäktsbudget" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PersonalProdukt" EntityType="DatabaseModel.Store.PersonalProdukt" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AvdelningPersonal" EntityType="DatabaseModel.Store.AvdelningPersonal" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="KontoAvdelning" EntityType="DatabaseModel.Store.KontoAvdelning" store:Type="Tables" Schema="dbo" />
@@ -27,17 +29,25 @@
       <End Role="Prognos" EntitySet="Prognos" />
       <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
     </AssociationSet>
-    <AssociationSet Name="KundIntäktsbudget" Association="DatabaseModel.Store.KundIntäktsbudget">
+    <AssociationSet Name="FK_KundIntäktsbudget_Kund" Association="DatabaseModel.Store.FK_KundIntäktsbudget_Kund">
       <End Role="Kund" EntitySet="Kund" />
+      <End Role="KundIntäktsbudget" EntitySet="KundIntäktsbudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KundIntäktsbudget_Intäktsbudget" Association="DatabaseModel.Store.FK_KundIntäktsbudget_Intäktsbudget">
       <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
+      <End Role="KundIntäktsbudget" EntitySet="KundIntäktsbudget" />
     </AssociationSet>
     <AssociationSet Name="KundKategoriKund" Association="DatabaseModel.Store.KundKategoriKund">
       <End Role="KundKategori" EntitySet="KundKategori" />
       <End Role="Kund" EntitySet="Kund" />
     </AssociationSet>
-    <AssociationSet Name="ProduktIntäktsbudget" Association="DatabaseModel.Store.ProduktIntäktsbudget">
+    <AssociationSet Name="FK_ProduktIntäktsbudget_Produkt" Association="DatabaseModel.Store.FK_ProduktIntäktsbudget_Produkt">
       <End Role="Produkt" EntitySet="Produkt" />
+      <End Role="ProduktIntäktsbudget" EntitySet="ProduktIntäktsbudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProduktIntäktsbudget_Intäktsbudget" Association="DatabaseModel.Store.FK_ProduktIntäktsbudget_Intäktsbudget">
       <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
+      <End Role="ProduktIntäktsbudget" EntitySet="ProduktIntäktsbudget" />
     </AssociationSet>
     <AssociationSet Name="AntalTimmarPersonal" Association="DatabaseModel.Store.AntalTimmarPersonal">
       <End Role="AntalTimmar" EntitySet="AntalTimmar" />
@@ -115,7 +125,6 @@
     <Property Name="Budget" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Tim" Type="int" Nullable="false" />
     <Property Name="Kommentar" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Kund_KundID" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Kund">
     <Key>
@@ -138,7 +147,6 @@
     </Key>
     <Property Name="ProduktID" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="true" />
     <Property Name="Produktkategori_ProduktkategoriID" Type="int" Nullable="false" />
     <Property Name="Produktgrupp_ProduktgruppID" Type="int" Nullable="false" />
     <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
@@ -221,6 +229,22 @@
     <Property Name="Belopp" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Konto_KontoID" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="KundIntäktsbudget">
+    <Key>
+      <PropertyRef Name="Kund_KundID" />
+      <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
+    </Key>
+    <Property Name="Kund_KundID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProduktIntäktsbudget">
+    <Key>
+      <PropertyRef Name="Produkt_ProduktID" />
+      <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
+    </Key>
+    <Property Name="Produkt_ProduktID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Intäktsbudget_IntäktsbudgetID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="PersonalProdukt">
     <Key>
       <PropertyRef Name="Personal_PersonalID" />
@@ -257,18 +281,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="KundIntäktsbudget">
-    <End Role="Kund" Type="DatabaseModel.Store.Kund" Multiplicity="1" />
-    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Kund">
-        <PropertyRef Name="KundID" />
-      </Principal>
-      <Dependent Role="Intäktsbudget">
-        <PropertyRef Name="Kund_KundID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="KundKategoriKund">
     <End Role="KundKategori" Type="DatabaseModel.Store.KundKategori" Multiplicity="1" />
     <End Role="Kund" Type="DatabaseModel.Store.Kund" Multiplicity="*" />
@@ -278,18 +290,6 @@
       </Principal>
       <Dependent Role="Kund">
         <PropertyRef Name="KundKategori_KundKategoriID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProduktIntäktsbudget">
-    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="*" />
-    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Intäktsbudget">
-        <PropertyRef Name="IntäktsbudgetID" />
-      </Principal>
-      <Dependent Role="Produkt">
-        <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -374,6 +374,54 @@
       </Principal>
       <Dependent Role="Produkt">
         <PropertyRef Name="Avdelning_AvdelningID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KundIntäktsbudget_Kund">
+    <End Role="Kund" Type="DatabaseModel.Store.Kund" Multiplicity="1" />
+    <End Role="KundIntäktsbudget" Type="DatabaseModel.Store.KundIntäktsbudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kund">
+        <PropertyRef Name="KundID" />
+      </Principal>
+      <Dependent Role="KundIntäktsbudget">
+        <PropertyRef Name="Kund_KundID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KundIntäktsbudget_Intäktsbudget">
+    <End Role="KundIntäktsbudget" Type="DatabaseModel.Store.KundIntäktsbudget" Multiplicity="*" />
+    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Intäktsbudget">
+        <PropertyRef Name="IntäktsbudgetID" />
+      </Principal>
+      <Dependent Role="KundIntäktsbudget">
+        <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProduktIntäktsbudget_Produkt">
+    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="1" />
+    <End Role="ProduktIntäktsbudget" Type="DatabaseModel.Store.ProduktIntäktsbudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkt">
+        <PropertyRef Name="ProduktID" />
+      </Principal>
+      <Dependent Role="ProduktIntäktsbudget">
+        <PropertyRef Name="Produkt_ProduktID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProduktIntäktsbudget_Intäktsbudget">
+    <End Role="ProduktIntäktsbudget" Type="DatabaseModel.Store.ProduktIntäktsbudget" Multiplicity="*" />
+    <End Role="Intäktsbudget" Type="DatabaseModel.Store.Intäktsbudget" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Intäktsbudget">
+        <PropertyRef Name="IntäktsbudgetID" />
+      </Principal>
+      <Dependent Role="ProduktIntäktsbudget">
+        <PropertyRef Name="Intäktsbudget_IntäktsbudgetID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -566,8 +614,8 @@
           <NavigationProperty Name="KundKategori" Relationship="DatabaseModel.KundKategoriKund" FromRole="Kund" ToRole="KundKategori" />
         </EntityType>
         <Association Name="KundIntäktsbudget">
-          <End Type="DatabaseModel.Kund" Role="Kund" Multiplicity="1" />
-          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Kund" Role="Kund" Multiplicity="*" />
+          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="*" />
         </Association>
         <EntityType Name="KundKategori">
           <Key>
@@ -595,7 +643,7 @@
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
-          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="0..1" />
+          <End Type="DatabaseModel.Intäktsbudget" Role="Intäktsbudget" Multiplicity="*" />
         </Association>
         <EntityType Name="Personal">
           <Key>
@@ -873,12 +921,12 @@
         <ScalarProperty Name="PrognosID" ColumnName="PrognosID" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="KundIntäktsbudget" TypeName="DatabaseModel.KundIntäktsbudget" StoreEntitySet="Intäktsbudget">
+    <AssociationSetMapping Name="KundIntäktsbudget" TypeName="DatabaseModel.KundIntäktsbudget" StoreEntitySet="KundIntäktsbudget">
       <EndProperty Name="Kund">
         <ScalarProperty Name="KundID" ColumnName="Kund_KundID" />
       </EndProperty>
       <EndProperty Name="Intäktsbudget">
-        <ScalarProperty Name="IntäktsbudgetID" ColumnName="IntäktsbudgetID" />
+        <ScalarProperty Name="IntäktsbudgetID" ColumnName="Intäktsbudget_IntäktsbudgetID" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="KundKategoriKund" TypeName="DatabaseModel.KundKategoriKund" StoreEntitySet="Kund">
@@ -889,14 +937,13 @@
         <ScalarProperty Name="KundID" ColumnName="KundID" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProduktIntäktsbudget" TypeName="DatabaseModel.ProduktIntäktsbudget" StoreEntitySet="Produkt">
+    <AssociationSetMapping Name="ProduktIntäktsbudget" TypeName="DatabaseModel.ProduktIntäktsbudget" StoreEntitySet="ProduktIntäktsbudget">
+      <EndProperty Name="Produkt">
+        <ScalarProperty Name="ProduktID" ColumnName="Produkt_ProduktID" />
+      </EndProperty>
       <EndProperty Name="Intäktsbudget">
         <ScalarProperty Name="IntäktsbudgetID" ColumnName="Intäktsbudget_IntäktsbudgetID" />
       </EndProperty>
-      <EndProperty Name="Produkt">
-        <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
-      </EndProperty>
-      <Condition ColumnName="Intäktsbudget_IntäktsbudgetID" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="AntalTimmarPersonal" TypeName="DatabaseModel.AntalTimmarPersonal" StoreEntitySet="AntalTimmar">
       <EndProperty Name="Personal">

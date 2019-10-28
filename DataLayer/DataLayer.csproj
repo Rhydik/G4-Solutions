@@ -56,11 +56,13 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataContext.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
     <Compile Include="DTO\IntäktsbudgetKundDTO.cs" />
+    <Compile Include="KundIntäktsbudget.cs" />
+    <Compile Include="ProduktIntäktsbudget.cs" />
     <Compile Include="Repositories\IntäktsRepository.cs" />
     <Compile Include="Repositories\BehörighetRepository.cs" />
-    <Compile Include="DataContext.cs" />
     <Compile Include="DTO\AktivitetDTO.cs" />
     <Compile Include="AntalTimmar.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>

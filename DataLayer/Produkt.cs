@@ -17,8 +17,6 @@ namespace DataLayer
         [Column(Order = 1)]
         public string Namn { get; set; }
 
-        public int? Intäktsbudget_IntäktsbudgetID { get; set; }
-
         [Key]
         [Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -35,8 +33,6 @@ namespace DataLayer
         public int Avdelning_AvdelningID { get; set; }
 
         public virtual Avdelning Avdelning { get; set; }
-
-        public virtual Intäktsbudget Intäktsbudget { get; set; }
 
         public virtual Produktgrupp Produktgrupp { get; set; }
 

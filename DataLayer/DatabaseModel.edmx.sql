@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/17/2019 14:54:12
+-- Date Created: 10/28/2019 15:47:57
 -- Generated from EDMX file: C:\Users\look_\source\repos\Rhydik\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
@@ -149,8 +149,7 @@ CREATE TABLE [dbo].[Intäktsbudget] (
     [GradT] bit  NOT NULL,
     [Budget] decimal(18,0)  NOT NULL,
     [Tim] int  NOT NULL,
-    [Kommentar] nvarchar(max)  NOT NULL,
-    [Kund_KundID] nvarchar(max)  NOT NULL
+    [Kommentar] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -173,7 +172,6 @@ GO
 CREATE TABLE [dbo].[Produkt] (
     [ProduktID] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
-    [Intäktsbudget_IntäktsbudgetID] int  NULL,
     [Produktkategori_ProduktkategoriID] int  NOT NULL,
     [Produktgrupp_ProduktgruppID] int  NOT NULL,
     [Avdelning_AvdelningID] int  NOT NULL
@@ -255,6 +253,20 @@ CREATE TABLE [dbo].[schablonkostnad] (
     [Namn] nvarchar(max)  NOT NULL,
     [Belopp] decimal(18,0)  NOT NULL,
     [Konto_KontoID] int  NOT NULL
+);
+GO
+
+-- Creating table 'KundIntäktsbudget'
+CREATE TABLE [dbo].[KundIntäktsbudget] (
+    [Kund_KundID] nvarchar(max)  NOT NULL,
+    [Intäktsbudget_IntäktsbudgetID] int  NOT NULL
+);
+GO
+
+-- Creating table 'ProduktIntäktsbudget'
+CREATE TABLE [dbo].[ProduktIntäktsbudget] (
+    [Produkt_ProduktID] nvarchar(max)  NOT NULL,
+    [Intäktsbudget_IntäktsbudgetID] int  NOT NULL
 );
 GO
 
@@ -367,6 +379,18 @@ ADD CONSTRAINT [PK_schablonkostnad]
     PRIMARY KEY CLUSTERED ([schablonkostnadID] ASC);
 GO
 
+-- Creating primary key on [Kund_KundID], [Intäktsbudget_IntäktsbudgetID] in table 'KundIntäktsbudget'
+ALTER TABLE [dbo].[KundIntäktsbudget]
+ADD CONSTRAINT [PK_KundIntäktsbudget]
+    PRIMARY KEY CLUSTERED ([Kund_KundID], [Intäktsbudget_IntäktsbudgetID] ASC);
+GO
+
+-- Creating primary key on [Produkt_ProduktID], [Intäktsbudget_IntäktsbudgetID] in table 'ProduktIntäktsbudget'
+ALTER TABLE [dbo].[ProduktIntäktsbudget]
+ADD CONSTRAINT [PK_ProduktIntäktsbudget]
+    PRIMARY KEY CLUSTERED ([Produkt_ProduktID], [Intäktsbudget_IntäktsbudgetID] ASC);
+GO
+
 -- Creating primary key on [Personal_PersonalID], [Produkt_ProduktID] in table 'PersonalProdukt'
 ALTER TABLE [dbo].[PersonalProdukt]
 ADD CONSTRAINT [PK_PersonalProdukt]
@@ -404,19 +428,28 @@ ON [dbo].[Prognos]
     ([Intäktsbudget_IntäktsbudgetID]);
 GO
 
--- Creating foreign key on [Kund_KundID] in table 'Intäktsbudget'
-ALTER TABLE [dbo].[Intäktsbudget]
-ADD CONSTRAINT [FK_KundIntäktsbudget]
+-- Creating foreign key on [Kund_KundID] in table 'KundIntäktsbudget'
+ALTER TABLE [dbo].[KundIntäktsbudget]
+ADD CONSTRAINT [FK_KundIntäktsbudget_Kund]
     FOREIGN KEY ([Kund_KundID])
     REFERENCES [dbo].[Kund]
         ([KundID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_KundIntäktsbudget'
-CREATE INDEX [IX_FK_KundIntäktsbudget]
-ON [dbo].[Intäktsbudget]
-    ([Kund_KundID]);
+-- Creating foreign key on [Intäktsbudget_IntäktsbudgetID] in table 'KundIntäktsbudget'
+ALTER TABLE [dbo].[KundIntäktsbudget]
+ADD CONSTRAINT [FK_KundIntäktsbudget_Intäktsbudget]
+    FOREIGN KEY ([Intäktsbudget_IntäktsbudgetID])
+    REFERENCES [dbo].[Intäktsbudget]
+        ([IntäktsbudgetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KundIntäktsbudget_Intäktsbudget'
+CREATE INDEX [IX_FK_KundIntäktsbudget_Intäktsbudget]
+ON [dbo].[KundIntäktsbudget]
+    ([Intäktsbudget_IntäktsbudgetID]);
 GO
 
 -- Creating foreign key on [KundKategori_KundKategoriID] in table 'Kund'
@@ -434,18 +467,27 @@ ON [dbo].[Kund]
     ([KundKategori_KundKategoriID]);
 GO
 
--- Creating foreign key on [Intäktsbudget_IntäktsbudgetID] in table 'Produkt'
-ALTER TABLE [dbo].[Produkt]
-ADD CONSTRAINT [FK_ProduktIntäktsbudget]
+-- Creating foreign key on [Produkt_ProduktID] in table 'ProduktIntäktsbudget'
+ALTER TABLE [dbo].[ProduktIntäktsbudget]
+ADD CONSTRAINT [FK_ProduktIntäktsbudget_Produkt]
+    FOREIGN KEY ([Produkt_ProduktID])
+    REFERENCES [dbo].[Produkt]
+        ([ProduktID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Intäktsbudget_IntäktsbudgetID] in table 'ProduktIntäktsbudget'
+ALTER TABLE [dbo].[ProduktIntäktsbudget]
+ADD CONSTRAINT [FK_ProduktIntäktsbudget_Intäktsbudget]
     FOREIGN KEY ([Intäktsbudget_IntäktsbudgetID])
     REFERENCES [dbo].[Intäktsbudget]
         ([IntäktsbudgetID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_ProduktIntäktsbudget'
-CREATE INDEX [IX_FK_ProduktIntäktsbudget]
-ON [dbo].[Produkt]
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProduktIntäktsbudget_Intäktsbudget'
+CREATE INDEX [IX_FK_ProduktIntäktsbudget_Intäktsbudget]
+ON [dbo].[ProduktIntäktsbudget]
     ([Intäktsbudget_IntäktsbudgetID]);
 GO
 

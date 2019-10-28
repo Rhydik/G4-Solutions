@@ -11,7 +11,8 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Intäktsbudget()
         {
-            Produkt = new HashSet<Produkt>();
+            KundIntäktsbudget = new HashSet<KundIntäktsbudget>();
+            ProduktIntäktsbudget = new HashSet<ProduktIntäktsbudget>();
             Prognos = new HashSet<Prognos>();
         }
 
@@ -34,11 +35,11 @@ namespace DataLayer
         [Required]
         public string Kommentar { get; set; }
 
-        [Required]
-        public string Kund_KundID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KundIntäktsbudget> KundIntäktsbudget { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Produkt> Produkt { get; set; }
+        public virtual ICollection<ProduktIntäktsbudget> ProduktIntäktsbudget { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prognos> Prognos { get; set; }

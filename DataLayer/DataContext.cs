@@ -9,7 +9,7 @@
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=DataContext2")
+            : base("name=DataContext3")
         {
         }
 
@@ -26,8 +26,10 @@
         public virtual DbSet<schablonkostnad> schablonkostnad { get; set; }
         public virtual DbSet<Aktivitet> Aktivitet { get; set; }
         public virtual DbSet<Kund> Kund { get; set; }
+        public virtual DbSet<KundIntäktsbudget> KundIntäktsbudget { get; set; }
         public virtual DbSet<PersonalProdukt> PersonalProdukt { get; set; }
         public virtual DbSet<Produkt> Produkt { get; set; }
+        public virtual DbSet<ProduktIntäktsbudget> ProduktIntäktsbudget { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -70,9 +72,16 @@
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Intäktsbudget>()
-                .HasMany(e => e.Produkt)
-                .WithOptional(e => e.Intäktsbudget)
-                .HasForeignKey(e => e.Intäktsbudget_IntäktsbudgetID);
+                .HasMany(e => e.KundIntäktsbudget)
+                .WithRequired(e => e.Intäktsbudget)
+                .HasForeignKey(e => e.Intäktsbudget_IntäktsbudgetID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Intäktsbudget>()
+                .HasMany(e => e.ProduktIntäktsbudget)
+                .WithRequired(e => e.Intäktsbudget)
+                .HasForeignKey(e => e.Intäktsbudget_IntäktsbudgetID)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Intäktsbudget>()
                 .HasMany(e => e.Prognos)

@@ -92,23 +92,23 @@ namespace PresentationLayer1.Forms
 
         private void btnSök_Click(object sender, EventArgs e)
         {
-            //string produktID = tbProduktID.Text;
-            //string namn = tbProdukt.Text;
+            string produktID = tbProduktID.Text;
+            string namn = tbProdukt.Text;
 
-            //var kategori = cmbProduktKategori.GetItemText(cmbProduktKategori.SelectedItem);
+            var kategori = cmbProduktKategori.GetItemText(cmbProduktKategori.SelectedItem);
 
-            //var grupp = cmbProduktgrupp.GetItemText(cmbProduktgrupp.SelectedItem);
+            var grupp = cmbProduktgrupp.GetItemText(cmbProduktgrupp.SelectedItem);
 
-            //var avdelning = cmbVäljAvdelning.GetItemText(cmbVäljAvdelning.SelectedItem);
+            var avdelning = cmbVäljAvdelning.GetItemText(cmbVäljAvdelning.SelectedItem);
 
-            //if (tbProduktID.Text.Length != 0)
-            //{
-            //    produktID = tbProduktID.Text;
-            //}
+            if (tbProduktID.Text.Length != 0)
+            {
+                produktID = tbProduktID.Text;
+            }
 
-            //var data = businessManager.GetProdukterBySearch(produktID, namn, kategori, grupp, avdelning);
+            var data = businessManager.GetProdukterBySearch(produktID, namn, kategori, grupp, avdelning);
 
-            //dgvProdukter.DataSource = data;
+            dgvProdukter.DataSource = data;
         }
     }
     }

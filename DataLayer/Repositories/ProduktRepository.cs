@@ -151,7 +151,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produkt
-                            select new ProduktDTO { ProduktID = produktID, Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp, Avdelning = produktAvdelning };
+                            select new ProduktDTO { ProduktID = x.ProduktID, Namn = x.Namn, Produktkategori = x.Produktkategori.Namn, Produktgrupp = x.Produktgrupp.Namn, Avdelning = x.Avdelning.Namn };
 
                 if (!string.IsNullOrEmpty(produktID))
                     query = query.Where(ProduktDTO => ProduktDTO.ProduktID.StartsWith(produktID));
@@ -163,10 +163,10 @@ namespace DataLayer
                     query = query.Where(ProduktDTO => ProduktDTO.Produktkategori == produktKategori);
 
                 if (!string.IsNullOrEmpty(produktGrupp))
-                    query = query.Where(ProduktgruppDTO => ProduktgruppDTO.Namn == produktGrupp);
+                    query = query.Where(ProduktDTO => ProduktDTO.Produktgrupp == produktGrupp);
 
                 if (!string.IsNullOrEmpty(produktAvdelning))
-                    query = query.Where(AvdelningDTO => AvdelningDTO.Namn == produktAvdelning);
+                    query = query.Where(ProduktDTO => ProduktDTO.Avdelning == produktAvdelning);
 
                 return query.ToList();
             }

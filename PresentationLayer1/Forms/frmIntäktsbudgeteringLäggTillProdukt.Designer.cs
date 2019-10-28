@@ -31,12 +31,10 @@
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
-            this.lblProduktID = new System.Windows.Forms.Label();
             this.lblLäggTillProdulktFör = new System.Windows.Forms.Label();
-            this.tbProduktID = new System.Windows.Forms.TextBox();
             this.lblKund = new System.Windows.Forms.Label();
-            this.lblProdukt = new System.Windows.Forms.Label();
-            this.tbProdukt = new System.Windows.Forms.TextBox();
+            this.lblBudget = new System.Windows.Forms.Label();
+            this.tbBudget = new System.Windows.Forms.TextBox();
             this.lblAvtal = new System.Windows.Forms.Label();
             this.tbAvtal = new System.Windows.Forms.TextBox();
             this.cmbGradA = new System.Windows.Forms.ComboBox();
@@ -49,12 +47,14 @@
             this.tbTimmar = new System.Windows.Forms.TextBox();
             this.rtbKommentar = new System.Windows.Forms.RichTextBox();
             this.lblKommentar = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(16, 461);
+            this.btnAvbryt.Location = new System.Drawing.Point(598, 538);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
             this.btnAvbryt.TabIndex = 39;
@@ -64,7 +64,7 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(-4, 426);
+            this.label6.Location = new System.Drawing.Point(390, 530);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(398, 3);
             this.label6.TabIndex = 38;
@@ -72,22 +72,12 @@
             // btnSpara
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(260, 461);
+            this.btnSpara.Location = new System.Drawing.Point(665, 538);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(123, 58);
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
-            // 
-            // lblProduktID
-            // 
-            this.lblProduktID.AutoSize = true;
-            this.lblProduktID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduktID.Location = new System.Drawing.Point(13, 79);
-            this.lblProduktID.Name = "lblProduktID";
-            this.lblProduktID.Size = new System.Drawing.Size(67, 16);
-            this.lblProduktID.TabIndex = 34;
-            this.lblProduktID.Text = "ProduktID";
             // 
             // lblLäggTillProdulktFör
             // 
@@ -99,45 +89,38 @@
             this.lblLäggTillProdulktFör.TabIndex = 32;
             this.lblLäggTillProdulktFör.Text = "Lägg till produkt för";
             // 
-            // tbProduktID
-            // 
-            this.tbProduktID.Location = new System.Drawing.Point(16, 98);
-            this.tbProduktID.Name = "tbProduktID";
-            this.tbProduktID.Size = new System.Drawing.Size(188, 20);
-            this.tbProduktID.TabIndex = 30;
-            // 
             // lblKund
             // 
             this.lblKund.AutoSize = true;
             this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(12, 40);
+            this.lblKund.Location = new System.Drawing.Point(242, 11);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(46, 20);
             this.lblKund.TabIndex = 41;
             this.lblKund.Text = "Kund";
             // 
-            // lblProdukt
+            // lblBudget
             // 
-            this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdukt.Location = new System.Drawing.Point(13, 121);
-            this.lblProdukt.Name = "lblProdukt";
-            this.lblProdukt.Size = new System.Drawing.Size(54, 16);
-            this.lblProdukt.TabIndex = 43;
-            this.lblProdukt.Text = "Produkt";
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBudget.Location = new System.Drawing.Point(16, 551);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(51, 16);
+            this.lblBudget.TabIndex = 43;
+            this.lblBudget.Text = "Budget";
             // 
-            // tbProdukt
+            // tbBudget
             // 
-            this.tbProdukt.Location = new System.Drawing.Point(16, 140);
-            this.tbProdukt.Name = "tbProdukt";
-            this.tbProdukt.Size = new System.Drawing.Size(188, 20);
-            this.tbProdukt.TabIndex = 42;
+            this.tbBudget.Location = new System.Drawing.Point(15, 571);
+            this.tbBudget.Name = "tbBudget";
+            this.tbBudget.Size = new System.Drawing.Size(188, 20);
+            this.tbBudget.TabIndex = 42;
             // 
             // lblAvtal
             // 
             this.lblAvtal.AutoSize = true;
             this.lblAvtal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvtal.Location = new System.Drawing.Point(13, 163);
+            this.lblAvtal.Location = new System.Drawing.Point(16, 507);
             this.lblAvtal.Name = "lblAvtal";
             this.lblAvtal.Size = new System.Drawing.Size(38, 16);
             this.lblAvtal.TabIndex = 45;
@@ -145,7 +128,7 @@
             // 
             // tbAvtal
             // 
-            this.tbAvtal.Location = new System.Drawing.Point(16, 182);
+            this.tbAvtal.Location = new System.Drawing.Point(16, 526);
             this.tbAvtal.Name = "tbAvtal";
             this.tbAvtal.Size = new System.Drawing.Size(188, 20);
             this.tbAvtal.TabIndex = 44;
@@ -153,7 +136,7 @@
             // cmbGradA
             // 
             this.cmbGradA.FormattingEnabled = true;
-            this.cmbGradA.Location = new System.Drawing.Point(15, 224);
+            this.cmbGradA.Location = new System.Drawing.Point(15, 478);
             this.cmbGradA.Name = "cmbGradA";
             this.cmbGradA.Size = new System.Drawing.Size(188, 21);
             this.cmbGradA.TabIndex = 46;
@@ -162,7 +145,7 @@
             // 
             this.lblGradA.AutoSize = true;
             this.lblGradA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradA.Location = new System.Drawing.Point(12, 205);
+            this.lblGradA.Location = new System.Drawing.Point(16, 459);
             this.lblGradA.Name = "lblGradA";
             this.lblGradA.Size = new System.Drawing.Size(50, 16);
             this.lblGradA.TabIndex = 47;
@@ -172,7 +155,7 @@
             // 
             this.lblGradT.AutoSize = true;
             this.lblGradT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradT.Location = new System.Drawing.Point(12, 290);
+            this.lblGradT.Location = new System.Drawing.Point(12, 373);
             this.lblGradT.Name = "lblGradT";
             this.lblGradT.Size = new System.Drawing.Size(50, 16);
             this.lblGradT.TabIndex = 49;
@@ -181,7 +164,7 @@
             // cmbGradT
             // 
             this.cmbGradT.FormattingEnabled = true;
-            this.cmbGradT.Location = new System.Drawing.Point(15, 309);
+            this.cmbGradT.Location = new System.Drawing.Point(15, 392);
             this.cmbGradT.Name = "cmbGradT";
             this.cmbGradT.Size = new System.Drawing.Size(188, 21);
             this.cmbGradT.TabIndex = 48;
@@ -190,7 +173,7 @@
             // 
             this.lblTillägg.AutoSize = true;
             this.lblTillägg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTillägg.Location = new System.Drawing.Point(12, 248);
+            this.lblTillägg.Location = new System.Drawing.Point(12, 331);
             this.lblTillägg.Name = "lblTillägg";
             this.lblTillägg.Size = new System.Drawing.Size(50, 16);
             this.lblTillägg.TabIndex = 51;
@@ -198,7 +181,7 @@
             // 
             // tbTilägg
             // 
-            this.tbTilägg.Location = new System.Drawing.Point(15, 267);
+            this.tbTilägg.Location = new System.Drawing.Point(16, 350);
             this.tbTilägg.Name = "tbTilägg";
             this.tbTilägg.Size = new System.Drawing.Size(188, 20);
             this.tbTilägg.TabIndex = 50;
@@ -207,7 +190,7 @@
             // 
             this.lblTimmar.AutoSize = true;
             this.lblTimmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimmar.Location = new System.Drawing.Point(13, 338);
+            this.lblTimmar.Location = new System.Drawing.Point(12, 416);
             this.lblTimmar.Name = "lblTimmar";
             this.lblTimmar.Size = new System.Drawing.Size(54, 16);
             this.lblTimmar.TabIndex = 53;
@@ -215,16 +198,16 @@
             // 
             // tbTimmar
             // 
-            this.tbTimmar.Location = new System.Drawing.Point(16, 357);
+            this.tbTimmar.Location = new System.Drawing.Point(16, 435);
             this.tbTimmar.Name = "tbTimmar";
             this.tbTimmar.Size = new System.Drawing.Size(188, 20);
             this.tbTimmar.TabIndex = 52;
             // 
             // rtbKommentar
             // 
-            this.rtbKommentar.Location = new System.Drawing.Point(260, 121);
+            this.rtbKommentar.Location = new System.Drawing.Point(484, 337);
             this.rtbKommentar.Name = "rtbKommentar";
-            this.rtbKommentar.Size = new System.Drawing.Size(123, 256);
+            this.rtbKommentar.Size = new System.Drawing.Size(304, 185);
             this.rtbKommentar.TabIndex = 54;
             this.rtbKommentar.Text = "";
             // 
@@ -232,18 +215,27 @@
             // 
             this.lblKommentar.AutoSize = true;
             this.lblKommentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKommentar.Location = new System.Drawing.Point(257, 98);
+            this.lblKommentar.Location = new System.Drawing.Point(402, 338);
             this.lblKommentar.Name = "lblKommentar";
             this.lblKommentar.Size = new System.Drawing.Size(76, 16);
             this.lblKommentar.TabIndex = 55;
             this.lblKommentar.Text = "Kommentar";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(773, 281);
+            this.dataGridView1.TabIndex = 56;
             // 
             // frmIntäktsbudgeteringLäggTillProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(395, 543);
+            this.ClientSize = new System.Drawing.Size(800, 603);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblKommentar);
             this.Controls.Add(this.rtbKommentar);
             this.Controls.Add(this.lblTimmar);
@@ -256,18 +248,17 @@
             this.Controls.Add(this.cmbGradA);
             this.Controls.Add(this.lblAvtal);
             this.Controls.Add(this.tbAvtal);
-            this.Controls.Add(this.lblProdukt);
-            this.Controls.Add(this.tbProdukt);
+            this.Controls.Add(this.lblBudget);
+            this.Controls.Add(this.tbBudget);
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
-            this.Controls.Add(this.lblProduktID);
             this.Controls.Add(this.lblLäggTillProdulktFör);
-            this.Controls.Add(this.tbProduktID);
             this.Name = "frmIntäktsbudgeteringLäggTillProdukt";
             this.Text = "frmIntäktsbudgeteringLäggTillProdukt";
             this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillProdukt_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,12 +268,10 @@
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;
-        private System.Windows.Forms.Label lblProduktID;
         private System.Windows.Forms.Label lblLäggTillProdulktFör;
-        private System.Windows.Forms.TextBox tbProduktID;
         private System.Windows.Forms.Label lblKund;
-        private System.Windows.Forms.Label lblProdukt;
-        private System.Windows.Forms.TextBox tbProdukt;
+        private System.Windows.Forms.Label lblBudget;
+        private System.Windows.Forms.TextBox tbBudget;
         private System.Windows.Forms.Label lblAvtal;
         private System.Windows.Forms.TextBox tbAvtal;
         private System.Windows.Forms.ComboBox cmbGradA;
@@ -295,5 +284,6 @@
         private System.Windows.Forms.TextBox tbTimmar;
         private System.Windows.Forms.RichTextBox rtbKommentar;
         private System.Windows.Forms.Label lblKommentar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

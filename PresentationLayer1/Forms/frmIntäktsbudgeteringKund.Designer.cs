@@ -45,7 +45,6 @@
             this.lblKund = new System.Windows.Forms.Label();
             this.lblKundID = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
             this.cmbKundkategori = new System.Windows.Forms.ComboBox();
             this.tbNamn = new System.Windows.Forms.TextBox();
             this.tbKundID = new System.Windows.Forms.TextBox();
@@ -54,6 +53,12 @@
             this.btnTaBortProdukt = new System.Windows.Forms.Button();
             this.btnLåsBudget = new System.Windows.Forms.Button();
             this.btnExportera = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblValdKundID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblValdKundNamn = new System.Windows.Forms.Label();
+            this.btnVäljNyKund = new System.Windows.Forms.Button();
+            this.btnVäljKund = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).BeginInit();
             this.SuspendLayout();
@@ -200,7 +205,7 @@
             // lblKundkategori
             // 
             this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(567, 35);
+            this.lblKundkategori.Location = new System.Drawing.Point(527, 35);
             this.lblKundkategori.Name = "lblKundkategori";
             this.lblKundkategori.Size = new System.Drawing.Size(70, 13);
             this.lblKundkategori.TabIndex = 40;
@@ -209,7 +214,7 @@
             // lblKund
             // 
             this.lblKund.AutoSize = true;
-            this.lblKund.Location = new System.Drawing.Point(414, 35);
+            this.lblKund.Location = new System.Drawing.Point(391, 35);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(32, 13);
             this.lblKund.TabIndex = 39;
@@ -226,21 +231,13 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(328, 87);
+            this.btnRensa.Location = new System.Drawing.Point(728, 56);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 37;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(260, 87);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 36;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // cmbKundkategori
             // 
@@ -248,19 +245,22 @@
             this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKundkategori.FormattingEnabled = true;
             this.cmbKundkategori.Items.AddRange(new object[] {
+            "Alla",
             "Offentlig",
             "Näringsliv"});
-            this.cmbKundkategori.Location = new System.Drawing.Point(570, 56);
+            this.cmbKundkategori.Location = new System.Drawing.Point(530, 56);
             this.cmbKundkategori.Name = "cmbKundkategori";
             this.cmbKundkategori.Size = new System.Drawing.Size(192, 21);
             this.cmbKundkategori.TabIndex = 35;
+            this.cmbKundkategori.SelectedIndexChanged += new System.EventHandler(this.cmbKundkategori_SelectedIndexChanged);
             // 
             // tbNamn
             // 
-            this.tbNamn.Location = new System.Drawing.Point(416, 56);
+            this.tbNamn.Location = new System.Drawing.Point(394, 56);
             this.tbNamn.Name = "tbNamn";
             this.tbNamn.Size = new System.Drawing.Size(128, 20);
             this.tbNamn.TabIndex = 34;
+            this.tbNamn.TextChanged += new System.EventHandler(this.tbNamn_TextChanged);
             // 
             // tbKundID
             // 
@@ -268,11 +268,12 @@
             this.tbKundID.Name = "tbKundID";
             this.tbKundID.Size = new System.Drawing.Size(128, 20);
             this.tbKundID.TabIndex = 33;
+            this.tbKundID.TextChanged += new System.EventHandler(this.tbKundID_TextChanged);
             // 
             // dgvIntäktsbudgeteringKund
             // 
             this.dgvIntäktsbudgeteringKund.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(260, 123);
+            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(260, 138);
             this.dgvIntäktsbudgeteringKund.Name = "dgvIntäktsbudgeteringKund";
             this.dgvIntäktsbudgeteringKund.ReadOnly = true;
             this.dgvIntäktsbudgeteringKund.RowHeadersWidth = 62;
@@ -281,25 +282,27 @@
             // 
             // btnLäggTillProdukt
             // 
-            this.btnLäggTillProdukt.Location = new System.Drawing.Point(642, 375);
+            this.btnLäggTillProdukt.Location = new System.Drawing.Point(642, 390);
             this.btnLäggTillProdukt.Name = "btnLäggTillProdukt";
             this.btnLäggTillProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnLäggTillProdukt.TabIndex = 32;
             this.btnLäggTillProdukt.Text = "Lägg till produkt";
             this.btnLäggTillProdukt.UseVisualStyleBackColor = true;
+            this.btnLäggTillProdukt.Click += new System.EventHandler(this.btnLäggTillProdukt_Click);
             // 
             // btnTaBortProdukt
             // 
-            this.btnTaBortProdukt.Location = new System.Drawing.Point(516, 375);
+            this.btnTaBortProdukt.Location = new System.Drawing.Point(516, 390);
             this.btnTaBortProdukt.Name = "btnTaBortProdukt";
             this.btnTaBortProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnTaBortProdukt.TabIndex = 41;
             this.btnTaBortProdukt.Text = "Ta bort produkt";
             this.btnTaBortProdukt.UseVisualStyleBackColor = true;
+            this.btnTaBortProdukt.Click += new System.EventHandler(this.btnTaBortProdukt_Click);
             // 
             // btnLåsBudget
             // 
-            this.btnLåsBudget.Location = new System.Drawing.Point(381, 375);
+            this.btnLåsBudget.Location = new System.Drawing.Point(381, 390);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 42;
@@ -308,18 +311,82 @@
             // 
             // btnExportera
             // 
-            this.btnExportera.Location = new System.Drawing.Point(255, 375);
+            this.btnExportera.Location = new System.Drawing.Point(255, 390);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 43;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(263, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "KundID:";
+            // 
+            // lblValdKundID
+            // 
+            this.lblValdKundID.AutoSize = true;
+            this.lblValdKundID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValdKundID.Location = new System.Drawing.Point(263, 103);
+            this.lblValdKundID.Name = "lblValdKundID";
+            this.lblValdKundID.Size = new System.Drawing.Size(46, 13);
+            this.lblValdKundID.TabIndex = 45;
+            this.lblValdKundID.Text = "Ej vald";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(394, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Kund:";
+            // 
+            // lblValdKundNamn
+            // 
+            this.lblValdKundNamn.AutoSize = true;
+            this.lblValdKundNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValdKundNamn.Location = new System.Drawing.Point(394, 103);
+            this.lblValdKundNamn.Name = "lblValdKundNamn";
+            this.lblValdKundNamn.Size = new System.Drawing.Size(46, 13);
+            this.lblValdKundNamn.TabIndex = 47;
+            this.lblValdKundNamn.Text = "Ej vald";
+            // 
+            // btnVäljNyKund
+            // 
+            this.btnVäljNyKund.Location = new System.Drawing.Point(530, 98);
+            this.btnVäljNyKund.Name = "btnVäljNyKund";
+            this.btnVäljNyKund.Size = new System.Drawing.Size(74, 23);
+            this.btnVäljNyKund.TabIndex = 48;
+            this.btnVäljNyKund.Text = "Välj ny kund";
+            this.btnVäljNyKund.UseVisualStyleBackColor = true;
+            this.btnVäljNyKund.Click += new System.EventHandler(this.btnVäljNyKund_Click);
+            // 
+            // btnVäljKund
+            // 
+            this.btnVäljKund.Location = new System.Drawing.Point(642, 390);
+            this.btnVäljKund.Name = "btnVäljKund";
+            this.btnVäljKund.Size = new System.Drawing.Size(120, 41);
+            this.btnVäljKund.TabIndex = 49;
+            this.btnVäljKund.Text = "Välj kund";
+            this.btnVäljKund.UseVisualStyleBackColor = true;
+            this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
+            // 
             // frmIntäktsbudgeteringKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVäljKund);
+            this.Controls.Add(this.btnVäljNyKund);
+            this.Controls.Add(this.lblValdKundNamn);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblValdKundID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
             this.Controls.Add(this.btnTaBortProdukt);
@@ -327,7 +394,6 @@
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.lblKundID);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.cmbKundkategori);
             this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.tbKundID);
@@ -335,6 +401,7 @@
             this.Controls.Add(this.dgvIntäktsbudgeteringKund);
             this.Controls.Add(this.panel1);
             this.Name = "frmIntäktsbudgeteringKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIntäktsbudgeteringKund";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).EndInit();
@@ -362,7 +429,6 @@
         private System.Windows.Forms.Label lblKund;
         private System.Windows.Forms.Label lblKundID;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.ComboBox cmbKundkategori;
         private System.Windows.Forms.TextBox tbNamn;
         private System.Windows.Forms.TextBox tbKundID;
@@ -371,5 +437,11 @@
         private System.Windows.Forms.Button btnTaBortProdukt;
         private System.Windows.Forms.Button btnLåsBudget;
         private System.Windows.Forms.Button btnExportera;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblValdKundID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblValdKundNamn;
+        private System.Windows.Forms.Button btnVäljNyKund;
+        private System.Windows.Forms.Button btnVäljKund;
     }
 }

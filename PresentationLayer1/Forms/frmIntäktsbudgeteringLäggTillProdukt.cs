@@ -7,19 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer.DTO;
+using BusinessLayer;
+using DataLayer;
 
 namespace PresentationLayer1.Forms
 {
     public partial class frmIntäktsbudgeteringLäggTillProdukt : Form
     {
-        public frmIntäktsbudgeteringLäggTillProdukt()
+        string kund;
+        public frmIntäktsbudgeteringLäggTillProdukt(string kundNamn)
         {
             InitializeComponent();
+            kund = kundNamn;
+            lblKund.Text = kund;
+            Load();
         }
 
-        private void frmIntäktsbudgeteringLäggTillProdukt_Load(object sender, EventArgs e)
+        public void Load()
         {
+            lblKund.Text = kund;
+        }
 
+        private void btnAvbryt_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSpara_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

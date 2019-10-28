@@ -18,6 +18,7 @@ namespace DataLayer
         public ProduktRepository produktRepository { get; set; }
         public SchablonRepository schablonRepository { get; set; }
         public BehörighetRepository behörighetRepository { get; set; }
+        public IntäktsRepository intäktsRepository { get; set; }
 
         private RepositoryFacade()
         {
@@ -27,6 +28,7 @@ namespace DataLayer
             produktRepository = new ProduktRepository();
             schablonRepository = new SchablonRepository();
             behörighetRepository = new BehörighetRepository();
+            intäktsRepository = new IntäktsRepository();
 
         }
 

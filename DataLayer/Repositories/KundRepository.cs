@@ -15,7 +15,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Kund
-                            where x.KundID == id
+                            where x.KundID.StartsWith(id)
                             select new KundDTO { KundID = x.KundID, Namn = x.Namn, KundKategori = x.KundKategori.Namn };
 
                 return query.ToList();
@@ -26,7 +26,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Kund
-                            where x.Namn == namn
+                            where x.Namn.StartsWith(namn)
                             select new KundDTO { KundID = x.KundID, Namn = x.Namn, KundKategori = x.KundKategori.Namn };
 
                 return query.ToList();

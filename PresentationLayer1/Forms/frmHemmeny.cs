@@ -58,5 +58,12 @@ namespace PresentationLayer1
             Hide();
             frmbehörighet.Show();
         }
+
+        private void btnIntäktsbudgeteringKund_Click(object sender, EventArgs e)
+        {
+            this.Visible = !this.Visible;
+            Forms.frmIntäktsbudgeteringKund frmIntäktsbudgeteringKund = new Forms.frmIntäktsbudgeteringKund();
+            frmIntäktsbudgeteringKund.Show();
+        }
     }
 }

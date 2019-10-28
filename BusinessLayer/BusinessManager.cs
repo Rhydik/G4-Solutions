@@ -115,6 +115,10 @@ namespace BusinessLayer
             return repositoryFacade.schablonRepository.GetSchablonByBenämning(benämning);
         }
 
+        public List<IntäktsbudgetKundDTO> GetAllKundProdukter(string KundID)
+        {
+            return repositoryFacade.intäktsRepository.GetAllKundProdukter(KundID);
+        }
 
         public List<AktivitetDTO> GetAktivitetById(string aktivitetId)
         {

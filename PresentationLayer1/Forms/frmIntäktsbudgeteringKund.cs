@@ -17,7 +17,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager = new BusinessManager();
         private List<KundDTO> kunds;
-        private List<ProduktDTO> produkts;
+        private List<IntäktsbudgetKundDTO> produkts;
         public frmIntäktsbudgeteringKund()
         {
             InitializeComponent();
@@ -120,7 +120,7 @@ namespace PresentationLayer1.Forms
 
         private void Update()
         {
-            //produkts = businessManager.GetAllKundProdukter(kunden);
+            produkts = businessManager.GetAllKundProdukter(tbKundID.Text);
             dgvIntäktsbudgeteringKund.DataSource = produkts;
         }
 

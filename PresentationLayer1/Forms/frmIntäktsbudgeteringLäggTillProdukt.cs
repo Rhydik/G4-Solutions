@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer.DTO;
+using BusinessLayer;
+using DataLayer;
 
 namespace PresentationLayer1.Forms
 {
@@ -30,6 +32,11 @@ namespace PresentationLayer1.Forms
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnSpara_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

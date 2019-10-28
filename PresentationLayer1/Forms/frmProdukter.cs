@@ -27,6 +27,20 @@ namespace PresentationLayer1.Forms
 
             dgvProdukter.DataSource = produkter;
 
+            var kategori = businessManager.GetProduktByKategori();
+            cmbProduktKategori.DataSource = kategori;
+            cmbProduktKategori.ValueMember = "Namn";
+            cmbProduktKategori.DisplayMember = "Namn";
+
+            var grupp = businessManager.GetProduktByGrupp();
+            cmbProduktgrupp.DataSource = grupp;
+            cmbProduktgrupp.ValueMember = "Namn";
+            cmbProduktgrupp.DisplayMember = "Namn";
+
+            cmbVäljAvdelning.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
+            cmbVäljAvdelning.Items.Insert(1, "Driftavdelning");
+            cmbVäljAvdelning.SelectedIndex = 0;
+
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -74,6 +88,27 @@ namespace PresentationLayer1.Forms
         {
             produkterupdated = businessManager.GetAllProdukter();
             dgvProdukter.DataSource = produkterupdated;
+        }
+
+        private void btnSök_Click(object sender, EventArgs e)
+        {
+            string produktID = tbProduktID.Text;
+            string namn = tbProdukt.Text;
+
+            var kategori = cmbProduktKategori.GetItemText(cmbProduktKategori.SelectedItem);
+
+            var grupp = cmbProduktgrupp.GetItemText(cmbProduktgrupp.SelectedItem);
+
+            var avdelning = cmbVäljAvdelning.GetItemText(cmbVäljAvdelning.SelectedItem);
+
+            if (tbProduktID.Text.Length != 0)
+            {
+                produktID = tbProduktID.Text;
+            }
+
+            var data = businessManager.GetProdukterBySearch(produktID, namn, kategori, grupp, avdelning);
+
+            dgvProdukter.DataSource = data;
         }
     }
     }

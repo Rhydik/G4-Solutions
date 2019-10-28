@@ -274,6 +274,11 @@ namespace BusinessLayer
             repositoryFacade.produktRepository.UpdateProdukt(oldProdukt, produktID, namn, produktKategori, produktGrupp, produktAvdelning);
         }
 
+        public List<ProduktDTO> GetProdukterBySearch(string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        {
+            return repositoryFacade.produktRepository.GetProdukterBySearch(produktID, namn, produktKategori, produktGrupp, produktAvdelning);
+        }
+
         public string SkapaID(string kundId, string kundKategori)
         {
             string idEnd = "";

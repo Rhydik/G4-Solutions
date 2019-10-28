@@ -16,5 +16,20 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
         }
+
+        private void frmIntäktsbudgeteringLäggTillKund_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbTimmar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTimmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -145,5 +145,31 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
+
+        public List<ProduktDTO> GetProdukterBySearch(string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Produkt
+                            select new ProduktDTO { ProduktID = produktID, Namn = namn, Produktkategori = produktKategori, Produktgrupp = produktGrupp, Avdelning = produktAvdelning };
+
+                if (!string.IsNullOrEmpty(produktID))
+                    query = query.Where(ProduktDTO => ProduktDTO.ProduktID.StartsWith(produktID));
+
+                if (!string.IsNullOrEmpty(namn))
+                    query = query.Where(ProduktDTO => ProduktDTO.Namn.StartsWith(namn));
+
+                if (!string.IsNullOrEmpty(produktKategori))
+                    query = query.Where(ProduktDTO => ProduktDTO.Produktkategori == produktKategori);
+
+                if (!string.IsNullOrEmpty(produktGrupp))
+                    query = query.Where(ProduktgruppDTO => ProduktgruppDTO.Namn == produktGrupp);
+
+                if (!string.IsNullOrEmpty(produktAvdelning))
+                    query = query.Where(AvdelningDTO => AvdelningDTO.Namn == produktAvdelning);
+
+                return query.ToList();
+            }
+        }
     }
 }

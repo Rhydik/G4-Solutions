@@ -57,7 +57,7 @@
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\BehörighetDTO.cs" />
-    <Compile Include="IntäktsbudgetKundDTO.cs" />
+    <Compile Include="DTO\IntäktsbudgetKundDTO.cs" />
     <Compile Include="Repositories\IntäktsRepository.cs" />
     <Compile Include="Repositories\BehörighetRepository.cs" />
     <Compile Include="DataContext.cs" />

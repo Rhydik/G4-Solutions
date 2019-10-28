@@ -14,6 +14,7 @@ namespace DataLayer
         public bool GradA { get; set; }
         public decimal Tillägg { get; set; }
         public bool GradT { get; set; }
+        public decimal Budget { get; set; }
         public int Tim { get; set; }
         public string Kommentar { get; set; }
     }

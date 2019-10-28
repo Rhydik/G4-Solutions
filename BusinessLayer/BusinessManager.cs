@@ -55,6 +55,11 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
+        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string kundId)
+        {
+            repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, budget, tim, kommentar, kundId);
+        }
+
         public void AddBehörighet(string tempBehör, string tempPersnr)
         {
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
@@ -103,6 +108,11 @@ namespace BusinessLayer
         public void CreateKonto(int konto, string namn, int schablonKostnad)
         {
             repositoryFacade.schablonRepository.CreateKonto(konto, namn, schablonKostnad);
+        }
+
+        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)
+        {
+            repositoryFacade.intäktsRepository.RemoveKundProdukt(produkten);
         }
 
         public void CreateAvkastning(int avkastning)

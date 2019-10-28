@@ -113,20 +113,20 @@ namespace PresentationLayer1.Forms
 
         private void btnTaBortProdukt_Click(object sender, EventArgs e)
         {
-            ProduktDTO produkten = (ProduktDTO)dgvIntäktsbudgeteringKund.CurrentRow.DataBoundItem;
-            //businessManager.RemoveKundProdukt(produkten);
+            var produkten = (IntäktsbudgetKundDTO)dgvIntäktsbudgeteringKund.CurrentRow.DataBoundItem;
+            businessManager.RemoveKundProdukt(produkten);
             Update();
         }
 
         private void Update()
         {
-            produkts = businessManager.GetAllKundProdukter(tbKundID.Text);
+            produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
             dgvIntäktsbudgeteringKund.DataSource = produkts;
         }
 
         private void btnLäggTillProdukt_Click(object sender, EventArgs e)
         {
-            frmIntäktsbudgeteringLäggTillProdukt frmIntäktsbudgeteringLäggTillProdukt = new frmIntäktsbudgeteringLäggTillProdukt(lblValdKundNamn.Text);
+            frmIntäktsbudgeteringLäggTillProdukt frmIntäktsbudgeteringLäggTillProdukt = new frmIntäktsbudgeteringLäggTillProdukt(lblValdKundNamn.Text, lblValdKundID.Text);
             frmIntäktsbudgeteringLäggTillProdukt.Show();
         }
     }

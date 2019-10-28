@@ -32,7 +32,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
             this.lblLäggTillProdulktFör = new System.Windows.Forms.Label();
-            this.lblKund = new System.Windows.Forms.Label();
+            this.lblKunden = new System.Windows.Forms.Label();
             this.lblBudget = new System.Windows.Forms.Label();
             this.tbBudget = new System.Windows.Forms.TextBox();
             this.lblAvtal = new System.Windows.Forms.Label();
@@ -47,8 +47,8 @@
             this.tbTimmar = new System.Windows.Forms.TextBox();
             this.rtbKommentar = new System.Windows.Forms.RichTextBox();
             this.lblKommentar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvProdukter = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAvbryt
@@ -60,6 +60,7 @@
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click_1);
             // 
             // label6
             // 
@@ -78,6 +79,7 @@
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click_1);
             // 
             // lblLäggTillProdulktFör
             // 
@@ -89,15 +91,15 @@
             this.lblLäggTillProdulktFör.TabIndex = 32;
             this.lblLäggTillProdulktFör.Text = "Lägg till produkt för";
             // 
-            // lblKund
+            // lblKunden
             // 
-            this.lblKund.AutoSize = true;
-            this.lblKund.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKund.Location = new System.Drawing.Point(242, 11);
-            this.lblKund.Name = "lblKund";
-            this.lblKund.Size = new System.Drawing.Size(46, 20);
-            this.lblKund.TabIndex = 41;
-            this.lblKund.Text = "Kund";
+            this.lblKunden.AutoSize = true;
+            this.lblKunden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKunden.Location = new System.Drawing.Point(242, 11);
+            this.lblKunden.Name = "lblKunden";
+            this.lblKunden.Size = new System.Drawing.Size(46, 20);
+            this.lblKunden.TabIndex = 41;
+            this.lblKunden.Text = "Kund";
             // 
             // lblBudget
             // 
@@ -136,6 +138,9 @@
             // cmbGradA
             // 
             this.cmbGradA.FormattingEnabled = true;
+            this.cmbGradA.Items.AddRange(new object[] {
+            "Säker",
+            "Osäker"});
             this.cmbGradA.Location = new System.Drawing.Point(15, 478);
             this.cmbGradA.Name = "cmbGradA";
             this.cmbGradA.Size = new System.Drawing.Size(188, 21);
@@ -164,6 +169,9 @@
             // cmbGradT
             // 
             this.cmbGradT.FormattingEnabled = true;
+            this.cmbGradT.Items.AddRange(new object[] {
+            "Säker",
+            "Osäker"});
             this.cmbGradT.Location = new System.Drawing.Point(15, 392);
             this.cmbGradT.Name = "cmbGradT";
             this.cmbGradT.Size = new System.Drawing.Size(188, 21);
@@ -221,13 +229,13 @@
             this.lblKommentar.TabIndex = 55;
             this.lblKommentar.Text = "Kommentar";
             // 
-            // dataGridView1
+            // dgvProdukter
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(773, 281);
-            this.dataGridView1.TabIndex = 56;
+            this.dgvProdukter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProdukter.Location = new System.Drawing.Point(15, 34);
+            this.dgvProdukter.Name = "dgvProdukter";
+            this.dgvProdukter.Size = new System.Drawing.Size(773, 281);
+            this.dgvProdukter.TabIndex = 56;
             // 
             // frmIntäktsbudgeteringLäggTillProdukt
             // 
@@ -235,7 +243,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 603);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProdukter);
             this.Controls.Add(this.lblKommentar);
             this.Controls.Add(this.rtbKommentar);
             this.Controls.Add(this.lblTimmar);
@@ -250,15 +258,15 @@
             this.Controls.Add(this.tbAvtal);
             this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.tbBudget);
-            this.Controls.Add(this.lblKund);
+            this.Controls.Add(this.lblKunden);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.lblLäggTillProdulktFör);
             this.Name = "frmIntäktsbudgeteringLäggTillProdukt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIntäktsbudgeteringLäggTillProdukt";
-            this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillProdukt_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +277,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Label lblLäggTillProdulktFör;
-        private System.Windows.Forms.Label lblKund;
+        private System.Windows.Forms.Label lblKunden;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.TextBox tbBudget;
         private System.Windows.Forms.Label lblAvtal;
@@ -284,6 +292,6 @@
         private System.Windows.Forms.TextBox tbTimmar;
         private System.Windows.Forms.RichTextBox rtbKommentar;
         private System.Windows.Forms.Label lblKommentar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProdukter;
     }
 }

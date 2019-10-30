@@ -63,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(873, 39);
+            this.label3.Location = new System.Drawing.Point(684, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
@@ -110,13 +110,12 @@
             // 
             // cmbVäljAvdelning
             // 
-            this.cmbVäljAvdelning.FormattingEnabled = true;
-            this.cmbVäljAvdelning.Location = new System.Drawing.Point(667, 49);
-            this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
-            this.cmbVäljAvdelning.Size = new System.Drawing.Size(178, 21);
-            this.cmbVäljAvdelning.TabIndex = 27;
-            this.cmbVäljAvdelning.Text = "Välj avdelning";
             this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVäljAvdelning.FormattingEnabled = true;
+            this.cmbVäljAvdelning.Location = new System.Drawing.Point(543, 51);
+            this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
+            this.cmbVäljAvdelning.Size = new System.Drawing.Size(138, 21);
+            this.cmbVäljAvdelning.TabIndex = 27;
             // 
             // tbProdukt
             // 
@@ -134,8 +133,8 @@
             // 
             // btnRegistreraNyProdukt
             // 
-            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(847, 444);
-            this.btnRegistreraNyProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(698, 374);
+            this.btnRegistreraNyProdukt.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistreraNyProdukt.Name = "btnRegistreraNyProdukt";
             this.btnRegistreraNyProdukt.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyProdukt.TabIndex = 24;
@@ -320,21 +319,21 @@
             // 
             // cmbProduktgrupp
             // 
+            this.cmbProduktgrupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProduktgrupp.FormattingEnabled = true;
-            this.cmbProduktgrupp.Location = new System.Drawing.Point(592, 61);
+            this.cmbProduktgrupp.Location = new System.Drawing.Point(445, 51);
             this.cmbProduktgrupp.Name = "cmbProduktgrupp";
             this.cmbProduktgrupp.Size = new System.Drawing.Size(92, 21);
             this.cmbProduktgrupp.TabIndex = 36;
-            this.cmbProduktgrupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // cmbProduktKategori
             // 
-            this.cmbProduktKategori.FormattingEnabled = true;
             this.cmbProduktKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProduktKategori.FormattingEnabled = true;
             this.cmbProduktKategori.Items.AddRange(new object[] {
             "Kundspecifik",
             "Generell"});
-            this.cmbProduktKategori.Location = new System.Drawing.Point(719, 61);
+            this.cmbProduktKategori.Location = new System.Drawing.Point(687, 51);
             this.cmbProduktKategori.Name = "cmbProduktKategori";
             this.cmbProduktKategori.Size = new System.Drawing.Size(123, 21);
             this.cmbProduktKategori.TabIndex = 37;
@@ -342,7 +341,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(537, 32);
+            this.label5.Location = new System.Drawing.Point(540, 32);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 13);

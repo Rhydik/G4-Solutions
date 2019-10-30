@@ -87,6 +87,7 @@
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
             this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(524, 284);
             this.dgvPrognostiseringIntäkter.TabIndex = 85;
+            this.dgvPrognostiseringIntäkter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrognostiseringIntäkter_CellContentClick);
             // 
             // panel1
             // 
@@ -186,6 +187,7 @@
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
+            this.btnSchablonkostnad.Click += new System.EventHandler(this.btnSchablonkostnad_Click);
             // 
             // btnAktiviteter
             // 
@@ -248,7 +250,7 @@
             this.Controls.Add(this.dgvPrognostiseringIntäkter);
             this.Controls.Add(this.panel1);
             this.Name = "frmPrognostiseringIntäkter";
-            this.Text = "Prognostisering intäkter  | G4 Solutions Economy System";
+            this.Text = "frmPrognostiseringIntäkter";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

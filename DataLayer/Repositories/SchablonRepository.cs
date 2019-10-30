@@ -13,7 +13,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn };
+                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn, Beskrivning = x.Beskrivning };
 
                 return query.ToList();
             }
@@ -90,8 +90,8 @@ namespace DataLayer
                                     where x.Konto.Namn == namn
                                     select x).FirstOrDefault();
 
-                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = namn, Belopp = schablonKostnad, Konto_KontoID = konto };
-                var nyttkonto = new Konto { KontoID = konto, Namn = namn};
+                var schablon = new schablonkostnad { Namn = konto.ToString(), Beskrivning = namn, Belopp = schablonKostnad, Konto_KontoID = konto };
+                var nyttkonto = new Konto { KontoID = konto, Namn = konto.ToString()};
 
                 db.Konto.Add(nyttkonto);
                 db.schablonkostnad.Add(schablon);
@@ -104,8 +104,8 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablon = new schablonkostnad { schablonkostnadID = 9999, Namn = "Avkastning", Belopp = avkastning, Konto_KontoID = 9999 };
-                var nyttkonto = new Konto { KontoID = 9999, Namn = "Avkastning" };
+                var schablon = new schablonkostnad { schablonkostnadID = 9999, Namn = "9999", Belopp = avkastning, Beskrivning = "Avkastning", Konto_KontoID = 9999 };
+                var nyttkonto = new Konto { KontoID = 9999, Namn = "9999"};
 
                 var kontoToRemove = (from x in db.Konto
                                      where x.Namn == schablon.Namn
@@ -116,7 +116,6 @@ namespace DataLayer
 
                 db.Konto.Remove(kontoToRemove);
                 db.schablonkostnad.Remove(schablonToRemove);
-
                 
                 db.Konto.Add(nyttkonto);
                 db.schablonkostnad.Add(schablon);

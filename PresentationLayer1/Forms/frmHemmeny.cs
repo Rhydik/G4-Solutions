@@ -65,5 +65,17 @@ namespace PresentationLayer1
             Forms.frmIntäktsbudgeteringKund frmIntäktsbudgeteringKund = new Forms.frmIntäktsbudgeteringKund();
             frmIntäktsbudgeteringKund.Show();
         }
+
+        private void frmHemmeny_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrognostiseringIntäkter_Click(object sender, EventArgs e)
+        {
+            Forms.frmPrognostiseringIntäkter frmPrognostiseringIntäkter = new Forms.frmPrognostiseringIntäkter();
+            Hide();
+            frmPrognostiseringIntäkter.Show();
+        }
     }
 }

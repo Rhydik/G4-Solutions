@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer
+namespace DataLayer.DTO
 {
-    public class SchablonDTO
+    public class PrognosDTO
     {
-        public int KontoID { get; set; }
+        public int PrognosID { get; set; }
         public string Namn { get; set; }
         public decimal Belopp { get; set; }
 
-        public string Beskrivning { get; set; }
     }
 }

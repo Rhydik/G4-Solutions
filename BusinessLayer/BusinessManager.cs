@@ -40,6 +40,12 @@ namespace BusinessLayer
             return repositoryFacade.schablonRepository.GetAllSchablon();
         }
 
+
+        public List<PrognosDTO> GetAllPrognoser()
+        {
+            return repositoryFacade.prognosRepository.GetAllPrognoser();
+        }
+
         public void RemoveAktivitet(AktivitetDTO aktivitet)
         {
             repositoryFacade.aktivitetRepository.RemoveAktivitet(aktivitet);

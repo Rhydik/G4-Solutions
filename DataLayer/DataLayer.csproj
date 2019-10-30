@@ -59,6 +59,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
     <Compile Include="DTO\IntäktsbudgetKundDTO.cs" />
+    <Compile Include="DTO\PrognosDTO.cs" />
     <Compile Include="KundIntäktsbudget.cs" />
     <Compile Include="ProduktIntäktsbudget.cs" />
     <Compile Include="Repositories\IntäktsRepository.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Repositories\PersonalRepository.cs" />
     <Compile Include="Repositories\ProduktRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PrognosRepository.cs" />
     <Compile Include="Repositories\RepositoryFacade.cs" />
     <Compile Include="Repositories\SchablonRepository.cs" />
     <Compile Include="DTO\SchablonDTO.cs" />

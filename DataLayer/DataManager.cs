@@ -48,6 +48,14 @@ namespace DataLayer
             }
         }
 
+        public static List<Prognos> GetPrognoser()
+        {
+            using (var db = new DataContext())
+            {
+                return db.Prognos.ToList();
+            }
+        }
+
         public static List<Produktkategori> GetProduktkategori()
         {
             using (var db = new DataContext())

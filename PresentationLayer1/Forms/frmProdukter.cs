@@ -43,6 +43,8 @@ namespace PresentationLayer1.Forms
             cmbVäljAvdelning.Items.Insert(1, "Driftavdelning");
             cmbVäljAvdelning.SelectedIndex = -1;
 
+            HideFromUser();
+
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -118,6 +120,15 @@ namespace PresentationLayer1.Forms
             var data = businessManager.GetProdukterBySearch(produktID, namn, kategori, grupp, avdelning);
 
             dgvProdukter.DataSource = data;
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRedigeraProdukt.Hide();
+                btnRegistreraNyProdukt.Hide();
+            }
         }
 
     }

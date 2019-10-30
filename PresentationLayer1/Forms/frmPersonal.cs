@@ -24,6 +24,8 @@ namespace PresentationLayer1.Forms
 
             personal = businessManager.GetAllPersonal();
             gvPersonal.DataSource = personal;
+
+            HideFromUser();
         }
 
         private void tbPersonnummer_TextChanged(object sender, EventArgs e)
@@ -71,6 +73,16 @@ namespace PresentationLayer1.Forms
         private void gvPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRedigeraPersonal.Hide();
+                btnRegistreraNyPersonal.Hide();
+            }
         }
     }
 }

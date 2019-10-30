@@ -57,6 +57,9 @@
             // 
             // dgvPlacering
             // 
+            this.dgvPlacering.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlacering.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlacering.Location = new System.Drawing.Point(354, 94);
             this.dgvPlacering.Name = "dgvPlacering";
@@ -67,6 +70,7 @@
             // 
             // btnExportera
             // 
+            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportera.Location = new System.Drawing.Point(244, 375);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
@@ -215,6 +219,7 @@
             // 
             // btnSpara
             // 
+            this.btnSpara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSpara.Location = new System.Drawing.Point(642, 375);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(120, 41);
@@ -224,6 +229,7 @@
             // 
             // btnLåsBudget
             // 
+            this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLåsBudget.Location = new System.Drawing.Point(516, 375);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
@@ -301,7 +307,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSpara);
             this.Name = "frmKostnadsbudgetering";
-            this.Text = "frmKostnadsbudgetering";
+            this.Text = "Kostnadsbudgetering  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlacering)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -128,8 +128,7 @@
             this.Controls.Add(this.btnLoggaIn);
             this.Name = "frmLoggaIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "G4-Solutions";
-            //this.Load += new System.EventHandler(this.frmLoggaIn_Load);
+            this.Text = "Logga in  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

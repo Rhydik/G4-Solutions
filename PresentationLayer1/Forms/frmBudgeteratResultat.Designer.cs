@@ -277,7 +277,7 @@
             this.Controls.Add(this.dgvBudgeteratResultat);
             this.Controls.Add(this.panel1);
             this.Name = "frmBudgeteratResultat";
-            this.Text = "frmBudgeteratResultat";
+            this.Text = "Budgeterat Resultat | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

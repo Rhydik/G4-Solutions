@@ -248,7 +248,7 @@
             this.Controls.Add(this.dgvPrognostiseringIntäkter);
             this.Controls.Add(this.panel1);
             this.Name = "frmPrognostiseringIntäkter";
-            this.Text = "frmPrognostiseringIntäkter";
+            this.Text = "Prognostisering intäkter  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

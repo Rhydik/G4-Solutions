@@ -243,13 +243,12 @@
             // 
             // cmbVäljAvdelning
             // 
+            this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVäljAvdelning.FormattingEnabled = true;
             this.cmbVäljAvdelning.Location = new System.Drawing.Point(440, 54);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
             this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 41;
-            this.cmbVäljAvdelning.Text = "Välj avdelning";
-            this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVäljAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbVäljAvdelning_SelectedIndexChanged);
             // 
             // tbBenämning
@@ -270,6 +269,7 @@
             // 
             // btnRegistreraNyAktivitet
             // 
+            this.btnRegistreraNyAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(624, 365);
             this.btnRegistreraNyAktivitet.Name = "btnRegistreraNyAktivitet";
             this.btnRegistreraNyAktivitet.Size = new System.Drawing.Size(112, 40);
@@ -280,6 +280,7 @@
             // 
             // btnRedigeraAktivitet
             // 
+            this.btnRedigeraAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRedigeraAktivitet.Location = new System.Drawing.Point(499, 363);
             this.btnRedigeraAktivitet.Name = "btnRedigeraAktivitet";
             this.btnRedigeraAktivitet.Size = new System.Drawing.Size(120, 41);
@@ -290,6 +291,10 @@
             // 
             // dgvAktiviteter
             // 
+            this.dgvAktiviteter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAktiviteter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAktiviteter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAktiviteter.Location = new System.Drawing.Point(235, 121);
             this.dgvAktiviteter.Name = "dgvAktiviteter";
@@ -317,7 +322,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAktiviteter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAktiviteter";
+            this.Text = "Aktiviteter  | G4 Solutions Economy System";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).EndInit();
             this.ResumeLayout(false);

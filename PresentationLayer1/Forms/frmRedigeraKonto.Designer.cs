@@ -162,7 +162,7 @@
             this.Controls.Add(this.tbKontobenämning);
             this.Name = "frmRedigeraKonto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraKonto";
+            this.Text = "Redigera Konto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

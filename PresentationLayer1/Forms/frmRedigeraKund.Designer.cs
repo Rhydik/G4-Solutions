@@ -132,14 +132,14 @@
             this.lblRedigeraKund.TabIndex = 32;
             this.lblRedigeraKund.Text = "Redigera kund";
             // 
-            // tbKundID2
+            // tbKundID
             // 
             this.tbKundID.Location = new System.Drawing.Point(12, 92);
             this.tbKundID.Name = "tbKundID";
             this.tbKundID.Size = new System.Drawing.Size(239, 20);
             this.tbKundID.TabIndex = 31;
             // 
-            // tbKund2
+            // tbKundNamn
             // 
             this.tbKundNamn.Location = new System.Drawing.Point(12, 146);
             this.tbKundNamn.Name = "tbKundNamn";
@@ -166,7 +166,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRedigeraKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraKund";
+            this.Text = "Redigera Kund";
             this.ResumeLayout(false);
             this.PerformLayout();
 

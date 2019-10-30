@@ -108,6 +108,7 @@
             // 
             // btnRegistreraNyPersonal
             // 
+            this.btnRegistreraNyPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistreraNyPersonal.Location = new System.Drawing.Point(701, 398);
             this.btnRegistreraNyPersonal.Name = "btnRegistreraNyPersonal";
             this.btnRegistreraNyPersonal.Size = new System.Drawing.Size(112, 40);
@@ -118,6 +119,7 @@
             // 
             // btnRedigeraPersonal
             // 
+            this.btnRedigeraPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRedigeraPersonal.Location = new System.Drawing.Point(575, 397);
             this.btnRedigeraPersonal.Name = "btnRedigeraPersonal";
             this.btnRedigeraPersonal.Size = new System.Drawing.Size(120, 41);
@@ -128,6 +130,10 @@
             // 
             // gvPersonal
             // 
+            this.gvPersonal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvPersonal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvPersonal.Location = new System.Drawing.Point(244, 119);
             this.gvPersonal.Name = "gvPersonal";
@@ -293,7 +299,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPersonal";
+            this.Text = "Personal  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

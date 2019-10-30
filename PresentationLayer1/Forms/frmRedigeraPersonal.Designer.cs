@@ -209,7 +209,7 @@
             this.Controls.Add(this.btnSparaPersonal);
             this.Name = "frmRedigeraPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraPersonal";
+            this.Text = "Redigera Personal";
             this.ResumeLayout(false);
             this.PerformLayout();
 

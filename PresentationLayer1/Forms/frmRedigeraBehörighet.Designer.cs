@@ -187,7 +187,7 @@
             this.Controls.Add(this.Namn);
             this.Name = "frmRedigeraBehörighet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraBehörighet";
+            this.Text = "Redigera Behörighet";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

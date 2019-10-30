@@ -62,9 +62,9 @@
             this.lblKontobenämning.AutoSize = true;
             this.lblKontobenämning.Location = new System.Drawing.Point(399, 35);
             this.lblKontobenämning.Name = "lblKontobenämning";
-            this.lblKontobenämning.Size = new System.Drawing.Size(87, 13);
+            this.lblKontobenämning.Size = new System.Drawing.Size(35, 13);
             this.lblKontobenämning.TabIndex = 40;
-            this.lblKontobenämning.Text = "Kontobenämning";
+            this.lblKontobenämning.Text = "Namn";
             // 
             // lblKonto
             // 
@@ -132,11 +132,11 @@
             // gvSchablonkostnad
             // 
             this.gvSchablonkostnad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSchablonkostnad.Location = new System.Drawing.Point(246, 122);
+            this.gvSchablonkostnad.Location = new System.Drawing.Point(206, 122);
             this.gvSchablonkostnad.Name = "gvSchablonkostnad";
             this.gvSchablonkostnad.ReadOnly = true;
             this.gvSchablonkostnad.RowHeadersWidth = 62;
-            this.gvSchablonkostnad.Size = new System.Drawing.Size(383, 237);
+            this.gvSchablonkostnad.Size = new System.Drawing.Size(423, 237);
             this.gvSchablonkostnad.TabIndex = 32;
             // 
             // panel1

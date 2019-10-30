@@ -16,6 +16,8 @@ namespace DataLayer
 
         public decimal Belopp { get; set; }
 
+        public string Beskrivning { get; set; }
+
         public int Konto_KontoID { get; set; }
 
         public virtual Konto Konto { get; set; }

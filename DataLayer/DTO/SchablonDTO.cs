@@ -11,5 +11,7 @@ namespace DataLayer
         public int KontoID { get; set; }
         public string Namn { get; set; }
         public decimal Belopp { get; set; }
+
+        public string Beskrivning { get; set; }
     }
 }

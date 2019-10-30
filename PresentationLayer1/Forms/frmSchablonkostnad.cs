@@ -23,7 +23,9 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
 
             schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.KontoID).ToList(); ;
+            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Namn).ToList();
+
+            HideFromUser();
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -87,8 +89,7 @@ namespace PresentationLayer1.Forms
 
             if (gvSchablonkostnad.CurrentRow.DataBoundItem != null)
             {
-                
-                using(var frmRedigeraKonto = new frmRedigeraKonto((SchablonDTO)gvSchablonkostnad.CurrentRow.DataBoundItem))
+                using (var frmRedigeraKonto = new frmRedigeraKonto((SchablonDTO)gvSchablonkostnad.CurrentRow.DataBoundItem))
                 {
                     if (frmRedigeraKonto.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         Update();
@@ -98,7 +99,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                MessageBox.Show("Du måste välja en kund");
+                MessageBox.Show("Du måste välja en Schablon");
             }
 
             
@@ -143,12 +144,22 @@ namespace PresentationLayer1.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             businessManager.CreateAvkastning(int.Parse(tbAvkastningskrav.Text));
+            MessageBox.Show("Avkastning är nu ", tbAvkastningskrav.Text);
             Update();
         }
 
-        private void frmSchablonkostnad_Load(object sender, EventArgs e)
+        private void gvSchablonkostnad_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRegistreraNyttKonto.Hide();
+                btnRedigeraKonto.Hide();
+            }
         }
     }
 }

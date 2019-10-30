@@ -128,6 +128,7 @@
             // 
             // btnTaBortKund
             // 
+            this.btnTaBortKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTaBortKund.Location = new System.Drawing.Point(529, 372);
             this.btnTaBortKund.Name = "btnTaBortKund";
             this.btnTaBortKund.Size = new System.Drawing.Size(120, 41);
@@ -144,6 +145,7 @@
             // 
             // btnLäggTillKund
             // 
+            this.btnLäggTillKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLäggTillKund.Location = new System.Drawing.Point(655, 372);
             this.btnLäggTillKund.Name = "btnLäggTillKund";
             this.btnLäggTillKund.Size = new System.Drawing.Size(120, 41);
@@ -153,6 +155,10 @@
             // 
             // dgvIntäktsbudgeteringProdukt
             // 
+            this.dgvIntäktsbudgeteringProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvIntäktsbudgeteringProdukt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIntäktsbudgeteringProdukt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(273, 120);
             this.dgvIntäktsbudgeteringProdukt.Name = "dgvIntäktsbudgeteringProdukt";
@@ -210,6 +216,7 @@
             // 
             // btnExportera
             // 
+            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportera.Location = new System.Drawing.Point(268, 372);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
@@ -229,6 +236,7 @@
             // 
             // btnLåsBudget
             // 
+            this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLåsBudget.Location = new System.Drawing.Point(394, 372);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
@@ -309,7 +317,7 @@
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.panel1);
             this.Name = "frmIntäktsbudgeteringProdukt";
-            this.Text = "frmIntäktsbudgeteringProdukt";
+            this.Text = "Intäktsbudgetering: Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

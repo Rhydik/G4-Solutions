@@ -24,6 +24,8 @@ namespace PresentationLayer1
             businessManager = new BusinessManager();
 
             RefreshData();
+
+            HideFromUser();
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -100,6 +102,18 @@ namespace PresentationLayer1
             cmbKundkategori.ValueMember = "Namn";
             cmbKundkategori.DisplayMember = "Namn";
             cmbKundkategori.SelectedIndex = -1;
+        }
+
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal == null) return;
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRegistreraNyKund.Hide();
+                btnRedigeraKund.Hide();
+            }
         }
     }
 }

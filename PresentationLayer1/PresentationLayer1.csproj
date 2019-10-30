@@ -232,6 +232,12 @@
     <Compile Include="Forms\frmSchablonkostnad.Designer.cs">
       <DependentUpon>frmSchablonkostnad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucMeny.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucMeny.Designer.cs">
+      <DependentUpon>ucMeny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSchablonkostnad.resx">
       <DependentUpon>frmSchablonkostnad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucMeny.resx">
+      <DependentUpon>ucMeny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

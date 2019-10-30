@@ -236,7 +236,7 @@
             this.Name = "frmRegistreraNyProdukt";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddNewProdukt";
+            this.Text = "Registrera ny produkt";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAddNewProdukt_Load);
             this.ResumeLayout(false);

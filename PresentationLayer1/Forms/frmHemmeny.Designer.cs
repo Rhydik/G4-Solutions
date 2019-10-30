@@ -29,22 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHemmeny));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResultat = new System.Windows.Forms.Button();
-            this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
-            this.btnBudgeteratResultat = new System.Windows.Forms.Button();
-            this.btnKostnadsbudgetering = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringProdukt = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringKund = new System.Windows.Forms.Button();
-            this.btnBehörighet = new System.Windows.Forms.Button();
-            this.btnSchablonkostnad = new System.Windows.Forms.Button();
-            this.btnAktiviteter = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
-            this.btnProdukter = new System.Windows.Forms.Button();
-            this.btnKunder = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panel1.SuspendLayout();
+            this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +73,6 @@
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
-            this.btnPrognostiseringIntäkter.Click += new System.EventHandler(this.btnPrognostiseringIntäkter_Click);
             // 
             // btnBudgeteratResultat
             // 
@@ -197,6 +183,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(277, 91);
             this.pictureBox1.Name = "pictureBox1";
@@ -213,18 +202,24 @@
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
+            // ucMeny1
+            // 
+            this.ucMeny1.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny1.Name = "ucMeny1";
+            this.ucMeny1.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny1.TabIndex = 5;
+            // 
             // frmHemmeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ucMeny1);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmHemmeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "G4 Solutions Economy System";
-            this.Load += new System.EventHandler(this.frmHemmeny_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -232,21 +227,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPrognostiseringIntäkter;
-        private System.Windows.Forms.Button btnBudgeteratResultat;
-        private System.Windows.Forms.Button btnKostnadsbudgetering;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringProdukt;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringKund;
-        private System.Windows.Forms.Button btnBehörighet;
-        private System.Windows.Forms.Button btnSchablonkostnad;
-        private System.Windows.Forms.Button btnAktiviteter;
-        private System.Windows.Forms.Button btnPersonal;
-        private System.Windows.Forms.Button btnProdukter;
-        private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Button btnResultat;
+        private Forms.ucMeny ucMeny1;
     }
 }

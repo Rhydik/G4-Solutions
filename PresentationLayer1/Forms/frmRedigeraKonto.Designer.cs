@@ -98,9 +98,9 @@
             this.lblKontobenämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKontobenämning.Location = new System.Drawing.Point(9, 127);
             this.lblKontobenämning.Name = "lblKontobenämning";
-            this.lblKontobenämning.Size = new System.Drawing.Size(109, 16);
+            this.lblKontobenämning.Size = new System.Drawing.Size(78, 16);
             this.lblKontobenämning.TabIndex = 34;
-            this.lblKontobenämning.Text = "Kontobenämning";
+            this.lblKontobenämning.Text = "Beskrivning";
             // 
             // lblKonto
             // 
@@ -108,9 +108,9 @@
             this.lblKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKonto.Location = new System.Drawing.Point(9, 73);
             this.lblKonto.Name = "lblKonto";
-            this.lblKonto.Size = new System.Drawing.Size(42, 16);
+            this.lblKonto.Size = new System.Drawing.Size(44, 16);
             this.lblKonto.TabIndex = 33;
-            this.lblKonto.Text = "Konto";
+            this.lblKonto.Text = "Namn";
             // 
             // lblRedigeraKonto
             // 
@@ -162,7 +162,7 @@
             this.Controls.Add(this.tbKontobenämning);
             this.Name = "frmRedigeraKonto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraKonto";
+            this.Text = "Redigera Konto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

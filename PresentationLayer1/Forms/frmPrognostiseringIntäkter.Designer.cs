@@ -251,7 +251,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmPrognostiseringIntäkter";
             this.Text = "frmPrognostiseringIntäkter";
-            this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

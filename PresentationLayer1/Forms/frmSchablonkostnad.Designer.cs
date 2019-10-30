@@ -62,9 +62,9 @@
             this.lblKontobenämning.AutoSize = true;
             this.lblKontobenämning.Location = new System.Drawing.Point(399, 35);
             this.lblKontobenämning.Name = "lblKontobenämning";
-            this.lblKontobenämning.Size = new System.Drawing.Size(87, 13);
+            this.lblKontobenämning.Size = new System.Drawing.Size(35, 13);
             this.lblKontobenämning.TabIndex = 40;
-            this.lblKontobenämning.Text = "Kontobenämning";
+            this.lblKontobenämning.Text = "Namn";
             // 
             // lblKonto
             // 
@@ -111,7 +111,8 @@
             // 
             // btnRegistreraNyttKonto
             // 
-            this.btnRegistreraNyttKonto.Location = new System.Drawing.Point(635, 366);
+            this.btnRegistreraNyttKonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistreraNyttKonto.Location = new System.Drawing.Point(676, 398);
             this.btnRegistreraNyttKonto.Name = "btnRegistreraNyttKonto";
             this.btnRegistreraNyttKonto.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyttKonto.TabIndex = 34;
@@ -121,7 +122,8 @@
             // 
             // btnRedigeraKonto
             // 
-            this.btnRedigeraKonto.Location = new System.Drawing.Point(509, 365);
+            this.btnRedigeraKonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRedigeraKonto.Location = new System.Drawing.Point(550, 398);
             this.btnRedigeraKonto.Name = "btnRedigeraKonto";
             this.btnRedigeraKonto.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraKonto.TabIndex = 33;
@@ -136,8 +138,9 @@
             this.gvSchablonkostnad.Name = "gvSchablonkostnad";
             this.gvSchablonkostnad.ReadOnly = true;
             this.gvSchablonkostnad.RowHeadersWidth = 62;
-            this.gvSchablonkostnad.Size = new System.Drawing.Size(383, 237);
+            this.gvSchablonkostnad.Size = new System.Drawing.Size(423, 237);
             this.gvSchablonkostnad.TabIndex = 32;
+            this.gvSchablonkostnad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSchablonkostnad_CellContentClick);
             // 
             // panel1
             // 
@@ -280,7 +283,7 @@
             // 
             // tbAvkastningskrav
             // 
-            this.tbAvkastningskrav.Location = new System.Drawing.Point(635, 273);
+            this.tbAvkastningskrav.Location = new System.Drawing.Point(245, 166);
             this.tbAvkastningskrav.Name = "tbAvkastningskrav";
             this.tbAvkastningskrav.Size = new System.Drawing.Size(112, 20);
             this.tbAvkastningskrav.TabIndex = 41;
@@ -288,7 +291,7 @@
             // lblAvkastningskrav
             // 
             this.lblAvkastningskrav.AutoSize = true;
-            this.lblAvkastningskrav.Location = new System.Drawing.Point(635, 257);
+            this.lblAvkastningskrav.Location = new System.Drawing.Point(242, 150);
             this.lblAvkastningskrav.Name = "lblAvkastningskrav";
             this.lblAvkastningskrav.Size = new System.Drawing.Size(86, 13);
             this.lblAvkastningskrav.TabIndex = 42;
@@ -296,7 +299,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(753, 273);
+            this.button1.Location = new System.Drawing.Point(245, 192);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 43;
@@ -324,7 +327,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmSchablonkostnad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSchablonkostnad";
+            this.Text = "Schablonkostnad  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.gvSchablonkostnad)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

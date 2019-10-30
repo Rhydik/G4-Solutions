@@ -237,6 +237,7 @@
             // 
             // btnRedigeraBehörighet
             // 
+            this.btnRedigeraBehörighet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRedigeraBehörighet.Location = new System.Drawing.Point(613, 365);
             this.btnRedigeraBehörighet.Name = "btnRedigeraBehörighet";
             this.btnRedigeraBehörighet.Size = new System.Drawing.Size(120, 41);
@@ -247,6 +248,10 @@
             // 
             // dgvBehörighet
             // 
+            this.dgvBehörighet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBehörighet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBehörighet.Location = new System.Drawing.Point(233, 84);
             this.dgvBehörighet.Name = "dgvBehörighet";
@@ -268,10 +273,10 @@
             this.Controls.Add(this.btnRedigeraBehörighet);
             this.Controls.Add(this.dgvBehörighet);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBehörighet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBehörighet";
+            this.Text = "Behörighet  | G4 Solutions Economy System";
             this.Activated += new System.EventHandler(this.frmBehörighet_Activated);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).EndInit();

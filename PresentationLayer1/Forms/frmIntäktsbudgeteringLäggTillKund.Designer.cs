@@ -343,7 +343,7 @@
             this.Controls.Add(this.lblLäggTillKundFör);
             this.Controls.Add(this.tbBudget);
             this.Name = "frmIntäktsbudgeteringLäggTillKund";
-            this.Text = "frmIntäktsbudgeteringLäggTillKund";
+            this.Text = "Intäktsbudgetering: Lägg till Kund  | G4 Solutions Economy System";
             this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillKund_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);

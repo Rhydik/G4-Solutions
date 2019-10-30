@@ -63,7 +63,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(664, 32);
+            this.label3.Location = new System.Drawing.Point(873, 39);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 32;
@@ -133,7 +134,8 @@
             // 
             // btnRegistreraNyProdukt
             // 
-            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(635, 361);
+            this.btnRegistreraNyProdukt.Location = new System.Drawing.Point(847, 444);
+            this.btnRegistreraNyProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistreraNyProdukt.Name = "btnRegistreraNyProdukt";
             this.btnRegistreraNyProdukt.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyProdukt.TabIndex = 24;
@@ -143,7 +145,8 @@
             // 
             // btnRedigeraProdukt
             // 
-            this.btnRedigeraProdukt.Location = new System.Drawing.Point(509, 361);
+            this.btnRedigeraProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRedigeraProdukt.Location = new System.Drawing.Point(572, 373);
             this.btnRedigeraProdukt.Name = "btnRedigeraProdukt";
             this.btnRedigeraProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraProdukt.TabIndex = 23;
@@ -153,6 +156,10 @@
             // 
             // dgvProdukter
             // 
+            this.dgvProdukter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProdukter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProdukter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdukter.Location = new System.Drawing.Point(246, 118);
             this.dgvProdukter.Name = "dgvProdukter";
@@ -314,8 +321,7 @@
             // cmbProduktgrupp
             // 
             this.cmbProduktgrupp.FormattingEnabled = true;
-            this.cmbProduktgrupp.Location = new System.Drawing.Point(444, 50);
-            this.cmbProduktgrupp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProduktgrupp.Location = new System.Drawing.Point(592, 61);
             this.cmbProduktgrupp.Name = "cmbProduktgrupp";
             this.cmbProduktgrupp.Size = new System.Drawing.Size(92, 21);
             this.cmbProduktgrupp.TabIndex = 36;
@@ -328,8 +334,7 @@
             this.cmbProduktKategori.Items.AddRange(new object[] {
             "Kundspecifik",
             "Generell"});
-            this.cmbProduktKategori.Location = new System.Drawing.Point(539, 50);
-            this.cmbProduktKategori.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbProduktKategori.Location = new System.Drawing.Point(719, 61);
             this.cmbProduktKategori.Name = "cmbProduktKategori";
             this.cmbProduktKategori.Size = new System.Drawing.Size(123, 21);
             this.cmbProduktKategori.TabIndex = 37;
@@ -367,7 +372,7 @@
             this.Controls.Add(this.dgvProdukter);
             this.Name = "frmProdukter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produkter || G4 Solutions Economy System";
+            this.Text = "Produkter | G4 Solutions Economy System";
             this.Load += new System.EventHandler(this.frmProdukter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).EndInit();
             this.panel1.ResumeLayout(false);

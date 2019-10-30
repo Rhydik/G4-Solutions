@@ -167,7 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRedigeraAktivitet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRedigeraAktivitet";
+            this.Text = "Redigera Aktivitet";
             this.ResumeLayout(false);
             this.PerformLayout();
 

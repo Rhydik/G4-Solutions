@@ -45,11 +45,6 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.RemoveAktivitet(aktivitet);
         }
 
-        public void CreateIntäksBudget(string kundID)
-        {
-            repositoryFacade.intäktsRepository.CreateIntäktsBudget(kundID);
-        }
-
         public List<AktivitetDTO> GetAllAktiviteter()
         {
             return repositoryFacade.aktivitetRepository.GetAllAktiviteter();

@@ -9,17 +9,25 @@ namespace DataLayer
 {
     public class IntäktsRepository
     {
-        public List<IntäktsbudgetKundDTO> GetAllKundProdukter(string kundID)
+        public List<IntäktsbudgetKundDTO> GetAllKundProdukter(string kundId)
         {
             using (var db = new DataContext())
             {
-                var kund = db.Kund.Where(x => x.KundID == kundID).FirstOrDefault();
-                var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).FirstOrDefault();
-
-                var intäkt = from x in db.Intäktsbudget
-                             where x.IntäktsbudgetID == kunden.Intäktsbudget_IntäktsbudgetID
-                             select new IntäktsbudgetKundDTO { Avtal = x.Avtal, GradA = x.GradA, GradT = x.GradT, Kommentar = x.Kommentar, Tillägg = x.Tillägg, Tim = x.Tim, Budget = x.Budget, };
-                return intäkt.ToList();
+                var kund = db.Kund.Where(x => x.KundID == kundId).FirstOrDefault();
+                var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).ToList();
+               
+                if (kunden != null)
+                {
+                    var intäkt = from x in db.KundIntäktsbudget
+                                 where x.Kund_KundID == kundId
+                                 join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                                 select new IntäktsbudgetKundDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, };
+                    return intäkt.ToList();
+                }
+                else
+                {
+                    return new List<IntäktsbudgetKundDTO>();
+                }
             }
         }
 
@@ -28,10 +36,9 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 Intäktsbudget intäktsbudget = new Intäktsbudget();
-                ProduktIntäktsbudget produktIntäktsbudget = new ProduktIntäktsbudget();
-                produktIntäktsbudget.Produkt_ProduktID = produkt.ProduktID;
-                KundIntäktsbudget kundIntäktsbudget = new KundIntäktsbudget();
-                kundIntäktsbudget.Kund_KundID = kundId;
+                ProduktIntäktsbudget produktIntäktsbudget = new ProduktIntäktsbudget() { Intäktsbudget = intäktsbudget, Intäktsbudget_IntäktsbudgetID = intäktsbudget.IntäktsbudgetID, Produkt_ProduktID = produkt.ProduktID };
+                KundIntäktsbudget kundIntäktsbudget = new KundIntäktsbudget() { Intäktsbudget = intäktsbudget, Kund_KundID = kundId, Intäktsbudget_IntäktsbudgetID = intäktsbudget.IntäktsbudgetID };
+                
 
                 intäktsbudget.ProduktIntäktsbudget.Add(produktIntäktsbudget);
                 intäktsbudget.Avtal = avtal;
@@ -58,20 +65,6 @@ namespace DataLayer
 
                 //db.Intäktsbudget.Remove(produkt);
                 //db.SaveChanges();
-            }
-        }
-
-        public void CreateIntäktsBudget(string kundID)
-        {
-            using (var db = new DataContext())
-            {
-                Intäktsbudget intäkts = new Intäktsbudget();
-                db.Intäktsbudget.Add(intäkts);
-
-                var kundIntäkt = new KundIntäktsbudget { Kund_KundID = kundID, Intäktsbudget = intäkts };
-                db.KundIntäktsbudget.Add(kundIntäkt);
-                
-                db.SaveChanges();
             }
         }
 

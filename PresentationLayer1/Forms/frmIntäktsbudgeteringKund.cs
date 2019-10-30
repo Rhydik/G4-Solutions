@@ -41,10 +41,6 @@ namespace PresentationLayer1.Forms
             dgvIntäktsbudgeteringKund.DataSource = null;
             lblValdKundID.Text = kunden.KundID;
             lblValdKundNamn.Text = kunden.Namn;
-            if (businessManager.GetAllKundID(kunden.KundID).Count == 0)
-            {
-                businessManager.CreateIntäksBudget(kunden.KundID);
-            }
             Show();
             Update();
         }

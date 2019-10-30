@@ -23,7 +23,9 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
 
             schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Namn).ToList(); ;
+            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Namn).ToList();
+
+            HideFromUser();
         }
 
         private void btnKunder_Click(object sender, EventArgs e)
@@ -144,6 +146,20 @@ namespace PresentationLayer1.Forms
             businessManager.CreateAvkastning(int.Parse(tbAvkastningskrav.Text));
             MessageBox.Show("Avkastning är nu ", tbAvkastningskrav.Text);
             Update();
+        }
+
+        private void gvSchablonkostnad_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRegistreraNyttKonto.Hide();
+                btnRedigeraKonto.Hide();
+            }
         }
     }
 }

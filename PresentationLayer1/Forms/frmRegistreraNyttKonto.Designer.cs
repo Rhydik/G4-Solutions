@@ -149,7 +149,7 @@
             this.Controls.Add(this.tbKontobenämning);
             this.Name = "frmRegistreraNyttKonto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRegistreraNyttKonto";
+            this.Text = "Registrera Nytt Konto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

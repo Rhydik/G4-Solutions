@@ -212,7 +212,7 @@
             this.Controls.Add(this.tbPersonnummer);
             this.Name = "frmRegistreraNyPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRegistreraNyPersonal";
+            this.Text = "Registrera Ny Personal";
             this.ResumeLayout(false);
             this.PerformLayout();
 

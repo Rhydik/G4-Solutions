@@ -162,6 +162,7 @@
             // 
             // btnLåsBudget
             // 
+            this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLåsBudget.Location = new System.Drawing.Point(515, 393);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
@@ -171,6 +172,7 @@
             // 
             // btnSpara
             // 
+            this.btnSpara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSpara.Location = new System.Drawing.Point(641, 393);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(120, 41);
@@ -219,6 +221,7 @@
             // 
             // btnExportera
             // 
+            this.btnExportera.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnExportera.Location = new System.Drawing.Point(244, 393);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
@@ -257,6 +260,10 @@
             // 
             // dgvDirektaKostnaderProdukt
             // 
+            this.dgvDirektaKostnaderProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDirektaKostnaderProdukt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDirektaKostnaderProdukt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDirektaKostnaderProdukt.Location = new System.Drawing.Point(244, 94);
             this.dgvDirektaKostnaderProdukt.Name = "dgvDirektaKostnaderProdukt";
@@ -280,7 +287,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvDirektaKostnaderProdukt);
             this.Name = "frmDirektaKostnaderProdukt";
-            this.Text = "frmDirektaKostnaderProdukt";
+            this.Text = "Direkta kostnader: Produkt | G4 Solutions Economy System";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirektaKostnaderProdukt)).EndInit();
             this.ResumeLayout(false);

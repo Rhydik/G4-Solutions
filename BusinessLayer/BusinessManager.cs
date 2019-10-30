@@ -45,6 +45,11 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.RemoveAktivitet(aktivitet);
         }
 
+        public void CreateIntäksBudget(string kundID)
+        {
+            repositoryFacade.intäktsRepository.CreateIntäktsBudget(kundID);
+        }
+
         public List<AktivitetDTO> GetAllAktiviteter()
         {
             return repositoryFacade.aktivitetRepository.GetAllAktiviteter();
@@ -68,6 +73,11 @@ namespace BusinessLayer
         public void RemoveBehörighet(string tempBehör, string tempPersnr)
         {
             repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
+        }
+
+        public List<KundIntäktsbudget> GetAllKundID(string kundId)
+        {
+            return repositoryFacade.intäktsRepository.GetAllKundID(kundId);
         }
 
         public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)

@@ -31,15 +31,19 @@ namespace PresentationLayer1.Forms
             cmbProduktKategori.DataSource = kategori;
             cmbProduktKategori.ValueMember = "Namn";
             cmbProduktKategori.DisplayMember = "Namn";
+            cmbProduktKategori.SelectedIndex = -1;
 
             var grupp = businessManager.GetProduktByGrupp();
             cmbProduktgrupp.DataSource = grupp;
             cmbProduktgrupp.ValueMember = "Namn";
             cmbProduktgrupp.DisplayMember = "Namn";
+            cmbProduktgrupp.SelectedIndex = -1;
 
             cmbVäljAvdelning.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
             cmbVäljAvdelning.Items.Insert(1, "Driftavdelning");
-            cmbVäljAvdelning.SelectedIndex = 0;
+            cmbVäljAvdelning.SelectedIndex = -1;
+
+            HideFromUser();
 
         }
 
@@ -88,6 +92,13 @@ namespace PresentationLayer1.Forms
         {
             produkterupdated = businessManager.GetAllProdukter();
             dgvProdukter.DataSource = produkterupdated;
+
+            cmbProduktKategori.SelectedIndex = -1;
+            cmbProduktgrupp.SelectedIndex = -1;
+            cmbVäljAvdelning.SelectedIndex = -1;
+
+            tbProduktID.Text = "";
+            tbProdukt.Text = "";
         }
 
         private void btnSök_Click(object sender, EventArgs e)
@@ -110,6 +121,17 @@ namespace PresentationLayer1.Forms
 
             dgvProdukter.DataSource = data;
         }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal == null) return;
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+                btnRedigeraProdukt.Hide();
+                btnRegistreraNyProdukt.Hide();
+            }
+        }
+
     }
-    }
+}
 

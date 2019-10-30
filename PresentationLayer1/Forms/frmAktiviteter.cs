@@ -30,6 +30,8 @@ namespace PresentationLayer1.Forms
             cmbVäljAvdelning.DataSource = avdelning;
             cmbVäljAvdelning.ValueMember = "Namn";
             cmbVäljAvdelning.DisplayMember = "Namn";
+
+            HideFromUser();
         }
 
         private void tbAktivitetsID_TextChanged(object sender, EventArgs e)
@@ -91,6 +93,17 @@ namespace PresentationLayer1.Forms
             this.Visible = !this.Visible;
             frmKunder frmKunder = new frmKunder();
             frmKunder.Show();
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal == null) return;
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            {
+
+                btnRedigeraAktivitet.Hide();
+                btnRegistreraNyAktivitet.Hide();
+            }
         }
     }
 }

@@ -212,6 +212,10 @@
             // 
             // dgvDirektaKostnaderAktivitet
             // 
+            this.dgvDirektaKostnaderAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDirektaKostnaderAktivitet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDirektaKostnaderAktivitet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDirektaKostnaderAktivitet.Location = new System.Drawing.Point(244, 94);
             this.dgvDirektaKostnaderAktivitet.Name = "dgvDirektaKostnaderAktivitet";
@@ -280,7 +284,7 @@
             this.Controls.Add(this.btnDirektaKostnaderProdukt);
             this.Controls.Add(this.btnDirektaKostnaderAktivitet);
             this.Name = "frmDirektaKostnaderAktvitet";
-            this.Text = "frmDirektaKostnaderAktvitet";
+            this.Text = "Direkta Kostnader: Aktvitet  | G4 Solutions Economy System";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirektaKostnaderAktivitet)).EndInit();
             this.ResumeLayout(false);

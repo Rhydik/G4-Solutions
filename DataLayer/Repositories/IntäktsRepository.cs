@@ -13,12 +13,11 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                
                 var kund = db.Kund.Where(x => x.KundID == kundID).FirstOrDefault();
                 var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).FirstOrDefault();
-               
+
                 var intäkt = from x in db.Intäktsbudget
-                             where x.IntäktsbudgetID == kunden.Intäktsbudget.IntäktsbudgetID
+                             where x.IntäktsbudgetID == kunden.Intäktsbudget_IntäktsbudgetID
                              select new IntäktsbudgetKundDTO { Avtal = x.Avtal, GradA = x.GradA, GradT = x.GradT, Kommentar = x.Kommentar, Tillägg = x.Tillägg, Tim = x.Tim, Budget = x.Budget, };
                 return intäkt.ToList();
             }
@@ -29,18 +28,19 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 Intäktsbudget intäktsbudget = new Intäktsbudget();
+                ProduktIntäktsbudget produktIntäktsbudget = new ProduktIntäktsbudget();
+                produktIntäktsbudget.Produkt_ProduktID = produkt.ProduktID;
+                KundIntäktsbudget kundIntäktsbudget = new KundIntäktsbudget();
+                kundIntäktsbudget.Kund_KundID = kundId;
 
-                var produkten = db.ProduktIntäktsbudget.Where(x => x.Produkt_ProduktID == produkt.ProduktID).FirstOrDefault();
-                var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kundId).FirstOrDefault();
-
-                intäktsbudget.ProduktIntäktsbudget.Add(produkten);
+                intäktsbudget.ProduktIntäktsbudget.Add(produktIntäktsbudget);
                 intäktsbudget.Avtal = avtal;
                 intäktsbudget.Tillägg = tillägg;
                 intäktsbudget.GradT = gradT;
                 intäktsbudget.GradA = gradA;
                 intäktsbudget.Budget = budget;
                 intäktsbudget.Tim = tim;
-                intäktsbudget.KundIntäktsbudget.Add(kunden);
+                intäktsbudget.KundIntäktsbudget.Add(kundIntäktsbudget);
                 intäktsbudget.Kommentar = kommentar;
                 intäktsbudget.Låst = false;
 
@@ -58,6 +58,29 @@ namespace DataLayer
 
                 //db.Intäktsbudget.Remove(produkt);
                 //db.SaveChanges();
+            }
+        }
+
+        public void CreateIntäktsBudget(string kundID)
+        {
+            using (var db = new DataContext())
+            {
+                Intäktsbudget intäkts = new Intäktsbudget();
+                db.Intäktsbudget.Add(intäkts);
+
+                var kundIntäkt = new KundIntäktsbudget { Kund_KundID = kundID, Intäktsbudget = intäkts };
+                db.KundIntäktsbudget.Add(kundIntäkt);
+                
+                db.SaveChanges();
+            }
+        }
+
+        public List<KundIntäktsbudget> GetAllKundID(string kundid)
+        {
+            using (var db = new DataContext())
+            {
+                var intäktsbudget = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kundid);
+                return intäktsbudget.ToList();
             }
         }
     }

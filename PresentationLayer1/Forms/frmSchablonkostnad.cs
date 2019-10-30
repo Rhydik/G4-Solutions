@@ -145,5 +145,10 @@ namespace PresentationLayer1.Forms
             businessManager.CreateAvkastning(int.Parse(tbAvkastningskrav.Text));
             Update();
         }
+
+        private void frmSchablonkostnad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

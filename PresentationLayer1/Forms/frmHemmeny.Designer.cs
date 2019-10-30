@@ -86,6 +86,7 @@
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
+            this.btnPrognostiseringIntäkter.Click += new System.EventHandler(this.btnPrognostiseringIntäkter_Click);
             // 
             // btnBudgeteratResultat
             // 
@@ -223,6 +224,7 @@
             this.Name = "frmHemmeny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "G4 Solutions Economy System";
+            this.Load += new System.EventHandler(this.frmHemmeny_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

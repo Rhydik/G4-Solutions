@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace DataLayer
         public SchablonRepository schablonRepository { get; set; }
         public BehörighetRepository behörighetRepository { get; set; }
         public IntäktsRepository intäktsRepository { get; set; }
+        public PrognosRepository prognosRepository { get; set; }
 
         private RepositoryFacade()
         {
@@ -29,6 +31,7 @@ namespace DataLayer
             schablonRepository = new SchablonRepository();
             behörighetRepository = new BehörighetRepository();
             intäktsRepository = new IntäktsRepository();
+            prognosRepository = new PrognosRepository();
 
         }
 

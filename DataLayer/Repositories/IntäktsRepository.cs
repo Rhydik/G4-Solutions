@@ -14,14 +14,20 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var kund = db.Kund.Where(x => x.KundID == kundId).FirstOrDefault();
-                var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).ToList();
+                var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).FirstOrDefault();
+                var intäkten = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == kunden.Intäktsbudget_IntäktsbudgetID).FirstOrDefault();
+                var prodbudget = db.ProduktIntäktsbudget.Where(x => x.Intäktsbudget_IntäktsbudgetID == intäkten.IntäktsbudgetID).FirstOrDefault();
+                var produkt = db.Produkt.Where(x => x.ProduktID == prodbudget.Produkt_ProduktID).ToList();
+                
                
                 if (kunden != null)
                 {
                     var intäkt = from x in db.KundIntäktsbudget
                                  where x.Kund_KundID == kundId
                                  join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
-                                 select new IntäktsbudgetKundDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, };
+                                 join prod in db.ProduktIntäktsbudget on y.IntäktsbudgetID equals prod.Intäktsbudget_IntäktsbudgetID
+                                 join prodnamn in db.Produkt on prod.Produkt_ProduktID equals prodnamn.ProduktID
+                                 select new IntäktsbudgetKundDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, ProduktID = prod.Produkt_ProduktID, ProduktNamn = prodnamn.Namn };
                     return intäkt.ToList();
                 }
                 else
@@ -60,11 +66,11 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                //var omvandling = db.Produkt.Where(x => x.ProduktID == produkten.ProduktID).FirstOrDefault();
-                //var produkt = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == omvandling.).FirstOrDefault();
+                var produktbudget = db.ProduktIntäktsbudget.Where(x => x.Produkt_ProduktID == produkten.ProduktID).FirstOrDefault();
+                var intäksbudget = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == produktbudget.Intäktsbudget_IntäktsbudgetID).FirstOrDefault();
 
-                //db.Intäktsbudget.Remove(produkt);
-                //db.SaveChanges();
+                db.Intäktsbudget.Remove(intäksbudget);
+                db.SaveChanges();
             }
         }
 

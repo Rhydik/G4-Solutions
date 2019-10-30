@@ -106,6 +106,8 @@ namespace PresentationLayer1
 
         private void HideFromUser()
         {
+            if (Globals.CurrentPersonal == null) return;
+
             if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
             {
 

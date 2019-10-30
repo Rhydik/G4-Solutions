@@ -15,10 +15,6 @@ namespace DataLayer
             {
                 var kund = db.Kund.Where(x => x.KundID == kundId).FirstOrDefault();
                 var kunden = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kund.KundID).FirstOrDefault();
-                var intäkten = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == kunden.Intäktsbudget_IntäktsbudgetID).FirstOrDefault();
-                var prodbudget = db.ProduktIntäktsbudget.Where(x => x.Intäktsbudget_IntäktsbudgetID == intäkten.IntäktsbudgetID).FirstOrDefault();
-                var produkt = db.Produkt.Where(x => x.ProduktID == prodbudget.Produkt_ProduktID).ToList();
-                
                
                 if (kunden != null)
                 {
@@ -68,7 +64,9 @@ namespace DataLayer
             {
                 var produktbudget = db.ProduktIntäktsbudget.Where(x => x.Produkt_ProduktID == produkten.ProduktID).FirstOrDefault();
                 var intäksbudget = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == produktbudget.Intäktsbudget_IntäktsbudgetID).FirstOrDefault();
+                var kundbudget = db.KundIntäktsbudget.Where(x => x.Intäktsbudget_IntäktsbudgetID == intäksbudget.IntäktsbudgetID).FirstOrDefault();
 
+                db.KundIntäktsbudget.Remove(kundbudget);
                 db.Intäktsbudget.Remove(intäksbudget);
                 db.SaveChanges();
             }

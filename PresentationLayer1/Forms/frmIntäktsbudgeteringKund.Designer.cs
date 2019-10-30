@@ -365,7 +365,7 @@
             // 
             // btnVäljNyKund
             // 
-            this.btnVäljNyKund.Location = new System.Drawing.Point(530, 98);
+            this.btnVäljNyKund.Location = new System.Drawing.Point(687, 98);
             this.btnVäljNyKund.Name = "btnVäljNyKund";
             this.btnVäljNyKund.Size = new System.Drawing.Size(74, 23);
             this.btnVäljNyKund.TabIndex = 48;

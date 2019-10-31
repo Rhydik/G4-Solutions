@@ -59,6 +59,7 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
     <Compile Include="DTO\IntäktsbudgetKundDTO.cs" />
+    <Compile Include="DTO\IntäktsbudgetProduktDTO.cs" />
     <Compile Include="DTO\PrognosDTO.cs" />
     <Compile Include="KundIntäktsbudget.cs" />
     <Compile Include="ProduktIntäktsbudget.cs" />

@@ -27,7 +27,6 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             this.dataGridView = dataGridView;
 
-            dataGridView.DataSource = businessManager.GetAllKunder();
             cmbKundkategori.SelectedItem = "Alla";
         }
         private void tbKundID_TextChanged(object sender, EventArgs e)

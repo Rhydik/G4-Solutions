@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
             this.btnBudgeteratResultat = new System.Windows.Forms.Button();
@@ -41,13 +40,6 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
-            this.lblKundkategori = new System.Windows.Forms.Label();
-            this.lblKund = new System.Windows.Forms.Label();
-            this.lblKundID = new System.Windows.Forms.Label();
-            this.btnRensa = new System.Windows.Forms.Button();
-            this.cmbKundkategori = new System.Windows.Forms.ComboBox();
-            this.tbNamn = new System.Windows.Forms.TextBox();
-            this.tbKundID = new System.Windows.Forms.TextBox();
             this.dgvIntäktsbudgeteringKund = new System.Windows.Forms.DataGridView();
             this.btnLäggTillProdukt = new System.Windows.Forms.Button();
             this.btnTaBortProdukt = new System.Windows.Forms.Button();
@@ -59,28 +51,10 @@
             this.lblValdKundNamn = new System.Windows.Forms.Label();
             this.btnVäljNyKund = new System.Windows.Forms.Button();
             this.btnVäljKund = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund(this.dgvIntäktsbudgeteringKund);
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnResultat);
-            this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
-            this.panel1.Controls.Add(this.btnBudgeteratResultat);
-            this.panel1.Controls.Add(this.btnKostnadsbudgetering);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
-            this.panel1.Controls.Add(this.btnBehörighet);
-            this.panel1.Controls.Add(this.btnSchablonkostnad);
-            this.panel1.Controls.Add(this.btnAktiviteter);
-            this.panel1.Controls.Add(this.btnPersonal);
-            this.panel1.Controls.Add(this.btnProdukter);
-            this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 7;
             // 
             // btnResultat
             // 
@@ -202,74 +176,6 @@
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
             // 
-            // lblKundkategori
-            // 
-            this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(527, 35);
-            this.lblKundkategori.Name = "lblKundkategori";
-            this.lblKundkategori.Size = new System.Drawing.Size(70, 13);
-            this.lblKundkategori.TabIndex = 40;
-            this.lblKundkategori.Text = "Kundkategori";
-            // 
-            // lblKund
-            // 
-            this.lblKund.AutoSize = true;
-            this.lblKund.Location = new System.Drawing.Point(391, 35);
-            this.lblKund.Name = "lblKund";
-            this.lblKund.Size = new System.Drawing.Size(32, 13);
-            this.lblKund.TabIndex = 39;
-            this.lblKund.Text = "Kund";
-            // 
-            // lblKundID
-            // 
-            this.lblKundID.AutoSize = true;
-            this.lblKundID.Location = new System.Drawing.Point(260, 35);
-            this.lblKundID.Name = "lblKundID";
-            this.lblKundID.Size = new System.Drawing.Size(43, 13);
-            this.lblKundID.TabIndex = 38;
-            this.lblKundID.Text = "KundID";
-            // 
-            // btnRensa
-            // 
-            this.btnRensa.Location = new System.Drawing.Point(728, 56);
-            this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 23);
-            this.btnRensa.TabIndex = 37;
-            this.btnRensa.Text = "Rensa";
-            this.btnRensa.UseVisualStyleBackColor = true;
-            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
-            // 
-            // cmbKundkategori
-            // 
-            this.cmbKundkategori.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Items.AddRange(new object[] {
-            "Alla",
-            "Offentlig",
-            "Näringsliv"});
-            this.cmbKundkategori.Location = new System.Drawing.Point(530, 56);
-            this.cmbKundkategori.Name = "cmbKundkategori";
-            this.cmbKundkategori.Size = new System.Drawing.Size(192, 21);
-            this.cmbKundkategori.TabIndex = 35;
-            this.cmbKundkategori.SelectedIndexChanged += new System.EventHandler(this.cmbKundkategori_SelectedIndexChanged);
-            // 
-            // tbNamn
-            // 
-            this.tbNamn.Location = new System.Drawing.Point(394, 56);
-            this.tbNamn.Name = "tbNamn";
-            this.tbNamn.Size = new System.Drawing.Size(128, 20);
-            this.tbNamn.TabIndex = 34;
-            this.tbNamn.TextChanged += new System.EventHandler(this.tbNamn_TextChanged);
-            // 
-            // tbKundID
-            // 
-            this.tbKundID.Location = new System.Drawing.Point(260, 56);
-            this.tbKundID.Name = "tbKundID";
-            this.tbKundID.Size = new System.Drawing.Size(128, 20);
-            this.tbKundID.TabIndex = 33;
-            this.tbKundID.TextChanged += new System.EventHandler(this.tbKundID_TextChanged);
-            // 
             // dgvIntäktsbudgeteringKund
             // 
             this.dgvIntäktsbudgeteringKund.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -384,11 +290,26 @@
             this.btnVäljKund.UseVisualStyleBackColor = true;
             this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
             // 
+            // ucSökFältKund1
+            // 
+            this.ucSökFältKund.Location = new System.Drawing.Point(257, 27);
+            this.ucSökFältKund.Name = "ucSökFältKund1";
+            this.ucSökFältKund.Size = new System.Drawing.Size(534, 53);
+            this.ucSökFältKund.TabIndex = 50;
+            //
+            // ucMeny
+            //
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
+            // 
             // frmIntäktsbudgeteringKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ucSökFältKund);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnVäljNyKund);
             this.Controls.Add(this.lblValdKundNamn);
@@ -398,20 +319,12 @@
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
             this.Controls.Add(this.btnTaBortProdukt);
-            this.Controls.Add(this.lblKundkategori);
-            this.Controls.Add(this.lblKund);
-            this.Controls.Add(this.lblKundID);
-            this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.cmbKundkategori);
-            this.Controls.Add(this.tbNamn);
-            this.Controls.Add(this.tbKundID);
             this.Controls.Add(this.btnLäggTillProdukt);
             this.Controls.Add(this.dgvIntäktsbudgeteringKund);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucMeny);
             this.Name = "frmIntäktsbudgeteringKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kund  | G4 Solutions Economy System";
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -420,7 +333,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnBudgeteratResultat;
@@ -433,13 +345,6 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.Label lblKundkategori;
-        private System.Windows.Forms.Label lblKund;
-        private System.Windows.Forms.Label lblKundID;
-        private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.ComboBox cmbKundkategori;
-        private System.Windows.Forms.TextBox tbNamn;
-        private System.Windows.Forms.TextBox tbKundID;
         private System.Windows.Forms.DataGridView dgvIntäktsbudgeteringKund;
         private System.Windows.Forms.Button btnLäggTillProdukt;
         private System.Windows.Forms.Button btnTaBortProdukt;
@@ -451,5 +356,7 @@
         private System.Windows.Forms.Label lblValdKundNamn;
         private System.Windows.Forms.Button btnVäljNyKund;
         private System.Windows.Forms.Button btnVäljKund;
+        private ucSökFältKund ucSökFältKund;
+        private Forms.ucMeny ucMeny;
     }
 }

@@ -28,19 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResultat = new System.Windows.Forms.Button();
-            this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
-            this.btnBudgeteratResultat = new System.Windows.Forms.Button();
-            this.btnKostnadsbudgetering = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringProdukt = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringKund = new System.Windows.Forms.Button();
-            this.btnBehörighet = new System.Windows.Forms.Button();
-            this.btnSchablonkostnad = new System.Windows.Forms.Button();
-            this.btnAktiviteter = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
-            this.btnProdukter = new System.Windows.Forms.Button();
-            this.btnKunder = new System.Windows.Forms.Button();
             this.lblAvdelning = new System.Windows.Forms.Label();
             this.lblBenämning = new System.Windows.Forms.Label();
             this.lblAktivitetsID = new System.Windows.Forms.Label();
@@ -52,149 +39,9 @@
             this.btnRegistreraNyAktivitet = new System.Windows.Forms.Button();
             this.btnRedigeraAktivitet = new System.Windows.Forms.Button();
             this.dgvAktiviteter = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnResultat);
-            this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
-            this.panel1.Controls.Add(this.btnBudgeteratResultat);
-            this.panel1.Controls.Add(this.btnKostnadsbudgetering);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
-            this.panel1.Controls.Add(this.btnBehörighet);
-            this.panel1.Controls.Add(this.btnSchablonkostnad);
-            this.panel1.Controls.Add(this.btnAktiviteter);
-            this.panel1.Controls.Add(this.btnPersonal);
-            this.panel1.Controls.Add(this.btnProdukter);
-            this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 4;
-            // 
-            // btnResultat
-            // 
-            this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResultat.Location = new System.Drawing.Point(15, 381);
-            this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(75, 23);
-            this.btnResultat.TabIndex = 2;
-            this.btnResultat.Text = "Resultat";
-            this.btnResultat.UseVisualStyleBackColor = true;
-            // 
-            // btnPrognostiseringIntäkter
-            // 
-            this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(15, 352);
-            this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
-            this.btnPrognostiseringIntäkter.TabIndex = 2;
-            this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
-            this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
-            // 
-            // btnBudgeteratResultat
-            // 
-            this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudgeteratResultat.Location = new System.Drawing.Point(15, 322);
-            this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
-            this.btnBudgeteratResultat.TabIndex = 2;
-            this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
-            this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
-            // 
-            // btnKostnadsbudgetering
-            // 
-            this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 274);
-            this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
-            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
-            this.btnKostnadsbudgetering.TabIndex = 2;
-            this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
-            this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
-            // 
-            // btnIntäktsbudgeteringProdukt
-            // 
-            this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 245);
-            this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
-            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
-            this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
-            this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
-            this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
-            // 
-            // btnIntäktsbudgeteringKund
-            // 
-            this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 216);
-            this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
-            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
-            this.btnIntäktsbudgeteringKund.TabIndex = 3;
-            this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
-            this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
-            // 
-            // btnBehörighet
-            // 
-            this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBehörighet.Location = new System.Drawing.Point(15, 169);
-            this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
-            this.btnBehörighet.TabIndex = 2;
-            this.btnBehörighet.Text = "Behörighet";
-            this.btnBehörighet.UseVisualStyleBackColor = true;
-            // 
-            // btnSchablonkostnad
-            // 
-            this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchablonkostnad.Location = new System.Drawing.Point(15, 140);
-            this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
-            this.btnSchablonkostnad.TabIndex = 2;
-            this.btnSchablonkostnad.Text = "Schablonkostnad";
-            this.btnSchablonkostnad.UseVisualStyleBackColor = true;
-            // 
-            // btnAktiviteter
-            // 
-            this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktiviteter.Location = new System.Drawing.Point(15, 110);
-            this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
-            this.btnAktiviteter.TabIndex = 2;
-            this.btnAktiviteter.Text = "Aktiviteter";
-            this.btnAktiviteter.UseVisualStyleBackColor = true;
-            // 
-            // btnPersonal
-            // 
-            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Location = new System.Drawing.Point(15, 82);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
-            this.btnPersonal.TabIndex = 2;
-            this.btnPersonal.Text = "Personal";
-            this.btnPersonal.UseVisualStyleBackColor = true;
-            // 
-            // btnProdukter
-            // 
-            this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdukter.Location = new System.Drawing.Point(15, 53);
-            this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
-            this.btnProdukter.TabIndex = 2;
-            this.btnProdukter.Text = "Produkter";
-            this.btnProdukter.UseVisualStyleBackColor = true;
-            // 
-            // btnKunder
-            // 
-            this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKunder.Location = new System.Drawing.Point(15, 23);
-            this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(107, 23);
-            this.btnKunder.TabIndex = 2;
-            this.btnKunder.Text = "Kunder";
-            this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
             // lblAvdelning
             // 
@@ -301,6 +148,13 @@
             this.dgvAktiviteter.RowHeadersWidth = 62;
             this.dgvAktiviteter.Size = new System.Drawing.Size(501, 237);
             this.dgvAktiviteter.TabIndex = 36;
+            //
+            // ucMeny
+            //
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmAktiviteter
             // 
@@ -318,12 +172,11 @@
             this.Controls.Add(this.btnRegistreraNyAktivitet);
             this.Controls.Add(this.btnRedigeraAktivitet);
             this.Controls.Add(this.dgvAktiviteter);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucMeny);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAktiviteter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aktiviteter  | G4 Solutions Economy System";
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,20 +184,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnResultat;
-        private System.Windows.Forms.Button btnPrognostiseringIntäkter;
-        private System.Windows.Forms.Button btnBudgeteratResultat;
-        private System.Windows.Forms.Button btnKostnadsbudgetering;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringProdukt;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringKund;
-        private System.Windows.Forms.Button btnBehörighet;
-        private System.Windows.Forms.Button btnSchablonkostnad;
-        private System.Windows.Forms.Button btnAktiviteter;
-        private System.Windows.Forms.Button btnPersonal;
-        private System.Windows.Forms.Button btnProdukter;
-        private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.Label lblAvdelning;
         private System.Windows.Forms.Label lblBenämning;
         private System.Windows.Forms.Label lblAktivitetsID;
@@ -356,5 +195,6 @@
         private System.Windows.Forms.Button btnRegistreraNyAktivitet;
         private System.Windows.Forms.Button btnRedigeraAktivitet;
         private System.Windows.Forms.DataGridView dgvAktiviteter;
+        private Forms.ucMeny ucMeny;
     }
 }

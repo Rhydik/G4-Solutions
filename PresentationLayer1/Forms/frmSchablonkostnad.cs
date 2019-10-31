@@ -154,9 +154,10 @@ namespace PresentationLayer1.Forms
         }
         private void HideFromUser()
         {
+            if (Globals.CurrentPersonal == null) return;
+
             if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
             {
-
                 btnRegistreraNyttKonto.Hide();
                 btnRedigeraKonto.Hide();
             }

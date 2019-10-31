@@ -24,7 +24,6 @@ namespace PresentationLayer1.Forms
             Hide();
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
-            cmbKundkategori.SelectedItem = "Alla";
         }
 
         private void Hide()
@@ -60,55 +59,6 @@ namespace PresentationLayer1.Forms
             lblValdKundNamn.Text = "Ej vald";
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
-        }
-
-        private void tbKundID_TextChanged(object sender, EventArgs e)
-        {
-            if (tbKundID.TextLength == 0)
-            {
-                kunds = businessManager.GetAllKunder();
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-            else
-            {
-                kunds = businessManager.GetKunderByID(tbKundID.Text);
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-        }
-
-        private void tbNamn_TextChanged(object sender, EventArgs e)
-        {
-            if (tbNamn.TextLength == 0)
-            {
-                kunds = businessManager.GetAllKunder();
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-            else
-            {
-                kunds = businessManager.GetKunderByNamn(tbNamn.Text);
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-        }
-
-        private void cmbKundkategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbKundkategori.Text == "Alla")
-            {
-                kunds = businessManager.GetAllKunder();
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-            else
-            {
-                kunds = businessManager.GetKunderByKategori(cmbKundkategori.Text);
-                dgvIntäktsbudgeteringKund.DataSource = kunds;
-            }
-        }
-
-        private void btnRensa_Click(object sender, EventArgs e)
-        {
-            tbNamn.Clear();
-            tbKundID.Clear();
-            cmbKundkategori.SelectedItem = "Alla";
         }
 
         private void btnTaBortProdukt_Click(object sender, EventArgs e)

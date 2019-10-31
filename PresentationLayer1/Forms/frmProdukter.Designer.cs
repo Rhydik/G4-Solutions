@@ -39,25 +39,12 @@
             this.btnRegistreraNyProdukt = new System.Windows.Forms.Button();
             this.btnRedigeraProdukt = new System.Windows.Forms.Button();
             this.dgvProdukter = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResultat = new System.Windows.Forms.Button();
-            this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
-            this.btnBudgeteratResultat = new System.Windows.Forms.Button();
-            this.btnKostnadsbudgetering = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringProdukt = new System.Windows.Forms.Button();
-            this.btnIntäktsbudgeteringKund = new System.Windows.Forms.Button();
-            this.btnBehörighet = new System.Windows.Forms.Button();
-            this.btnSchablonkostnad = new System.Windows.Forms.Button();
-            this.btnAktiviteter = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
-            this.btnProdukter = new System.Windows.Forms.Button();
-            this.btnKunder = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbProduktgrupp = new System.Windows.Forms.ComboBox();
             this.cmbProduktKategori = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -167,147 +154,6 @@
             this.dgvProdukter.TabIndex = 20;
             this.dgvProdukter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdukter_CellContentClick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnResultat);
-            this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
-            this.panel1.Controls.Add(this.btnBudgeteratResultat);
-            this.panel1.Controls.Add(this.btnKostnadsbudgetering);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
-            this.panel1.Controls.Add(this.btnBehörighet);
-            this.panel1.Controls.Add(this.btnSchablonkostnad);
-            this.panel1.Controls.Add(this.btnAktiviteter);
-            this.panel1.Controls.Add(this.btnPersonal);
-            this.panel1.Controls.Add(this.btnProdukter);
-            this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(9, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 33;
-            // 
-            // btnResultat
-            // 
-            this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResultat.Location = new System.Drawing.Point(15, 381);
-            this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(75, 23);
-            this.btnResultat.TabIndex = 2;
-            this.btnResultat.Text = "Resultat";
-            this.btnResultat.UseVisualStyleBackColor = true;
-            // 
-            // btnPrognostiseringIntäkter
-            // 
-            this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(15, 352);
-            this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
-            this.btnPrognostiseringIntäkter.TabIndex = 2;
-            this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
-            this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
-            // 
-            // btnBudgeteratResultat
-            // 
-            this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBudgeteratResultat.Location = new System.Drawing.Point(15, 322);
-            this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
-            this.btnBudgeteratResultat.TabIndex = 2;
-            this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
-            this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
-            // 
-            // btnKostnadsbudgetering
-            // 
-            this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 274);
-            this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
-            this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
-            this.btnKostnadsbudgetering.TabIndex = 2;
-            this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
-            this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
-            // 
-            // btnIntäktsbudgeteringProdukt
-            // 
-            this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 245);
-            this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
-            this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
-            this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
-            this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
-            this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
-            // 
-            // btnIntäktsbudgeteringKund
-            // 
-            this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 216);
-            this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
-            this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
-            this.btnIntäktsbudgeteringKund.TabIndex = 3;
-            this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
-            this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
-            // 
-            // btnBehörighet
-            // 
-            this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBehörighet.Location = new System.Drawing.Point(15, 169);
-            this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
-            this.btnBehörighet.TabIndex = 2;
-            this.btnBehörighet.Text = "Behörighet";
-            this.btnBehörighet.UseVisualStyleBackColor = true;
-            // 
-            // btnSchablonkostnad
-            // 
-            this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchablonkostnad.Location = new System.Drawing.Point(15, 140);
-            this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
-            this.btnSchablonkostnad.TabIndex = 2;
-            this.btnSchablonkostnad.Text = "Schablonkostnad";
-            this.btnSchablonkostnad.UseVisualStyleBackColor = true;
-            // 
-            // btnAktiviteter
-            // 
-            this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAktiviteter.Location = new System.Drawing.Point(15, 110);
-            this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
-            this.btnAktiviteter.TabIndex = 2;
-            this.btnAktiviteter.Text = "Aktiviteter";
-            this.btnAktiviteter.UseVisualStyleBackColor = true;
-            // 
-            // btnPersonal
-            // 
-            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Location = new System.Drawing.Point(15, 82);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
-            this.btnPersonal.TabIndex = 2;
-            this.btnPersonal.Text = "Personal";
-            this.btnPersonal.UseVisualStyleBackColor = true;
-            // 
-            // btnProdukter
-            // 
-            this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdukter.Location = new System.Drawing.Point(15, 53);
-            this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
-            this.btnProdukter.TabIndex = 2;
-            this.btnProdukter.Text = "Produkter";
-            this.btnProdukter.UseVisualStyleBackColor = true;
-            this.btnProdukter.Click += new System.EventHandler(this.btnProdukter_Click);
-            // 
-            // btnKunder
-            // 
-            this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKunder.Location = new System.Drawing.Point(15, 23);
-            this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(107, 23);
-            this.btnKunder.TabIndex = 2;
-            this.btnKunder.Text = "Kunder";
-            this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -347,6 +193,13 @@
             this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 38;
             this.label5.Text = "Produktkategori";
+            //
+            // ucMeny
+            //
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmProdukter
             // 
@@ -357,7 +210,6 @@
             this.Controls.Add(this.cmbProduktKategori);
             this.Controls.Add(this.cmbProduktgrupp);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -369,12 +221,12 @@
             this.Controls.Add(this.btnRegistreraNyProdukt);
             this.Controls.Add(this.btnRedigeraProdukt);
             this.Controls.Add(this.dgvProdukter);
+            this.Controls.Add(this.ucMeny);
             this.Name = "frmProdukter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkter | G4 Solutions Economy System";
             this.Load += new System.EventHandler(this.frmProdukter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,23 +244,11 @@
         private System.Windows.Forms.TextBox tbProduktID;
         private System.Windows.Forms.Button btnRegistreraNyProdukt;
         private System.Windows.Forms.Button btnRedigeraProdukt;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnResultat;
-        private System.Windows.Forms.Button btnPrognostiseringIntäkter;
-        private System.Windows.Forms.Button btnBudgeteratResultat;
-        private System.Windows.Forms.Button btnKostnadsbudgetering;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringProdukt;
-        private System.Windows.Forms.Button btnIntäktsbudgeteringKund;
-        private System.Windows.Forms.Button btnBehörighet;
-        private System.Windows.Forms.Button btnSchablonkostnad;
-        private System.Windows.Forms.Button btnAktiviteter;
-        private System.Windows.Forms.Button btnPersonal;
-        private System.Windows.Forms.Button btnProdukter;
-        private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.DataGridView dgvProdukter;
         private System.Windows.Forms.ComboBox cmbProduktgrupp;
         private System.Windows.Forms.ComboBox cmbProduktKategori;
         private System.Windows.Forms.Label label5;
+        private Forms.ucMeny ucMeny;
     }
 }

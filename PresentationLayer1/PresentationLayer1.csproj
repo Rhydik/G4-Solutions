@@ -238,6 +238,12 @@
     <Compile Include="Forms\ucMeny.Designer.cs">
       <DependentUpon>ucMeny.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucSökFältKund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucSökFältKund.Designer.cs">
+      <DependentUpon>ucSökFältKund.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucMeny.resx">
       <DependentUpon>ucMeny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucSökFältKund.resx">
+      <DependentUpon>ucSökFältKund.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

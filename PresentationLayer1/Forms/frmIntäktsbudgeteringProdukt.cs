@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using DataLayer.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,15 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmIntäktsbudgeteringProdukt : Form
     {
+        private BusinessManager businessManager = new BusinessManager();
+        private List<ProduktDTO> produkter;
+
         public frmIntäktsbudgeteringProdukt()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            //Hide();
+            produkter = businessManager.GetAllProdukter();
+            dgvIntäktsbudgeteringProdukt.DataSource = produkter;
         }
     }
 }

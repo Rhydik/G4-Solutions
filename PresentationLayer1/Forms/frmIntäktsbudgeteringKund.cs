@@ -24,7 +24,7 @@ namespace PresentationLayer1.Forms
             Hide();
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
-            
+            cmbKundkategori.SelectedItem = "Alla";
         }
 
         private void Hide()
@@ -108,7 +108,7 @@ namespace PresentationLayer1.Forms
         {
             tbNamn.Clear();
             tbKundID.Clear();
-            cmbKundkategori.Text = "Alla";
+            cmbKundkategori.SelectedItem = "Alla";
         }
 
         private void btnTaBortProdukt_Click(object sender, EventArgs e)

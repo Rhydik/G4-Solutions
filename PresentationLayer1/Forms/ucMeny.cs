@@ -27,44 +27,50 @@ namespace PresentationLayer1.Forms
 
         private void btnProdukter_Click(object sender, EventArgs e)
         {
-            Forms.frmProdukter frmProdukter = new Forms.frmProdukter();
+            frmProdukter frmProdukter = new frmProdukter();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmProdukter.Show();
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
         {
-            Forms.frmPersonal frmPersonal = new Forms.frmPersonal();
+            frmPersonal frmPersonal = new frmPersonal();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmPersonal.Show();
         }
 
         private void btnAktiviteter_Click(object sender, EventArgs e)
         {
-            Forms.frmAktiviteter frmAktiviteter = new Forms.frmAktiviteter();
+            frmAktiviteter frmAktiviteter = new frmAktiviteter();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmAktiviteter.Show();
         }
 
         private void btnSchablonkostnad_Click(object sender, EventArgs e)
         {
-            Forms.frmSchablonkostnad frmSchablonkostnad = new Forms.frmSchablonkostnad();
+            frmSchablonkostnad frmSchablonkostnad = new frmSchablonkostnad();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmSchablonkostnad.Show();
         }
 
         private void btnBehörighet_Click(object sender, EventArgs e)
         {
-            Forms.frmBehörighet frmbehörighet = new Forms.frmBehörighet();
+            frmBehörighet frmbehörighet = new frmBehörighet();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmbehörighet.Show();
         }
 
         private void btnIntäktsbudgeteringKund_Click(object sender, EventArgs e)
         {
-            Forms.frmIntäktsbudgeteringKund frmIntäktsbudgeteringKund = new Forms.frmIntäktsbudgeteringKund();
+            frmIntäktsbudgeteringKund frmIntäktsbudgeteringKund = new frmIntäktsbudgeteringKund();
             (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
             frmIntäktsbudgeteringKund.Show();
+        }
+        private void btnIntäktsbudgeteringProdukt_Click(object sender, EventArgs e)
+        {
+            frmIntäktsbudgeteringProdukt frmIntäktsbudgeteringProdukt = new frmIntäktsbudgeteringProdukt();
+            (Application.OpenForms["frmHemmeny"] as frmHemmeny).Hide();
+            frmIntäktsbudgeteringProdukt.Show();
         }
     }
 }

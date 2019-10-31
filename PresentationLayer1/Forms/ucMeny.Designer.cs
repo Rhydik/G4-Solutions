@@ -112,6 +112,7 @@
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
             this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
             this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
+            this.btnIntäktsbudgeteringProdukt.Click += new System.EventHandler(this.btnIntäktsbudgeteringProdukt_Click);
             // 
             // btnIntäktsbudgeteringKund
             // 

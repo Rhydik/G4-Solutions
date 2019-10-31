@@ -51,9 +51,10 @@
             this.lblProduktID = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
             this.btnSök = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            //this.panel1 = new System.Windows.Forms.Panel();
+            this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
-            this.panel1.SuspendLayout();
+            //this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnResultat
@@ -282,22 +283,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnResultat);
-            this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
-            this.panel1.Controls.Add(this.btnBudgeteratResultat);
-            this.panel1.Controls.Add(this.btnKostnadsbudgetering);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
-            this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
-            this.panel1.Controls.Add(this.btnBehörighet);
-            this.panel1.Controls.Add(this.btnSchablonkostnad);
-            this.panel1.Controls.Add(this.btnAktiviteter);
-            this.panel1.Controls.Add(this.btnPersonal);
-            this.panel1.Controls.Add(this.btnProdukter);
-            this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(25, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 44;
+            //this.panel1.Controls.Add(this.btnResultat);
+            //this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
+            //this.panel1.Controls.Add(this.btnBudgeteratResultat);
+            //this.panel1.Controls.Add(this.btnKostnadsbudgetering);
+            //this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
+            //this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
+            //this.panel1.Controls.Add(this.btnBehörighet);
+            //this.panel1.Controls.Add(this.btnSchablonkostnad);
+            //this.panel1.Controls.Add(this.btnAktiviteter);
+            //this.panel1.Controls.Add(this.btnPersonal);
+            //this.panel1.Controls.Add(this.btnProdukter);
+            //this.panel1.Controls.Add(this.btnKunder);
+            //this.panel1.Location = new System.Drawing.Point(25, 9);
+            //this.panel1.Name = "panel1";
+            //this.panel1.Size = new System.Drawing.Size(188, 432);
+            //this.panel1.TabIndex = 44;
+            //
+            // ucMeny1
+            //
+            this.ucMeny1.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny1.Name = "ucMeny1";
+            this.ucMeny1.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny1.TabIndex = 5;
             // 
             // frmIntäktsbudgeteringProdukt
             // 
@@ -316,10 +324,11 @@
             this.Controls.Add(this.btnRensa);
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucMeny1);
             this.Name = "frmIntäktsbudgeteringProdukt";
             this.Text = "Intäktsbudgetering: Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).EndInit();
-            this.panel1.ResumeLayout(false);
+            //this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,5 +359,6 @@
         private System.Windows.Forms.Button btnRensa;
         private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.Panel panel1;
+        private Forms.ucMeny ucMeny1;
     }
 }

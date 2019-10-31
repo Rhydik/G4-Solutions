@@ -16,12 +16,18 @@ namespace PresentationLayer1.Forms
     {
         private BusinessManager businessManager = new BusinessManager();
         private List<KundDTO> kunds;
+        private DataGridView dataGridView;
 
         public ucSökFältKund()
         {
-            InitializeComponent(); 
-            kunds = businessManager.GetAllKunder();
-            //dgvIntäktsbudgeteringKund.DataSource = kunds;
+            InitializeComponent();
+        }
+        public ucSökFältKund(DataGridView dataGridView)
+        {
+            InitializeComponent();
+            this.dataGridView = dataGridView;
+
+            dataGridView.DataSource = businessManager.GetAllKunder();
             cmbKundkategori.SelectedItem = "Alla";
         }
         private void tbKundID_TextChanged(object sender, EventArgs e)
@@ -29,12 +35,12 @@ namespace PresentationLayer1.Forms
             if (tbKundID.TextLength == 0)
             {
                 kunds = businessManager.GetAllKunder();
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
             else
             {
                 kunds = businessManager.GetKunderByID(tbKundID.Text);
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
         }
 
@@ -43,12 +49,12 @@ namespace PresentationLayer1.Forms
             if (tbNamn.TextLength == 0)
             {
                 kunds = businessManager.GetAllKunder();
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
             else
             {
                 kunds = businessManager.GetKunderByNamn(tbNamn.Text);
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
         }
 
@@ -57,12 +63,12 @@ namespace PresentationLayer1.Forms
             if (cmbKundkategori.Text == "Alla")
             {
                 kunds = businessManager.GetAllKunder();
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
             else
             {
                 kunds = businessManager.GetKunderByKategori(cmbKundkategori.Text);
-                //dgvIntäktsbudgeteringKund.DataSource = kunds;
+                dataGridView.DataSource = kunds;
             }
         }
 

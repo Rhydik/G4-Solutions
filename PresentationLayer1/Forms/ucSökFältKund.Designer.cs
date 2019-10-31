@@ -40,7 +40,7 @@
             // lblKundkategori
             // 
             this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(270, 0);
+            this.lblKundkategori.Location = new System.Drawing.Point(270, 4);
             this.lblKundkategori.Name = "lblKundkategori";
             this.lblKundkategori.Size = new System.Drawing.Size(70, 13);
             this.lblKundkategori.TabIndex = 47;
@@ -49,7 +49,7 @@
             // lblKund
             // 
             this.lblKund.AutoSize = true;
-            this.lblKund.Location = new System.Drawing.Point(134, 0);
+            this.lblKund.Location = new System.Drawing.Point(134, 4);
             this.lblKund.Name = "lblKund";
             this.lblKund.Size = new System.Drawing.Size(32, 13);
             this.lblKund.TabIndex = 46;
@@ -58,7 +58,7 @@
             // lblKundID
             // 
             this.lblKundID.AutoSize = true;
-            this.lblKundID.Location = new System.Drawing.Point(3, 0);
+            this.lblKundID.Location = new System.Drawing.Point(1, 4);
             this.lblKundID.Name = "lblKundID";
             this.lblKundID.Size = new System.Drawing.Size(43, 13);
             this.lblKundID.TabIndex = 45;
@@ -66,12 +66,13 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(471, 21);
+            this.btnRensa.Location = new System.Drawing.Point(471, 20);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 44;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // cmbKundkategori
             // 
@@ -86,6 +87,7 @@
             this.cmbKundkategori.Name = "cmbKundkategori";
             this.cmbKundkategori.Size = new System.Drawing.Size(192, 21);
             this.cmbKundkategori.TabIndex = 43;
+            this.cmbKundkategori.SelectedIndexChanged += new System.EventHandler(this.cmbKundkategori_SelectedIndexChanged);
             // 
             // tbNamn
             // 
@@ -93,6 +95,7 @@
             this.tbNamn.Name = "tbNamn";
             this.tbNamn.Size = new System.Drawing.Size(128, 20);
             this.tbNamn.TabIndex = 42;
+            this.tbNamn.TextChanged += new System.EventHandler(this.tbNamn_TextChanged);
             // 
             // tbKundID
             // 
@@ -100,6 +103,7 @@
             this.tbKundID.Name = "tbKundID";
             this.tbKundID.Size = new System.Drawing.Size(128, 20);
             this.tbKundID.TabIndex = 41;
+            this.tbKundID.TextChanged += new System.EventHandler(this.tbKundID_TextChanged);
             // 
             // ucSökFältKund
             // 
@@ -113,7 +117,7 @@
             this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.tbKundID);
             this.Name = "ucSökFältKund";
-            this.Size = new System.Drawing.Size(539, 53);
+            this.Size = new System.Drawing.Size(534, 53);
             this.ResumeLayout(false);
             this.PerformLayout();
 

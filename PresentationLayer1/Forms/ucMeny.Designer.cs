@@ -68,7 +68,7 @@
             this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResultat.Location = new System.Drawing.Point(15, 381);
             this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(75, 23);
+            this.btnResultat.Size = new System.Drawing.Size(158, 23);
             this.btnResultat.TabIndex = 2;
             this.btnResultat.Text = "Resultat";
             this.btnResultat.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.btnPrognostiseringIntäkter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrognostiseringIntäkter.Location = new System.Drawing.Point(15, 352);
             this.btnPrognostiseringIntäkter.Name = "btnPrognostiseringIntäkter";
-            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(141, 23);
+            this.btnPrognostiseringIntäkter.Size = new System.Drawing.Size(158, 23);
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@
             this.btnBudgeteratResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBudgeteratResultat.Location = new System.Drawing.Point(15, 322);
             this.btnBudgeteratResultat.Name = "btnBudgeteratResultat";
-            this.btnBudgeteratResultat.Size = new System.Drawing.Size(123, 23);
+            this.btnBudgeteratResultat.Size = new System.Drawing.Size(158, 23);
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             this.btnBehörighet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBehörighet.Location = new System.Drawing.Point(15, 169);
             this.btnBehörighet.Name = "btnBehörighet";
-            this.btnBehörighet.Size = new System.Drawing.Size(107, 23);
+            this.btnBehörighet.Size = new System.Drawing.Size(158, 23);
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.btnSchablonkostnad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSchablonkostnad.Location = new System.Drawing.Point(15, 140);
             this.btnSchablonkostnad.Name = "btnSchablonkostnad";
-            this.btnSchablonkostnad.Size = new System.Drawing.Size(107, 23);
+            this.btnSchablonkostnad.Size = new System.Drawing.Size(158, 23);
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.btnAktiviteter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAktiviteter.Location = new System.Drawing.Point(15, 110);
             this.btnAktiviteter.Name = "btnAktiviteter";
-            this.btnAktiviteter.Size = new System.Drawing.Size(107, 23);
+            this.btnAktiviteter.Size = new System.Drawing.Size(158, 23);
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Location = new System.Drawing.Point(15, 82);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(107, 23);
+            this.btnPersonal.Size = new System.Drawing.Size(158, 23);
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdukter.Location = new System.Drawing.Point(15, 53);
             this.btnProdukter.Name = "btnProdukter";
-            this.btnProdukter.Size = new System.Drawing.Size(107, 23);
+            this.btnProdukter.Size = new System.Drawing.Size(158, 23);
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.btnKunder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKunder.Location = new System.Drawing.Point(15, 23);
             this.btnKunder.Name = "btnKunder";
-            this.btnKunder.Size = new System.Drawing.Size(107, 23);
+            this.btnKunder.Size = new System.Drawing.Size(158, 23);
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;

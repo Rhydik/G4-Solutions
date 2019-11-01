@@ -280,25 +280,6 @@
             this.btnSök.TabIndex = 50;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            //this.panel1.Controls.Add(this.btnResultat);
-            //this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
-            //this.panel1.Controls.Add(this.btnBudgeteratResultat);
-            //this.panel1.Controls.Add(this.btnKostnadsbudgetering);
-            //this.panel1.Controls.Add(this.btnIntäktsbudgeteringProdukt);
-            //this.panel1.Controls.Add(this.btnIntäktsbudgeteringKund);
-            //this.panel1.Controls.Add(this.btnBehörighet);
-            //this.panel1.Controls.Add(this.btnSchablonkostnad);
-            //this.panel1.Controls.Add(this.btnAktiviteter);
-            //this.panel1.Controls.Add(this.btnPersonal);
-            //this.panel1.Controls.Add(this.btnProdukter);
-            //this.panel1.Controls.Add(this.btnKunder);
-            //this.panel1.Location = new System.Drawing.Point(25, 9);
-            //this.panel1.Name = "panel1";
-            //this.panel1.Size = new System.Drawing.Size(188, 432);
-            //this.panel1.TabIndex = 44;
             //
             // ucMeny1
             //
@@ -323,7 +304,6 @@
             this.Controls.Add(this.lblProduktID);
             this.Controls.Add(this.btnRensa);
             this.Controls.Add(this.btnSök);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ucMeny1);
             this.Name = "frmIntäktsbudgeteringProdukt";
             this.Text = "Intäktsbudgetering: Produkt  | G4 Solutions Economy System";
@@ -358,7 +338,6 @@
         private System.Windows.Forms.Label lblProduktID;
         private System.Windows.Forms.Button btnRensa;
         private System.Windows.Forms.Button btnSök;
-        private System.Windows.Forms.Panel panel1;
         private Forms.ucMeny ucMeny1;
     }
 }

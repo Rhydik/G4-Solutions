@@ -36,13 +36,14 @@
             this.btnRedigeraBehörighet = new System.Windows.Forms.Button();
             this.dgvBehörighet = new System.Windows.Forms.DataGridView();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNamn
             // 
             this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(387, 34);
+            this.lblNamn.Location = new System.Drawing.Point(360, 59);
             this.lblNamn.Name = "lblNamn";
             this.lblNamn.Size = new System.Drawing.Size(35, 13);
             this.lblNamn.TabIndex = 29;
@@ -51,7 +52,7 @@
             // lblPersonnummer
             // 
             this.lblPersonnummer.AutoSize = true;
-            this.lblPersonnummer.Location = new System.Drawing.Point(233, 34);
+            this.lblPersonnummer.Location = new System.Drawing.Point(206, 59);
             this.lblPersonnummer.Name = "lblPersonnummer";
             this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
             this.lblPersonnummer.TabIndex = 28;
@@ -59,7 +60,7 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(523, 55);
+            this.btnRensa.Location = new System.Drawing.Point(518, 79);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 20);
             this.btnRensa.TabIndex = 27;
@@ -69,7 +70,7 @@
             // 
             // tbNamn
             // 
-            this.tbNamn.Location = new System.Drawing.Point(389, 55);
+            this.tbNamn.Location = new System.Drawing.Point(362, 80);
             this.tbNamn.Name = "tbNamn";
             this.tbNamn.Size = new System.Drawing.Size(128, 20);
             this.tbNamn.TabIndex = 24;
@@ -77,7 +78,7 @@
             // 
             // tbPersonNr
             // 
-            this.tbPersonNr.Location = new System.Drawing.Point(233, 55);
+            this.tbPersonNr.Location = new System.Drawing.Point(206, 80);
             this.tbPersonNr.Name = "tbPersonNr";
             this.tbPersonNr.Size = new System.Drawing.Size(128, 20);
             this.tbPersonNr.TabIndex = 23;
@@ -86,7 +87,7 @@
             // btnRedigeraBehörighet
             // 
             this.btnRedigeraBehörighet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraBehörighet.Location = new System.Drawing.Point(613, 365);
+            this.btnRedigeraBehörighet.Location = new System.Drawing.Point(702, 397);
             this.btnRedigeraBehörighet.Name = "btnRedigeraBehörighet";
             this.btnRedigeraBehörighet.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraBehörighet.TabIndex = 21;
@@ -101,25 +102,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBehörighet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBehörighet.Location = new System.Drawing.Point(233, 84);
+            this.dgvBehörighet.Location = new System.Drawing.Point(209, 123);
             this.dgvBehörighet.Name = "dgvBehörighet";
             this.dgvBehörighet.ReadOnly = true;
             this.dgvBehörighet.RowHeadersWidth = 62;
-            this.dgvBehörighet.Size = new System.Drawing.Size(501, 275);
+            this.dgvBehörighet.Size = new System.Drawing.Size(614, 268);
             this.dgvBehörighet.TabIndex = 20;
-            //
+            // 
             // ucMeny
-            //
+            // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(205, 28);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 48;
+            this.lblSök.Text = "Sök";
+            // 
             // frmBehörighet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 427);
+            this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.lblNamn);
             this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.btnRensa);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.Button btnRedigeraBehörighet;
         private System.Windows.Forms.DataGridView dgvBehörighet;
         private Forms.ucMeny ucMeny;
+        private System.Windows.Forms.Label lblSök;
     }
 }

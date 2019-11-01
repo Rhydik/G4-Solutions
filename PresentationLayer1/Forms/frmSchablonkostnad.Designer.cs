@@ -41,13 +41,14 @@
             this.lblAvkastningskrav = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvSchablonkostnad)).BeginInit();
             this.SuspendLayout();
             // 
             // lblKontobenämning
             // 
             this.lblKontobenämning.AutoSize = true;
-            this.lblKontobenämning.Location = new System.Drawing.Point(399, 35);
+            this.lblKontobenämning.Location = new System.Drawing.Point(340, 58);
             this.lblKontobenämning.Name = "lblKontobenämning";
             this.lblKontobenämning.Size = new System.Drawing.Size(35, 13);
             this.lblKontobenämning.TabIndex = 40;
@@ -56,7 +57,7 @@
             // lblKonto
             // 
             this.lblKonto.AutoSize = true;
-            this.lblKonto.Location = new System.Drawing.Point(245, 35);
+            this.lblKonto.Location = new System.Drawing.Point(209, 58);
             this.lblKonto.Name = "lblKonto";
             this.lblKonto.Size = new System.Drawing.Size(35, 13);
             this.lblKonto.TabIndex = 39;
@@ -64,7 +65,7 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(313, 86);
+            this.btnRensa.Location = new System.Drawing.Point(491, 72);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 38;
@@ -73,7 +74,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(246, 86);
+            this.btnSök.Location = new System.Drawing.Point(732, 26);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(60, 23);
             this.btnSök.TabIndex = 37;
@@ -82,7 +83,7 @@
             // 
             // tbKontobenämning
             // 
-            this.tbKontobenämning.Location = new System.Drawing.Point(402, 55);
+            this.tbKontobenämning.Location = new System.Drawing.Point(343, 74);
             this.tbKontobenämning.Name = "tbKontobenämning";
             this.tbKontobenämning.Size = new System.Drawing.Size(128, 20);
             this.tbKontobenämning.TabIndex = 36;
@@ -90,7 +91,7 @@
             // 
             // tbKonto
             // 
-            this.tbKonto.Location = new System.Drawing.Point(245, 55);
+            this.tbKonto.Location = new System.Drawing.Point(209, 74);
             this.tbKonto.Name = "tbKonto";
             this.tbKonto.Size = new System.Drawing.Size(128, 20);
             this.tbKonto.TabIndex = 35;
@@ -99,7 +100,7 @@
             // btnRegistreraNyttKonto
             // 
             this.btnRegistreraNyttKonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistreraNyttKonto.Location = new System.Drawing.Point(676, 398);
+            this.btnRegistreraNyttKonto.Location = new System.Drawing.Point(711, 398);
             this.btnRegistreraNyttKonto.Name = "btnRegistreraNyttKonto";
             this.btnRegistreraNyttKonto.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyttKonto.TabIndex = 34;
@@ -110,7 +111,7 @@
             // btnRedigeraKonto
             // 
             this.btnRedigeraKonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraKonto.Location = new System.Drawing.Point(550, 398);
+            this.btnRedigeraKonto.Location = new System.Drawing.Point(585, 398);
             this.btnRedigeraKonto.Name = "btnRedigeraKonto";
             this.btnRedigeraKonto.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraKonto.TabIndex = 33;
@@ -121,17 +122,17 @@
             // gvSchablonkostnad
             // 
             this.gvSchablonkostnad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvSchablonkostnad.Location = new System.Drawing.Point(246, 122);
+            this.gvSchablonkostnad.Location = new System.Drawing.Point(209, 113);
             this.gvSchablonkostnad.Name = "gvSchablonkostnad";
             this.gvSchablonkostnad.ReadOnly = true;
             this.gvSchablonkostnad.RowHeadersWidth = 62;
-            this.gvSchablonkostnad.Size = new System.Drawing.Size(423, 237);
+            this.gvSchablonkostnad.Size = new System.Drawing.Size(614, 268);
             this.gvSchablonkostnad.TabIndex = 32;
             this.gvSchablonkostnad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvSchablonkostnad_CellContentClick);
             // 
             // tbAvkastningskrav
             // 
-            this.tbAvkastningskrav.Location = new System.Drawing.Point(245, 166);
+            this.tbAvkastningskrav.Location = new System.Drawing.Point(209, 409);
             this.tbAvkastningskrav.Name = "tbAvkastningskrav";
             this.tbAvkastningskrav.Size = new System.Drawing.Size(112, 20);
             this.tbAvkastningskrav.TabIndex = 41;
@@ -139,7 +140,7 @@
             // lblAvkastningskrav
             // 
             this.lblAvkastningskrav.AutoSize = true;
-            this.lblAvkastningskrav.Location = new System.Drawing.Point(242, 150);
+            this.lblAvkastningskrav.Location = new System.Drawing.Point(206, 393);
             this.lblAvkastningskrav.Name = "lblAvkastningskrav";
             this.lblAvkastningskrav.Size = new System.Drawing.Size(86, 13);
             this.lblAvkastningskrav.TabIndex = 42;
@@ -147,26 +148,37 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 192);
+            this.button1.Location = new System.Drawing.Point(329, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 43;
             this.button1.Text = "Spara";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
+            // 
             // ucMeny
-            //
+            // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(204, 26);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 44;
+            this.lblSök.Text = "Sök";
+            // 
             // frmSchablonkostnad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAvkastningskrav);
             this.Controls.Add(this.tbAvkastningskrav);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.Label lblAvkastningskrav;
         private System.Windows.Forms.Button button1;
         private Forms.ucMeny ucMeny;
+        private System.Windows.Forms.Label lblSök;
     }
 }

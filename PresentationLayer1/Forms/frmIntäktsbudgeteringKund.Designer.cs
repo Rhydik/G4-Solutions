@@ -51,7 +51,7 @@
             this.lblValdKundNamn = new System.Windows.Forms.Label();
             this.btnVäljNyKund = new System.Windows.Forms.Button();
             this.btnVäljKund = new System.Windows.Forms.Button();
-            this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund(this.dgvIntäktsbudgeteringKund);
+            this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).BeginInit();
             this.SuspendLayout();
@@ -296,6 +296,7 @@
             this.ucSökFältKund.Name = "ucSökFältKund1";
             this.ucSökFältKund.Size = new System.Drawing.Size(534, 53);
             this.ucSökFältKund.TabIndex = 50;
+            this.ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
             //
             // ucMeny
             //

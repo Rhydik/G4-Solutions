@@ -32,7 +32,7 @@
             this.btnRegistreraNyKund = new System.Windows.Forms.Button();
             this.btnRedigeraKund = new System.Windows.Forms.Button();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
-            this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund(this.dgvKunder);
+            this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKunder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             // 
             // ucSökFältKund1
             // 
+            this.ucSökFältKund.SetGridView(this.dgvKunder);
             this.ucSökFältKund.Location = new System.Drawing.Point(243, 39);
             this.ucSökFältKund.Name = "ucSökFältKund";
             this.ucSökFältKund.Size = new System.Drawing.Size(545, 53);

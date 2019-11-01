@@ -21,16 +21,21 @@ namespace PresentationLayer1.Forms
         public ucSökFältKund()
         {
             InitializeComponent();
+            Load();
         }
-        public ucSökFältKund(DataGridView dataGridView)
-        {
-            InitializeComponent();
-            this.dataGridView = dataGridView;
 
+        public void SetGridView(DataGridView dataGridView)
+        {
+            this.dataGridView = dataGridView;
+        }
+        private void Load()
+        {
             cmbKundkategori.SelectedItem = "Alla";
         }
         private void tbKundID_TextChanged(object sender, EventArgs e)
         {
+            if (dataGridView == null) return;
+
             if (tbKundID.TextLength == 0)
             {
                 kunds = businessManager.GetAllKunder();
@@ -45,6 +50,8 @@ namespace PresentationLayer1.Forms
 
         private void tbNamn_TextChanged(object sender, EventArgs e)
         {
+            if (dataGridView == null) return;
+
             if (tbNamn.TextLength == 0)
             {
                 kunds = businessManager.GetAllKunder();
@@ -59,6 +66,8 @@ namespace PresentationLayer1.Forms
 
         private void cmbKundkategori_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (dataGridView == null) return;
+
             if (cmbKundkategori.Text == "Alla")
             {
                 kunds = businessManager.GetAllKunder();

@@ -40,7 +40,7 @@
             this.cmbGradA = new System.Windows.Forms.ComboBox();
             this.lblAvtal = new System.Windows.Forms.Label();
             this.tbAvtal = new System.Windows.Forms.TextBox();
-            this.lblProdukt = new System.Windows.Forms.Label();
+            this.lblIntäktProdukt = new System.Windows.Forms.Label();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -166,15 +166,15 @@
             this.tbAvtal.Size = new System.Drawing.Size(188, 20);
             this.tbAvtal.TabIndex = 65;
             // 
-            // lblProdukt
+            // lblIntäktProdukt
             // 
-            this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdukt.Location = new System.Drawing.Point(186, 18);
-            this.lblProdukt.Name = "lblProdukt";
-            this.lblProdukt.Size = new System.Drawing.Size(64, 20);
-            this.lblProdukt.TabIndex = 62;
-            this.lblProdukt.Text = "Produkt";
+            this.lblIntäktProdukt.AutoSize = true;
+            this.lblIntäktProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntäktProdukt.Location = new System.Drawing.Point(186, 18);
+            this.lblIntäktProdukt.Name = "lblIntäktProdukt";
+            this.lblIntäktProdukt.Size = new System.Drawing.Size(64, 20);
+            this.lblIntäktProdukt.TabIndex = 62;
+            this.lblIntäktProdukt.Text = "Produkt";
             // 
             // btnAvbryt
             // 
@@ -335,7 +335,7 @@
             this.Controls.Add(this.cmbGradA);
             this.Controls.Add(this.lblAvtal);
             this.Controls.Add(this.tbAvtal);
-            this.Controls.Add(this.lblProdukt);
+            this.Controls.Add(this.lblIntäktProdukt);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
@@ -343,6 +343,7 @@
             this.Controls.Add(this.lblLäggTillKundFör);
             this.Controls.Add(this.tbBudget);
             this.Name = "frmIntäktsbudgeteringLäggTillKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Lägg till Kund  | G4 Solutions Economy System";
             this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillKund_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -365,7 +366,7 @@
         private System.Windows.Forms.ComboBox cmbGradA;
         private System.Windows.Forms.Label lblAvtal;
         private System.Windows.Forms.TextBox tbAvtal;
-        private System.Windows.Forms.Label lblProdukt;
+        private System.Windows.Forms.Label lblIntäktProdukt;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;

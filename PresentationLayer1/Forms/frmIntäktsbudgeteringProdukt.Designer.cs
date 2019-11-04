@@ -156,6 +156,7 @@
             this.btnLäggTillKund.TabIndex = 46;
             this.btnLäggTillKund.Text = "Lägg till kund";
             this.btnLäggTillKund.UseVisualStyleBackColor = true;
+            this.btnLäggTillKund.Click += new System.EventHandler(this.btnLäggTillKund_Click);
             // 
             // dgvIntäktsbudgeteringProdukt
             // 
@@ -274,6 +275,7 @@
             this.btnRensa.TabIndex = 51;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // btnVäljProdukt
             // 

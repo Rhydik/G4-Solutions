@@ -66,5 +66,17 @@ namespace PresentationLayer1.Forms
             dgvIntäktsbudgeteringProdukt.DataSource = produkter;
             Hide();
         }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            tbProdukt.Clear();
+            tbProduktID.Clear();
+        }
+
+        private void btnLäggTillKund_Click(object sender, EventArgs e)
+        {
+            Forms.frmIntäktsbudgeteringLäggTillKund frmIntäktsbudgeteringLäggTillKund = new frmIntäktsbudgeteringLäggTillKund(lblValdProduktID.Text, lblValdProdukt.Text);
+            frmIntäktsbudgeteringLäggTillKund.Show();
+        }
     }
 }

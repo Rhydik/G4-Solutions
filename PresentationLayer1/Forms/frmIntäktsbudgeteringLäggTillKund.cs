@@ -12,9 +12,12 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmIntäktsbudgeteringLäggTillKund : Form
     {
-        public frmIntäktsbudgeteringLäggTillKund()
+        public frmIntäktsbudgeteringLäggTillKund(string produktId, string produktnamn)
         {
             InitializeComponent();
+            var produktID = produktId;
+            var produktNamn = produktnamn;
+            lblIntäktProdukt.Text = produktNamn;
         }
 
         private void frmIntäktsbudgeteringLäggTillKund_Load(object sender, EventArgs e)

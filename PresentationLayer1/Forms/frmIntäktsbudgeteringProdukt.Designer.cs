@@ -304,6 +304,7 @@
             this.Controls.Add(this.btnSök);
             this.Controls.Add(this.ucMeny1);
             this.Name = "frmIntäktsbudgeteringProdukt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).EndInit();
             this.ResumeLayout(false);

@@ -58,6 +58,30 @@ namespace DataLayer
             }
         }
 
+        public List<IntäktsbudgetProduktDTO> GetAllProduktKunder(string produktId)
+        {
+            using (var db = new DataContext())
+            {
+                var produkt = db.Produkt.Where(x => x.ProduktID == produktId).FirstOrDefault();
+                var produkten = db.ProduktIntäktsbudget.Where(x => x.Produkt_ProduktID == produkt.ProduktID).FirstOrDefault();
+
+                if (produkten != null)
+                {
+                    var intäkt = from x in db.ProduktIntäktsbudget
+                                 where x.Produkt_ProduktID == produktId
+                                 join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                                 join kun in db.KundIntäktsbudget on y.IntäktsbudgetID equals kun.Intäktsbudget_IntäktsbudgetID
+                                 join kunNamn in db.Kund on kun.Kund_KundID equals kunNamn.KundID
+                                 select new IntäktsbudgetProduktDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, KundID = kun.Kund_KundID, KundNamn = kunNamn.Namn };
+                    return intäkt.ToList();
+                }
+                else
+                {
+                    return new List<IntäktsbudgetProduktDTO>();
+                }
+            }
+        }
+
         public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)
         {
             using (var db = new DataContext())

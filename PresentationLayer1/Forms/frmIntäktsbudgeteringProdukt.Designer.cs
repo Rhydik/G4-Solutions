@@ -50,7 +50,12 @@
             this.lblProdukt = new System.Windows.Forms.Label();
             this.lblProduktID = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
+            this.btnVäljProdukt = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblValdProduktID = new System.Windows.Forms.Label();
+            this.lblValdProdukt = new System.Windows.Forms.Label();
+            this.btnVäljNyProdukt = new System.Windows.Forms.Button();
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +142,7 @@
             // 
             // tbProduktID
             // 
-            this.tbProduktID.Location = new System.Drawing.Point(273, 53);
+            this.tbProduktID.Location = new System.Drawing.Point(210, 54);
             this.tbProduktID.Name = "tbProduktID";
             this.tbProduktID.Size = new System.Drawing.Size(128, 20);
             this.tbProduktID.TabIndex = 47;
@@ -198,7 +203,7 @@
             // 
             // tbProdukt
             // 
-            this.tbProdukt.Location = new System.Drawing.Point(429, 53);
+            this.tbProdukt.Location = new System.Drawing.Point(366, 54);
             this.tbProdukt.Name = "tbProdukt";
             this.tbProdukt.Size = new System.Drawing.Size(128, 20);
             this.tbProdukt.TabIndex = 48;
@@ -216,7 +221,7 @@
             // btnExportera
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(281, 397);
+            this.btnExportera.Location = new System.Drawing.Point(209, 397);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 57;
@@ -236,7 +241,7 @@
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLåsBudget.Location = new System.Drawing.Point(407, 397);
+            this.btnLåsBudget.Location = new System.Drawing.Point(335, 397);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 56;
@@ -246,7 +251,7 @@
             // lblProdukt
             // 
             this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Location = new System.Drawing.Point(427, 32);
+            this.lblProdukt.Location = new System.Drawing.Point(364, 33);
             this.lblProdukt.Name = "lblProdukt";
             this.lblProdukt.Size = new System.Drawing.Size(44, 13);
             this.lblProdukt.TabIndex = 53;
@@ -255,7 +260,7 @@
             // lblProduktID
             // 
             this.lblProduktID.AutoSize = true;
-            this.lblProduktID.Location = new System.Drawing.Point(273, 32);
+            this.lblProduktID.Location = new System.Drawing.Point(210, 33);
             this.lblProduktID.Name = "lblProduktID";
             this.lblProduktID.Size = new System.Drawing.Size(55, 13);
             this.lblProduktID.TabIndex = 52;
@@ -263,21 +268,71 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(341, 84);
+            this.btnRensa.Location = new System.Drawing.Point(511, 54);
             this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 23);
+            this.btnRensa.Size = new System.Drawing.Size(60, 20);
             this.btnRensa.TabIndex = 51;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
             // 
-            // btnSök
+            // btnVäljProdukt
             // 
-            this.btnSök.Location = new System.Drawing.Point(273, 84);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 50;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
+            this.btnVäljProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVäljProdukt.Location = new System.Drawing.Point(703, 397);
+            this.btnVäljProdukt.Name = "btnVäljProdukt";
+            this.btnVäljProdukt.Size = new System.Drawing.Size(120, 41);
+            this.btnVäljProdukt.TabIndex = 58;
+            this.btnVäljProdukt.Text = "Välj Produkt";
+            this.btnVäljProdukt.UseVisualStyleBackColor = true;
+            this.btnVäljProdukt.Click += new System.EventHandler(this.btnVäljProdukt_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(206, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "ProduktID:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(364, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Produkt:";
+            // 
+            // lblValdProduktID
+            // 
+            this.lblValdProduktID.AutoSize = true;
+            this.lblValdProduktID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValdProduktID.Location = new System.Drawing.Point(206, 94);
+            this.lblValdProduktID.Name = "lblValdProduktID";
+            this.lblValdProduktID.Size = new System.Drawing.Size(46, 13);
+            this.lblValdProduktID.TabIndex = 61;
+            this.lblValdProduktID.Text = "Ej vald";
+            // 
+            // lblValdProdukt
+            // 
+            this.lblValdProdukt.AutoSize = true;
+            this.lblValdProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValdProdukt.Location = new System.Drawing.Point(364, 94);
+            this.lblValdProdukt.Name = "lblValdProdukt";
+            this.lblValdProdukt.Size = new System.Drawing.Size(46, 13);
+            this.lblValdProdukt.TabIndex = 62;
+            this.lblValdProdukt.Text = "Ej vald";
+            // 
+            // btnVäljNyProdukt
+            // 
+            this.btnVäljNyProdukt.Location = new System.Drawing.Point(511, 84);
+            this.btnVäljNyProdukt.Name = "btnVäljNyProdukt";
+            this.btnVäljNyProdukt.Size = new System.Drawing.Size(90, 23);
+            this.btnVäljNyProdukt.TabIndex = 63;
+            this.btnVäljNyProdukt.Text = "Välj ny produkt";
+            this.btnVäljNyProdukt.UseVisualStyleBackColor = true;
+            this.btnVäljNyProdukt.Click += new System.EventHandler(this.btnVäljNyProdukt_Click);
             // 
             // ucMeny1
             // 
@@ -291,6 +346,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.btnVäljNyProdukt);
+            this.Controls.Add(this.lblValdProdukt);
+            this.Controls.Add(this.lblValdProduktID);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnVäljProdukt);
             this.Controls.Add(this.btnTaBortKund);
             this.Controls.Add(this.tbProduktID);
             this.Controls.Add(this.btnLäggTillKund);
@@ -301,9 +362,9 @@
             this.Controls.Add(this.lblProdukt);
             this.Controls.Add(this.lblProduktID);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.ucMeny1);
             this.Name = "frmIntäktsbudgeteringProdukt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).EndInit();
             this.ResumeLayout(false);
@@ -334,7 +395,12 @@
         private System.Windows.Forms.Label lblProdukt;
         private System.Windows.Forms.Label lblProduktID;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private Forms.ucMeny ucMeny1;
+        private System.Windows.Forms.Button btnVäljProdukt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblValdProduktID;
+        private System.Windows.Forms.Label lblValdProdukt;
+        private System.Windows.Forms.Button btnVäljNyProdukt;
     }
 }

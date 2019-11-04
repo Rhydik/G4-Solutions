@@ -234,7 +234,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(263, 83);
+            this.label1.Location = new System.Drawing.Point(257, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 44;
@@ -244,7 +244,7 @@
             // 
             this.lblValdKundID.AutoSize = true;
             this.lblValdKundID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundID.Location = new System.Drawing.Point(263, 103);
+            this.lblValdKundID.Location = new System.Drawing.Point(257, 98);
             this.lblValdKundID.Name = "lblValdKundID";
             this.lblValdKundID.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundID.TabIndex = 45;
@@ -253,7 +253,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(394, 83);
+            this.label3.Location = new System.Drawing.Point(394, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 46;
@@ -263,7 +263,7 @@
             // 
             this.lblValdKundNamn.AutoSize = true;
             this.lblValdKundNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundNamn.Location = new System.Drawing.Point(394, 103);
+            this.lblValdKundNamn.Location = new System.Drawing.Point(394, 98);
             this.lblValdKundNamn.Name = "lblValdKundNamn";
             this.lblValdKundNamn.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundNamn.TabIndex = 47;
@@ -290,16 +290,15 @@
             this.btnVäljKund.UseVisualStyleBackColor = true;
             this.btnVäljKund.Click += new System.EventHandler(this.btnVäljKund_Click);
             // 
-            // ucSökFältKund1
+            // ucSökFältKund
             // 
             this.ucSökFältKund.Location = new System.Drawing.Point(257, 27);
-            this.ucSökFältKund.Name = "ucSökFältKund1";
+            this.ucSökFältKund.Name = "ucSökFältKund";
             this.ucSökFältKund.Size = new System.Drawing.Size(534, 53);
             this.ucSökFältKund.TabIndex = 50;
-            this.ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
-            //
+            // 
             // ucMeny
-            //
+            // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);

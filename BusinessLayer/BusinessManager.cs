@@ -56,6 +56,11 @@ namespace BusinessLayer
             return repositoryFacade.aktivitetRepository.GetAllAktiviteter();
         }
 
+        public List<IntäktsbudgetProduktDTO> GetAllProduktKunder(string produktId)
+        {
+            return repositoryFacade.intäktsRepository.GetAllProduktKunder(produktId);
+        }
+
         public void AddAktivitet(string aktvitetsId, string namn, string avdelning)
         {
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);

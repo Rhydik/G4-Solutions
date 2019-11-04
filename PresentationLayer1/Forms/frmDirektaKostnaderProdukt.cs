@@ -16,5 +16,15 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
         }
+
+        private void btnLåsBudget_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSpara_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

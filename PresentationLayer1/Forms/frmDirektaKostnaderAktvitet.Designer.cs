@@ -55,7 +55,7 @@
             // 
             // btnSpara
             // 
-            this.btnSpara.Location = new System.Drawing.Point(641, 397);
+            this.btnSpara.Location = new System.Drawing.Point(703, 397);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(120, 41);
             this.btnSpara.TabIndex = 89;
@@ -64,7 +64,7 @@
             // 
             // btnExportera
             // 
-            this.btnExportera.Location = new System.Drawing.Point(244, 397);
+            this.btnExportera.Location = new System.Drawing.Point(209, 393);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 91;
@@ -217,16 +217,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDirektaKostnaderAktivitet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDirektaKostnaderAktivitet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDirektaKostnaderAktivitet.Location = new System.Drawing.Point(244, 94);
+            this.dgvDirektaKostnaderAktivitet.Location = new System.Drawing.Point(209, 119);
             this.dgvDirektaKostnaderAktivitet.Name = "dgvDirektaKostnaderAktivitet";
             this.dgvDirektaKostnaderAktivitet.ReadOnly = true;
             this.dgvDirektaKostnaderAktivitet.RowHeadersWidth = 62;
-            this.dgvDirektaKostnaderAktivitet.Size = new System.Drawing.Size(517, 293);
+            this.dgvDirektaKostnaderAktivitet.Size = new System.Drawing.Size(614, 268);
             this.dgvDirektaKostnaderAktivitet.TabIndex = 88;
             // 
             // btnLåsBudget
             // 
-            this.btnLåsBudget.Location = new System.Drawing.Point(515, 397);
+            this.btnLåsBudget.Location = new System.Drawing.Point(577, 397);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 90;
@@ -235,7 +235,7 @@
             // 
             // btnPlacering
             // 
-            this.btnPlacering.Location = new System.Drawing.Point(244, 17);
+            this.btnPlacering.Location = new System.Drawing.Point(315, 26);
             this.btnPlacering.Name = "btnPlacering";
             this.btnPlacering.Size = new System.Drawing.Size(120, 41);
             this.btnPlacering.TabIndex = 92;
@@ -245,7 +245,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 78);
+            this.label1.Location = new System.Drawing.Point(493, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 95;
@@ -253,7 +253,7 @@
             // 
             // btnDirektaKostnaderProdukt
             // 
-            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(370, 17);
+            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(441, 26);
             this.btnDirektaKostnaderProdukt.Name = "btnDirektaKostnaderProdukt";
             this.btnDirektaKostnaderProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderProdukt.TabIndex = 93;
@@ -262,7 +262,7 @@
             // 
             // btnDirektaKostnaderAktivitet
             // 
-            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(496, 17);
+            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(567, 26);
             this.btnDirektaKostnaderAktivitet.Name = "btnDirektaKostnaderAktivitet";
             this.btnDirektaKostnaderAktivitet.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderAktivitet.TabIndex = 94;
@@ -273,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 450);
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.panel1);

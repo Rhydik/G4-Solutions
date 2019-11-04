@@ -40,13 +40,14 @@
             this.btnRedigeraAktivitet = new System.Windows.Forms.Button();
             this.dgvAktiviteter = new System.Windows.Forms.DataGridView();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAktiviteter)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAvdelning
             // 
             this.lblAvdelning.AutoSize = true;
-            this.lblAvdelning.Location = new System.Drawing.Point(437, 34);
+            this.lblAvdelning.Location = new System.Drawing.Point(406, 55);
             this.lblAvdelning.Name = "lblAvdelning";
             this.lblAvdelning.Size = new System.Drawing.Size(54, 13);
             this.lblAvdelning.TabIndex = 46;
@@ -55,7 +56,7 @@
             // lblBenämning
             // 
             this.lblBenämning.AutoSize = true;
-            this.lblBenämning.Location = new System.Drawing.Point(331, 34);
+            this.lblBenämning.Location = new System.Drawing.Point(300, 55);
             this.lblBenämning.Name = "lblBenämning";
             this.lblBenämning.Size = new System.Drawing.Size(35, 13);
             this.lblBenämning.TabIndex = 45;
@@ -64,7 +65,7 @@
             // lblAktivitetsID
             // 
             this.lblAktivitetsID.AutoSize = true;
-            this.lblAktivitetsID.Location = new System.Drawing.Point(231, 34);
+            this.lblAktivitetsID.Location = new System.Drawing.Point(200, 55);
             this.lblAktivitetsID.Name = "lblAktivitetsID";
             this.lblAktivitetsID.Size = new System.Drawing.Size(61, 13);
             this.lblAktivitetsID.TabIndex = 44;
@@ -72,7 +73,7 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(303, 84);
+            this.btnRensa.Location = new System.Drawing.Point(645, 73);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 43;
@@ -81,7 +82,7 @@
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(235, 84);
+            this.btnSök.Location = new System.Drawing.Point(733, 30);
             this.btnSök.Name = "btnSök";
             this.btnSök.Size = new System.Drawing.Size(60, 23);
             this.btnSök.TabIndex = 42;
@@ -92,7 +93,7 @@
             // 
             this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVäljAvdelning.FormattingEnabled = true;
-            this.cmbVäljAvdelning.Location = new System.Drawing.Point(440, 54);
+            this.cmbVäljAvdelning.Location = new System.Drawing.Point(409, 75);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
             this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 41;
@@ -100,7 +101,7 @@
             // 
             // tbBenämning
             // 
-            this.tbBenämning.Location = new System.Drawing.Point(335, 53);
+            this.tbBenämning.Location = new System.Drawing.Point(304, 74);
             this.tbBenämning.Name = "tbBenämning";
             this.tbBenämning.Size = new System.Drawing.Size(94, 20);
             this.tbBenämning.TabIndex = 40;
@@ -108,7 +109,7 @@
             // 
             // tbAktivitetsID
             // 
-            this.tbAktivitetsID.Location = new System.Drawing.Point(235, 53);
+            this.tbAktivitetsID.Location = new System.Drawing.Point(204, 74);
             this.tbAktivitetsID.Name = "tbAktivitetsID";
             this.tbAktivitetsID.Size = new System.Drawing.Size(94, 20);
             this.tbAktivitetsID.TabIndex = 39;
@@ -117,7 +118,7 @@
             // btnRegistreraNyAktivitet
             // 
             this.btnRegistreraNyAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(624, 365);
+            this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(710, 398);
             this.btnRegistreraNyAktivitet.Name = "btnRegistreraNyAktivitet";
             this.btnRegistreraNyAktivitet.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyAktivitet.TabIndex = 38;
@@ -128,7 +129,7 @@
             // btnRedigeraAktivitet
             // 
             this.btnRedigeraAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraAktivitet.Location = new System.Drawing.Point(499, 363);
+            this.btnRedigeraAktivitet.Location = new System.Drawing.Point(585, 396);
             this.btnRedigeraAktivitet.Name = "btnRedigeraAktivitet";
             this.btnRedigeraAktivitet.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraAktivitet.TabIndex = 37;
@@ -143,24 +144,35 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAktiviteter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAktiviteter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAktiviteter.Location = new System.Drawing.Point(235, 121);
+            this.dgvAktiviteter.Location = new System.Drawing.Point(205, 122);
             this.dgvAktiviteter.Name = "dgvAktiviteter";
             this.dgvAktiviteter.RowHeadersWidth = 62;
-            this.dgvAktiviteter.Size = new System.Drawing.Size(501, 237);
+            this.dgvAktiviteter.Size = new System.Drawing.Size(614, 268);
             this.dgvAktiviteter.TabIndex = 36;
-            //
+            // 
             // ucMeny
-            //
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(5, 12);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
+            // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(199, 27);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 47;
+            this.lblSök.Text = "Sök";
             // 
             // frmAktiviteter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 432);
+            this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.lblAvdelning);
             this.Controls.Add(this.lblBenämning);
             this.Controls.Add(this.lblAktivitetsID);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button btnRedigeraAktivitet;
         private System.Windows.Forms.DataGridView dgvAktiviteter;
         private Forms.ucMeny ucMeny;
+        private System.Windows.Forms.Label lblSök;
     }
 }

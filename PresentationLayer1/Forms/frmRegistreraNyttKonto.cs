@@ -42,8 +42,8 @@ namespace PresentationLayer1.Forms
 
             else
             {
-                //try
-                //{
+                try
+                {
                     var result = schablons.SingleOrDefault(o => o.KontoID == int.Parse(tbKonto.Text));
 
                     if (result != null)
@@ -67,12 +67,12 @@ namespace PresentationLayer1.Forms
 
 
                     }
-                //}
+                }
 
-                //catch
-                //{
-                //    MessageBox.Show("Kontrollera uppgfiter");
-                //}
+                catch
+                {
+                    MessageBox.Show("Kontrollera uppgfiter");
+                }
 
             }
 

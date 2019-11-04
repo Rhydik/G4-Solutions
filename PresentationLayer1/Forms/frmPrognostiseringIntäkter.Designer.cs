@@ -34,12 +34,13 @@
             this.dgvPrognostiseringIntäkter = new System.Windows.Forms.DataGridView();
             this.btnLås = new System.Windows.Forms.Button();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportera
             // 
-            this.btnExportera.Location = new System.Drawing.Point(246, 393);
+            this.btnExportera.Location = new System.Drawing.Point(208, 397);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 92;
@@ -49,7 +50,7 @@
             // cmbMånad
             // 
             this.cmbMånad.FormattingEnabled = true;
-            this.cmbMånad.Location = new System.Drawing.Point(245, 43);
+            this.cmbMånad.Location = new System.Drawing.Point(208, 84);
             this.cmbMånad.Name = "cmbMånad";
             this.cmbMånad.Size = new System.Drawing.Size(121, 21);
             this.cmbMånad.TabIndex = 91;
@@ -58,7 +59,7 @@
             // lblMånad
             // 
             this.lblMånad.AutoSize = true;
-            this.lblMånad.Location = new System.Drawing.Point(243, 27);
+            this.lblMånad.Location = new System.Drawing.Point(206, 68);
             this.lblMånad.Name = "lblMånad";
             this.lblMånad.Size = new System.Drawing.Size(40, 13);
             this.lblMånad.TabIndex = 89;
@@ -68,35 +69,46 @@
             // dgvPrognostiseringIntäkter
             // 
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(247, 94);
+            this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 123);
             this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
             this.dgvPrognostiseringIntäkter.ReadOnly = true;
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
-            this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(524, 284);
+            this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(614, 268);
             this.dgvPrognostiseringIntäkter.TabIndex = 85;
             this.dgvPrognostiseringIntäkter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrognostiseringIntäkter_CellContentClick);
             // 
             // btnLås
             // 
-            this.btnLås.Location = new System.Drawing.Point(651, 384);
+            this.btnLås.Location = new System.Drawing.Point(703, 397);
             this.btnLås.Name = "btnLås";
             this.btnLås.Size = new System.Drawing.Size(120, 41);
             this.btnLås.TabIndex = 93;
             this.btnLås.Text = "Lås";
             this.btnLås.UseVisualStyleBackColor = true;
-            //
+            // 
             // ucMeny
-            //
+            // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(205, 31);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 94;
+            this.lblSök.Text = "Sök";
+            // 
             // frmPrognostiseringIntäkter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.btnLås);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.cmbMånad);
@@ -105,6 +117,7 @@
             this.Controls.Add(this.ucMeny);
             this.Name = "frmPrognostiseringIntäkter";
             this.Text = "frmPrognostiseringIntäkter";
+            this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -119,5 +132,6 @@
         private System.Windows.Forms.DataGridView dgvPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnLås;
         private Forms.ucMeny ucMeny;
+        private System.Windows.Forms.Label lblSök;
     }
 }

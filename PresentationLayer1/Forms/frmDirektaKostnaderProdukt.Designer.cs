@@ -64,7 +64,7 @@
             // 
             // btnDirektaKostnaderProdukt
             // 
-            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(370, 17);
+            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(446, 26);
             this.btnDirektaKostnaderProdukt.Name = "btnDirektaKostnaderProdukt";
             this.btnDirektaKostnaderProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderProdukt.TabIndex = 84;
@@ -73,7 +73,7 @@
             // 
             // btnPlacering
             // 
-            this.btnPlacering.Location = new System.Drawing.Point(244, 17);
+            this.btnPlacering.Location = new System.Drawing.Point(320, 26);
             this.btnPlacering.Name = "btnPlacering";
             this.btnPlacering.Size = new System.Drawing.Size(120, 41);
             this.btnPlacering.TabIndex = 83;
@@ -163,22 +163,24 @@
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLåsBudget.Location = new System.Drawing.Point(515, 393);
+            this.btnLåsBudget.Location = new System.Drawing.Point(574, 403);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 79;
             this.btnLåsBudget.Text = "Lås Budget";
             this.btnLåsBudget.UseVisualStyleBackColor = true;
+            this.btnLåsBudget.Click += new System.EventHandler(this.btnLåsBudget_Click);
             // 
             // btnSpara
             // 
             this.btnSpara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSpara.Location = new System.Drawing.Point(641, 393);
+            this.btnSpara.Location = new System.Drawing.Point(700, 403);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(120, 41);
             this.btnSpara.TabIndex = 78;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = true;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // btnAktiviteter
             // 
@@ -212,7 +214,7 @@
             // 
             // btnDirektaKostnaderAktivitet
             // 
-            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(496, 17);
+            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(572, 26);
             this.btnDirektaKostnaderAktivitet.Name = "btnDirektaKostnaderAktivitet";
             this.btnDirektaKostnaderAktivitet.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderAktivitet.TabIndex = 85;
@@ -222,7 +224,7 @@
             // btnExportera
             // 
             this.btnExportera.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnExportera.Location = new System.Drawing.Point(244, 393);
+            this.btnExportera.Location = new System.Drawing.Point(206, 403);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 80;
@@ -265,18 +267,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDirektaKostnaderProdukt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDirektaKostnaderProdukt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDirektaKostnaderProdukt.Location = new System.Drawing.Point(244, 94);
+            this.dgvDirektaKostnaderProdukt.Location = new System.Drawing.Point(209, 129);
             this.dgvDirektaKostnaderProdukt.Name = "dgvDirektaKostnaderProdukt";
             this.dgvDirektaKostnaderProdukt.ReadOnly = true;
             this.dgvDirektaKostnaderProdukt.RowHeadersWidth = 62;
-            this.dgvDirektaKostnaderProdukt.Size = new System.Drawing.Size(517, 293);
+            this.dgvDirektaKostnaderProdukt.Size = new System.Drawing.Size(614, 268);
             this.dgvDirektaKostnaderProdukt.TabIndex = 77;
             // 
             // frmDirektaKostnaderProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(835, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDirektaKostnaderProdukt);
             this.Controls.Add(this.btnPlacering);

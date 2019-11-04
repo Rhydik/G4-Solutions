@@ -30,6 +30,17 @@ namespace PresentationLayer1.Forms
             List<LästFilPrognos> convert = vektor.Cast<LästFilPrognos>().ToList();
             dgvPrognostiseringIntäkter.DataSource = convert;
 
+            dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false;
+            dgvPrognostiseringIntäkter.Columns["KundID"].Visible = false;
+            dgvPrognostiseringIntäkter.Columns["Kund"].Visible = false;
+            dgvPrognostiseringIntäkter.Columns["Datum"].Visible = false;
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Upparbetat");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Trend");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Prognos");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Prognos-Budget");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Budget");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Utfall mån");
+            dgvPrognostiseringIntäkter.Columns.Add("Column", "Utfall Acc");
         }
 
         private void Update()
@@ -37,43 +48,32 @@ namespace PresentationLayer1.Forms
 
         }
 
-        public static void LäggTillSpel(LästFilPrognos m)   //lagrar spel objekten (m) i vektorn vecSpel //denna metod kallas i metoden "matainLästFil".
+        public static void LäggTillIndex(LästFilPrognos m)   //lagrar objekten (m) i vektorn  //denna metod kallas i metoden "matainLästFil".
         {
             LästFilPrognos[] temp = new LästFilPrognos[vektor.Length + 1];
             for (int i = 0; i < vektor.Length; i++)
             {
                 temp[i] = vektor[i];
             }
-
             temp[vektor.Length] = m;
             vektor = temp;
-
         }
 
-        public void SparaFilMetod()                      // sparar information från vektorn in i en textfil.
+        public void SparaFilMetod() 
         {
-            
-
-            using (StreamWriter utfil = new StreamWriter("IntäktProduktKund.txt")) //här skriver den till dokumentet utefter den definierade "myDocPath" in i MyDocuments.
+            using (StreamWriter utfil = new StreamWriter("IntäktProduktKund.txt")) 
             {
-                for (int i = 0; i < vektor.Length; i++) //bara en for loop som går igenom vecktorn och skriver ut spel efter spel
+                for (int i = 0; i < vektor.Length; i++) //bara en for loop som går igenom vecktorn och skriver ut line för line
                 {
                     LästFilPrognos m = vektor[i];
                     utfil.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}", m.ProduktID, m.Produkt, m.KundID, m.Kund, m.Datum, m.Belopp);
-
                 }
-
                 utfil.Close();
-
             }
-
         }
 
-        public void LaddaRegister()    //laddar in data från textfil, vi skrev lite extra kod för att få textfilen i dokument istället för i source > repos > projekt
+        public void LaddaRegister()    //laddar in data från textfil
         {
-
-           
-
             StreamReader infil = new StreamReader("IntäktProduktKund.txt");
 
             while (true)
@@ -91,15 +91,13 @@ namespace PresentationLayer1.Forms
                 m.Datum = LästRad[4];
                 m.Belopp = LästRad[5];
 
-                LäggTillSpel(m);
+                LäggTillIndex(m);
             }
-
             infil.Close();
-
         }
 
 
-        public void TaBortSpel(int index) // Metoden som tar bort ett facks objekt från listan. 
+        public void TaBortIndex(int index) // Metoden som tar bort ett facks objekt från listan
         {
             LästFilPrognos[] temp = new LästFilPrognos[vektor.Length - 1];
 

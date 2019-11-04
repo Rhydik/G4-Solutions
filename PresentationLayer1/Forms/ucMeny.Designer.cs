@@ -82,6 +82,7 @@
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
+            this.btnPrognostiseringIntäkter.Click += new System.EventHandler(this.btnPrognostiseringIntäkter_Click);
             // 
             // btnBudgeteratResultat
             // 

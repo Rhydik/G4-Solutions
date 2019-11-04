@@ -89,5 +89,12 @@ namespace PresentationLayer1.Forms
                 (form as Form).Hide();
             }
         }
+
+        private void btnPrognostiseringIntäkter_Click(object sender, EventArgs e)
+        {
+            Forms.frmPrognostiseringIntäkter frmPrognostiseringIntäkter = new Forms.frmPrognostiseringIntäkter();
+            Hide();
+            frmPrognostiseringIntäkter.Show();
+        }
     }
 }

@@ -62,6 +62,7 @@
     <Compile Include="DTO\IntäktsbudgetProduktDTO.cs" />
     <Compile Include="DTO\PrognosDTO.cs" />
     <Compile Include="KundIntäktsbudget.cs" />
+    <Compile Include="LästFilPrognos.cs" />
     <Compile Include="ProduktIntäktsbudget.cs" />
     <Compile Include="Repositories\IntäktsRepository.cs" />
     <Compile Include="Repositories\BehörighetRepository.cs" />

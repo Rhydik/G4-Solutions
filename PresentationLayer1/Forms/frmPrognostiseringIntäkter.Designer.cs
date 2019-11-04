@@ -117,6 +117,7 @@
             this.Controls.Add(this.ucMeny);
             this.Name = "frmPrognostiseringIntäkter";
             this.Text = "frmPrognostiseringIntäkter";
+            this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

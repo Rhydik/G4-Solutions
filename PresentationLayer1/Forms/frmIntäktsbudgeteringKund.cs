@@ -24,6 +24,7 @@ namespace PresentationLayer1.Forms
             Hide();
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
+            ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
         }
 
         private void Hide()

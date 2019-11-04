@@ -43,8 +43,6 @@ namespace PresentationLayer1.Forms
                 kategori = "";
             }
 
-            dataGridView.DataSource = businessManager.GetKunderBySearch(tbKundID.Text, tbNamn.Text, kategori);
-
             if (tbKundID.TextLength == 0)
             {
                 dataGridView.DataSource = businessManager.GetAllKunder();

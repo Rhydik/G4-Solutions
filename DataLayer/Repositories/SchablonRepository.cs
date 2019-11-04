@@ -74,7 +74,7 @@ namespace DataLayer
 
                 
 
-                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = namn, Belopp = schablonKostnad, Konto_KontoID = tempSchablon.Konto_KontoID};
+                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = konto.ToString(), Belopp = schablonKostnad, Beskrivning = namn, Konto_KontoID = tempSchablon.Konto_KontoID};
                 db.schablonkostnad.Remove(tempSchablon);
                 db.schablonkostnad.Add(schablon);
 

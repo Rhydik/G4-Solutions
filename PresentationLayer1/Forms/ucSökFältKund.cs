@@ -36,15 +36,22 @@ namespace PresentationLayer1.Forms
         {
             if (dataGridView == null) return;
 
+            string kategori = cmbKundkategori.Text;
+
+            if (cmbKundkategori.Text.Equals("Alla"))
+            {
+                kategori = "";
+            }
+
+            dataGridView.DataSource = businessManager.GetKunderBySearch(tbKundID.Text, tbNamn.Text, kategori);
+
             if (tbKundID.TextLength == 0)
             {
-                kunds = businessManager.GetAllKunder();
-                dataGridView.DataSource = kunds;
+                dataGridView.DataSource = businessManager.GetAllKunder();
             }
             else
             {
-                kunds = businessManager.GetKunderByID(tbKundID.Text);
-                dataGridView.DataSource = kunds;
+                dataGridView.DataSource = businessManager.GetKunderBySearch(tbKundID.Text, tbNamn.Text, kategori);
             }
         }
 
@@ -52,15 +59,20 @@ namespace PresentationLayer1.Forms
         {
             if (dataGridView == null) return;
 
+            string kategori = cmbKundkategori.Text;
+
+            if (cmbKundkategori.Text.Equals("Alla"))
+            {
+                kategori = "";
+            }
+ 
             if (tbNamn.TextLength == 0)
             {
-                kunds = businessManager.GetAllKunder();
-                dataGridView.DataSource = kunds;
+                dataGridView.DataSource = businessManager.GetAllKunder();
             }
             else
             {
-                kunds = businessManager.GetKunderByNamn(tbNamn.Text);
-                dataGridView.DataSource = kunds;
+                dataGridView.DataSource = businessManager.GetKunderBySearch(tbKundID.Text, tbNamn.Text, kategori);
             }
         }
 
@@ -68,15 +80,18 @@ namespace PresentationLayer1.Forms
         {
             if (dataGridView == null) return;
 
-            if (cmbKundkategori.Text == "Alla")
+            string kategori = cmbKundkategori.Text;
+
+            if (cmbKundkategori.Text.Equals("Alla"))
             {
+                kategori = ""; 
                 kunds = businessManager.GetAllKunder();
                 dataGridView.DataSource = kunds;
             }
+
             else
             {
-                kunds = businessManager.GetKunderByKategori(cmbKundkategori.Text);
-                dataGridView.DataSource = kunds;
+                dataGridView.DataSource = businessManager.GetKunderBySearch(tbKundID.Text, tbNamn.Text, kategori);
             }
         }
 

@@ -80,7 +80,6 @@
             this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKundkategori.FormattingEnabled = true;
             this.cmbKundkategori.Items.AddRange(new object[] {
-            "Alla",
             "Offentlig",
             "Näringsliv"});
             this.cmbKundkategori.Location = new System.Drawing.Point(273, 21);

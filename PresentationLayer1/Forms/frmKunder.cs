@@ -26,6 +26,7 @@ namespace PresentationLayer1
             RefreshData();
 
             HideFromUser();
+            ucSökFältKund.SetGridView(this.dgvKunder);
         }
 
         private void btnKunder_Click(object sender, EventArgs e)

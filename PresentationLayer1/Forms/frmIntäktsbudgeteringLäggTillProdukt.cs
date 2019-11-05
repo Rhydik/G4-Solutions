@@ -38,12 +38,11 @@ namespace PresentationLayer1.Forms
         private void btnSpara_Click_1(object sender, EventArgs e)
         {
             var produkt = (ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem;
-            Intäktsbudget intäktsbudget = new Intäktsbudget();
             var avtal = decimal.Parse(tbAvtal.Text);
             var tillägg = decimal.Parse(tbTilägg.Text);
             var gradT = bool.Parse(cmbGradT.Text = cmbGradT.Text == "Säker" ? "true" : "False"); ;
             var gradA = bool.Parse(cmbGradA.Text = cmbGradA.Text == "Säker" ? "true" : "False"); ;
-            var budget = decimal.Parse(tbTilägg.Text);
+            var budget = decimal.Parse(tbBudget.Text);
             var tim = int.Parse(tbTimmar.Text);
             var kommentar = rtbKommentar.Text;
             businessManager.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, budget, tim, kommentar, kundID);

@@ -40,7 +40,7 @@
             this.cmbGradA = new System.Windows.Forms.ComboBox();
             this.lblAvtal = new System.Windows.Forms.Label();
             this.tbAvtal = new System.Windows.Forms.TextBox();
-            this.lblProdukt = new System.Windows.Forms.Label();
+            this.lblIntäktProdukt = new System.Windows.Forms.Label();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -52,7 +52,6 @@
             this.lblKund = new System.Windows.Forms.Label();
             this.lblKundID = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
             this.cmbKundkategori = new System.Windows.Forms.ComboBox();
             this.tbKund = new System.Windows.Forms.TextBox();
             this.tbKundID = new System.Windows.Forms.TextBox();
@@ -86,7 +85,6 @@
             this.lblTimmar.Size = new System.Drawing.Size(54, 16);
             this.lblTimmar.TabIndex = 74;
             this.lblTimmar.Text = "Timmar";
-            this.lblTimmar.Click += new System.EventHandler(this.lblTimmar_Click);
             // 
             // tbTimmar
             // 
@@ -94,7 +92,6 @@
             this.tbTimmar.Name = "tbTimmar";
             this.tbTimmar.Size = new System.Drawing.Size(188, 20);
             this.tbTimmar.TabIndex = 73;
-            this.tbTimmar.TextChanged += new System.EventHandler(this.tbTimmar_TextChanged);
             // 
             // lblTillägg
             // 
@@ -126,6 +123,9 @@
             // cmbGradT
             // 
             this.cmbGradT.FormattingEnabled = true;
+            this.cmbGradT.Items.AddRange(new object[] {
+            "Säker",
+            "Osäker"});
             this.cmbGradT.Location = new System.Drawing.Point(21, 462);
             this.cmbGradT.Name = "cmbGradT";
             this.cmbGradT.Size = new System.Drawing.Size(188, 21);
@@ -144,6 +144,9 @@
             // cmbGradA
             // 
             this.cmbGradA.FormattingEnabled = true;
+            this.cmbGradA.Items.AddRange(new object[] {
+            "Säker",
+            "Osäker"});
             this.cmbGradA.Location = new System.Drawing.Point(21, 550);
             this.cmbGradA.Name = "cmbGradA";
             this.cmbGradA.Size = new System.Drawing.Size(188, 21);
@@ -166,15 +169,15 @@
             this.tbAvtal.Size = new System.Drawing.Size(188, 20);
             this.tbAvtal.TabIndex = 65;
             // 
-            // lblProdukt
+            // lblIntäktProdukt
             // 
-            this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdukt.Location = new System.Drawing.Point(186, 18);
-            this.lblProdukt.Name = "lblProdukt";
-            this.lblProdukt.Size = new System.Drawing.Size(64, 20);
-            this.lblProdukt.TabIndex = 62;
-            this.lblProdukt.Text = "Produkt";
+            this.lblIntäktProdukt.AutoSize = true;
+            this.lblIntäktProdukt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIntäktProdukt.Location = new System.Drawing.Point(186, 18);
+            this.lblIntäktProdukt.Name = "lblIntäktProdukt";
+            this.lblIntäktProdukt.Size = new System.Drawing.Size(64, 20);
+            this.lblIntäktProdukt.TabIndex = 62;
+            this.lblIntäktProdukt.Text = "Produkt";
             // 
             // btnAvbryt
             // 
@@ -185,6 +188,7 @@
             this.btnAvbryt.TabIndex = 61;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
+            this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
             // 
             // label6
             // 
@@ -203,6 +207,7 @@
             this.btnSpara.TabIndex = 59;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
+            this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
             // lblBudget
             // 
@@ -268,31 +273,28 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(728, 75);
+            this.btnRensa.Location = new System.Drawing.Point(552, 75);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 82;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(662, 75);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 81;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // cmbKundkategori
             // 
             this.cmbKundkategori.BackColor = System.Drawing.SystemColors.Window;
             this.cmbKundkategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbKundkategori.FormattingEnabled = true;
+            this.cmbKundkategori.Items.AddRange(new object[] {
+            "Alla",
+            "Näringsliv",
+            "Offentlig"});
             this.cmbKundkategori.Location = new System.Drawing.Point(328, 75);
             this.cmbKundkategori.Name = "cmbKundkategori";
             this.cmbKundkategori.Size = new System.Drawing.Size(192, 21);
             this.cmbKundkategori.TabIndex = 80;
+            this.cmbKundkategori.SelectedIndexChanged += new System.EventHandler(this.cmbKundkategori_SelectedIndexChanged);
             // 
             // tbKund
             // 
@@ -300,6 +302,7 @@
             this.tbKund.Name = "tbKund";
             this.tbKund.Size = new System.Drawing.Size(128, 20);
             this.tbKund.TabIndex = 79;
+            this.tbKund.TextChanged += new System.EventHandler(this.tbKund_TextChanged);
             // 
             // tbKundID
             // 
@@ -307,6 +310,7 @@
             this.tbKundID.Name = "tbKundID";
             this.tbKundID.Size = new System.Drawing.Size(128, 20);
             this.tbKundID.TabIndex = 78;
+            this.tbKundID.TextChanged += new System.EventHandler(this.tbKundID_TextChanged);
             // 
             // frmIntäktsbudgeteringLäggTillKund
             // 
@@ -318,7 +322,6 @@
             this.Controls.Add(this.lblKund);
             this.Controls.Add(this.lblKundID);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.cmbKundkategori);
             this.Controls.Add(this.tbKund);
             this.Controls.Add(this.tbKundID);
@@ -335,7 +338,7 @@
             this.Controls.Add(this.cmbGradA);
             this.Controls.Add(this.lblAvtal);
             this.Controls.Add(this.tbAvtal);
-            this.Controls.Add(this.lblProdukt);
+            this.Controls.Add(this.lblIntäktProdukt);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
@@ -343,8 +346,8 @@
             this.Controls.Add(this.lblLäggTillKundFör);
             this.Controls.Add(this.tbBudget);
             this.Name = "frmIntäktsbudgeteringLäggTillKund";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Lägg till Kund  | G4 Solutions Economy System";
-            this.Load += new System.EventHandler(this.frmIntäktsbudgeteringLäggTillKund_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,7 +368,7 @@
         private System.Windows.Forms.ComboBox cmbGradA;
         private System.Windows.Forms.Label lblAvtal;
         private System.Windows.Forms.TextBox tbAvtal;
-        private System.Windows.Forms.Label lblProdukt;
+        private System.Windows.Forms.Label lblIntäktProdukt;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;
@@ -377,7 +380,6 @@
         private System.Windows.Forms.Label lblKund;
         private System.Windows.Forms.Label lblKundID;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.ComboBox cmbKundkategori;
         private System.Windows.Forms.TextBox tbKund;
         private System.Windows.Forms.TextBox tbKundID;

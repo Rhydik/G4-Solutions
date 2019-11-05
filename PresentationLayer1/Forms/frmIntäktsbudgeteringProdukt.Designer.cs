@@ -57,6 +57,7 @@
             this.lblValdProdukt = new System.Windows.Forms.Label();
             this.btnVäljNyProdukt = new System.Windows.Forms.Button();
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +157,7 @@
             this.btnLäggTillKund.TabIndex = 46;
             this.btnLäggTillKund.Text = "Lägg till kund";
             this.btnLäggTillKund.UseVisualStyleBackColor = true;
+            this.btnLäggTillKund.Click += new System.EventHandler(this.btnLäggTillKund_Click);
             // 
             // dgvIntäktsbudgeteringProdukt
             // 
@@ -268,12 +270,13 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(511, 54);
+            this.btnRensa.Location = new System.Drawing.Point(660, 54);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 20);
             this.btnRensa.TabIndex = 51;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // btnVäljProdukt
             // 
@@ -341,11 +344,23 @@
             this.ucMeny1.Size = new System.Drawing.Size(194, 438);
             this.ucMeny1.TabIndex = 5;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(511, 56);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(143, 17);
+            this.checkBox1.TabIndex = 64;
+            this.checkBox1.Text = "Ej budgeterade produker";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // frmIntäktsbudgeteringProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnVäljNyProdukt);
             this.Controls.Add(this.lblValdProdukt);
             this.Controls.Add(this.lblValdProduktID);
@@ -402,5 +417,6 @@
         private System.Windows.Forms.Label lblValdProduktID;
         private System.Windows.Forms.Label lblValdProdukt;
         private System.Windows.Forms.Button btnVäljNyProdukt;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

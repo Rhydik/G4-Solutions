@@ -82,6 +82,32 @@ namespace DataLayer
             }
         }
 
+        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string produktID)
+        {
+            using (var db = new DataContext())
+            {
+                Intäktsbudget intäktsbudget = new Intäktsbudget();
+                ProduktIntäktsbudget produktIntäktsbudget = new ProduktIntäktsbudget() { Intäktsbudget = intäktsbudget, Intäktsbudget_IntäktsbudgetID = intäktsbudget.IntäktsbudgetID, Produkt_ProduktID = produktID };
+                KundIntäktsbudget kundIntäktsbudget = new KundIntäktsbudget() { Intäktsbudget = intäktsbudget, Kund_KundID = kund.KundID, Intäktsbudget_IntäktsbudgetID = intäktsbudget.IntäktsbudgetID };
+
+
+                intäktsbudget.ProduktIntäktsbudget.Add(produktIntäktsbudget);
+                intäktsbudget.Avtal = avtal;
+                intäktsbudget.Tillägg = tillägg;
+                intäktsbudget.GradT = gradT;
+                intäktsbudget.GradA = gradA;
+                intäktsbudget.Budget = budget;
+                intäktsbudget.Tim = tim;
+                intäktsbudget.KundIntäktsbudget.Add(kundIntäktsbudget);
+                intäktsbudget.Kommentar = kommentar;
+                intäktsbudget.Låst = false;
+
+                db.Intäktsbudget.Add(intäktsbudget);
+                db.SaveChanges();
+            }
+
+        }
+
         public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)
         {
             using (var db = new DataContext())
@@ -102,6 +128,24 @@ namespace DataLayer
             {
                 var intäktsbudget = db.KundIntäktsbudget.Where(x => x.Kund_KundID == kundid);
                 return intäktsbudget.ToList();
+            }
+        }
+
+        public List<ProduktDTO> GetProduktWithoutIntäkt()
+        {
+            using (var db = new DataContext())
+            {
+                var test = from p in db.ProduktIntäktsbudget
+                           join x in db.Intäktsbudget on p.Intäktsbudget_IntäktsbudgetID equals x.IntäktsbudgetID
+                           join prod in db.Produkt on p.Produkt_ProduktID equals prod.ProduktID
+                           select new ProduktDTO { ProduktID = prod.ProduktID, Avdelning = prod.Avdelning.Namn, Namn = prod.Namn, Produktgrupp = prod.Produktgrupp.Namn, Produktkategori = prod.Produktkategori.Namn };
+
+                var produkt = from x in db.Produkt
+                              select new ProduktDTO { ProduktID = x.ProduktID, Avdelning = x.Avdelning.Namn, Namn = x.Namn, Produktgrupp = x.Produktgrupp.Namn, Produktkategori = x.Produktkategori.Namn };
+
+                var difference = produkt.Where(p => !test.Contains(p));
+
+                return difference.ToList();
             }
         }
     }

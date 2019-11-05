@@ -36,20 +36,15 @@
             this.btnIntäktsbudgeteringKund = new System.Windows.Forms.Button();
             this.btnBehörighet = new System.Windows.Forms.Button();
             this.btnTaBortKund = new System.Windows.Forms.Button();
-            this.tbProduktID = new System.Windows.Forms.TextBox();
             this.btnLäggTillKund = new System.Windows.Forms.Button();
             this.dgvIntäktsbudgeteringProdukt = new System.Windows.Forms.DataGridView();
             this.btnSchablonkostnad = new System.Windows.Forms.Button();
             this.btnAktiviteter = new System.Windows.Forms.Button();
             this.btnPersonal = new System.Windows.Forms.Button();
-            this.tbProdukt = new System.Windows.Forms.TextBox();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnExportera = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
             this.btnLåsBudget = new System.Windows.Forms.Button();
-            this.lblProdukt = new System.Windows.Forms.Label();
-            this.lblProduktID = new System.Windows.Forms.Label();
-            this.btnRensa = new System.Windows.Forms.Button();
             this.btnVäljProdukt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +53,7 @@
             this.btnVäljNyProdukt = new System.Windows.Forms.Button();
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ucSökFältProdukt = new PresentationLayer1.Forms.ucSökFältProdukt();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,13 +137,6 @@
             this.btnTaBortKund.Text = "Ta bort kund";
             this.btnTaBortKund.UseVisualStyleBackColor = true;
             // 
-            // tbProduktID
-            // 
-            this.tbProduktID.Location = new System.Drawing.Point(210, 54);
-            this.tbProduktID.Name = "tbProduktID";
-            this.tbProduktID.Size = new System.Drawing.Size(128, 20);
-            this.tbProduktID.TabIndex = 47;
-            // 
             // btnLäggTillKund
             // 
             this.btnLäggTillKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,13 +192,6 @@
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
             // 
-            // tbProdukt
-            // 
-            this.tbProdukt.Location = new System.Drawing.Point(366, 54);
-            this.tbProdukt.Name = "tbProdukt";
-            this.tbProdukt.Size = new System.Drawing.Size(128, 20);
-            this.tbProdukt.TabIndex = 48;
-            // 
             // btnProdukter
             // 
             this.btnProdukter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -249,34 +231,6 @@
             this.btnLåsBudget.TabIndex = 56;
             this.btnLåsBudget.Text = "Lås Budget";
             this.btnLåsBudget.UseVisualStyleBackColor = true;
-            // 
-            // lblProdukt
-            // 
-            this.lblProdukt.AutoSize = true;
-            this.lblProdukt.Location = new System.Drawing.Point(364, 33);
-            this.lblProdukt.Name = "lblProdukt";
-            this.lblProdukt.Size = new System.Drawing.Size(44, 13);
-            this.lblProdukt.TabIndex = 53;
-            this.lblProdukt.Text = "Produkt";
-            // 
-            // lblProduktID
-            // 
-            this.lblProduktID.AutoSize = true;
-            this.lblProduktID.Location = new System.Drawing.Point(210, 33);
-            this.lblProduktID.Name = "lblProduktID";
-            this.lblProduktID.Size = new System.Drawing.Size(55, 13);
-            this.lblProduktID.TabIndex = 52;
-            this.lblProduktID.Text = "ProduktID";
-            // 
-            // btnRensa
-            // 
-            this.btnRensa.Location = new System.Drawing.Point(660, 54);
-            this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 20);
-            this.btnRensa.TabIndex = 51;
-            this.btnRensa.Text = "Rensa";
-            this.btnRensa.UseVisualStyleBackColor = true;
-            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // btnVäljProdukt
             // 
@@ -347,7 +301,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(511, 56);
+            this.checkBox1.Location = new System.Drawing.Point(623, 88);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(143, 17);
             this.checkBox1.TabIndex = 64;
@@ -355,11 +309,19 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // ucSökFältProdukt
+            // 
+            this.ucSökFältProdukt.Location = new System.Drawing.Point(209, 28);
+            this.ucSökFältProdukt.Name = "ucSökFältProdukt";
+            this.ucSökFältProdukt.Size = new System.Drawing.Size(534, 53);
+            this.ucSökFältProdukt.TabIndex = 65;
+            // 
             // frmIntäktsbudgeteringProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.ucSökFältProdukt);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnVäljNyProdukt);
             this.Controls.Add(this.lblValdProdukt);
@@ -368,15 +330,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVäljProdukt);
             this.Controls.Add(this.btnTaBortKund);
-            this.Controls.Add(this.tbProduktID);
             this.Controls.Add(this.btnLäggTillKund);
             this.Controls.Add(this.dgvIntäktsbudgeteringProdukt);
-            this.Controls.Add(this.tbProdukt);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
-            this.Controls.Add(this.lblProdukt);
-            this.Controls.Add(this.lblProduktID);
-            this.Controls.Add(this.btnRensa);
             this.Controls.Add(this.ucMeny1);
             this.Name = "frmIntäktsbudgeteringProdukt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -396,20 +353,15 @@
         private System.Windows.Forms.Button btnIntäktsbudgeteringKund;
         private System.Windows.Forms.Button btnBehörighet;
         private System.Windows.Forms.Button btnTaBortKund;
-        private System.Windows.Forms.TextBox tbProduktID;
         private System.Windows.Forms.Button btnLäggTillKund;
         private System.Windows.Forms.DataGridView dgvIntäktsbudgeteringProdukt;
         private System.Windows.Forms.Button btnSchablonkostnad;
         private System.Windows.Forms.Button btnAktiviteter;
         private System.Windows.Forms.Button btnPersonal;
-        private System.Windows.Forms.TextBox tbProdukt;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnExportera;
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.Button btnLåsBudget;
-        private System.Windows.Forms.Label lblProdukt;
-        private System.Windows.Forms.Label lblProduktID;
-        private System.Windows.Forms.Button btnRensa;
         private Forms.ucMeny ucMeny1;
         private System.Windows.Forms.Button btnVäljProdukt;
         private System.Windows.Forms.Label label1;
@@ -418,5 +370,6 @@
         private System.Windows.Forms.Label lblValdProdukt;
         private System.Windows.Forms.Button btnVäljNyProdukt;
         private System.Windows.Forms.CheckBox checkBox1;
+        private ucSökFältProdukt ucSökFältProdukt;
     }
 }

@@ -28,6 +28,8 @@ namespace PresentationLayer1.Forms
             Load();
             produkts = businessManager.GetAllProdukter();
             dgvProdukter.DataSource = produkts;
+            ucSökFältProdukt.SetGridView(dgvProdukter);
+            ucSökFältProdukt.Load();
         }
 
         public void Load()
@@ -53,5 +55,7 @@ namespace PresentationLayer1.Forms
         {
             Close();
         }
+
+
     }
 }

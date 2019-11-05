@@ -24,6 +24,8 @@ namespace PresentationLayer1.Forms
             Hide();
             produkter = businessManager.GetAllProdukter();
             dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            ucSökFältProdukt.SetGridView(dgvIntäktsbudgeteringProdukt);
+            ucSökFältProdukt.Load();
         }
 
         private void Hide()
@@ -64,13 +66,8 @@ namespace PresentationLayer1.Forms
             lblValdProduktID.Text = "Ej vald";
             produkter = businessManager.GetAllProdukter();
             dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            ucSökFältProdukt.Rensa();
             Hide();
-        }
-
-        private void btnRensa_Click(object sender, EventArgs e)
-        {
-            tbProdukt.Clear();
-            tbProduktID.Clear();
         }
 
         private void btnLäggTillKund_Click(object sender, EventArgs e)

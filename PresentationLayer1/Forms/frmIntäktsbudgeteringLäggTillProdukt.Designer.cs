@@ -48,6 +48,7 @@
             this.rtbKommentar = new System.Windows.Forms.RichTextBox();
             this.lblKommentar = new System.Windows.Forms.Label();
             this.dgvProdukter = new System.Windows.Forms.DataGridView();
+            this.ucSökFältProdukt = new PresentationLayer1.Forms.ucSökFältProdukt();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,10 +233,17 @@
             // dgvProdukter
             // 
             this.dgvProdukter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProdukter.Location = new System.Drawing.Point(15, 34);
+            this.dgvProdukter.Location = new System.Drawing.Point(12, 109);
             this.dgvProdukter.Name = "dgvProdukter";
-            this.dgvProdukter.Size = new System.Drawing.Size(773, 281);
+            this.dgvProdukter.Size = new System.Drawing.Size(773, 200);
             this.dgvProdukter.TabIndex = 56;
+            // 
+            // ucSökFältProdukt
+            // 
+            this.ucSökFältProdukt.Location = new System.Drawing.Point(12, 50);
+            this.ucSökFältProdukt.Name = "ucSökFältProdukt";
+            this.ucSökFältProdukt.Size = new System.Drawing.Size(534, 53);
+            this.ucSökFältProdukt.TabIndex = 57;
             // 
             // frmIntäktsbudgeteringLäggTillProdukt
             // 
@@ -243,6 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(800, 603);
+            this.Controls.Add(this.ucSökFältProdukt);
             this.Controls.Add(this.dgvProdukter);
             this.Controls.Add(this.lblKommentar);
             this.Controls.Add(this.rtbKommentar);
@@ -293,5 +302,6 @@
         private System.Windows.Forms.RichTextBox rtbKommentar;
         private System.Windows.Forms.Label lblKommentar;
         private System.Windows.Forms.DataGridView dgvProdukter;
+        private ucSökFältProdukt ucSökFältProdukt;
     }
 }

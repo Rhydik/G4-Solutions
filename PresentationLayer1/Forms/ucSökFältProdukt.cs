@@ -14,7 +14,7 @@ namespace PresentationLayer1.Forms
 {
     public partial class ucSökFältProdukt : UserControl
     {
-        private BusinessManager businessManager;
+        private BusinessManager businessManager = new BusinessManager();
         private List<ProduktDTO> produkter;
         private DataGridView dataGridView;
         public ucSökFältProdukt()
@@ -26,9 +26,7 @@ namespace PresentationLayer1.Forms
             this.dataGridView = dataGridView;
         }
         public void Load()
-        {
-            businessManager = new BusinessManager();
-            
+        {   
             var kategori = businessManager.GetProduktByKategori();
             
             cmbProduktkategori.DataSource = kategori;

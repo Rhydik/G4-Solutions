@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class ucSökFältProdukter
+    partial class ucSökFältProdukt
     {
         /// <summary> 
         /// Required designer variable.
@@ -87,6 +87,7 @@
             this.cmbProduktgrupp.Name = "cmbProduktgrupp";
             this.cmbProduktgrupp.Size = new System.Drawing.Size(84, 21);
             this.cmbProduktgrupp.TabIndex = 50;
+            this.cmbProduktgrupp.SelectedIndexChanged += new System.EventHandler(this.cmbProduktgrupp_SelectedIndexChanged);
             // 
             // tbNamn
             // 
@@ -94,6 +95,7 @@
             this.tbNamn.Name = "tbNamn";
             this.tbNamn.Size = new System.Drawing.Size(80, 20);
             this.tbNamn.TabIndex = 49;
+            this.tbNamn.TextChanged += new System.EventHandler(this.tbNamn_TextChanged);
             // 
             // tbProduktID
             // 
@@ -101,6 +103,7 @@
             this.tbProduktID.Name = "tbProduktID";
             this.tbProduktID.Size = new System.Drawing.Size(90, 20);
             this.tbProduktID.TabIndex = 48;
+            this.tbProduktID.TextChanged += new System.EventHandler(this.tbProduktID_TextChanged);
             // 
             // lblProduktkategori
             // 
@@ -129,6 +132,7 @@
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(92, 21);
             this.cmbAvdelning.TabIndex = 57;
+            this.cmbAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbAvdelning_SelectedIndexChanged);
             // 
             // cmbProduktkategori
             // 
@@ -139,8 +143,9 @@
             this.cmbProduktkategori.Name = "cmbProduktkategori";
             this.cmbProduktkategori.Size = new System.Drawing.Size(92, 21);
             this.cmbProduktkategori.TabIndex = 58;
+            this.cmbProduktkategori.SelectedIndexChanged += new System.EventHandler(this.cmbProduktkategori_SelectedIndexChanged);
             // 
-            // ucSökFältProdukter
+            // ucSökFältProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +160,7 @@
             this.Controls.Add(this.cmbProduktgrupp);
             this.Controls.Add(this.tbNamn);
             this.Controls.Add(this.tbProduktID);
-            this.Name = "ucSökFältProdukter";
+            this.Name = "ucSökFältProdukt";
             this.Size = new System.Drawing.Size(534, 53);
             this.ResumeLayout(false);
             this.PerformLayout();

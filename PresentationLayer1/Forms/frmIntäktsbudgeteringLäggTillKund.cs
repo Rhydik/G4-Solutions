@@ -27,55 +27,7 @@ namespace PresentationLayer1.Forms
             lblIntäktProdukt.Text = produktNamn;
             kunder = businessManager.GetAllKunder();
             dgv.DataSource = kunder;
-        }
-
-        private void tbKundID_TextChanged(object sender, EventArgs e)
-        {
-            if (tbKundID.TextLength == 0)
-            {
-                kunder = businessManager.GetAllKunder();
-                dgv.DataSource = kunder;
-            }
-            else
-            {
-                kunder = businessManager.GetKunderByID(tbKundID.Text);
-                dgv.DataSource = kunder;
-            }
-        }
-
-        private void tbKund_TextChanged(object sender, EventArgs e)
-        {
-            if (tbKund.TextLength == 0)
-            {
-                kunder = businessManager.GetAllKunder();
-                dgv.DataSource = kunder;
-            }
-            else
-            {
-                kunder = businessManager.GetKunderByNamn(tbKund.Text);
-                dgv.DataSource = kunder;
-            }
-        }
-
-        private void cmbKundkategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbKundkategori.Text == "Alla")
-            {
-                kunder = businessManager.GetAllKunder();
-                dgv.DataSource = kunder;
-            }
-            else
-            {
-                kunder = businessManager.GetKunderByKategori(cmbKundkategori.Text);
-                dgv.DataSource = kunder;
-            }
-        }
-
-        private void btnRensa_Click(object sender, EventArgs e)
-        {
-            tbKund.Clear();
-            tbKundID.Clear();
-            cmbKundkategori.Text = "Alla";
+            ucSökFältKund.SetGridView(dgv);
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)

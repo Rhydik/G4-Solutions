@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PresentationLayer1.Forms
 {
@@ -24,6 +25,8 @@ namespace PresentationLayer1.Forms
             Hide();
             produkter = businessManager.GetAllProdukter();
             dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            ucSökFältProdukt.SetGridView(dgvIntäktsbudgeteringProdukt);
+            ucSökFältProdukt.Load();
         }
 
         private void Hide()
@@ -64,13 +67,8 @@ namespace PresentationLayer1.Forms
             lblValdProduktID.Text = "Ej vald";
             produkter = businessManager.GetAllProdukter();
             dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            ucSökFältProdukt.Rensa();
             Hide();
-        }
-
-        private void btnRensa_Click(object sender, EventArgs e)
-        {
-            tbProdukt.Clear();
-            tbProduktID.Clear();
         }
 
         private void btnLäggTillKund_Click(object sender, EventArgs e)
@@ -92,5 +90,20 @@ namespace PresentationLayer1.Forms
                 dgvIntäktsbudgeteringProdukt.DataSource = produkter;
             }
         }
+
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+
+            string filename = save.FileName; 
+
+            save.DefaultExt = ".xls";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                businessManager.Exportera(dgvIntäktsbudgeteringProdukt, save.FileName);
+                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
+            }
+        }
+
     }
 }

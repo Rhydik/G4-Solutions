@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnResultat = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
             this.btnBudgeteratResultat = new System.Windows.Forms.Button();
             this.btnKostnadsbudgetering = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnResultat);
             this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
             this.panel1.Controls.Add(this.btnBudgeteratResultat);
             this.panel1.Controls.Add(this.btnKostnadsbudgetering);
@@ -62,16 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
             this.panel1.TabIndex = 4;
-            // 
-            // btnResultat
-            // 
-            this.btnResultat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResultat.Location = new System.Drawing.Point(15, 381);
-            this.btnResultat.Name = "btnResultat";
-            this.btnResultat.Size = new System.Drawing.Size(158, 23);
-            this.btnResultat.TabIndex = 2;
-            this.btnResultat.Text = "Resultat";
-            this.btnResultat.UseVisualStyleBackColor = true;
             // 
             // btnPrognostiseringIntäkter
             // 
@@ -93,6 +81,7 @@
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
+            this.btnBudgeteratResultat.Click += new System.EventHandler(this.btnBudgeteratResultat_Click);
             // 
             // btnKostnadsbudgetering
             // 
@@ -207,7 +196,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnResultat;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnBudgeteratResultat;
         private System.Windows.Forms.Button btnKostnadsbudgetering;

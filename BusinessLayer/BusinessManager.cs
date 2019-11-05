@@ -66,6 +66,11 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
+        public string GetProduktIntäkter(ProduktDTO produkt)
+        {
+            return repositoryFacade.produktRepository.GetProduktIntäkter(produkt);
+        }
+
         public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string kundId)
         {
             repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, budget, tim, kommentar, kundId);

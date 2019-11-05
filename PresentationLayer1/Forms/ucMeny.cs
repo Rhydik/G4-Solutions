@@ -96,5 +96,12 @@ namespace PresentationLayer1.Forms
             Hide();
             frmPrognostiseringIntäkter.Show();
         }
+
+        private void btnBudgeteratResultat_Click(object sender, EventArgs e)
+        {
+            HideAllOpenForms();
+            frmBudgeteratResultat frmBudgeteratResultat = new frmBudgeteratResultat();
+            frmBudgeteratResultat.Show();
+        }
     }
 }

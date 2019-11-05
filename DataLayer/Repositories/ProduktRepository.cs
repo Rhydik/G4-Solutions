@@ -74,6 +74,20 @@ namespace DataLayer
             }
         }
 
+        public string GetProduktIntäkter(ProduktDTO produkt)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.ProduktIntäktsbudget
+                            where x.Produkt_ProduktID == produkt.ProduktID
+                            join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                            select y.Avtal;
+
+                query.ToList();
+                return null;
+            }
+        }
+
         public void RemoveProdukt(ProduktDTO produkt)
         {
             using (var db = new DataContext())

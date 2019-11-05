@@ -37,7 +37,6 @@
             this.btnPlacering = new System.Windows.Forms.Button();
             this.btnDirektaKostnaderProdukt = new System.Windows.Forms.Button();
             this.btnDirektaKostnaderAktivitet = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlacering)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +87,9 @@
             // cmbAvdelning
             // 
             this.cmbAvdelning.FormattingEnabled = true;
+            this.cmbAvdelning.Items.AddRange(new object[] {
+            "Driftavdelning",
+            "Utveckling- och förvaltning"});
             this.cmbAvdelning.Location = new System.Drawing.Point(702, 96);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(121, 21);
@@ -129,15 +131,6 @@
             this.btnDirektaKostnaderAktivitet.Text = "Direkta kostnader aktivitet";
             this.btnDirektaKostnaderAktivitet.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(495, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "label1";
-            // 
             // ucMeny
             // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
@@ -150,7 +143,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDirektaKostnaderAktivitet);
             this.Controls.Add(this.btnDirektaKostnaderProdukt);
             this.Controls.Add(this.btnPlacering);
@@ -180,7 +172,6 @@
         private System.Windows.Forms.Button btnPlacering;
         private System.Windows.Forms.Button btnDirektaKostnaderProdukt;
         private System.Windows.Forms.Button btnDirektaKostnaderAktivitet;
-        private System.Windows.Forms.Label label1;
         private Forms.ucMeny ucMeny;
     }
 }

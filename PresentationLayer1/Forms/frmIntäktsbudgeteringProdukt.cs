@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PresentationLayer1.Forms
 {
@@ -87,6 +88,58 @@ namespace PresentationLayer1.Forms
             {
                 produkter = businessManager.GetAllProdukter();
                 dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            }
+        }
+
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+            for (int x = 1; x < dgvIntäktsbudgeteringProdukt.Columns.Count + 1; x++)
+            {
+                xlWorkSheet.Cells[1, x] = dgvIntäktsbudgeteringProdukt.Columns[x - 1].HeaderText;
+            }
+
+            for (int i = 0; i < dgvIntäktsbudgeteringProdukt.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvIntäktsbudgeteringProdukt.Columns.Count; j++)
+                {
+                    xlWorkSheet.Cells[i + 2, j + 1] = dgvIntäktsbudgeteringProdukt.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            xlWorkBook.SaveAs("csharp.net-informations4.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
+
+            releaseObject(xlWorkSheet);
+            releaseObject(xlWorkBook);
+            releaseObject(xlApp);
+
+            MessageBox.Show("Excel file created , you can find the file c:\\csharp.net-informations.xls");
+        }
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
             }
         }
     }

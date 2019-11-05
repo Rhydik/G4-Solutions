@@ -93,54 +93,17 @@ namespace PresentationLayer1.Forms
 
         private void btnExportera_Click(object sender, EventArgs e)
         {
-            Excel.Application xlApp;
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
+            SaveFileDialog save = new SaveFileDialog();
 
-            xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            string filename = save.FileName; 
 
-            for (int x = 1; x < dgvIntäktsbudgeteringProdukt.Columns.Count + 1; x++)
+            save.DefaultExt = ".xls";
+            if (save.ShowDialog() == DialogResult.OK)
             {
-                xlWorkSheet.Cells[1, x] = dgvIntäktsbudgeteringProdukt.Columns[x - 1].HeaderText;
-            }
-
-            for (int i = 0; i < dgvIntäktsbudgeteringProdukt.Rows.Count; i++)
-            {
-                for (int j = 0; j < dgvIntäktsbudgeteringProdukt.Columns.Count; j++)
-                {
-                    xlWorkSheet.Cells[i + 2, j + 1] = dgvIntäktsbudgeteringProdukt.Rows[i].Cells[j].Value.ToString();
-                }
-            }
-
-            xlWorkBook.SaveAs("csharp.net-informations4.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            xlWorkBook.Close(true, misValue, misValue);
-            xlApp.Quit();
-
-            releaseObject(xlWorkSheet);
-            releaseObject(xlWorkBook);
-            releaseObject(xlApp);
-
-            MessageBox.Show("Excel file created , you can find the file c:\\csharp.net-informations.xls");
-        }
-        private void releaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
-            }
-            finally
-            {
-                GC.Collect();
+                businessManager.Exportera(dgvIntäktsbudgeteringProdukt, save.FileName);
+                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
             }
         }
+
     }
 }

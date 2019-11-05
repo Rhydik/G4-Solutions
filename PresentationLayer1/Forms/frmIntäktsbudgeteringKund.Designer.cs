@@ -230,6 +230,7 @@
             this.btnExportera.TabIndex = 43;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
+            this.btnExportera.Click += new System.EventHandler(this.btnExportera_Click);
             // 
             // label1
             // 

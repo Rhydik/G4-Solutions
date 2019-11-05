@@ -78,5 +78,19 @@ namespace PresentationLayer1.Forms
             Forms.frmIntäktsbudgeteringLäggTillKund frmIntäktsbudgeteringLäggTillKund = new frmIntäktsbudgeteringLäggTillKund(lblValdProduktID.Text, lblValdProdukt.Text);
             frmIntäktsbudgeteringLäggTillKund.Show();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                produkter = businessManager.GetProduktWithoutIntäkt();
+                dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            }
+            else
+            {
+                produkter = businessManager.GetAllProdukter();
+                dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            }
+        }
     }
 }

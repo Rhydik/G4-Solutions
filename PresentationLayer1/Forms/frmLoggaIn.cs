@@ -60,7 +60,6 @@ namespace PresentationLayer1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             this.Visible = !this.Visible;
             frmHemmeny frmHemmeny = new frmHemmeny();
             frmHemmeny.Show();

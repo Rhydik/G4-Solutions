@@ -81,6 +81,11 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
         }
 
+        public List<ProduktDTO> GetProduktWithoutIntäkt()
+        {
+            return repositoryFacade.intäktsRepository.GetProduktWithoutIntäkt();
+        }
+
         public List<KundIntäktsbudget> GetAllKundID(string kundId)
         {
             return repositoryFacade.intäktsRepository.GetAllKundID(kundId);
@@ -89,6 +94,11 @@ namespace BusinessLayer
         public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)
         {
             return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);
+        }
+
+        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string produktID)
+        {
+            repositoryFacade.intäktsRepository.AddProduktKund(kund, avtal, tillägg, gradT, gradA, budget, tim, kommentar, produktID);
         }
 
         public List<PersonalDTO> GetAllPersonal()

@@ -33,8 +33,8 @@
             this.lblMånad = new System.Windows.Forms.Label();
             this.dgvPrognostiseringIntäkter = new System.Windows.Forms.DataGridView();
             this.btnLås = new System.Windows.Forms.Button();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.lblSök = new System.Windows.Forms.Label();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,12 +68,14 @@
             // 
             // dgvPrognostiseringIntäkter
             // 
+            this.dgvPrognostiseringIntäkter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 123);
             this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
             this.dgvPrognostiseringIntäkter.ReadOnly = true;
+            this.dgvPrognostiseringIntäkter.RowHeadersVisible = false;
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
-            this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(614, 268);
+            this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(615, 268);
             this.dgvPrognostiseringIntäkter.TabIndex = 85;
             this.dgvPrognostiseringIntäkter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrognostiseringIntäkter_CellContentClick);
             // 
@@ -86,13 +88,6 @@
             this.btnLås.Text = "Lås";
             this.btnLås.UseVisualStyleBackColor = true;
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
@@ -102,6 +97,13 @@
             this.lblSök.Size = new System.Drawing.Size(45, 24);
             this.lblSök.TabIndex = 94;
             this.lblSök.Text = "Sök";
+            // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmPrognostiseringIntäkter
             // 

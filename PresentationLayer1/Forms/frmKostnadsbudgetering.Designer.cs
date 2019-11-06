@@ -45,21 +45,21 @@
             // 
             // dgvÖvre
             // 
-            this.dgvÖvre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvÖvre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvÖvre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvÖvre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvÖvre.Location = new System.Drawing.Point(208, 68);
             this.dgvÖvre.Name = "dgvÖvre";
             this.dgvÖvre.ReadOnly = true;
             this.dgvÖvre.RowHeadersWidth = 62;
-            this.dgvÖvre.Size = new System.Drawing.Size(508, 457);
+            this.dgvÖvre.Size = new System.Drawing.Size(530, 457);
             this.dgvÖvre.TabIndex = 59;
             // 
             // btnExportera
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(270, 531);
+            this.btnExportera.Location = new System.Drawing.Point(208, 531);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 69;
@@ -92,7 +92,7 @@
             this.cmbAvdelning.Items.AddRange(new object[] {
             "Driftavdelning",
             "Utveckling- och förvaltning"});
-            this.cmbAvdelning.Location = new System.Drawing.Point(830, 41);
+            this.cmbAvdelning.Location = new System.Drawing.Point(928, 41);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(121, 21);
             this.cmbAvdelning.TabIndex = 70;
@@ -100,7 +100,7 @@
             // lblAvdelning
             // 
             this.lblAvdelning.AutoSize = true;
-            this.lblAvdelning.Location = new System.Drawing.Point(827, 25);
+            this.lblAvdelning.Location = new System.Drawing.Point(925, 25);
             this.lblAvdelning.Name = "lblAvdelning";
             this.lblAvdelning.Size = new System.Drawing.Size(54, 13);
             this.lblAvdelning.TabIndex = 71;
@@ -108,7 +108,7 @@
             // 
             // btnPlacering
             // 
-            this.btnPlacering.Location = new System.Drawing.Point(451, 21);
+            this.btnPlacering.Location = new System.Drawing.Point(549, 21);
             this.btnPlacering.Name = "btnPlacering";
             this.btnPlacering.Size = new System.Drawing.Size(120, 41);
             this.btnPlacering.TabIndex = 72;
@@ -117,7 +117,7 @@
             // 
             // btnDirektaKostnaderProdukt
             // 
-            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(578, 21);
+            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(676, 21);
             this.btnDirektaKostnaderProdukt.Name = "btnDirektaKostnaderProdukt";
             this.btnDirektaKostnaderProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderProdukt.TabIndex = 73;
@@ -126,7 +126,7 @@
             // 
             // btnDirektaKostnaderAktivitet
             // 
-            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(704, 21);
+            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(802, 21);
             this.btnDirektaKostnaderAktivitet.Name = "btnDirektaKostnaderAktivitet";
             this.btnDirektaKostnaderAktivitet.Size = new System.Drawing.Size(120, 41);
             this.btnDirektaKostnaderAktivitet.TabIndex = 74;
@@ -135,10 +135,14 @@
             // 
             // dgvNedre
             // 
+            this.dgvNedre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNedre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNedre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNedre.Location = new System.Drawing.Point(722, 68);
+            this.dgvNedre.Location = new System.Drawing.Point(744, 68);
             this.dgvNedre.Name = "dgvNedre";
-            this.dgvNedre.Size = new System.Drawing.Size(507, 457);
+            this.dgvNedre.Size = new System.Drawing.Size(518, 457);
             this.dgvNedre.TabIndex = 75;
             // 
             // ucMeny

@@ -74,17 +74,31 @@ namespace DataLayer
             }
         }
 
-        public string GetProduktIntäkter(ProduktDTO produkt)
+        public bool CheckAvdelning(string avdelning)
         {
             using (var db = new DataContext())
             {
-                var query = from x in db.ProduktIntäktsbudget
-                            where x.Produkt_ProduktID == produkt.ProduktID
-                            join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
-                            select y.Avtal;
+                var query = (from x in db.Avdelning
+                            where x.Namn.ToLower() == avdelning.ToLower()
+                            select x).FirstOrDefault();
+                if (query != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
 
-                query.ToList();
-                return null;
+        public void CreateAvdelning(string avdelning)
+        {
+            using (var db = new DataContext())
+            {
+                Avdelning avd = new Avdelning() { Namn = avdelning };
+                db.Avdelning.Add(avd);
+                db.SaveChanges();
             }
         }
 
@@ -181,6 +195,18 @@ namespace DataLayer
 
                 if (!string.IsNullOrEmpty(produktAvdelning))
                     query = query.Where(ProduktDTO => ProduktDTO.Avdelning == produktAvdelning);
+
+                return query.ToList();
+            }
+        }
+
+        public List<ProduktDTO> GetProduktByNamn(string produktnamn)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Produkt
+                            where x.Namn.StartsWith(produktnamn)
+                            select new ProduktDTO { Namn = x.Namn, Avdelning = x.Avdelning.Namn, Produktgrupp = x.Produktgrupp.Namn, ProduktID = x.ProduktID, Produktkategori = x.Produktkategori.Namn };
 
                 return query.ToList();
             }

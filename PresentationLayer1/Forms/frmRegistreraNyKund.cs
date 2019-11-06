@@ -31,39 +31,22 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            var kundId = tbKundID.Text.ToUpper();
             var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
+            
 
-            string id = businessManager.SkapaID(kundId, kundKategori);
+            string id = businessManager.SkapaID(kundNamn, kundKategori);
+            businessManager.AddKund(id, kundNamn, kundKategori);
 
-            try
+            MessageBox.Show(kundNamn + " sparad.", "Spara kund", MessageBoxButtons.OK);
+
+            if (Application.OpenForms["frmKunder"] != null)
             {
-                if (tbKundID.Text.Length == 4)
-                {
-                    businessManager.AddKund(id, kundNamn, kundKategori);
-
-                    MessageBox.Show(kundNamn + " sparad.", "Spara kund", MessageBoxButtons.OK);
-
-                    if (Application.OpenForms["frmKunder"] != null)
-                    {
-                        (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
-                    }
-
-                    tbKundID.Text = "";
-                    tbKundNamn.Text = "";
-                    cmbKundkategori.SelectedIndex = -1;
-
-                } 
-                else
-                {
-                    MessageBox.Show("KundID måste vara 4 tecken", "KundID för lång.", MessageBoxButtons.OK);
-                }
-            } 
-            catch (Exception exception)
-            {
-
+                (Application.OpenForms["frmKunder"] as frmKunder).RefreshData();
             }
+
+            tbKundNamn.Text = "";
+            cmbKundkategori.SelectedIndex = -1;
         }
 
         private void btnSkapaNyKundkategori_Click(object sender, EventArgs e)

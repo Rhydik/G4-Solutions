@@ -20,11 +20,16 @@
     <EntitySet Name="Direktkostnad" EntityType="DatabaseModel.Store.Direktkostnad" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Konto" EntityType="DatabaseModel.Store.Konto" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="schablonkostnad" EntityType="DatabaseModel.Store.schablonkostnad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KostnadsbudgetSet" EntityType="DatabaseModel.Store.KostnadsbudgetSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="KundIntäktsbudget" EntityType="DatabaseModel.Store.KundIntäktsbudget" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProduktIntäktsbudget" EntityType="DatabaseModel.Store.ProduktIntäktsbudget" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PersonalProdukt" EntityType="DatabaseModel.Store.PersonalProdukt" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="AvdelningPersonal" EntityType="DatabaseModel.Store.AvdelningPersonal" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="KontoAvdelning" EntityType="DatabaseModel.Store.KontoAvdelning" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KostnadsbudgetProdukt" EntityType="DatabaseModel.Store.KostnadsbudgetProdukt" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KostnadsbudgetDirektkostnad" EntityType="DatabaseModel.Store.KostnadsbudgetDirektkostnad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonalKostnadsbudget" EntityType="DatabaseModel.Store.PersonalKostnadsbudget" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AktivitetKostnadsbudget" EntityType="DatabaseModel.Store.AktivitetKostnadsbudget" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PrognosIntäktsbudget" Association="DatabaseModel.Store.PrognosIntäktsbudget">
       <End Role="Prognos" EntitySet="Prognos" />
       <End Role="Intäktsbudget" EntitySet="Intäktsbudget" />
@@ -101,6 +106,38 @@
       <End Role="Produkt" EntitySet="Produkt" />
       <End Role="Avdelning" EntitySet="Avdelning" />
     </AssociationSet>
+    <AssociationSet Name="FK_KostnadsbudgetProdukt_Kostnadsbudget" Association="DatabaseModel.Store.FK_KostnadsbudgetProdukt_Kostnadsbudget">
+      <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+      <End Role="KostnadsbudgetProdukt" EntitySet="KostnadsbudgetProdukt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KostnadsbudgetProdukt_Produkt" Association="DatabaseModel.Store.FK_KostnadsbudgetProdukt_Produkt">
+      <End Role="Produkt" EntitySet="Produkt" />
+      <End Role="KostnadsbudgetProdukt" EntitySet="KostnadsbudgetProdukt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KostnadsbudgetDirektkostnad_Kostnadsbudget" Association="DatabaseModel.Store.FK_KostnadsbudgetDirektkostnad_Kostnadsbudget">
+      <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+      <End Role="KostnadsbudgetDirektkostnad" EntitySet="KostnadsbudgetDirektkostnad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KostnadsbudgetDirektkostnad_Direktkostnad" Association="DatabaseModel.Store.FK_KostnadsbudgetDirektkostnad_Direktkostnad">
+      <End Role="Direktkostnad" EntitySet="Direktkostnad" />
+      <End Role="KostnadsbudgetDirektkostnad" EntitySet="KostnadsbudgetDirektkostnad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonalKostnadsbudget_Personal" Association="DatabaseModel.Store.FK_PersonalKostnadsbudget_Personal">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="PersonalKostnadsbudget" EntitySet="PersonalKostnadsbudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonalKostnadsbudget_Kostnadsbudget" Association="DatabaseModel.Store.FK_PersonalKostnadsbudget_Kostnadsbudget">
+      <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+      <End Role="PersonalKostnadsbudget" EntitySet="PersonalKostnadsbudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AktivitetKostnadsbudget_Aktivitet" Association="DatabaseModel.Store.FK_AktivitetKostnadsbudget_Aktivitet">
+      <End Role="Aktivitet" EntitySet="Aktivitet" />
+      <End Role="AktivitetKostnadsbudget" EntitySet="AktivitetKostnadsbudget" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AktivitetKostnadsbudget_Kostnadsbudget" Association="DatabaseModel.Store.FK_AktivitetKostnadsbudget_Kostnadsbudget">
+      <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+      <End Role="AktivitetKostnadsbudget" EntitySet="AktivitetKostnadsbudget" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Prognos">
     <Key>
@@ -159,8 +196,8 @@
     <Property Name="PersonNr" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Månadslön" Type="int" Nullable="false" />
-    <Property Name="Sysselsättningsgrad" Type="int" Nullable="false" />
-    <Property Name="Vakansavdrag" Type="int" Nullable="false" />
+    <Property Name="Sysselsättningsgrad" Type="decimal" Nullable="false" />
+    <Property Name="Vakansavdrag" Type="decimal" Nullable="false" />
     <Property Name="Lösenord" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Behörighet" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -229,6 +266,13 @@
     <Property Name="Belopp" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Konto_KontoID" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="KostnadsbudgetSet">
+    <Key>
+      <PropertyRef Name="KostnadsbudgetID" />
+    </Key>
+    <Property Name="KostnadsbudgetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Summering" Type="decimal" Nullable="false" />
+  </EntityType>
   <EntityType Name="KundIntäktsbudget">
     <Key>
       <PropertyRef Name="Kund_KundID" />
@@ -268,6 +312,38 @@
     </Key>
     <Property Name="Konto_KontoID" Type="int" Nullable="false" />
     <Property Name="Avdelning_AvdelningID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KostnadsbudgetProdukt">
+    <Key>
+      <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      <PropertyRef Name="Produkt_ProduktID" />
+    </Key>
+    <Property Name="Kostnadsbudget_KostnadsbudgetID" Type="int" Nullable="false" />
+    <Property Name="Produkt_ProduktID" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KostnadsbudgetDirektkostnad">
+    <Key>
+      <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      <PropertyRef Name="Direktkostnad_DirektkostnadID" />
+    </Key>
+    <Property Name="Kostnadsbudget_KostnadsbudgetID" Type="int" Nullable="false" />
+    <Property Name="Direktkostnad_DirektkostnadID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonalKostnadsbudget">
+    <Key>
+      <PropertyRef Name="Personal_PersonalID" />
+      <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+    </Key>
+    <Property Name="Personal_PersonalID" Type="int" Nullable="false" />
+    <Property Name="Kostnadsbudget_KostnadsbudgetID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AktivitetKostnadsbudget">
+    <Key>
+      <PropertyRef Name="Aktivitet_AktivitetID" />
+      <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+    </Key>
+    <Property Name="Aktivitet_AktivitetID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kostnadsbudget_KostnadsbudgetID" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PrognosIntäktsbudget">
     <End Role="Prognos" Type="DatabaseModel.Store.Prognos" Multiplicity="*" />
@@ -497,6 +573,102 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_KostnadsbudgetProdukt_Kostnadsbudget">
+    <End Role="Kostnadsbudget" Type="DatabaseModel.Store.KostnadsbudgetSet" Multiplicity="1" />
+    <End Role="KostnadsbudgetProdukt" Type="DatabaseModel.Store.KostnadsbudgetProdukt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kostnadsbudget">
+        <PropertyRef Name="KostnadsbudgetID" />
+      </Principal>
+      <Dependent Role="KostnadsbudgetProdukt">
+        <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KostnadsbudgetProdukt_Produkt">
+    <End Role="KostnadsbudgetProdukt" Type="DatabaseModel.Store.KostnadsbudgetProdukt" Multiplicity="*" />
+    <End Role="Produkt" Type="DatabaseModel.Store.Produkt" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Produkt">
+        <PropertyRef Name="ProduktID" />
+      </Principal>
+      <Dependent Role="KostnadsbudgetProdukt">
+        <PropertyRef Name="Produkt_ProduktID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KostnadsbudgetDirektkostnad_Kostnadsbudget">
+    <End Role="Kostnadsbudget" Type="DatabaseModel.Store.KostnadsbudgetSet" Multiplicity="1" />
+    <End Role="KostnadsbudgetDirektkostnad" Type="DatabaseModel.Store.KostnadsbudgetDirektkostnad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kostnadsbudget">
+        <PropertyRef Name="KostnadsbudgetID" />
+      </Principal>
+      <Dependent Role="KostnadsbudgetDirektkostnad">
+        <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KostnadsbudgetDirektkostnad_Direktkostnad">
+    <End Role="KostnadsbudgetDirektkostnad" Type="DatabaseModel.Store.KostnadsbudgetDirektkostnad" Multiplicity="*" />
+    <End Role="Direktkostnad" Type="DatabaseModel.Store.Direktkostnad" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Direktkostnad">
+        <PropertyRef Name="DirektkostnadID" />
+      </Principal>
+      <Dependent Role="KostnadsbudgetDirektkostnad">
+        <PropertyRef Name="Direktkostnad_DirektkostnadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonalKostnadsbudget_Personal">
+    <End Role="Personal" Type="DatabaseModel.Store.Personal" Multiplicity="1" />
+    <End Role="PersonalKostnadsbudget" Type="DatabaseModel.Store.PersonalKostnadsbudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="PersonalID" />
+      </Principal>
+      <Dependent Role="PersonalKostnadsbudget">
+        <PropertyRef Name="Personal_PersonalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonalKostnadsbudget_Kostnadsbudget">
+    <End Role="PersonalKostnadsbudget" Type="DatabaseModel.Store.PersonalKostnadsbudget" Multiplicity="*" />
+    <End Role="Kostnadsbudget" Type="DatabaseModel.Store.KostnadsbudgetSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Kostnadsbudget">
+        <PropertyRef Name="KostnadsbudgetID" />
+      </Principal>
+      <Dependent Role="PersonalKostnadsbudget">
+        <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AktivitetKostnadsbudget_Aktivitet">
+    <End Role="Aktivitet" Type="DatabaseModel.Store.Aktivitet" Multiplicity="1" />
+    <End Role="AktivitetKostnadsbudget" Type="DatabaseModel.Store.AktivitetKostnadsbudget" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aktivitet">
+        <PropertyRef Name="AktivitetID" />
+      </Principal>
+      <Dependent Role="AktivitetKostnadsbudget">
+        <PropertyRef Name="Aktivitet_AktivitetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AktivitetKostnadsbudget_Kostnadsbudget">
+    <End Role="AktivitetKostnadsbudget" Type="DatabaseModel.Store.AktivitetKostnadsbudget" Multiplicity="*" />
+    <End Role="Kostnadsbudget" Type="DatabaseModel.Store.KostnadsbudgetSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Kostnadsbudget">
+        <PropertyRef Name="KostnadsbudgetID" />
+      </Principal>
+      <Dependent Role="AktivitetKostnadsbudget">
+        <PropertyRef Name="Kostnadsbudget_KostnadsbudgetID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -572,6 +744,23 @@
             <End Role="Produkt" EntitySet="Produkt" />
             <End Role="Avdelning" EntitySet="Avdelning" />
           </AssociationSet>
+          <EntitySet Name="KostnadsbudgetSet" EntityType="DatabaseModel.Kostnadsbudget" />
+          <AssociationSet Name="KostnadsbudgetProdukt" Association="DatabaseModel.KostnadsbudgetProdukt">
+            <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+            <End Role="Produkt" EntitySet="Produkt" />
+          </AssociationSet>
+          <AssociationSet Name="KostnadsbudgetDirektkostnad" Association="DatabaseModel.KostnadsbudgetDirektkostnad">
+            <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+            <End Role="Direktkostnad" EntitySet="Direktkostnad" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalKostnadsbudget" Association="DatabaseModel.PersonalKostnadsbudget">
+            <End Role="Personal" EntitySet="Personal" />
+            <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+          </AssociationSet>
+          <AssociationSet Name="AktivitetKostnadsbudget" Association="DatabaseModel.AktivitetKostnadsbudget">
+            <End Role="Aktivitet" EntitySet="Aktivitet" />
+            <End Role="Kostnadsbudget" EntitySet="KostnadsbudgetSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Prognos">
           <Key>
@@ -640,6 +829,7 @@
           <NavigationProperty Name="Produktgrupp" Relationship="DatabaseModel.ProduktgruppProdukt" FromRole="Produkt" ToRole="Produktgrupp" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.ProduktAvdelning" FromRole="Produkt" ToRole="Avdelning" />
+          <NavigationProperty Name="Kostnadsbudget" Relationship="DatabaseModel.KostnadsbudgetProdukt" FromRole="Produkt" ToRole="Kostnadsbudget" />
         </EntityType>
         <Association Name="ProduktIntäktsbudget">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
@@ -653,13 +843,14 @@
           <Property Name="PersonNr" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Månadslön" Type="Int32" Nullable="false" />
-          <Property Name="Sysselsättningsgrad" Type="Int32" Nullable="false" />
-          <Property Name="Vakansavdrag" Type="Int32" Nullable="false" />
+          <Property Name="Sysselsättningsgrad" Type="Decimal" Nullable="false" />
+          <Property Name="Vakansavdrag" Type="Decimal" Nullable="false" />
           <Property Name="Lösenord" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Behörighet" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="AntalTimmar" Relationship="DatabaseModel.AntalTimmarPersonal" FromRole="Personal" ToRole="AntalTimmar" />
           <NavigationProperty Name="Produkt" Relationship="DatabaseModel.PersonalProdukt" FromRole="Personal" ToRole="Produkt" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.AvdelningPersonal" FromRole="Personal" ToRole="Avdelning" />
+          <NavigationProperty Name="Kostnadsbudget" Relationship="DatabaseModel.PersonalKostnadsbudget" FromRole="Personal" ToRole="Kostnadsbudget" />
         </EntityType>
         <EntityType Name="AntalTimmar">
           <Key>
@@ -726,6 +917,7 @@
           <Property Name="AktivitetID" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.AktivitetAvdelning" FromRole="Aktivitet" ToRole="Avdelning" />
+          <NavigationProperty Name="Kostnadsbudget" Relationship="DatabaseModel.AktivitetKostnadsbudget" FromRole="Aktivitet" ToRole="Kostnadsbudget" />
         </EntityType>
         <Association Name="AktivitetAvdelning">
           <End Type="DatabaseModel.Aktivitet" Multiplicity="*" Role="Aktivitet" />
@@ -739,6 +931,7 @@
           <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Belopp" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoDirektkostnad" FromRole="Direktkostnad" ToRole="Konto" />
+          <NavigationProperty Name="Kostnadsbudget" Relationship="DatabaseModel.KostnadsbudgetDirektkostnad" FromRole="Direktkostnad" ToRole="Kostnadsbudget" />
         </EntityType>
         <EntityType Name="Konto">
           <Key>
@@ -774,6 +967,33 @@
         <Association Name="ProduktAvdelning">
           <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Kostnadsbudget">
+          <Key>
+            <PropertyRef Name="KostnadsbudgetID" />
+          </Key>
+          <Property Name="KostnadsbudgetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Summering" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Produkt" Relationship="DatabaseModel.KostnadsbudgetProdukt" FromRole="Kostnadsbudget" ToRole="Produkt" />
+          <NavigationProperty Name="Direktkostnad" Relationship="DatabaseModel.KostnadsbudgetDirektkostnad" FromRole="Kostnadsbudget" ToRole="Direktkostnad" />
+          <NavigationProperty Name="Personal" Relationship="DatabaseModel.PersonalKostnadsbudget" FromRole="Kostnadsbudget" ToRole="Personal" />
+          <NavigationProperty Name="Aktivitet" Relationship="DatabaseModel.AktivitetKostnadsbudget" FromRole="Kostnadsbudget" ToRole="Aktivitet" />
+        </EntityType>
+        <Association Name="KostnadsbudgetProdukt">
+          <End Type="DatabaseModel.Kostnadsbudget" Role="Kostnadsbudget" Multiplicity="*" />
+          <End Type="DatabaseModel.Produkt" Role="Produkt" Multiplicity="*" />
+        </Association>
+        <Association Name="KostnadsbudgetDirektkostnad">
+          <End Type="DatabaseModel.Kostnadsbudget" Role="Kostnadsbudget" Multiplicity="*" />
+          <End Type="DatabaseModel.Direktkostnad" Role="Direktkostnad" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonalKostnadsbudget">
+          <End Type="DatabaseModel.Personal" Role="Personal" Multiplicity="*" />
+          <End Type="DatabaseModel.Kostnadsbudget" Role="Kostnadsbudget" Multiplicity="*" />
+        </Association>
+        <Association Name="AktivitetKostnadsbudget">
+          <End Type="DatabaseModel.Aktivitet" Role="Aktivitet" Multiplicity="*" />
+          <End Type="DatabaseModel.Kostnadsbudget" Role="Kostnadsbudget" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -913,6 +1133,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="KostnadsbudgetSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Kostnadsbudget)">
+        <MappingFragment StoreEntitySet="KostnadsbudgetSet">
+          <ScalarProperty Name="KostnadsbudgetID" ColumnName="KostnadsbudgetID" />
+          <ScalarProperty Name="Summering" ColumnName="Summering" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PrognosIntäktsbudget" TypeName="DatabaseModel.PrognosIntäktsbudget" StoreEntitySet="Prognos">
       <EndProperty Name="Intäktsbudget">
         <ScalarProperty Name="IntäktsbudgetID" ColumnName="Intäktsbudget_IntäktsbudgetID" />
@@ -1023,6 +1251,38 @@
       </EndProperty>
       <EndProperty Name="Produkt">
         <ScalarProperty Name="ProduktID" ColumnName="ProduktID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KostnadsbudgetProdukt" TypeName="DatabaseModel.KostnadsbudgetProdukt" StoreEntitySet="KostnadsbudgetProdukt">
+      <EndProperty Name="Kostnadsbudget">
+        <ScalarProperty Name="KostnadsbudgetID" ColumnName="Kostnadsbudget_KostnadsbudgetID" />
+      </EndProperty>
+      <EndProperty Name="Produkt">
+        <ScalarProperty Name="ProduktID" ColumnName="Produkt_ProduktID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="KostnadsbudgetDirektkostnad" TypeName="DatabaseModel.KostnadsbudgetDirektkostnad" StoreEntitySet="KostnadsbudgetDirektkostnad">
+      <EndProperty Name="Kostnadsbudget">
+        <ScalarProperty Name="KostnadsbudgetID" ColumnName="Kostnadsbudget_KostnadsbudgetID" />
+      </EndProperty>
+      <EndProperty Name="Direktkostnad">
+        <ScalarProperty Name="DirektkostnadID" ColumnName="Direktkostnad_DirektkostnadID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonalKostnadsbudget" TypeName="DatabaseModel.PersonalKostnadsbudget" StoreEntitySet="PersonalKostnadsbudget">
+      <EndProperty Name="Personal">
+        <ScalarProperty Name="PersonalID" ColumnName="Personal_PersonalID" />
+      </EndProperty>
+      <EndProperty Name="Kostnadsbudget">
+        <ScalarProperty Name="KostnadsbudgetID" ColumnName="Kostnadsbudget_KostnadsbudgetID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AktivitetKostnadsbudget" TypeName="DatabaseModel.AktivitetKostnadsbudget" StoreEntitySet="AktivitetKostnadsbudget">
+      <EndProperty Name="Aktivitet">
+        <ScalarProperty Name="AktivitetID" ColumnName="Aktivitet_AktivitetID" />
+      </EndProperty>
+      <EndProperty Name="Kostnadsbudget">
+        <ScalarProperty Name="KostnadsbudgetID" ColumnName="Kostnadsbudget_KostnadsbudgetID" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

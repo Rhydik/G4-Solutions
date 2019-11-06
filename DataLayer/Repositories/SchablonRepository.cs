@@ -13,7 +13,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn, Beskrivning = x.Beskrivning };
+                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn, };
 
                 return query.ToList();
             }
@@ -74,7 +74,7 @@ namespace DataLayer
 
                 
 
-                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = konto.ToString(), Belopp = schablonKostnad, Beskrivning = namn, Konto_KontoID = tempSchablon.Konto_KontoID};
+                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = konto.ToString(), Belopp = schablonKostnad, Konto_KontoID = tempSchablon.Konto_KontoID};
                 db.schablonkostnad.Remove(tempSchablon);
                 db.schablonkostnad.Add(schablon);
 
@@ -90,7 +90,7 @@ namespace DataLayer
                                     where x.Konto.Namn == namn
                                     select x).FirstOrDefault();
 
-                var schablon = new schablonkostnad { Namn = konto.ToString(), Beskrivning = namn, Belopp = schablonKostnad, Konto_KontoID = konto };
+                var schablon = new schablonkostnad { Namn = konto.ToString(), Belopp = schablonKostnad, Konto_KontoID = konto };
                 var nyttkonto = new Konto { KontoID = konto, Namn = konto.ToString()};
 
                 db.Konto.Add(nyttkonto);
@@ -104,7 +104,7 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablon = new schablonkostnad { schablonkostnadID = 9999, Namn = "9999", Belopp = avkastning, Beskrivning = "Avkastning", Konto_KontoID = 9999 };
+                var schablon = new schablonkostnad { schablonkostnadID = 9999, Namn = "9999", Belopp = avkastning, Konto_KontoID = 9999 };
                 var nyttkonto = new Konto { KontoID = 9999, Namn = "9999"};
 
                 var kontoToRemove = (from x in db.Konto

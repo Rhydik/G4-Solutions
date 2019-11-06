@@ -33,7 +33,7 @@ namespace DataLayer
             }
         }
 
-        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string kundId)
+        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId)
         {
             using (var db = new DataContext())
             {
@@ -47,7 +47,7 @@ namespace DataLayer
                 intäktsbudget.Tillägg = tillägg;
                 intäktsbudget.GradT = gradT;
                 intäktsbudget.GradA = gradA;
-                intäktsbudget.Budget = budget;
+                intäktsbudget.Budget = avtal + tillägg;
                 intäktsbudget.Tim = tim;
                 intäktsbudget.KundIntäktsbudget.Add(kundIntäktsbudget);
                 intäktsbudget.Kommentar = kommentar;
@@ -82,7 +82,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string produktID)
+        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
         {
             using (var db = new DataContext())
             {
@@ -96,7 +96,7 @@ namespace DataLayer
                 intäktsbudget.Tillägg = tillägg;
                 intäktsbudget.GradT = gradT;
                 intäktsbudget.GradA = gradA;
-                intäktsbudget.Budget = budget;
+                intäktsbudget.Budget = avtal + tillägg;
                 intäktsbudget.Tim = tim;
                 intäktsbudget.KundIntäktsbudget.Add(kundIntäktsbudget);
                 intäktsbudget.Kommentar = kommentar;

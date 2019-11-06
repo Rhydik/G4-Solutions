@@ -103,5 +103,12 @@ namespace PresentationLayer1.Forms
             frmBudgeteratResultat frmBudgeteratResultat = new frmBudgeteratResultat();
             frmBudgeteratResultat.Show();
         }
+
+        private void btnKostnadsbudgetering_Click(object sender, EventArgs e)
+        {
+            HideAllOpenForms();
+            frmKostnadsbudgetering frmKostnadsbudgetering = new frmKostnadsbudgetering();
+            frmKostnadsbudgetering.Show();
+        }
     }
 }

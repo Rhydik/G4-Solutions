@@ -27,7 +27,6 @@ namespace PresentationLayer1.Forms
         public new void Load()
         {
             tbKonto.Text = schablon.Namn.ToString();
-            tbKontobenämning.Text = schablon.Beskrivning;
             tbSchablonkostnad.Text = schablon.Belopp.ToString();
         }
 

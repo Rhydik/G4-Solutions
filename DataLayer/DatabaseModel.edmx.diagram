@@ -33,6 +33,11 @@
         <AssociationConnector Association="DatabaseModel.KontoDirektkostnad" />
         <AssociationConnector Association="DatabaseModel.KontoAvdelning" />
         <AssociationConnector Association="DatabaseModel.ProduktAvdelning" />
+        <EntityTypeShape EntityType="DatabaseModel.Kostnadsbudget" Width="1.5" PointX="11.5" PointY="5.375" />
+        <AssociationConnector Association="DatabaseModel.KostnadsbudgetProdukt" />
+        <AssociationConnector Association="DatabaseModel.KostnadsbudgetDirektkostnad" />
+        <AssociationConnector Association="DatabaseModel.PersonalKostnadsbudget" />
+        <AssociationConnector Association="DatabaseModel.AktivitetKostnadsbudget" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

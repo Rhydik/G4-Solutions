@@ -92,6 +92,7 @@
             this.btnKostnadsbudgetering.TabIndex = 2;
             this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
+            this.btnKostnadsbudgetering.Click += new System.EventHandler(this.btnKostnadsbudgetering_Click);
             // 
             // btnIntäktsbudgeteringProdukt
             // 

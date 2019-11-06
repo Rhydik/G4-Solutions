@@ -27,6 +27,16 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
+        public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetKostnadsbudgetPersonal();
+        }
+
+        public List<KostnadsbudgetProduktDTO> GetKostnadsbudgetProdukt()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetKostnadsbudgetProdukt();
+        }
+
         public List<BehörighetDTO> GetAllBehörighet()
         {
             return repositoryFacade.behörighetRepository.GetAllBehörighet();
@@ -63,19 +73,56 @@ namespace BusinessLayer
             return repositoryFacade.intäktsRepository.GetAllProduktKunder(produktId);
         }
 
+        public List<KontorDTO> GetKontor()
+        {
+            KontorDTO kontor = new KontorDTO() { Kontor = "Stockholmskontoret", KontorID = 1 };
+            List<KontorDTO> kontors = new List<KontorDTO>();
+            kontors.Add(kontor);
+            return kontors;
+        }
+
         public void AddAktivitet(string aktvitetsId, string namn, string avdelning)
         {
             repositoryFacade.aktivitetRepository.AddAktivitet(aktvitetsId, namn, avdelning);
         }
 
-        public string GetProduktIntäkter(ProduktDTO produkt)
+        public bool CheckAvdelning(string avdelning)
         {
-            return repositoryFacade.produktRepository.GetProduktIntäkter(produkt);
+            return repositoryFacade.produktRepository.CheckAvdelning(avdelning);
         }
 
-        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string kundId)
+        public decimal GetProduktIntäkter(ProduktDTO produkt)
         {
-            repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, budget, tim, kommentar, kundId);
+            decimal budget = 0;
+            
+            var list = repositoryFacade.budgeteratResultatRepository.GetProduktIntäkter(produkt);
+            foreach (var item in list)
+            {
+                budget = budget + item.Budget;
+            }
+            return budget;
+        }
+
+        public void CreateAvdelning(string avdelning)
+        {
+            repositoryFacade.produktRepository.CreateAvdelning(avdelning);
+        }
+
+        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId)
+        {
+            repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, tim, kommentar, kundId);
+        }
+
+        public decimal GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
+        {
+            decimal budget = 0;
+
+            var list = repositoryFacade.budgeteratResultatRepository.GetGruppIntäkter(produktgruppDTO);
+            foreach (var item in list)
+            {
+                budget = budget + item.Budget;
+            }
+            return budget;
         }
 
         public void AddBehörighet(string tempBehör, string tempPersnr)
@@ -83,9 +130,33 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
         }
 
+        public decimal GetAvdelningIntäkter(AvdelningDTO avdelningDTO)
+        {
+            decimal budget = 0;
+
+            var list = repositoryFacade.budgeteratResultatRepository.GetAvdelningIntäkter(avdelningDTO);
+            foreach (var item in list)
+            {
+                budget = budget + item.Budget;
+            }
+            return budget;
+        }
+
         public void RemoveBehörighet(string tempBehör, string tempPersnr)
         {
             repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
+        }
+
+        public decimal GetKontorIntäkter()
+        {
+            decimal budget = 0;
+
+            var list = repositoryFacade.budgeteratResultatRepository.GetKontorIntäkter();
+            foreach (var item in list)
+            {
+                budget = budget + item.Budget;
+            }
+            return budget;
         }
 
         public List<ProduktDTO> GetProduktWithoutIntäkt()
@@ -103,14 +174,19 @@ namespace BusinessLayer
             return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);
         }
 
-        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, decimal budget, int tim, string kommentar, string produktID)
+        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
         {
-            repositoryFacade.intäktsRepository.AddProduktKund(kund, avtal, tillägg, gradT, gradA, budget, tim, kommentar, produktID);
+            repositoryFacade.intäktsRepository.AddProduktKund(kund, avtal, tillägg, gradT, gradA, tim, kommentar, produktID);
         }
 
         public List<PersonalDTO> GetAllPersonal()
         {
             return repositoryFacade.personalRepository.GetAllPersonal();
+        }
+
+        public List<ProduktDTO> GetProduktByNamn(string produktnamn)
+        {
+            return repositoryFacade.produktRepository.GetProduktByNamn(produktnamn);
         }
 
         public object GetSchablonById(string id)
@@ -312,23 +388,17 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProdukterBySearch(produktID, namn, produktKategori, produktGrupp, produktAvdelning);
         }
 
-        public string SkapaID(string kundId, string kundKategori)
+        public string SkapaID(string namn, string Kategori)
         {
-            string idEnd = "";
+            string idEnd = Kategori.Substring(0,2).ToUpper();
 
-            if (kundKategori.Equals("Näringsliv"))
-            {
-                idEnd = "NL";
-            }
+            Random r = new Random();
+            var indext = r.Next(3, namn.Length - 1);
+            var IdStart = namn.Substring(0, 3) + (namn[indext]);
 
-            if (kundKategori.Equals("Offentlig"))
-            {
-                idEnd = "OF";
-            }
+            string id = IdStart + idEnd;
 
-            string id = kundId + idEnd;
-
-            return id;
+            return id.ToUpper();
         }
 
         public void Exportera(DataGridView dgv, string filename)

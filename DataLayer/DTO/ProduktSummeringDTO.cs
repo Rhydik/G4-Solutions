@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-    public class SchablonDTO
+    public class ProduktSummeringDTO
     {
-        public int KontoID { get; set; }
-        public string Namn { get; set; }
-        public decimal Belopp { get; set; }
+        public decimal Budget { get; set; }
     }
 }

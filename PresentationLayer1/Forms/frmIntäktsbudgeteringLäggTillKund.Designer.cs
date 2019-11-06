@@ -44,9 +44,7 @@
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
-            this.lblBudget = new System.Windows.Forms.Label();
             this.lblLäggTillKundFör = new System.Windows.Forms.Label();
-            this.tbBudget = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -203,16 +201,6 @@
             this.btnSpara.UseVisualStyleBackColor = false;
             this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
-            // lblBudget
-            // 
-            this.lblBudget.AutoSize = true;
-            this.lblBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudget.Location = new System.Drawing.Point(21, 618);
-            this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(51, 16);
-            this.lblBudget.TabIndex = 58;
-            this.lblBudget.Text = "Budget";
-            // 
             // lblLäggTillKundFör
             // 
             this.lblLäggTillKundFör.AutoSize = true;
@@ -222,13 +210,6 @@
             this.lblLäggTillKundFör.Size = new System.Drawing.Size(166, 22);
             this.lblLäggTillKundFör.TabIndex = 57;
             this.lblLäggTillKundFör.Text = "Lägg till kund för";
-            // 
-            // tbBudget
-            // 
-            this.tbBudget.Location = new System.Drawing.Point(21, 637);
-            this.tbBudget.Name = "tbBudget";
-            this.tbBudget.Size = new System.Drawing.Size(188, 20);
-            this.tbBudget.TabIndex = 56;
             // 
             // dgv
             // 
@@ -269,9 +250,7 @@
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
-            this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.lblLäggTillKundFör);
-            this.Controls.Add(this.tbBudget);
             this.Name = "frmIntäktsbudgeteringLäggTillKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Lägg till Kund  | G4 Solutions Economy System";
@@ -299,9 +278,7 @@
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;
-        private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Label lblLäggTillKundFör;
-        private System.Windows.Forms.TextBox tbBudget;
         private System.Windows.Forms.DataGridView dgv;
         private ucSökFältKund ucSökFältKund;
     }

@@ -53,6 +53,7 @@
             this.btnVäljKund = new System.Windows.Forms.Button();
             this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.lblSummering = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).BeginInit();
             this.SuspendLayout();
             // 
@@ -305,11 +306,22 @@
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
+            // lblSummering
+            // 
+            this.lblSummering.AutoSize = true;
+            this.lblSummering.Location = new System.Drawing.Point(623, 122);
+            this.lblSummering.Name = "lblSummering";
+            this.lblSummering.Size = new System.Drawing.Size(13, 13);
+            this.lblSummering.TabIndex = 51;
+            this.lblSummering.Text = "0";
+            this.lblSummering.Visible = false;
+            // 
             // frmIntäktsbudgeteringKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSummering);
             this.Controls.Add(this.ucSökFältKund);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnVäljNyKund);
@@ -359,5 +371,6 @@
         private System.Windows.Forms.Button btnVäljKund;
         private ucSökFältKund ucSökFältKund;
         private Forms.ucMeny ucMeny;
+        private System.Windows.Forms.Label lblSummering;
     }
 }

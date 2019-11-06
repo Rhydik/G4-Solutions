@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.DTO
+namespace DataLayer
 {
-    public class PersonalDTO
+    public class KonstnadsbudgetPersonalDTO
     {
-        public int PersonalID { get; set; }
-        public decimal Sysselsättningsgrad { get; set; }
         public string Namn { get; set; }
-        public string PersonNr { get; set; }
+        public decimal Sysselsättningsgrad { get; set; }
         public decimal Vakansavdrag { get; set; }
+        public decimal Årsarbetare { get; set; }
     }
 }

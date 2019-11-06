@@ -42,10 +42,9 @@ namespace PresentationLayer1.Forms
             var tillägg = decimal.Parse(tbTillägg.Text);
             var gradT = bool.Parse(cmbGradT.Text = cmbGradT.Text == "Säker" ? "true" : "False"); ;
             var gradA = bool.Parse(cmbGradA.Text = cmbGradA.Text == "Säker" ? "true" : "False"); ;
-            var budget = decimal.Parse(tbBudget.Text);
             var tim = int.Parse(tbTimmar.Text);
             var kommentar = rtbKommentar.Text;
-            businessManager.AddProduktKund(kund, avtal, tillägg, gradT, gradA, budget, tim, kommentar, produktID);
+            businessManager.AddProduktKund(kund, avtal, tillägg, gradT, gradA, tim, kommentar, produktID);
             MessageBox.Show("Kunden tillagd!");
         }
     }

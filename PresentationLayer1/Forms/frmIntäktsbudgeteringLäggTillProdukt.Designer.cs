@@ -33,8 +33,6 @@
             this.btnSpara = new System.Windows.Forms.Button();
             this.lblLäggTillProdulktFör = new System.Windows.Forms.Label();
             this.lblKunden = new System.Windows.Forms.Label();
-            this.lblBudget = new System.Windows.Forms.Label();
-            this.tbBudget = new System.Windows.Forms.TextBox();
             this.lblAvtal = new System.Windows.Forms.Label();
             this.tbAvtal = new System.Windows.Forms.TextBox();
             this.cmbGradA = new System.Windows.Forms.ComboBox();
@@ -101,23 +99,6 @@
             this.lblKunden.Size = new System.Drawing.Size(46, 20);
             this.lblKunden.TabIndex = 41;
             this.lblKunden.Text = "Kund";
-            // 
-            // lblBudget
-            // 
-            this.lblBudget.AutoSize = true;
-            this.lblBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudget.Location = new System.Drawing.Point(16, 551);
-            this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(51, 16);
-            this.lblBudget.TabIndex = 43;
-            this.lblBudget.Text = "Budget";
-            // 
-            // tbBudget
-            // 
-            this.tbBudget.Location = new System.Drawing.Point(15, 571);
-            this.tbBudget.Name = "tbBudget";
-            this.tbBudget.Size = new System.Drawing.Size(188, 20);
-            this.tbBudget.TabIndex = 42;
             // 
             // lblAvtal
             // 
@@ -265,8 +246,6 @@
             this.Controls.Add(this.cmbGradA);
             this.Controls.Add(this.lblAvtal);
             this.Controls.Add(this.tbAvtal);
-            this.Controls.Add(this.lblBudget);
-            this.Controls.Add(this.tbBudget);
             this.Controls.Add(this.lblKunden);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
@@ -287,8 +266,6 @@
         private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Label lblLäggTillProdulktFör;
         private System.Windows.Forms.Label lblKunden;
-        private System.Windows.Forms.Label lblBudget;
-        private System.Windows.Forms.TextBox tbBudget;
         private System.Windows.Forms.Label lblAvtal;
         private System.Windows.Forms.TextBox tbAvtal;
         private System.Windows.Forms.ComboBox cmbGradA;

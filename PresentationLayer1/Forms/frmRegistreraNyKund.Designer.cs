@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblKund1 = new System.Windows.Forms.Label();
             this.lblKund2 = new System.Windows.Forms.Label();
             this.lblKundkategori = new System.Windows.Forms.Label();
-            this.tbKundID = new System.Windows.Forms.TextBox();
             this.tbKundNamn = new System.Windows.Forms.TextBox();
             this.cmbKundkategori = new System.Windows.Forms.ComboBox();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -41,20 +39,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblKund1
-            // 
-            this.lblKund1.AutoSize = true;
-            this.lblKund1.Location = new System.Drawing.Point(18, 64);
-            this.lblKund1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKund1.Name = "lblKund1";
-            this.lblKund1.Size = new System.Drawing.Size(43, 13);
-            this.lblKund1.TabIndex = 6;
-            this.lblKund1.Text = "KundID";
-            // 
             // lblKund2
             // 
             this.lblKund2.AutoSize = true;
-            this.lblKund2.Location = new System.Drawing.Point(18, 117);
+            this.lblKund2.Location = new System.Drawing.Point(9, 54);
             this.lblKund2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKund2.Name = "lblKund2";
             this.lblKund2.Size = new System.Drawing.Size(32, 13);
@@ -64,24 +52,16 @@
             // lblKundkategori
             // 
             this.lblKundkategori.AutoSize = true;
-            this.lblKundkategori.Location = new System.Drawing.Point(18, 175);
+            this.lblKundkategori.Location = new System.Drawing.Point(9, 112);
             this.lblKundkategori.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKundkategori.Name = "lblKundkategori";
             this.lblKundkategori.Size = new System.Drawing.Size(70, 13);
             this.lblKundkategori.TabIndex = 8;
             this.lblKundkategori.Text = "Kundkategori";
             // 
-            // tbKundID
-            // 
-            this.tbKundID.Location = new System.Drawing.Point(16, 79);
-            this.tbKundID.Margin = new System.Windows.Forms.Padding(2);
-            this.tbKundID.Name = "tbKundID";
-            this.tbKundID.Size = new System.Drawing.Size(241, 20);
-            this.tbKundID.TabIndex = 9;
-            // 
             // tbKundNamn
             // 
-            this.tbKundNamn.Location = new System.Drawing.Point(20, 140);
+            this.tbKundNamn.Location = new System.Drawing.Point(11, 77);
             this.tbKundNamn.Margin = new System.Windows.Forms.Padding(2);
             this.tbKundNamn.Name = "tbKundNamn";
             this.tbKundNamn.Size = new System.Drawing.Size(237, 20);
@@ -90,7 +70,7 @@
             // cmbKundkategori
             // 
             this.cmbKundkategori.FormattingEnabled = true;
-            this.cmbKundkategori.Location = new System.Drawing.Point(20, 198);
+            this.cmbKundkategori.Location = new System.Drawing.Point(11, 135);
             this.cmbKundkategori.Margin = new System.Windows.Forms.Padding(2);
             this.cmbKundkategori.Name = "cmbKundkategori";
             this.cmbKundkategori.Size = new System.Drawing.Size(154, 21);
@@ -121,7 +101,7 @@
             // 
             // btnSkapaNyKundkategori
             // 
-            this.btnSkapaNyKundkategori.Location = new System.Drawing.Point(178, 190);
+            this.btnSkapaNyKundkategori.Location = new System.Drawing.Point(169, 127);
             this.btnSkapaNyKundkategori.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkapaNyKundkategori.Name = "btnSkapaNyKundkategori";
             this.btnSkapaNyKundkategori.Size = new System.Drawing.Size(79, 34);
@@ -161,10 +141,8 @@
             this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.cmbKundkategori);
             this.Controls.Add(this.tbKundNamn);
-            this.Controls.Add(this.tbKundID);
             this.Controls.Add(this.lblKundkategori);
             this.Controls.Add(this.lblKund2);
-            this.Controls.Add(this.lblKund1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRegistreraNyKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -175,10 +153,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblKund1;
         private System.Windows.Forms.Label lblKund2;
         private System.Windows.Forms.Label lblKundkategori;
-        private System.Windows.Forms.TextBox tbKundID;
         private System.Windows.Forms.TextBox tbKundNamn;
         private System.Windows.Forms.ComboBox cmbKundkategori;
         private System.Windows.Forms.Button btnSpara;

@@ -21,6 +21,8 @@ namespace DataLayer
         public BehörighetRepository behörighetRepository { get; set; }
         public IntäktsRepository intäktsRepository { get; set; }
         public PrognosRepository prognosRepository { get; set; }
+        public BudgeteratResultatRepository budgeteratResultatRepository { get; set; }
+        public KostnadsbudgetRepository kostnadsbudgetRepository { get; set; }
 
         private RepositoryFacade()
         {
@@ -32,6 +34,8 @@ namespace DataLayer
             behörighetRepository = new BehörighetRepository();
             intäktsRepository = new IntäktsRepository();
             prognosRepository = new PrognosRepository();
+            budgeteratResultatRepository = new BudgeteratResultatRepository();
+            kostnadsbudgetRepository = new KostnadsbudgetRepository();
 
         }
 

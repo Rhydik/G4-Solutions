@@ -9,7 +9,7 @@
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=DataContext3")
+            : base("name=DataContext4")
         {
         }
 
@@ -18,6 +18,7 @@
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
         public virtual DbSet<Intäktsbudget> Intäktsbudget { get; set; }
         public virtual DbSet<Konto> Konto { get; set; }
+        public virtual DbSet<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
         public virtual DbSet<KundKategori> KundKategori { get; set; }
         public virtual DbSet<Personal> Personal { get; set; }
         public virtual DbSet<Produktgrupp> Produktgrupp { get; set; }
@@ -25,6 +26,8 @@
         public virtual DbSet<Prognos> Prognos { get; set; }
         public virtual DbSet<schablonkostnad> schablonkostnad { get; set; }
         public virtual DbSet<Aktivitet> Aktivitet { get; set; }
+        public virtual DbSet<AktivitetKostnadsbudget> AktivitetKostnadsbudget { get; set; }
+        public virtual DbSet<KostnadsbudgetProdukt> KostnadsbudgetProdukt { get; set; }
         public virtual DbSet<Kund> Kund { get; set; }
         public virtual DbSet<KundIntäktsbudget> KundIntäktsbudget { get; set; }
         public virtual DbSet<PersonalProdukt> PersonalProdukt { get; set; }
@@ -58,6 +61,11 @@
             modelBuilder.Entity<Direktkostnad>()
                 .Property(e => e.Belopp)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Direktkostnad>()
+                .HasMany(e => e.KostnadsbudgetSet)
+                .WithMany(e => e.Direktkostnad)
+                .Map(m => m.ToTable("KostnadsbudgetDirektkostnad").MapRightKey("Kostnadsbudget_KostnadsbudgetID"));
 
             modelBuilder.Entity<Intäktsbudget>()
                 .Property(e => e.Avtal)
@@ -101,11 +109,40 @@
                 .HasForeignKey(e => e.Konto_KontoID)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<KostnadsbudgetSet>()
+                .Property(e => e.Summering)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<KostnadsbudgetSet>()
+                .HasMany(e => e.AktivitetKostnadsbudget)
+                .WithRequired(e => e.KostnadsbudgetSet)
+                .HasForeignKey(e => e.Kostnadsbudget_KostnadsbudgetID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KostnadsbudgetSet>()
+                .HasMany(e => e.KostnadsbudgetProdukt)
+                .WithRequired(e => e.KostnadsbudgetSet)
+                .HasForeignKey(e => e.Kostnadsbudget_KostnadsbudgetID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<KostnadsbudgetSet>()
+                .HasMany(e => e.Personal)
+                .WithMany(e => e.KostnadsbudgetSet)
+                .Map(m => m.ToTable("PersonalKostnadsbudget").MapLeftKey("Kostnadsbudget_KostnadsbudgetID"));
+
             modelBuilder.Entity<KundKategori>()
                 .HasMany(e => e.Kund)
                 .WithRequired(e => e.KundKategori)
                 .HasForeignKey(e => e.KundKategori_KundKategoriID)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Personal>()
+                .Property(e => e.Sysselsättningsgrad)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Personal>()
+                .Property(e => e.Vakansavdrag)
+                .HasPrecision(18, 0);
 
             modelBuilder.Entity<Personal>()
                 .HasMany(e => e.AntalTimmar)

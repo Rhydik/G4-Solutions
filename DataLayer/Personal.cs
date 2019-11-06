@@ -15,6 +15,7 @@ namespace DataLayer
             AntalTimmar = new HashSet<AntalTimmar>();
             PersonalProdukt = new HashSet<PersonalProdukt>();
             Avdelning = new HashSet<Avdelning>();
+            KostnadsbudgetSet = new HashSet<KostnadsbudgetSet>();
         }
 
         public int PersonalID { get; set; }
@@ -27,9 +28,9 @@ namespace DataLayer
 
         public int Månadslön { get; set; }
 
-        public int Sysselsättningsgrad { get; set; }
+        public decimal Sysselsättningsgrad { get; set; }
 
-        public int Vakansavdrag { get; set; }
+        public decimal Vakansavdrag { get; set; }
 
         [Required]
         public string Lösenord { get; set; }
@@ -45,5 +46,8 @@ namespace DataLayer
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avdelning> Avdelning { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
     }
 }

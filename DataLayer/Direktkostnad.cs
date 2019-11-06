@@ -9,6 +9,12 @@ namespace DataLayer
     [Table("Direktkostnad")]
     public partial class Direktkostnad
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Direktkostnad()
+        {
+            KostnadsbudgetSet = new HashSet<KostnadsbudgetSet>();
+        }
+
         public int DirektkostnadID { get; set; }
 
         [Required]
@@ -19,5 +25,8 @@ namespace DataLayer
         public int Konto_KontoID { get; set; }
 
         public virtual Konto Konto { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
     }
 }

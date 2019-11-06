@@ -29,6 +29,7 @@ namespace PresentationLayer1.Forms
 
         private void Hide()
         {
+            lblSummering.Hide();
             btnLäggTillProdukt.Hide();
             btnTaBortProdukt.Hide();
             btnVäljNyKund.Hide();
@@ -47,6 +48,7 @@ namespace PresentationLayer1.Forms
         
         private void Show()
         {
+            lblSummering.Show();
             btnLäggTillProdukt.Show();
             btnTaBortProdukt.Show();
             btnVäljKund.Hide();
@@ -71,7 +73,13 @@ namespace PresentationLayer1.Forms
 
         private void Update()
         {
+            decimal sum = 0;
             produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
+            foreach (var item in produkts)
+            {
+                sum = sum + item.Budget;
+            }
+            lblSummering.Text = sum.ToString();
             dgvIntäktsbudgeteringKund.DataSource = produkts;
         }
 

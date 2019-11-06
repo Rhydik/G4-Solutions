@@ -56,7 +56,18 @@
     <Compile Include="Aktivitet.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AktivitetKostnadsbudget.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="DTO\KontorDTO.cs" />
+    <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
+    <Compile Include="Kostnadsbudget.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KostnadsbudgetProdukt.cs" />
+    <Compile Include="KostnadsbudgetProduktDTO.cs" />
+    <Compile Include="KostnadsbudgetSet.cs" />
+    <Compile Include="Repositories\KostnadsbudgetRepository.cs" />
+    <Compile Include="Repositories\BudgeteratResultatRepository.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
     <Compile Include="DTO\IntäktsbudgetKundDTO.cs" />
     <Compile Include="DTO\IntäktsbudgetProduktDTO.cs" />
@@ -64,6 +75,7 @@
     <Compile Include="KundIntäktsbudget.cs" />
     <Compile Include="LästFilPrognos.cs" />
     <Compile Include="ProduktIntäktsbudget.cs" />
+    <Compile Include="DTO\ProduktSummeringDTO.cs" />
     <Compile Include="Repositories\IntäktsRepository.cs" />
     <Compile Include="Repositories\BehörighetRepository.cs" />
     <Compile Include="DTO\AktivitetDTO.cs" />

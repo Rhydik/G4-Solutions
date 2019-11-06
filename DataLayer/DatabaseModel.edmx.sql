@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/28/2019 15:47:57
+-- Date Created: 11/06/2019 14:04:10
 -- Generated from EDMX file: C:\Users\look_\source\repos\Rhydik\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
@@ -20,14 +20,20 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_PrognosIntäktsbudget]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Prognos] DROP CONSTRAINT [FK_PrognosIntäktsbudget];
 GO
-IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Intäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget];
+IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget_Kund]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KundIntäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget_Kund];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KundIntäktsbudget_Intäktsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KundIntäktsbudget] DROP CONSTRAINT [FK_KundIntäktsbudget_Intäktsbudget];
 GO
 IF OBJECT_ID(N'[dbo].[FK_KundKategoriKund]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Kund] DROP CONSTRAINT [FK_KundKategoriKund];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktIntäktsbudget];
+IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget_Produkt]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProduktIntäktsbudget] DROP CONSTRAINT [FK_ProduktIntäktsbudget_Produkt];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProduktIntäktsbudget_Intäktsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProduktIntäktsbudget] DROP CONSTRAINT [FK_ProduktIntäktsbudget_Intäktsbudget];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AntalTimmarPersonal]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AntalTimmar] DROP CONSTRAINT [FK_AntalTimmarPersonal];
@@ -115,6 +121,12 @@ GO
 IF OBJECT_ID(N'[dbo].[schablonkostnad]', 'U') IS NOT NULL
     DROP TABLE [dbo].[schablonkostnad];
 GO
+IF OBJECT_ID(N'[dbo].[KundIntäktsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KundIntäktsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[ProduktIntäktsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProduktIntäktsbudget];
+GO
 IF OBJECT_ID(N'[dbo].[PersonalProdukt]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PersonalProdukt];
 GO
@@ -184,8 +196,8 @@ CREATE TABLE [dbo].[Personal] (
     [PersonNr] nvarchar(max)  NOT NULL,
     [Namn] nvarchar(max)  NOT NULL,
     [Månadslön] int  NOT NULL,
-    [Sysselsättningsgrad] int  NOT NULL,
-    [Vakansavdrag] int  NOT NULL,
+    [Sysselsättningsgrad] decimal(18,0)  NOT NULL,
+    [Vakansavdrag] decimal(18,0)  NOT NULL,
     [Lösenord] nvarchar(max)  NOT NULL,
     [Behörighet] nvarchar(max)  NOT NULL
 );
@@ -256,6 +268,13 @@ CREATE TABLE [dbo].[schablonkostnad] (
 );
 GO
 
+-- Creating table 'KostnadsbudgetSet'
+CREATE TABLE [dbo].[KostnadsbudgetSet] (
+    [KostnadsbudgetID] int IDENTITY(1,1) NOT NULL,
+    [Summering] decimal(18,0)  NOT NULL
+);
+GO
+
 -- Creating table 'KundIntäktsbudget'
 CREATE TABLE [dbo].[KundIntäktsbudget] (
     [Kund_KundID] nvarchar(max)  NOT NULL,
@@ -288,6 +307,34 @@ GO
 CREATE TABLE [dbo].[KontoAvdelning] (
     [Konto_KontoID] int  NOT NULL,
     [Avdelning_AvdelningID] int  NOT NULL
+);
+GO
+
+-- Creating table 'KostnadsbudgetProdukt'
+CREATE TABLE [dbo].[KostnadsbudgetProdukt] (
+    [Kostnadsbudget_KostnadsbudgetID] int  NOT NULL,
+    [Produkt_ProduktID] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'KostnadsbudgetDirektkostnad'
+CREATE TABLE [dbo].[KostnadsbudgetDirektkostnad] (
+    [Kostnadsbudget_KostnadsbudgetID] int  NOT NULL,
+    [Direktkostnad_DirektkostnadID] int  NOT NULL
+);
+GO
+
+-- Creating table 'PersonalKostnadsbudget'
+CREATE TABLE [dbo].[PersonalKostnadsbudget] (
+    [Personal_PersonalID] int  NOT NULL,
+    [Kostnadsbudget_KostnadsbudgetID] int  NOT NULL
+);
+GO
+
+-- Creating table 'AktivitetKostnadsbudget'
+CREATE TABLE [dbo].[AktivitetKostnadsbudget] (
+    [Aktivitet_AktivitetID] nvarchar(max)  NOT NULL,
+    [Kostnadsbudget_KostnadsbudgetID] int  NOT NULL
 );
 GO
 
@@ -379,6 +426,12 @@ ADD CONSTRAINT [PK_schablonkostnad]
     PRIMARY KEY CLUSTERED ([schablonkostnadID] ASC);
 GO
 
+-- Creating primary key on [KostnadsbudgetID] in table 'KostnadsbudgetSet'
+ALTER TABLE [dbo].[KostnadsbudgetSet]
+ADD CONSTRAINT [PK_KostnadsbudgetSet]
+    PRIMARY KEY CLUSTERED ([KostnadsbudgetID] ASC);
+GO
+
 -- Creating primary key on [Kund_KundID], [Intäktsbudget_IntäktsbudgetID] in table 'KundIntäktsbudget'
 ALTER TABLE [dbo].[KundIntäktsbudget]
 ADD CONSTRAINT [PK_KundIntäktsbudget]
@@ -407,6 +460,30 @@ GO
 ALTER TABLE [dbo].[KontoAvdelning]
 ADD CONSTRAINT [PK_KontoAvdelning]
     PRIMARY KEY CLUSTERED ([Konto_KontoID], [Avdelning_AvdelningID] ASC);
+GO
+
+-- Creating primary key on [Kostnadsbudget_KostnadsbudgetID], [Produkt_ProduktID] in table 'KostnadsbudgetProdukt'
+ALTER TABLE [dbo].[KostnadsbudgetProdukt]
+ADD CONSTRAINT [PK_KostnadsbudgetProdukt]
+    PRIMARY KEY CLUSTERED ([Kostnadsbudget_KostnadsbudgetID], [Produkt_ProduktID] ASC);
+GO
+
+-- Creating primary key on [Kostnadsbudget_KostnadsbudgetID], [Direktkostnad_DirektkostnadID] in table 'KostnadsbudgetDirektkostnad'
+ALTER TABLE [dbo].[KostnadsbudgetDirektkostnad]
+ADD CONSTRAINT [PK_KostnadsbudgetDirektkostnad]
+    PRIMARY KEY CLUSTERED ([Kostnadsbudget_KostnadsbudgetID], [Direktkostnad_DirektkostnadID] ASC);
+GO
+
+-- Creating primary key on [Personal_PersonalID], [Kostnadsbudget_KostnadsbudgetID] in table 'PersonalKostnadsbudget'
+ALTER TABLE [dbo].[PersonalKostnadsbudget]
+ADD CONSTRAINT [PK_PersonalKostnadsbudget]
+    PRIMARY KEY CLUSTERED ([Personal_PersonalID], [Kostnadsbudget_KostnadsbudgetID] ASC);
+GO
+
+-- Creating primary key on [Aktivitet_AktivitetID], [Kostnadsbudget_KostnadsbudgetID] in table 'AktivitetKostnadsbudget'
+ALTER TABLE [dbo].[AktivitetKostnadsbudget]
+ADD CONSTRAINT [PK_AktivitetKostnadsbudget]
+    PRIMARY KEY CLUSTERED ([Aktivitet_AktivitetID], [Kostnadsbudget_KostnadsbudgetID] ASC);
 GO
 
 -- --------------------------------------------------
@@ -666,6 +743,102 @@ GO
 CREATE INDEX [IX_FK_ProduktAvdelning]
 ON [dbo].[Produkt]
     ([Avdelning_AvdelningID]);
+GO
+
+-- Creating foreign key on [Kostnadsbudget_KostnadsbudgetID] in table 'KostnadsbudgetProdukt'
+ALTER TABLE [dbo].[KostnadsbudgetProdukt]
+ADD CONSTRAINT [FK_KostnadsbudgetProdukt_Kostnadsbudget]
+    FOREIGN KEY ([Kostnadsbudget_KostnadsbudgetID])
+    REFERENCES [dbo].[KostnadsbudgetSet]
+        ([KostnadsbudgetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Produkt_ProduktID] in table 'KostnadsbudgetProdukt'
+ALTER TABLE [dbo].[KostnadsbudgetProdukt]
+ADD CONSTRAINT [FK_KostnadsbudgetProdukt_Produkt]
+    FOREIGN KEY ([Produkt_ProduktID])
+    REFERENCES [dbo].[Produkt]
+        ([ProduktID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KostnadsbudgetProdukt_Produkt'
+CREATE INDEX [IX_FK_KostnadsbudgetProdukt_Produkt]
+ON [dbo].[KostnadsbudgetProdukt]
+    ([Produkt_ProduktID]);
+GO
+
+-- Creating foreign key on [Kostnadsbudget_KostnadsbudgetID] in table 'KostnadsbudgetDirektkostnad'
+ALTER TABLE [dbo].[KostnadsbudgetDirektkostnad]
+ADD CONSTRAINT [FK_KostnadsbudgetDirektkostnad_Kostnadsbudget]
+    FOREIGN KEY ([Kostnadsbudget_KostnadsbudgetID])
+    REFERENCES [dbo].[KostnadsbudgetSet]
+        ([KostnadsbudgetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Direktkostnad_DirektkostnadID] in table 'KostnadsbudgetDirektkostnad'
+ALTER TABLE [dbo].[KostnadsbudgetDirektkostnad]
+ADD CONSTRAINT [FK_KostnadsbudgetDirektkostnad_Direktkostnad]
+    FOREIGN KEY ([Direktkostnad_DirektkostnadID])
+    REFERENCES [dbo].[Direktkostnad]
+        ([DirektkostnadID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_KostnadsbudgetDirektkostnad_Direktkostnad'
+CREATE INDEX [IX_FK_KostnadsbudgetDirektkostnad_Direktkostnad]
+ON [dbo].[KostnadsbudgetDirektkostnad]
+    ([Direktkostnad_DirektkostnadID]);
+GO
+
+-- Creating foreign key on [Personal_PersonalID] in table 'PersonalKostnadsbudget'
+ALTER TABLE [dbo].[PersonalKostnadsbudget]
+ADD CONSTRAINT [FK_PersonalKostnadsbudget_Personal]
+    FOREIGN KEY ([Personal_PersonalID])
+    REFERENCES [dbo].[Personal]
+        ([PersonalID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Kostnadsbudget_KostnadsbudgetID] in table 'PersonalKostnadsbudget'
+ALTER TABLE [dbo].[PersonalKostnadsbudget]
+ADD CONSTRAINT [FK_PersonalKostnadsbudget_Kostnadsbudget]
+    FOREIGN KEY ([Kostnadsbudget_KostnadsbudgetID])
+    REFERENCES [dbo].[KostnadsbudgetSet]
+        ([KostnadsbudgetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PersonalKostnadsbudget_Kostnadsbudget'
+CREATE INDEX [IX_FK_PersonalKostnadsbudget_Kostnadsbudget]
+ON [dbo].[PersonalKostnadsbudget]
+    ([Kostnadsbudget_KostnadsbudgetID]);
+GO
+
+-- Creating foreign key on [Aktivitet_AktivitetID] in table 'AktivitetKostnadsbudget'
+ALTER TABLE [dbo].[AktivitetKostnadsbudget]
+ADD CONSTRAINT [FK_AktivitetKostnadsbudget_Aktivitet]
+    FOREIGN KEY ([Aktivitet_AktivitetID])
+    REFERENCES [dbo].[Aktivitet]
+        ([AktivitetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Kostnadsbudget_KostnadsbudgetID] in table 'AktivitetKostnadsbudget'
+ALTER TABLE [dbo].[AktivitetKostnadsbudget]
+ADD CONSTRAINT [FK_AktivitetKostnadsbudget_Kostnadsbudget]
+    FOREIGN KEY ([Kostnadsbudget_KostnadsbudgetID])
+    REFERENCES [dbo].[KostnadsbudgetSet]
+        ([KostnadsbudgetID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AktivitetKostnadsbudget_Kostnadsbudget'
+CREATE INDEX [IX_FK_AktivitetKostnadsbudget_Kostnadsbudget]
+ON [dbo].[AktivitetKostnadsbudget]
+    ([Kostnadsbudget_KostnadsbudgetID]);
 GO
 
 -- --------------------------------------------------

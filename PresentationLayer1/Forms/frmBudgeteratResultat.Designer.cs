@@ -35,15 +35,15 @@
             this.dgvBudgeteratResultat = new System.Windows.Forms.DataGridView();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.btnExportera = new System.Windows.Forms.Button();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblBudgeteradeIntäkter = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblBudgetKostnader = new System.Windows.Forms.Label();
+            this.lblResultat = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +52,9 @@
             this.lblSök.AutoSize = true;
             this.lblSök.Location = new System.Drawing.Point(361, 41);
             this.lblSök.Name = "lblSök";
-            this.lblSök.Size = new System.Drawing.Size(26, 13);
+            this.lblSök.Size = new System.Drawing.Size(100, 13);
             this.lblSök.TabIndex = 40;
-            this.lblSök.Text = "Sök";
+            this.lblSök.Text = "Sök på produktnam";
             // 
             // lblKategori
             // 
@@ -73,6 +73,7 @@
             this.btnRensa.TabIndex = 38;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // tbSök
             // 
@@ -80,6 +81,7 @@
             this.tbSök.Name = "tbSök";
             this.tbSök.Size = new System.Drawing.Size(128, 20);
             this.tbSök.TabIndex = 36;
+            this.tbSök.TextChanged += new System.EventHandler(this.tbSök_TextChanged);
             // 
             // dgvBudgeteratResultat
             // 
@@ -90,7 +92,7 @@
             this.dgvBudgeteratResultat.RowHeadersWidth = 62;
             this.dgvBudgeteratResultat.Size = new System.Drawing.Size(614, 265);
             this.dgvBudgeteratResultat.TabIndex = 32;
-            this.dgvBudgeteratResultat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBudgeteratResultat_CellClick);
+            this.dgvBudgeteratResultat.SelectionChanged += new System.EventHandler(this.dgvBudgeteratResultat_SelectionChanged);
             // 
             // cmbKategori
             // 
@@ -114,13 +116,6 @@
             this.btnExportera.TabIndex = 83;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
-            // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
             // 
             // label1
             // 
@@ -164,27 +159,27 @@
             this.lblBudgeteradeIntäkter.AutoSize = true;
             this.lblBudgeteradeIntäkter.Location = new System.Drawing.Point(361, 362);
             this.lblBudgeteradeIntäkter.Name = "lblBudgeteradeIntäkter";
-            this.lblBudgeteradeIntäkter.Size = new System.Drawing.Size(24, 13);
+            this.lblBudgeteradeIntäkter.Size = new System.Drawing.Size(13, 13);
             this.lblBudgeteradeIntäkter.TabIndex = 88;
-            this.lblBudgeteradeIntäkter.Text = "test";
+            this.lblBudgeteradeIntäkter.Text = "0";
             // 
-            // label6
+            // lblBudgetKostnader
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(361, 384);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 89;
-            this.label6.Text = "test";
+            this.lblBudgetKostnader.AutoSize = true;
+            this.lblBudgetKostnader.Location = new System.Drawing.Point(361, 384);
+            this.lblBudgetKostnader.Name = "lblBudgetKostnader";
+            this.lblBudgetKostnader.Size = new System.Drawing.Size(13, 13);
+            this.lblBudgetKostnader.TabIndex = 89;
+            this.lblBudgetKostnader.Text = "0";
             // 
-            // label7
+            // lblResultat
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(361, 419);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 13);
-            this.label7.TabIndex = 90;
-            this.label7.Text = "test";
+            this.lblResultat.AutoSize = true;
+            this.lblResultat.Location = new System.Drawing.Point(361, 419);
+            this.lblResultat.Name = "lblResultat";
+            this.lblResultat.Size = new System.Drawing.Size(13, 13);
+            this.lblResultat.TabIndex = 90;
+            this.lblResultat.Text = "0";
             // 
             // groupBox1
             // 
@@ -196,14 +191,21 @@
             this.groupBox1.TabIndex = 91;
             this.groupBox1.TabStop = false;
             // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
+            // 
             // frmBudgeteratResultat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblResultat);
+            this.Controls.Add(this.lblBudgetKostnader);
             this.Controls.Add(this.lblBudgeteradeIntäkter);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -218,6 +220,7 @@
             this.Controls.Add(this.dgvBudgeteratResultat);
             this.Controls.Add(this.ucMeny);
             this.Name = "frmBudgeteratResultat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budgeterat Resultat | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).EndInit();
             this.ResumeLayout(false);
@@ -239,8 +242,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblBudgeteradeIntäkter;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblBudgetKostnader;
+        private System.Windows.Forms.Label lblResultat;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

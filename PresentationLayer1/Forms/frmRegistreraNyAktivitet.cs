@@ -19,20 +19,23 @@ namespace PresentationLayer1.Forms
         public frmRegistreraNyAktivitet()
         {
             InitializeComponent();
-
-            var avdelning = businessManager.GetAllAvdelningar();
-            cmbAvdelning.DataSource = avdelning;
-            cmbAvdelning.ValueMember = "Namn";
-            cmbAvdelning.DisplayMember = "Namn";
         }
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            var aktvitetsId = tbAktivitetsID.Text;
             var namn = tbBenämning.Text;
             var avdelning = cmbAvdelning.Text;
-
-            businessManager.AddAktivitet(aktvitetsId, namn, avdelning);
+            var aktivitetID = businessManager.SkapaID(namn, avdelning);
+          
+            if (businessManager.CheckAvdelning(cmbAvdelning.Text) == true)
+            {
+                businessManager.AddAktivitet(aktivitetID, namn, avdelning);
+            }
+            else
+            {
+                businessManager.CreateAvdelning(avdelning);
+                businessManager.AddAktivitet(aktivitetID, namn, avdelning);
+            }
 
             this.Visible = !this.Visible;
         }

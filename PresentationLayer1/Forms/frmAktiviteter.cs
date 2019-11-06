@@ -26,11 +26,6 @@ namespace PresentationLayer1.Forms
             aktiviteter = businessManager.GetAllAktiviteter();
             dgvAktiviteter.DataSource = aktiviteter;
 
-            var avdelning = businessManager.GetAllAvdelningar();
-            cmbVäljAvdelning.DataSource = avdelning;
-            cmbVäljAvdelning.ValueMember = "Namn";
-            cmbVäljAvdelning.DisplayMember = "Namn";
-
             HideFromUser();
         }
 
@@ -64,7 +59,7 @@ namespace PresentationLayer1.Forms
 
         private void cmbVäljAvdelning_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbVäljAvdelning.SelectedIndex == 0)
+            if (cmbVäljAvdelning.Text == "Alla")
             {
                 bindingSource.DataSource = businessManager.GetAllAktiviteter();
                 dgvAktiviteter.DataSource = bindingSource.DataSource;
@@ -104,6 +99,12 @@ namespace PresentationLayer1.Forms
                 btnRedigeraAktivitet.Hide();
                 btnRegistreraNyAktivitet.Hide();
             }
+        }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            tbAktivitetsID.Clear();
+            tbBenämning.Clear();
         }
     }
 }

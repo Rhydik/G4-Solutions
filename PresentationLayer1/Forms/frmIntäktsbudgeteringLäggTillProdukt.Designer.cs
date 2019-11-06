@@ -104,7 +104,7 @@
             // 
             this.lblAvtal.AutoSize = true;
             this.lblAvtal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvtal.Location = new System.Drawing.Point(16, 507);
+            this.lblAvtal.Location = new System.Drawing.Point(16, 335);
             this.lblAvtal.Name = "lblAvtal";
             this.lblAvtal.Size = new System.Drawing.Size(38, 16);
             this.lblAvtal.TabIndex = 45;
@@ -112,7 +112,7 @@
             // 
             // tbAvtal
             // 
-            this.tbAvtal.Location = new System.Drawing.Point(16, 526);
+            this.tbAvtal.Location = new System.Drawing.Point(16, 354);
             this.tbAvtal.Name = "tbAvtal";
             this.tbAvtal.Size = new System.Drawing.Size(188, 20);
             this.tbAvtal.TabIndex = 44;
@@ -123,7 +123,7 @@
             this.cmbGradA.Items.AddRange(new object[] {
             "Säker",
             "Osäker"});
-            this.cmbGradA.Location = new System.Drawing.Point(15, 478);
+            this.cmbGradA.Location = new System.Drawing.Point(16, 399);
             this.cmbGradA.Name = "cmbGradA";
             this.cmbGradA.Size = new System.Drawing.Size(188, 21);
             this.cmbGradA.TabIndex = 46;
@@ -132,7 +132,7 @@
             // 
             this.lblGradA.AutoSize = true;
             this.lblGradA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradA.Location = new System.Drawing.Point(16, 459);
+            this.lblGradA.Location = new System.Drawing.Point(17, 380);
             this.lblGradA.Name = "lblGradA";
             this.lblGradA.Size = new System.Drawing.Size(50, 16);
             this.lblGradA.TabIndex = 47;
@@ -142,7 +142,7 @@
             // 
             this.lblGradT.AutoSize = true;
             this.lblGradT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGradT.Location = new System.Drawing.Point(12, 373);
+            this.lblGradT.Location = new System.Drawing.Point(13, 476);
             this.lblGradT.Name = "lblGradT";
             this.lblGradT.Size = new System.Drawing.Size(50, 16);
             this.lblGradT.TabIndex = 49;
@@ -154,7 +154,7 @@
             this.cmbGradT.Items.AddRange(new object[] {
             "Säker",
             "Osäker"});
-            this.cmbGradT.Location = new System.Drawing.Point(15, 392);
+            this.cmbGradT.Location = new System.Drawing.Point(16, 495);
             this.cmbGradT.Name = "cmbGradT";
             this.cmbGradT.Size = new System.Drawing.Size(188, 21);
             this.cmbGradT.TabIndex = 48;
@@ -163,7 +163,7 @@
             // 
             this.lblTillägg.AutoSize = true;
             this.lblTillägg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTillägg.Location = new System.Drawing.Point(12, 331);
+            this.lblTillägg.Location = new System.Drawing.Point(12, 424);
             this.lblTillägg.Name = "lblTillägg";
             this.lblTillägg.Size = new System.Drawing.Size(50, 16);
             this.lblTillägg.TabIndex = 51;
@@ -171,7 +171,7 @@
             // 
             // tbTilägg
             // 
-            this.tbTilägg.Location = new System.Drawing.Point(16, 350);
+            this.tbTilägg.Location = new System.Drawing.Point(16, 443);
             this.tbTilägg.Name = "tbTilägg";
             this.tbTilägg.Size = new System.Drawing.Size(188, 20);
             this.tbTilägg.TabIndex = 50;
@@ -180,7 +180,7 @@
             // 
             this.lblTimmar.AutoSize = true;
             this.lblTimmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimmar.Location = new System.Drawing.Point(12, 416);
+            this.lblTimmar.Location = new System.Drawing.Point(12, 519);
             this.lblTimmar.Name = "lblTimmar";
             this.lblTimmar.Size = new System.Drawing.Size(54, 16);
             this.lblTimmar.TabIndex = 53;
@@ -188,7 +188,7 @@
             // 
             // tbTimmar
             // 
-            this.tbTimmar.Location = new System.Drawing.Point(16, 435);
+            this.tbTimmar.Location = new System.Drawing.Point(16, 538);
             this.tbTimmar.Name = "tbTimmar";
             this.tbTimmar.Size = new System.Drawing.Size(188, 20);
             this.tbTimmar.TabIndex = 52;

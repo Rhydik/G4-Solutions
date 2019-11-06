@@ -87,6 +87,7 @@ namespace PresentationLayer1.Forms
         private void btnTaBortProdukt_Click_1(object sender, EventArgs e)
         {
             businessManager.RemoveProdukt(produkten);
+            MessageBox.Show("Produkten borttagen!");
         }
 
         private void cmbProduktgrupp_SelectedIndexChanged(object sender, EventArgs e)

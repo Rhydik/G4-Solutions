@@ -32,7 +32,6 @@
             this.lblBenämning = new System.Windows.Forms.Label();
             this.lblAktivitetsID = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
             this.cmbVäljAvdelning = new System.Windows.Forms.ComboBox();
             this.tbBenämning = new System.Windows.Forms.TextBox();
             this.tbAktivitetsID = new System.Windows.Forms.TextBox();
@@ -73,30 +72,27 @@
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(645, 73);
+            this.btnRensa.Location = new System.Drawing.Point(623, 73);
             this.btnRensa.Name = "btnRensa";
             this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 43;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(733, 30);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 42;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // cmbVäljAvdelning
             // 
             this.cmbVäljAvdelning.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVäljAvdelning.FormattingEnabled = true;
+            this.cmbVäljAvdelning.Items.AddRange(new object[] {
+            "Alla",
+            "Administrativa avdelningen",
+            "Försäljnings- och marknadsavdelningen"});
             this.cmbVäljAvdelning.Location = new System.Drawing.Point(409, 75);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
             this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
             this.cmbVäljAvdelning.TabIndex = 41;
+            this.cmbVäljAvdelning.TabStop = false;
             this.cmbVäljAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbVäljAvdelning_SelectedIndexChanged);
             // 
             // tbBenämning
@@ -177,7 +173,6 @@
             this.Controls.Add(this.lblBenämning);
             this.Controls.Add(this.lblAktivitetsID);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.cmbVäljAvdelning);
             this.Controls.Add(this.tbBenämning);
             this.Controls.Add(this.tbAktivitetsID);
@@ -200,7 +195,6 @@
         private System.Windows.Forms.Label lblBenämning;
         private System.Windows.Forms.Label lblAktivitetsID;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.ComboBox cmbVäljAvdelning;
         private System.Windows.Forms.TextBox tbBenämning;
         private System.Windows.Forms.TextBox tbAktivitetsID;

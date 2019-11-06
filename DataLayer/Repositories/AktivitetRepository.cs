@@ -14,7 +14,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Aktivitet
-                            select new AktivitetDTO { AktivitetID = x.AktivitetID, Namn = x.Namn };
+                            select new AktivitetDTO { AktivitetID = x.AktivitetID, Namn = x.Namn, Avdelning = x.Avdelning.Namn};
                 return query.ToList();
             }
         }
@@ -55,7 +55,17 @@ namespace DataLayer
 
         public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
         {
-            return;
+            using (var db = new DataContext())
+            {
+                var akti = (from x in db.Aktivitet
+                           where x.AktivitetID == aktiId
+                           select x).FirstOrDefault();
+
+                akti.Namn = aktinamn;
+                akti.AktivitetID = aktiId;
+                akti.Avdelning.Namn = aktiAvdelning;
+                db.SaveChanges();
+            }
         }
 
         public void AddAktivitet(string aktvitetsId, string namn, string avdelning)
@@ -77,8 +87,8 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Aktivitet
-                            where x.Avdelning.ToString().StartsWith(avdelning)
-                            select new AktivitetDTO { AktivitetID = x.AktivitetID, Namn = x.Namn };
+                            where x.Avdelning.Namn.StartsWith(avdelning)
+                            select new AktivitetDTO { AktivitetID = x.AktivitetID, Namn = x.Namn, Avdelning = x.Avdelning.Namn };
 
                 return query.ToList();
             }

@@ -184,16 +184,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvIntäktsbudgeteringKund.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIntäktsbudgeteringKund.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(260, 138);
+            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(208, 138);
             this.dgvIntäktsbudgeteringKund.Name = "dgvIntäktsbudgeteringKund";
             this.dgvIntäktsbudgeteringKund.ReadOnly = true;
             this.dgvIntäktsbudgeteringKund.RowHeadersWidth = 62;
-            this.dgvIntäktsbudgeteringKund.Size = new System.Drawing.Size(501, 237);
+            this.dgvIntäktsbudgeteringKund.Size = new System.Drawing.Size(580, 237);
             this.dgvIntäktsbudgeteringKund.TabIndex = 31;
             // 
             // btnLäggTillProdukt
             // 
-            this.btnLäggTillProdukt.Location = new System.Drawing.Point(642, 390);
+            this.btnLäggTillProdukt.Location = new System.Drawing.Point(666, 390);
             this.btnLäggTillProdukt.Name = "btnLäggTillProdukt";
             this.btnLäggTillProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnLäggTillProdukt.TabIndex = 32;
@@ -204,7 +204,7 @@
             // btnTaBortProdukt
             // 
             this.btnTaBortProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaBortProdukt.Location = new System.Drawing.Point(516, 390);
+            this.btnTaBortProdukt.Location = new System.Drawing.Point(540, 390);
             this.btnTaBortProdukt.Name = "btnTaBortProdukt";
             this.btnTaBortProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnTaBortProdukt.TabIndex = 41;
@@ -215,7 +215,7 @@
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLåsBudget.Location = new System.Drawing.Point(381, 390);
+            this.btnLåsBudget.Location = new System.Drawing.Point(330, 390);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 42;
@@ -225,7 +225,7 @@
             // btnExportera
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(255, 390);
+            this.btnExportera.Location = new System.Drawing.Point(204, 390);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 43;
@@ -236,7 +236,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 78);
+            this.label1.Location = new System.Drawing.Point(208, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 44;
@@ -246,7 +246,7 @@
             // 
             this.lblValdKundID.AutoSize = true;
             this.lblValdKundID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundID.Location = new System.Drawing.Point(257, 98);
+            this.lblValdKundID.Location = new System.Drawing.Point(208, 98);
             this.lblValdKundID.Name = "lblValdKundID";
             this.lblValdKundID.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundID.TabIndex = 45;
@@ -255,7 +255,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(394, 78);
+            this.label3.Location = new System.Drawing.Point(345, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 46;
@@ -265,7 +265,7 @@
             // 
             this.lblValdKundNamn.AutoSize = true;
             this.lblValdKundNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundNamn.Location = new System.Drawing.Point(394, 98);
+            this.lblValdKundNamn.Location = new System.Drawing.Point(345, 98);
             this.lblValdKundNamn.Name = "lblValdKundNamn";
             this.lblValdKundNamn.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundNamn.TabIndex = 47;
@@ -273,7 +273,7 @@
             // 
             // btnVäljNyKund
             // 
-            this.btnVäljNyKund.Location = new System.Drawing.Point(687, 98);
+            this.btnVäljNyKund.Location = new System.Drawing.Point(638, 98);
             this.btnVäljNyKund.Name = "btnVäljNyKund";
             this.btnVäljNyKund.Size = new System.Drawing.Size(74, 23);
             this.btnVäljNyKund.TabIndex = 48;
@@ -284,7 +284,7 @@
             // btnVäljKund
             // 
             this.btnVäljKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVäljKund.Location = new System.Drawing.Point(642, 390);
+            this.btnVäljKund.Location = new System.Drawing.Point(666, 390);
             this.btnVäljKund.Name = "btnVäljKund";
             this.btnVäljKund.Size = new System.Drawing.Size(120, 41);
             this.btnVäljKund.TabIndex = 49;
@@ -294,7 +294,7 @@
             // 
             // ucSökFältKund
             // 
-            this.ucSökFältKund.Location = new System.Drawing.Point(257, 27);
+            this.ucSökFältKund.Location = new System.Drawing.Point(208, 27);
             this.ucSökFältKund.Name = "ucSökFältKund";
             this.ucSökFältKund.Size = new System.Drawing.Size(534, 53);
             this.ucSökFältKund.TabIndex = 50;

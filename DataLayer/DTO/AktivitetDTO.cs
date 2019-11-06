@@ -10,5 +10,6 @@ namespace DataLayer.DTO
     {
         public string AktivitetID { get; set; }
         public string Namn { get; set; }
+        public string Avdelning { get; set; }
     }
 }

@@ -390,12 +390,23 @@ namespace BusinessLayer
 
         public string SkapaID(string namn, string Kategori)
         {
-            string idEnd = Kategori.Substring(0,2).ToUpper();
+            string idEnd;
+            if (Kategori == "Administrativa avdelningen")
+            {
+                idEnd = "AO";
+            }
+            else if (Kategori == "Försäljnings- och marknadsavdelningen")
+            {
+                idEnd = "FO";
+            }
+            else
+            {
+                idEnd = Kategori.Substring(0, 2).ToUpper();
+            }
 
             Random r = new Random();
-            var indext = r.Next(3, namn.Length - 1);
-            var IdStart = namn.Substring(0, 3) + (namn[indext]);
-
+            var indext = r.Next(2, namn.Trim().Length - 1);
+            var IdStart = namn.Substring(0, 3) + (namn.Trim()[indext]);
             string id = IdStart + idEnd;
 
             return id.ToUpper();

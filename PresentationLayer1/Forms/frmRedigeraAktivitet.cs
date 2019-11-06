@@ -47,8 +47,8 @@ namespace PresentationLayer1.Forms
             var aktiId = tbAktivitetsID.Text;
             var aktinamn = tbBenämning.Text;
             var aktiAvdelning = cmbAvdelning.Text;
-            businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning); 
-            
+            businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
+            MessageBox.Show("Aktivitet uppdaterad!");
             this.Visible = !this.Visible;
         }
     }

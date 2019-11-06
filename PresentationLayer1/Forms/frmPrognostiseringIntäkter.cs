@@ -17,6 +17,7 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmPrognostiseringIntäkter : Form
     {
+        private BusinessManager businessManager = new BusinessManager();
         //BindingSource bindingSource = new BindingSource();
         //BusinessManager businessManager = new BusinessManager();
         //private List<PrognosDTO> prognoser;
@@ -45,9 +46,15 @@ namespace PresentationLayer1.Forms
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Utfall Acc");
 
 
-
+            this.FormClosing += frmPrognostiseringIntäkter_FormClosing; //för att få saker att sparas när man stänger fönstret
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
+        }
+
+
+        private void frmPrognostiseringIntäkter_FormClosing(Object sender, FormClosingEventArgs e) //för att få saker att sparas när man stänger fönstret
+        {
+            SparaFilMetod();
         }
 
         private void Update()
@@ -95,24 +102,19 @@ namespace PresentationLayer1.Forms
 
 
                 m.ProduktID = LästRad[0];
-                m.Produkt = LästRad[1];     //visas
+                m.Produkt = LästRad[1];           //visas
                 m.KundID = LästRad[2];
                 m.Kund = LästRad[3];
                 m.Datum = LästRad[4];
-                m.Budget = LästRad[5];      //visas
-
+                m.Budget = LästRad[5];            //visas
                 m.UtfallMån = LästRad[6];         //visas 
                 m.UtfallAcc = LästRad[7];         //visas
-
                 m.Månad = LästRad[8];
-
                 m.Upparbetat = LästRad[9];        //visas
-                m.Trend = LästRad[10];             //visas
-                m.FöregPrognos = LästRad[11];      //visas
-                m.Prognos = LästRad[12];           //visas
+                m.Trend = LästRad[10];            //visas
+                m.FöregPrognos = LästRad[11];     //visas
+                m.Prognos = LästRad[12];          //visas
                 m.PrognosBudget = LästRad[13];    //visas
-
-
 
                 LäggTillIndex(m);
             }
@@ -165,6 +167,37 @@ namespace PresentationLayer1.Forms
         private void frmPrognostiseringIntäkter_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void RäknaUtBudgetPrognos()
+        {
+            foreach (DataGridViewRow row in dgvPrognostiseringIntäkter.Rows)
+            {
+                decimal.TryParse(row.Cells["Budget"]?.Value?.ToString(), out decimal Grade1);
+                decimal.TryParse(row.Cells["Prognos"]?.Value?.ToString(), out decimal Grade2);
+
+                //if(Grade2 )
+
+                var resultat = (Grade1 + Grade2);
+                row.Cells["PrognosBudget"].Value = resultat;
+
+                MessageBox.Show(resultat.ToString());
+
+            }
+        }
+
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+
+            string filename = save.FileName;
+
+            save.DefaultExt = ".xls";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                businessManager.Exportera(dgvPrognostiseringIntäkter, save.FileName);
+                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
+            }
         }
     }
 }

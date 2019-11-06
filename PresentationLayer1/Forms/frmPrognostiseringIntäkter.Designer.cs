@@ -46,6 +46,7 @@
             this.btnExportera.TabIndex = 92;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
+            this.btnExportera.Click += new System.EventHandler(this.btnExportera_Click);
             // 
             // cmbMånad
             // 
@@ -72,7 +73,6 @@
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 123);
             this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
-            this.dgvPrognostiseringIntäkter.ReadOnly = true;
             this.dgvPrognostiseringIntäkter.RowHeadersVisible = false;
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
             this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(615, 268);

@@ -44,7 +44,7 @@ namespace PresentationLayer1.Forms
             {
                 try
                 {
-                    var result = schablons.SingleOrDefault(o => o.KontoID == int.Parse(tbKonto.Text));
+                    var result = schablons.SingleOrDefault(o => o.Konto == tbKonto.Text);
 
                     if (result != null)
                     {
@@ -54,11 +54,11 @@ namespace PresentationLayer1.Forms
                     {
 
                         var konto = int.Parse(tbKonto.Text);
-                        var namn = tbKontobenämning.Text;
+                        var benämning = tbKontobenämning.Text;
                         var schablonkostnad = int.Parse(tbSchablonkostnad.Text);
 
 
-                        businessManager.CreateKonto(konto, namn, schablonkostnad);
+                        businessManager.CreateKonto(konto, benämning, schablonkostnad);
 
 
                         DialogResult resultat = MessageBox.Show(tbKontobenämning.Text + " Skapat.", "Skapat", MessageBoxButtons.OK);

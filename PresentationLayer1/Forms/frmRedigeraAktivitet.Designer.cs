@@ -75,7 +75,7 @@
             // 
             this.cmbAvdelning.FormattingEnabled = true;
             this.cmbAvdelning.Items.AddRange(new object[] {
-            "Administrativa avdelning",
+            "Administrativa avdelningen",
             "Försäljnings- och Marknadsavdelning"});
             this.cmbAvdelning.Location = new System.Drawing.Point(12, 225);
             this.cmbAvdelning.Name = "cmbAvdelning";

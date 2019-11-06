@@ -8,8 +8,8 @@ namespace DataLayer
 {
     public class SchablonDTO
     {
-        public int KontoID { get; set; }
-        public string Namn { get; set; }
+        public string Konto { get; set; }
+        public string Kontobenämning { get; set; }
         public decimal Belopp { get; set; }
     }
 }

@@ -31,7 +31,6 @@
             this.lblKontobenämning = new System.Windows.Forms.Label();
             this.lblKonto = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
             this.tbKontobenämning = new System.Windows.Forms.TextBox();
             this.tbKonto = new System.Windows.Forms.TextBox();
             this.btnRegistreraNyttKonto = new System.Windows.Forms.Button();
@@ -40,8 +39,8 @@
             this.tbAvkastningskrav = new System.Windows.Forms.TextBox();
             this.lblAvkastningskrav = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.lblSök = new System.Windows.Forms.Label();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.gvSchablonkostnad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,15 +70,7 @@
             this.btnRensa.TabIndex = 38;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(732, 26);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 37;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click_1);
             // 
             // tbKontobenämning
             // 
@@ -156,13 +147,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
@@ -172,6 +156,13 @@
             this.lblSök.Size = new System.Drawing.Size(45, 24);
             this.lblSök.TabIndex = 44;
             this.lblSök.Text = "Sök";
+            // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmSchablonkostnad
             // 
@@ -185,7 +176,6 @@
             this.Controls.Add(this.lblKontobenämning);
             this.Controls.Add(this.lblKonto);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.tbKontobenämning);
             this.Controls.Add(this.tbKonto);
             this.Controls.Add(this.btnRegistreraNyttKonto);
@@ -206,7 +196,6 @@
         private System.Windows.Forms.Label lblKontobenämning;
         private System.Windows.Forms.Label lblKonto;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.TextBox tbKontobenämning;
         private System.Windows.Forms.TextBox tbKonto;
         private System.Windows.Forms.Button btnRegistreraNyttKonto;

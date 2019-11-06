@@ -60,11 +60,15 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="DTO\KontorDTO.cs" />
     <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
+    <Compile Include="Konto.cs" />
+    <Compile Include="Konton.cs">
+      <DependentUpon>DatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Kostnadsbudget.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="KostnadsbudgetProdukt.cs" />
-    <Compile Include="KostnadsbudgetProduktDTO.cs" />
+    <Compile Include="DTO\KostnadsbudgetProduktDTO.cs" />
     <Compile Include="KostnadsbudgetSet.cs" />
     <Compile Include="Repositories\KostnadsbudgetRepository.cs" />
     <Compile Include="Repositories\BudgeteratResultatRepository.cs" />
@@ -96,9 +100,6 @@
     <Compile Include="DTO\KundDTO.cs" />
     <Compile Include="DTO\ProduktKategoriDTO.cs" />
     <Compile Include="Intäktsbudget.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Konto.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Kund.cs">

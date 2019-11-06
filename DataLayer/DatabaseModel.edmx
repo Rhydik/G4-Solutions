@@ -255,14 +255,14 @@
       <PropertyRef Name="KontoID" />
     </Key>
     <Property Name="KontoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Benämning" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="konto" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="schablonkostnad">
     <Key>
       <PropertyRef Name="schablonkostnadID" />
     </Key>
     <Property Name="schablonkostnadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Namn" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Belopp" Type="decimal" Nullable="false" Precision="18" Scale="0" />
     <Property Name="Konto_KontoID" Type="int" Nullable="false" />
   </EntityType>
@@ -726,7 +726,7 @@
             <End EntitySet="Avdelning" Role="Avdelning" />
           </AssociationSet>
           <EntitySet Name="Direktkostnad" EntityType="DatabaseModel.Direktkostnad" />
-          <EntitySet Name="Konto" EntityType="DatabaseModel.Konto" />
+          <EntitySet Name="Konto" EntityType="DatabaseModel.Konton" />
           <EntitySet Name="schablonkostnad" EntityType="DatabaseModel.schablonkostnad" />
           <AssociationSet Name="schablonkostnadKonto" Association="DatabaseModel.schablonkostnadKonto">
             <End Role="schablonkostnad" EntitySet="schablonkostnad" />
@@ -933,35 +933,35 @@
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.KontoDirektkostnad" FromRole="Direktkostnad" ToRole="Konto" />
           <NavigationProperty Name="Kostnadsbudget" Relationship="DatabaseModel.KostnadsbudgetDirektkostnad" FromRole="Direktkostnad" ToRole="Kostnadsbudget" />
         </EntityType>
-        <EntityType Name="Konto">
+        <EntityType Name="Konton">
           <Key>
             <PropertyRef Name="KontoID" />
           </Key>
           <Property Name="KontoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Benämning" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="schablonkostnad" Relationship="DatabaseModel.schablonkostnadKonto" FromRole="Konto" ToRole="schablonkostnad" />
           <NavigationProperty Name="Direktkostnad" Relationship="DatabaseModel.KontoDirektkostnad" FromRole="Konto" ToRole="Direktkostnad" />
           <NavigationProperty Name="Avdelning" Relationship="DatabaseModel.KontoAvdelning" FromRole="Konto" ToRole="Avdelning" />
+          <Property Name="konto" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="schablonkostnad">
           <Key>
             <PropertyRef Name="schablonkostnadID" />
           </Key>
           <Property Name="schablonkostnadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Namn" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Belopp" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
           <NavigationProperty Name="Konto" Relationship="DatabaseModel.schablonkostnadKonto" FromRole="schablonkostnad" ToRole="Konto" />
         </EntityType>
         <Association Name="schablonkostnadKonto">
           <End Type="DatabaseModel.schablonkostnad" Role="schablonkostnad" Multiplicity="*" />
-          <End Type="DatabaseModel.Konto" Role="Konto" Multiplicity="1" />
+          <End Type="DatabaseModel.Konton" Role="Konto" Multiplicity="1" />
         </Association>
         <Association Name="KontoDirektkostnad">
-          <End Type="DatabaseModel.Konto" Role="Konto" Multiplicity="1" />
+          <End Type="DatabaseModel.Konton" Role="Konto" Multiplicity="1" />
           <End Type="DatabaseModel.Direktkostnad" Role="Direktkostnad" Multiplicity="*" />
         </Association>
         <Association Name="KontoAvdelning">
-          <End Type="DatabaseModel.Konto" Role="Konto" Multiplicity="*" />
+          <End Type="DatabaseModel.Konton" Role="Konto" Multiplicity="*" />
           <End Type="DatabaseModel.Avdelning" Role="Avdelning" Multiplicity="*" />
         </Association>
         <Association Name="ProduktAvdelning">
@@ -1117,10 +1117,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Konto">
-      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Konto)">
+      <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.Konton)">
         <MappingFragment StoreEntitySet="Konto">
           <ScalarProperty Name="KontoID" ColumnName="KontoID" />
-          <ScalarProperty Name="Namn" ColumnName="Namn" />
+          <ScalarProperty Name="Benämning" ColumnName="Benämning" />
+          <ScalarProperty Name="konto" ColumnName="konto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1128,7 +1129,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(DatabaseModel.schablonkostnad)">
         <MappingFragment StoreEntitySet="schablonkostnad">
           <ScalarProperty Name="schablonkostnadID" ColumnName="schablonkostnadID" />
-          <ScalarProperty Name="Namn" ColumnName="Namn" />
           <ScalarProperty Name="Belopp" ColumnName="Belopp" />
         </MappingFragment>
       </EntityTypeMapping>

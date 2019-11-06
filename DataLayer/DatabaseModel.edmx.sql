@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/06/2019 14:04:10
+-- Date Created: 11/06/2019 19:41:08
 -- Generated from EDMX file: C:\Users\look_\source\repos\Rhydik\G4-Solutions\DataLayer\DatabaseModel.edmx
 -- --------------------------------------------------
 
@@ -74,6 +74,30 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProduktAvdelning]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Produkt] DROP CONSTRAINT [FK_ProduktAvdelning];
 GO
+IF OBJECT_ID(N'[dbo].[FK_KostnadsbudgetProdukt_Kostnadsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KostnadsbudgetProdukt] DROP CONSTRAINT [FK_KostnadsbudgetProdukt_Kostnadsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KostnadsbudgetProdukt_Produkt]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KostnadsbudgetProdukt] DROP CONSTRAINT [FK_KostnadsbudgetProdukt_Produkt];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KostnadsbudgetDirektkostnad_Kostnadsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KostnadsbudgetDirektkostnad] DROP CONSTRAINT [FK_KostnadsbudgetDirektkostnad_Kostnadsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_KostnadsbudgetDirektkostnad_Direktkostnad]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[KostnadsbudgetDirektkostnad] DROP CONSTRAINT [FK_KostnadsbudgetDirektkostnad_Direktkostnad];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonalKostnadsbudget_Personal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PersonalKostnadsbudget] DROP CONSTRAINT [FK_PersonalKostnadsbudget_Personal];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PersonalKostnadsbudget_Kostnadsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PersonalKostnadsbudget] DROP CONSTRAINT [FK_PersonalKostnadsbudget_Kostnadsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AktivitetKostnadsbudget_Aktivitet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AktivitetKostnadsbudget] DROP CONSTRAINT [FK_AktivitetKostnadsbudget_Aktivitet];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AktivitetKostnadsbudget_Kostnadsbudget]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AktivitetKostnadsbudget] DROP CONSTRAINT [FK_AktivitetKostnadsbudget_Kostnadsbudget];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -121,6 +145,9 @@ GO
 IF OBJECT_ID(N'[dbo].[schablonkostnad]', 'U') IS NOT NULL
     DROP TABLE [dbo].[schablonkostnad];
 GO
+IF OBJECT_ID(N'[dbo].[KostnadsbudgetSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KostnadsbudgetSet];
+GO
 IF OBJECT_ID(N'[dbo].[KundIntäktsbudget]', 'U') IS NOT NULL
     DROP TABLE [dbo].[KundIntäktsbudget];
 GO
@@ -135,6 +162,18 @@ IF OBJECT_ID(N'[dbo].[AvdelningPersonal]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[KontoAvdelning]', 'U') IS NOT NULL
     DROP TABLE [dbo].[KontoAvdelning];
+GO
+IF OBJECT_ID(N'[dbo].[KostnadsbudgetProdukt]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KostnadsbudgetProdukt];
+GO
+IF OBJECT_ID(N'[dbo].[KostnadsbudgetDirektkostnad]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[KostnadsbudgetDirektkostnad];
+GO
+IF OBJECT_ID(N'[dbo].[PersonalKostnadsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PersonalKostnadsbudget];
+GO
+IF OBJECT_ID(N'[dbo].[AktivitetKostnadsbudget]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AktivitetKostnadsbudget];
 GO
 
 -- --------------------------------------------------
@@ -255,14 +294,14 @@ GO
 -- Creating table 'Konto'
 CREATE TABLE [dbo].[Konto] (
     [KontoID] int IDENTITY(1,1) NOT NULL,
-    [Namn] nvarchar(max)  NOT NULL
+    [Benämning] nvarchar(max)  NOT NULL,
+    [konto] nvarchar(max)  NOT NULL
 );
 GO
 
 -- Creating table 'schablonkostnad'
 CREATE TABLE [dbo].[schablonkostnad] (
     [schablonkostnadID] int IDENTITY(1,1) NOT NULL,
-    [Namn] nvarchar(max)  NOT NULL,
     [Belopp] decimal(18,0)  NOT NULL,
     [Konto_KontoID] int  NOT NULL
 );

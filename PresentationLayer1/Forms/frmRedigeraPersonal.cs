@@ -50,7 +50,7 @@ namespace PresentationLayer1.Forms
             personal.Namn = tbNamn.Text;
             personal.Sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
             personal.Vakansavdrag = int.Parse(tbVakansavdrag.Text);
-
+            MessageBox.Show("Personal uppdaterad!");
             businessManager.UpdatePersonal(personal);
         }
     }

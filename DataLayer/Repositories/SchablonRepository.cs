@@ -13,31 +13,31 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn, };
+                            select new SchablonDTO { Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning, Belopp = x.Belopp};
 
                 return query.ToList();
             }
         }
 
-        public object GetSchablonById(string id)
+        public List<SchablonDTO> GetSchablonById(string id)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            where x.Konto_KontoID.ToString().StartsWith(id)
-                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn };
+                            where x.Konto.konto1.StartsWith(id)
+                            select new SchablonDTO { Belopp = x.Belopp, Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning };
 
                 return query.ToList();
             }
         }
 
-        public object GetSchablonByBenämning(string benämning)
+        public List<SchablonDTO> GetSchablonByBenämning(string benämning)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            where x.Namn.StartsWith(benämning)
-                            select new SchablonDTO { Belopp = x.Belopp, KontoID = x.Konto_KontoID, Namn = x.Namn };
+                            where x.Konto.Benämning.StartsWith(benämning)
+                            select new SchablonDTO { Belopp = x.Belopp, Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning };
 
                 return query.ToList();
             }
@@ -48,10 +48,10 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var kontoToRemove = (from x in db.Konto
-                                     where x.KontoID == schablon.KontoID
+                                     where x.konto1 == schablon.Konto
                                      select x).FirstOrDefault();
 
-                var schablonen = db.schablonkostnad.Where(x => x.Konto.KontoID == schablon.KontoID).FirstOrDefault();
+                var schablonen = db.schablonkostnad.Where(x => x.Konto.konto1 == schablon.Konto).FirstOrDefault();
 
                 db.Konto.Remove(kontoToRemove);
                 db.schablonkostnad.Remove(schablonen);
@@ -60,41 +60,45 @@ namespace DataLayer
             }
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, int konto, string namn, int schablonKostnad)
+        public void UpdateKonto(SchablonDTO oldSchablon, string kontot, string benämning, int schablonKostnad)
         {
             using (var db = new DataContext())
             {
-                var schablonen = (from x in db.schablonkostnad
-                                    where x.Konto.Namn == namn
+                var tempkontot = (from x in db.Konto
+                              where x.konto1 == kontot
+                              select x).FirstOrDefault();
+
+
+                Konto konto = new Konto { konto1 = kontot, Benämning = benämning, };
+                db.Konto.Remove(tempkontot);
+                db.Konto.Add(konto);
+
+                var tempschablon = (from x in db.schablonkostnad
+                                    where x.Konto.konto1 == kontot
                                     select x).FirstOrDefault();
 
-                var tempSchablon = (from x in db.schablonkostnad
-                                where x.Konto.KontoID == oldSchablon.KontoID
-                                select x).FirstOrDefault();
-
-                
-
-                var schablon = new schablonkostnad { schablonkostnadID = konto, Namn = konto.ToString(), Belopp = schablonKostnad, Konto_KontoID = tempSchablon.Konto_KontoID};
-                db.schablonkostnad.Remove(tempSchablon);
+                schablonkostnad schablon = new schablonkostnad { Konto = konto, Belopp = schablonKostnad, Konto_KontoID = konto.KontoID, };
+                db.schablonkostnad.Remove(tempschablon);
                 db.schablonkostnad.Add(schablon);
 
                 db.SaveChanges();
             }
         }
 
-        public void CreateKonto (int konto, string namn, int schablonKostnad)
+        public void CreateKonto (int kontot, string benämning, int schablonKostnad)
         {
             using (var db = new DataContext())
             {
-                var schablonen = (from x in db.schablonkostnad
-                                    where x.Konto.Namn == namn
-                                    select x).FirstOrDefault();
+                var konto = new Konto { konto1 = kontot.ToString(), Benämning = benämning };
+                db.Konto.Add(konto);
 
-                var schablon = new schablonkostnad { Namn = konto.ToString(), Belopp = schablonKostnad, Konto_KontoID = konto };
-                var nyttkonto = new Konto { KontoID = konto, Namn = konto.ToString()};
+                var schablon = (from x in db.schablonkostnad
+                                where x.Konto_KontoID == kontot
+                                select x).FirstOrDefault();
 
-                db.Konto.Add(nyttkonto);
-                db.schablonkostnad.Add(schablon);
+                schablonkostnad newschablon = new schablonkostnad { Konto = konto, Belopp = schablonKostnad, Konto_KontoID = konto.KontoID };
+
+                db.schablonkostnad.Add(newschablon);
 
                 db.SaveChanges();
             }
@@ -104,19 +108,9 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablon = new schablonkostnad { schablonkostnadID = 9999, Namn = "9999", Belopp = avkastning, Konto_KontoID = 9999 };
-                var nyttkonto = new Konto { KontoID = 9999, Namn = "9999"};
+                var nyttkonto = new Konto { konto1 = "9999", Benämning = "Avkastningskrav" };
+                var schablon = new schablonkostnad { schablonkostnadID = 9999, Konto = nyttkonto, Belopp = avkastning, Konto_KontoID = nyttkonto.KontoID};
 
-                var kontoToRemove = (from x in db.Konto
-                                     where x.Namn == schablon.Namn
-                                     select x).FirstOrDefault();
-
-                var schablonToRemove = db.schablonkostnad.Where(x => x.Konto.Namn == schablon.Namn).FirstOrDefault();
-
-
-                db.Konto.Remove(kontoToRemove);
-                db.schablonkostnad.Remove(schablonToRemove);
-                
                 db.Konto.Add(nyttkonto);
                 db.schablonkostnad.Add(schablon);
 

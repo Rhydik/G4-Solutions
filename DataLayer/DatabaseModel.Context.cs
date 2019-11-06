@@ -37,7 +37,7 @@ namespace DataLayer
         public virtual DbSet<Produktkategori> Produktkategori { get; set; }
         public virtual DbSet<Aktivitet> Aktivitet { get; set; }
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
-        public virtual DbSet<Konto> Konto { get; set; }
+        public virtual DbSet<Konton> Konto { get; set; }
         public virtual DbSet<schablonkostnad> schablonkostnad { get; set; }
         public virtual DbSet<Kostnadsbudget> KostnadsbudgetSet { get; set; }
     }

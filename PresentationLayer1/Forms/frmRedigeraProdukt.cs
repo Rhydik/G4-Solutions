@@ -31,7 +31,7 @@ namespace PresentationLayer1.Forms
             tbProduktNamn.Text = produkten.Namn;
             cmbProduktkategori.Text = produkten.Produktkategori;
 
-            var produktkategori = businessManager.GetAllProdukter();
+            var produktkategori = businessManager.GetProduktByKategori();
             cmbProduktkategori.DataSource = produktkategori;
             cmbProduktkategori.ValueMember = "Namn";
             cmbProduktkategori.DisplayMember = "Namn";
@@ -65,56 +65,29 @@ namespace PresentationLayer1.Forms
             frmKunder.Show();
         }
 
-        private void btnSpara_Click(object sender, EventArgs e)
-        {
-            var ProduktID = tbProduktID.Text;
-            var ProduktNamn = tbProduktNamn.Text;
-
-            var Produktkategori = cmbProduktkategori.GetItemText(cmbProduktkategori.SelectedItem);
-
-            var Produktgrupp = cmbProduktgrupp.GetItemText(cmbProduktgrupp.SelectedItem);
-
-            var Produktavdelning = cmbAvdelning.GetItemText(cmbAvdelning.SelectedItem);
-
-            businessManager.UpdateProdukt(produkten, ProduktID, ProduktNamn, Produktkategori, Produktgrupp, Produktavdelning);
-        }
-
-        private void tbProduktID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTaBortProdukt_Click_1(object sender, EventArgs e)
         {
             businessManager.RemoveProdukt(produkten);
             MessageBox.Show("Produkten borttagen!");
         }
 
-        private void cmbProduktgrupp_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbProduktkategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbAvdelning_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbProduktNamn_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAvbryt_Click_1(object sender, EventArgs e)
         {
-            this.Visible = !this.Visible;
-            frmProdukter frmProdukter = new frmProdukter();
-            frmProdukter.Show();
+            Close();
+        }
+
+        private void btnSpara_Click_1(object sender, EventArgs e)
+        {
+            var ProduktID = tbProduktID.Text;
+            var ProduktNamn = tbProduktNamn.Text;
+
+            var Produktkategori = cmbProduktkategori.Text;
+
+            var Produktgrupp = cmbProduktgrupp.Text;
+
+            var Produktavdelning = cmbAvdelning.Text;
+
+            businessManager.UpdateProdukt(produkten, ProduktID, ProduktNamn, Produktkategori, Produktgrupp, Produktavdelning);
         }
     }
 }

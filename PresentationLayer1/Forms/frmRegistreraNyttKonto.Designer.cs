@@ -42,7 +42,7 @@
             // 
             // tbSchablonkostnad
             // 
-            this.tbSchablonkostnad.Location = new System.Drawing.Point(21, 231);
+            this.tbSchablonkostnad.Location = new System.Drawing.Point(12, 231);
             this.tbSchablonkostnad.Name = "tbSchablonkostnad";
             this.tbSchablonkostnad.Size = new System.Drawing.Size(239, 20);
             this.tbSchablonkostnad.TabIndex = 52;
@@ -81,37 +81,37 @@
             // 
             this.lblSchablonkostnad.AutoSize = true;
             this.lblSchablonkostnad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchablonkostnad.Location = new System.Drawing.Point(18, 212);
+            this.lblSchablonkostnad.Location = new System.Drawing.Point(9, 212);
             this.lblSchablonkostnad.Name = "lblSchablonkostnad";
-            this.lblSchablonkostnad.Size = new System.Drawing.Size(113, 16);
+            this.lblSchablonkostnad.Size = new System.Drawing.Size(51, 16);
             this.lblSchablonkostnad.TabIndex = 47;
-            this.lblSchablonkostnad.Text = "Schablonkostnad";
+            this.lblSchablonkostnad.Text = "belopp";
             // 
             // lblKontobenämning
             // 
             this.lblKontobenämning.AutoSize = true;
             this.lblKontobenämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKontobenämning.Location = new System.Drawing.Point(18, 128);
+            this.lblKontobenämning.Location = new System.Drawing.Point(9, 128);
             this.lblKontobenämning.Name = "lblKontobenämning";
-            this.lblKontobenämning.Size = new System.Drawing.Size(78, 16);
+            this.lblKontobenämning.Size = new System.Drawing.Size(109, 16);
             this.lblKontobenämning.TabIndex = 46;
-            this.lblKontobenämning.Text = "Beskrivning";
+            this.lblKontobenämning.Text = "Kontobenämning";
             // 
             // lblKonto
             // 
             this.lblKonto.AutoSize = true;
             this.lblKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKonto.Location = new System.Drawing.Point(18, 74);
+            this.lblKonto.Location = new System.Drawing.Point(9, 74);
             this.lblKonto.Name = "lblKonto";
-            this.lblKonto.Size = new System.Drawing.Size(44, 16);
+            this.lblKonto.Size = new System.Drawing.Size(42, 16);
             this.lblKonto.TabIndex = 45;
-            this.lblKonto.Text = "Namn";
+            this.lblKonto.Text = "Konto";
             // 
             // lblRegistreraNyttKonto
             // 
             this.lblRegistreraNyttKonto.AutoSize = true;
             this.lblRegistreraNyttKonto.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistreraNyttKonto.Location = new System.Drawing.Point(17, 21);
+            this.lblRegistreraNyttKonto.Location = new System.Drawing.Point(12, 21);
             this.lblRegistreraNyttKonto.Name = "lblRegistreraNyttKonto";
             this.lblRegistreraNyttKonto.Size = new System.Drawing.Size(183, 22);
             this.lblRegistreraNyttKonto.TabIndex = 44;
@@ -119,14 +119,14 @@
             // 
             // tbKonto
             // 
-            this.tbKonto.Location = new System.Drawing.Point(21, 93);
+            this.tbKonto.Location = new System.Drawing.Point(12, 93);
             this.tbKonto.Name = "tbKonto";
             this.tbKonto.Size = new System.Drawing.Size(239, 20);
             this.tbKonto.TabIndex = 43;
             // 
             // tbKontobenämning
             // 
-            this.tbKontobenämning.Location = new System.Drawing.Point(21, 147);
+            this.tbKontobenämning.Location = new System.Drawing.Point(12, 147);
             this.tbKontobenämning.Name = "tbKontobenämning";
             this.tbKontobenämning.Size = new System.Drawing.Size(239, 20);
             this.tbKontobenämning.TabIndex = 42;

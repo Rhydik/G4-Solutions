@@ -20,7 +20,11 @@ namespace DataLayer
         public int KontoID { get; set; }
 
         [Required]
-        public string Namn { get; set; }
+        public string Benämning { get; set; }
+
+        [Column("konto")]
+        [Required]
+        public string konto1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Direktkostnad> Direktkostnad { get; set; }

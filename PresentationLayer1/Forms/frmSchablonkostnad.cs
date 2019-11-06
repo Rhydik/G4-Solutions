@@ -23,7 +23,7 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
 
             schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Namn).ToList();
+            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Kontobenämning).ToList();
 
             HideFromUser();
         }
@@ -108,7 +108,7 @@ namespace PresentationLayer1.Forms
         private void Update()
         {
             schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.KontoID).ToList();
+            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Konto).ToList();
         }
 
         
@@ -161,6 +161,12 @@ namespace PresentationLayer1.Forms
                 btnRegistreraNyttKonto.Hide();
                 btnRedigeraKonto.Hide();
             }
+        }
+
+        private void btnRensa_Click_1(object sender, EventArgs e)
+        {
+            tbKonto.Clear();
+            tbKontobenämning.Clear();
         }
     }
 }

@@ -27,7 +27,7 @@
         <EntityTypeShape EntityType="DatabaseModel.Aktivitet" Width="1.5" PointX="9.375" PointY="10.25" />
         <AssociationConnector Association="DatabaseModel.AktivitetAvdelning" />
         <EntityTypeShape EntityType="DatabaseModel.Direktkostnad" Width="1.5" PointX="12.375" PointY="9.375" />
-        <EntityTypeShape EntityType="DatabaseModel.Konto" Width="1.5" PointX="12.25" PointY="11.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Konton" Width="1.5" PointX="12.25" PointY="11.75" />
         <EntityTypeShape EntityType="DatabaseModel.schablonkostnad" Width="1.5" PointX="11.75" PointY="14.25" />
         <AssociationConnector Association="DatabaseModel.schablonkostnadKonto" />
         <AssociationConnector Association="DatabaseModel.KontoDirektkostnad" />

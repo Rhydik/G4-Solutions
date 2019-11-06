@@ -49,7 +49,7 @@ namespace PresentationLayer1.Forms
             var aktiAvdelning = cmbAvdelning.Text;
             businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
             MessageBox.Show("Aktivitet uppdaterad!");
-            this.Visible = !this.Visible;
+            Close();
         }
     }
 }

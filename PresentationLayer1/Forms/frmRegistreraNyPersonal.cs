@@ -35,7 +35,7 @@ namespace PresentationLayer1.Forms
             var sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
             var vakansavdrag = int.Parse(tbVakansavdrag.Text);
             var lösenord = tbLösenord.Text;
-
+            MessageBox.Show("Personal sparad!");
 
             businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
         }

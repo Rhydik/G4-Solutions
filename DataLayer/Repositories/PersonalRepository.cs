@@ -25,9 +25,8 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Personal
-                               select new PersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, PersonNr = x.PersonNr, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag };
+                               select new PersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, PersonNr = x.PersonNr, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag, Månadslön = x.Månadslön, Årsarbete = x.Sysselsättningsgrad - x.Vakansavdrag };
                                
-
                 return query.ToList();
             }
         }

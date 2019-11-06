@@ -31,14 +31,13 @@
             this.lblNamn = new System.Windows.Forms.Label();
             this.lblPersonnummer = new System.Windows.Forms.Label();
             this.btnRensa = new System.Windows.Forms.Button();
-            this.btnSök = new System.Windows.Forms.Button();
             this.tbPersonal = new System.Windows.Forms.TextBox();
             this.tbPersonnummer = new System.Windows.Forms.TextBox();
             this.btnRegistreraNyPersonal = new System.Windows.Forms.Button();
             this.btnRedigeraPersonal = new System.Windows.Forms.Button();
             this.gvPersonal = new System.Windows.Forms.DataGridView();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.lblSök = new System.Windows.Forms.Label();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.gvPersonal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,15 +67,6 @@
             this.btnRensa.TabIndex = 28;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
-            // 
-            // btnSök
-            // 
-            this.btnSök.Location = new System.Drawing.Point(753, 25);
-            this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(60, 23);
-            this.btnSök.TabIndex = 27;
-            this.btnSök.Text = "Sök";
-            this.btnSök.UseVisualStyleBackColor = true;
             // 
             // tbPersonal
             // 
@@ -131,13 +121,6 @@
             this.gvPersonal.TabIndex = 21;
             this.gvPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvPersonal_CellContentClick);
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
@@ -148,6 +131,13 @@
             this.lblSök.TabIndex = 48;
             this.lblSök.Text = "Sök";
             // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
+            // 
             // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +147,6 @@
             this.Controls.Add(this.lblNamn);
             this.Controls.Add(this.lblPersonnummer);
             this.Controls.Add(this.btnRensa);
-            this.Controls.Add(this.btnSök);
             this.Controls.Add(this.tbPersonal);
             this.Controls.Add(this.tbPersonnummer);
             this.Controls.Add(this.btnRegistreraNyPersonal);
@@ -177,7 +166,6 @@
         private System.Windows.Forms.Label lblNamn;
         private System.Windows.Forms.Label lblPersonnummer;
         private System.Windows.Forms.Button btnRensa;
-        private System.Windows.Forms.Button btnSök;
         private System.Windows.Forms.TextBox tbPersonal;
         private System.Windows.Forms.TextBox tbPersonnummer;
         private System.Windows.Forms.Button btnRegistreraNyPersonal;

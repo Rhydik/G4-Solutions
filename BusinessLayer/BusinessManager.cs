@@ -209,14 +209,14 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, string kontoId, string kontoNamn, string schablonkostnad)
+        public void UpdateKonto(SchablonDTO oldSchablon, string konto, string benämning, string schablonkostnad)
         {
-            repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, int.Parse(kontoId), kontoNamn, int.Parse(schablonkostnad));
+            repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, konto, benämning, int.Parse(schablonkostnad));
         }
         
-        public void CreateKonto(int konto, string namn, int schablonKostnad)
+        public void CreateKonto(int konto, string benämning, int schablonKostnad)
         {
-            repositoryFacade.schablonRepository.CreateKonto(konto, namn, schablonKostnad);
+            repositoryFacade.schablonRepository.CreateKonto(konto, benämning, schablonKostnad);
         }
 
         public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)

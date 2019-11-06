@@ -57,13 +57,17 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var akti = (from x in db.Aktivitet
+                var tempAkti = (from x in db.Aktivitet
                            where x.AktivitetID == aktiId
                            select x).FirstOrDefault();
 
-                akti.Namn = aktinamn;
-                akti.AktivitetID = aktiId;
-                akti.Avdelning.Namn = aktiAvdelning;
+                var avdelning = (from x in db.Avdelning
+                                 where x.Namn == aktiAvdelning
+                                 select x).FirstOrDefault();
+
+                var akti = new Aktivitet { AktivitetID = aktiId, Namn = aktinamn, Avdelning = avdelning, Avdelning_AvdelningID = avdelning.AvdelningID };
+                db.Aktivitet.Remove(tempAkti);
+                db.Aktivitet.Add(akti);
                 db.SaveChanges();
             }
         }

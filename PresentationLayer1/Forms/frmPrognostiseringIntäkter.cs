@@ -12,6 +12,7 @@ using BusinessLayer;
 using DataLayer.DTO;
 using System.IO;
 using System.Globalization;
+using System.Threading;
 
 namespace PresentationLayer1.Forms
 {
@@ -49,8 +50,16 @@ namespace PresentationLayer1.Forms
             this.FormClosing += frmPrognostiseringIntäkter_FormClosing; //för att få saker att sparas när man stänger fönstret
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
+
+            TimerCallback tmCallback = CheckEffectExpiry;
+            System.Threading.Timer timer = new System.Threading.Timer(tmCallback, "test", 1000, 1000);
         }
 
+
+         void CheckEffectExpiry(object objectInfo)
+        {
+            RäknaUtBudgetPrognos();
+        }
 
         private void frmPrognostiseringIntäkter_FormClosing(Object sender, FormClosingEventArgs e) //för att få saker att sparas när man stänger fönstret
         {
@@ -181,10 +190,14 @@ namespace PresentationLayer1.Forms
                 var resultat = (Grade1 + Grade2);
                 row.Cells["PrognosBudget"].Value = resultat;
 
-                MessageBox.Show(resultat.ToString());
+                //MessageBox.Show(resultat.ToString());
 
             }
         }
+
+
+
+
 
         private void btnExportera_Click(object sender, EventArgs e)
         {

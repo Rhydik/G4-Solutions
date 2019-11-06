@@ -58,5 +58,6 @@ namespace PresentationLayer1.Forms
             dgvBehörighet.DataSource = visaBehörighet;
             dgvBehörighet.Update();
         }
+
     }
 }

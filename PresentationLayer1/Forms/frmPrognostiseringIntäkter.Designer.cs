@@ -40,6 +40,7 @@
             // 
             // btnExportera
             // 
+            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportera.Location = new System.Drawing.Point(208, 397);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
@@ -69,6 +70,9 @@
             // 
             // dgvPrognostiseringIntäkter
             // 
+            this.dgvPrognostiseringIntäkter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPrognostiseringIntäkter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 123);
@@ -81,6 +85,7 @@
             // 
             // btnLås
             // 
+            this.btnLås.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLås.Location = new System.Drawing.Point(703, 397);
             this.btnLås.Name = "btnLås";
             this.btnLås.Size = new System.Drawing.Size(120, 41);
@@ -118,6 +123,7 @@
             this.Controls.Add(this.dgvPrognostiseringIntäkter);
             this.Controls.Add(this.ucMeny);
             this.Name = "frmPrognostiseringIntäkter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrognostiseringIntäkter";
             this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();

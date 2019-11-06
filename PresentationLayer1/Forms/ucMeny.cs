@@ -92,7 +92,8 @@ namespace PresentationLayer1.Forms
 
         private void btnPrognostiseringIntäkter_Click(object sender, EventArgs e)
         {
-            Forms.frmPrognostiseringIntäkter frmPrognostiseringIntäkter = new Forms.frmPrognostiseringIntäkter();
+            HideAllOpenForms();
+            frmPrognostiseringIntäkter frmPrognostiseringIntäkter = new frmPrognostiseringIntäkter();
             Hide();
             frmPrognostiseringIntäkter.Show();
         }

@@ -253,7 +253,7 @@
             this.Controls.Add(this.lblLäggTillProdulktFör);
             this.Name = "frmIntäktsbudgeteringLäggTillProdukt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmIntäktsbudgeteringLäggTillProdukt";
+            this.Text = "Intäktsbudgetering: Lägg till Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdukter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -37,7 +37,6 @@
             this.cmbBehörighet = new System.Windows.Forms.ComboBox();
             this.btnTillsätt = new System.Windows.Forms.Button();
             this.btnAvbryt = new System.Windows.Forms.Button();
-            this.btnSpara = new System.Windows.Forms.Button();
             this.lblRedigeraBehörighet = new System.Windows.Forms.Label();
             this.btnTaBortBehörighet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBehörighet)).BeginInit();
@@ -133,19 +132,9 @@
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
             this.btnAvbryt.TabIndex = 30;
-            this.btnAvbryt.Text = "Avbryt";
+            this.btnAvbryt.Text = "Tillbaka";
             this.btnAvbryt.UseVisualStyleBackColor = false;
             this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
-            // 
-            // btnSpara
-            // 
-            this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(401, 300);
-            this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(123, 58);
-            this.btnSpara.TabIndex = 29;
-            this.btnSpara.Text = "Spara";
-            this.btnSpara.UseVisualStyleBackColor = false;
             // 
             // lblRedigeraBehörighet
             // 
@@ -176,7 +165,6 @@
             this.Controls.Add(this.btnTaBortBehörighet);
             this.Controls.Add(this.lblRedigeraBehörighet);
             this.Controls.Add(this.btnAvbryt);
-            this.Controls.Add(this.btnSpara);
             this.Controls.Add(this.btnTillsätt);
             this.Controls.Add(this.cmbBehörighet);
             this.Controls.Add(this.lblBehörighet);
@@ -205,7 +193,6 @@
         private System.Windows.Forms.ComboBox cmbBehörighet;
         private System.Windows.Forms.Button btnTillsätt;
         private System.Windows.Forms.Button btnAvbryt;
-        private System.Windows.Forms.Button btnSpara;
         private System.Windows.Forms.Label lblRedigeraBehörighet;
         private System.Windows.Forms.Button btnTaBortBehörighet;
     }

@@ -43,17 +43,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKunder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKunder.Location = new System.Drawing.Point(243, 119);
+            this.dgvKunder.Location = new System.Drawing.Point(212, 98);
             this.dgvKunder.Name = "dgvKunder";
             this.dgvKunder.ReadOnly = true;
             this.dgvKunder.RowHeadersWidth = 62;
-            this.dgvKunder.Size = new System.Drawing.Size(501, 237);
+            this.dgvKunder.Size = new System.Drawing.Size(576, 293);
             this.dgvKunder.TabIndex = 7;
             // 
             // btnRegistreraNyKund
             // 
             this.btnRegistreraNyKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistreraNyKund.Location = new System.Drawing.Point(632, 362);
+            this.btnRegistreraNyKund.Location = new System.Drawing.Point(676, 398);
             this.btnRegistreraNyKund.Name = "btnRegistreraNyKund";
             this.btnRegistreraNyKund.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyKund.TabIndex = 11;
@@ -64,7 +64,7 @@
             // btnRedigeraKund
             // 
             this.btnRedigeraKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraKund.Location = new System.Drawing.Point(506, 361);
+            this.btnRedigeraKund.Location = new System.Drawing.Point(550, 397);
             this.btnRedigeraKund.Name = "btnRedigeraKund";
             this.btnRedigeraKund.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraKund.TabIndex = 10;
@@ -72,17 +72,16 @@
             this.btnRedigeraKund.UseVisualStyleBackColor = true;
             this.btnRedigeraKund.Click += new System.EventHandler(this.btnRedigeraKund_Click);
             // 
-            // ucMeny1
+            // ucMeny
             // 
             this.ucMeny.Location = new System.Drawing.Point(12, 12);
-            this.ucMeny.Name = "ucMeny1";
+            this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 20;
             // 
-            // ucSökFältKund1
+            // ucSökFältKund
             // 
-            this.ucSökFältKund.SetGridView(this.dgvKunder);
-            this.ucSökFältKund.Location = new System.Drawing.Point(243, 39);
+            this.ucSökFältKund.Location = new System.Drawing.Point(212, 39);
             this.ucSökFältKund.Name = "ucSökFältKund";
             this.ucSökFältKund.Size = new System.Drawing.Size(545, 53);
             this.ucSökFältKund.TabIndex = 21;

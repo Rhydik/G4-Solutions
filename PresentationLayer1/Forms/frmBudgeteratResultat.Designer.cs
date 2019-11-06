@@ -85,6 +85,10 @@
             // 
             // dgvBudgeteratResultat
             // 
+            this.dgvBudgeteratResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBudgeteratResultat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBudgeteratResultat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBudgeteratResultat.Location = new System.Drawing.Point(209, 86);
             this.dgvBudgeteratResultat.Name = "dgvBudgeteratResultat";
@@ -110,6 +114,7 @@
             // 
             // btnExportera
             // 
+            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportera.Location = new System.Drawing.Point(703, 405);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
@@ -129,6 +134,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(211, 362);
             this.label2.Name = "label2";
@@ -138,6 +144,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(211, 384);
             this.label3.Name = "label3";
@@ -147,6 +154,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(211, 419);
             this.label4.Name = "label4";
@@ -156,6 +164,7 @@
             // 
             // lblBudgeteradeIntäkter
             // 
+            this.lblBudgeteradeIntäkter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBudgeteradeIntäkter.AutoSize = true;
             this.lblBudgeteradeIntäkter.Location = new System.Drawing.Point(361, 362);
             this.lblBudgeteradeIntäkter.Name = "lblBudgeteradeIntäkter";
@@ -165,6 +174,7 @@
             // 
             // lblBudgetKostnader
             // 
+            this.lblBudgetKostnader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBudgetKostnader.AutoSize = true;
             this.lblBudgetKostnader.Location = new System.Drawing.Point(361, 384);
             this.lblBudgetKostnader.Name = "lblBudgetKostnader";
@@ -174,6 +184,7 @@
             // 
             // lblResultat
             // 
+            this.lblResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblResultat.AutoSize = true;
             this.lblResultat.Location = new System.Drawing.Point(361, 419);
             this.lblResultat.Name = "lblResultat";
@@ -183,6 +194,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(214, 400);

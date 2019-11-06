@@ -337,7 +337,7 @@
             this.Controls.Add(this.ucMeny);
             this.Name = "frmIntäktsbudgeteringKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kund  | G4 Solutions Economy System";
+            this.Text = "Intäktsbudgetering: Kund  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

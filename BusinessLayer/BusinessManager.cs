@@ -174,6 +174,11 @@ namespace BusinessLayer
             return repositoryFacade.behörighetRepository.GetBehörighetByPersnr(persnr);
         }
 
+        public void RemoveProduktKund(IntäktsbudgetProduktDTO kunden, string ProduktID)
+        {
+            repositoryFacade.intäktsRepository.RemoveProduktKund(kunden, ProduktID);
+        }
+
         public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
         {
             repositoryFacade.intäktsRepository.AddProduktKund(kund, avtal, tillägg, gradT, gradA, tim, kommentar, produktID);
@@ -219,9 +224,9 @@ namespace BusinessLayer
             repositoryFacade.schablonRepository.CreateKonto(konto, benämning, schablonKostnad);
         }
 
-        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)
+        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten, string kundId)
         {
-            repositoryFacade.intäktsRepository.RemoveKundProdukt(produkten);
+            repositoryFacade.intäktsRepository.RemoveKundProdukt(produkten, kundId);
         }
 
         public void CreateAvkastning(int avkastning)

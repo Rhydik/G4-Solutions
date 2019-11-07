@@ -32,6 +32,10 @@ namespace PresentationLayer1.Forms
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms["frmIntäktsbudgeteringProdukt"] != null)
+            {
+                (Application.OpenForms["frmIntäktsbudgeteringProdukt"] as frmIntäktsbudgeteringProdukt).RefreshData();
+            }
             Close();
         }
 

@@ -78,10 +78,21 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Marknadsavdelningsschef") || Globals.CurrentPersonal.Behörighet.Equals("Försäljningsavdelningschef")|| Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef")|| Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef")|| Globals.CurrentPersonal.Behörighet.Equals("Kundavdelningschef"))
             {
+
+                btnRegistreraNyProdukt.Show();
                 btnRedigeraProdukt.Hide();
+            }
+            else if (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
+            {
+                btnRedigeraProdukt.Show();
+                btnRegistreraNyProdukt.Show();
+            }
+            else
+            {
                 btnRegistreraNyProdukt.Hide();
+                btnRedigeraProdukt.Hide();
             }
         }
 

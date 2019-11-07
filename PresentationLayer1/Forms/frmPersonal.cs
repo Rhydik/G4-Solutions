@@ -79,9 +79,14 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Personalschef") || (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig")))
             {
 
+                btnRedigeraPersonal.Show();
+                btnRegistreraNyPersonal.Show();
+            }
+            else
+            {
                 btnRedigeraPersonal.Hide();
                 btnRegistreraNyPersonal.Hide();
             }

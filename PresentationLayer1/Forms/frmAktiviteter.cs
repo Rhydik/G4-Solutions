@@ -93,12 +93,23 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Försäljning- och marknadsavdelningschef")|| Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef"))
             {
 
                 btnRedigeraAktivitet.Hide();
-                btnRegistreraNyAktivitet.Hide();
+                btnRegistreraNyAktivitet.Show();
             }
+            else if (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
+            {
+                btnRegistreraNyAktivitet.Show();
+                btnRedigeraAktivitet.Show();
+            }
+            else
+            {
+                btnRegistreraNyAktivitet.Hide();
+                btnRedigeraAktivitet.Hide();
+            }
+            
         }
 
         private void btnRensa_Click(object sender, EventArgs e)

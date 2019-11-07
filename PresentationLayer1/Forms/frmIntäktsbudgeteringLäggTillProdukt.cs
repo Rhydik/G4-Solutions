@@ -39,19 +39,39 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click_1(object sender, EventArgs e)
         {
+            var tim = 0;
+            var kommentar = " ";
             var produkt = (ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem;
             var avtal = decimal.Parse(tbAvtal.Text);
             var tillägg = decimal.Parse(tbTilägg.Text);
             var gradT = bool.Parse(cmbGradT.Text = cmbGradT.Text == "Säker" ? "true" : "False"); ;
             var gradA = bool.Parse(cmbGradA.Text = cmbGradA.Text == "Säker" ? "true" : "False"); ;
-            var tim = int.Parse(tbTimmar.Text);
-            var kommentar = rtbKommentar.Text;
+            if (tbTimmar.Text.Length == 0)
+            {
+                tim = 0;
+            }
+            else
+            {
+                tim = int.Parse(tbTimmar.Text);
+            }
+            if (rtbKommentar.Text.Length == 0)
+            {
+                kommentar = " ";
+            }
+            else
+            {
+                kommentar = rtbKommentar.Text;
+            }
             businessManager.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, tim, kommentar, kundID);
             MessageBox.Show("Produkt tillagd!");
         }
 
         private void btnAvbryt_Click_1(object sender, EventArgs e)
         {
+            if (Application.OpenForms["frmIntäktsbudgeteringKund"] != null)
+            {
+                (Application.OpenForms["frmIntäktsbudgeteringKund"] as frmIntäktsbudgeteringKund).RefreshData();
+            }
             Close();
         }
 

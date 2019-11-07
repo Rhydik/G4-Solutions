@@ -31,6 +31,10 @@ namespace PresentationLayer1.Forms
 
         private void Hide()
         {
+            lblTim.Hide();
+            lblTillägg.Hide();
+            lblBudget.Hide();
+            lblAvtal.Hide();
             btnLäggTillKund.Hide();
             btnTaBortKund.Hide();
             btnVäljNyProdukt.Hide();
@@ -49,6 +53,10 @@ namespace PresentationLayer1.Forms
 
         private void Show()
         {
+            lblTim.Show();
+            lblTillägg.Show();
+            lblBudget.Show();
+            lblAvtal.Show();
             btnLäggTillKund.Show();
             btnTaBortKund.Show();
             btnVäljNyProdukt.Show();
@@ -57,6 +65,14 @@ namespace PresentationLayer1.Forms
 
         private void Update()
         {
+            decimal sumAvtal = GetSum(businessManager.GetAllProduktKunder(lblValdProduktID.Text), "Avtal");
+            decimal sumTillägg = GetSum(businessManager.GetAllProduktKunder(lblValdProduktID.Text), "Tillägg");
+            decimal sumBudget = GetSum(businessManager.GetAllProduktKunder(lblValdProduktID.Text), "Budget");
+            decimal sumTim = GetSum(businessManager.GetAllProduktKunder(lblValdProduktID.Text), "Tim");
+            lblAvtal.Text = sumAvtal.ToString();
+            lblTillägg.Text = sumTillägg.ToString();
+            lblBudget.Text = sumBudget.ToString();
+            lblTim.Text = sumTim.ToString();
             kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
             dgvIntäktsbudgeteringProdukt.DataSource = kunder;
         }
@@ -104,6 +120,52 @@ namespace PresentationLayer1.Forms
                 MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
             }
         }
+        private decimal GetSum(List<IntäktsbudgetProduktDTO> produkts, string sak)
+        {
+            decimal sum = 0;
+            if (sak == "Avtal")
+            {
+                foreach (var item in produkts)
+                {
+                    sum = sum + item.Avtal;
+                }
+            }
+            else if (sak == "Tillägg")
+            {
+                foreach (var item in produkts)
+                {
+                    sum = sum + item.Tillägg;
+                }
+            }
+            else if (sak == "Budget")
+            {
+                foreach (var item in produkts)
+                {
+                    sum = sum + item.Budget;
+                }
+            }
+            else if (sak == "Tim")
+            {
+                foreach (var item in produkts)
+                {
+                    sum = sum + item.Tim;
+                }
+            }
+            return sum;
+        }
 
+        private void btnTaBortKund_Click(object sender, EventArgs e)
+        {
+            var kunden = (IntäktsbudgetProduktDTO)dgvIntäktsbudgeteringProdukt.CurrentRow.DataBoundItem;
+            businessManager.RemoveProduktKund(kunden, lblValdProduktID.Text);
+            Update();
+        }
+
+        public void RefreshData()
+        {
+            kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
+
+            dgvIntäktsbudgeteringProdukt.DataSource = kunder;
+        }
     }
 }

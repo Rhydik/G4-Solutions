@@ -108,16 +108,50 @@ namespace DataLayer
 
         }
 
-        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten)
+        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten, string kundId)
         {
             using (var db = new DataContext())
             {
-                var produktbudget = db.ProduktIntäktsbudget.Where(x => x.Produkt_ProduktID == produkten.ProduktID).FirstOrDefault();
-                var intäksbudget = db.Intäktsbudget.Where(x => x.IntäktsbudgetID == produktbudget.Intäktsbudget_IntäktsbudgetID).FirstOrDefault();
-                var kundbudget = db.KundIntäktsbudget.Where(x => x.Intäktsbudget_IntäktsbudgetID == intäksbudget.IntäktsbudgetID).FirstOrDefault();
+                var kundbudget = (from x in db.KundIntäktsbudget
+                                  where x.Kund_KundID == kundId
+                                  select x).FirstOrDefault();
 
+                var produktbudget = (from x in db.ProduktIntäktsbudget
+                                     where x.Produkt_ProduktID == produkten.ProduktID
+                                     select x).FirstOrDefault();
+
+                var intäktsbudget = (from x in db.KundIntäktsbudget
+                             where x.Kund_KundID == kundId
+                             join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                             select y).FirstOrDefault();
+
+                db.ProduktIntäktsbudget.Remove(produktbudget);
                 db.KundIntäktsbudget.Remove(kundbudget);
-                db.Intäktsbudget.Remove(intäksbudget);
+                db.Intäktsbudget.Remove(intäktsbudget);
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveProduktKund(IntäktsbudgetProduktDTO kunden, string produktID)
+        {
+            using (var db = new DataContext())
+            {
+                var kundbudget = (from x in db.KundIntäktsbudget
+                                  where x.Kund_KundID == kunden.KundID
+                                  select x).FirstOrDefault();
+
+                var produktbudget = (from x in db.ProduktIntäktsbudget
+                                     where x.Produkt_ProduktID == produktID
+                                     select x).FirstOrDefault();
+
+                var intäktsbudget = (from x in db.ProduktIntäktsbudget
+                                     where x.Produkt_ProduktID == produktID
+                                     join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                                     select y).FirstOrDefault();
+
+                db.ProduktIntäktsbudget.Remove(produktbudget);
+                db.KundIntäktsbudget.Remove(kundbudget);
+                db.Intäktsbudget.Remove(intäktsbudget);
                 db.SaveChanges();
             }
         }

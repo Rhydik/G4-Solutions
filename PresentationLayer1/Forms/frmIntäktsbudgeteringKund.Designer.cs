@@ -53,7 +53,10 @@
             this.btnVäljKund = new System.Windows.Forms.Button();
             this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
-            this.lblSummering = new System.Windows.Forms.Label();
+            this.lblBudget = new System.Windows.Forms.Label();
+            this.lblTim = new System.Windows.Forms.Label();
+            this.lblAvtal = new System.Windows.Forms.Label();
+            this.lblTIllägg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringKund)).BeginInit();
             this.SuspendLayout();
             // 
@@ -306,22 +309,52 @@
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
-            // lblSummering
+            // lblBudget
             // 
-            this.lblSummering.AutoSize = true;
-            this.lblSummering.Location = new System.Drawing.Point(623, 122);
-            this.lblSummering.Name = "lblSummering";
-            this.lblSummering.Size = new System.Drawing.Size(13, 13);
-            this.lblSummering.TabIndex = 51;
-            this.lblSummering.Text = "0";
-            this.lblSummering.Visible = false;
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Location = new System.Drawing.Point(623, 122);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(13, 13);
+            this.lblBudget.TabIndex = 51;
+            this.lblBudget.Text = "0";
+            this.lblBudget.Visible = false;
+            // 
+            // lblTim
+            // 
+            this.lblTim.AutoSize = true;
+            this.lblTim.Location = new System.Drawing.Point(677, 122);
+            this.lblTim.Name = "lblTim";
+            this.lblTim.Size = new System.Drawing.Size(13, 13);
+            this.lblTim.TabIndex = 52;
+            this.lblTim.Text = "0";
+            // 
+            // lblAvtal
+            // 
+            this.lblAvtal.AutoSize = true;
+            this.lblAvtal.Location = new System.Drawing.Point(393, 122);
+            this.lblAvtal.Name = "lblAvtal";
+            this.lblAvtal.Size = new System.Drawing.Size(13, 13);
+            this.lblAvtal.TabIndex = 53;
+            this.lblAvtal.Text = "0";
+            // 
+            // lblTIllägg
+            // 
+            this.lblTIllägg.AutoSize = true;
+            this.lblTIllägg.Location = new System.Drawing.Point(506, 122);
+            this.lblTIllägg.Name = "lblTIllägg";
+            this.lblTIllägg.Size = new System.Drawing.Size(13, 13);
+            this.lblTIllägg.TabIndex = 54;
+            this.lblTIllägg.Text = "0";
             // 
             // frmIntäktsbudgeteringKund
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblSummering);
+            this.Controls.Add(this.lblTIllägg);
+            this.Controls.Add(this.lblAvtal);
+            this.Controls.Add(this.lblTim);
+            this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.ucSökFältKund);
             this.Controls.Add(this.btnVäljKund);
             this.Controls.Add(this.btnVäljNyKund);
@@ -371,6 +404,9 @@
         private System.Windows.Forms.Button btnVäljKund;
         private ucSökFältKund ucSökFältKund;
         private Forms.ucMeny ucMeny;
-        private System.Windows.Forms.Label lblSummering;
+        private System.Windows.Forms.Label lblBudget;
+        private System.Windows.Forms.Label lblTim;
+        private System.Windows.Forms.Label lblAvtal;
+        private System.Windows.Forms.Label lblTIllägg;
     }
 }

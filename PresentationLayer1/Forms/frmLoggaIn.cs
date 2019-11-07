@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace PresentationLayer1
 {
@@ -63,6 +64,8 @@ namespace PresentationLayer1
             this.Visible = !this.Visible;
             frmHemmeny frmHemmeny = new frmHemmeny();
             frmHemmeny.Show();
+            Personal personal = new Personal { Behörighet = "Basanvändare" };
+            Globals.CurrentPersonal = personal;
         }
 
         private void frmLoggaIn_Load(object sender, EventArgs e)

@@ -54,6 +54,10 @@
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.ucSökFältProdukt = new PresentationLayer1.Forms.ucSökFältProdukt();
+            this.lblAvtal = new System.Windows.Forms.Label();
+            this.lblTillägg = new System.Windows.Forms.Label();
+            this.lblBudget = new System.Windows.Forms.Label();
+            this.lblTim = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +140,7 @@
             this.btnTaBortKund.TabIndex = 55;
             this.btnTaBortKund.Text = "Ta bort kund";
             this.btnTaBortKund.UseVisualStyleBackColor = true;
+            this.btnTaBortKund.Click += new System.EventHandler(this.btnTaBortKund_Click);
             // 
             // btnLäggTillKund
             // 
@@ -155,11 +160,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvIntäktsbudgeteringProdukt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIntäktsbudgeteringProdukt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(209, 123);
+            this.dgvIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(209, 133);
             this.dgvIntäktsbudgeteringProdukt.Name = "dgvIntäktsbudgeteringProdukt";
             this.dgvIntäktsbudgeteringProdukt.ReadOnly = true;
             this.dgvIntäktsbudgeteringProdukt.RowHeadersWidth = 62;
-            this.dgvIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(614, 268);
+            this.dgvIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(614, 258);
             this.dgvIntäktsbudgeteringProdukt.TabIndex = 45;
             // 
             // btnSchablonkostnad
@@ -317,11 +322,51 @@
             this.ucSökFältProdukt.Size = new System.Drawing.Size(534, 53);
             this.ucSökFältProdukt.TabIndex = 65;
             // 
+            // lblAvtal
+            // 
+            this.lblAvtal.AutoSize = true;
+            this.lblAvtal.Location = new System.Drawing.Point(401, 117);
+            this.lblAvtal.Name = "lblAvtal";
+            this.lblAvtal.Size = new System.Drawing.Size(13, 13);
+            this.lblAvtal.TabIndex = 66;
+            this.lblAvtal.Text = "0";
+            // 
+            // lblTillägg
+            // 
+            this.lblTillägg.AutoSize = true;
+            this.lblTillägg.Location = new System.Drawing.Point(527, 117);
+            this.lblTillägg.Name = "lblTillägg";
+            this.lblTillägg.Size = new System.Drawing.Size(13, 13);
+            this.lblTillägg.TabIndex = 67;
+            this.lblTillägg.Text = "0";
+            // 
+            // lblBudget
+            // 
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Location = new System.Drawing.Point(642, 117);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(13, 13);
+            this.lblBudget.TabIndex = 68;
+            this.lblBudget.Text = "0";
+            // 
+            // lblTim
+            // 
+            this.lblTim.AutoSize = true;
+            this.lblTim.Location = new System.Drawing.Point(713, 117);
+            this.lblTim.Name = "lblTim";
+            this.lblTim.Size = new System.Drawing.Size(13, 13);
+            this.lblTim.TabIndex = 69;
+            this.lblTim.Text = "0";
+            // 
             // frmIntäktsbudgeteringProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblTim);
+            this.Controls.Add(this.lblBudget);
+            this.Controls.Add(this.lblTillägg);
+            this.Controls.Add(this.lblAvtal);
             this.Controls.Add(this.ucSökFältProdukt);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnVäljNyProdukt);
@@ -372,5 +417,9 @@
         private System.Windows.Forms.Button btnVäljNyProdukt;
         private System.Windows.Forms.CheckBox checkBox1;
         private ucSökFältProdukt ucSökFältProdukt;
+        private System.Windows.Forms.Label lblAvtal;
+        private System.Windows.Forms.Label lblTillägg;
+        private System.Windows.Forms.Label lblBudget;
+        private System.Windows.Forms.Label lblTim;
     }
 }

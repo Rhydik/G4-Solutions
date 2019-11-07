@@ -16,8 +16,6 @@ namespace PresentationLayer1
     {
         BusinessManager businessManager;
         private List<KundDTO> kunder; 
-
-
         public frmKunder()
         {
             InitializeComponent();
@@ -78,9 +76,19 @@ namespace PresentationLayer1
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Försäljning- och marknadsavdelningschef"))
             {
 
+                btnRegistreraNyKund.Show();
+                btnRedigeraKund.Hide();
+            }
+            else if (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
+            {
+                btnRedigeraKund.Show();
+                btnRegistreraNyKund.Show();
+            }
+            else
+            {
                 btnRegistreraNyKund.Hide();
                 btnRedigeraKund.Hide();
             }

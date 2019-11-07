@@ -86,7 +86,7 @@
             this.dgvBehörighet.Location = new System.Drawing.Point(284, 83);
             this.dgvBehörighet.Name = "dgvBehörighet";
             this.dgvBehörighet.RowHeadersWidth = 62;
-            this.dgvBehörighet.Size = new System.Drawing.Size(240, 150);
+            this.dgvBehörighet.Size = new System.Drawing.Size(329, 150);
             this.dgvBehörighet.TabIndex = 6;
             // 
             // lblBehörighet
@@ -104,20 +104,22 @@
             this.cmbBehörighet.FormattingEnabled = true;
             this.cmbBehörighet.Items.AddRange(new object[] {
             "Ekonomichef",
+            "Systemansvarig",
+            "Försäljning- och marknadsavdelningschef",
             "Driftavdelningschef",
             "Utvecklingsavdelningsschef",
-            "Marknadsavdelningsschef",
             "Kundavdelningschef",
-            "Försäljningsavdelningschef",
+            "Personalchef",
+            "Administrativaavdelningschef",
             "Basanvändare"});
-            this.cmbBehörighet.Location = new System.Drawing.Point(284, 235);
+            this.cmbBehörighet.Location = new System.Drawing.Point(284, 239);
             this.cmbBehörighet.Name = "cmbBehörighet";
-            this.cmbBehörighet.Size = new System.Drawing.Size(113, 21);
+            this.cmbBehörighet.Size = new System.Drawing.Size(202, 21);
             this.cmbBehörighet.TabIndex = 8;
             // 
             // btnTillsätt
             // 
-            this.btnTillsätt.Location = new System.Drawing.Point(403, 235);
+            this.btnTillsätt.Location = new System.Drawing.Point(492, 239);
             this.btnTillsätt.Name = "btnTillsätt";
             this.btnTillsätt.Size = new System.Drawing.Size(58, 23);
             this.btnTillsätt.TabIndex = 9;
@@ -148,7 +150,7 @@
             // 
             // btnTaBortBehörighet
             // 
-            this.btnTaBortBehörighet.Location = new System.Drawing.Point(467, 235);
+            this.btnTaBortBehörighet.Location = new System.Drawing.Point(556, 239);
             this.btnTaBortBehörighet.Name = "btnTaBortBehörighet";
             this.btnTaBortBehörighet.Size = new System.Drawing.Size(57, 23);
             this.btnTaBortBehörighet.TabIndex = 34;

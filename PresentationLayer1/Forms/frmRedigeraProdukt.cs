@@ -89,5 +89,17 @@ namespace PresentationLayer1.Forms
 
             businessManager.UpdateProdukt(produkten, ProduktID, ProduktNamn, Produktkategori, Produktgrupp, Produktavdelning);
         }
+
+        private void btnSkapaNyProdukGrupp_Click(object sender, EventArgs e)
+        {
+            frmRegistreraNyProduktGrupp frmRegistreraNyProduktGrupp = new frmRegistreraNyProduktGrupp();
+            frmRegistreraNyProduktGrupp.Show();
+        }
+
+        private void btnSkapaNyProduktKategori_Click(object sender, EventArgs e)
+        {
+            frmRegistreraNyProduktKategori frmRegistreraNyProduktkategori = new frmRegistreraNyProduktKategori();
+            frmRegistreraNyProduktkategori.Show();
+        }
     }
 }

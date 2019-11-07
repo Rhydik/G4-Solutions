@@ -66,7 +66,7 @@ namespace PresentationLayer1.Forms
         }
 
 
-
+        //Uppdaterar produkter:
         public void RefreshProdukter()
         {
             produkterupdated = businessManager.GetAllProdukter();

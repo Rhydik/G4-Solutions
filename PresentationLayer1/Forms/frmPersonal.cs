@@ -79,7 +79,7 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Personalschef") || (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig")))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
             {
 
                 btnRedigeraPersonal.Show();
@@ -89,6 +89,10 @@ namespace PresentationLayer1.Forms
             {
                 btnRedigeraPersonal.Hide();
                 btnRegistreraNyPersonal.Hide();
+                this.gvPersonal.Columns["Månadslön"].Visible = false;
+                this.gvPersonal.Columns["Vakansavdrag"].Visible = false;
+                this.gvPersonal.Columns["Sysselsättningsgrad"].Visible = false;
+                this.gvPersonal.Columns["Årsarbete"].Visible = false;
             }
         }
     }

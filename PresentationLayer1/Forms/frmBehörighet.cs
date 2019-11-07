@@ -21,7 +21,7 @@ namespace PresentationLayer1.Forms
         public frmBehörighet()
         {
             InitializeComponent();
-
+            HideFromUser();
             behörighets = businessManager.GetAllBehörighet();
             dgvBehörighet.DataSource = behörighets;
         }
@@ -71,6 +71,22 @@ namespace PresentationLayer1.Forms
         {
             tbNamn.Clear();
             tbPersonNr.Clear();
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal == null) return;
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Systemägare"))
+            {
+
+                btnRedigeraBehörighet.Show();
+
+            }
+            else
+            {
+                btnRedigeraBehörighet.Hide();
+            }
+
         }
     }
 }

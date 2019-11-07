@@ -22,6 +22,7 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
             Hide();
+            HideFromUser();
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
             ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
@@ -149,6 +150,23 @@ namespace PresentationLayer1.Forms
             produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
 
             dgvIntäktsbudgeteringKund.DataSource = produkts;
+        }
+
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal == null) return;
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Försäljning- och marknadsavdelningschef"))
+            {
+
+                btnLåsBudget.Show();
+                
+            }
+            else
+            {
+                btnLåsBudget.Hide();
+            }
+
         }
     }
 }

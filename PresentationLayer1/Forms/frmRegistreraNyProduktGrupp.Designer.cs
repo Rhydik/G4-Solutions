@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistreraNyProduktGrupp));
             this.tbNyProduktGrupp = new System.Windows.Forms.TextBox();
             this.lbNyProduktgrupp = new System.Windows.Forms.Label();
             this.btnSparaNyProduktGrupp = new System.Windows.Forms.Button();
@@ -36,10 +37,10 @@
             // 
             // tbNyProduktGrupp
             // 
-            this.tbNyProduktGrupp.Location = new System.Drawing.Point(76, 58);
-            this.tbNyProduktGrupp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNyProduktGrupp.Location = new System.Drawing.Point(101, 71);
+            this.tbNyProduktGrupp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNyProduktGrupp.Name = "tbNyProduktGrupp";
-            this.tbNyProduktGrupp.Size = new System.Drawing.Size(242, 20);
+            this.tbNyProduktGrupp.Size = new System.Drawing.Size(321, 22);
             this.tbNyProduktGrupp.TabIndex = 0;
             this.tbNyProduktGrupp.TextChanged += new System.EventHandler(this.tbNyProduktGrupp_TextChanged);
             // 
@@ -47,8 +48,7 @@
             // 
             this.lbNyProduktgrupp.AutoSize = true;
             this.lbNyProduktgrupp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNyProduktgrupp.Location = new System.Drawing.Point(20, 54);
-            this.lbNyProduktgrupp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNyProduktgrupp.Location = new System.Drawing.Point(27, 66);
             this.lbNyProduktgrupp.Name = "lbNyProduktgrupp";
             this.lbNyProduktgrupp.Size = new System.Drawing.Size(55, 20);
             this.lbNyProduktgrupp.TabIndex = 1;
@@ -56,10 +56,10 @@
             // 
             // btnSparaNyProduktGrupp
             // 
-            this.btnSparaNyProduktGrupp.Location = new System.Drawing.Point(233, 110);
-            this.btnSparaNyProduktGrupp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSparaNyProduktGrupp.Location = new System.Drawing.Point(311, 135);
+            this.btnSparaNyProduktGrupp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSparaNyProduktGrupp.Name = "btnSparaNyProduktGrupp";
-            this.btnSparaNyProduktGrupp.Size = new System.Drawing.Size(75, 29);
+            this.btnSparaNyProduktGrupp.Size = new System.Drawing.Size(100, 36);
             this.btnSparaNyProduktGrupp.TabIndex = 2;
             this.btnSparaNyProduktGrupp.Text = "Spara";
             this.btnSparaNyProduktGrupp.UseVisualStyleBackColor = true;
@@ -67,10 +67,10 @@
             // 
             // btnAvbryt
             // 
-            this.btnAvbryt.Location = new System.Drawing.Point(152, 110);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAvbryt.Location = new System.Drawing.Point(203, 135);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(64, 29);
+            this.btnAvbryt.Size = new System.Drawing.Size(85, 36);
             this.btnAvbryt.TabIndex = 3;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = true;
@@ -78,15 +78,16 @@
             // 
             // frmRegistreraNyProduktGrupp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(339, 167);
+            this.ClientSize = new System.Drawing.Size(452, 206);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.btnSparaNyProduktGrupp);
             this.Controls.Add(this.lbNyProduktgrupp);
             this.Controls.Add(this.tbNyProduktGrupp);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRegistreraNyProduktGrupp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrera ny Produktgrupp";

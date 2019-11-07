@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRedigeraKonto));
             this.btnTaBortAktivitet = new System.Windows.Forms.Button();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,9 +45,10 @@
             // btnTaBortAktivitet
             // 
             this.btnTaBortAktivitet.BackColor = System.Drawing.Color.DarkRed;
-            this.btnTaBortAktivitet.Location = new System.Drawing.Point(12, 393);
+            this.btnTaBortAktivitet.Location = new System.Drawing.Point(16, 484);
+            this.btnTaBortAktivitet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaBortAktivitet.Name = "btnTaBortAktivitet";
-            this.btnTaBortAktivitet.Size = new System.Drawing.Size(239, 41);
+            this.btnTaBortAktivitet.Size = new System.Drawing.Size(319, 50);
             this.btnTaBortAktivitet.TabIndex = 40;
             this.btnTaBortAktivitet.Text = "Ta bort Konto";
             this.btnTaBortAktivitet.UseVisualStyleBackColor = false;
@@ -55,9 +57,10 @@
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(12, 472);
+            this.btnAvbryt.Location = new System.Drawing.Point(16, 581);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
+            this.btnAvbryt.Size = new System.Drawing.Size(81, 71);
             this.btnAvbryt.TabIndex = 39;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
@@ -66,17 +69,19 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(-8, 437);
+            this.label6.Location = new System.Drawing.Point(-11, 538);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(398, 3);
+            this.label6.Size = new System.Drawing.Size(531, 4);
             this.label6.TabIndex = 38;
             // 
             // btnSpara
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(133, 472);
+            this.btnSpara.Location = new System.Drawing.Point(177, 581);
+            this.btnSpara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(123, 58);
+            this.btnSpara.Size = new System.Drawing.Size(164, 71);
             this.btnSpara.TabIndex = 37;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
@@ -86,7 +91,8 @@
             // 
             this.lblSchablonkostnad.AutoSize = true;
             this.lblSchablonkostnad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSchablonkostnad.Location = new System.Drawing.Point(9, 211);
+            this.lblSchablonkostnad.Location = new System.Drawing.Point(12, 260);
+            this.lblSchablonkostnad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSchablonkostnad.Name = "lblSchablonkostnad";
             this.lblSchablonkostnad.Size = new System.Drawing.Size(113, 16);
             this.lblSchablonkostnad.TabIndex = 35;
@@ -96,7 +102,8 @@
             // 
             this.lblKontobenämning.AutoSize = true;
             this.lblKontobenämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKontobenämning.Location = new System.Drawing.Point(9, 127);
+            this.lblKontobenämning.Location = new System.Drawing.Point(12, 156);
+            this.lblKontobenämning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKontobenämning.Name = "lblKontobenämning";
             this.lblKontobenämning.Size = new System.Drawing.Size(78, 16);
             this.lblKontobenämning.TabIndex = 34;
@@ -106,7 +113,8 @@
             // 
             this.lblKonto.AutoSize = true;
             this.lblKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKonto.Location = new System.Drawing.Point(9, 73);
+            this.lblKonto.Location = new System.Drawing.Point(12, 90);
+            this.lblKonto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKonto.Name = "lblKonto";
             this.lblKonto.Size = new System.Drawing.Size(44, 16);
             this.lblKonto.TabIndex = 33;
@@ -116,7 +124,8 @@
             // 
             this.lblRedigeraKonto.AutoSize = true;
             this.lblRedigeraKonto.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedigeraKonto.Location = new System.Drawing.Point(8, 20);
+            this.lblRedigeraKonto.Location = new System.Drawing.Point(11, 25);
+            this.lblRedigeraKonto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRedigeraKonto.Name = "lblRedigeraKonto";
             this.lblRedigeraKonto.Size = new System.Drawing.Size(139, 22);
             this.lblRedigeraKonto.TabIndex = 32;
@@ -124,31 +133,34 @@
             // 
             // tbKonto
             // 
-            this.tbKonto.Location = new System.Drawing.Point(12, 92);
+            this.tbKonto.Location = new System.Drawing.Point(16, 113);
+            this.tbKonto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbKonto.Name = "tbKonto";
-            this.tbKonto.Size = new System.Drawing.Size(239, 20);
+            this.tbKonto.Size = new System.Drawing.Size(317, 22);
             this.tbKonto.TabIndex = 31;
             // 
             // tbKontobenämning
             // 
-            this.tbKontobenämning.Location = new System.Drawing.Point(12, 146);
+            this.tbKontobenämning.Location = new System.Drawing.Point(16, 180);
+            this.tbKontobenämning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbKontobenämning.Name = "tbKontobenämning";
-            this.tbKontobenämning.Size = new System.Drawing.Size(239, 20);
+            this.tbKontobenämning.Size = new System.Drawing.Size(317, 22);
             this.tbKontobenämning.TabIndex = 30;
             // 
             // tbSchablonkostnad
             // 
-            this.tbSchablonkostnad.Location = new System.Drawing.Point(12, 230);
+            this.tbSchablonkostnad.Location = new System.Drawing.Point(16, 283);
+            this.tbSchablonkostnad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSchablonkostnad.Name = "tbSchablonkostnad";
-            this.tbSchablonkostnad.Size = new System.Drawing.Size(239, 20);
+            this.tbSchablonkostnad.Size = new System.Drawing.Size(317, 22);
             this.tbSchablonkostnad.TabIndex = 41;
             // 
             // frmRedigeraKonto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(272, 543);
+            this.ClientSize = new System.Drawing.Size(363, 668);
             this.Controls.Add(this.tbSchablonkostnad);
             this.Controls.Add(this.btnTaBortAktivitet);
             this.Controls.Add(this.btnAvbryt);
@@ -160,6 +172,8 @@
             this.Controls.Add(this.lblRedigeraKonto);
             this.Controls.Add(this.tbKonto);
             this.Controls.Add(this.tbKontobenämning);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRedigeraKonto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Redigera Konto";

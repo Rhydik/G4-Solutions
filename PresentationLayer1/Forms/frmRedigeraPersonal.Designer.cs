@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRedigeraPersonal));
             this.tbPersNr = new System.Windows.Forms.TextBox();
             this.tbNamn = new System.Windows.Forms.TextBox();
             this.lblMånadslön = new System.Windows.Forms.Label();
@@ -47,47 +48,44 @@
             // 
             // tbPersNr
             // 
-            this.tbPersNr.Location = new System.Drawing.Point(10, 141);
-            this.tbPersNr.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPersNr.Location = new System.Drawing.Point(13, 174);
+            this.tbPersNr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPersNr.Name = "tbPersNr";
-            this.tbPersNr.Size = new System.Drawing.Size(239, 20);
+            this.tbPersNr.Size = new System.Drawing.Size(317, 22);
             this.tbPersNr.TabIndex = 43;
             // 
             // tbNamn
             // 
-            this.tbNamn.Location = new System.Drawing.Point(10, 95);
-            this.tbNamn.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNamn.Location = new System.Drawing.Point(13, 117);
+            this.tbNamn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbNamn.Name = "tbNamn";
-            this.tbNamn.Size = new System.Drawing.Size(239, 20);
+            this.tbNamn.Size = new System.Drawing.Size(317, 22);
             this.tbNamn.TabIndex = 42;
             // 
             // lblMånadslön
             // 
             this.lblMånadslön.AutoSize = true;
-            this.lblMånadslön.Location = new System.Drawing.Point(8, 170);
-            this.lblMånadslön.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMånadslön.Location = new System.Drawing.Point(11, 209);
             this.lblMånadslön.Name = "lblMånadslön";
-            this.lblMånadslön.Size = new System.Drawing.Size(59, 13);
+            this.lblMånadslön.Size = new System.Drawing.Size(75, 16);
             this.lblMånadslön.TabIndex = 41;
             this.lblMånadslön.Text = "Månadslön";
             // 
             // lblPersonnummer
             // 
             this.lblPersonnummer.AutoSize = true;
-            this.lblPersonnummer.Location = new System.Drawing.Point(8, 126);
-            this.lblPersonnummer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonnummer.Location = new System.Drawing.Point(11, 155);
             this.lblPersonnummer.Name = "lblPersonnummer";
-            this.lblPersonnummer.Size = new System.Drawing.Size(77, 13);
+            this.lblPersonnummer.Size = new System.Drawing.Size(99, 16);
             this.lblPersonnummer.TabIndex = 40;
             this.lblPersonnummer.Text = "Personnummer";
             // 
             // lblNamn
             // 
             this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(8, 80);
-            this.lblNamn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNamn.Location = new System.Drawing.Point(11, 98);
             this.lblNamn.Name = "lblNamn";
-            this.lblNamn.Size = new System.Drawing.Size(35, 13);
+            this.lblNamn.Size = new System.Drawing.Size(44, 16);
             this.lblNamn.TabIndex = 39;
             this.lblNamn.Text = "Namn";
             // 
@@ -95,9 +93,10 @@
             // 
             this.btnTaBortPersonal.BackColor = System.Drawing.Color.DarkRed;
             this.btnTaBortPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaBortPersonal.Location = new System.Drawing.Point(10, 420);
+            this.btnTaBortPersonal.Location = new System.Drawing.Point(13, 517);
+            this.btnTaBortPersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaBortPersonal.Name = "btnTaBortPersonal";
-            this.btnTaBortPersonal.Size = new System.Drawing.Size(239, 41);
+            this.btnTaBortPersonal.Size = new System.Drawing.Size(319, 50);
             this.btnTaBortPersonal.TabIndex = 37;
             this.btnTaBortPersonal.Text = "Ta bort Personal";
             this.btnTaBortPersonal.UseVisualStyleBackColor = false;
@@ -105,9 +104,10 @@
             // 
             // btnAvbrytPersonal
             // 
-            this.btnAvbrytPersonal.Location = new System.Drawing.Point(12, 481);
+            this.btnAvbrytPersonal.Location = new System.Drawing.Point(16, 592);
+            this.btnAvbrytPersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvbrytPersonal.Name = "btnAvbrytPersonal";
-            this.btnAvbrytPersonal.Size = new System.Drawing.Size(61, 58);
+            this.btnAvbrytPersonal.Size = new System.Drawing.Size(81, 71);
             this.btnAvbrytPersonal.TabIndex = 36;
             this.btnAvbrytPersonal.Text = "Avbryt";
             this.btnAvbrytPersonal.UseVisualStyleBackColor = true;
@@ -116,9 +116,10 @@
             // btnSparaPersonal
             // 
             this.btnSparaPersonal.BackColor = System.Drawing.Color.Yellow;
-            this.btnSparaPersonal.Location = new System.Drawing.Point(137, 481);
+            this.btnSparaPersonal.Location = new System.Drawing.Point(183, 592);
+            this.btnSparaPersonal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSparaPersonal.Name = "btnSparaPersonal";
-            this.btnSparaPersonal.Size = new System.Drawing.Size(123, 58);
+            this.btnSparaPersonal.Size = new System.Drawing.Size(164, 71);
             this.btnSparaPersonal.TabIndex = 35;
             this.btnSparaPersonal.Text = "Spara";
             this.btnSparaPersonal.UseVisualStyleBackColor = false;
@@ -126,61 +127,61 @@
             // 
             // tbMånadslön
             // 
-            this.tbMånadslön.Location = new System.Drawing.Point(10, 185);
-            this.tbMånadslön.Margin = new System.Windows.Forms.Padding(2);
+            this.tbMånadslön.Location = new System.Drawing.Point(13, 228);
+            this.tbMånadslön.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMånadslön.Name = "tbMånadslön";
-            this.tbMånadslön.Size = new System.Drawing.Size(239, 20);
+            this.tbMånadslön.Size = new System.Drawing.Size(317, 22);
             this.tbMånadslön.TabIndex = 44;
             // 
             // tbSysselsättningsgrad
             // 
-            this.tbSysselsättningsgrad.Location = new System.Drawing.Point(10, 229);
-            this.tbSysselsättningsgrad.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSysselsättningsgrad.Location = new System.Drawing.Point(13, 282);
+            this.tbSysselsättningsgrad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbSysselsättningsgrad.Name = "tbSysselsättningsgrad";
-            this.tbSysselsättningsgrad.Size = new System.Drawing.Size(239, 20);
+            this.tbSysselsättningsgrad.Size = new System.Drawing.Size(317, 22);
             this.tbSysselsättningsgrad.TabIndex = 46;
             // 
             // lblSysselsättningsgrad
             // 
             this.lblSysselsättningsgrad.AutoSize = true;
-            this.lblSysselsättningsgrad.Location = new System.Drawing.Point(8, 214);
-            this.lblSysselsättningsgrad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSysselsättningsgrad.Location = new System.Drawing.Point(11, 263);
             this.lblSysselsättningsgrad.Name = "lblSysselsättningsgrad";
-            this.lblSysselsättningsgrad.Size = new System.Drawing.Size(111, 13);
+            this.lblSysselsättningsgrad.Size = new System.Drawing.Size(145, 16);
             this.lblSysselsättningsgrad.TabIndex = 45;
             this.lblSysselsättningsgrad.Text = "Sysselsättningsgrad %";
             // 
             // tbVakansavdrag
             // 
-            this.tbVakansavdrag.Location = new System.Drawing.Point(11, 276);
-            this.tbVakansavdrag.Margin = new System.Windows.Forms.Padding(2);
+            this.tbVakansavdrag.Location = new System.Drawing.Point(15, 340);
+            this.tbVakansavdrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbVakansavdrag.Name = "tbVakansavdrag";
-            this.tbVakansavdrag.Size = new System.Drawing.Size(239, 20);
+            this.tbVakansavdrag.Size = new System.Drawing.Size(317, 22);
             this.tbVakansavdrag.TabIndex = 48;
             // 
             // lblVakansavdrag
             // 
             this.lblVakansavdrag.AutoSize = true;
-            this.lblVakansavdrag.Location = new System.Drawing.Point(9, 261);
-            this.lblVakansavdrag.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVakansavdrag.Location = new System.Drawing.Point(12, 321);
             this.lblVakansavdrag.Name = "lblVakansavdrag";
-            this.lblVakansavdrag.Size = new System.Drawing.Size(87, 13);
+            this.lblVakansavdrag.Size = new System.Drawing.Size(112, 16);
             this.lblVakansavdrag.TabIndex = 47;
             this.lblVakansavdrag.Text = "Vakansavdrag %";
             // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(-68, 475);
+            this.label6.Location = new System.Drawing.Point(-91, 585);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(398, 3);
+            this.label6.Size = new System.Drawing.Size(531, 4);
             this.label6.TabIndex = 65;
             // 
             // lblRedigeraPersonal
             // 
             this.lblRedigeraPersonal.AutoSize = true;
             this.lblRedigeraPersonal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedigeraPersonal.Location = new System.Drawing.Point(12, 28);
+            this.lblRedigeraPersonal.Location = new System.Drawing.Point(16, 34);
+            this.lblRedigeraPersonal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRedigeraPersonal.Name = "lblRedigeraPersonal";
             this.lblRedigeraPersonal.Size = new System.Drawing.Size(168, 22);
             this.lblRedigeraPersonal.TabIndex = 66;
@@ -188,10 +189,10 @@
             // 
             // frmRedigeraPersonal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(272, 543);
+            this.ClientSize = new System.Drawing.Size(363, 668);
             this.Controls.Add(this.lblRedigeraPersonal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbVakansavdrag);
@@ -207,6 +208,8 @@
             this.Controls.Add(this.btnTaBortPersonal);
             this.Controls.Add(this.btnAvbrytPersonal);
             this.Controls.Add(this.btnSparaPersonal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRedigeraPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Redigera Personal";

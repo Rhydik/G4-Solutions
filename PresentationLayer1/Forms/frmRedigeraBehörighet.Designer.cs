@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRedigeraBehörighet));
             this.Namn = new System.Windows.Forms.Label();
             this.Pnr = new System.Windows.Forms.Label();
             this.lblNamn = new System.Windows.Forms.Label();
@@ -46,7 +47,8 @@
             // 
             this.Namn.AutoSize = true;
             this.Namn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Namn.Location = new System.Drawing.Point(85, 83);
+            this.Namn.Location = new System.Drawing.Point(113, 102);
+            this.Namn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Namn.Name = "Namn";
             this.Namn.Size = new System.Drawing.Size(39, 13);
             this.Namn.TabIndex = 0;
@@ -56,7 +58,8 @@
             // 
             this.Pnr.AutoSize = true;
             this.Pnr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pnr.Location = new System.Drawing.Point(85, 108);
+            this.Pnr.Location = new System.Drawing.Point(113, 133);
+            this.Pnr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Pnr.Name = "Pnr";
             this.Pnr.Size = new System.Drawing.Size(26, 13);
             this.Pnr.TabIndex = 1;
@@ -65,35 +68,39 @@
             // lblNamn
             // 
             this.lblNamn.AutoSize = true;
-            this.lblNamn.Location = new System.Drawing.Point(154, 83);
+            this.lblNamn.Location = new System.Drawing.Point(205, 102);
+            this.lblNamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNamn.Name = "lblNamn";
-            this.lblNamn.Size = new System.Drawing.Size(35, 13);
+            this.lblNamn.Size = new System.Drawing.Size(45, 16);
             this.lblNamn.TabIndex = 3;
             this.lblNamn.Text = "label1";
             // 
             // lblPnr
             // 
             this.lblPnr.AutoSize = true;
-            this.lblPnr.Location = new System.Drawing.Point(154, 108);
+            this.lblPnr.Location = new System.Drawing.Point(205, 133);
+            this.lblPnr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPnr.Name = "lblPnr";
-            this.lblPnr.Size = new System.Drawing.Size(35, 13);
+            this.lblPnr.Size = new System.Drawing.Size(45, 16);
             this.lblPnr.TabIndex = 4;
             this.lblPnr.Text = "label2";
             // 
             // dgvBehörighet
             // 
             this.dgvBehörighet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBehörighet.Location = new System.Drawing.Point(284, 83);
+            this.dgvBehörighet.Location = new System.Drawing.Point(379, 102);
+            this.dgvBehörighet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvBehörighet.Name = "dgvBehörighet";
             this.dgvBehörighet.RowHeadersWidth = 62;
-            this.dgvBehörighet.Size = new System.Drawing.Size(329, 150);
+            this.dgvBehörighet.Size = new System.Drawing.Size(439, 185);
             this.dgvBehörighet.TabIndex = 6;
             // 
             // lblBehörighet
             // 
             this.lblBehörighet.AutoSize = true;
             this.lblBehörighet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBehörighet.Location = new System.Drawing.Point(281, 63);
+            this.lblBehörighet.Location = new System.Drawing.Point(375, 78);
+            this.lblBehörighet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBehörighet.Name = "lblBehörighet";
             this.lblBehörighet.Size = new System.Drawing.Size(68, 13);
             this.lblBehörighet.TabIndex = 7;
@@ -112,16 +119,18 @@
             "Personalchef",
             "Administrativaavdelningschef",
             "Basanvändare"});
-            this.cmbBehörighet.Location = new System.Drawing.Point(284, 239);
+            this.cmbBehörighet.Location = new System.Drawing.Point(379, 294);
+            this.cmbBehörighet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBehörighet.Name = "cmbBehörighet";
-            this.cmbBehörighet.Size = new System.Drawing.Size(202, 21);
+            this.cmbBehörighet.Size = new System.Drawing.Size(268, 24);
             this.cmbBehörighet.TabIndex = 8;
             // 
             // btnTillsätt
             // 
-            this.btnTillsätt.Location = new System.Drawing.Point(492, 239);
+            this.btnTillsätt.Location = new System.Drawing.Point(656, 294);
+            this.btnTillsätt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTillsätt.Name = "btnTillsätt";
-            this.btnTillsätt.Size = new System.Drawing.Size(58, 23);
+            this.btnTillsätt.Size = new System.Drawing.Size(77, 28);
             this.btnTillsätt.TabIndex = 9;
             this.btnTillsätt.Text = "Tillsätt";
             this.btnTillsätt.UseVisualStyleBackColor = true;
@@ -130,9 +139,10 @@
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(284, 300);
+            this.btnAvbryt.Location = new System.Drawing.Point(379, 369);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
+            this.btnAvbryt.Size = new System.Drawing.Size(81, 71);
             this.btnAvbryt.TabIndex = 30;
             this.btnAvbryt.Text = "Tillbaka";
             this.btnAvbryt.UseVisualStyleBackColor = false;
@@ -142,7 +152,8 @@
             // 
             this.lblRedigeraBehörighet.AutoSize = true;
             this.lblRedigeraBehörighet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedigeraBehörighet.Location = new System.Drawing.Point(26, 21);
+            this.lblRedigeraBehörighet.Location = new System.Drawing.Point(35, 26);
+            this.lblRedigeraBehörighet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRedigeraBehörighet.Name = "lblRedigeraBehörighet";
             this.lblRedigeraBehörighet.Size = new System.Drawing.Size(183, 22);
             this.lblRedigeraBehörighet.TabIndex = 33;
@@ -150,9 +161,10 @@
             // 
             // btnTaBortBehörighet
             // 
-            this.btnTaBortBehörighet.Location = new System.Drawing.Point(556, 239);
+            this.btnTaBortBehörighet.Location = new System.Drawing.Point(741, 294);
+            this.btnTaBortBehörighet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaBortBehörighet.Name = "btnTaBortBehörighet";
-            this.btnTaBortBehörighet.Size = new System.Drawing.Size(57, 23);
+            this.btnTaBortBehörighet.Size = new System.Drawing.Size(76, 28);
             this.btnTaBortBehörighet.TabIndex = 34;
             this.btnTaBortBehörighet.Text = "Ta bort";
             this.btnTaBortBehörighet.UseVisualStyleBackColor = true;
@@ -160,10 +172,10 @@
             // 
             // frmRedigeraBehörighet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(641, 386);
+            this.ClientSize = new System.Drawing.Size(855, 475);
             this.Controls.Add(this.btnTaBortBehörighet);
             this.Controls.Add(this.lblRedigeraBehörighet);
             this.Controls.Add(this.btnAvbryt);
@@ -175,6 +187,8 @@
             this.Controls.Add(this.lblNamn);
             this.Controls.Add(this.Pnr);
             this.Controls.Add(this.Namn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRedigeraBehörighet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Redigera Behörighet";

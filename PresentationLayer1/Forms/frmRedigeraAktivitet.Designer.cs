@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRedigeraAktivitet));
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
@@ -44,9 +45,10 @@
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(12, 467);
+            this.btnAvbryt.Location = new System.Drawing.Point(16, 575);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAvbryt.Name = "btnAvbryt";
-            this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
+            this.btnAvbryt.Size = new System.Drawing.Size(81, 71);
             this.btnAvbryt.TabIndex = 28;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
@@ -55,17 +57,19 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(-8, 432);
+            this.label6.Location = new System.Drawing.Point(-11, 532);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(398, 3);
+            this.label6.Size = new System.Drawing.Size(531, 4);
             this.label6.TabIndex = 25;
             // 
             // btnSpara
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(133, 467);
+            this.btnSpara.Location = new System.Drawing.Point(177, 575);
+            this.btnSpara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSpara.Name = "btnSpara";
-            this.btnSpara.Size = new System.Drawing.Size(123, 58);
+            this.btnSpara.Size = new System.Drawing.Size(164, 71);
             this.btnSpara.TabIndex = 22;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
@@ -77,16 +81,18 @@
             this.cmbAvdelning.Items.AddRange(new object[] {
             "Administrativa avdelningen",
             "Försäljnings- och Marknadsavdelning"});
-            this.cmbAvdelning.Location = new System.Drawing.Point(12, 225);
+            this.cmbAvdelning.Location = new System.Drawing.Point(16, 277);
+            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbAvdelning.Name = "cmbAvdelning";
-            this.cmbAvdelning.Size = new System.Drawing.Size(239, 21);
+            this.cmbAvdelning.Size = new System.Drawing.Size(317, 24);
             this.cmbAvdelning.TabIndex = 21;
             // 
             // lblAvdelning
             // 
             this.lblAvdelning.AutoSize = true;
             this.lblAvdelning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvdelning.Location = new System.Drawing.Point(9, 206);
+            this.lblAvdelning.Location = new System.Drawing.Point(12, 254);
+            this.lblAvdelning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvdelning.Name = "lblAvdelning";
             this.lblAvdelning.Size = new System.Drawing.Size(68, 16);
             this.lblAvdelning.TabIndex = 20;
@@ -96,7 +102,8 @@
             // 
             this.lblAktivitetsID.AutoSize = true;
             this.lblAktivitetsID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAktivitetsID.Location = new System.Drawing.Point(9, 59);
+            this.lblAktivitetsID.Location = new System.Drawing.Point(12, 73);
+            this.lblAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAktivitetsID.Name = "lblAktivitetsID";
             this.lblAktivitetsID.Size = new System.Drawing.Size(74, 16);
             this.lblAktivitetsID.TabIndex = 19;
@@ -106,7 +113,8 @@
             // 
             this.lblBenämning.AutoSize = true;
             this.lblBenämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBenämning.Location = new System.Drawing.Point(9, 118);
+            this.lblBenämning.Location = new System.Drawing.Point(12, 145);
+            this.lblBenämning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBenämning.Name = "lblBenämning";
             this.lblBenämning.Size = new System.Drawing.Size(76, 16);
             this.lblBenämning.TabIndex = 18;
@@ -116,7 +124,8 @@
             // 
             this.lblRedigeraAktivitet.AutoSize = true;
             this.lblRedigeraAktivitet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRedigeraAktivitet.Location = new System.Drawing.Point(8, 15);
+            this.lblRedigeraAktivitet.Location = new System.Drawing.Point(11, 18);
+            this.lblRedigeraAktivitet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRedigeraAktivitet.Name = "lblRedigeraAktivitet";
             this.lblRedigeraAktivitet.Size = new System.Drawing.Size(155, 22);
             this.lblRedigeraAktivitet.TabIndex = 17;
@@ -124,24 +133,27 @@
             // 
             // tbBenämning
             // 
-            this.tbBenämning.Location = new System.Drawing.Point(12, 137);
+            this.tbBenämning.Location = new System.Drawing.Point(16, 169);
+            this.tbBenämning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbBenämning.Name = "tbBenämning";
-            this.tbBenämning.Size = new System.Drawing.Size(239, 20);
+            this.tbBenämning.Size = new System.Drawing.Size(317, 22);
             this.tbBenämning.TabIndex = 16;
             // 
             // tbAktivitetsID
             // 
-            this.tbAktivitetsID.Location = new System.Drawing.Point(12, 78);
+            this.tbAktivitetsID.Location = new System.Drawing.Point(16, 96);
+            this.tbAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbAktivitetsID.Name = "tbAktivitetsID";
-            this.tbAktivitetsID.Size = new System.Drawing.Size(239, 20);
+            this.tbAktivitetsID.Size = new System.Drawing.Size(317, 22);
             this.tbAktivitetsID.TabIndex = 15;
             // 
             // btnTaBortAktivitet
             // 
             this.btnTaBortAktivitet.BackColor = System.Drawing.Color.DarkRed;
-            this.btnTaBortAktivitet.Location = new System.Drawing.Point(12, 388);
+            this.btnTaBortAktivitet.Location = new System.Drawing.Point(16, 478);
+            this.btnTaBortAktivitet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTaBortAktivitet.Name = "btnTaBortAktivitet";
-            this.btnTaBortAktivitet.Size = new System.Drawing.Size(239, 41);
+            this.btnTaBortAktivitet.Size = new System.Drawing.Size(319, 50);
             this.btnTaBortAktivitet.TabIndex = 29;
             this.btnTaBortAktivitet.Text = "Ta bort aktivitet";
             this.btnTaBortAktivitet.UseVisualStyleBackColor = false;
@@ -149,10 +161,10 @@
             // 
             // frmRedigeraAktivitet
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(272, 543);
+            this.ClientSize = new System.Drawing.Size(363, 668);
             this.Controls.Add(this.btnTaBortAktivitet);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
@@ -164,7 +176,8 @@
             this.Controls.Add(this.lblRedigeraAktivitet);
             this.Controls.Add(this.tbBenämning);
             this.Controls.Add(this.tbAktivitetsID);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRedigeraAktivitet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Redigera Aktivitet";

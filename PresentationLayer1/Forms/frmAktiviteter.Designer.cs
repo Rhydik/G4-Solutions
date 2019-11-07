@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAktiviteter));
             this.lblAvdelning = new System.Windows.Forms.Label();
             this.lblBenämning = new System.Windows.Forms.Label();
             this.lblAktivitetsID = new System.Windows.Forms.Label();
@@ -46,35 +47,39 @@
             // lblAvdelning
             // 
             this.lblAvdelning.AutoSize = true;
-            this.lblAvdelning.Location = new System.Drawing.Point(406, 55);
+            this.lblAvdelning.Location = new System.Drawing.Point(541, 68);
+            this.lblAvdelning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvdelning.Name = "lblAvdelning";
-            this.lblAvdelning.Size = new System.Drawing.Size(54, 13);
+            this.lblAvdelning.Size = new System.Drawing.Size(68, 16);
             this.lblAvdelning.TabIndex = 46;
             this.lblAvdelning.Text = "Avdelning";
             // 
             // lblBenämning
             // 
             this.lblBenämning.AutoSize = true;
-            this.lblBenämning.Location = new System.Drawing.Point(300, 55);
+            this.lblBenämning.Location = new System.Drawing.Point(400, 68);
+            this.lblBenämning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBenämning.Name = "lblBenämning";
-            this.lblBenämning.Size = new System.Drawing.Size(35, 13);
+            this.lblBenämning.Size = new System.Drawing.Size(44, 16);
             this.lblBenämning.TabIndex = 45;
             this.lblBenämning.Text = "Namn";
             // 
             // lblAktivitetsID
             // 
             this.lblAktivitetsID.AutoSize = true;
-            this.lblAktivitetsID.Location = new System.Drawing.Point(200, 55);
+            this.lblAktivitetsID.Location = new System.Drawing.Point(267, 68);
+            this.lblAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAktivitetsID.Name = "lblAktivitetsID";
-            this.lblAktivitetsID.Size = new System.Drawing.Size(61, 13);
+            this.lblAktivitetsID.Size = new System.Drawing.Size(74, 16);
             this.lblAktivitetsID.TabIndex = 44;
             this.lblAktivitetsID.Text = "AktivitetsID";
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(623, 73);
+            this.btnRensa.Location = new System.Drawing.Point(831, 90);
+            this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(60, 23);
+            this.btnRensa.Size = new System.Drawing.Size(80, 28);
             this.btnRensa.TabIndex = 43;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
@@ -88,35 +93,39 @@
             "Alla",
             "Administrativa avdelningen",
             "Försäljnings- och marknadsavdelningen"});
-            this.cmbVäljAvdelning.Location = new System.Drawing.Point(409, 75);
+            this.cmbVäljAvdelning.Location = new System.Drawing.Point(545, 92);
+            this.cmbVäljAvdelning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbVäljAvdelning.Name = "cmbVäljAvdelning";
-            this.cmbVäljAvdelning.Size = new System.Drawing.Size(192, 21);
+            this.cmbVäljAvdelning.Size = new System.Drawing.Size(255, 24);
             this.cmbVäljAvdelning.TabIndex = 41;
             this.cmbVäljAvdelning.TabStop = false;
             this.cmbVäljAvdelning.SelectedIndexChanged += new System.EventHandler(this.cmbVäljAvdelning_SelectedIndexChanged);
             // 
             // tbBenämning
             // 
-            this.tbBenämning.Location = new System.Drawing.Point(304, 74);
+            this.tbBenämning.Location = new System.Drawing.Point(405, 91);
+            this.tbBenämning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbBenämning.Name = "tbBenämning";
-            this.tbBenämning.Size = new System.Drawing.Size(94, 20);
+            this.tbBenämning.Size = new System.Drawing.Size(124, 22);
             this.tbBenämning.TabIndex = 40;
             this.tbBenämning.TextChanged += new System.EventHandler(this.tbBenämning_TextChanged);
             // 
             // tbAktivitetsID
             // 
-            this.tbAktivitetsID.Location = new System.Drawing.Point(204, 74);
+            this.tbAktivitetsID.Location = new System.Drawing.Point(272, 91);
+            this.tbAktivitetsID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbAktivitetsID.Name = "tbAktivitetsID";
-            this.tbAktivitetsID.Size = new System.Drawing.Size(94, 20);
+            this.tbAktivitetsID.Size = new System.Drawing.Size(124, 22);
             this.tbAktivitetsID.TabIndex = 39;
             this.tbAktivitetsID.TextChanged += new System.EventHandler(this.tbAktivitetsID_TextChanged);
             // 
             // btnRegistreraNyAktivitet
             // 
             this.btnRegistreraNyAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(710, 398);
+            this.btnRegistreraNyAktivitet.Location = new System.Drawing.Point(947, 490);
+            this.btnRegistreraNyAktivitet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistreraNyAktivitet.Name = "btnRegistreraNyAktivitet";
-            this.btnRegistreraNyAktivitet.Size = new System.Drawing.Size(112, 40);
+            this.btnRegistreraNyAktivitet.Size = new System.Drawing.Size(149, 49);
             this.btnRegistreraNyAktivitet.TabIndex = 38;
             this.btnRegistreraNyAktivitet.Text = "Registrera ny aktivitet";
             this.btnRegistreraNyAktivitet.UseVisualStyleBackColor = true;
@@ -125,9 +134,10 @@
             // btnRedigeraAktivitet
             // 
             this.btnRedigeraAktivitet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraAktivitet.Location = new System.Drawing.Point(585, 396);
+            this.btnRedigeraAktivitet.Location = new System.Drawing.Point(780, 487);
+            this.btnRedigeraAktivitet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRedigeraAktivitet.Name = "btnRedigeraAktivitet";
-            this.btnRedigeraAktivitet.Size = new System.Drawing.Size(120, 41);
+            this.btnRedigeraAktivitet.Size = new System.Drawing.Size(160, 50);
             this.btnRedigeraAktivitet.TabIndex = 37;
             this.btnRedigeraAktivitet.Text = "Redigera aktivitet";
             this.btnRedigeraAktivitet.UseVisualStyleBackColor = true;
@@ -140,24 +150,27 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAktiviteter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAktiviteter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAktiviteter.Location = new System.Drawing.Point(205, 122);
+            this.dgvAktiviteter.Location = new System.Drawing.Point(273, 150);
+            this.dgvAktiviteter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvAktiviteter.Name = "dgvAktiviteter";
             this.dgvAktiviteter.RowHeadersWidth = 62;
-            this.dgvAktiviteter.Size = new System.Drawing.Size(614, 268);
+            this.dgvAktiviteter.Size = new System.Drawing.Size(819, 330);
             this.dgvAktiviteter.TabIndex = 36;
             // 
             // ucMeny
             // 
-            this.ucMeny.Location = new System.Drawing.Point(5, 12);
+            this.ucMeny.Location = new System.Drawing.Point(7, 15);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.Size = new System.Drawing.Size(259, 539);
             this.ucMeny.TabIndex = 5;
             // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
             this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSök.Location = new System.Drawing.Point(199, 27);
+            this.lblSök.Location = new System.Drawing.Point(265, 33);
+            this.lblSök.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSök.Name = "lblSök";
             this.lblSök.Size = new System.Drawing.Size(45, 24);
             this.lblSök.TabIndex = 47;
@@ -165,9 +178,9 @@
             // 
             // frmAktiviteter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 450);
+            this.ClientSize = new System.Drawing.Size(1113, 554);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.lblAvdelning);
             this.Controls.Add(this.lblBenämning);
@@ -180,7 +193,8 @@
             this.Controls.Add(this.btnRedigeraAktivitet);
             this.Controls.Add(this.dgvAktiviteter);
             this.Controls.Add(this.ucMeny);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAktiviteter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aktiviteter  | G4 Solutions Economy System";

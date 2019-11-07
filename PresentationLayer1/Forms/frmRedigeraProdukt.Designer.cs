@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRedigeraProdukt));
             this.lblAvdelning = new System.Windows.Forms.Label();
             this.lblProduktkategori = new System.Windows.Forms.Label();
             this.lblProduktgrupp = new System.Windows.Forms.Label();
@@ -84,7 +85,7 @@
             // 
             this.btnTaBortProdukt.BackColor = System.Drawing.Color.DarkRed;
             this.btnTaBortProdukt.Location = new System.Drawing.Point(16, 481);
-            this.btnTaBortProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTaBortProdukt.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaBortProdukt.Name = "btnTaBortProdukt";
             this.btnTaBortProdukt.Size = new System.Drawing.Size(319, 50);
             this.btnTaBortProdukt.TabIndex = 66;
@@ -96,7 +97,7 @@
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
             this.btnAvbryt.Location = new System.Drawing.Point(16, 578);
-            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAvbryt.Margin = new System.Windows.Forms.Padding(4);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(81, 71);
             this.btnAvbryt.TabIndex = 65;
@@ -117,7 +118,7 @@
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
             this.btnSpara.Location = new System.Drawing.Point(177, 578);
-            this.btnSpara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSpara.Margin = new System.Windows.Forms.Padding(4);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(164, 71);
             this.btnSpara.TabIndex = 63;
@@ -161,7 +162,7 @@
             // tbProduktID
             // 
             this.tbProduktID.Location = new System.Drawing.Point(16, 111);
-            this.tbProduktID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProduktID.Margin = new System.Windows.Forms.Padding(4);
             this.tbProduktID.Name = "tbProduktID";
             this.tbProduktID.Size = new System.Drawing.Size(317, 22);
             this.tbProduktID.TabIndex = 59;
@@ -169,7 +170,7 @@
             // tbProduktNamn
             // 
             this.tbProduktNamn.Location = new System.Drawing.Point(16, 177);
-            this.tbProduktNamn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbProduktNamn.Margin = new System.Windows.Forms.Padding(4);
             this.tbProduktNamn.Name = "tbProduktNamn";
             this.tbProduktNamn.Size = new System.Drawing.Size(317, 22);
             this.tbProduktNamn.TabIndex = 58;
@@ -178,7 +179,7 @@
             // 
             this.cmbProduktgrupp.FormattingEnabled = true;
             this.cmbProduktgrupp.Location = new System.Drawing.Point(16, 242);
-            this.cmbProduktgrupp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProduktgrupp.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProduktgrupp.Name = "cmbProduktgrupp";
             this.cmbProduktgrupp.Size = new System.Drawing.Size(173, 24);
             this.cmbProduktgrupp.TabIndex = 73;
@@ -187,7 +188,7 @@
             // 
             this.cmbProduktkategori.FormattingEnabled = true;
             this.cmbProduktkategori.Location = new System.Drawing.Point(16, 326);
-            this.cmbProduktkategori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProduktkategori.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProduktkategori.Name = "cmbProduktkategori";
             this.cmbProduktkategori.Size = new System.Drawing.Size(173, 24);
             this.cmbProduktkategori.TabIndex = 74;
@@ -196,7 +197,7 @@
             // 
             this.cmbAvdelning.FormattingEnabled = true;
             this.cmbAvdelning.Location = new System.Drawing.Point(15, 407);
-            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(317, 24);
             this.cmbAvdelning.TabIndex = 75;
@@ -204,7 +205,7 @@
             // btnSkapaNyProdukGrupp
             // 
             this.btnSkapaNyProdukGrupp.Location = new System.Drawing.Point(199, 242);
-            this.btnSkapaNyProdukGrupp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSkapaNyProdukGrupp.Margin = new System.Windows.Forms.Padding(4);
             this.btnSkapaNyProdukGrupp.Name = "btnSkapaNyProdukGrupp";
             this.btnSkapaNyProdukGrupp.Size = new System.Drawing.Size(135, 63);
             this.btnSkapaNyProdukGrupp.TabIndex = 76;
@@ -215,7 +216,7 @@
             // btnSkapaNyProduktKategori
             // 
             this.btnSkapaNyProduktKategori.Location = new System.Drawing.Point(200, 326);
-            this.btnSkapaNyProduktKategori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSkapaNyProduktKategori.Margin = new System.Windows.Forms.Padding(4);
             this.btnSkapaNyProduktKategori.Name = "btnSkapaNyProduktKategori";
             this.btnSkapaNyProduktKategori.Size = new System.Drawing.Size(135, 63);
             this.btnSkapaNyProduktKategori.TabIndex = 77;
@@ -246,6 +247,7 @@
             this.Controls.Add(this.lblRedigeraProdukt);
             this.Controls.Add(this.tbProduktID);
             this.Controls.Add(this.tbProduktNamn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmRedigeraProdukt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -124,7 +124,7 @@
             this.Controls.Add(this.ucMeny);
             this.Name = "frmPrognostiseringIntäkter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPrognostiseringIntäkter";
+            this.Text = "Prognostisering intäkter | G4 Solutions Economy System";
             this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             this.ResumeLayout(false);

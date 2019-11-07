@@ -112,6 +112,10 @@
             // 
             // gvSchablonkostnad
             // 
+            this.gvSchablonkostnad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gvSchablonkostnad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvSchablonkostnad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvSchablonkostnad.Location = new System.Drawing.Point(209, 113);
             this.gvSchablonkostnad.Name = "gvSchablonkostnad";

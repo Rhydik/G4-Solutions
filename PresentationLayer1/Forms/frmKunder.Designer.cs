@@ -33,6 +33,7 @@
             this.btnRedigeraKund = new System.Windows.Forms.Button();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.ucSökFältKund = new PresentationLayer1.Forms.ucSökFältKund();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKunder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,22 @@
             this.ucSökFältKund.Size = new System.Drawing.Size(545, 53);
             this.ucSökFältKund.TabIndex = 21;
             // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(212, 12);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 49;
+            this.lblSök.Text = "Sök";
+            // 
             // frmKunder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.ucSökFältKund);
             this.Controls.Add(this.ucMeny);
             this.Controls.Add(this.btnRegistreraNyKund);
@@ -101,6 +113,7 @@
             this.Text = "Kunder | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvKunder)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,5 +123,6 @@
         private System.Windows.Forms.Button btnRedigeraKund;
         private Forms.ucMeny ucMeny;
         private Forms.ucSökFältKund ucSökFältKund;
+        private System.Windows.Forms.Label lblSök;
     }
 }

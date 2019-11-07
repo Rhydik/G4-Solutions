@@ -58,6 +58,7 @@
             this.lblTillägg = new System.Windows.Forms.Label();
             this.lblBudget = new System.Windows.Forms.Label();
             this.lblTim = new System.Windows.Forms.Label();
+            this.lblSök = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntäktsbudgeteringProdukt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -358,11 +359,22 @@
             this.lblTim.TabIndex = 69;
             this.lblTim.Text = "0";
             // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(208, 9);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(45, 24);
+            this.lblSök.TabIndex = 70;
+            this.lblSök.Text = "Sök";
+            // 
             // frmIntäktsbudgeteringProdukt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.lblSök);
             this.Controls.Add(this.lblTim);
             this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.lblTillägg);
@@ -421,5 +433,6 @@
         private System.Windows.Forms.Label lblTillägg;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Label lblTim;
+        private System.Windows.Forms.Label lblSök;
     }
 }

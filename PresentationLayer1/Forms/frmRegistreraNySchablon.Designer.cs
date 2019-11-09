@@ -1,6 +1,6 @@
-﻿namespace PresentationLayer1.Forms
+﻿namespace PresentationLayer1
 {
-    partial class frmRegistreraNyttKonto
+    partial class frmRegistreraNySchablon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistreraNyttKonto));
+            this.tbSchablonkostnad = new System.Windows.Forms.TextBox();
             this.btnAvbryt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSpara = new System.Windows.Forms.Button();
-            this.lblKontobenämning = new System.Windows.Forms.Label();
+            this.lblSchablonkostnad = new System.Windows.Forms.Label();
             this.lblKonto = new System.Windows.Forms.Label();
             this.lblRegistreraNyttKonto = new System.Windows.Forms.Label();
-            this.tbKonto = new System.Windows.Forms.TextBox();
-            this.tbKontobenämning = new System.Windows.Forms.TextBox();
+            this.lblValtKonto = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // tbSchablonkostnad
+            // 
+            this.tbSchablonkostnad.Location = new System.Drawing.Point(17, 129);
+            this.tbSchablonkostnad.Name = "tbSchablonkostnad";
+            this.tbSchablonkostnad.Size = new System.Drawing.Size(239, 20);
+            this.tbSchablonkostnad.TabIndex = 62;
             // 
             // btnAvbryt
             // 
             this.btnAvbryt.BackColor = System.Drawing.Color.White;
-            this.btnAvbryt.Location = new System.Drawing.Point(21, 473);
+            this.btnAvbryt.Location = new System.Drawing.Point(26, 460);
             this.btnAvbryt.Name = "btnAvbryt";
             this.btnAvbryt.Size = new System.Drawing.Size(61, 58);
-            this.btnAvbryt.TabIndex = 50;
+            this.btnAvbryt.TabIndex = 61;
             this.btnAvbryt.Text = "Avbryt";
             this.btnAvbryt.UseVisualStyleBackColor = false;
             this.btnAvbryt.Click += new System.EventHandler(this.btnAvbryt_Click);
@@ -53,97 +59,92 @@
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(1, 438);
+            this.label6.Location = new System.Drawing.Point(6, 425);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(398, 3);
-            this.label6.TabIndex = 49;
+            this.label6.TabIndex = 60;
             // 
             // btnSpara
             // 
             this.btnSpara.BackColor = System.Drawing.Color.Yellow;
-            this.btnSpara.Location = new System.Drawing.Point(142, 473);
+            this.btnSpara.Location = new System.Drawing.Point(147, 460);
             this.btnSpara.Name = "btnSpara";
             this.btnSpara.Size = new System.Drawing.Size(123, 58);
-            this.btnSpara.TabIndex = 48;
+            this.btnSpara.TabIndex = 59;
             this.btnSpara.Text = "Spara";
             this.btnSpara.UseVisualStyleBackColor = false;
             this.btnSpara.Click += new System.EventHandler(this.btnSpara_Click);
             // 
-            // lblKontobenämning
+            // lblSchablonkostnad
             // 
-            this.lblKontobenämning.AutoSize = true;
-            this.lblKontobenämning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKontobenämning.Location = new System.Drawing.Point(9, 128);
-            this.lblKontobenämning.Name = "lblKontobenämning";
-            this.lblKontobenämning.Size = new System.Drawing.Size(109, 16);
-            this.lblKontobenämning.TabIndex = 46;
-            this.lblKontobenämning.Text = "Kontobenämning";
+            this.lblSchablonkostnad.AutoSize = true;
+            this.lblSchablonkostnad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSchablonkostnad.Location = new System.Drawing.Point(14, 110);
+            this.lblSchablonkostnad.Name = "lblSchablonkostnad";
+            this.lblSchablonkostnad.Size = new System.Drawing.Size(52, 16);
+            this.lblSchablonkostnad.TabIndex = 58;
+            this.lblSchablonkostnad.Text = "Belopp";
             // 
             // lblKonto
             // 
             this.lblKonto.AutoSize = true;
             this.lblKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKonto.Location = new System.Drawing.Point(9, 74);
+            this.lblKonto.Location = new System.Drawing.Point(14, 61);
             this.lblKonto.Name = "lblKonto";
-            this.lblKonto.Size = new System.Drawing.Size(42, 16);
-            this.lblKonto.TabIndex = 45;
-            this.lblKonto.Text = "Konto";
+            this.lblKonto.Size = new System.Drawing.Size(45, 16);
+            this.lblKonto.TabIndex = 56;
+            this.lblKonto.Text = "Konto:";
             // 
             // lblRegistreraNyttKonto
             // 
             this.lblRegistreraNyttKonto.AutoSize = true;
             this.lblRegistreraNyttKonto.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistreraNyttKonto.Location = new System.Drawing.Point(12, 21);
+            this.lblRegistreraNyttKonto.Location = new System.Drawing.Point(-42, -27);
             this.lblRegistreraNyttKonto.Name = "lblRegistreraNyttKonto";
             this.lblRegistreraNyttKonto.Size = new System.Drawing.Size(183, 22);
-            this.lblRegistreraNyttKonto.TabIndex = 44;
+            this.lblRegistreraNyttKonto.TabIndex = 55;
             this.lblRegistreraNyttKonto.Text = "Registrera nytt konto";
             // 
-            // tbKonto
+            // lblValtKonto
             // 
-            this.tbKonto.Location = new System.Drawing.Point(12, 93);
-            this.tbKonto.Name = "tbKonto";
-            this.tbKonto.Size = new System.Drawing.Size(239, 20);
-            this.tbKonto.TabIndex = 43;
+            this.lblValtKonto.AutoSize = true;
+            this.lblValtKonto.Location = new System.Drawing.Point(62, 63);
+            this.lblValtKonto.Name = "lblValtKonto";
+            this.lblValtKonto.Size = new System.Drawing.Size(35, 13);
+            this.lblValtKonto.TabIndex = 63;
+            this.lblValtKonto.Text = "label1";
             // 
-            // tbKontobenämning
-            // 
-            this.tbKontobenämning.Location = new System.Drawing.Point(12, 147);
-            this.tbKontobenämning.Name = "tbKontobenämning";
-            this.tbKontobenämning.Size = new System.Drawing.Size(239, 20);
-            this.tbKontobenämning.TabIndex = 42;
-            // 
-            // frmRegistreraNyttKonto
+            // frmRegistreraNySchablon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(272, 543);
+            this.ClientSize = new System.Drawing.Size(292, 553);
+            this.Controls.Add(this.lblValtKonto);
+            this.Controls.Add(this.tbSchablonkostnad);
             this.Controls.Add(this.btnAvbryt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSpara);
-            this.Controls.Add(this.lblKontobenämning);
+            this.Controls.Add(this.lblSchablonkostnad);
             this.Controls.Add(this.lblKonto);
             this.Controls.Add(this.lblRegistreraNyttKonto);
-            this.Controls.Add(this.tbKonto);
-            this.Controls.Add(this.tbKontobenämning);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmRegistreraNyttKonto";
+            this.Name = "frmRegistreraNySchablon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registrera Nytt Konto";
+            this.Text = "frmRegistreraNySchablon";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox tbSchablonkostnad;
         private System.Windows.Forms.Button btnAvbryt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSpara;
-        private System.Windows.Forms.Label lblKontobenämning;
+        private System.Windows.Forms.Label lblSchablonkostnad;
         private System.Windows.Forms.Label lblKonto;
         private System.Windows.Forms.Label lblRegistreraNyttKonto;
-        private System.Windows.Forms.TextBox tbKonto;
-        private System.Windows.Forms.TextBox tbKontobenämning;
+        private System.Windows.Forms.Label lblValtKonto;
     }
 }

@@ -28,7 +28,6 @@ namespace PresentationLayer1.Forms
         {
             tbKonto.Text = schablon.Konto;
             tbKontobenämning.Text = schablon.Kontobenämning;
-            tbSchablonkostnad.Text = schablon.Belopp.ToString();
         }
 
         private void btnTaBortAktivitet_Click_1(object sender, EventArgs e)
@@ -50,9 +49,8 @@ namespace PresentationLayer1.Forms
         {
             var konto = tbKonto.Text;
             var benämning = tbKontobenämning.Text;
-            var schablonkostnad = tbSchablonkostnad.Text;
 
-            businessManager.UpdateKonto(schablon, konto, benämning, schablonkostnad);
+            businessManager.UpdateKonto(schablon, konto, benämning );
 
 
             DialogResult resultat = MessageBox.Show(schablon.Kontobenämning + " uppdaterad.", "Uppdatera Konto", MessageBoxButtons.OK);

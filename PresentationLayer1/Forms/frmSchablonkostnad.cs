@@ -23,7 +23,7 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
 
             schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Kontobenämning).ToList();
+            gvSchablonkostnad.DataSource = schablons;
 
             HideFromUser();
         }
@@ -156,17 +156,41 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Basanvändare"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
+            {
+                btnRegistreraNyttKonto.Show();
+                btnRedigeraKonto.Show();
+                btnLäggTillSchablon.Show();
+            }
+            else
             {
                 btnRegistreraNyttKonto.Hide();
                 btnRedigeraKonto.Hide();
+                btnLäggTillSchablon.Hide();
+                lblAvkastningskrav.Hide();
+                tbAvkastningskrav.Hide();
+                button1.Hide();
             }
+            
         }
 
         private void btnRensa_Click_1(object sender, EventArgs e)
         {
             tbKonto.Clear();
             tbKontobenämning.Clear();
+        }
+
+        private void btnLäggTillSchablon_Click(object sender, EventArgs e)
+        {
+            frmRegistreraNySchablon frmRegistreraNySchablon = new frmRegistreraNySchablon((SchablonDTO)gvSchablonkostnad.CurrentRow.DataBoundItem);
+            frmRegistreraNySchablon.Show();
+        }
+
+        public void RefreshData()
+        {
+            schablons = businessManager.GetAllSchablon();
+
+            gvSchablonkostnad.DataSource = schablons;
         }
     }
 }

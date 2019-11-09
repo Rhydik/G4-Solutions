@@ -42,6 +42,11 @@ namespace BusinessLayer
             return repositoryFacade.behörighetRepository.GetAllBehörighet();
         }
 
+        public void AddSchablon(string kostnad, SchablonDTO schablon)
+        {
+            repositoryFacade.schablonRepository.AddSchablon(kostnad, schablon);
+        }
+
         public List<VisaBehörighetDTO> GetBehörighet(string persnr)
         {
             return repositoryFacade.behörighetRepository.GetBehörighet(persnr);
@@ -214,14 +219,14 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, string konto, string benämning, string schablonkostnad)
+        public void UpdateKonto(SchablonDTO oldSchablon, string konto, string benämning )
         {
-            repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, konto, benämning, int.Parse(schablonkostnad));
+            repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, konto, benämning );
         }
         
-        public void CreateKonto(int konto, string benämning, int schablonKostnad)
+        public void CreateKonto(int konto, string benämning)
         {
-            repositoryFacade.schablonRepository.CreateKonto(konto, benämning, schablonKostnad);
+            repositoryFacade.schablonRepository.CreateKonto(konto, benämning);
         }
 
         public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten, string kundId)

@@ -44,10 +44,9 @@
             // 
             // btnExportera
             // 
-            this.btnExportera.Location = new System.Drawing.Point(277, 489);
-            this.btnExportera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportera.Location = new System.Drawing.Point(208, 397);
             this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(160, 50);
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 92;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
@@ -55,85 +54,77 @@
             // cmbKategori
             // 
             this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(276, 98);
-            this.cmbKategori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbKategori.Location = new System.Drawing.Point(207, 80);
             this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(160, 24);
+            this.cmbKategori.Size = new System.Drawing.Size(121, 21);
             this.cmbKategori.TabIndex = 91;
             // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
-            this.lblSök.Location = new System.Drawing.Point(480, 79);
-            this.lblSök.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSök.Location = new System.Drawing.Point(360, 64);
             this.lblSök.Name = "lblSök";
-            this.lblSök.Size = new System.Drawing.Size(32, 16);
+            this.lblSök.Size = new System.Drawing.Size(26, 13);
             this.lblSök.TabIndex = 90;
             this.lblSök.Text = "Sök";
             // 
             // lblKategori
             // 
             this.lblKategori.AutoSize = true;
-            this.lblKategori.Location = new System.Drawing.Point(275, 79);
-            this.lblKategori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKategori.Location = new System.Drawing.Point(206, 64);
             this.lblKategori.Name = "lblKategori";
-            this.lblKategori.Size = new System.Drawing.Size(58, 16);
+            this.lblKategori.Size = new System.Drawing.Size(46, 13);
             this.lblKategori.TabIndex = 89;
             this.lblKategori.Text = "Kategori";
             // 
             // btnRensa
             // 
-            this.btnRensa.Location = new System.Drawing.Point(679, 98);
-            this.btnRensa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRensa.Location = new System.Drawing.Point(509, 80);
             this.btnRensa.Name = "btnRensa";
-            this.btnRensa.Size = new System.Drawing.Size(80, 28);
+            this.btnRensa.Size = new System.Drawing.Size(60, 23);
             this.btnRensa.TabIndex = 88;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
             // 
             // btnSök
             // 
-            this.btnSök.Location = new System.Drawing.Point(1016, 10);
-            this.btnSök.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSök.Location = new System.Drawing.Point(762, 8);
             this.btnSök.Name = "btnSök";
-            this.btnSök.Size = new System.Drawing.Size(80, 28);
+            this.btnSök.Size = new System.Drawing.Size(60, 23);
             this.btnSök.TabIndex = 87;
             this.btnSök.Text = "Sök";
             this.btnSök.UseVisualStyleBackColor = true;
             // 
             // tbSök
             // 
-            this.tbSök.Location = new System.Drawing.Point(484, 98);
-            this.tbSök.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSök.Location = new System.Drawing.Point(363, 80);
             this.tbSök.Name = "tbSök";
-            this.tbSök.Size = new System.Drawing.Size(169, 22);
+            this.tbSök.Size = new System.Drawing.Size(128, 20);
             this.tbSök.TabIndex = 86;
             // 
             // dgvBudgeteratResultat
             // 
             this.dgvBudgeteratResultat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBudgeteratResultat.Location = new System.Drawing.Point(277, 146);
-            this.dgvBudgeteratResultat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBudgeteratResultat.Location = new System.Drawing.Point(208, 119);
             this.dgvBudgeteratResultat.Name = "dgvBudgeteratResultat";
             this.dgvBudgeteratResultat.ReadOnly = true;
             this.dgvBudgeteratResultat.RowHeadersWidth = 62;
-            this.dgvBudgeteratResultat.Size = new System.Drawing.Size(819, 330);
+            this.dgvBudgeteratResultat.Size = new System.Drawing.Size(614, 268);
             this.dgvBudgeteratResultat.TabIndex = 85;
             // 
             // ucMeny
             // 
-            this.ucMeny.Location = new System.Drawing.Point(11, 10);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(259, 539);
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(208, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 24);
             this.label1.TabIndex = 93;
@@ -141,9 +132,9 @@
             // 
             // frmResultat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 554);
+            this.ClientSize = new System.Drawing.Size(835, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.cmbKategori);
@@ -155,7 +146,6 @@
             this.Controls.Add(this.dgvBudgeteratResultat);
             this.Controls.Add(this.ucMeny);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmResultat";
             this.Text = "Resultat  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).EndInit();

@@ -45,21 +45,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKunder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKunder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKunder.Location = new System.Drawing.Point(283, 121);
-            this.dgvKunder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvKunder.Location = new System.Drawing.Point(212, 98);
             this.dgvKunder.Name = "dgvKunder";
             this.dgvKunder.ReadOnly = true;
             this.dgvKunder.RowHeadersWidth = 62;
-            this.dgvKunder.Size = new System.Drawing.Size(768, 361);
+            this.dgvKunder.Size = new System.Drawing.Size(576, 293);
             this.dgvKunder.TabIndex = 7;
             // 
             // btnRegistreraNyKund
             // 
             this.btnRegistreraNyKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistreraNyKund.Location = new System.Drawing.Point(901, 490);
-            this.btnRegistreraNyKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistreraNyKund.Location = new System.Drawing.Point(676, 398);
             this.btnRegistreraNyKund.Name = "btnRegistreraNyKund";
-            this.btnRegistreraNyKund.Size = new System.Drawing.Size(149, 49);
+            this.btnRegistreraNyKund.Size = new System.Drawing.Size(112, 40);
             this.btnRegistreraNyKund.TabIndex = 11;
             this.btnRegistreraNyKund.Text = "Registrera ny kund";
             this.btnRegistreraNyKund.UseVisualStyleBackColor = true;
@@ -68,10 +66,9 @@
             // btnRedigeraKund
             // 
             this.btnRedigeraKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRedigeraKund.Location = new System.Drawing.Point(733, 489);
-            this.btnRedigeraKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRedigeraKund.Location = new System.Drawing.Point(550, 397);
             this.btnRedigeraKund.Name = "btnRedigeraKund";
-            this.btnRedigeraKund.Size = new System.Drawing.Size(160, 50);
+            this.btnRedigeraKund.Size = new System.Drawing.Size(120, 41);
             this.btnRedigeraKund.TabIndex = 10;
             this.btnRedigeraKund.Text = "Redigera kund";
             this.btnRedigeraKund.UseVisualStyleBackColor = true;
@@ -79,26 +76,25 @@
             // 
             // ucMeny
             // 
-            this.ucMeny.Location = new System.Drawing.Point(16, 15);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucMeny.Location = new System.Drawing.Point(12, 12);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(259, 539);
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 20;
             // 
             // ucSökFältKund
             // 
-            this.ucSökFältKund.Location = new System.Drawing.Point(283, 48);
-            this.ucSökFältKund.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucSökFältKund.Location = new System.Drawing.Point(212, 39);
+            this.ucSökFältKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucSökFältKund.Name = "ucSökFältKund";
-            this.ucSökFältKund.Size = new System.Drawing.Size(727, 65);
+            this.ucSökFältKund.Size = new System.Drawing.Size(545, 53);
             this.ucSökFältKund.TabIndex = 21;
             // 
             // lblSök
             // 
             this.lblSök.AutoSize = true;
             this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSök.Location = new System.Drawing.Point(283, 15);
-            this.lblSök.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSök.Location = new System.Drawing.Point(212, 12);
             this.lblSök.Name = "lblSök";
             this.lblSök.Size = new System.Drawing.Size(45, 24);
             this.lblSök.TabIndex = 49;
@@ -106,9 +102,9 @@
             // 
             // frmKunder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.ucSökFältKund);
             this.Controls.Add(this.ucMeny);
@@ -116,7 +112,6 @@
             this.Controls.Add(this.btnRedigeraKund);
             this.Controls.Add(this.dgvKunder);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmKunder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kunder | G4 Solutions Economy System";

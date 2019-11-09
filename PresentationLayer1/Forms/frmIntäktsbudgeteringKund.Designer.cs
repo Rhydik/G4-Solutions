@@ -189,20 +189,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvIntäktsbudgeteringKund.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIntäktsbudgeteringKund.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(277, 170);
-            this.dgvIntäktsbudgeteringKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvIntäktsbudgeteringKund.Location = new System.Drawing.Point(208, 138);
             this.dgvIntäktsbudgeteringKund.Name = "dgvIntäktsbudgeteringKund";
             this.dgvIntäktsbudgeteringKund.ReadOnly = true;
             this.dgvIntäktsbudgeteringKund.RowHeadersWidth = 62;
-            this.dgvIntäktsbudgeteringKund.Size = new System.Drawing.Size(773, 292);
+            this.dgvIntäktsbudgeteringKund.Size = new System.Drawing.Size(580, 237);
             this.dgvIntäktsbudgeteringKund.TabIndex = 31;
             // 
             // btnLäggTillProdukt
             // 
-            this.btnLäggTillProdukt.Location = new System.Drawing.Point(888, 480);
-            this.btnLäggTillProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLäggTillProdukt.Location = new System.Drawing.Point(666, 390);
             this.btnLäggTillProdukt.Name = "btnLäggTillProdukt";
-            this.btnLäggTillProdukt.Size = new System.Drawing.Size(160, 50);
+            this.btnLäggTillProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnLäggTillProdukt.TabIndex = 32;
             this.btnLäggTillProdukt.Text = "Lägg till produkt";
             this.btnLäggTillProdukt.UseVisualStyleBackColor = true;
@@ -211,10 +209,9 @@
             // btnTaBortProdukt
             // 
             this.btnTaBortProdukt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaBortProdukt.Location = new System.Drawing.Point(720, 480);
-            this.btnTaBortProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTaBortProdukt.Location = new System.Drawing.Point(540, 390);
             this.btnTaBortProdukt.Name = "btnTaBortProdukt";
-            this.btnTaBortProdukt.Size = new System.Drawing.Size(160, 50);
+            this.btnTaBortProdukt.Size = new System.Drawing.Size(120, 41);
             this.btnTaBortProdukt.TabIndex = 41;
             this.btnTaBortProdukt.Text = "Ta bort produkt";
             this.btnTaBortProdukt.UseVisualStyleBackColor = true;
@@ -223,10 +220,9 @@
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLåsBudget.Location = new System.Drawing.Point(440, 480);
-            this.btnLåsBudget.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLåsBudget.Location = new System.Drawing.Point(330, 390);
             this.btnLåsBudget.Name = "btnLåsBudget";
-            this.btnLåsBudget.Size = new System.Drawing.Size(160, 50);
+            this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 42;
             this.btnLåsBudget.Text = "Lås Budget";
             this.btnLåsBudget.UseVisualStyleBackColor = true;
@@ -234,10 +230,9 @@
             // btnExportera
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(272, 480);
-            this.btnExportera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportera.Location = new System.Drawing.Point(204, 390);
             this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(160, 50);
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 43;
             this.btnExportera.Text = "Exportera";
             this.btnExportera.UseVisualStyleBackColor = true;
@@ -246,10 +241,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(208, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 44;
             this.label1.Text = "KundID:";
             // 
@@ -257,8 +251,7 @@
             // 
             this.lblValdKundID.AutoSize = true;
             this.lblValdKundID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundID.Location = new System.Drawing.Point(277, 121);
-            this.lblValdKundID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValdKundID.Location = new System.Drawing.Point(208, 98);
             this.lblValdKundID.Name = "lblValdKundID";
             this.lblValdKundID.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundID.TabIndex = 45;
@@ -267,10 +260,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(460, 96);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(345, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 16);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 46;
             this.label3.Text = "Kund:";
             // 
@@ -278,8 +270,7 @@
             // 
             this.lblValdKundNamn.AutoSize = true;
             this.lblValdKundNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValdKundNamn.Location = new System.Drawing.Point(460, 121);
-            this.lblValdKundNamn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValdKundNamn.Location = new System.Drawing.Point(345, 98);
             this.lblValdKundNamn.Name = "lblValdKundNamn";
             this.lblValdKundNamn.Size = new System.Drawing.Size(46, 13);
             this.lblValdKundNamn.TabIndex = 47;
@@ -287,10 +278,9 @@
             // 
             // btnVäljNyKund
             // 
-            this.btnVäljNyKund.Location = new System.Drawing.Point(851, 121);
-            this.btnVäljNyKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVäljNyKund.Location = new System.Drawing.Point(638, 98);
             this.btnVäljNyKund.Name = "btnVäljNyKund";
-            this.btnVäljNyKund.Size = new System.Drawing.Size(99, 28);
+            this.btnVäljNyKund.Size = new System.Drawing.Size(74, 23);
             this.btnVäljNyKund.TabIndex = 48;
             this.btnVäljNyKund.Text = "Välj ny kund";
             this.btnVäljNyKund.UseVisualStyleBackColor = true;
@@ -299,10 +289,9 @@
             // btnVäljKund
             // 
             this.btnVäljKund.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVäljKund.Location = new System.Drawing.Point(888, 480);
-            this.btnVäljKund.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVäljKund.Location = new System.Drawing.Point(666, 390);
             this.btnVäljKund.Name = "btnVäljKund";
-            this.btnVäljKund.Size = new System.Drawing.Size(160, 50);
+            this.btnVäljKund.Size = new System.Drawing.Size(120, 41);
             this.btnVäljKund.TabIndex = 49;
             this.btnVäljKund.Text = "Välj kund";
             this.btnVäljKund.UseVisualStyleBackColor = true;
@@ -310,27 +299,26 @@
             // 
             // ucSökFältKund
             // 
-            this.ucSökFältKund.Location = new System.Drawing.Point(277, 33);
-            this.ucSökFältKund.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucSökFältKund.Location = new System.Drawing.Point(208, 27);
+            this.ucSökFältKund.Margin = new System.Windows.Forms.Padding(4);
             this.ucSökFältKund.Name = "ucSökFältKund";
-            this.ucSökFältKund.Size = new System.Drawing.Size(712, 65);
+            this.ucSökFältKund.Size = new System.Drawing.Size(534, 53);
             this.ucSökFältKund.TabIndex = 50;
             // 
             // ucMeny
             // 
-            this.ucMeny.Location = new System.Drawing.Point(11, 10);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
             this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(259, 539);
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
             // lblBudget
             // 
             this.lblBudget.AutoSize = true;
-            this.lblBudget.Location = new System.Drawing.Point(831, 150);
-            this.lblBudget.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBudget.Location = new System.Drawing.Point(623, 122);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(15, 16);
+            this.lblBudget.Size = new System.Drawing.Size(13, 13);
             this.lblBudget.TabIndex = 51;
             this.lblBudget.Text = "0";
             this.lblBudget.Visible = false;
@@ -338,30 +326,27 @@
             // lblTim
             // 
             this.lblTim.AutoSize = true;
-            this.lblTim.Location = new System.Drawing.Point(903, 150);
-            this.lblTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTim.Location = new System.Drawing.Point(677, 122);
             this.lblTim.Name = "lblTim";
-            this.lblTim.Size = new System.Drawing.Size(15, 16);
+            this.lblTim.Size = new System.Drawing.Size(13, 13);
             this.lblTim.TabIndex = 52;
             this.lblTim.Text = "0";
             // 
             // lblAvtal
             // 
             this.lblAvtal.AutoSize = true;
-            this.lblAvtal.Location = new System.Drawing.Point(524, 150);
-            this.lblAvtal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvtal.Location = new System.Drawing.Point(393, 122);
             this.lblAvtal.Name = "lblAvtal";
-            this.lblAvtal.Size = new System.Drawing.Size(15, 16);
+            this.lblAvtal.Size = new System.Drawing.Size(13, 13);
             this.lblAvtal.TabIndex = 53;
             this.lblAvtal.Text = "0";
             // 
             // lblTIllägg
             // 
             this.lblTIllägg.AutoSize = true;
-            this.lblTIllägg.Location = new System.Drawing.Point(675, 150);
-            this.lblTIllägg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTIllägg.Location = new System.Drawing.Point(506, 122);
             this.lblTIllägg.Name = "lblTIllägg";
-            this.lblTIllägg.Size = new System.Drawing.Size(15, 16);
+            this.lblTIllägg.Size = new System.Drawing.Size(13, 13);
             this.lblTIllägg.TabIndex = 54;
             this.lblTIllägg.Text = "0";
             // 
@@ -369,8 +354,7 @@
             // 
             this.lblSök.AutoSize = true;
             this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSök.Location = new System.Drawing.Point(272, 10);
-            this.lblSök.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSök.Location = new System.Drawing.Point(204, 8);
             this.lblSök.Name = "lblSök";
             this.lblSök.Size = new System.Drawing.Size(45, 24);
             this.lblSök.TabIndex = 55;
@@ -378,9 +362,9 @@
             // 
             // frmIntäktsbudgeteringKund
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.lblTIllägg);
             this.Controls.Add(this.lblAvtal);
@@ -400,7 +384,6 @@
             this.Controls.Add(this.dgvIntäktsbudgeteringKund);
             this.Controls.Add(this.ucMeny);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmIntäktsbudgeteringKund";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Intäktsbudgetering: Kund  | G4 Solutions Economy System";

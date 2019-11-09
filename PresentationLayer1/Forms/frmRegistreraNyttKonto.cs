@@ -35,10 +35,6 @@ namespace PresentationLayer1.Forms
             {
                 MessageBox.Show("Ange en benämning");
             }
-            if (string.IsNullOrEmpty(tbSchablonkostnad.Text))
-            {
-                MessageBox.Show("Ange ett belopp");
-            }
 
             else
             {
@@ -55,10 +51,9 @@ namespace PresentationLayer1.Forms
 
                         var konto = int.Parse(tbKonto.Text);
                         var benämning = tbKontobenämning.Text;
-                        var schablonkostnad = int.Parse(tbSchablonkostnad.Text);
 
 
-                        businessManager.CreateKonto(konto, benämning, schablonkostnad);
+                        businessManager.CreateKonto(konto, benämning);
 
 
                         DialogResult resultat = MessageBox.Show(tbKontobenämning.Text + " Skapat.", "Skapat", MessageBoxButtons.OK);

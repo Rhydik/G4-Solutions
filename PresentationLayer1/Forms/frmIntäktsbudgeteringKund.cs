@@ -18,11 +18,15 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<KundDTO> kunds;
         private List<IntäktsbudgetKundDTO> produkts;
+
+        private bool IsLåst { get; set; } = false;
         public frmIntäktsbudgeteringKund()
         {
             InitializeComponent();
             Hide();
             HideFromUser();
+
+            CheckLås();
             kunds = businessManager.GetAllKunder();
             dgvIntäktsbudgeteringKund.DataSource = kunds;
             ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
@@ -40,6 +44,17 @@ namespace PresentationLayer1.Forms
             btnVäljKund.Show();
         }
 
+        private void CheckLås()
+        {
+            string message = businessManager.ReadFile("IntäktsBudgetLog.txt");
+
+            if (String.Equals(message, "Budget låst"))
+            {
+                IsLåst = true; 
+            }
+
+            else { IsLåst = false; }
+        }
         private void btnVäljKund_Click(object sender, EventArgs e)
         {
             KundDTO kunden = (KundDTO)dgvIntäktsbudgeteringKund.CurrentRow.DataBoundItem;
@@ -60,6 +75,13 @@ namespace PresentationLayer1.Forms
             btnTaBortProdukt.Show();
             btnVäljKund.Hide();
             btnVäljNyKund.Show();
+
+            if (IsLåst)
+            {
+                btnLåsBudget.Hide();
+                btnLäggTillProdukt.Hide();
+                btnTaBortProdukt.Hide();
+            }
         }
 
         private void btnVäljNyKund_Click(object sender, EventArgs e)
@@ -167,6 +189,25 @@ namespace PresentationLayer1.Forms
                 btnLåsBudget.Hide();
             }
 
+        }
+
+        private void btnLåsBudget_Click(object sender, EventArgs e)
+        {
+            if (IsLåst)
+            {
+                MessageBox.Show("Budget är redan låst");
+            }
+
+            var result = MessageBox.Show("Är du säker på att du vill låsa budgeten?", "Lås budget", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Budget är låst");
+                businessManager.LogFile("Budget låst", "IntäktsbudgetLog.txt");
+                IsLåst = true;
+                btnLåsBudget.Hide();
+            }
+            
         }
     }
 }

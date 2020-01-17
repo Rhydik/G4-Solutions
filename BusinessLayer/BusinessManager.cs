@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -473,5 +475,39 @@ namespace BusinessLayer
             }
         }
 
+        public void LogFile(string message, string fileName)
+        {
+            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + fileName;
+
+            using (StreamWriter streamWriter = new StreamWriter(filePath))
+            {
+                streamWriter.WriteLine(message);
+                streamWriter.Close();
+            }
+        }
+        
+        public string ReadFile(string fileName)
+        {
+            string message;
+
+            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + fileName;
+
+            try
+            {
+                using (StreamReader streamReader = new StreamReader(filePath))
+                {
+                    message = streamReader.ReadLine();
+                    streamReader.Close();
+                }
+            } 
+            catch (Exception e)
+            {
+                message = "";
+            }
+            
+
+
+            return message;
+        }
     }
 }

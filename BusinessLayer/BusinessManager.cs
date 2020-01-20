@@ -280,27 +280,22 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderByID(id);
         }
-
         public List<KundDTO> GetKunderByNamn(string namn)
         {
             return repositoryFacade.kundRepository.GetKunderByNamn(namn);
         }
-
         public List<AktivitetDTO> GetAktivitetByAvdelning(string avdelning)
         {
             return repositoryFacade.aktivitetRepository.GetAktivitetByAvdelning(avdelning);
         }
-
         public List<PersonalDTO> GetPersonalByNamn(string namn)
         {
             return repositoryFacade.personalRepository.GetPersonalByNamn(namn);
         }
-
         public void UpdatePersonal(PersonalDTO personal)
         {
             repositoryFacade.personalRepository.UpdatePersonal(personal);
         }
-
         public List<KundDTO> GetKunderByKategori(string kategori)
         {
             return repositoryFacade.kundRepository.GetKunderByKategori(kategori);
@@ -309,63 +304,46 @@ namespace BusinessLayer
         {
             return repositoryFacade.kundRepository.GetKunderBySearch(id, namn, kategori);
         }
-
         public void UpdateKund(KundDTO oldKund, string kundId, string kundNamn, string kundKategori)
         {
             repositoryFacade.kundRepository.UpdateKund(oldKund, kundId, kundNamn, kundKategori);
         }
-
         public void AddKund(string id, string namn, string kategori)
         {
             repositoryFacade.kundRepository.AddKund(id, namn, kategori);
         }
-
-        //KundKategori
         public void AddKundKategori(string namn)
         {
             repositoryFacade.kundRepository.AddKundKategori(namn);
         }
-
         public List<KundKategoriDTO> GetAllKundKategori()
         {
             return repositoryFacade.kundRepository.GetAllKundKategori();
         }
-
-        //Produkter
         public List<ProduktDTO> GetAllProdukter()
         {
             return repositoryFacade.produktRepository.GetAllProdukter();
         }
-
         public List<ProduktKategoriDTO> GetProduktByKategori()
         {
             return repositoryFacade.produktRepository.GetProduktByKategori();
         }
-
         public List<ProduktgruppDTO> GetProduktByGrupp()
         {
             return repositoryFacade.produktRepository.GetProduktByGrupp();
         }
-
         public List<AvdelningDTO> GetProduktByAvdelning()
         {
             return repositoryFacade.produktRepository.GetProduktByAvdelning();
         }
-
         public void AddProduktGrupp(string namn)
         {
             repositoryFacade.produktRepository.AddProduktGrupp(namn);
         }
-
         public void AddProduktKategori(string namn)
         {
             repositoryFacade.produktRepository.AddProduktKategori(namn);
         }
-
-
-
-            //avdelningar?
-
         public void AddAvdelning(string namn)
         {
             repositoryFacade.aktivitetRepository.AddAvdelning(namn);
@@ -474,42 +452,6 @@ namespace BusinessLayer
                 GC.Collect();
             }
         }
-
-        public void LogFile(string message, string fileName)
-        {
-            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + fileName;
-
-            using (StreamWriter streamWriter = new StreamWriter(filePath))
-            {
-                streamWriter.WriteLine(message);
-                streamWriter.Close();
-            }
-        }
-        
-        public string ReadFile(string fileName)
-        {
-            string message;
-
-            string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + fileName;
-
-            try
-            {
-                using (StreamReader streamReader = new StreamReader(filePath))
-                {
-                    message = streamReader.ReadLine();
-                    streamReader.Close();
-                }
-            } 
-            catch (Exception e)
-            {
-                message = "";
-            }
-            
-
-
-            return message;
-        }
-
         public bool GetIntäktsLås()
         {
             return repositoryFacade.låsRepository.GetIntäktsLås();

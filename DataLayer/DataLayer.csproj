@@ -70,6 +70,16 @@
     <Compile Include="KostnadsbudgetProdukt.cs" />
     <Compile Include="DTO\KostnadsbudgetProduktDTO.cs" />
     <Compile Include="KostnadsbudgetSet.cs" />
+    <Compile Include="Lås.cs" />
+    <Compile Include="Migrations\202001171225486_Initial.cs" />
+    <Compile Include="Migrations\202001171225486_Initial.designer.cs">
+      <DependentUpon>202001171225486_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001201442408_Lås.cs" />
+    <Compile Include="Migrations\202001201442408_Lås.designer.cs">
+      <DependentUpon>202001201442408_Lås.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\KostnadsbudgetRepository.cs" />
     <Compile Include="Repositories\BudgeteratResultatRepository.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
@@ -142,6 +152,7 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Repositories\KundRepository.cs" />
+    <Compile Include="Repositories\LåsRepository.cs" />
     <Compile Include="Repositories\PersonalRepository.cs" />
     <Compile Include="Repositories\ProduktRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,6 +191,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001171225486_Initial.resx">
+      <DependentUpon>202001171225486_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001201442408_Lås.resx">
+      <DependentUpon>202001201442408_Lås.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

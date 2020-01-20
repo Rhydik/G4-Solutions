@@ -509,5 +509,22 @@ namespace BusinessLayer
 
             return message;
         }
+
+        public bool GetIntäktsLås()
+        {
+            return repositoryFacade.låsRepository.GetIntäktsLås();
+        }
+        public void SetIntäktsLås(bool boolean)
+        {
+            repositoryFacade.låsRepository.SetIntäktsLås(boolean);
+        }
+        public bool GetKostnadsLås()
+        {
+            return repositoryFacade.låsRepository.GetIntäktsLås();
+        }
+        public void SetKostnadsLås(bool boolean)
+        {
+            repositoryFacade.låsRepository.SetKostnadsLås(boolean);
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             Hide();
             HideFromUser();
+            btnLåsBudget.Show();
 
             CheckLås();
             kunds = businessManager.GetAllKunder();
@@ -46,9 +47,10 @@ namespace PresentationLayer1.Forms
 
         private void CheckLås()
         {
-            string message = businessManager.ReadFile("IntäktsBudgetLog.txt");
+            //string message = businessManager.ReadFile("IntäktsBudgetLog.txt");
 
-            if (String.Equals(message, "Budget låst"))
+
+            if (businessManager.GetIntäktsLås())
             {
                 IsLåst = true; 
             }
@@ -198,13 +200,11 @@ namespace PresentationLayer1.Forms
                 MessageBox.Show("Budget är redan låst");
             }
 
-            var result = MessageBox.Show("Är du säker på att du vill låsa budgeten?", "Lås budget", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (result == DialogResult.Yes)
+            else if (MessageBox.Show("Är du säker på att du vill låsa budgeten?", "Lås budget", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 MessageBox.Show("Budget är låst");
-                businessManager.LogFile("Budget låst", "IntäktsbudgetLog.txt");
                 IsLåst = true;
+                businessManager.SetIntäktsLås(IsLåst);
                 btnLåsBudget.Hide();
             }
             

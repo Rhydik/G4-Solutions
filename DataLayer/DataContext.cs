@@ -14,6 +14,7 @@
         }
 
         public virtual DbSet<AntalTimmar> AntalTimmar { get; set; }
+        public virtual DbSet<Lås> Lås { get; set; }
         public virtual DbSet<Avdelning> Avdelning { get; set; }
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
         public virtual DbSet<Intäktsbudget> Intäktsbudget { get; set; }

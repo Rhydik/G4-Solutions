@@ -19,10 +19,11 @@ namespace PresentationLayer1.Forms
     public partial class frmPrognostiseringIntäkter : Form
     {
         private BusinessManager businessManager = new BusinessManager();
-        //BindingSource bindingSource = new BindingSource();
-        //BusinessManager businessManager = new BusinessManager();
-        //private List<PrognosDTO> prognoser;
         public List<LästFilPrognos> prognoser = new List<LästFilPrognos>();
+        int dela = new int();
+        decimal total = new decimal();
+        public LästFilPrognos totalPrognos = new LästFilPrognos();
+        
 
         public frmPrognostiseringIntäkter()
         {
@@ -30,6 +31,7 @@ namespace PresentationLayer1.Forms
 
             InitializeComponent();
             LaddaRegister();
+            totalPrognos.Produkt = "Totalt";
             dgvPrognostiseringIntäkter.DataSource = prognoser;
 
             dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false;
@@ -51,7 +53,6 @@ namespace PresentationLayer1.Forms
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
             cmbMånad.Items.Add("Alla Månader");
-
             
         }
 
@@ -109,7 +110,7 @@ namespace PresentationLayer1.Forms
                 m.Trend = LästRad[10];            //visas
                 m.FöregPrognos = LästRad[11];     //visas
                 m.Prognos = LästRad[12];          //visas
-                m.PrognosBudget = LästRad[13];    //visas
+                m.PrognosBudget = decimal.Parse(LästRad[13]);    //visas
 
                 prognoser.Add(m);
             }
@@ -162,7 +163,7 @@ namespace PresentationLayer1.Forms
 
                 var resultat = (Grade1 + Grade2);
                 row.Cells["PrognosBudget"].Value = resultat;
-
+                totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat;
                 //MessageBox.Show(resultat.ToString());
 
             }
@@ -172,18 +173,23 @@ namespace PresentationLayer1.Forms
                 decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade1);
                 decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade2);
 
-                int dela = new int();
+                
                 dela = int.Parse(DateTime.Now.Month.ToString()) * 12;
-                var trend = (Grade1 + Grade2/dela);
-                row.Cells["Trend"].Value = trend;
+                total = Grade1 + Grade2;
 
-                //MessageBox.Show(resultat.ToString());
+                var trend = (total/dela);
+                trend = Math.Round(trend, 2);
+                row.Cells["Trend"].Value = trend;
 
             }
 
+            
+            MessageBox.Show(totalPrognos.PrognosBudget.ToString());
+            dataGridView1.DataSource = new List<LästFilPrognos> { totalPrognos };
+
         }
 
-        
+
 
 
 

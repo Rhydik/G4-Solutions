@@ -22,7 +22,7 @@ namespace DataLayer
         public string Trend { get; set; }
         public string FöregPrognos { get; set; }
         public string Prognos { get; set; }
-        public string PrognosBudget { get; set; }
+        public decimal PrognosBudget { get; set; }
         
     }
 }

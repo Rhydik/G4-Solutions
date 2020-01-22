@@ -35,7 +35,9 @@
             this.dgvPrognostiseringIntäkter = new System.Windows.Forms.DataGridView();
             this.btnLås = new System.Windows.Forms.Button();
             this.lblSök = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,12 +89,13 @@
             // btnLås
             // 
             this.btnLås.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLås.Location = new System.Drawing.Point(703, 397);
+            this.btnLås.Location = new System.Drawing.Point(447, 397);
             this.btnLås.Name = "btnLås";
             this.btnLås.Size = new System.Drawing.Size(120, 41);
             this.btnLås.TabIndex = 93;
             this.btnLås.Text = "Lås";
             this.btnLås.UseVisualStyleBackColor = true;
+            this.btnLås.Click += new System.EventHandler(this.btnLås_Click);
             // 
             // lblSök
             // 
@@ -104,19 +107,41 @@
             this.lblSök.TabIndex = 94;
             this.lblSök.Text = "Sök";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(690, 397);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 41);
+            this.button1.TabIndex = 95;
+            this.button1.Text = "Räkna Ut";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ucMeny
             // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(336, 84);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 96;
+            this.button2.Text = "Visa månad";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmPrognostiseringIntäkter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.btnLås);
             this.Controls.Add(this.btnExportera);
@@ -144,5 +169,7 @@
         private System.Windows.Forms.Button btnLås;
         private Forms.ucMeny ucMeny;
         private System.Windows.Forms.Label lblSök;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -22,21 +22,21 @@ namespace PresentationLayer1.Forms
         //BindingSource bindingSource = new BindingSource();
         //BusinessManager businessManager = new BusinessManager();
         //private List<PrognosDTO> prognoser;
-        public static LästFilPrognos[] vektor = new LästFilPrognos[0];
+        public List<LästFilPrognos> prognoser = new List<LästFilPrognos>();
+
         public frmPrognostiseringIntäkter()
         {
             //prognoser = businessManager.GetAllPrognoser();
 
             InitializeComponent();
             LaddaRegister();
-            List<LästFilPrognos> convert = vektor.Cast<LästFilPrognos>().ToList();
-            dgvPrognostiseringIntäkter.DataSource = convert;
+            dgvPrognostiseringIntäkter.DataSource = prognoser;
 
             dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["KundID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Kund"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Datum"].Visible = false;
-            dgvPrognostiseringIntäkter.Columns["Månad"].Visible = false;
+            //dgvPrognostiseringIntäkter.Columns["Månad"].Visible = false;
 
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Upparbetat");
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Trend");
@@ -51,15 +51,9 @@ namespace PresentationLayer1.Forms
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
 
-            TimerCallback tmCallback = CheckEffectExpiry;
-            System.Threading.Timer timer = new System.Threading.Timer(tmCallback, "test", 1000, 1000);
+            
         }
 
-
-         void CheckEffectExpiry(object objectInfo)
-        {
-            RäknaUtBudgetPrognos();
-        }
 
         private void frmPrognostiseringIntäkter_FormClosing(Object sender, FormClosingEventArgs e) //för att få saker att sparas när man stänger fönstret
         {
@@ -71,24 +65,15 @@ namespace PresentationLayer1.Forms
 
         }
 
-        public static void LäggTillIndex(LästFilPrognos m)   //lagrar objekten (m) i vektorn  //denna metod kallas i metoden "matainLästFil".
-        {
-            LästFilPrognos[] temp = new LästFilPrognos[vektor.Length + 1];
-            for (int i = 0; i < vektor.Length; i++)
-            {
-                temp[i] = vektor[i];
-            }
-            temp[vektor.Length] = m;
-            vektor = temp;
-        }
+        
 
-        public void SparaFilMetod() 
+        public void SparaFilMetod()
         {
-            using (StreamWriter utfil = new StreamWriter("IntäktProduktKund.txt")) 
+            using (StreamWriter utfil = new StreamWriter("IntäktProduktKund.txt"))
             {
-                for (int i = 0; i < vektor.Length; i++) //bara en for loop som går igenom vecktorn och skriver ut line för line
+                for (int i = 0; i < prognoser.Count; i++) //bara en for loop som går igenom vecktorn och skriver ut line för line
                 {
-                    LästFilPrognos m = vektor[i];
+                    LästFilPrognos m = prognoser[i];
                     utfil.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}\t{9}\t{10}\t{11}\t{12}\t{13}", m.ProduktID, m.Produkt, m.KundID, m.Kund, m.Datum, m.Budget, m.UtfallMån, m.UtfallAcc, m.Månad, m.Upparbetat, m.Trend, m.FöregPrognos, m.Prognos, m.PrognosBudget);
                 }
                 utfil.Close();
@@ -97,17 +82,17 @@ namespace PresentationLayer1.Forms
 
         public void LaddaRegister()    //laddar in data från textfil
         {
-
+            
             StreamReader infil = new StreamReader("IntäktProduktKund.txt");
 
             while (true)
             {
                 string line = infil.ReadLine();
+
                 if (line == null) break;
-                string[] LästRad = line.Split('\t');
+                List<string> LästRad = new List<string>(line.Split('\t'));
 
                 LästFilPrognos m = new LästFilPrognos();
-
 
 
                 m.ProduktID = LästRad[0];
@@ -125,26 +110,13 @@ namespace PresentationLayer1.Forms
                 m.Prognos = LästRad[12];          //visas
                 m.PrognosBudget = LästRad[13];    //visas
 
-                LäggTillIndex(m);
+                prognoser.Add(m);
             }
+
             infil.Close();
         }
 
 
-        public void TaBortIndex(int index) // Metoden som tar bort ett facks objekt från listan
-        {
-            LästFilPrognos[] temp = new LästFilPrognos[vektor.Length - 1];
-
-            for (int i = 0; i < index; i++)
-            {
-                temp[i] = vektor[i];
-            }
-            for (int i = index + 1; i < vektor.Length; i++)
-            {
-                temp[i - 1] = vektor[i];
-            }
-            vektor = temp;
-        }
 
         private void lblKategori_Click(object sender, EventArgs e)
         {
@@ -195,7 +167,7 @@ namespace PresentationLayer1.Forms
             }
         }
 
-
+        
 
 
 
@@ -211,6 +183,24 @@ namespace PresentationLayer1.Forms
                 businessManager.Exportera(dgvPrognostiseringIntäkter, save.FileName);
                 MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
             }
+        }
+
+        private void btnLås_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RäknaUtBudgetPrognos();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //var utvaldBudget = from x in prognoser
+            //                   where x.Månad == cmbMånad.Items.
+                           
+
+            
         }
     }
 }

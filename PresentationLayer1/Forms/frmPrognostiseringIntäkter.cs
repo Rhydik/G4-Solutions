@@ -50,6 +50,7 @@ namespace PresentationLayer1.Forms
             this.FormClosing += frmPrognostiseringIntäkter_FormClosing; //för att få saker att sparas när man stänger fönstret
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
+            cmbMånad.Items.Add("Alla Månader");
 
             
         }
@@ -165,6 +166,21 @@ namespace PresentationLayer1.Forms
                 //MessageBox.Show(resultat.ToString());
 
             }
+
+            foreach (DataGridViewRow row in dgvPrognostiseringIntäkter.Rows)
+            {
+                decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade1);
+                decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade2);
+
+                int dela = new int();
+                dela = int.Parse(DateTime.Now.Month.ToString()) * 12;
+                var trend = (Grade1 + Grade2/dela);
+                row.Cells["Trend"].Value = trend;
+
+                //MessageBox.Show(resultat.ToString());
+
+            }
+
         }
 
         
@@ -196,10 +212,17 @@ namespace PresentationLayer1.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //var utvaldBudget = from x in prognoser
-            //                   where x.Månad == cmbMånad.Items.
-                           
+            if(cmbMånad.Text != null)
+            {
+                List<LästFilPrognos> utvaldMånad = new List<LästFilPrognos>(prognoser.Where(p => p.Månad == cmbMånad.Text));
 
+                dgvPrognostiseringIntäkter.DataSource = utvaldMånad;
+            }
+            if(cmbMånad.Text == "Alla Månader")
+            {
+                dgvPrognostiseringIntäkter.DataSource = prognoser;
+            
+            }
             
         }
     }

@@ -36,8 +36,8 @@
             this.btnLås = new System.Windows.Forms.Button();
             this.lblSök = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.button2 = new System.Windows.Forms.Button();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPrognostiseringIntäkter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 123);
+            this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 111);
             this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
             this.dgvPrognostiseringIntäkter.RowHeadersVisible = false;
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
@@ -117,14 +117,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(336, 84);
@@ -134,6 +126,14 @@
             this.button2.Text = "Visa månad";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmPrognostiseringIntäkter
             // 

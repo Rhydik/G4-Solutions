@@ -154,17 +154,32 @@ namespace PresentationLayer1.Forms
 
         private void RäknaUtBudgetPrognos()
         {
+// TO DO - följande rubriker ska visas bara: Budget(gjord) , Utfall mån(gjord), utfall acc(gjord), upparbetat(gjort), trend(gjort), Föreg.prognos(gjord), prognos(gjord), prognos budget
+
             foreach (DataGridViewRow row in dgvPrognostiseringIntäkter.Rows)
             {
                 decimal.TryParse(row.Cells["Budget"]?.Value?.ToString(), out decimal Grade1);
                 decimal.TryParse(row.Cells["Prognos"]?.Value?.ToString(), out decimal Grade2);
-
+                decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade3);
+                decimal.TryParse(row.Cells["UtfallMån"]?.Value?.ToString(), out decimal Grade4);
+                decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade5);
+                decimal.TryParse(row.Cells["Trend"]?.Value?.ToString(), out decimal Grade6);
+                decimal.TryParse(row.Cells["FöregPrognos"]?.Value?.ToString(), out decimal Grade7);
+                decimal.TryParse(row.Cells["PrognosBudget"]?.Value?.ToString(), out decimal Grade8);
                 //if(Grade2 )
 
                 var resultat = (Grade1 + Grade2);
                 row.Cells["PrognosBudget"].Value = resultat;
                 totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat;
                 //MessageBox.Show(resultat.ToString());
+
+
+
+                var resultat1 = (Grade3 + Grade4);
+                row.Cells["UtfallAcc"].Value = resultat1;
+                totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultat1;
+
+
 
             }
 

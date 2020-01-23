@@ -18,11 +18,12 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmPrognostiseringIntäkter : Form
     {
+       
         private BusinessManager businessManager = new BusinessManager();
         public List<LästFilPrognos> prognoser = new List<LästFilPrognos>();
         int dela = new int();
         decimal total = new decimal();
-        public LästFilPrognos totalPrognos = new LästFilPrognos();
+
         
 
         public frmPrognostiseringIntäkter()
@@ -31,31 +32,24 @@ namespace PresentationLayer1.Forms
 
             InitializeComponent();
             LaddaRegister();
-            totalPrognos.Produkt = "Totalt";
+          
+
             dgvPrognostiseringIntäkter.DataSource = prognoser;
 
             dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["KundID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Kund"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Datum"].Visible = false;
-            //dgvPrognostiseringIntäkter.Columns["Månad"].Visible = false;
 
-
-
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Upparbetat");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Trend");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Prognos");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Prognos-Budget");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Budget");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Utfall mån");
-            //dgvPrognostiseringIntäkter.Columns.Add("Column", "Utfall Acc");
 
 
             this.FormClosing += frmPrognostiseringIntäkter_FormClosing; //för att få saker att sparas när man stänger fönstret
 
             cmbMånad.Items.AddRange(System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthNames);
             cmbMånad.Items.Add("Alla Månader");
-            
+            RäknaUtBudgetPrognos();
+        
+
         }
 
 
@@ -104,18 +98,20 @@ namespace PresentationLayer1.Forms
                 m.KundID = LästRad[2];
                 m.Kund = LästRad[3];
                 m.Datum = LästRad[4];
-                m.Budget = LästRad[5];            //visas
-                m.UtfallMån = LästRad[6];         //visas 
-                m.UtfallAcc = LästRad[7];         //visas
+                m.Budget = decimal.Parse(LästRad[5]);            //visas
+                m.UtfallMån = decimal.Parse(LästRad[6]);         //visas 
+                m.UtfallAcc = decimal.Parse(LästRad[7]);         //visas
                 m.Månad = LästRad[8];
-                m.Upparbetat = LästRad[9];        //visas
-                m.Trend = LästRad[10];            //visas
-                m.FöregPrognos = LästRad[11];     //visas
-                m.Prognos = LästRad[12];          //visas
+                m.Upparbetat = decimal.Parse(LästRad[9]);        //visas
+                m.Trend = decimal.Parse(LästRad[10]);            //visas
+                m.FöregPrognos = decimal.Parse(LästRad[11]);     //visas
+                m.Prognos = decimal.Parse(LästRad[12]);          //visas
                 m.PrognosBudget = decimal.Parse(LästRad[13]);    //visas
+
 
                 prognoser.Add(m);
             }
+
 
             infil.Close();
         }
@@ -156,72 +152,97 @@ namespace PresentationLayer1.Forms
 
         private void RäknaUtBudgetPrognos()
         {
-// TO DO - följande rubriker ska visas bara: Budget(gjord) , Utfall mån(gjord), utfall acc(gjord), upparbetat(gjort), trend(gjort), Föreg.prognos(gjord), prognos(gjord), prognos budget
+
+
+
+            LästFilPrognos totalPrognos = new LästFilPrognos();
+
+
+
+
+
+
 
             foreach (DataGridViewRow row in dgvPrognostiseringIntäkter.Rows)
-            {
-                decimal.TryParse(row.Cells["Budget"]?.Value?.ToString(), out decimal Grade1);
-                decimal.TryParse(row.Cells["Prognos"]?.Value?.ToString(), out decimal Grade2);
-                decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade3);
-                decimal.TryParse(row.Cells["UtfallMån"]?.Value?.ToString(), out decimal Grade4);
-                decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade5);
-                decimal.TryParse(row.Cells["Trend"]?.Value?.ToString(), out decimal Grade6);
-                decimal.TryParse(row.Cells["FöregPrognos"]?.Value?.ToString(), out decimal Grade7);
-                decimal.TryParse(row.Cells["PrognosBudget"]?.Value?.ToString(), out decimal Grade8);
-                //if(Grade2 )
+                {
 
-                var resultat1 = (Grade1);
-                row.Cells["Budget"].Value = resultat1;
-                totalPrognos.Budget = totalPrognos.Budget + resultat1;
-                //MessageBox.Show(resultat.ToString());
+                    decimal.TryParse(row.Cells["Budget"]?.Value?.ToString(), out decimal Grade1);
+                    decimal.TryParse(row.Cells["Prognos"]?.Value?.ToString(), out decimal Grade2);
+                    decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade3);
+                    decimal.TryParse(row.Cells["UtfallMån"]?.Value?.ToString(), out decimal Grade4);
+                    decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade5);
+                    decimal.TryParse(row.Cells["Trend"]?.Value?.ToString(), out decimal Grade6);
+                    decimal.TryParse(row.Cells["FöregPrognos"]?.Value?.ToString(), out decimal Grade7);
+                    decimal.TryParse(row.Cells["PrognosBudget"]?.Value?.ToString(), out decimal Grade8);
 
-                var resultat2 = (Grade2);
-                row.Cells["Prognos"].Value = resultat2;
-                totalPrognos.Prognos = totalPrognos.Prognos + resultat2;
+                    var resultat1 = (Grade1);
+                    row.Cells["Budget"].Value = resultat1;
+                    totalPrognos.Budget = totalPrognos.Budget + resultat1;
 
-                var resultat3 = (Grade3);
-                row.Cells["UtfallAcc"].Value = resultat3;
-                totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultat3;
+                    var resultat2 = (Grade2);
+                    row.Cells["Prognos"].Value = resultat2;
+                    totalPrognos.Prognos = totalPrognos.Prognos + resultat2;
 
-                var resultat4 = (Grade4);
-                row.Cells["UtfallMån"].Value = resultat4;
-                totalPrognos.UtfallMån = totalPrognos.UtfallMån + resultat4;
+                    var resultat3 = (Grade3);
+                    row.Cells["UtfallAcc"].Value = resultat3;
+                    totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultat3;
 
-                var resultat5 = (Grade5);
-                row.Cells["Upparbetat"].Value = resultat5;
-                totalPrognos.Upparbetat = totalPrognos.Upparbetat + resultat5;
+                    var resultat4 = (Grade4);
+                    row.Cells["UtfallMån"].Value = resultat4;
+                    totalPrognos.UtfallMån = totalPrognos.UtfallMån + resultat4;
 
-                var resultat6 = (Grade6);
-                row.Cells["Trend"].Value = resultat6;
-                totalPrognos.Trend = totalPrognos.Trend + resultat6;
+                    var resultat5 = (Grade5);
+                    row.Cells["Upparbetat"].Value = resultat5;
+                    totalPrognos.Upparbetat = totalPrognos.Upparbetat + resultat5;
 
-                var resultat7 = (Grade7);
-                row.Cells["FöregPrognos"].Value = resultat7;
-                totalPrognos.FöregPrognos = totalPrognos.FöregPrognos + resultat7;
+                    var resultat6 = (Grade6);
+                    row.Cells["Trend"].Value = resultat6;
+                    totalPrognos.Trend = totalPrognos.Trend + resultat6;
 
-                var resultat8 = (Grade8);
-                row.Cells["PrognosBudget"].Value = resultat8;
-                totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat8;
+                    var resultat7 = (Grade7);
+                    row.Cells["FöregPrognos"].Value = resultat7;
+                    totalPrognos.FöregPrognos = totalPrognos.FöregPrognos + resultat7;
 
+                    var resultat8 = (Grade8);
+                    row.Cells["PrognosBudget"].Value = resultat8;
+                    totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat8;
 
+                    prognoser.Add(totalPrognos);
+                    dgvPrognostiseringIntäkter.DataSource = prognoser;
+                
             }
-
+                
+            
             foreach (DataGridViewRow row in dgvPrognostiseringIntäkter.Rows)
             {
-                decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade1);
-                decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade2);
+                decimal.TryParse(row.Cells["UtfallAcc"]?.Value?.ToString(), out decimal Grade10);
+                decimal.TryParse(row.Cells["Upparbetat"]?.Value?.ToString(), out decimal Grade20);
 
                 
                 dela = int.Parse(DateTime.Now.Month.ToString()) * 12;
-                total = Grade1 + Grade2;
+                total = Grade10 + Grade20;
 
                 var trend = (total/dela);
                 trend = Math.Round(trend, 2);
                 row.Cells["Trend"].Value = trend;
 
+
             }
 
-            
+            totalPrognos.Produkt = "Totalt";
+
+            prognoser.Add(totalPrognos);
+
+            var myDistinctList = prognoser.GroupBy(i => i.Produkt)
+            .Select(g => g.First()).ToList();
+
+            dgvPrognostiseringIntäkter.DataSource = myDistinctList;
+
+
+
+
+           
+
             //MessageBox.Show(totalPrognos.PrognosBudget.ToString());
             dataGridView1.DataSource = new List<LästFilPrognos> { totalPrognos };
 
@@ -232,6 +253,8 @@ namespace PresentationLayer1.Forms
             dataGridView1.Columns["Datum"].Visible = false;
             dataGridView1.Columns["Månad"].Visible = false;
 
+        
+           
         }
 
 

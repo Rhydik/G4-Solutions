@@ -40,6 +40,8 @@ namespace PresentationLayer1.Forms
             dgvPrognostiseringIntäkter.Columns["Datum"].Visible = false;
             //dgvPrognostiseringIntäkter.Columns["Månad"].Visible = false;
 
+
+
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Upparbetat");
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Trend");
             //dgvPrognostiseringIntäkter.Columns.Add("Column", "Prognos");
@@ -168,17 +170,38 @@ namespace PresentationLayer1.Forms
                 decimal.TryParse(row.Cells["PrognosBudget"]?.Value?.ToString(), out decimal Grade8);
                 //if(Grade2 )
 
-                var resultat = (Grade1 + Grade2);
-                row.Cells["PrognosBudget"].Value = resultat;
-                totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat;
+                var resultat1 = (Grade1);
+                row.Cells["Budget"].Value = resultat1;
+                totalPrognos.Budget = totalPrognos.Budget + resultat1;
                 //MessageBox.Show(resultat.ToString());
 
+                var resultat2 = (Grade2);
+                row.Cells["Prognos"].Value = resultat2;
+                totalPrognos.Prognos = totalPrognos.Prognos + resultat2;
 
+                var resultat3 = (Grade3);
+                row.Cells["UtfallAcc"].Value = resultat3;
+                totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultat3;
 
-                var resultat1 = (Grade3 + Grade4);
-                row.Cells["UtfallAcc"].Value = resultat1;
-                totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultat1;
+                var resultat4 = (Grade4);
+                row.Cells["UtfallMån"].Value = resultat4;
+                totalPrognos.UtfallMån = totalPrognos.UtfallMån + resultat4;
 
+                var resultat5 = (Grade5);
+                row.Cells["Upparbetat"].Value = resultat5;
+                totalPrognos.Upparbetat = totalPrognos.Upparbetat + resultat5;
+
+                var resultat6 = (Grade6);
+                row.Cells["Trend"].Value = resultat6;
+                totalPrognos.Trend = totalPrognos.Trend + resultat6;
+
+                var resultat7 = (Grade7);
+                row.Cells["FöregPrognos"].Value = resultat7;
+                totalPrognos.FöregPrognos = totalPrognos.FöregPrognos + resultat7;
+
+                var resultat8 = (Grade8);
+                row.Cells["PrognosBudget"].Value = resultat8;
+                totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultat8;
 
 
             }
@@ -199,8 +222,15 @@ namespace PresentationLayer1.Forms
             }
 
             
-            MessageBox.Show(totalPrognos.PrognosBudget.ToString());
+            //MessageBox.Show(totalPrognos.PrognosBudget.ToString());
             dataGridView1.DataSource = new List<LästFilPrognos> { totalPrognos };
+
+            dataGridView1.Columns["Produkt"].Visible = false;
+            dataGridView1.Columns["ProduktID"].Visible = false;
+            dataGridView1.Columns["KundID"].Visible = false;
+            dataGridView1.Columns["Kund"].Visible = false;
+            dataGridView1.Columns["Datum"].Visible = false;
+            dataGridView1.Columns["Månad"].Visible = false;
 
         }
 

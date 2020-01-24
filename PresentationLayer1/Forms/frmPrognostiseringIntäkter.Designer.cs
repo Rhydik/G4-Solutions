@@ -39,8 +39,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
+            this.shadowDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shadowDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportera
@@ -80,6 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPrognostiseringIntäkter.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPrognostiseringIntäkter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrognostiseringIntäkter.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvPrognostiseringIntäkter.Location = new System.Drawing.Point(208, 111);
             this.dgvPrognostiseringIntäkter.Name = "dgvPrognostiseringIntäkter";
             this.dgvPrognostiseringIntäkter.RowHeadersVisible = false;
@@ -131,10 +134,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(208, 332);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridView1.Size = new System.Drawing.Size(614, 60);
             this.dataGridView1.TabIndex = 97;
             // 
@@ -146,11 +151,21 @@
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
             // 
+            // shadowDataGridView
+            // 
+            this.shadowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.shadowDataGridView.Location = new System.Drawing.Point(787, 12);
+            this.shadowDataGridView.Name = "shadowDataGridView";
+            this.shadowDataGridView.Size = new System.Drawing.Size(15, 13);
+            this.shadowDataGridView.TabIndex = 98;
+            this.shadowDataGridView.Visible = false;
+            // 
             // frmPrognostiseringIntäkter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.shadowDataGridView);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -168,6 +183,7 @@
             this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shadowDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +201,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView shadowDataGridView;
     }
 }

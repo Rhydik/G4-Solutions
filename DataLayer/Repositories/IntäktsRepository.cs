@@ -54,7 +54,28 @@ namespace DataLayer
                 intäktsbudget.Låst = false;
 
                 db.Intäktsbudget.Add(intäktsbudget);
-                db.SaveChanges();
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
         }
 
@@ -127,8 +148,29 @@ namespace DataLayer
 
                 db.ProduktIntäktsbudget.Remove(produktbudget);
                 db.KundIntäktsbudget.Remove(kundbudget);
-                db.Intäktsbudget.Remove(intäktsbudget);
-                db.SaveChanges();
+                db.Intäktsbudget.Remove(intäktsbudget); 
+                
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                {
+                    Exception raise = dbEx;
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            string message = string.Format("{0}:{1}",
+                                validationErrors.Entry.Entity.ToString(),
+                                validationError.ErrorMessage);
+                            // raise a new exception nesting
+                            // the current instance as InnerException
+                            raise = new InvalidOperationException(message, raise);
+                        }
+                    }
+                    throw raise;
+                }
             }
         }
 

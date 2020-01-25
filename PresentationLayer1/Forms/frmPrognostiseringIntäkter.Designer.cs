@@ -63,7 +63,6 @@
             this.cmbMånad.Name = "cmbMånad";
             this.cmbMånad.Size = new System.Drawing.Size(121, 21);
             this.cmbMånad.TabIndex = 91;
-            this.cmbMånad.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // lblMånad
             // 
@@ -73,7 +72,6 @@
             this.lblMånad.Size = new System.Drawing.Size(40, 13);
             this.lblMånad.TabIndex = 89;
             this.lblMånad.Text = "Månad";
-            this.lblMånad.Click += new System.EventHandler(this.lblKategori_Click);
             // 
             // dgvPrognostiseringIntäkter
             // 
@@ -89,7 +87,6 @@
             this.dgvPrognostiseringIntäkter.RowHeadersWidth = 62;
             this.dgvPrognostiseringIntäkter.Size = new System.Drawing.Size(615, 207);
             this.dgvPrognostiseringIntäkter.TabIndex = 85;
-            this.dgvPrognostiseringIntäkter.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrognostiseringIntäkter_CellContentClick);
             // 
             // btnLås
             // 
@@ -180,7 +177,6 @@
             this.Name = "frmPrognostiseringIntäkter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prognostisering intäkter | G4 Solutions Economy System";
-            this.Load += new System.EventHandler(this.frmPrognostiseringIntäkter_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrognostiseringIntäkter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shadowDataGridView)).EndInit();

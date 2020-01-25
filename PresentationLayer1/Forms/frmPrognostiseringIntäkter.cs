@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
-using DataLayer.DTO;
 using System.IO;
-using System.Globalization;
-using System.Threading;
 
 namespace PresentationLayer1.Forms
 {
@@ -47,7 +41,7 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             LaddaRegister();
             dgvPrognostiseringIntäkter.DataSource = prognoser;
-            dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false; //gömmer de fält som inte behövs
+            dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false; //gömmer onödiga fält
             dgvPrognostiseringIntäkter.Columns["KundID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Kund"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Datum"].Visible = false;
@@ -107,33 +101,6 @@ namespace PresentationLayer1.Forms
             infil.Close();
         }
 
-        private void lblKategori_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e) //månad
-        {
-        }
-
-        private void btnSchablonkostnad_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void frmPrognostiseringIntäkter_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void dgvPrognostiseringIntäkter_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void dgvPrognostiseringIntäkter_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void frmPrognostiseringIntäkter_Load_1(object sender, EventArgs e)
-        {
-        }
         public void låsPrognostisering()
         {
             DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill låsa Prognostiseringen?", "Varning", MessageBoxButtons.YesNo);
@@ -239,8 +206,6 @@ namespace PresentationLayer1.Forms
 
             transfer = totalPrognos;
         }
-
-
 
         private void btnExportera_Click(object sender, System.EventArgs e)
         {

@@ -197,6 +197,7 @@ namespace PresentationLayer1.Forms
             dataGridView1.Columns["Månad"].Visible = false;
 
             transfer = totalPrognos;
+            businessManager.SparaFilMetod(prognoser);
         }
 
         private void btnExportera_Click(object sender, System.EventArgs e)
@@ -257,6 +258,11 @@ namespace PresentationLayer1.Forms
                 dgvPrognostiseringIntäkter.DataSource = prognoser;
             }
 
+        }
+
+        private void ucMeny_Enter(object sender, EventArgs e)
+        {
+            businessManager.SparaFilMetod(prognoser);
         }
     }
 }

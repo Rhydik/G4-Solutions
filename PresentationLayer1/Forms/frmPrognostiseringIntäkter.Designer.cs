@@ -147,6 +147,7 @@
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;
+            this.ucMeny.Enter += new System.EventHandler(this.ucMeny_Enter);
             // 
             // shadowDataGridView
             // 

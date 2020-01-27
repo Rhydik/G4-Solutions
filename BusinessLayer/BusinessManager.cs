@@ -468,5 +468,10 @@ namespace BusinessLayer
         {
             repositoryFacade.låsRepository.SetKostnadsLås(boolean);
         }
+
+        public void SparaFilMetod(List<LästFilPrognos> prognoser)
+        {
+            repositoryFacade.prognosRepository.SparaFilMetod(prognoser);
+        }
     }
 }

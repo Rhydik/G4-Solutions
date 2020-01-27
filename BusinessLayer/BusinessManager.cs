@@ -120,6 +120,8 @@ namespace BusinessLayer
             repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, tim, kommentar, kundId);
         }
 
+        
+
         public decimal GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
         {
             decimal budget = 0;
@@ -170,6 +172,8 @@ namespace BusinessLayer
         {
             return repositoryFacade.intäktsRepository.GetProduktWithoutIntäkt();
         }
+
+        
 
         public List<KundIntäktsbudget> GetAllKundID(string kundId)
         {
@@ -472,6 +476,24 @@ namespace BusinessLayer
         public void SparaFilMetod(List<LästFilPrognos> prognoser)
         {
             repositoryFacade.prognosRepository.SparaFilMetod(prognoser);
+        }
+
+        public List<LästFilPrognos> LaddaRegister()
+        {
+            List<LästFilPrognos> lästFilPrognoser = repositoryFacade.prognosRepository.LaddaRegister();
+            return lästFilPrognoser;
+        }
+
+        public LästFilPrognos RäknaUtBudgetPrognos(List<LästFilPrognos> prognoser)
+        {
+            LästFilPrognos lästFilPrognoser = repositoryFacade.prognosRepository.RäknaUtBudgetPrognos(prognoser);
+            return lästFilPrognoser;
+        }
+
+        public List<LästFilPrognos> FörberedaExport(LästFilPrognos transfer, List<LästFilPrognos> prognoser)
+        {
+            List<LästFilPrognos> förberdaPrognoser = repositoryFacade.prognosRepository.FörberedaExport(transfer, prognoser);
+            return förberdaPrognoser;
         }
     }
 }

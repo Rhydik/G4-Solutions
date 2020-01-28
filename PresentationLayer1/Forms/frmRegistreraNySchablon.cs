@@ -26,7 +26,7 @@ namespace PresentationLayer1
 
         private void Load()
         {
-            lblValtKonto.Text = schablon.Konto;
+            lblValtKonto.Text = schablon.Konto.ToString();
             tbSchablonkostnad.Text = schablon.Belopp.ToString();
         }
 

@@ -26,7 +26,7 @@ namespace PresentationLayer1.Forms
 
         public new void Load()
         {
-            tbKonto.Text = schablon.Konto;
+            tbKonto.Text = schablon.Konto.ToString();
             tbKontobenämning.Text = schablon.Kontobenämning;
         }
 

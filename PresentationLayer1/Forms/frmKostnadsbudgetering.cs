@@ -27,6 +27,7 @@ namespace PresentationLayer1.Forms
         private void Load()
         {
             personals = businessManager.GetKostnadsbudgetPersonal();
+            businessManager.Kalkylering(personals);
             dgvÖvre.DataSource = personals;
             produkts = businessManager.GetKostnadsbudgetProdukt();
             dgvNedre.DataSource = produkts;

@@ -30,5 +30,29 @@ namespace DataLayer
             }
 
         }
+
+
+        /// <summary>
+        /// I kalkyleringen skall vi genomföra algoritmen för att räkna ut de följande värdena : andel,diff, totalt etc...
+        /// Kolla gärna KostnadsBudgetPersonalDTO samt prototyp/dokumentation för vidare förklaring av vad variablerna står för.
+        /// 
+        /// </summary>
+        /// <param name="personals"></param>
+        /// <returns></returns>
+        public List<KonstnadsbudgetPersonalDTO> Kalkylering(List<KonstnadsbudgetPersonalDTO> personals)
+        {
+            foreach (var item in personals)
+            {
+
+                
+                item.Andel = 0;
+                item.Diff = 0;
+                item.Totalt = 0;
+                item.GemAdm = 0;
+                item.Fpp = 0;
+            }
+            return personals;
+
+        }
     }
 }

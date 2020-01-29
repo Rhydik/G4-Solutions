@@ -495,5 +495,11 @@ namespace BusinessLayer
             List<LästFilPrognos> förberdaPrognoser = repositoryFacade.prognosRepository.FörberedaExport(transfer, prognoser);
             return förberdaPrognoser;
         }
+
+        public List<KonstnadsbudgetPersonalDTO> Kalkylering(List<KonstnadsbudgetPersonalDTO> personals)
+        {
+            List<KonstnadsbudgetPersonalDTO> kalkylLista = repositoryFacade.kostnadsbudgetRepository.Kalkylering(personals);
+            return kalkylLista;
+        }
     }
 }

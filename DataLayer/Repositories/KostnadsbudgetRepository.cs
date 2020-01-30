@@ -24,7 +24,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Produkt
-                            select new KostnadsbudgetProduktDTO { Produkt = x.Namn, ProduktID = x.ProduktID, };
+                            select new KostnadsbudgetProduktDTO { Produkt = x.Namn, ProduktID = x.ProduktID, Avdelning_AvdelningID = x.Avdelning_AvdelningID };
 
                 return query.ToList();
             }
@@ -44,7 +44,7 @@ namespace DataLayer
             foreach (var item in personals)
             {
 
-                
+                //vi ska uppdatera logiken här, detta är bara tillfälligt
                 item.Andel = 0;
                 item.Diff = 0;
                 item.Totalt = 0;

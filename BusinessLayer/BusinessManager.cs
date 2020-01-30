@@ -501,5 +501,7 @@ namespace BusinessLayer
             List<KonstnadsbudgetPersonalDTO> kalkylLista = repositoryFacade.kostnadsbudgetRepository.Kalkylering(personals);
             return kalkylLista;
         }
+
+
     }
 }

@@ -12,19 +12,7 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmPrognostiseringIntäkter : Form
     {
-        /*
-            TODO
 
-       - dubbelkolla algoritmen för UtfallAcc + Upparbetat / 12mån , så att detta räknar rätt
-
-       - stoppa in alla stora funktioner i repositories/backend
-
-            Klart-ish
-
-       + Lås funktionen är färdig men borde nog använda sig av "public LåsID Boolean" etc...
-
-      + kolla med patrik ifall det spelar roll att Å,Ä,Ö inte visas rätt i datagridviewen..
-        */
 
         private BusinessManager businessManager = new BusinessManager();
         public List<LästFilPrognos> prognoser = new List<LästFilPrognos>(); //listan populeras av textfilen,används också i gridviewen

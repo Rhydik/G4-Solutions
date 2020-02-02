@@ -28,6 +28,7 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<KonstnadsbudgetPersonalDTO> personals;
         private List<KostnadsbudgetProduktDTO> produkts;
+        private List<KostnadsbudgetKontoDTO> konton;
         
         
         public List<KostnadsbudgetProduktDTO> allaProdukter;
@@ -46,7 +47,7 @@ namespace PresentationLayer1.Forms
             produkts = businessManager.GetKostnadsbudgetProdukt();
             dgvNedre.DataSource = produkts;
             allaProdukter = businessManager.GetKostnadsbudgetProdukt();
-            GömKolumner();
+            GömKolumnerFörAvdelningar();
 
 
         }
@@ -61,21 +62,50 @@ namespace PresentationLayer1.Forms
             {
                 List<KostnadsbudgetProduktDTO> utvaldAvdelning = new List<KostnadsbudgetProduktDTO>(allaProdukter.Where(p => p.Avdelning_AvdelningID == 1));
                 dgvNedre.DataSource = utvaldAvdelning;
-                GömKolumner();
+                GömKolumnerFörAvdelningar();
             }
             else if (cmbAvdelning.Text == "Driftavdelning")
             {
                 List<KostnadsbudgetProduktDTO> utvaldAvdelning = new List<KostnadsbudgetProduktDTO>(allaProdukter.Where(p => p.Avdelning_AvdelningID == 2));
                 dgvNedre.DataSource = utvaldAvdelning;
-                GömKolumner();
+                GömKolumnerFörAvdelningar();
             }
         }
 
-        public void GömKolumner() //Ui
+        public void GömKolumnerFörAvdelningar() //Ui
         {
             dgvNedre.Columns["ProduktID"].Visible = false;
             dgvNedre.Columns["Avdelning_AvdelningID"].Visible = false;
 
+        }
+
+        private void btnDirektaKostnaderProdukt_Click(object sender, EventArgs e)
+        {
+            LaddaDirektaKostnaderUI();
+        }
+
+        private void btnPlacering_Click(object sender, EventArgs e)
+        {
+            dgvNedre.Visible = true;
+            cmbAvdelning.Visible = true;
+            buttonVäljAvdelning.Visible = true;
+            lblAvdelning.Visible = true;
+            Load();
+        }
+
+        public void LaddaDirektaKostnaderUI()
+        {
+            konton = businessManager.GetAllKonton();
+            dgvÖvre.DataSource = konton;
+            dgvÖvre.Columns["KontoID"].Visible = false;
+            cmbAvdelning.Visible = false;
+            buttonVäljAvdelning.Visible = false;
+            lblAvdelning.Visible = false;
+        }
+
+        private void btnDirektaKostnaderAktivitet_Click(object sender, EventArgs e)
+        {
+            LaddaDirektaKostnaderUI();
         }
     }
 }

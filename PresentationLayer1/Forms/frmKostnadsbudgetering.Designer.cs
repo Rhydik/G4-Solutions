@@ -39,8 +39,8 @@
             this.btnDirektaKostnaderProdukt = new System.Windows.Forms.Button();
             this.btnDirektaKostnaderAktivitet = new System.Windows.Forms.Button();
             this.dgvNedre = new System.Windows.Forms.DataGridView();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.buttonVäljAvdelning = new System.Windows.Forms.Button();
+            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvÖvre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +116,7 @@
             this.btnPlacering.TabIndex = 72;
             this.btnPlacering.Text = "Placering";
             this.btnPlacering.UseVisualStyleBackColor = true;
+            this.btnPlacering.Click += new System.EventHandler(this.btnPlacering_Click);
             // 
             // btnDirektaKostnaderProdukt
             // 
@@ -125,6 +126,7 @@
             this.btnDirektaKostnaderProdukt.TabIndex = 73;
             this.btnDirektaKostnaderProdukt.Text = "Direkta kostnader produkt";
             this.btnDirektaKostnaderProdukt.UseVisualStyleBackColor = true;
+            this.btnDirektaKostnaderProdukt.Click += new System.EventHandler(this.btnDirektaKostnaderProdukt_Click);
             // 
             // btnDirektaKostnaderAktivitet
             // 
@@ -134,6 +136,7 @@
             this.btnDirektaKostnaderAktivitet.TabIndex = 74;
             this.btnDirektaKostnaderAktivitet.Text = "Direkta kostnader aktivitet";
             this.btnDirektaKostnaderAktivitet.UseVisualStyleBackColor = true;
+            this.btnDirektaKostnaderAktivitet.Click += new System.EventHandler(this.btnDirektaKostnaderAktivitet_Click);
             // 
             // dgvNedre
             // 
@@ -147,14 +150,6 @@
             this.dgvNedre.Size = new System.Drawing.Size(518, 457);
             this.dgvNedre.TabIndex = 75;
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // buttonVäljAvdelning
             // 
             this.buttonVäljAvdelning.Location = new System.Drawing.Point(1000, 40);
@@ -164,6 +159,14 @@
             this.buttonVäljAvdelning.Text = "Välj Avdelning";
             this.buttonVäljAvdelning.UseVisualStyleBackColor = true;
             this.buttonVäljAvdelning.Click += new System.EventHandler(this.buttonVäljAvdelning_Click);
+            // 
+            // ucMeny
+            // 
+            this.ucMeny.Location = new System.Drawing.Point(8, 8);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
+            this.ucMeny.Name = "ucMeny";
+            this.ucMeny.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny.TabIndex = 5;
             // 
             // frmKostnadsbudgetering
             // 

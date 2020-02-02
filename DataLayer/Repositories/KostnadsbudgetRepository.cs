@@ -45,6 +45,7 @@ namespace DataLayer
             {
 
                 //vi ska uppdatera logiken här, detta är bara tillfälligt
+                item.Vakansavdrag = 100 - item.Årsarbetare; //100% - hur mkt de jobbat = hur mycket de behöver i vakans
                 item.Andel = 0;
                 item.Diff = 0;
                 item.Totalt = 0;
@@ -53,6 +54,16 @@ namespace DataLayer
             }
             return personals;
 
+        }
+
+        public List<DTO.KostnadsbudgetKontoDTO> GetAllKonton()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Konto
+                            select new DTO.KostnadsbudgetKontoDTO {Benämning = x.Benämning , Konto = x.konto1, KontoID = x.KontoID };
+                        return query.ToList();
+            }
         }
     }
 }

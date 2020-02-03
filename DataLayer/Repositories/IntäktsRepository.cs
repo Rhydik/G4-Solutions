@@ -191,8 +191,8 @@ namespace DataLayer
                                      join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
                                      select y).FirstOrDefault();
 
-                db.ProduktIntäktsbudget.Remove(produktbudget);
                 db.KundIntäktsbudget.Remove(kundbudget);
+                db.ProduktIntäktsbudget.Remove(produktbudget);
                 db.Intäktsbudget.Remove(intäktsbudget);
                 db.SaveChanges();
             }

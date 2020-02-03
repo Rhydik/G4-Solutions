@@ -10,6 +10,7 @@ namespace DataLayer
     {
         public string ProduktID { get; set; }
         public string Produkt { get; set; }
-        public decimal Summering { get; set; }
+        public decimal Summering { get; set; } 
+        public int Avdelning_AvdelningID { get; set; }
     }
 }

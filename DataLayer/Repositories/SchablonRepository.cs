@@ -12,8 +12,9 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablon = from x in db.schablonkostnad
-                               select new SchablonDTO { Belopp = x.Belopp, Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning};
+                var schablon = from x in db.Konto
+                               join y in db.schablonkostnad on x.KontoID equals y.Konto_KontoID
+                               select new SchablonDTO { Konto = x.konto1, Kontobenämning = x.Benämning, Belopp = y.Belopp};
 
                 return schablon.ToList();
             }
@@ -60,7 +61,7 @@ namespace DataLayer
                 else
                 {
                     var kontot = (from x in db.Konto
-                                 where x.konto1 == schablon.Konto
+                                 where x.konto1== schablon.Konto
                                  select x).FirstOrDefault();
 
                     var newschablon = new schablonkostnad { Belopp = int.Parse(kostnad), Konto = kontot, Konto_KontoID = kontot.KontoID };

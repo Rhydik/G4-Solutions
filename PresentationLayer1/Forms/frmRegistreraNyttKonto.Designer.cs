@@ -85,9 +85,9 @@
             this.lblKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKonto.Location = new System.Drawing.Point(9, 74);
             this.lblKonto.Name = "lblKonto";
-            this.lblKonto.Size = new System.Drawing.Size(42, 16);
+            this.lblKonto.Size = new System.Drawing.Size(90, 16);
             this.lblKonto.TabIndex = 45;
-            this.lblKonto.Text = "Konto";
+            this.lblKonto.Text = "Kontonummer";
             // 
             // lblRegistreraNyttKonto
             // 

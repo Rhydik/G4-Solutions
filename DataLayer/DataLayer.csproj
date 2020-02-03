@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -53,33 +53,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aktivitet.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Aktivitet.cs" />
     <Compile Include="AktivitetKostnadsbudget.cs" />
+    <Compile Include="AntalTimmar.cs" />
+    <Compile Include="Avdelning.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="Direktkostnad.cs" />
     <Compile Include="DTO\KontorDTO.cs" />
     <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
+    <Compile Include="Intäktsbudget.cs" />
     <Compile Include="Konto.cs" />
-    <Compile Include="Konton.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Kostnadsbudget.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="KostnadsbudgetProdukt.cs" />
     <Compile Include="DTO\KostnadsbudgetProduktDTO.cs" />
     <Compile Include="KostnadsbudgetSet.cs" />
+    <Compile Include="Kund.cs" />
+    <Compile Include="KundKategori.cs" />
     <Compile Include="Lås.cs" />
-    <Compile Include="Migrations\202001171225486_Initial.cs" />
-    <Compile Include="Migrations\202001171225486_Initial.designer.cs">
-      <DependentUpon>202001171225486_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202002031246504_Initial.cs" />
+    <Compile Include="Migrations\202002031246504_Initial.designer.cs">
+      <DependentUpon>202002031246504_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001201442408_Lås.cs" />
-    <Compile Include="Migrations\202001201442408_Lås.designer.cs">
-      <DependentUpon>202001201442408_Lås.cs</DependentUpon>
+    <Compile Include="Migrations\202002031248392_AddLås.cs" />
+    <Compile Include="Migrations\202002031248392_AddLås.designer.cs">
+      <DependentUpon>202002031248392_AddLås.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Personal.cs" />
+    <Compile Include="Produkt.cs" />
+    <Compile Include="Produktgrupp.cs" />
+    <Compile Include="Produktkategori.cs" />
+    <Compile Include="Prognos.cs" />
     <Compile Include="Repositories\KostnadsbudgetRepository.cs" />
     <Compile Include="Repositories\BudgeteratResultatRepository.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />
@@ -93,15 +96,6 @@
     <Compile Include="Repositories\IntäktsRepository.cs" />
     <Compile Include="Repositories\BehörighetRepository.cs" />
     <Compile Include="DTO\AktivitetDTO.cs" />
-    <Compile Include="AntalTimmar.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Avdelning.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Direktkostnad.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\AvdelningDTO.cs" />
     <Compile Include="DTO\KundKategoriDTO.cs" />
     <Compile Include="DTO\PersonalDTO.cs" />
@@ -109,48 +103,9 @@
     <Compile Include="DTO\ProduktDTO.cs" />
     <Compile Include="DTO\KundDTO.cs" />
     <Compile Include="DTO\ProduktKategoriDTO.cs" />
-    <Compile Include="Intäktsbudget.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Kund.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KundKategori.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Personal.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="PersonalProdukt.cs" />
-    <Compile Include="Produkt.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Produktgrupp.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Produktkategori.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Prognos.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Repositories\AktivitetRepository.cs" />
     <Compile Include="DataManager.cs" />
-    <Compile Include="DatabaseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Repositories\KundRepository.cs" />
     <Compile Include="Repositories\LåsRepository.cs" />
     <Compile Include="Repositories\PersonalRepository.cs" />
@@ -160,44 +115,26 @@
     <Compile Include="Repositories\RepositoryFacade.cs" />
     <Compile Include="Repositories\SchablonRepository.cs" />
     <Compile Include="DTO\SchablonDTO.cs" />
-    <Compile Include="schablonkostnad.cs">
-      <DependentUpon>DatabaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DTO\VisaBehörighetDTO.cs" />
+    <Compile Include="schablonkostnad.cs" />
+    <Compile Include="sysdiagrams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DatabaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DatabaseModel.edmx.diagram">
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseModel.Context.cs</LastGenOutput>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Content>
     <Content Include="DatabaseModel.edmx.sql" />
-    <Content Include="DatabaseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DatabaseModel.cs</LastGenOutput>
-      <DependentUpon>DatabaseModel.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001171225486_Initial.resx">
-      <DependentUpon>202001171225486_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002031246504_Initial.resx">
+      <DependentUpon>202002031246504_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001201442408_Lås.resx">
-      <DependentUpon>202001201442408_Lås.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002031248392_AddLås.resx">
+      <DependentUpon>202002031248392_AddLås.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -205,8 +142,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

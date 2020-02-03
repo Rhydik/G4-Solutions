@@ -38,7 +38,7 @@ namespace DataLayer.Repositories
             {
                 var query = from x in db.Lås
                             where x.LåsID == 1
-                            select x.Kostnadsbudget;
+                            select x.AffoAvdelning;
 
                 return query.FirstOrDefault();
             }
@@ -48,7 +48,7 @@ namespace DataLayer.Repositories
             using (var db = new DataContext())
             {
                 var lås = db.Lås.Where(x => x.LåsID == 1).FirstOrDefault();
-                lås.Kostnadsbudget = boolean;
+                lås.AffoAvdelning = boolean;
                 db.SaveChanges();
             }
         }

@@ -4,28 +4,28 @@
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
-    using SqlProviderServices = System.Data.Entity.SqlServer.SqlProviderServices;
 
     public partial class DataContext : DbContext
     {
         public DataContext()
-            : base("name=DataContext5")
+            : base("name=DatabaseModel")
         {
         }
 
         public virtual DbSet<AntalTimmar> AntalTimmar { get; set; }
-        public virtual DbSet<Lås> Lås { get; set; }
         public virtual DbSet<Avdelning> Avdelning { get; set; }
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
         public virtual DbSet<Intäktsbudget> Intäktsbudget { get; set; }
         public virtual DbSet<Konto> Konto { get; set; }
         public virtual DbSet<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
         public virtual DbSet<KundKategori> KundKategori { get; set; }
+        public virtual DbSet<Lås> Lås { get; set; }
         public virtual DbSet<Personal> Personal { get; set; }
         public virtual DbSet<Produktgrupp> Produktgrupp { get; set; }
         public virtual DbSet<Produktkategori> Produktkategori { get; set; }
         public virtual DbSet<Prognos> Prognos { get; set; }
         public virtual DbSet<schablonkostnad> schablonkostnad { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Aktivitet> Aktivitet { get; set; }
         public virtual DbSet<AktivitetKostnadsbudget> AktivitetKostnadsbudget { get; set; }
         public virtual DbSet<KostnadsbudgetProdukt> KostnadsbudgetProdukt { get; set; }

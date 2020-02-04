@@ -56,12 +56,12 @@ namespace DataLayer
 
         }
 
-        public List<DTO.KostnadsbudgetKontoDTO> GetAllKonton()
+        public List<DTO.BudgetKontoDTO> GetAllKonton()
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.Konto
-                            select new DTO.KostnadsbudgetKontoDTO {Benämning = x.Benämning , Konto = x.konto1, KontoID = x.KontoID };
+                            select new DTO.BudgetKontoDTO {Benämning = x.Benämning , Konto = x.konto1, KontoID = x.KontoID };
                         return query.ToList();
             }
         }

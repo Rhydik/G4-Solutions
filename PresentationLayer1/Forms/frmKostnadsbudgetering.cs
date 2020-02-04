@@ -28,7 +28,7 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<KonstnadsbudgetPersonalDTO> personals;
         private List<KostnadsbudgetProduktDTO> produkts;
-        private List<KostnadsbudgetKontoDTO> konton;
+        private List<BudgetKontoDTO> konton;
         
         
         public List<KostnadsbudgetProduktDTO> allaProdukter;

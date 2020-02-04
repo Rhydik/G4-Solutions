@@ -34,7 +34,7 @@ namespace BusinessLayer
             return repositoryFacade.kostnadsbudgetRepository.GetKostnadsbudgetPersonal();
         }
 
-        public List<KostnadsbudgetKontoDTO> GetAllKonton()
+        public List<BudgetKontoDTO> GetAllKonton()
         {
             return repositoryFacade.kostnadsbudgetRepository.GetAllKonton();
         }

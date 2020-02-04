@@ -59,6 +59,7 @@
     <Compile Include="Avdelning.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs" />
+    <Compile Include="DTO\BudgetKontoDTO.cs" />
     <Compile Include="DTO\KontorDTO.cs" />
     <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
     <Compile Include="Intäktsbudget.cs" />

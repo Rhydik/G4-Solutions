@@ -22,6 +22,11 @@ namespace BusinessLayer
             return repositoryFacade.personalRepository.Login(användarnamn, lösenord);
         }
 
+        public List<PlaceringsDTO> GetAllAvdelningarFördelning()
+        {
+            return repositoryFacade.personalRepository.GetAllAVdelningarFördelning();
+        }
+
         //Kunder
         public List<KundDTO> GetAllKunder()
         {
@@ -275,9 +280,9 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.RemovePersonal(personal);
         }
 
-        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, string årsarbetare)
         {
-            repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
+            repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare);
         }
 
         public List<AktivitetDTO> GetAktivitetByNamn(string aktivitetNamn)

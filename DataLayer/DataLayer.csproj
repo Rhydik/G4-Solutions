@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
+    <Compile Include="DTO\PlaceringsDTO.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Produktgrupp.cs" />
     <Compile Include="Produktkategori.cs" />

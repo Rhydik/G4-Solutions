@@ -31,6 +31,17 @@ namespace DataLayer
             }
         }
 
+        public List<PlaceringsDTO> GetAllAVdelningarFördelning()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Avdelning
+                            select new PlaceringsDTO { Avdelning = x.Namn };
+
+                return query.ToList();
+            }
+        }
+
         public List<PersonalDTO> GetPersonalByPersNr(string persNr)
         {
             using (var db = new DataContext())
@@ -55,13 +66,13 @@ namespace DataLayer
             }
         }
 
-        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, string årsarbetare)
         {
             using (var db = new DataContext())
             {
-                
 
-                var personal = new Personal() { 
+
+                var personal = new Personal() {
                     Sysselsättningsgrad = sysselsättningsgrad,
                     Namn = namn,
                     PersonNr = personNr,
@@ -69,7 +80,6 @@ namespace DataLayer
                     Behörighet = "Basanvändare",
                     Lösenord = lösenord,
                     //Avdelning = personal.Avdelning,
-                    //AntalTimmar = personal.AntalTimmar,
                     Månadslön = månadslön,
                     //PersonalProdukt = personal.PersonalProdukt,
                     //PersonalID = personal.PersonalID

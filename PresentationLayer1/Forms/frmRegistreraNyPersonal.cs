@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
+using DataLayer.DTO;
 using BusinessLayer;
 
 namespace PresentationLayer1.Forms
@@ -15,9 +16,13 @@ namespace PresentationLayer1.Forms
     public partial class frmRegistreraNyPersonal : Form
     {
         BusinessManager businessManager = new BusinessManager();
+        private List<PlaceringsDTO> avdelnings;
+        int årsarbete;
         public frmRegistreraNyPersonal()
         {
             InitializeComponent();
+            avdelnings = businessManager.GetAllAvdelningarFördelning();
+            dgvPlacering.DataSource = avdelnings;
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
@@ -35,9 +40,16 @@ namespace PresentationLayer1.Forms
             var sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
             var vakansavdrag = int.Parse(tbVakansavdrag.Text);
             var lösenord = tbLösenord.Text;
+            var årsarbetare = tbÅrsarbetare.Text;
             MessageBox.Show("Personal sparad!");
 
-            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön);
+            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare);
+        }
+
+        private void tbVakansavdrag_TextChanged(object sender, EventArgs e)
+        {
+            årsarbete = int.Parse(tbSysselsättningsgrad.Text) - int.Parse(tbVakansavdrag.Text);
+            tbÅrsarbetare.Text = årsarbete.ToString();
         }
     }
 }

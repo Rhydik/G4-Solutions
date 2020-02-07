@@ -105,8 +105,12 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
+                var prod = (from x in db.Produkt
+                            where x.Namn == produkt
+                            select x).FirstOrDefault();
+
                 var query = (from x in db.PersonalProdukt
-                             where x.Placeringsandel == andel & x.Personal.Namn == pers
+                             where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Produkt_ProduktID == prod.ProduktID
                              select x).FirstOrDefault();
 
                 db.PersonalProdukt.Remove(query);

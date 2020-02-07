@@ -100,5 +100,19 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public void RemovePlaceringsProdukt(string pers, string produkt, int andel)
+        {
+            using (var db = new DataContext())
+            {
+                var query = (from x in db.PersonalProdukt
+                             where x.Placeringsandel == andel & x.Personal.Namn == pers
+                             select x).FirstOrDefault();
+
+                db.PersonalProdukt.Remove(query);
+                         
+                db.SaveChanges();
+            }
+        }
     }
 }

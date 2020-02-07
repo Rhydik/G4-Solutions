@@ -136,10 +136,10 @@ namespace PresentationLayer1.Forms
 
         private void btnTaBort_Click(object sender, EventArgs e)
         {
-            KonstnadsbudgetPersonalDTO personal = (KonstnadsbudgetPersonalDTO)dgvÖvre.CurrentRow.DataBoundItem;
-            var pers = personal.PersonalID;
-            var produkt = cbProdukt.SelectedItem.ToString();
-            var andel = tbAndel.Text;
+            PersonalProduktDTO perspro = (PersonalProduktDTO)dgvNedre.CurrentRow.DataBoundItem;
+            var pers = perspro.Personal;
+            var andel = perspro.Placeringsandel;
+            var produkt = perspro.Produkt;
 
             businessManager.RemovePlaceringProdukt(pers, produkt, andel);
             Update();

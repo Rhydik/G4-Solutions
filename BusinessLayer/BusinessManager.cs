@@ -159,9 +159,9 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
         }
 
-        public void RemovePlaceringProdukt(int pers, string produkt, string andel)
+        public void RemovePlaceringProdukt(string pers, string produkt, int andel)
         {
-            throw new NotImplementedException();
+            repositoryFacade.kostnadsbudgetRepository.RemovePlaceringsProdukt(pers, produkt, andel);
         }
 
         public decimal GetAvdelningIntäkter(AvdelningDTO avdelningDTO)

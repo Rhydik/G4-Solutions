@@ -45,8 +45,13 @@ namespace PresentationLayer1.Forms
             businessManager.Kalkylering(personals); //Updatera logiken i kalkylering() så det funkar som det ska
             dgvÖvre.DataSource = personals;
             produkts = businessManager.GetKostnadsbudgetProdukt();
-            dgvNedre.DataSource = produkts;
+            foreach (var prod in produkts)
+            {
+                cbProdukt.Items.Add(prod.Produkt);
+            }
             allaProdukter = businessManager.GetKostnadsbudgetProdukt();
+            dgvNedre.DataSource = businessManager.GetAllPersonalProdukt();
+
             GömKolumnerFörAvdelningar();
 
 
@@ -74,8 +79,8 @@ namespace PresentationLayer1.Forms
 
         public void GömKolumnerFörAvdelningar() //Ui
         {
-            dgvNedre.Columns["ProduktID"].Visible = false;
-            dgvNedre.Columns["Avdelning_AvdelningID"].Visible = false;
+            //dgvNedre.Columns["ProduktID"].Visible = false;
+            //dgvNedre.Columns["Avdelning_AvdelningID"].Visible = false;
 
         }
 
@@ -106,6 +111,38 @@ namespace PresentationLayer1.Forms
         private void btnDirektaKostnaderAktivitet_Click(object sender, EventArgs e)
         {
             LaddaDirektaKostnaderUI();
+        }
+
+        private void cbProdukt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblprodukt.Text = cbProdukt.SelectedItem.ToString();
+        }
+
+        private void btnLäggTill_Click(object sender, EventArgs e)
+        {
+            KonstnadsbudgetPersonalDTO personal = (KonstnadsbudgetPersonalDTO)dgvÖvre.CurrentRow.DataBoundItem;
+            var pers = personal.PersonalID;
+            var produkt = cbProdukt.SelectedItem.ToString();
+            var andel = tbAndel.Text;
+
+            businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
+            Update();
+        }
+
+        public void Update()
+        {
+            dgvNedre.DataSource = businessManager.GetAllPersonalProdukt();
+        }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
+        {
+            KonstnadsbudgetPersonalDTO personal = (KonstnadsbudgetPersonalDTO)dgvÖvre.CurrentRow.DataBoundItem;
+            var pers = personal.PersonalID;
+            var produkt = cbProdukt.SelectedItem.ToString();
+            var andel = tbAndel.Text;
+
+            businessManager.RemovePlaceringProdukt(pers, produkt, andel);
+            Update();
         }
     }
 }

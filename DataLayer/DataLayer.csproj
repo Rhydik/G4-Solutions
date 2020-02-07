@@ -78,9 +78,14 @@
     <Compile Include="Migrations\202002031248392_AddLås.designer.cs">
       <DependentUpon>202002031248392_AddLås.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002071248222_Placeringsandel.cs" />
+    <Compile Include="Migrations\202002071248222_Placeringsandel.designer.cs">
+      <DependentUpon>202002071248222_Placeringsandel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
+    <Compile Include="PersonalProduktDTO.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Produktgrupp.cs" />
     <Compile Include="Produktkategori.cs" />
@@ -137,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002031248392_AddLås.resx">
       <DependentUpon>202002031248392_AddLås.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002071248222_Placeringsandel.resx">
+      <DependentUpon>202002071248222_Placeringsandel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

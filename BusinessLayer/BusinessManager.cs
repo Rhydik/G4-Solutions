@@ -144,9 +144,24 @@ namespace BusinessLayer
             return budget;
         }
 
+        public List<PersonalProduktDTO> GetAllPersonalProdukt()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalProdukt();
+        }
+
+        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel)
+        {
+            repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringProdukt(personal, produkt, andel);
+        }
+
         public void AddBehörighet(string tempBehör, string tempPersnr)
         {
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
+        }
+
+        public void RemovePlaceringProdukt(int pers, string produkt, string andel)
+        {
+            throw new NotImplementedException();
         }
 
         public decimal GetAvdelningIntäkter(AvdelningDTO avdelningDTO)

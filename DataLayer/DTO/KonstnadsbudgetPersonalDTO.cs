@@ -8,6 +8,7 @@ namespace DataLayer
 {
     public class KonstnadsbudgetPersonalDTO
     {
+        public int PersonalID { get; set; }
         public string Namn { get; set; }
         public decimal Sysselsättningsgrad { get; set; }
         public decimal Vakansavdrag { get; set; }

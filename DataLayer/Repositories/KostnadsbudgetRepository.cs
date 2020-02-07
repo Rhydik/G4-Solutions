@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer.DTO;
 
 namespace DataLayer
 {
@@ -13,7 +14,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Personal
-                            select new KonstnadsbudgetPersonalDTO { Namn = x.Namn, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag, Årsarbetare = x.Sysselsättningsgrad - x.Vakansavdrag };
+                            select new KonstnadsbudgetPersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag, Årsarbetare = x.Sysselsättningsgrad - x.Vakansavdrag };
 
                 return query.ToList();
             }
@@ -63,6 +64,40 @@ namespace DataLayer
                 var query = from x in db.Konto
                             select new DTO.BudgetKontoDTO {Benämning = x.Benämning , Konto = x.konto1, KontoID = x.KontoID };
                         return query.ToList();
+            }
+        }
+
+        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel)
+        {
+            using (var db = new DataContext())
+            {
+                var pers = (from x in db.Personal
+                            where x.PersonalID == personal
+                            select x).FirstOrDefault();
+                var prod = (from x in db.Produkt
+                            where x.Namn == produkt
+                            select x).FirstOrDefault();
+
+                PersonalProdukt temp = new PersonalProdukt();
+                temp.Personal = pers;
+                temp.Placeringsandel = int.Parse(andel);
+                temp.Produkt_ProduktID = prod.ProduktID;
+
+                db.PersonalProdukt.Add(temp);
+
+                db.SaveChanges();
+            }
+        }
+
+        public List<PersonalProduktDTO> GetAllPersonalProdukt()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.PersonalProdukt
+                            from y in db.Produkt where y.ProduktID == x.Produkt_ProduktID
+                            select new PersonalProduktDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Produkt = y.Namn };
+
+                return query.ToList();
             }
         }
     }

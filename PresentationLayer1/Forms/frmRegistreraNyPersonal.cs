@@ -23,6 +23,7 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             avdelnings = businessManager.GetAllAvdelningarFördelning();
             dgvPlacering.DataSource = avdelnings;
+            dgvPlacering.CellValueChanged += DgvPlacering_CellValueChanged;
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
@@ -44,6 +45,13 @@ namespace PresentationLayer1.Forms
             MessageBox.Show("Personal sparad!");
 
             businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare);
+        }
+
+        private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //Lägg i kod för att spara alla värden här.
+            var newList = avdelnings.Where(x => x.Avdelning == "Driftavdelning");
+
         }
 
         private void tbVakansavdrag_TextChanged(object sender, EventArgs e)

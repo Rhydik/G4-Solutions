@@ -527,6 +527,9 @@ namespace BusinessLayer
             return kalkylLista;
         }
 
-
+        public void SetPlacering(string avdelningsnamn, string personNr, int placering)
+        {
+            repositoryFacade.avdelningPersonalRepository.SetAvdelningPersonal(avdelningsnamn, personNr, placering);
+        }
     }
 }

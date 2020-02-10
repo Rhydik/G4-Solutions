@@ -45,24 +45,16 @@ namespace PresentationLayer1.Forms
             MessageBox.Show("Personal sparad!");
 
             businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare);
+
+            foreach(var avdelning in avdelnings)
+            {
+                businessManager.SetPlacering(avdelning.Avdelning, personNr, avdelning.Fördelning);
+            }
         }
 
         private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //Lägg i kod för att spara alla värden här.
-            var drift = avdelnings.Where(x => x.Avdelning == "Driftavdelning").FirstOrDefault();
-            var driftint = drift.Fördelning;
-
-            var fom = avdelnings.Where(x => x.Avdelning == "Försäljnings - och marknadsavdelningen").FirstOrDefault();
-            var fomint = fom.Fördelning;
-
-            var adm = avdelnings.Where(x => x.Avdelning == "Administrativa avdelningen").FirstOrDefault();
-            var admint = adm.Fördelning;
-
-            var utvförv = avdelnings.Where(x => x.Avdelning == "Utv/Förv").FirstOrDefault();
-            var utvförvint = utvförv.Fördelning;
-
-
+            
         }
 
         private void tbVakansavdrag_TextChanged(object sender, EventArgs e)

@@ -95,6 +95,7 @@
     <Compile Include="Produktgrupp.cs" />
     <Compile Include="Produktkategori.cs" />
     <Compile Include="Prognos.cs" />
+    <Compile Include="Repositories\AvdelningPersonalRepository.cs" />
     <Compile Include="Repositories\KostnadsbudgetRepository.cs" />
     <Compile Include="Repositories\BudgeteratResultatRepository.cs" />
     <Compile Include="DTO\BehörighetDTO.cs" />

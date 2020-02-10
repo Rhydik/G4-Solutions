@@ -14,6 +14,7 @@ namespace DataLayer
         private static readonly object padlock = new object();
 
         public KundRepository kundRepository { get; set; }
+        public AvdelningPersonalRepository avdelningPersonalRepository { get; set; }
         public AktivitetRepository aktivitetRepository { get; set; }
         public PersonalRepository personalRepository { get; set; }
         public ProduktRepository produktRepository { get; set; }
@@ -38,7 +39,7 @@ namespace DataLayer
             budgeteratResultatRepository = new BudgeteratResultatRepository();
             kostnadsbudgetRepository = new KostnadsbudgetRepository();
             låsRepository = new LåsRepository();
-
+            avdelningPersonalRepository = new AvdelningPersonalRepository();
         }
 
         public static RepositoryFacade Instance()

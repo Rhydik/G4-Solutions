@@ -50,7 +50,18 @@ namespace PresentationLayer1.Forms
         private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //Lägg i kod för att spara alla värden här.
-            var newList = avdelnings.Where(x => x.Avdelning == "Driftavdelning");
+            var drift = avdelnings.Where(x => x.Avdelning == "Driftavdelning").FirstOrDefault();
+            var driftint = drift.Fördelning;
+
+            var fom = avdelnings.Where(x => x.Avdelning == "Försäljnings - och marknadsavdelningen").FirstOrDefault();
+            var fomint = fom.Fördelning;
+
+            var adm = avdelnings.Where(x => x.Avdelning == "Administrativa avdelningen").FirstOrDefault();
+            var admint = adm.Fördelning;
+
+            var utvförv = avdelnings.Where(x => x.Avdelning == "Utv/Förv").FirstOrDefault();
+            var utvförvint = utvförv.Fördelning;
+
 
         }
 

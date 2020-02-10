@@ -17,6 +17,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager = new BusinessManager();
         private List<PlaceringsDTO> avdelnings;
+        private List<RollDTO> rolls;
         int årsarbete;
         public frmRegistreraNyPersonal()
         {
@@ -41,10 +42,11 @@ namespace PresentationLayer1.Forms
             var sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
             var vakansavdrag = int.Parse(tbVakansavdrag.Text);
             var lösenord = tbLösenord.Text;
+            var roll = cbRoll.SelectedItem.ToString();
             var årsarbetare = tbÅrsarbetare.Text;
             MessageBox.Show("Personal sparad!");
 
-            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare);
+            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);
 
             foreach(var avdelning in avdelnings)
             {

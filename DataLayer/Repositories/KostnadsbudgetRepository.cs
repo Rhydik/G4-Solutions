@@ -32,6 +32,26 @@ namespace DataLayer
 
         }
 
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, string andel)
+        {
+            using (var db = new DataContext())
+            {
+                var perso = (from x in db.Personal
+                            where x.PersonalID == pers
+                            select x).FirstOrDefault();
+                var prod = (from x in db.Aktivitet
+                            where x.Namn == aktivitet
+                            select x).FirstOrDefault();
+
+                PersonalAktivitet temp = new PersonalAktivitet();
+                temp.Aktivitet_AktivitetID = prod.AktivitetID;
+                temp.Personal = perso;
+                temp.Placeringsandel = int.Parse(andel);
+
+                db.SaveChanges();
+            }
+        }
+
 
         /// <summary>
         /// I kalkyleringen skall vi genomföra algoritmen för att räkna ut de följande värdena : andel,diff, totalt etc...

@@ -200,6 +200,16 @@
             // cbRoll
             // 
             this.cbRoll.FormattingEnabled = true;
+            this.cbRoll.Items.AddRange(new object[] {
+            "Ekonomichef",
+            "Systemansvarig",
+            "Försäljning- och marknadsavdelningschef",
+            "Driftavdelningschef",
+            "Utvecklingsavdelningsschef",
+            "Kundavdelningschef",
+            "Personalchef",
+            "Administrativaavdelningschef",
+            "Basanvändare"});
             this.cbRoll.Location = new System.Drawing.Point(337, 95);
             this.cbRoll.Name = "cbRoll";
             this.cbRoll.Size = new System.Drawing.Size(239, 21);

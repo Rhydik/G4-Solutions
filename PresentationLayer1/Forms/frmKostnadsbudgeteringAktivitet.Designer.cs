@@ -34,7 +34,7 @@
             this.tbAndel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAktivitet = new System.Windows.Forms.Label();
-            this.cbProdukt = new System.Windows.Forms.ComboBox();
+            this.cbAktivitet = new System.Windows.Forms.ComboBox();
             this.buttonVäljAvdelning = new System.Windows.Forms.Button();
             this.dgvNedre = new System.Windows.Forms.DataGridView();
             this.lblAvdelning = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.btnLäggTill.TabIndex = 99;
             this.btnLäggTill.Text = "Lägg till";
             this.btnLäggTill.UseVisualStyleBackColor = true;
+            this.btnLäggTill.Click += new System.EventHandler(this.btnLäggTill_Click);
             // 
             // label2
             // 
@@ -101,13 +102,13 @@
             this.lblAktivitet.TabIndex = 95;
             this.lblAktivitet.Text = "Aktivitet";
             // 
-            // cbProdukt
+            // cbAktivitet
             // 
-            this.cbProdukt.FormattingEnabled = true;
-            this.cbProdukt.Location = new System.Drawing.Point(737, 48);
-            this.cbProdukt.Name = "cbProdukt";
-            this.cbProdukt.Size = new System.Drawing.Size(225, 21);
-            this.cbProdukt.TabIndex = 93;
+            this.cbAktivitet.FormattingEnabled = true;
+            this.cbAktivitet.Location = new System.Drawing.Point(737, 48);
+            this.cbAktivitet.Name = "cbAktivitet";
+            this.cbAktivitet.Size = new System.Drawing.Size(225, 21);
+            this.cbAktivitet.TabIndex = 93;
             // 
             // buttonVäljAvdelning
             // 
@@ -224,7 +225,7 @@
             this.Controls.Add(this.tbAndel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblAktivitet);
-            this.Controls.Add(this.cbProdukt);
+            this.Controls.Add(this.cbAktivitet);
             this.Controls.Add(this.buttonVäljAvdelning);
             this.Controls.Add(this.dgvNedre);
             this.Controls.Add(this.lblAvdelning);
@@ -250,7 +251,7 @@
         private System.Windows.Forms.TextBox tbAndel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAktivitet;
-        private System.Windows.Forms.ComboBox cbProdukt;
+        private System.Windows.Forms.ComboBox cbAktivitet;
         private System.Windows.Forms.Button buttonVäljAvdelning;
         private System.Windows.Forms.DataGridView dgvNedre;
         private System.Windows.Forms.Label lblAvdelning;

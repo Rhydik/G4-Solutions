@@ -60,6 +60,7 @@
     <Compile Include="AvdelningPersonal.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs" />
+    <Compile Include="DirektkostnadAktivitet.cs" />
     <Compile Include="DTO\BudgetKontoDTO.cs" />
     <Compile Include="DTO\KontorDTO.cs" />
     <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
@@ -87,10 +88,15 @@
     <Compile Include="Migrations\202002101131328_AvdelningsPersonalxRef.designer.cs">
       <DependentUpon>202002101131328_AvdelningsPersonalxRef.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002101630229_personalaktivitet.cs" />
+    <Compile Include="Migrations\202002101630229_personalaktivitet.designer.cs">
+      <DependentUpon>202002101630229_personalaktivitet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
-    <Compile Include="PersonalProduktDTO.cs" />
+    <Compile Include="DTO\PersonalProduktDTO.cs" />
+    <Compile Include="PersonalAktivitet.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Produktgrupp.cs" />
     <Compile Include="Produktkategori.cs" />
@@ -129,6 +135,7 @@
     <Compile Include="Repositories\SchablonRepository.cs" />
     <Compile Include="DTO\SchablonDTO.cs" />
     <Compile Include="DTO\VisaBehörighetDTO.cs" />
+    <Compile Include="DTO\RollDTO.cs" />
     <Compile Include="schablonkostnad.cs" />
     <Compile Include="sysdiagrams.cs" />
   </ItemGroup>
@@ -151,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002101131328_AvdelningsPersonalxRef.resx">
       <DependentUpon>202002101131328_AvdelningsPersonalxRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002101630229_personalaktivitet.resx">
+      <DependentUpon>202002101630229_personalaktivitet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

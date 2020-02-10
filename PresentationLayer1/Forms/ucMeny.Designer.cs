@@ -42,11 +42,13 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
+            this.btnKostnadsbudgetering2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnKostnadsbudgetering2);
             this.panel1.Controls.Add(this.btnKostnadAktivitet);
             this.panel1.Controls.Add(this.btnKostnadProdukt);
             this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
@@ -68,22 +70,24 @@
             // btnKostnadAktivitet
             // 
             this.btnKostnadAktivitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadAktivitet.Location = new System.Drawing.Point(15, 332);
+            this.btnKostnadAktivitet.Location = new System.Drawing.Point(15, 347);
             this.btnKostnadAktivitet.Name = "btnKostnadAktivitet";
             this.btnKostnadAktivitet.Size = new System.Drawing.Size(158, 23);
             this.btnKostnadAktivitet.TabIndex = 5;
             this.btnKostnadAktivitet.Text = "Direkta kostnader - Aktivitet";
             this.btnKostnadAktivitet.UseVisualStyleBackColor = true;
+            this.btnKostnadAktivitet.Click += new System.EventHandler(this.btnKostnadAktivitet_Click);
             // 
             // btnKostnadProdukt
             // 
             this.btnKostnadProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadProdukt.Location = new System.Drawing.Point(15, 303);
+            this.btnKostnadProdukt.Location = new System.Drawing.Point(15, 318);
             this.btnKostnadProdukt.Name = "btnKostnadProdukt";
             this.btnKostnadProdukt.Size = new System.Drawing.Size(158, 23);
             this.btnKostnadProdukt.TabIndex = 4;
             this.btnKostnadProdukt.Text = "Direkta kostnader - Produkt";
             this.btnKostnadProdukt.UseVisualStyleBackColor = true;
+            this.btnKostnadProdukt.Click += new System.EventHandler(this.btnKostnadProdukt_Click);
             // 
             // btnPrognostiseringIntäkter
             // 
@@ -110,18 +114,18 @@
             // btnKostnadsbudgetering
             // 
             this.btnKostnadsbudgetering.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 274);
+            this.btnKostnadsbudgetering.Location = new System.Drawing.Point(15, 264);
             this.btnKostnadsbudgetering.Name = "btnKostnadsbudgetering";
             this.btnKostnadsbudgetering.Size = new System.Drawing.Size(158, 23);
             this.btnKostnadsbudgetering.TabIndex = 2;
-            this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
+            this.btnKostnadsbudgetering.Text = "Personalfördelning - Produkt";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
             this.btnKostnadsbudgetering.Click += new System.EventHandler(this.btnKostnadsbudgetering_Click);
             // 
             // btnIntäktsbudgeteringProdukt
             // 
             this.btnIntäktsbudgeteringProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 245);
+            this.btnIntäktsbudgeteringProdukt.Location = new System.Drawing.Point(15, 235);
             this.btnIntäktsbudgeteringProdukt.Name = "btnIntäktsbudgeteringProdukt";
             this.btnIntäktsbudgeteringProdukt.Size = new System.Drawing.Size(158, 23);
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
@@ -132,7 +136,7 @@
             // btnIntäktsbudgeteringKund
             // 
             this.btnIntäktsbudgeteringKund.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 216);
+            this.btnIntäktsbudgeteringKund.Location = new System.Drawing.Point(15, 206);
             this.btnIntäktsbudgeteringKund.Name = "btnIntäktsbudgeteringKund";
             this.btnIntäktsbudgeteringKund.Size = new System.Drawing.Size(158, 23);
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
@@ -206,6 +210,17 @@
             this.btnKunder.UseVisualStyleBackColor = true;
             this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
+            // btnKostnadsbudgetering2
+            // 
+            this.btnKostnadsbudgetering2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKostnadsbudgetering2.Location = new System.Drawing.Point(15, 289);
+            this.btnKostnadsbudgetering2.Name = "btnKostnadsbudgetering2";
+            this.btnKostnadsbudgetering2.Size = new System.Drawing.Size(158, 23);
+            this.btnKostnadsbudgetering2.TabIndex = 6;
+            this.btnKostnadsbudgetering2.Text = "Personalfördelning - Aktivitet";
+            this.btnKostnadsbudgetering2.UseVisualStyleBackColor = true;
+            this.btnKostnadsbudgetering2.Click += new System.EventHandler(this.btnKostnadsbudgetering2_Click);
+            // 
             // ucMeny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,5 +249,6 @@
         private System.Windows.Forms.Button btnKunder;
         private System.Windows.Forms.Button btnKostnadProdukt;
         private System.Windows.Forms.Button btnKostnadAktivitet;
+        private System.Windows.Forms.Button btnKostnadsbudgetering2;
     }
 }

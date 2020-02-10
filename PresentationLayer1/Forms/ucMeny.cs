@@ -111,5 +111,30 @@ namespace PresentationLayer1.Forms
             frmKostnadsbudgetering frmKostnadsbudgetering = new frmKostnadsbudgetering();
             frmKostnadsbudgetering.Show();
         }
+
+        private void btnKostnadProdukt_Click(object sender, EventArgs e)
+        {
+            {
+                HideAllOpenForms();
+                frmKostnadProdukt frmKostnadProdukt = new frmKostnadProdukt();
+                frmKostnadProdukt.Show();
+            }
+        }
+
+        private void btnKostnadAktivitet_Click(object sender, EventArgs e)
+        {
+            {
+                HideAllOpenForms();
+                frmKostnadAktivitet frmKostnadAktivitet = new frmKostnadAktivitet();
+                frmKostnadAktivitet.Show();
+            }
+        }
+
+        private void btnKostnadsbudgetering2_Click(object sender, EventArgs e)
+        {
+            HideAllOpenForms();
+            frmKostnadsbudgeteringAktivitet frmKostnadsbudgeteringAktivitet = new frmKostnadsbudgeteringAktivitet();
+            frmKostnadsbudgeteringAktivitet.Show();
+        }
     }
 }

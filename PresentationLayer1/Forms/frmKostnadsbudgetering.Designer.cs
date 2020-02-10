@@ -37,14 +37,15 @@
             this.dgvNedre = new System.Windows.Forms.DataGridView();
             this.buttonVäljAvdelning = new System.Windows.Forms.Button();
             this.cbProdukt = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblprodukt = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbAndel = new System.Windows.Forms.TextBox();
-            this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLäggTill = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
+            this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
+            this.lblSök = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvÖvre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +56,11 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvÖvre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvÖvre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvÖvre.Location = new System.Drawing.Point(208, 68);
+            this.dgvÖvre.Location = new System.Drawing.Point(208, 84);
             this.dgvÖvre.Name = "dgvÖvre";
             this.dgvÖvre.ReadOnly = true;
             this.dgvÖvre.RowHeadersWidth = 62;
-            this.dgvÖvre.Size = new System.Drawing.Size(530, 457);
+            this.dgvÖvre.Size = new System.Drawing.Size(530, 441);
             this.dgvÖvre.TabIndex = 59;
             // 
             // btnExportera
@@ -88,7 +89,7 @@
             this.cmbAvdelning.Items.AddRange(new object[] {
             "Driftavdelning",
             "Försäljnings- och marknadsavdelningen"});
-            this.cmbAvdelning.Location = new System.Drawing.Point(209, 41);
+            this.cmbAvdelning.Location = new System.Drawing.Point(207, 55);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(121, 21);
             this.cmbAvdelning.TabIndex = 70;
@@ -96,7 +97,7 @@
             // lblAvdelning
             // 
             this.lblAvdelning.AutoSize = true;
-            this.lblAvdelning.Location = new System.Drawing.Point(206, 25);
+            this.lblAvdelning.Location = new System.Drawing.Point(206, 39);
             this.lblAvdelning.Name = "lblAvdelning";
             this.lblAvdelning.Size = new System.Drawing.Size(54, 13);
             this.lblAvdelning.TabIndex = 71;
@@ -116,7 +117,7 @@
             // 
             // buttonVäljAvdelning
             // 
-            this.buttonVäljAvdelning.Location = new System.Drawing.Point(336, 40);
+            this.buttonVäljAvdelning.Location = new System.Drawing.Point(336, 55);
             this.buttonVäljAvdelning.Name = "buttonVäljAvdelning";
             this.buttonVäljAvdelning.Size = new System.Drawing.Size(75, 23);
             this.buttonVäljAvdelning.TabIndex = 76;
@@ -127,25 +128,16 @@
             // cbProdukt
             // 
             this.cbProdukt.FormattingEnabled = true;
-            this.cbProdukt.Location = new System.Drawing.Point(744, 84);
+            this.cbProdukt.Location = new System.Drawing.Point(743, 42);
             this.cbProdukt.Name = "cbProdukt";
             this.cbProdukt.Size = new System.Drawing.Size(225, 21);
             this.cbProdukt.TabIndex = 77;
             this.cbProdukt.SelectedIndexChanged += new System.EventHandler(this.cbProdukt_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(741, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Välj Produkt";
-            // 
             // lblprodukt
             // 
             this.lblprodukt.AutoSize = true;
-            this.lblprodukt.Location = new System.Drawing.Point(741, 128);
+            this.lblprodukt.Location = new System.Drawing.Point(817, 121);
             this.lblprodukt.Name = "lblprodukt";
             this.lblprodukt.Size = new System.Drawing.Size(44, 13);
             this.lblprodukt.TabIndex = 79;
@@ -167,22 +159,14 @@
             this.tbAndel.Size = new System.Drawing.Size(225, 20);
             this.tbAndel.TabIndex = 82;
             // 
-            // ucMeny
-            // 
-            this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
-            this.ucMeny.Name = "ucMeny";
-            this.ucMeny.Size = new System.Drawing.Size(194, 438);
-            this.ucMeny.TabIndex = 5;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(741, 115);
+            this.label2.Location = new System.Drawing.Point(744, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 83;
-            this.label2.Text = "Vald produkt";
+            this.label2.Text = "Vald produkt:";
             // 
             // btnLäggTill
             // 
@@ -204,18 +188,47 @@
             this.btnTaBort.UseVisualStyleBackColor = true;
             this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
             // 
+            // ucMeny1
+            // 
+            this.ucMeny1.Location = new System.Drawing.Point(6, 25);
+            this.ucMeny1.Name = "ucMeny1";
+            this.ucMeny1.Size = new System.Drawing.Size(194, 438);
+            this.ucMeny1.TabIndex = 86;
+            // 
+            // lblSök
+            // 
+            this.lblSök.AutoSize = true;
+            this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSök.Location = new System.Drawing.Point(205, 15);
+            this.lblSök.Name = "lblSök";
+            this.lblSök.Size = new System.Drawing.Size(133, 24);
+            this.lblSök.TabIndex = 89;
+            this.lblSök.Text = "Välj Personal";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(739, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 24);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "Välj Produkt";
+            // 
             // frmKostnadsbudgetering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 584);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblSök);
+            this.Controls.Add(this.ucMeny1);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbAndel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblprodukt);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbProdukt);
             this.Controls.Add(this.buttonVäljAvdelning);
             this.Controls.Add(this.dgvNedre);
@@ -224,11 +237,10 @@
             this.Controls.Add(this.dgvÖvre);
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
-            this.Controls.Add(this.ucMeny);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmKostnadsbudgetering";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kostnadsbudgetering  | G4 Solutions Economy System";
+            this.Text = "Personalfördelning - Produkt  | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvÖvre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).EndInit();
             this.ResumeLayout(false);
@@ -243,16 +255,17 @@
         private System.Windows.Forms.Button btnLåsBudget;
         private System.Windows.Forms.ComboBox cmbAvdelning;
         private System.Windows.Forms.Label lblAvdelning;
-        private Forms.ucMeny ucMeny;
         private System.Windows.Forms.DataGridView dgvNedre;
         private System.Windows.Forms.Button buttonVäljAvdelning;
         private System.Windows.Forms.ComboBox cbProdukt;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblprodukt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbAndel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLäggTill;
         private System.Windows.Forms.Button btnTaBort;
+        private ucMeny ucMeny1;
+        private System.Windows.Forms.Label lblSök;
+        private System.Windows.Forms.Label label4;
     }
 }

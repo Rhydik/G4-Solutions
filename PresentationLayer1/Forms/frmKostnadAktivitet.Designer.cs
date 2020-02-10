@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbVäljaKonto = new System.Windows.Forms.ComboBox();
             this.cmbVäljKonto = new System.Windows.Forms.Label();
             this.cmbVäljAktivitet = new System.Windows.Forms.ComboBox();
             this.btnTaBort = new System.Windows.Forms.Button();
@@ -43,13 +43,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox3
+            // cmbVäljaKonto
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(368, 37);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 126;
+            this.cmbVäljaKonto.FormattingEnabled = true;
+            this.cmbVäljaKonto.Location = new System.Drawing.Point(368, 37);
+            this.cmbVäljaKonto.Name = "cmbVäljaKonto";
+            this.cmbVäljaKonto.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljaKonto.TabIndex = 126;
             // 
             // cmbVäljKonto
             // 
@@ -160,7 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 584);
             this.Controls.Add(this.ucMeny1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbVäljaKonto);
             this.Controls.Add(this.cmbVäljKonto);
             this.Controls.Add(this.cmbVäljAktivitet);
             this.Controls.Add(this.btnTaBort);
@@ -181,7 +181,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbVäljaKonto;
         private System.Windows.Forms.Label cmbVäljKonto;
         private System.Windows.Forms.ComboBox cmbVäljAktivitet;
         private System.Windows.Forms.Button btnTaBort;

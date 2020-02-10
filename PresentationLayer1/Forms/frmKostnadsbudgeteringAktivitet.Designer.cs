@@ -57,6 +57,7 @@
             this.btnTaBort.TabIndex = 100;
             this.btnTaBort.Text = "Ta bort";
             this.btnTaBort.UseVisualStyleBackColor = true;
+            this.btnTaBort.Click += new System.EventHandler(this.btnTaBort_Click);
             // 
             // btnLäggTill
             // 

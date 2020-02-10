@@ -47,9 +47,42 @@ namespace DataLayer
                 temp.Aktivitet_AktivitetID = prod.AktivitetID;
                 temp.Personal = perso;
                 temp.Placeringsandel = int.Parse(andel);
-
+                //db.PersonalAktivitet.Add(temp);
                 db.SaveChanges();
             }
+        }
+
+        public List<PersonalAktivitetDTO> GetAllPersonalAktivitet()
+        {
+            using (var db = new DataContext())
+            {
+                //var query = from x in db.PersonalAktivitet
+                //            from y in db.Aktivitet
+                //            where y.AktivitetID == x.Aktivitet_AktivitetID
+                //            select new PersonalAktivitetDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Aktivitet = y.Namn};
+
+                //return query.ToList();
+
+                return null;
+            }
+        }
+
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
+        {
+            //using (var db = new DataContext())
+            //{
+            //    var prod = (from x in db.Aktivitet
+            //                where x.Namn == aktivitet
+            //                select x).FirstOrDefault();
+
+            //    var query = (from x in db.PersonalAktivitet
+            //                 where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Aktivitet_AktivitetID == prod.AktivitetID
+            //                 select x).FirstOrDefault();
+
+            //    db.PersonalAktivitet.Remove(query);
+
+            //    db.SaveChanges();
+            //}
         }
 
 
@@ -82,6 +115,7 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.Konto
+                            orderby x.Benämning
                             select new DTO.BudgetKontoDTO {Benämning = x.Benämning , Konto = x.konto1, KontoID = x.KontoID };
                         return query.ToList();
             }

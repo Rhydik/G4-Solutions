@@ -97,6 +97,7 @@
     <Compile Include="DTO\PlaceringsDTO.cs" />
     <Compile Include="DTO\PersonalProduktDTO.cs" />
     <Compile Include="PersonalAktivitet.cs" />
+    <Compile Include="DTO\PersonalAktivitetDTO.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Produktgrupp.cs" />
     <Compile Include="Produktkategori.cs" />

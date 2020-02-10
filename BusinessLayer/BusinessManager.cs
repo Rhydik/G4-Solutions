@@ -39,6 +39,11 @@ namespace BusinessLayer
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
         }
 
+        public List<PersonalAktivitetDTO> GetAllPersonalAktivitet()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalAktivitet();
+        }
+
         public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal()
         {
             return repositoryFacade.kostnadsbudgetRepository.GetKostnadsbudgetPersonal();
@@ -62,6 +67,11 @@ namespace BusinessLayer
         public void AddSchablon(string kostnad, SchablonDTO schablon)
         {
             repositoryFacade.schablonRepository.AddSchablon(kostnad, schablon);
+        }
+
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
+        {
+            repositoryFacade.kostnadsbudgetRepository.RemovePlaceringAktivitet(pers, aktivitet, andel);
         }
 
         public List<VisaBehörighetDTO> GetBehörighet(string persnr)

@@ -29,8 +29,6 @@ namespace PresentationLayer1.Forms
         private List<KonstnadsbudgetPersonalDTO> personals;
         private List<KostnadsbudgetProduktDTO> produkts;
         private List<BudgetKontoDTO> konton;
-        
-        
         public List<KostnadsbudgetProduktDTO> allaProdukter;
    
         public frmKostnadsbudgetering()

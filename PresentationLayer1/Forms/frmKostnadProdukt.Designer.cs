@@ -38,8 +38,8 @@
             this.btnLåsBudget = new System.Windows.Forms.Button();
             this.btnTaBort = new System.Windows.Forms.Button();
             this.cmbVäljProdukt = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.cmbVäljKonto = new System.Windows.Forms.Label();
+            this.cmbVäljKonto = new System.Windows.Forms.ComboBox();
+            this.lblkonto = new System.Windows.Forms.Label();
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
@@ -130,23 +130,23 @@
             this.cmbVäljProdukt.Size = new System.Drawing.Size(121, 21);
             this.cmbVäljProdukt.TabIndex = 113;
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(358, 39);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 115;
-            // 
             // cmbVäljKonto
             // 
-            this.cmbVäljKonto.AutoSize = true;
-            this.cmbVäljKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbVäljKonto.Location = new System.Drawing.Point(354, 9);
+            this.cmbVäljKonto.FormattingEnabled = true;
+            this.cmbVäljKonto.Location = new System.Drawing.Point(358, 39);
             this.cmbVäljKonto.Name = "cmbVäljKonto";
-            this.cmbVäljKonto.Size = new System.Drawing.Size(105, 24);
-            this.cmbVäljKonto.TabIndex = 114;
-            this.cmbVäljKonto.Text = "Välj Konto";
+            this.cmbVäljKonto.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljKonto.TabIndex = 115;
+            // 
+            // lblkonto
+            // 
+            this.lblkonto.AutoSize = true;
+            this.lblkonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblkonto.Location = new System.Drawing.Point(354, 9);
+            this.lblkonto.Name = "lblkonto";
+            this.lblkonto.Size = new System.Drawing.Size(105, 24);
+            this.lblkonto.TabIndex = 114;
+            this.lblkonto.Text = "Välj Konto";
             // 
             // ucMeny1
             // 
@@ -161,8 +161,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 595);
             this.Controls.Add(this.ucMeny1);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.cmbVäljKonto);
+            this.Controls.Add(this.lblkonto);
             this.Controls.Add(this.cmbVäljProdukt);
             this.Controls.Add(this.btnTaBort);
             this.Controls.Add(this.btnExportera);
@@ -192,8 +192,8 @@
         private System.Windows.Forms.Button btnLåsBudget;
         private System.Windows.Forms.Button btnTaBort;
         private System.Windows.Forms.ComboBox cmbVäljProdukt;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label cmbVäljKonto;
+        private System.Windows.Forms.ComboBox cmbVäljKonto;
+        private System.Windows.Forms.Label lblkonto;
         private ucMeny ucMeny1;
     }
 }

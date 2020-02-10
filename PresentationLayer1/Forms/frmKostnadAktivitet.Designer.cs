@@ -1,13 +1,13 @@
 ﻿namespace PresentationLayer1.Forms
 {
-    partial class ucMeny
+    partial class frmKostnadAktivitet
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,17 +20,17 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnKostnadAktivitet = new System.Windows.Forms.Button();
-            this.btnKostnadProdukt = new System.Windows.Forms.Button();
+            this.lblKostnadAktivitet = new System.Windows.Forms.Button();
+            this.lblKostnadProdukt = new System.Windows.Forms.Button();
             this.btnPrognostiseringIntäkter = new System.Windows.Forms.Button();
             this.btnBudgeteratResultat = new System.Windows.Forms.Button();
             this.btnKostnadsbudgetering = new System.Windows.Forms.Button();
@@ -42,13 +42,25 @@
             this.btnPersonal = new System.Windows.Forms.Button();
             this.btnProdukter = new System.Windows.Forms.Button();
             this.btnKunder = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbVäljKonto = new System.Windows.Forms.Label();
+            this.cmbVäljAktivitet = new System.Windows.Forms.ComboBox();
+            this.btnTaBort = new System.Windows.Forms.Button();
+            this.btnExportera = new System.Windows.Forms.Button();
+            this.btnLåsBudget = new System.Windows.Forms.Button();
+            this.btnLäggTill = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbBelopp = new System.Windows.Forms.TextBox();
+            this.lblVäljAktivitet = new System.Windows.Forms.Label();
+            this.dgvNedre = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnKostnadAktivitet);
-            this.panel1.Controls.Add(this.btnKostnadProdukt);
+            this.panel1.Controls.Add(this.lblKostnadAktivitet);
+            this.panel1.Controls.Add(this.lblKostnadProdukt);
             this.panel1.Controls.Add(this.btnPrognostiseringIntäkter);
             this.panel1.Controls.Add(this.btnBudgeteratResultat);
             this.panel1.Controls.Add(this.btnKostnadsbudgetering);
@@ -60,30 +72,30 @@
             this.panel1.Controls.Add(this.btnPersonal);
             this.panel1.Controls.Add(this.btnProdukter);
             this.panel1.Controls.Add(this.btnKunder);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 432);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 5;
             // 
-            // btnKostnadAktivitet
+            // lblKostnadAktivitet
             // 
-            this.btnKostnadAktivitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadAktivitet.Location = new System.Drawing.Point(15, 332);
-            this.btnKostnadAktivitet.Name = "btnKostnadAktivitet";
-            this.btnKostnadAktivitet.Size = new System.Drawing.Size(158, 23);
-            this.btnKostnadAktivitet.TabIndex = 5;
-            this.btnKostnadAktivitet.Text = "Direkta kostnader - Aktivitet";
-            this.btnKostnadAktivitet.UseVisualStyleBackColor = true;
+            this.lblKostnadAktivitet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblKostnadAktivitet.Location = new System.Drawing.Point(15, 332);
+            this.lblKostnadAktivitet.Name = "lblKostnadAktivitet";
+            this.lblKostnadAktivitet.Size = new System.Drawing.Size(158, 23);
+            this.lblKostnadAktivitet.TabIndex = 5;
+            this.lblKostnadAktivitet.Text = "Direkta kostnader - Aktivitet";
+            this.lblKostnadAktivitet.UseVisualStyleBackColor = true;
             // 
-            // btnKostnadProdukt
+            // lblKostnadProdukt
             // 
-            this.btnKostnadProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKostnadProdukt.Location = new System.Drawing.Point(15, 303);
-            this.btnKostnadProdukt.Name = "btnKostnadProdukt";
-            this.btnKostnadProdukt.Size = new System.Drawing.Size(158, 23);
-            this.btnKostnadProdukt.TabIndex = 4;
-            this.btnKostnadProdukt.Text = "Direkta kostnader - Produkt";
-            this.btnKostnadProdukt.UseVisualStyleBackColor = true;
+            this.lblKostnadProdukt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblKostnadProdukt.Location = new System.Drawing.Point(15, 303);
+            this.lblKostnadProdukt.Name = "lblKostnadProdukt";
+            this.lblKostnadProdukt.Size = new System.Drawing.Size(158, 23);
+            this.lblKostnadProdukt.TabIndex = 4;
+            this.lblKostnadProdukt.Text = "Direkta kostnader - Produkt";
+            this.lblKostnadProdukt.UseVisualStyleBackColor = true;
             // 
             // btnPrognostiseringIntäkter
             // 
@@ -94,7 +106,6 @@
             this.btnPrognostiseringIntäkter.TabIndex = 2;
             this.btnPrognostiseringIntäkter.Text = "Prognostisering intäkter";
             this.btnPrognostiseringIntäkter.UseVisualStyleBackColor = true;
-            this.btnPrognostiseringIntäkter.Click += new System.EventHandler(this.btnPrognostiseringIntäkter_Click);
             // 
             // btnBudgeteratResultat
             // 
@@ -105,7 +116,6 @@
             this.btnBudgeteratResultat.TabIndex = 2;
             this.btnBudgeteratResultat.Text = "Budgeterat Resultat";
             this.btnBudgeteratResultat.UseVisualStyleBackColor = true;
-            this.btnBudgeteratResultat.Click += new System.EventHandler(this.btnBudgeteratResultat_Click);
             // 
             // btnKostnadsbudgetering
             // 
@@ -116,7 +126,6 @@
             this.btnKostnadsbudgetering.TabIndex = 2;
             this.btnKostnadsbudgetering.Text = "Kostnadsbudgetering";
             this.btnKostnadsbudgetering.UseVisualStyleBackColor = true;
-            this.btnKostnadsbudgetering.Click += new System.EventHandler(this.btnKostnadsbudgetering_Click);
             // 
             // btnIntäktsbudgeteringProdukt
             // 
@@ -127,7 +136,6 @@
             this.btnIntäktsbudgeteringProdukt.TabIndex = 2;
             this.btnIntäktsbudgeteringProdukt.Text = "Intäktsbudgetering Produkt";
             this.btnIntäktsbudgeteringProdukt.UseVisualStyleBackColor = true;
-            this.btnIntäktsbudgeteringProdukt.Click += new System.EventHandler(this.btnIntäktsbudgeteringProdukt_Click);
             // 
             // btnIntäktsbudgeteringKund
             // 
@@ -138,7 +146,6 @@
             this.btnIntäktsbudgeteringKund.TabIndex = 3;
             this.btnIntäktsbudgeteringKund.Text = "Intäktsbudgetering Kund";
             this.btnIntäktsbudgeteringKund.UseVisualStyleBackColor = true;
-            this.btnIntäktsbudgeteringKund.Click += new System.EventHandler(this.btnIntäktsbudgeteringKund_Click);
             // 
             // btnBehörighet
             // 
@@ -149,7 +156,6 @@
             this.btnBehörighet.TabIndex = 2;
             this.btnBehörighet.Text = "Behörighet";
             this.btnBehörighet.UseVisualStyleBackColor = true;
-            this.btnBehörighet.Click += new System.EventHandler(this.btnBehörighet_Click);
             // 
             // btnSchablonkostnad
             // 
@@ -160,7 +166,6 @@
             this.btnSchablonkostnad.TabIndex = 2;
             this.btnSchablonkostnad.Text = "Schablonkostnad";
             this.btnSchablonkostnad.UseVisualStyleBackColor = true;
-            this.btnSchablonkostnad.Click += new System.EventHandler(this.btnSchablonkostnad_Click);
             // 
             // btnAktiviteter
             // 
@@ -171,7 +176,6 @@
             this.btnAktiviteter.TabIndex = 2;
             this.btnAktiviteter.Text = "Aktiviteter";
             this.btnAktiviteter.UseVisualStyleBackColor = true;
-            this.btnAktiviteter.Click += new System.EventHandler(this.btnAktiviteter_Click);
             // 
             // btnPersonal
             // 
@@ -182,7 +186,6 @@
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = true;
-            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
             // 
             // btnProdukter
             // 
@@ -193,7 +196,6 @@
             this.btnProdukter.TabIndex = 2;
             this.btnProdukter.Text = "Produkter";
             this.btnProdukter.UseVisualStyleBackColor = true;
-            this.btnProdukter.Click += new System.EventHandler(this.btnProdukter_Click);
             // 
             // btnKunder
             // 
@@ -204,23 +206,142 @@
             this.btnKunder.TabIndex = 2;
             this.btnKunder.Text = "Kunder";
             this.btnKunder.UseVisualStyleBackColor = true;
-            this.btnKunder.Click += new System.EventHandler(this.btnKunder_Click);
             // 
-            // ucMeny
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(368, 37);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 126;
+            // 
+            // cmbVäljKonto
+            // 
+            this.cmbVäljKonto.AutoSize = true;
+            this.cmbVäljKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVäljKonto.Location = new System.Drawing.Point(364, 7);
+            this.cmbVäljKonto.Name = "cmbVäljKonto";
+            this.cmbVäljKonto.Size = new System.Drawing.Size(105, 24);
+            this.cmbVäljKonto.TabIndex = 125;
+            this.cmbVäljKonto.Text = "Välj Konto";
+            // 
+            // cmbVäljAktivitet
+            // 
+            this.cmbVäljAktivitet.FormattingEnabled = true;
+            this.cmbVäljAktivitet.Location = new System.Drawing.Point(220, 40);
+            this.cmbVäljAktivitet.Name = "cmbVäljAktivitet";
+            this.cmbVäljAktivitet.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljAktivitet.TabIndex = 124;
+            // 
+            // btnTaBort
+            // 
+            this.btnTaBort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaBort.Location = new System.Drawing.Point(1073, 497);
+            this.btnTaBort.Name = "btnTaBort";
+            this.btnTaBort.Size = new System.Drawing.Size(120, 41);
+            this.btnTaBort.TabIndex = 123;
+            this.btnTaBort.Text = "Ta bort";
+            this.btnTaBort.UseVisualStyleBackColor = true;
+            // 
+            // btnExportera
+            // 
+            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportera.Location = new System.Drawing.Point(221, 497);
+            this.btnExportera.Name = "btnExportera";
+            this.btnExportera.Size = new System.Drawing.Size(120, 41);
+            this.btnExportera.TabIndex = 122;
+            this.btnExportera.Text = "Exportera";
+            this.btnExportera.UseVisualStyleBackColor = true;
+            // 
+            // btnLåsBudget
+            // 
+            this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLåsBudget.Location = new System.Drawing.Point(934, 497);
+            this.btnLåsBudget.Name = "btnLåsBudget";
+            this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
+            this.btnLåsBudget.TabIndex = 121;
+            this.btnLåsBudget.Text = "Lås Budget";
+            this.btnLåsBudget.UseVisualStyleBackColor = true;
+            // 
+            // btnLäggTill
+            // 
+            this.btnLäggTill.Location = new System.Drawing.Point(668, 33);
+            this.btnLäggTill.Name = "btnLäggTill";
+            this.btnLäggTill.Size = new System.Drawing.Size(75, 23);
+            this.btnLäggTill.TabIndex = 120;
+            this.btnLäggTill.Text = "Lägg till";
+            this.btnLäggTill.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(531, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 119;
+            this.label1.Text = "Ange belopp";
+            // 
+            // tbBelopp
+            // 
+            this.tbBelopp.Location = new System.Drawing.Point(534, 36);
+            this.tbBelopp.Name = "tbBelopp";
+            this.tbBelopp.Size = new System.Drawing.Size(128, 20);
+            this.tbBelopp.TabIndex = 118;
+            // 
+            // lblVäljAktivitet
+            // 
+            this.lblVäljAktivitet.AutoSize = true;
+            this.lblVäljAktivitet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVäljAktivitet.Location = new System.Drawing.Point(216, 10);
+            this.lblVäljAktivitet.Name = "lblVäljAktivitet";
+            this.lblVäljAktivitet.Size = new System.Drawing.Size(122, 24);
+            this.lblVäljAktivitet.TabIndex = 117;
+            this.lblVäljAktivitet.Text = "Välj Aktivitet";
+            // 
+            // dgvNedre
+            // 
+            this.dgvNedre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvNedre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNedre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNedre.Location = new System.Drawing.Point(220, 98);
+            this.dgvNedre.Name = "dgvNedre";
+            this.dgvNedre.ReadOnly = true;
+            this.dgvNedre.RowHeadersWidth = 62;
+            this.dgvNedre.Size = new System.Drawing.Size(973, 377);
+            this.dgvNedre.TabIndex = 116;
+            // 
+            // frmKostnadAktivitet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1274, 584);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbVäljKonto);
+            this.Controls.Add(this.cmbVäljAktivitet);
+            this.Controls.Add(this.btnTaBort);
+            this.Controls.Add(this.btnExportera);
+            this.Controls.Add(this.btnLåsBudget);
+            this.Controls.Add(this.btnLäggTill);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbBelopp);
+            this.Controls.Add(this.lblVäljAktivitet);
+            this.Controls.Add(this.dgvNedre);
             this.Controls.Add(this.panel1);
-            this.Name = "ucMeny";
-            this.Size = new System.Drawing.Size(194, 438);
+            this.Name = "frmKostnadAktivitet";
+            this.Text = "Direkta kostnader - Aktivitet  | G4 Solutions Economy System";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button lblKostnadAktivitet;
+        private System.Windows.Forms.Button lblKostnadProdukt;
         private System.Windows.Forms.Button btnPrognostiseringIntäkter;
         private System.Windows.Forms.Button btnBudgeteratResultat;
         private System.Windows.Forms.Button btnKostnadsbudgetering;
@@ -232,7 +353,16 @@
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Button btnProdukter;
         private System.Windows.Forms.Button btnKunder;
-        private System.Windows.Forms.Button btnKostnadProdukt;
-        private System.Windows.Forms.Button btnKostnadAktivitet;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label cmbVäljKonto;
+        private System.Windows.Forms.ComboBox cmbVäljAktivitet;
+        private System.Windows.Forms.Button btnTaBort;
+        private System.Windows.Forms.Button btnExportera;
+        private System.Windows.Forms.Button btnLåsBudget;
+        private System.Windows.Forms.Button btnLäggTill;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbBelopp;
+        private System.Windows.Forms.Label lblVäljAktivitet;
+        private System.Windows.Forms.DataGridView dgvNedre;
     }
 }

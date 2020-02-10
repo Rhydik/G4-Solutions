@@ -34,9 +34,6 @@
             this.btnLåsBudget = new System.Windows.Forms.Button();
             this.cmbAvdelning = new System.Windows.Forms.ComboBox();
             this.lblAvdelning = new System.Windows.Forms.Label();
-            this.btnPlacering = new System.Windows.Forms.Button();
-            this.btnDirektaKostnaderProdukt = new System.Windows.Forms.Button();
-            this.btnDirektaKostnaderAktivitet = new System.Windows.Forms.Button();
             this.dgvNedre = new System.Windows.Forms.DataGridView();
             this.buttonVäljAvdelning = new System.Windows.Forms.Button();
             this.cbProdukt = new System.Windows.Forms.ComboBox();
@@ -104,36 +101,6 @@
             this.lblAvdelning.Size = new System.Drawing.Size(54, 13);
             this.lblAvdelning.TabIndex = 71;
             this.lblAvdelning.Text = "Avdelning";
-            // 
-            // btnPlacering
-            // 
-            this.btnPlacering.Location = new System.Drawing.Point(469, 11);
-            this.btnPlacering.Name = "btnPlacering";
-            this.btnPlacering.Size = new System.Drawing.Size(120, 41);
-            this.btnPlacering.TabIndex = 72;
-            this.btnPlacering.Text = "Placering";
-            this.btnPlacering.UseVisualStyleBackColor = true;
-            this.btnPlacering.Click += new System.EventHandler(this.btnPlacering_Click);
-            // 
-            // btnDirektaKostnaderProdukt
-            // 
-            this.btnDirektaKostnaderProdukt.Location = new System.Drawing.Point(595, 11);
-            this.btnDirektaKostnaderProdukt.Name = "btnDirektaKostnaderProdukt";
-            this.btnDirektaKostnaderProdukt.Size = new System.Drawing.Size(120, 41);
-            this.btnDirektaKostnaderProdukt.TabIndex = 73;
-            this.btnDirektaKostnaderProdukt.Text = "Direkta kostnader produkt";
-            this.btnDirektaKostnaderProdukt.UseVisualStyleBackColor = true;
-            this.btnDirektaKostnaderProdukt.Click += new System.EventHandler(this.btnDirektaKostnaderProdukt_Click);
-            // 
-            // btnDirektaKostnaderAktivitet
-            // 
-            this.btnDirektaKostnaderAktivitet.Location = new System.Drawing.Point(721, 11);
-            this.btnDirektaKostnaderAktivitet.Name = "btnDirektaKostnaderAktivitet";
-            this.btnDirektaKostnaderAktivitet.Size = new System.Drawing.Size(120, 41);
-            this.btnDirektaKostnaderAktivitet.TabIndex = 74;
-            this.btnDirektaKostnaderAktivitet.Text = "Direkta kostnader aktivitet";
-            this.btnDirektaKostnaderAktivitet.UseVisualStyleBackColor = true;
-            this.btnDirektaKostnaderAktivitet.Click += new System.EventHandler(this.btnDirektaKostnaderAktivitet_Click);
             // 
             // dgvNedre
             // 
@@ -229,7 +196,7 @@
             // 
             // btnTaBort
             // 
-            this.btnTaBort.Location = new System.Drawing.Point(1187, 200);
+            this.btnTaBort.Location = new System.Drawing.Point(1187, 531);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(75, 23);
             this.btnTaBort.TabIndex = 85;
@@ -252,9 +219,6 @@
             this.Controls.Add(this.cbProdukt);
             this.Controls.Add(this.buttonVäljAvdelning);
             this.Controls.Add(this.dgvNedre);
-            this.Controls.Add(this.btnDirektaKostnaderAktivitet);
-            this.Controls.Add(this.btnDirektaKostnaderProdukt);
-            this.Controls.Add(this.btnPlacering);
             this.Controls.Add(this.lblAvdelning);
             this.Controls.Add(this.cmbAvdelning);
             this.Controls.Add(this.dgvÖvre);
@@ -279,9 +243,6 @@
         private System.Windows.Forms.Button btnLåsBudget;
         private System.Windows.Forms.ComboBox cmbAvdelning;
         private System.Windows.Forms.Label lblAvdelning;
-        private System.Windows.Forms.Button btnPlacering;
-        private System.Windows.Forms.Button btnDirektaKostnaderProdukt;
-        private System.Windows.Forms.Button btnDirektaKostnaderAktivitet;
         private Forms.ucMeny ucMeny;
         private System.Windows.Forms.DataGridView dgvNedre;
         private System.Windows.Forms.Button buttonVäljAvdelning;

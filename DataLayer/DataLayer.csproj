@@ -57,6 +57,7 @@
     <Compile Include="AktivitetKostnadsbudget.cs" />
     <Compile Include="AntalTimmar.cs" />
     <Compile Include="Avdelning.cs" />
+    <Compile Include="AvdelningPersonal.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs" />
     <Compile Include="DTO\BudgetKontoDTO.cs" />
@@ -81,6 +82,10 @@
     <Compile Include="Migrations\202002071248222_Placeringsandel.cs" />
     <Compile Include="Migrations\202002071248222_Placeringsandel.designer.cs">
       <DependentUpon>202002071248222_Placeringsandel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002101131328_AvdelningsPersonalxRef.cs" />
+    <Compile Include="Migrations\202002101131328_AvdelningsPersonalxRef.designer.cs">
+      <DependentUpon>202002101131328_AvdelningsPersonalxRef.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
@@ -131,9 +136,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseModel.edmx.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002071248222_Placeringsandel.resx">
       <DependentUpon>202002071248222_Placeringsandel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002101131328_AvdelningsPersonalxRef.resx">
+      <DependentUpon>202002101131328_AvdelningsPersonalxRef.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

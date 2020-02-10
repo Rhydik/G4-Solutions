@@ -14,7 +14,7 @@ namespace DataLayer
         {
             Aktivitet = new HashSet<Aktivitet>();
             Produkt = new HashSet<Produkt>();
-            Personal = new HashSet<Personal>();
+            AvdelningPersonalxRef = new HashSet<AvdelningPersonalxRef>();
             Konto = new HashSet<Konto>();
         }
 
@@ -30,7 +30,7 @@ namespace DataLayer
         public virtual ICollection<Produkt> Produkt { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personal> Personal { get; set; }
+        public virtual ICollection<AvdelningPersonalxRef> AvdelningPersonalxRef { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Konto> Konto { get; set; }

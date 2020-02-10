@@ -14,6 +14,7 @@
 
         public virtual DbSet<AntalTimmar> AntalTimmar { get; set; }
         public virtual DbSet<Avdelning> Avdelning { get; set; }
+        public virtual DbSet<AvdelningPersonalxRef> AvdelningPersonalxRef { get; set; }
         public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
         public virtual DbSet<Intäktsbudget> Intäktsbudget { get; set; }
         public virtual DbSet<Konto> Konto { get; set; }
@@ -48,11 +49,6 @@
                 .WithRequired(e => e.Avdelning)
                 .HasForeignKey(e => e.Avdelning_AvdelningID)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Avdelning>()
-                .HasMany(e => e.Personal)
-                .WithMany(e => e.Avdelning)
-                .Map(m => m.ToTable("AvdelningPersonal"));
 
             modelBuilder.Entity<Avdelning>()
                 .HasMany(e => e.Konto)

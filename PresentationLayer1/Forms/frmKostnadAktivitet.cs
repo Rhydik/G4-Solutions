@@ -37,5 +37,14 @@ namespace PresentationLayer1.Forms
                 cmbVäljaKonto.Items.Add(item.Benämning);
             }
         }
+
+        private void btnLäggTill_Click(object sender, EventArgs e)
+        {
+            var akti = cmbVäljAktivitet.SelectedItem.ToString();
+            var konto = cmbVäljaKonto.SelectedItem.ToString();
+            var belopp = tbBelopp.Text;
+
+            businessManager.AddDirektkostnadAktivitet(akti, konto, belopp);
+        }
     }
 }

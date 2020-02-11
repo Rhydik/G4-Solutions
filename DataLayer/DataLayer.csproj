@@ -100,6 +100,14 @@
     <Compile Include="Migrations\202002111242059_aktifix.designer.cs">
       <DependentUpon>202002111242059_aktifix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111251405_direktkostnadAkti.cs" />
+    <Compile Include="Migrations\202002111251405_direktkostnadAkti.designer.cs">
+      <DependentUpon>202002111251405_direktkostnadAkti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111316328_kontodirekt.cs" />
+    <Compile Include="Migrations\202002111316328_kontodirekt.designer.cs">
+      <DependentUpon>202002111316328_kontodirekt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -176,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111242059_aktifix.resx">
       <DependentUpon>202002111242059_aktifix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111251405_direktkostnadAkti.resx">
+      <DependentUpon>202002111251405_direktkostnadAkti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111316328_kontodirekt.resx">
+      <DependentUpon>202002111316328_kontodirekt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

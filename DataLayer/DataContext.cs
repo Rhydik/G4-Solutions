@@ -36,6 +36,7 @@
         public virtual DbSet<Produkt> Produkt { get; set; }
         public virtual DbSet<ProduktIntäktsbudget> ProduktIntäktsbudget { get; set; }
         public virtual DbSet<PersonalAktivitet> PersonalAktivitet { get; set; }
+        public virtual DbSet<DirektkostnadAktivitet> DirektkostnadAktivitet { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

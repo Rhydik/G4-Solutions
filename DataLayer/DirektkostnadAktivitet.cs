@@ -13,13 +13,14 @@ namespace DataLayer
     {
         [Key]
         [Column(Order = 0)]
-        public int Direktkostnad_DirektkostnadID { get; set; }
-        public Direktkostnad Direktkostnad { get; set; }
+        public int Konto_KontoID { get; set; }
+        public virtual Konto Konto { get; set; }
 
         [Key]
-        [Column(Order = 1)]
-        public int Aktivitet_AktivitetID { get; set; }
-        public Aktivitet Aktivitet { get; set; }
+        [Column(TypeName = "VARCHAR", Order = 1)]
+        [StringLength(128)]
+        public string Aktivitet_AktivitetID { get; set; }
+        public virtual Aktivitet Aktivitet { get; set; }
         public decimal Belopp { get; set; }
     }
 }

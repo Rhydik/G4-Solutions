@@ -44,6 +44,11 @@ namespace BusinessLayer
             return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalAktivitet();
         }
 
+        public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
+        {
+            repositoryFacade.kostnadsbudgetRepository.AddDirektkostnadAktivitet(akti, konto, belopp);
+        }
+
         public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal()
         {
             return repositoryFacade.kostnadsbudgetRepository.GetKostnadsbudgetPersonal();

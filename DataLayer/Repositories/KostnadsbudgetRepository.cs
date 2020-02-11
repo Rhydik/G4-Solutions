@@ -54,6 +54,29 @@ namespace DataLayer
             }
         }
 
+        public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
+        {
+            using (var db = new DataContext())
+            {
+                var akitvitet = (from x in db.Aktivitet
+                                where x.Namn == akti
+                                select x).FirstOrDefault();
+                var kontot = (from x in db.Konto
+                              where x.Benämning == konto
+                              select x).FirstOrDefault();
+
+                DirektkostnadAktivitet DKA = new DirektkostnadAktivitet();
+                DKA.Aktivitet = akitvitet;
+                DKA.Aktivitet_AktivitetID = akitvitet.AktivitetID;
+                DKA.Belopp = decimal.Parse(belopp);
+                DKA.Konto = kontot;
+                DKA.Konto_KontoID = kontot.KontoID;
+
+                db.DirektkostnadAktivitet.Add(DKA);
+                db.SaveChanges();
+            }
+        }
+
         public List<PersonalAktivitetDTO> GetAllPersonalAktivitet()
         {
             using (var db = new DataContext())

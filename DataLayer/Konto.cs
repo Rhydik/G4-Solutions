@@ -15,6 +15,7 @@ namespace DataLayer
             Direktkostnad = new HashSet<Direktkostnad>();
             schablonkostnad = new HashSet<schablonkostnad>();
             Avdelning = new HashSet<Avdelning>();
+            DirektkostnadAktivitet = new HashSet<DirektkostnadAktivitet>();
         }
 
         public int KontoID { get; set; }
@@ -34,5 +35,8 @@ namespace DataLayer
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Avdelning> Avdelning { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DirektkostnadAktivitet> DirektkostnadAktivitet { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace DataLayer
         public Aktivitet()
         {
             PersonalAktivitet = new HashSet<PersonalAktivitet>();
+            DirektkostnadAktivitet = new HashSet<DirektkostnadAktivitet>();
         }
         [Key]
         [Column(TypeName = "VARCHAR", Order = 0)]
@@ -33,6 +34,8 @@ namespace DataLayer
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PersonalAktivitet> PersonalAktivitet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DirektkostnadAktivitet> DirektkostnadAktivitet { get; set; }
 
     }
 }

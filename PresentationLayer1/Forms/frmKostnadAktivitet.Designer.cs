@@ -107,6 +107,7 @@
             this.btnLäggTill.TabIndex = 120;
             this.btnLäggTill.Text = "Lägg till";
             this.btnLäggTill.UseVisualStyleBackColor = true;
+            this.btnLäggTill.Click += new System.EventHandler(this.btnLäggTill_Click);
             // 
             // label1
             // 

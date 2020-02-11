@@ -50,7 +50,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvNedre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNedre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNedre.Location = new System.Drawing.Point(210, 100);
+            this.dgvNedre.Location = new System.Drawing.Point(212, 78);
             this.dgvNedre.Name = "dgvNedre";
             this.dgvNedre.ReadOnly = true;
             this.dgvNedre.RowHeadersWidth = 62;
@@ -61,7 +61,7 @@
             // 
             this.lblSök.AutoSize = true;
             this.lblSök.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSök.Location = new System.Drawing.Point(206, 12);
+            this.lblSök.Location = new System.Drawing.Point(478, 13);
             this.lblSök.Name = "lblSök";
             this.lblSök.Size = new System.Drawing.Size(122, 24);
             this.lblSök.TabIndex = 88;
@@ -69,7 +69,7 @@
             // 
             // tbBelopp
             // 
-            this.tbBelopp.Location = new System.Drawing.Point(524, 38);
+            this.tbBelopp.Location = new System.Drawing.Point(753, 40);
             this.tbBelopp.Name = "tbBelopp";
             this.tbBelopp.Size = new System.Drawing.Size(128, 20);
             this.tbBelopp.TabIndex = 91;
@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(521, 17);
+            this.label1.Location = new System.Drawing.Point(750, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 97;
@@ -85,7 +85,7 @@
             // 
             // btnLäggTill
             // 
-            this.btnLäggTill.Location = new System.Drawing.Point(658, 35);
+            this.btnLäggTill.Location = new System.Drawing.Point(887, 40);
             this.btnLäggTill.Name = "btnLäggTill";
             this.btnLäggTill.Size = new System.Drawing.Size(75, 23);
             this.btnLäggTill.TabIndex = 109;
@@ -126,24 +126,24 @@
             // cmbVäljProdukt
             // 
             this.cmbVäljProdukt.FormattingEnabled = true;
-            this.cmbVäljProdukt.Location = new System.Drawing.Point(210, 42);
+            this.cmbVäljProdukt.Location = new System.Drawing.Point(482, 40);
             this.cmbVäljProdukt.Name = "cmbVäljProdukt";
-            this.cmbVäljProdukt.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljProdukt.Size = new System.Drawing.Size(220, 21);
             this.cmbVäljProdukt.TabIndex = 113;
             // 
             // cmbVäljKonto
             // 
             this.cmbVäljKonto.FormattingEnabled = true;
-            this.cmbVäljKonto.Location = new System.Drawing.Point(358, 39);
+            this.cmbVäljKonto.Location = new System.Drawing.Point(212, 40);
             this.cmbVäljKonto.Name = "cmbVäljKonto";
-            this.cmbVäljKonto.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljKonto.Size = new System.Drawing.Size(220, 21);
             this.cmbVäljKonto.TabIndex = 115;
             // 
             // lblkonto
             // 
             this.lblkonto.AutoSize = true;
             this.lblkonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblkonto.Location = new System.Drawing.Point(354, 9);
+            this.lblkonto.Location = new System.Drawing.Point(208, 13);
             this.lblkonto.Name = "lblkonto";
             this.lblkonto.Size = new System.Drawing.Size(105, 24);
             this.lblkonto.TabIndex = 114;

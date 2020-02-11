@@ -136,8 +136,8 @@ namespace PresentationLayer1.Forms
             decimal gruppintäkter = businessManager.GetGruppIntäkter(produktgruppDTO);
             decimal gruppKostnader = produktgruppDict[produktgruppDTO.Namn].Sum();
 
-            lblBudgeteradeIntäkter.Text = gruppintäkter.ToString();
-            lblBudgetKostnader.Text = gruppKostnader.ToString();
+            lblBudgeteradeIntäkter.Text = gruppintäkter.ToString("0.00");
+            lblBudgetKostnader.Text = gruppKostnader.ToString("0.00");
             var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }
@@ -148,8 +148,8 @@ namespace PresentationLayer1.Forms
             avdelningDTO = (AvdelningDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
             decimal avdelningIntäkter = businessManager.GetAvdelningIntäkter(avdelningDTO);
             decimal avdelningKostnader = produktAvdelningDict[avdelningDTO.Namn].Sum();
-            lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString();
-            lblBudgetKostnader.Text = avdelningKostnader.ToString();
+            lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString("0.00");
+            lblBudgetKostnader.Text = avdelningKostnader.ToString("0.00");
             var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }
@@ -158,8 +158,8 @@ namespace PresentationLayer1.Forms
             dgvBudgeteratResultat.ClearSelection();
             decimal kontorIntäkter = businessManager.GetKontorIntäkter();
             decimal kontorKostnader = produktDict.Sum(x => x.Value);
-            lblBudgeteradeIntäkter.Text = kontorIntäkter.ToString();
-            lblBudgetKostnader.Text = kontorKostnader.ToString();
+            lblBudgeteradeIntäkter.Text = kontorIntäkter.ToString("0.00");
+            lblBudgetKostnader.Text = kontorKostnader.ToString("0.00");
             var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }

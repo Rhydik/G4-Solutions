@@ -51,7 +51,7 @@ namespace PresentationLayer1.Forms
         public void Update()
         {
             // Behövs göras!
-            dgvNedre.DataSource = businessManager.GetAllPersonalProdukt();
+            dgvNedre.DataSource = businessManager.GetAllPersonalAktivitet();
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)

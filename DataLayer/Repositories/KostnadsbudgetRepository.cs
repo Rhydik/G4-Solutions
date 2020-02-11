@@ -39,15 +39,17 @@ namespace DataLayer
                 var perso = (from x in db.Personal
                             where x.PersonalID == pers
                             select x).FirstOrDefault();
-                var prod = (from x in db.Aktivitet
+                var akti = (from x in db.Aktivitet
                             where x.Namn == aktivitet
                             select x).FirstOrDefault();
 
                 PersonalAktivitet temp = new PersonalAktivitet();
-                temp.Aktivitet_AktivitetID = prod.AktivitetID;
+                temp.Aktivitet_AktivitetID = akti.AktivitetID;
                 temp.Personal = perso;
+                temp.Personal_PersonalID = perso.PersonalID;
+                temp.Aktivitet = akti;
                 temp.Placeringsandel = int.Parse(andel);
-                //db.PersonalAktivitet.Add(temp);
+                db.PersonalAktivitet.Add(temp);
                 db.SaveChanges();
             }
         }
@@ -56,14 +58,12 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                //var query = from x in db.PersonalAktivitet
-                //            from y in db.Aktivitet
-                //            where y.AktivitetID == x.Aktivitet_AktivitetID
-                //            select new PersonalAktivitetDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Aktivitet = y.Namn};
+                var query = from x in db.PersonalAktivitet
+                            from y in db.Aktivitet
+                            where y.AktivitetID == x.Aktivitet_AktivitetID
+                            select new PersonalAktivitetDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Aktivitet = y.Namn };
 
-                //return query.ToList();
-
-                return null;
+                return query.ToList();
             }
         }
 

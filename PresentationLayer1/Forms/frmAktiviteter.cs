@@ -38,7 +38,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                bindingSource.DataSource = businessManager.GetAktivitetById(tbAktivitetsID.Text);
+                bindingSource.DataSource = businessManager.GetAktivitetById((tbAktivitetsID.Text));
                 dgvAktiviteter.DataSource = bindingSource.DataSource;
             }
         }

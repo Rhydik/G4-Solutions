@@ -17,11 +17,13 @@ namespace DataLayer
         public int Personal_PersonalID { get; set; }
 
         [Key]
-        [Column(Order = 1)]
+        [Column(TypeName = "VARCHAR", Order = 1)]
+        [StringLength(128)]
         public string Aktivitet_AktivitetID { get; set; }
 
         public int Placeringsandel { get; set; }
 
         public virtual Personal Personal { get; set; }
+        public virtual Aktivitet Aktivitet { get; set; }
     }
 }

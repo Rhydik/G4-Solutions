@@ -92,6 +92,14 @@
     <Compile Include="Migrations\202002101630229_personalaktivitet.designer.cs">
       <DependentUpon>202002101630229_personalaktivitet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111230332_aktivitet.cs" />
+    <Compile Include="Migrations\202002111230332_aktivitet.designer.cs">
+      <DependentUpon>202002111230332_aktivitet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111242059_aktifix.cs" />
+    <Compile Include="Migrations\202002111242059_aktifix.designer.cs">
+      <DependentUpon>202002111242059_aktifix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -162,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002101630229_personalaktivitet.resx">
       <DependentUpon>202002101630229_personalaktivitet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111230332_aktivitet.resx">
+      <DependentUpon>202002111230332_aktivitet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111242059_aktifix.resx">
+      <DependentUpon>202002111242059_aktifix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

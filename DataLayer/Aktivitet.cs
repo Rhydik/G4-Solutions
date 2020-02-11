@@ -9,19 +9,30 @@ namespace DataLayer
     [Table("Aktivitet")]
     public partial class Aktivitet
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Aktivitet()
+        {
+            PersonalAktivitet = new HashSet<PersonalAktivitet>();
+        }
         [Key]
-        [Column(Order = 0)]
+        [Column(TypeName = "VARCHAR", Order = 0)]
+        [Index(IsUnique = true)]
+        [StringLength(128)]
         public string AktivitetID { get; set; }
 
-        [Key]
+        
         [Column(Order = 1)]
         public string Namn { get; set; }
 
-        [Key]
+       
         [Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Avdelning_AvdelningID { get; set; }
 
         public virtual Avdelning Avdelning { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PersonalAktivitet> PersonalAktivitet { get; set; }
+
     }
 }

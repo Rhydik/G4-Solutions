@@ -46,16 +46,16 @@
             // cmbVäljaKonto
             // 
             this.cmbVäljaKonto.FormattingEnabled = true;
-            this.cmbVäljaKonto.Location = new System.Drawing.Point(368, 37);
+            this.cmbVäljaKonto.Location = new System.Drawing.Point(212, 40);
             this.cmbVäljaKonto.Name = "cmbVäljaKonto";
-            this.cmbVäljaKonto.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljaKonto.Size = new System.Drawing.Size(220, 21);
             this.cmbVäljaKonto.TabIndex = 126;
             // 
             // cmbVäljKonto
             // 
             this.cmbVäljKonto.AutoSize = true;
             this.cmbVäljKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbVäljKonto.Location = new System.Drawing.Point(364, 7);
+            this.cmbVäljKonto.Location = new System.Drawing.Point(212, 13);
             this.cmbVäljKonto.Name = "cmbVäljKonto";
             this.cmbVäljKonto.Size = new System.Drawing.Size(105, 24);
             this.cmbVäljKonto.TabIndex = 125;
@@ -64,15 +64,15 @@
             // cmbVäljAktivitet
             // 
             this.cmbVäljAktivitet.FormattingEnabled = true;
-            this.cmbVäljAktivitet.Location = new System.Drawing.Point(220, 40);
+            this.cmbVäljAktivitet.Location = new System.Drawing.Point(482, 40);
             this.cmbVäljAktivitet.Name = "cmbVäljAktivitet";
-            this.cmbVäljAktivitet.Size = new System.Drawing.Size(121, 21);
+            this.cmbVäljAktivitet.Size = new System.Drawing.Size(220, 21);
             this.cmbVäljAktivitet.TabIndex = 124;
             // 
             // btnTaBort
             // 
             this.btnTaBort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaBort.Location = new System.Drawing.Point(1073, 497);
+            this.btnTaBort.Location = new System.Drawing.Point(1065, 459);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(120, 41);
             this.btnTaBort.TabIndex = 123;
@@ -82,7 +82,7 @@
             // btnExportera
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(221, 497);
+            this.btnExportera.Location = new System.Drawing.Point(212, 459);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(120, 41);
             this.btnExportera.TabIndex = 122;
@@ -92,7 +92,7 @@
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLåsBudget.Location = new System.Drawing.Point(934, 497);
+            this.btnLåsBudget.Location = new System.Drawing.Point(939, 459);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(120, 41);
             this.btnLåsBudget.TabIndex = 121;
@@ -101,7 +101,7 @@
             // 
             // btnLäggTill
             // 
-            this.btnLäggTill.Location = new System.Drawing.Point(668, 33);
+            this.btnLäggTill.Location = new System.Drawing.Point(887, 40);
             this.btnLäggTill.Name = "btnLäggTill";
             this.btnLäggTill.Size = new System.Drawing.Size(75, 23);
             this.btnLäggTill.TabIndex = 120;
@@ -111,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(531, 15);
+            this.label1.Location = new System.Drawing.Point(750, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 119;
@@ -119,7 +119,7 @@
             // 
             // tbBelopp
             // 
-            this.tbBelopp.Location = new System.Drawing.Point(534, 36);
+            this.tbBelopp.Location = new System.Drawing.Point(753, 40);
             this.tbBelopp.Name = "tbBelopp";
             this.tbBelopp.Size = new System.Drawing.Size(128, 20);
             this.tbBelopp.TabIndex = 118;
@@ -128,7 +128,7 @@
             // 
             this.lblVäljAktivitet.AutoSize = true;
             this.lblVäljAktivitet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVäljAktivitet.Location = new System.Drawing.Point(216, 10);
+            this.lblVäljAktivitet.Location = new System.Drawing.Point(478, 13);
             this.lblVäljAktivitet.Name = "lblVäljAktivitet";
             this.lblVäljAktivitet.Size = new System.Drawing.Size(122, 24);
             this.lblVäljAktivitet.TabIndex = 117;
@@ -140,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvNedre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNedre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNedre.Location = new System.Drawing.Point(220, 98);
+            this.dgvNedre.Location = new System.Drawing.Point(212, 76);
             this.dgvNedre.Name = "dgvNedre";
             this.dgvNedre.ReadOnly = true;
             this.dgvNedre.RowHeadersWidth = 62;

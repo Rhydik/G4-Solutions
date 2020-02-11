@@ -66,7 +66,7 @@ namespace DataLayer
             }
         }
 
-        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, string årsarbetare, string roll)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, decimal årsarbetare, string roll)
         {
             using (var db = new DataContext())
             {
@@ -80,6 +80,7 @@ namespace DataLayer
                     Behörighet = roll,
                     Lösenord = lösenord,
                     Månadslön = månadslön,
+                    Årsarbete = årsarbetare,
                     //PersonalProdukt = personal.PersonalProdukt,
                     //PersonalID = personal.PersonalID
                 };

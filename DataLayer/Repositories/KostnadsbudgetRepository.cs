@@ -99,6 +99,18 @@ namespace DataLayer
             }
         }
 
+        public List<Produkt> GetProduktByProduktGrupp(ProduktgruppDTO produktgruppDTO)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Produktgrupp
+                            join y in db.Produkt on x.ProduktgruppID equals y.Produktgrupp.ProduktgruppID
+                            select y;
+
+                return query.ToList();
+            }
+        }
+
         public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
         {
             using (var db = new DataContext())

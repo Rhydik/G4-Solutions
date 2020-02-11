@@ -40,7 +40,7 @@ namespace PresentationLayer1.Forms
             {
                 try
                 {
-                    var result = schablons.SingleOrDefault(o => o.Konto == tbKonto.Text);
+                    var result = schablons.SingleOrDefault(o => o.Konto == int.Parse(tbKonto.Text));
 
                     if (result != null)
                     {

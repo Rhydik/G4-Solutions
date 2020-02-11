@@ -114,6 +114,14 @@
     <Compile Include="Migrations\202002111336276_direktprodukt.designer.cs">
       <DependentUpon>202002111336276_direktprodukt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111553430_årsarbete.cs" />
+    <Compile Include="Migrations\202002111553430_årsarbete.designer.cs">
+      <DependentUpon>202002111553430_årsarbete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111656591_konto.cs" />
+    <Compile Include="Migrations\202002111656591_konto.designer.cs">
+      <DependentUpon>202002111656591_konto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -199,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111336276_direktprodukt.resx">
       <DependentUpon>202002111336276_direktprodukt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111553430_årsarbete.resx">
+      <DependentUpon>202002111553430_årsarbete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111656591_konto.resx">
+      <DependentUpon>202002111656591_konto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

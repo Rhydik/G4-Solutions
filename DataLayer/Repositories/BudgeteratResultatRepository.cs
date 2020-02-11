@@ -60,5 +60,128 @@ namespace DataLayer
                 return query.ToList();
             }
         }
+
+        public decimal GetProduktKostnader(string produkt)
+        {
+            using (var db = new DataContext())
+            {
+                decimal lön = 0;
+                decimal andel = 0;
+                decimal lönresultat = 0;
+                decimal beräknadschablon = 0;
+                decimal totalandel = 0;
+                decimal kostnader = 0;
+                decimal pålägg = 0;
+                var produkten = (from x in db.Produkt
+                                 where x.ProduktID == produkt
+                                 select x).FirstOrDefault();
+
+                beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
+
+                var personalkostnad = from x in db.PersonalProdukt
+                                      join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
+                                      where x.Produkt_ProduktID == produkten.ProduktID
+                                      select x;
+                foreach (var item in personalkostnad)
+                {
+                    lön = item.Personal.Månadslön;
+                    andel = item.Placeringsandel;
+                    andel = (decimal)andel / 100;
+                    lönresultat += lön * andel;
+                    totalandel += andel;
+                }
+                kostnader = lönresultat + beräknadschablon;
+
+                pålägg = BeräknaTB(produkten) / kostnader;
+
+                var resultat = kostnader * pålägg;
+
+                return kostnader + resultat;
+            }
+        }
+        public decimal BeräknaTB(Produkt produkt)
+        {
+            decimal säljavd = 0;
+            decimal adminavd = 0;
+            decimal direktkostnadersälj = 0;
+            decimal direktkostnaderadmin = 0;
+
+            using (var db = new DataContext())
+            {
+                var querysälj = from x in db.Personal
+                                join y in db.AvdelningPersonalxRef on x.PersonalID equals y.Personal_PersonalID
+                                where y.Avdelning_AvdelningID == 2
+                                select y;
+                if (querysälj.Count() != 0)
+                {
+                    foreach (var item in querysälj)
+                    {
+                        säljavd += item.Personal.Månadslön * ((decimal)item.Placering/100);
+                    }
+                }
+                var queryadmin = from x in db.AvdelningPersonalxRef
+                                 join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
+                                 where x.Avdelning_AvdelningID == 3
+                                 select x;
+                if (queryadmin.Count() != 0)
+                {
+                    foreach (var item in queryadmin)
+                    {
+                        adminavd += item.Personal.Månadslön * ((decimal)item.Placering/100);
+                    }
+                }
+               
+                var querykostnadsälj= from x in db.DirektkostnadAktivitet
+                                  join y in db.Aktivitet on x.Aktivitet_AktivitetID equals y.AktivitetID
+                                  where y.Avdelning_AvdelningID == 2
+                                  select x;
+                if (querykostnadsälj.Count() != 0)
+                {
+                    direktkostnadersälj = querykostnadsälj.Sum(x => x.Belopp);
+                }
+
+                var querykostnadadmin = from x in db.DirektkostnadAktivitet
+                                       join y in db.Aktivitet on x.Aktivitet_AktivitetID equals y.AktivitetID
+                                       where y.Avdelning_AvdelningID == 3
+                                       select x;
+                if (querykostnadadmin.Count() != 0)
+                {
+                    direktkostnaderadmin = querykostnadadmin.Sum(x => x.Belopp);
+                }
+
+                var query = from x in db.schablonkostnad
+                            where x.Konto.konto1 == 9999
+                            select x;
+                var avkastningskrav = query.Sum(x => x.Belopp);
+
+                return (säljavd + adminavd + direktkostnadersälj + direktkostnaderadmin+ avkastningskrav);
+
+            }
+                
+        }
+        public decimal BeräknaSchablon()
+        {
+            using (var db = new DataContext())
+            {
+                var schablonskonstnad = from x in db.schablonkostnad
+                                        where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
+                                        select x;
+                var schablonresultat = schablonskonstnad.Sum(x => x.Belopp);
+
+                return schablonresultat;
+            }
+            
+        }
+        public decimal BeräknaÅrsarbetare()
+        {
+            using (var db = new DataContext())
+            {
+                var årsarbete = from x in db.Personal
+                                select x;
+                var årsarbeteresultat = årsarbete.Sum(x => x.Årsarbete) / 100;
+
+                return årsarbeteresultat;
+            }
+        }
     }
 }

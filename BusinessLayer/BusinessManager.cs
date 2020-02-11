@@ -84,6 +84,11 @@ namespace BusinessLayer
             return repositoryFacade.behörighetRepository.GetAllBehörighet();
         }
 
+        public decimal GetProduktKostnader(string produkt)
+        {
+            return repositoryFacade.budgeteratResultatRepository.GetProduktKostnader(produkt);
+        }
+
         public void AddSchablon(string kostnad, SchablonDTO schablon)
         {
             repositoryFacade.schablonRepository.AddSchablon(kostnad, schablon);
@@ -97,6 +102,11 @@ namespace BusinessLayer
         public List<VisaBehörighetDTO> GetBehörighet(string persnr)
         {
             return repositoryFacade.behörighetRepository.GetBehörighet(persnr);
+        }
+
+        public List<Produkt> GetProduktByProduktGrupp(ProduktgruppDTO produktgruppDTO)
+        {
+           return repositoryFacade.kostnadsbudgetRepository.GetProduktByProduktGrupp(produktgruppDTO);
         }
 
         public List<SchablonDTO> GetAllSchablon()
@@ -265,7 +275,7 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.GetProduktByNamn(produktnamn);
         }
 
-        public object GetSchablonById(string id)
+        public object GetSchablonById(int id)
         {
             return repositoryFacade.schablonRepository.GetSchablonById(id);
         }
@@ -285,7 +295,7 @@ namespace BusinessLayer
             repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, string konto, string benämning )
+        public void UpdateKonto(SchablonDTO oldSchablon, int konto, string benämning )
         {
             repositoryFacade.schablonRepository.UpdateKonto(oldSchablon, konto, benämning );
         }
@@ -330,7 +340,7 @@ namespace BusinessLayer
             repositoryFacade.personalRepository.RemovePersonal(personal);
         }
 
-        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, string årsarbetare, string roll)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, decimal årsarbetare, string roll)
         {
             repositoryFacade.personalRepository.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);
         }

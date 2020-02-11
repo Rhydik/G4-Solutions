@@ -122,7 +122,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                bindingSource.DataSource = businessManager.GetSchablonById(tbKonto.Text);
+                bindingSource.DataSource = businessManager.GetSchablonById(int.Parse(tbKonto.Text));
                 gvSchablonkostnad.DataSource = bindingSource.DataSource;
             }
         }

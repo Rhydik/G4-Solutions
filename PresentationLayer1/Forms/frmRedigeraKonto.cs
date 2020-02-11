@@ -47,7 +47,7 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click_1(object sender, EventArgs e)
         {
-            var konto = tbKonto.Text;
+            var konto = int.Parse(tbKonto.Text);
             var benämning = tbKontobenämning.Text;
 
             businessManager.UpdateKonto(schablon, konto, benämning );

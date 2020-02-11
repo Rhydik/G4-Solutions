@@ -12,20 +12,19 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablon = from x in db.Konto
-                               join y in db.schablonkostnad on x.KontoID equals y.Konto_KontoID
-                               select new SchablonDTO { Konto = x.konto1, Kontobenämning = x.Benämning, Belopp = y.Belopp};
+                var query = from x in db.schablonkostnad
+                            select new SchablonDTO { Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning, Belopp = x.Belopp };
 
-                return schablon.ToList();
+                return query.ToList();
             }
         }
 
-        public List<SchablonDTO> GetSchablonById(string id)
+        public List<SchablonDTO> GetSchablonById(int id)
         {
             using (var db = new DataContext())
             {
                 var query = from x in db.schablonkostnad
-                            where x.Konto.konto1.StartsWith(id)
+                            where x.Konto.konto1 == id
                             select new SchablonDTO { Belopp = x.Belopp, Konto = x.Konto.konto1, Kontobenämning = x.Konto.Benämning };
 
                 return query.ToList();
@@ -88,7 +87,7 @@ namespace DataLayer
             }
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, string kontot, string benämning )
+        public void UpdateKonto(SchablonDTO oldSchablon, int kontot, string benämning )
         {
             using (var db = new DataContext())
             {
@@ -116,7 +115,7 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var konto = new Konto { konto1 = kontot.ToString(), Benämning = benämning };
+                var konto = new Konto { konto1 = kontot, Benämning = benämning };
                 db.Konto.Add(konto);
 
                 var schablon = (from x in db.schablonkostnad
@@ -135,7 +134,7 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var nyttkonto = new Konto { konto1 = "9999", Benämning = "Avkastningskrav" };
+                var nyttkonto = new Konto { konto1 = 9999, Benämning = "Avkastningskrav" };
                 var schablon = new schablonkostnad { schablonkostnadID = 9999, Konto = nyttkonto, Belopp = avkastning, Konto_KontoID = nyttkonto.KontoID};
 
                 db.Konto.Add(nyttkonto);

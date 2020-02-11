@@ -43,7 +43,7 @@ namespace PresentationLayer1.Forms
             var vakansavdrag = int.Parse(tbVakansavdrag.Text);
             var lösenord = tbLösenord.Text;
             var roll = cbRoll.SelectedItem.ToString();
-            var årsarbetare = tbÅrsarbetare.Text;
+            var årsarbetare = decimal.Parse(tbÅrsarbetare.Text);
             MessageBox.Show("Personal sparad!");
 
             businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);

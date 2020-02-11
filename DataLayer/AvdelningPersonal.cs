@@ -14,12 +14,12 @@ namespace DataLayer
         [Key]
         [Column(Order = 0)]
         public int Avdelning_AvdelningID { get; set; }
-        public Avdelning Avdelning { get; set; }
+        public virtual Avdelning Avdelning { get; set; }
 
         [Key]
         [Column(Order = 1)]
         public int Personal_PersonalID { get; set; }
-        public Personal Personal { get; set; }
+        public virtual Personal Personal { get; set; }
         public int Placering { get;set; }
     }
 }

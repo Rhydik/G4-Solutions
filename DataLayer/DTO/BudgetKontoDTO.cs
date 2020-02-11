@@ -10,6 +10,6 @@ namespace DataLayer.DTO
     {
         public int KontoID { get; set; }
         public string Benämning { get; set; }
-        public string Konto { get; set; }
+        public int Konto { get; set; }
     }
 }

@@ -32,6 +32,7 @@ namespace DataLayer
         public decimal Sysselsättningsgrad { get; set; }
 
         public decimal Vakansavdrag { get; set; }
+        public decimal Årsarbete { get; set; }
 
         [Required]
         public string Lösenord { get; set; }

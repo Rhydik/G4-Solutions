@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DirektkostnadProduktDTO
     {
-        public string Kontonummer { get; set; }
+        public int Kontonummer { get; set; }
         public string Konto { get; set; }
         public string Produkt { get; set; }
         public decimal Belopp { get; set; }

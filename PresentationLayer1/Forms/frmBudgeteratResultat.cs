@@ -66,48 +66,71 @@ namespace PresentationLayer1.Forms
             }
         }
 
-        private void dgvBudgeteratResultat_SelectionChanged(object sender, EventArgs e)
+        private async void dgvBudgeteratResultat_SelectionChanged(object sender, EventArgs e)
         {
             if (cmbKategori.Text == "Produkt")
             {
-                dgvBudgeteratResultat.ClearSelection();
-                ProduktDTO produkt = new ProduktDTO();
-                produkt = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
-                decimal prodintäkter = businessManager.GetProduktIntäkter(produkt);
-                lblBudgeteradeIntäkter.Text = prodintäkter.ToString();
-                var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
-                lblResultat.Text = resultat.ToString();
+                CalculateProdukt();
             }
             if (cmbKategori.Text == "Produktgrupp")
             {
-                dgvBudgeteratResultat.ClearSelection();
-                ProduktgruppDTO produktgruppDTO = new ProduktgruppDTO();
-                produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
-                decimal gruppintäkter = businessManager.GetGruppIntäkter(produktgruppDTO);
-                lblBudgeteradeIntäkter.Text = gruppintäkter.ToString();
-                var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
-                lblResultat.Text = resultat.ToString();
+                CalculateProduktGrupp();
             }
             if (cmbKategori.Text == "Produktionsavdelning")
             {
-                dgvBudgeteratResultat.ClearSelection();
-                AvdelningDTO avdelningDTO = new AvdelningDTO();
-                avdelningDTO = (AvdelningDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
-                decimal avdelningIntäkter = businessManager.GetAvdelningIntäkter(avdelningDTO);
-                lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString();
-                var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
-                lblResultat.Text = resultat.ToString();
+                CalculateProduktKategori();
             }
             if (cmbKategori.Text == "Kontoret")
             {
-                dgvBudgeteratResultat.ClearSelection();
-                decimal avdelningIntäkter = businessManager.GetKontorIntäkter();
-                lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString();
-                var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
-                lblResultat.Text = resultat.ToString();
+                CalculateKontor();
             }
         }
-
+        public void CalculateProdukt()
+        {
+            dgvBudgeteratResultat.ClearSelection();
+            ProduktDTO produkt = new ProduktDTO();
+            produkt = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            decimal prodintäkter = businessManager.GetProduktIntäkter(produkt);
+            decimal prodKostnader = businessManager.GetProduktKostnader(produkt.ProduktID);
+            lblBudgeteradeIntäkter.Text = prodintäkter.ToString("0.00");
+            lblBudgetKostnader.Text = prodKostnader.ToString("0.00");
+            var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            lblResultat.Text = resultat.ToString("0.00");
+        }
+        public void CalculateProduktGrupp()
+        {
+            decimal Gruppkostnader = 0;
+            dgvBudgeteratResultat.ClearSelection();
+            ProduktgruppDTO produktgruppDTO = new ProduktgruppDTO();
+            produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            var produkter = businessManager.GetProduktByProduktGrupp(produktgruppDTO);
+            decimal gruppintäkter = businessManager.GetGruppIntäkter(produktgruppDTO);
+            foreach (var item in produkter)
+            {
+                Gruppkostnader += businessManager.GetProduktKostnader(item.ProduktID);
+            }
+            lblBudgeteradeIntäkter.Text = gruppintäkter.ToString();
+            var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            lblResultat.Text = resultat.ToString();
+        }
+        public void CalculateProduktKategori()
+        {
+            dgvBudgeteratResultat.ClearSelection();
+            AvdelningDTO avdelningDTO = new AvdelningDTO();
+            avdelningDTO = (AvdelningDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            decimal avdelningIntäkter = businessManager.GetAvdelningIntäkter(avdelningDTO);
+            lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString();
+            var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
+            lblResultat.Text = resultat.ToString();
+        }
+        public void CalculateKontor()
+        {
+            dgvBudgeteratResultat.ClearSelection();
+            decimal avdelningIntäkter = businessManager.GetKontorIntäkter();
+            lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString();
+            var resultat = int.Parse(lblBudgeteradeIntäkter.Text) - int.Parse(lblBudgetKostnader.Text);
+            lblResultat.Text = resultat.ToString();
+        }
         private void tbSök_TextChanged(object sender, EventArgs e)
         {
                 if (tbSök.TextLength == 0)

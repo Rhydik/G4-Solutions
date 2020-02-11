@@ -25,7 +25,7 @@ namespace DataLayer
 
         [Column("konto")]
         [Required]
-        public string konto1 { get; set; }
+        public int konto1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DirektkostnadProdukt> DirektkostnadProdukt { get; set; }

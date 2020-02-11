@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class DirektkostnadAktivitetDTO
     {
-        public string Kontonummer { get; set; }
+        public int Kontonummer { get; set; }
         public string Konto { get; set; }
         public string AktivitetID { get; set; }
         public string Aktivitet { get; set; }

@@ -6,27 +6,19 @@ namespace DataLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Direktkostnad")]
-    public partial class Direktkostnad
+    [Table("DirektkostnadProdukt")]
+    public partial class DirektkostnadProdukt
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Direktkostnad()
-        {
-            KostnadsbudgetSet = new HashSet<KostnadsbudgetSet>();
-        }
-
-        public int DirektkostnadID { get; set; }
-
-        [Required]
-        public string Namn { get; set; }
-
-        public decimal Belopp { get; set; }
-
+        [Key]
+        [Column(Order = 0)]
         public int Konto_KontoID { get; set; }
-
         public virtual Konto Konto { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
+        [Key]
+        [Column(TypeName = "VARCHAR", Order = 1)]
+        [StringLength(128)]
+        public string Produkt_ProduktID { get; set; }
+        public virtual Produkt Produkt { get; set; }
+        public decimal Belopp { get; set; }
     }
 }

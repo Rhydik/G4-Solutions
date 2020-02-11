@@ -15,7 +15,7 @@
         public virtual DbSet<AntalTimmar> AntalTimmar { get; set; }
         public virtual DbSet<Avdelning> Avdelning { get; set; }
         public virtual DbSet<AvdelningPersonalxRef> AvdelningPersonalxRef { get; set; }
-        public virtual DbSet<Direktkostnad> Direktkostnad { get; set; }
+        public virtual DbSet<DirektkostnadProdukt> DirektkostnadProdukt { get; set; }
         public virtual DbSet<Intäktsbudget> Intäktsbudget { get; set; }
         public virtual DbSet<Konto> Konto { get; set; }
         public virtual DbSet<KostnadsbudgetSet> KostnadsbudgetSet { get; set; }
@@ -57,14 +57,6 @@
                 .WithMany(e => e.Avdelning)
                 .Map(m => m.ToTable("KontoAvdelning"));
 
-            modelBuilder.Entity<Direktkostnad>()
-                .Property(e => e.Belopp)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Direktkostnad>()
-                .HasMany(e => e.KostnadsbudgetSet)
-                .WithMany(e => e.Direktkostnad)
-                .Map(m => m.ToTable("KostnadsbudgetDirektkostnad").MapRightKey("Kostnadsbudget_KostnadsbudgetID"));
 
             modelBuilder.Entity<Intäktsbudget>()
                 .Property(e => e.Avtal)
@@ -97,7 +89,7 @@
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Konto>()
-                .HasMany(e => e.Direktkostnad)
+                .HasMany(e => e.DirektkostnadProdukt)
                 .WithRequired(e => e.Konto)
                 .HasForeignKey(e => e.Konto_KontoID)
                 .WillCascadeOnDelete(false);

@@ -54,6 +54,51 @@ namespace DataLayer
             }
         }
 
+        public List<DirektkostnadProduktDTO> GetAllDirektKostnadProdukt()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.DirektkostnadProdukt
+                            select new DirektkostnadProduktDTO { Belopp = x.Belopp, Konto = x.Konto.Benämning, Kontonummer = x.Konto.konto1, Produkt = x.Produkt.Namn };
+
+                return query.ToList();
+            }
+        }
+
+        public List<DirektkostnadAktivitetDTO> GetAllDirektkostnadAktivitet()
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.DirektkostnadAktivitet
+                            select new DirektkostnadAktivitetDTO { Aktivitet = x.Aktivitet.Namn, AktivitetID = x.Aktivitet_AktivitetID, Belopp = x.Belopp, Konto = x.Konto.Benämning, Kontonummer = x.Konto.konto1 };
+
+                return query.ToList();
+            }
+        }
+
+        public void AddDirektkostnadProdukt(string prod, string konto, string belopp)
+        {
+            using (var db = new DataContext())
+            {
+                var produkt = (from x in db.Produkt
+                               where x.Namn == prod
+                               select x).FirstOrDefault();
+                var kontot = (from x in db.Konto
+                              where x.Benämning == konto
+                              select x).FirstOrDefault();
+
+                DirektkostnadProdukt DKP = new DirektkostnadProdukt();
+                DKP.Produkt = produkt;
+                DKP.Produkt_ProduktID = produkt.ProduktID;
+                DKP.Konto = kontot;
+                DKP.Konto_KontoID = kontot.KontoID;
+                DKP.Belopp = decimal.Parse(belopp);
+
+                db.DirektkostnadProdukt.Add(DKP);
+                db.SaveChanges();
+            }
+        }
+
         public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
         {
             using (var db = new DataContext())

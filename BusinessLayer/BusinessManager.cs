@@ -39,9 +39,24 @@ namespace BusinessLayer
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
         }
 
+        public List<DirektkostnadProduktDTO> GetAllDirektKostnadProdukt()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetAllDirektKostnadProdukt();
+        }
+
+        public List<DirektkostnadAktivitetDTO> GetAllDirektKostnadAktivitet()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetAllDirektkostnadAktivitet();
+        }
+
         public List<PersonalAktivitetDTO> GetAllPersonalAktivitet()
         {
             return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalAktivitet();
+        }
+
+        public void AddDirektkostnadProdukt(string prod, string konto, string belopp)
+        {
+            repositoryFacade.kostnadsbudgetRepository.AddDirektkostnadProdukt(prod, konto, belopp);
         }
 
         public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)

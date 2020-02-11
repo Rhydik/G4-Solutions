@@ -18,6 +18,7 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<AktivitetDTO> aktivitets;
         private List<BudgetKontoDTO> kontos;
+        private List<DirektkostnadAktivitetDTO> DKADTO;
         public frmKostnadAktivitet()
         {
             InitializeComponent();
@@ -36,6 +37,8 @@ namespace PresentationLayer1.Forms
             {
                 cmbVäljaKonto.Items.Add(item.Benämning);
             }
+            DKADTO = businessManager.GetAllDirektKostnadAktivitet();
+            dgvNedre.DataSource = DKADTO;
         }
 
         private void btnLäggTill_Click(object sender, EventArgs e)
@@ -45,6 +48,13 @@ namespace PresentationLayer1.Forms
             var belopp = tbBelopp.Text;
 
             businessManager.AddDirektkostnadAktivitet(akti, konto, belopp);
+            Update();
+        }
+
+        public void Update()
+        {
+            DKADTO = businessManager.GetAllDirektKostnadAktivitet();
+            dgvNedre.DataSource = DKADTO;
         }
     }
 }

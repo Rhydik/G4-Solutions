@@ -12,7 +12,7 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Konto()
         {
-            Direktkostnad = new HashSet<Direktkostnad>();
+            DirektkostnadProdukt = new HashSet<DirektkostnadProdukt>();
             schablonkostnad = new HashSet<schablonkostnad>();
             Avdelning = new HashSet<Avdelning>();
             DirektkostnadAktivitet = new HashSet<DirektkostnadAktivitet>();
@@ -28,7 +28,7 @@ namespace DataLayer
         public string konto1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Direktkostnad> Direktkostnad { get; set; }
+        public virtual ICollection<DirektkostnadProdukt> DirektkostnadProdukt { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<schablonkostnad> schablonkostnad { get; set; }
@@ -38,5 +38,6 @@ namespace DataLayer
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DirektkostnadAktivitet> DirektkostnadAktivitet { get; set; }
+
     }
 }

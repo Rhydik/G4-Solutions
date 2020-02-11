@@ -9,25 +9,28 @@ namespace DataLayer
     [Table("Produkt")]
     public partial class Produkt
     {
-        [Key]
-        [Column(Order = 0)]
-        public string ProduktID { get; set; }
+        public Produkt()
+        {
+            DirektkostnadProdukt = new HashSet<DirektkostnadProdukt>();
+        }
 
         [Key]
+        [Column(TypeName = "VARCHAR", Order = 0)]
+        [Index(IsUnique = true)]
+        [StringLength(128)]
+        public string ProduktID { get; set; }
+
         [Column(Order = 1)]
         public string Namn { get; set; }
 
-        [Key]
         [Column(Order = 2)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Produktkategori_ProduktkategoriID { get; set; }
 
-        [Key]
         [Column(Order = 3)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Produktgrupp_ProduktgruppID { get; set; }
 
-        [Key]
         [Column(Order = 4)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Avdelning_AvdelningID { get; set; }
@@ -37,5 +40,8 @@ namespace DataLayer
         public virtual Produktgrupp Produktgrupp { get; set; }
 
         public virtual Produktkategori Produktkategori { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DirektkostnadProdukt> DirektkostnadProdukt { get; set; }
     }
 }

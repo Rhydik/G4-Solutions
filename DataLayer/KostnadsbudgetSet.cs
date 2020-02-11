@@ -14,7 +14,6 @@ namespace DataLayer
         {
             AktivitetKostnadsbudget = new HashSet<AktivitetKostnadsbudget>();
             KostnadsbudgetProdukt = new HashSet<KostnadsbudgetProdukt>();
-            Direktkostnad = new HashSet<Direktkostnad>();
             Personal = new HashSet<Personal>();
         }
 
@@ -28,9 +27,6 @@ namespace DataLayer
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KostnadsbudgetProdukt> KostnadsbudgetProdukt { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Direktkostnad> Direktkostnad { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personal> Personal { get; set; }

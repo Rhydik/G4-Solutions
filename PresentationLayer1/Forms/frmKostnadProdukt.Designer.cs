@@ -30,7 +30,7 @@
         {
             this.dgvNedre = new System.Windows.Forms.DataGridView();
             this.lblSök = new System.Windows.Forms.Label();
-            this.tbKonto = new System.Windows.Forms.TextBox();
+            this.tbBelopp = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnLäggTill = new System.Windows.Forms.Button();
@@ -67,12 +67,12 @@
             this.lblSök.TabIndex = 88;
             this.lblSök.Text = "Välj Produkt";
             // 
-            // tbKonto
+            // tbBelopp
             // 
-            this.tbKonto.Location = new System.Drawing.Point(524, 38);
-            this.tbKonto.Name = "tbKonto";
-            this.tbKonto.Size = new System.Drawing.Size(128, 20);
-            this.tbKonto.TabIndex = 91;
+            this.tbBelopp.Location = new System.Drawing.Point(524, 38);
+            this.tbBelopp.Name = "tbBelopp";
+            this.tbBelopp.Size = new System.Drawing.Size(128, 20);
+            this.tbBelopp.TabIndex = 91;
             // 
             // label1
             // 
@@ -91,6 +91,7 @@
             this.btnLäggTill.TabIndex = 109;
             this.btnLäggTill.Text = "Lägg till";
             this.btnLäggTill.UseVisualStyleBackColor = true;
+            this.btnLäggTill.Click += new System.EventHandler(this.btnLäggTill_Click);
             // 
             // btnExportera
             // 
@@ -169,7 +170,7 @@
             this.Controls.Add(this.btnLåsBudget);
             this.Controls.Add(this.btnLäggTill);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbKonto);
+            this.Controls.Add(this.tbBelopp);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.dgvNedre);
             this.Name = "frmKostnadProdukt";
@@ -184,7 +185,7 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvNedre;
         private System.Windows.Forms.Label lblSök;
-        private System.Windows.Forms.TextBox tbKonto;
+        private System.Windows.Forms.TextBox tbBelopp;
         private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnLäggTill;

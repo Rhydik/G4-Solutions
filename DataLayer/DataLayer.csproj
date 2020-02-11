@@ -61,6 +61,8 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="Direktkostnad.cs" />
     <Compile Include="DirektkostnadAktivitet.cs" />
+    <Compile Include="DirektkostnadAktivitetDTO.cs" />
+    <Compile Include="DirektkostnadProduktDTO.cs" />
     <Compile Include="DTO\BudgetKontoDTO.cs" />
     <Compile Include="DTO\KontorDTO.cs" />
     <Compile Include="DTO\KonstnadsbudgetPersonalDTO.cs" />
@@ -107,6 +109,10 @@
     <Compile Include="Migrations\202002111316328_kontodirekt.cs" />
     <Compile Include="Migrations\202002111316328_kontodirekt.designer.cs">
       <DependentUpon>202002111316328_kontodirekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111336276_direktprodukt.cs" />
+    <Compile Include="Migrations\202002111336276_direktprodukt.designer.cs">
+      <DependentUpon>202002111336276_direktprodukt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Personal.cs" />
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111316328_kontodirekt.resx">
       <DependentUpon>202002111316328_kontodirekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111336276_direktprodukt.resx">
+      <DependentUpon>202002111336276_direktprodukt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

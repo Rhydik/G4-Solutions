@@ -82,6 +82,7 @@ namespace DataLayer
                                       join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                       where x.Produkt_ProduktID == produkten.ProduktID
                                       select x;
+
                 foreach (var item in personalkostnad)
                 {
                     lön = item.Personal.Månadslön;
@@ -149,10 +150,9 @@ namespace DataLayer
                     direktkostnaderadmin = querykostnadadmin.Sum(x => x.Belopp);
                 }
 
-                var query = from x in db.schablonkostnad
-                            where x.Konto.konto1 == 9999
-                            select x;
-                var avkastningskrav = query.Sum(x => x.Belopp);
+                var avkastningskrav = (from x in db.schablonkostnad
+                                    where x.Konto.konto1 == 9999
+                                    select x.Belopp).FirstOrDefault();
 
                 return (säljavd + adminavd + direktkostnadersälj + direktkostnaderadmin+ avkastningskrav);
 

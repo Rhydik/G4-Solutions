@@ -175,8 +175,6 @@ namespace BusinessLayer
             repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, tim, kommentar, kundId);
         }
 
-        
-
         public decimal GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
         {
             decimal budget = 0;

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DataLayer;
 using BusinessLayer;
 using DataLayer.DTO;
+using System.Diagnostics;
+using System.Threading;
 
 namespace PresentationLayer1.Forms
 {
@@ -26,16 +28,18 @@ namespace PresentationLayer1.Forms
 
         public frmBudgeteratResultat()
         {
+            Thread t = new Thread(new ThreadStart(Load)) { IsBackground = true };
+            t.Start();
             InitializeComponent();
-            Load();
+            t.Join();
+
+            cmbKategori.SelectedItem = "Produkt";
         }
 
         private void Load()
         {
-            cmbKategori.SelectedItem = "Produkt";
             produkter = businessManager.GetAllProdukter();
-
-            foreach(var produkt in produkter)
+            Parallel.ForEach(produkter, (produkt) =>
             {
                 decimal beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
 
@@ -46,7 +50,8 @@ namespace PresentationLayer1.Forms
                     var list = new List<decimal>();
                     list.Add(beräkning);
                     produktgruppDict.Add(produkt.Produktgrupp, list);
-                } else
+                }
+                else
                 {
                     produktgruppDict[produkt.Produktgrupp].Add(beräkning);
                 }
@@ -61,8 +66,7 @@ namespace PresentationLayer1.Forms
                 {
                     produktAvdelningDict[produkt.Avdelning].Add(beräkning);
                 }
-
-            }
+            });
 
             dgvBudgeteratResultat.DataSource = produkter;
         }
@@ -95,7 +99,7 @@ namespace PresentationLayer1.Forms
             }
         }
 
-        private async void dgvBudgeteratResultat_SelectionChanged(object sender, EventArgs e)
+        private void dgvBudgeteratResultat_SelectionChanged(object sender, EventArgs e)
         {
             if (cmbKategori.Text == "Produkt")
             {
@@ -128,7 +132,6 @@ namespace PresentationLayer1.Forms
         }
         public void CalculateProduktGrupp()
         {
-            decimal Gruppkostnader = 0;
             dgvBudgeteratResultat.ClearSelection();
             ProduktgruppDTO produktgruppDTO = new ProduktgruppDTO();
             produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;

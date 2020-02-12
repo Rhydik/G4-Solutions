@@ -15,10 +15,7 @@ namespace PresentationLayer1
 {
     public partial class frmLoggaIn : Form
     {
-        Thread t;
-
         BusinessManager businessManager;
-
         public frmLoggaIn()
         {
             Thread t = new Thread(new ThreadStart(Load)) { IsBackground = true };

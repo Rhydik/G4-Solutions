@@ -56,5 +56,12 @@ namespace PresentationLayer1.Forms
             DKADTO = businessManager.GetAllDirektKostnadAktivitet();
             dgvNedre.DataSource = DKADTO;
         }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
+        {
+            var direktkostnad = (DirektkostnadAktivitetDTO)dgvNedre.CurrentRow.DataBoundItem;
+            businessManager.RemoveDirektKostnadAktivitet(direktkostnad);
+            Update();
+        }
     }
 }

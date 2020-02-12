@@ -59,6 +59,16 @@ namespace BusinessLayer
             repositoryFacade.kostnadsbudgetRepository.AddDirektkostnadProdukt(prod, konto, belopp);
         }
 
+        public void RemoveDirektKostnadAktivitet(DirektkostnadAktivitetDTO direktkostnad)
+        {
+            repositoryFacade.kostnadsbudgetRepository.RemoveDirektKostnadAktivitet(direktkostnad);
+        }
+
+        public void RemoveDirektKostnadProdukt(DirektkostnadProduktDTO direktkostnad)
+        {
+            repositoryFacade.kostnadsbudgetRepository.RemoveDirektKostnadProdukt(direktkostnad);
+        }
+
         public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
         {
             repositoryFacade.kostnadsbudgetRepository.AddDirektkostnadAktivitet(akti, konto, belopp);

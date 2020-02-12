@@ -65,6 +65,32 @@ namespace DataLayer
             }
         }
 
+        public void RemoveDirektKostnadAktivitet(DirektkostnadAktivitetDTO direktkostnad)
+        {
+            using (var db = new DataContext())
+            {
+                var query = (from x in db.DirektkostnadAktivitet
+                            where x.Belopp == direktkostnad.Belopp & x.Aktivitet.AktivitetID == direktkostnad.AktivitetID & x.Konto.konto1 == direktkostnad.Kontonummer
+                            select x).FirstOrDefault();
+
+                db.DirektkostnadAktivitet.Remove(query);
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveDirektKostnadProdukt(DirektkostnadProduktDTO direktkostnad)
+        {
+            using (var db = new DataContext())
+            {
+                var query = (from x in db.DirektkostnadProdukt
+                            where x.Belopp == direktkostnad.Belopp & x.Konto.konto1 == direktkostnad.Kontonummer & x.Produkt.Namn == direktkostnad.Produkt
+                            select x).FirstOrDefault();
+
+                db.DirektkostnadProdukt.Remove(query);
+                db.SaveChanges();
+            }
+        }
+
         public List<DirektkostnadAktivitetDTO> GetAllDirektkostnadAktivitet()
         {
             using (var db = new DataContext())

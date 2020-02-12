@@ -149,20 +149,20 @@ namespace DataLayer
 
         public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
         {
-            //using (var db = new DataContext())
-            //{
-            //    var prod = (from x in db.Aktivitet
-            //                where x.Namn == aktivitet
-            //                select x).FirstOrDefault();
+            using (var db = new DataContext())
+            {
+                var akti = (from x in db.Aktivitet
+                            where x.Namn == aktivitet
+                            select x).FirstOrDefault();
 
-            //    var query = (from x in db.PersonalAktivitet
-            //                 where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Aktivitet_AktivitetID == prod.AktivitetID
-            //                 select x).FirstOrDefault();
+                var query = (from x in db.PersonalAktivitet
+                             where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Aktivitet_AktivitetID == akti.AktivitetID
+                             select x).FirstOrDefault();
 
-            //    db.PersonalAktivitet.Remove(query);
+                db.PersonalAktivitet.Remove(query);
 
-            //    db.SaveChanges();
-            //}
+                db.SaveChanges();
+            }
         }
 
 

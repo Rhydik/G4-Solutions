@@ -30,6 +30,7 @@ namespace PresentationLayer1.Forms
         private List<KostnadsbudgetProduktDTO> produkts;
         private List<BudgetKontoDTO> konton;
         public List<KostnadsbudgetProduktDTO> allaProdukter;
+        private List<AvdelningDTO> avdelnings;
    
         public frmKostnadsbudgetering()
         {
@@ -49,6 +50,11 @@ namespace PresentationLayer1.Forms
             }
             allaProdukter = businessManager.GetKostnadsbudgetProdukt();
             dgvNedre.DataSource = businessManager.GetAllPersonalProdukt();
+            avdelnings = businessManager.GetAllAvdelningar();
+            foreach (var item in avdelnings)
+            {
+                cmbAvdelning.Items.Add(item.Namn);
+            }
 
             GömKolumnerFörAvdelningar();
 

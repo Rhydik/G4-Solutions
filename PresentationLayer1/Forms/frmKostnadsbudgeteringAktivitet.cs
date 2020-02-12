@@ -18,6 +18,7 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<AktivitetDTO> aktivitets;
         private List<KonstnadsbudgetPersonalDTO> personals;
+        private List<AvdelningDTO> avdelnings;
         public frmKostnadsbudgeteringAktivitet()
         {
             InitializeComponent();
@@ -35,6 +36,11 @@ namespace PresentationLayer1.Forms
             businessManager.Kalkylering(personals); //Updatera logiken i kalkylering() så det funkar som det ska
             dgvÖvre.DataSource = personals;
             dgvNedre.DataSource = businessManager.GetAllPersonalAktivitet();
+            avdelnings = businessManager.GetAllAvdelningar();
+            foreach (var item in avdelnings)
+            {
+                cmbAvdelning.Items.Add(item.Namn);
+            }
         }
 
         private void btnLäggTill_Click(object sender, EventArgs e)

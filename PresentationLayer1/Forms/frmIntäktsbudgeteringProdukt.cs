@@ -42,6 +42,7 @@ namespace PresentationLayer1.Forms
             btnTaBortKund.Hide();
             btnVäljNyProdukt.Hide();
             btnVäljProdukt.Show();
+            
         }
 
         private void btnVäljProdukt_Click(object sender, EventArgs e)
@@ -93,6 +94,7 @@ namespace PresentationLayer1.Forms
             lblTim.Text = sumTim.ToString();
             kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
             dgvIntäktsbudgeteringProdukt.DataSource = kunder;
+            dgvIntäktsbudgeteringProdukt.Columns["IntäktsbudgetID"].Visible = false;
         }
 
         private void btnVäljNyProdukt_Click(object sender, EventArgs e)

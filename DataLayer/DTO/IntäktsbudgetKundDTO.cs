@@ -8,6 +8,7 @@ namespace DataLayer
 {
     public class IntäktsbudgetKundDTO
     {
+        public int IntäktsbudgetID { get; set; }
         public string ProduktID { get; set; }
         public string ProduktNamn { get; set; }
         public decimal Avtal { get; set; }

@@ -52,11 +52,11 @@ namespace PresentationLayer1.Forms
 
             businessManager.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
             Update();
+            UpdatePersonal();
         }
 
         public void Update()
         {
-            // Behövs göras!
             dgvNedre.DataSource = businessManager.GetAllPersonalAktivitet();
         }
 
@@ -69,6 +69,22 @@ namespace PresentationLayer1.Forms
 
             businessManager.RemovePlaceringAktivitet(pers, aktivitet, andel);
             Update();
+            UpdatePersonal();
+        }
+
+        private void buttonVäljAvdelning_Click(object sender, EventArgs e)
+        {
+            var avdelning = cmbAvdelning.Text;
+            personals = businessManager.GetPersonalByAvdelning(avdelning);
+            businessManager.Kalkylering(personals);
+            dgvÖvre.DataSource = personals;
+        }
+
+        public void UpdatePersonal()
+        {
+            personals = businessManager.GetKostnadsbudgetPersonal();
+            businessManager.Kalkylering(personals);
+            dgvÖvre.DataSource = personals;
         }
     }
 }

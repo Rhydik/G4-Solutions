@@ -91,6 +91,19 @@ namespace DataLayer
             }
         }
 
+        public List<KonstnadsbudgetPersonalDTO> GetPersonalByAvdelning(string avdelning)
+        {
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Personal
+                            join y in db.AvdelningPersonalxRef on x.PersonalID equals y.Personal_PersonalID
+                            where y.Avdelning.Namn == avdelning & y.Placering > 0
+                            select new KonstnadsbudgetPersonalDTO { PersonalID = x.PersonalID, Namn = x.Namn, Sysselsättningsgrad = x.Sysselsättningsgrad, Vakansavdrag = x.Vakansavdrag, Årsarbetare = x.Sysselsättningsgrad - x.Vakansavdrag };
+
+                return query.ToList();
+            }
+        }
+
         public void RemovePersonal(PersonalDTO personal)
         {
             using (var db = new DataContext())

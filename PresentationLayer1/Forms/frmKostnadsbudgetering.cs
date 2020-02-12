@@ -57,28 +57,14 @@ namespace PresentationLayer1.Forms
             }
 
             GömKolumnerFörAvdelningar();
-
-
         }
 
         private void buttonVäljAvdelning_Click(object sender, EventArgs e)
         {
-            if (cmbAvdelning.Text != null) 
-            {
-                dgvNedre.DataSource = produkts;
-            }
-            if (cmbAvdelning.Text == "Försäljnings- och marknadsavdelningen")
-            {
-                List<KostnadsbudgetProduktDTO> utvaldAvdelning = new List<KostnadsbudgetProduktDTO>(allaProdukter.Where(p => p.Avdelning_AvdelningID == 1));
-                dgvNedre.DataSource = utvaldAvdelning;
-                GömKolumnerFörAvdelningar();
-            }
-            else if (cmbAvdelning.Text == "Driftavdelning")
-            {
-                List<KostnadsbudgetProduktDTO> utvaldAvdelning = new List<KostnadsbudgetProduktDTO>(allaProdukter.Where(p => p.Avdelning_AvdelningID == 2));
-                dgvNedre.DataSource = utvaldAvdelning;
-                GömKolumnerFörAvdelningar();
-            }
+            var avdelning = cmbAvdelning.Text;
+            personals = businessManager.GetPersonalByAvdelning(avdelning);
+            businessManager.Kalkylering(personals);
+            dgvÖvre.DataSource = personals;
         }
 
         public void GömKolumnerFörAvdelningar() //Ui
@@ -131,6 +117,7 @@ namespace PresentationLayer1.Forms
 
             businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
             Update();
+            UpdatePersonal();
         }
 
         public void Update()
@@ -147,6 +134,14 @@ namespace PresentationLayer1.Forms
 
             businessManager.RemovePlaceringProdukt(pers, produkt, andel);
             Update();
+            UpdatePersonal();
+        }
+
+        public void UpdatePersonal()
+        {
+            personals = businessManager.GetKostnadsbudgetPersonal();
+            businessManager.Kalkylering(personals);
+            dgvÖvre.DataSource = personals;
         }
     }
 }

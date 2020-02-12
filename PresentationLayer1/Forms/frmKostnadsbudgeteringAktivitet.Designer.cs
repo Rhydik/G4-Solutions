@@ -119,6 +119,7 @@
             this.buttonVäljAvdelning.TabIndex = 92;
             this.buttonVäljAvdelning.Text = "Välj Avdelning";
             this.buttonVäljAvdelning.UseVisualStyleBackColor = true;
+            this.buttonVäljAvdelning.Click += new System.EventHandler(this.buttonVäljAvdelning_Click);
             // 
             // dgvNedre
             // 

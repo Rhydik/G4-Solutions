@@ -203,17 +203,40 @@ namespace DataLayer
         {
             foreach (var item in personals)
             {
-
                 //vi ska uppdatera logiken här, detta är bara tillfälligt
-                item.Vakansavdrag = 100 - item.Årsarbetare; //100% - hur mkt de jobbat = hur mycket de behöver i vakans
-                item.Andel = 0;
-                item.Diff = 0;
-                item.Totalt = 0;
+                item.Fpp = GetFördeladAndel(item.PersonalID);
+                item.Andel = 100;
+                item.Totalt = item.Årsarbetare;
+                item.Diff = item.Totalt - GetFördeladAndel(item.PersonalID);
                 item.GemAdm = 0;
-                item.Fpp = 0;
             }
             return personals;
 
+        }
+
+        public decimal GetFördeladAndel(int personal)
+        {
+            using (var db = new DataContext())
+            {
+                var total = 0;
+
+                var andelaktivitet = from x in db.PersonalAktivitet
+                            where x.Personal_PersonalID == personal
+                            select x.Placeringsandel;
+                foreach (var item in andelaktivitet)
+                {
+                    total += item;
+                }
+                var andelprodukt = from x in db.PersonalProdukt
+                                   where x.Personal_PersonalID == personal
+                                   select x.Placeringsandel;
+                foreach (var item in andelprodukt)
+                {
+                    total += item;
+                }
+
+                return (decimal)total;
+            }
         }
 
         public List<DTO.BudgetKontoDTO> GetAllKonton()

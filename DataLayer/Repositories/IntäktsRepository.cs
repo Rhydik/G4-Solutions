@@ -23,7 +23,7 @@ namespace DataLayer
                                  join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
                                  join prod in db.ProduktIntäktsbudget on y.IntäktsbudgetID equals prod.Intäktsbudget_IntäktsbudgetID
                                  join prodnamn in db.Produkt on prod.Produkt_ProduktID equals prodnamn.ProduktID
-                                 select new IntäktsbudgetKundDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, ProduktID = prod.Produkt_ProduktID, ProduktNamn = prodnamn.Namn };
+                                 select new IntäktsbudgetKundDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, ProduktID = prod.Produkt_ProduktID, ProduktNamn = prodnamn.Namn, IntäktsbudgetID = y.IntäktsbudgetID };
                     return intäkt.ToList();
                 }
                 else
@@ -93,7 +93,7 @@ namespace DataLayer
                                  join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
                                  join kun in db.KundIntäktsbudget on y.IntäktsbudgetID equals kun.Intäktsbudget_IntäktsbudgetID
                                  join kunNamn in db.Kund on kun.Kund_KundID equals kunNamn.KundID
-                                 select new IntäktsbudgetProduktDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, KundID = kun.Kund_KundID, KundNamn = kunNamn.Namn };
+                                 select new IntäktsbudgetProduktDTO { Avtal = y.Avtal, GradA = y.GradA, GradT = y.GradT, Kommentar = y.Kommentar, Tillägg = y.Tillägg, Tim = y.Tim, Budget = y.Budget, KundID = kun.Kund_KundID, KundNamn = kunNamn.Namn, IntäktsbudgetID = y.IntäktsbudgetID };
                     return intäkt.ToList();
                 }
                 else
@@ -134,43 +134,21 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var kundbudget = (from x in db.KundIntäktsbudget
-                                  where x.Kund_KundID == kundId
+                                  where x.Intäktsbudget_IntäktsbudgetID == produkten.IntäktsbudgetID
                                   select x).FirstOrDefault();
 
                 var produktbudget = (from x in db.ProduktIntäktsbudget
-                                     where x.Produkt_ProduktID == produkten.ProduktID
+                                     where x.Intäktsbudget_IntäktsbudgetID == produkten.IntäktsbudgetID
                                      select x).FirstOrDefault();
 
-                var intäktsbudget = (from x in db.KundIntäktsbudget
-                             where x.Kund_KundID == kundId
-                             join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
-                             select y).FirstOrDefault();
+                var intäktsbudget = (from x in db.Intäktsbudget
+                                     where x.IntäktsbudgetID == produkten.IntäktsbudgetID
+                                     select x).FirstOrDefault();
 
                 db.ProduktIntäktsbudget.Remove(produktbudget);
                 db.KundIntäktsbudget.Remove(kundbudget);
-                db.Intäktsbudget.Remove(intäktsbudget); 
-                
-                try
-                {
-                    db.SaveChanges();
-                }
-                catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                {
-                    Exception raise = dbEx;
-                    foreach (var validationErrors in dbEx.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            string message = string.Format("{0}:{1}",
-                                validationErrors.Entry.Entity.ToString(),
-                                validationError.ErrorMessage);
-                            // raise a new exception nesting
-                            // the current instance as InnerException
-                            raise = new InvalidOperationException(message, raise);
-                        }
-                    }
-                    throw raise;
-                }
+                db.Intäktsbudget.Remove(intäktsbudget);
+                db.SaveChanges();
             }
         }
 
@@ -179,17 +157,16 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var kundbudget = (from x in db.KundIntäktsbudget
-                                  where x.Kund_KundID == kunden.KundID
+                                  where x.Intäktsbudget_IntäktsbudgetID == kunden.IntäktsbudgetID
                                   select x).FirstOrDefault();
 
                 var produktbudget = (from x in db.ProduktIntäktsbudget
-                                     where x.Produkt_ProduktID == produktID
+                                     where x.Intäktsbudget_IntäktsbudgetID == kunden.IntäktsbudgetID
                                      select x).FirstOrDefault();
 
-                var intäktsbudget = (from x in db.ProduktIntäktsbudget
-                                     where x.Produkt_ProduktID == produktID
-                                     join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
-                                     select y).FirstOrDefault();
+                var intäktsbudget = (from x in db.Intäktsbudget
+                                    where x.IntäktsbudgetID == kunden.IntäktsbudgetID
+                                     select x).FirstOrDefault();
 
                 db.KundIntäktsbudget.Remove(kundbudget);
                 db.ProduktIntäktsbudget.Remove(produktbudget);

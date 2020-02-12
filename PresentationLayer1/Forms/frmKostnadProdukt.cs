@@ -37,8 +37,7 @@ namespace PresentationLayer1.Forms
             {
                 cmbVäljKonto.Items.Add(item.Benämning);
             }
-            DKPDTO = businessManager.GetAllDirektKostnadProdukt();
-            dgvNedre.DataSource = DKPDTO;
+            Update();
         }
 
         private void btnLäggTill_Click(object sender, EventArgs e)
@@ -55,6 +54,13 @@ namespace PresentationLayer1.Forms
         {
             DKPDTO = businessManager.GetAllDirektKostnadProdukt();
             dgvNedre.DataSource = DKPDTO;
+        }
+
+        private void btnTaBort_Click(object sender, EventArgs e)
+        {
+            var direktkostnad = (DirektkostnadProduktDTO)dgvNedre.CurrentRow.DataBoundItem;
+            businessManager.RemoveDirektKostnadProdukt(direktkostnad);
+            Update();
         }
     }
 }

@@ -65,6 +65,32 @@ namespace DataLayer
             }
         }
 
+        public void RemoveDirektKostnadAktivitet(DirektkostnadAktivitetDTO direktkostnad)
+        {
+            using (var db = new DataContext())
+            {
+                var query = (from x in db.DirektkostnadAktivitet
+                            where x.Belopp == direktkostnad.Belopp & x.Aktivitet.AktivitetID == direktkostnad.AktivitetID & x.Konto.konto1 == direktkostnad.Kontonummer
+                            select x).FirstOrDefault();
+
+                db.DirektkostnadAktivitet.Remove(query);
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveDirektKostnadProdukt(DirektkostnadProduktDTO direktkostnad)
+        {
+            using (var db = new DataContext())
+            {
+                var query = (from x in db.DirektkostnadProdukt
+                            where x.Belopp == direktkostnad.Belopp & x.Konto.konto1 == direktkostnad.Kontonummer & x.Produkt.Namn == direktkostnad.Produkt
+                            select x).FirstOrDefault();
+
+                db.DirektkostnadProdukt.Remove(query);
+                db.SaveChanges();
+            }
+        }
+
         public List<DirektkostnadAktivitetDTO> GetAllDirektkostnadAktivitet()
         {
             using (var db = new DataContext())
@@ -149,20 +175,20 @@ namespace DataLayer
 
         public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
         {
-            //using (var db = new DataContext())
-            //{
-            //    var prod = (from x in db.Aktivitet
-            //                where x.Namn == aktivitet
-            //                select x).FirstOrDefault();
+            using (var db = new DataContext())
+            {
+                var akti = (from x in db.Aktivitet
+                            where x.Namn == aktivitet
+                            select x).FirstOrDefault();
 
-            //    var query = (from x in db.PersonalAktivitet
-            //                 where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Aktivitet_AktivitetID == prod.AktivitetID
-            //                 select x).FirstOrDefault();
+                var query = (from x in db.PersonalAktivitet
+                             where x.Placeringsandel == andel & x.Personal.Namn == pers & x.Aktivitet_AktivitetID == akti.AktivitetID
+                             select x).FirstOrDefault();
 
-            //    db.PersonalAktivitet.Remove(query);
+                db.PersonalAktivitet.Remove(query);
 
-            //    db.SaveChanges();
-            //}
+                db.SaveChanges();
+            }
         }
 
 
@@ -177,17 +203,40 @@ namespace DataLayer
         {
             foreach (var item in personals)
             {
-
                 //vi ska uppdatera logiken här, detta är bara tillfälligt
-                item.Vakansavdrag = 100 - item.Årsarbetare; //100% - hur mkt de jobbat = hur mycket de behöver i vakans
-                item.Andel = 0;
-                item.Diff = 0;
-                item.Totalt = 0;
+                item.Fpp = GetFördeladAndel(item.PersonalID);
+                item.Andel = 100;
+                item.Totalt = item.Årsarbetare;
+                item.Diff = item.Totalt - GetFördeladAndel(item.PersonalID);
                 item.GemAdm = 0;
-                item.Fpp = 0;
             }
             return personals;
 
+        }
+
+        public decimal GetFördeladAndel(int personal)
+        {
+            using (var db = new DataContext())
+            {
+                var total = 0;
+
+                var andelaktivitet = from x in db.PersonalAktivitet
+                            where x.Personal_PersonalID == personal
+                            select x.Placeringsandel;
+                foreach (var item in andelaktivitet)
+                {
+                    total += item;
+                }
+                var andelprodukt = from x in db.PersonalProdukt
+                                   where x.Personal_PersonalID == personal
+                                   select x.Placeringsandel;
+                foreach (var item in andelprodukt)
+                {
+                    total += item;
+                }
+
+                return (decimal)total;
+            }
         }
 
         public List<DTO.BudgetKontoDTO> GetAllKonton()

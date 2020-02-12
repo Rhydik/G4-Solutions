@@ -114,6 +114,7 @@ namespace PresentationLayer1.Forms
             lblBudget.Text = sumBudget.ToString();
             lblTim.Text = sumTim.ToString();
             dgvIntäktsbudgeteringKund.DataSource = produkts;
+            dgvIntäktsbudgeteringKund.Columns["IntäktsbudgetID"].Visible = false;
         }
 
         private void btnLäggTillProdukt_Click(object sender, EventArgs e)

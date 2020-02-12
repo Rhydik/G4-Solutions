@@ -119,6 +119,7 @@
             this.buttonVäljAvdelning.TabIndex = 92;
             this.buttonVäljAvdelning.Text = "Välj Avdelning";
             this.buttonVäljAvdelning.UseVisualStyleBackColor = true;
+            this.buttonVäljAvdelning.Click += new System.EventHandler(this.buttonVäljAvdelning_Click);
             // 
             // dgvNedre
             // 
@@ -144,9 +145,6 @@
             // cmbAvdelning
             // 
             this.cmbAvdelning.FormattingEnabled = true;
-            this.cmbAvdelning.Items.AddRange(new object[] {
-            "Driftavdelning",
-            "Försäljnings- och marknadsavdelningen"});
             this.cmbAvdelning.Location = new System.Drawing.Point(202, 53);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(121, 21);

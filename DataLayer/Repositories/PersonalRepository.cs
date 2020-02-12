@@ -95,6 +95,14 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
+                var avdelningpers = from x in db.AvdelningPersonalxRef
+                                    where x.Personal_PersonalID == personal.PersonalID
+                                    select x;
+                foreach (var item in avdelningpers)
+                {
+                    db.AvdelningPersonalxRef.Remove(item);
+                }
+
                 var personalen = db.Personal.Where(x => x.PersonalID == personal.PersonalID).FirstOrDefault();
                 db.Personal.Remove(personalen);
                 db.SaveChanges();

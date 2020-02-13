@@ -52,23 +52,18 @@ namespace PresentationLayer1.Forms
                 IsLåst = true;
             }
 
-            else { IsLåst = false; }
-
-            if (Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") && businessManager.GetUtvFörvLås())
+            else if (Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") && businessManager.GetUtvFörvLås())
             {
                 IsLåst = true;
             }
 
-            else { IsLåst = false; }
-
-
-            if (Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef") && businessManager.GetAffoLås())
+            else if (Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef") && businessManager.GetAffoLås())
             {
                 IsLåst = true;
             }
-
             else { IsLåst = false; }
         }
+
 
         private void btnLäggTill_Click(object sender, EventArgs e)
         {

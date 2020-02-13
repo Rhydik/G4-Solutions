@@ -12,7 +12,7 @@ namespace PresentationLayer1.Forms
 {
     public partial class frmPrognostiseringIntäkter : Form
     {
-
+        
 
         private BusinessManager businessManager = new BusinessManager();
         public List<LästFilPrognos> prognoser = new List<LästFilPrognos>(); //listan populeras av textfilen,används också i gridviewen
@@ -26,6 +26,12 @@ namespace PresentationLayer1.Forms
         public frmPrognostiseringIntäkter()
         {
             //prognoser = businessManager.GetAllPrognoser();
+
+            if (businessManager.GetProgLås())
+            {
+                Lås();
+            }
+
             InitializeComponent();
             LaddaRegister();
             dgvPrognostiseringIntäkter.DataSource = prognoser;

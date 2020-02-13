@@ -38,7 +38,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public List<LästFilPrognos> LaddaRegister()     /*Metod för att läsa in register*/
+        public List<LästFilPrognos> LaddaRegister()
         {
             StreamReader infil = new StreamReader("IntäktProduktKund.txt");
             List<LästFilPrognos> lästFilPrognoser = new List<LästFilPrognos>();
@@ -53,37 +53,37 @@ namespace DataLayer.Repositories
                 if (line == null) break;
                 List<string> readLine = new List<string>(invert.Split('*'));
 
-       
 
-                LästFilPrognos m = new LästFilPrognos();        /*Åtgärd efter inläsning av prognos*/
+
+                LästFilPrognos m = new LästFilPrognos();
 
                 if (readLine.Count == 6)
                 {
-                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "";
+                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "null";
                     else
                     {
                         m.ProduktID = readLine[0];
                     }
 
-                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "";
+                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "null";
                     else
                     {
                         m.Produkt = readLine[1];
                     }
 
-                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "";
+                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "null";
                     else
                     {
                         m.KundID = readLine[2];
                     }
 
-                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "";
+                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "null";
                     else
                     {
                         m.Kund = readLine[3];
                     }
 
-                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "";
+                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "null";
                     else
                     {
                         m.Datum = readLine[4];
@@ -100,7 +100,7 @@ namespace DataLayer.Repositories
 
                     m.UtfallMån = 0;
                     m.UtfallAcc = 0;
-                    m.Månad = "";
+                    m.Månad = "null";
                     m.Upparbetat = 0;
                     m.Trend = 0;
                     m.FöregPrognos = 0;
@@ -109,31 +109,31 @@ namespace DataLayer.Repositories
                 }
                 else
                 {
-                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "";
+                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "null";
                     else
                     {
                         m.ProduktID = readLine[0];
                     }
 
-                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "";
+                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "null";
                     else
                     {
                         m.Produkt = readLine[1];
                     }
 
-                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "";
+                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "null";
                     else
                     {
                         m.KundID = readLine[2];
                     }
 
-                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "";
+                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "null";
                     else
                     {
                         m.Kund = readLine[3];
                     }
 
-                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "";
+                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "null";
                     else
                     {
                         m.Datum = readLine[4];
@@ -167,7 +167,7 @@ namespace DataLayer.Repositories
                     }
 
 
-                    if (readLine[8] == "Månad" || readLine[8] == null) m.Månad = "";
+                    if (readLine[8] == "Månad" || readLine[8] == null) m.Månad = "null";
                     else
                     {
                         m.Månad = readLine[8];
@@ -219,8 +219,13 @@ namespace DataLayer.Repositories
                         m.PrognosBudget = decimal.Parse(readLine[13]);
                     }
                 }
+
                 lästFilPrognoser.Add(m);
             }
+
+
+            lästFilPrognoser.RemoveAt(0);
+
 
             infil.Close();
             return lästFilPrognoser;

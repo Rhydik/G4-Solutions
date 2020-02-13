@@ -84,7 +84,6 @@ namespace DataLayer
                                       select x;
 
                 Parallel.ForEach(personalkostnad, (item) =>
-
                 {
                     lön = item.Personal.Månadslön;
                     andel = item.Placeringsandel;
@@ -93,7 +92,15 @@ namespace DataLayer
                     totalandel += andel;
                 });
 
+                if (totalandel != 0)
+                {
+                    beräknadschablon = beräknadschablon * totalandel;
+                }
+               
                 kostnader = lönresultat + beräknadschablon;
+
+                kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
+
                 if (kostnader != 0)
                 {
                     pålägg = BeräknaTB(produkten) / kostnader;
@@ -102,6 +109,29 @@ namespace DataLayer
                 var resultat = kostnader * pålägg;
 
                 return kostnader + resultat;
+            }
+        }
+        public decimal GetDirektKostnaderProdukt(string produkten)
+        {
+            decimal noll = 0;
+            decimal resultat = 0;
+            using (var db = new DataContext())
+            {
+                var query = from x in db.DirektkostnadProdukt
+                            where x.Produkt_ProduktID == produkten
+                            select x;
+                foreach (var item in query)
+                {
+                    resultat += item.Belopp;
+                }
+                if (resultat != 0)
+                {
+                    return resultat;
+                }
+                else
+                {
+                    return noll;
+                }
             }
         }
         public decimal BeräknaTB(Produkt produkt)
@@ -135,7 +165,7 @@ namespace DataLayer
                         adminavd += item.Personal.Månadslön * ((decimal)item.Placering / 100);
                     });
                 }
-               
+
                 var querykostnadsälj= from x in db.DirektkostnadAktivitet.AsParallel()
                                       join y in db.Aktivitet.AsParallel() on x.Aktivitet_AktivitetID equals y.AktivitetID
                                   where y.Avdelning_AvdelningID == 2
@@ -174,7 +204,6 @@ namespace DataLayer
 
                 return schablonresultat;
             }
-            
         }
         public decimal BeräknaÅrsarbetare()
         {

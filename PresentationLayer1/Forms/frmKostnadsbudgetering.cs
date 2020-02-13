@@ -200,6 +200,7 @@ namespace PresentationLayer1.Forms
                 {
                     businessManager.SetAffoLås(true);
                 }
+                IsLåst = true;
                 HideAfterLock();
             }
         }

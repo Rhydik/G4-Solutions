@@ -554,7 +554,7 @@ namespace BusinessLayer
         }
         public bool GetAffoLås()
         {
-            return repositoryFacade.låsRepository.GetIntäktsLås();
+            return repositoryFacade.låsRepository.GetAffoLås();
         }
         public void SetAffoLås(bool boolean)
         {
@@ -563,7 +563,7 @@ namespace BusinessLayer
 
         public bool GetDriftLås()
         {
-            return repositoryFacade.låsRepository.GetIntäktsLås();
+            return repositoryFacade.låsRepository.GetDriftLås();
         }
         public void SetDriftLås(bool boolean)
         {
@@ -571,7 +571,7 @@ namespace BusinessLayer
         }
         public bool GetUtvFörvLås()
         {
-            return repositoryFacade.låsRepository.GetIntäktsLås();
+            return repositoryFacade.låsRepository.GetUtvFörvLås();
         }
         public void SetUtvFörvLås(bool boolean)
         {
@@ -580,7 +580,7 @@ namespace BusinessLayer
 
         public bool GetProgLås()
         {
-            return repositoryFacade.låsRepository.GetIntäktsLås();
+            return repositoryFacade.låsRepository.GetProgLås();
         }
         public void SetProgLås(bool boolean)
         {

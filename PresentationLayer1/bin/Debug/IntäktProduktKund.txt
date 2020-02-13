@@ -1,9 +1,13 @@
-SERVSH	Serverhotell	N113	SDN Askim	20170215	999	44	100	mars	50	6,25	0	0	21500
-TFUKSH	TFU-kommun	K950	�rebro kommun	20170218	9999	0	14	0	1500	63,08	0	0	10500
-DAGRE�	Dagrapport	K704	Bor�s Kommum	20170310	56300	0	0	0	0	0	0	0	56300
-SERVSH	Serverhotell	N113	SDN Askim	20170415	21500	0	0	0	0	0	0	0	21500
-SERVSH	Serverhotell	N106	SDN �rgryte	20170415	28500	0	0	0	0	0	0	0	28500
-PCPLAS	PC-plattformen	K950	�rebro kommun	20170518	0	0	0	0	0	0	0	0	14500
-PJDBWE	Projektdatabas	K704	Bor�s Kommum	20170710	2	0	0	0	0	0	0	0	85750
-TFUKSH	TFU-kommun	K950	�rebro kommun	20170818	0	0	0	0	0	0	0	0	32500
-NYPRSH	Ny prod	K704	Bor�s Kommun	20171025	15000	0	0	0	0	0	0	0	15000
+ProduktID	Produkt				KundID	Kund				Datum		Belopp
+SERVSH		Serverhotell			N113	SDN Askim			20190115	-23500
+PCPLAS		PC-plattformen			B540	Skandiahamnen AB		20190118	-12500
+DAGREÖ		Dagrapport			K740	Borås Kommum			20190210	-57300
+SERVSH		Serverhotell			N113	SDN Askim			20190215	-23500
+SERVSH		Serverhotell			N106	SDN Örgryte			20190215	-23500
+PCPLAS		PC-plattformen			B540	Skandiahamnen AB		20190218	-12500
+PJDBWE		Projektdatabas			K740	Borås Kommum			20190210	-83750
+PCPLAS		PC-plattformen			B540	Skandiahamnen AB		20190318	-22500
+TEKOTK		Teknisk konsulting		X539	Högskolan i Borås		20190425	-45000
+NYPRSH		Ny produkt			K740	Borås Kommun			20190425	-10000
+TFUKSH		TFU-kommun			K950	Örebro Kommun			20191025	-15000
+VFUKSH		VFU-kommun			K975	Lysekil Kommun			20191025	-10000

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DataLayer.Repositories
@@ -45,30 +46,184 @@ namespace DataLayer.Repositories
             {
                 string line = infil.ReadLine();
 
+                string myString = string.Join("\t", line);
+                string result = Regex.Replace(myString, @"\t{2,}", @"*");
+                string invert = Regex.Replace(result, @"\t", @"*");
+
                 if (line == null) break;
-                List<string> LästRad = new List<string>(line.Split('\t'));
+                List<string> readLine = new List<string>(invert.Split('*'));
+
+       
+
                 LästFilPrognos m = new LästFilPrognos();
 
-                m.ProduktID = LästRad[0];
-                m.Produkt = LästRad[1];
-                m.KundID = LästRad[2];
-                m.Kund = LästRad[3];
-                m.Datum = LästRad[4];
-                m.Budget = decimal.Parse(LästRad[5]);
-                m.UtfallMån = decimal.Parse(LästRad[6]);
-                m.UtfallAcc = decimal.Parse(LästRad[7]);
-                m.Månad = LästRad[8];
-                m.Upparbetat = decimal.Parse(LästRad[9]);
-                m.Trend = decimal.Parse(LästRad[10]);
-                m.FöregPrognos = decimal.Parse(LästRad[11]);
-                m.Prognos = decimal.Parse(LästRad[12]);
-                m.PrognosBudget = decimal.Parse(LästRad[13]);
+                if (readLine.Count == 6)
+                {
+                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "";
+                    else
+                    {
+                        m.ProduktID = readLine[0];
+                    }
 
+                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "";
+                    else
+                    {
+                        m.Produkt = readLine[1];
+                    }
+
+                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "";
+                    else
+                    {
+                        m.KundID = readLine[2];
+                    }
+
+                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "";
+                    else
+                    {
+                        m.Kund = readLine[3];
+                    }
+
+                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "";
+                    else
+                    {
+                        m.Datum = readLine[4];
+                    }
+
+                    if (!decimal.TryParse(readLine[5], out decimal belopp))
+                    {
+                        m.Budget = belopp;
+                    }
+                    else
+                    {
+                        m.Budget = decimal.Parse(readLine[5]);
+                    }
+
+                    m.UtfallMån = 0;
+                    m.UtfallAcc = 0;
+                    m.Månad = "";
+                    m.Upparbetat = 0;
+                    m.Trend = 0;
+                    m.FöregPrognos = 0;
+                    m.Prognos = 0;
+
+                }
+                else
+                {
+                    if (readLine[0] == "ProduktID" || readLine[0] == null) readLine[0] = "";
+                    else
+                    {
+                        m.ProduktID = readLine[0];
+                    }
+
+                    if (readLine[1] == "Produkt" || readLine[1] == null) m.Produkt = "";
+                    else
+                    {
+                        m.Produkt = readLine[1];
+                    }
+
+                    if (readLine[2] == "KundID" || readLine[2] == null) m.KundID = "";
+                    else
+                    {
+                        m.KundID = readLine[2];
+                    }
+
+                    if (readLine[3] == "Kund" || readLine[3] == null) m.Kund = "";
+                    else
+                    {
+                        m.Kund = readLine[3];
+                    }
+
+                    if (readLine[4] == "Datum" || readLine[4] == null) m.Datum = "";
+                    else
+                    {
+                        m.Datum = readLine[4];
+                    }
+
+                    if (!decimal.TryParse(readLine[5], out decimal belopp))
+                    {
+                        m.Budget = belopp;
+                    }
+                    else
+                    {
+                        m.Budget = decimal.Parse(readLine[5]);
+                    }
+
+                    if (!decimal.TryParse(readLine[6], out decimal utfallMån))
+                    {
+                        m.UtfallMån = utfallMån;
+                    }
+                    else
+                    {
+                        m.UtfallMån = decimal.Parse(readLine[6]);
+                    }
+
+                    if (!decimal.TryParse(readLine[7], out decimal utfallAcc))
+                    {
+                        m.UtfallAcc = utfallAcc;
+                    }
+                    else
+                    {
+                        m.UtfallAcc = decimal.Parse(readLine[7]);
+                    }
+
+
+                    if (readLine[8] == "Månad" || readLine[8] == null) m.Månad = "";
+                    else
+                    {
+                        m.Månad = readLine[8];
+                    }
+
+
+                    if (!decimal.TryParse(readLine[9], out decimal upparbetat))
+                    {
+                        m.Upparbetat = upparbetat;
+                    }
+                    else
+                    {
+                        m.Upparbetat = decimal.Parse(readLine[9]);
+                    }
+
+                    if (!decimal.TryParse(readLine[10], out decimal trend))
+                    {
+                        m.Trend = trend;
+                    }
+                    else
+                    {
+                        m.Trend = decimal.Parse(readLine[10]);
+                    }
+
+                    if (!decimal.TryParse(readLine[11], out decimal föregPrognos))
+                    {
+                        m.FöregPrognos = föregPrognos;
+                    }
+                    else
+                    {
+                        m.FöregPrognos = decimal.Parse(readLine[11]);
+                    }
+
+                    if (!decimal.TryParse(readLine[12], out decimal prognos))
+                    {
+                        m.Prognos = prognos;
+                    }
+                    else
+                    {
+                        m.Prognos = decimal.Parse(readLine[12]);
+                    }
+
+                    if (!decimal.TryParse(readLine[13], out decimal prognosBudget))
+                    {
+                        m.PrognosBudget = prognosBudget;
+                    }
+                    else
+                    {
+                        m.PrognosBudget = decimal.Parse(readLine[13]);
+                    }
+                }
                 lästFilPrognoser.Add(m);
             }
 
             infil.Close();
-            return lästFilPrognoser; 
+            return lästFilPrognoser;
         }
 
         public LästFilPrognos RäknaUtBudgetPrognos(List<LästFilPrognos> prognoser)

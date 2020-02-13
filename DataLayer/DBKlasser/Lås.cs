@@ -15,5 +15,6 @@ namespace DataLayer
         public bool AffoAvdelning { get; set; }
         public bool DriftAvdelning { get; set; }
         public bool UtvFörvAvdelning { get; set; }
+        public bool Kostnadsbudget { get; set; }
     }
 }

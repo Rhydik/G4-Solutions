@@ -128,7 +128,7 @@ namespace DataLayer
                               where x.AvdelningID == produkt.Avdelning_AvdelningID
                               select x.Namn).FirstOrDefault());
                     info.Add(produkt.ProduktID);
-                    info.Add(produkt.Namn);
+                    info.Add(produkt.Namn.TrimEnd());
                     info.Add(kund.KundID);
                     info.Add(kund.Namn);
                     info.Add("-" + item.Budget.ToString());

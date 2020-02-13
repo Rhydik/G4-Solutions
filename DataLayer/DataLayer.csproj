@@ -122,6 +122,10 @@
     <Compile Include="Migrations\202002111656591_konto.designer.cs">
       <DependentUpon>202002111656591_konto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002131417016_lås.cs" />
+    <Compile Include="Migrations\202002131417016_lås.designer.cs">
+      <DependentUpon>202002131417016_lås.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DBKlasser\Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -213,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111656591_konto.resx">
       <DependentUpon>202002111656591_konto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002131417016_lås.resx">
+      <DependentUpon>202002131417016_lås.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

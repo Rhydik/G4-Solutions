@@ -94,8 +94,10 @@ namespace DataLayer
                 });
 
                 kostnader = lönresultat + beräknadschablon;
-
-                pålägg = BeräknaTB(produkten) / kostnader;
+                if (kostnader != 0)
+                {
+                    pålägg = BeräknaTB(produkten) / kostnader;
+                }
 
                 var resultat = kostnader * pålägg;
 

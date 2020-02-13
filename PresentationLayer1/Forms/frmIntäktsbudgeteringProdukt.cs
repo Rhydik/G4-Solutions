@@ -129,16 +129,7 @@ namespace PresentationLayer1.Forms
 
         private void btnExportera_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-
-            string filename = save.FileName; 
-
-            save.DefaultExt = ".xls";
-            if (save.ShowDialog() == DialogResult.OK)
-            {
-                businessManager.Exportera(dgvIntäktsbudgeteringProdukt, save.FileName);
-                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
-            }
+            businessManager.ExportToFile();
         }
         private decimal GetSum(List<IntäktsbudgetProduktDTO> produkts, string sak)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,6 +104,40 @@ namespace DataLayer
             }
         }
 
+        public void ExportTillFil()
+        {
+            List<List<string>> intäktsbudget = new List<List<string>>();
+            using (var db = new DataContext())
+            {
+                var query = from x in db.Intäktsbudget
+                            select x;
+                foreach (var item in query)
+                {
+                    List<string> info = new List<string>();
+                    info.Add("3010");
+                    Produkt produkt = (from x in db.Produkt
+                                       join y in db.ProduktIntäktsbudget on x.ProduktID equals y.Produkt_ProduktID
+                                       where y.Intäktsbudget_IntäktsbudgetID == item.IntäktsbudgetID
+                                       select x).FirstOrDefault();
+                    Kund kund = (from x in db.Kund
+                                 join y in db.KundIntäktsbudget on x.KundID equals y.Kund_KundID
+                                 where y.Intäktsbudget_IntäktsbudgetID == item.IntäktsbudgetID
+                                 select x).FirstOrDefault();
+
+                    info.Add((from x in db.Avdelning
+                              where x.AvdelningID == produkt.Avdelning_AvdelningID
+                              select x.Namn).FirstOrDefault());
+                    info.Add(produkt.ProduktID);
+                    info.Add(produkt.Namn);
+                    info.Add(kund.KundID);
+                    info.Add(kund.Namn);
+                    info.Add("-" + item.Budget.ToString());
+                    intäktsbudget.Add(info);
+                }
+                ExportTillTxtfil(intäktsbudget);
+            }
+        }
+
         public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
         {
             using (var db = new DataContext())
@@ -200,6 +235,34 @@ namespace DataLayer
 
                 return difference.ToList();
             }
+        }
+        public void ExportTillTxtfil(List<List<string>> lista)
+        {
+            string message = "";
+            string rootFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+            string textfil = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BudgetProduktKund.txt");
+
+            if (!File.Exists(textfil))
+            {
+                var file = File.Create(textfil);
+                file.Close();
+            }
+
+            StreamWriter writer = new StreamWriter(textfil);
+            if (writer != null)
+            {
+                writer.WriteLine("Konto;Ansvar;ProduktID;Produkt;KundID;Kund;Belopp;");
+
+                foreach (var item in lista)
+                {
+                    foreach (var data in item)
+                    {
+                        writer.Write(data + ";");
+                    }
+                    writer.Write("\n");
+                }
+            }
+            writer.Close();
         }
     }
 }

@@ -124,6 +124,11 @@ namespace BusinessLayer
            return repositoryFacade.kostnadsbudgetRepository.GetProduktByProduktGrupp(produktgruppDTO);
         }
 
+        public void ExportToFile()
+        {
+            repositoryFacade.intäktsRepository.ExportTillFil();
+        }
+
         public List<SchablonDTO> GetAllSchablon()
         {
             return repositoryFacade.schablonRepository.GetAllSchablon();

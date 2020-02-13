@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class ProduktRepository
     {
-        public List<ProduktDTO> GetAllProdukter()
+        public List<ProduktDTO> GetAllProdukter() //Metod som hämtar alla produkter.
         {
             using (var db = new DataContext())
             {
@@ -21,7 +21,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProdukt(string produktID, string namn, string kategori, string grupp, string avdelning)
+        public void AddProdukt(string produktID, string namn, string kategori, string grupp, string avdelning) //Metoden som lägger till en ny produkt.
         {
             using (var db = new DataContext())
             {
@@ -45,7 +45,7 @@ namespace DataLayer
 
 
         //Uppdatera produkt
-        public void UpdateProdukt(ProduktDTO oldProdukt, string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        public void UpdateProdukt(ProduktDTO oldProdukt, string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning) //Metoden som ändrar en befintlig produkt.
         {
             using (var db = new DataContext())
             {
@@ -74,7 +74,7 @@ namespace DataLayer
             }
         }
 
-        public bool CheckAvdelning(string avdelning)
+        public bool CheckAvdelning(string avdelning)        //Med som kollar vilken avdelning produkten står under.
         {
             using (var db = new DataContext())
             {
@@ -92,7 +92,7 @@ namespace DataLayer
             }
         }
 
-        public void CreateAvdelning(string avdelning)
+        public void CreateAvdelning(string avdelning)       //Metod för att skapa avdelning.
         {
             using (var db = new DataContext())
             {
@@ -102,7 +102,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveProdukt(ProduktDTO produkt)
+        public void RemoveProdukt(ProduktDTO produkt)           //Metod för att ta bort produkt
         {
             using (var db = new DataContext())
             {
@@ -116,7 +116,7 @@ namespace DataLayer
 
         //Produktkategori
 
-        public List<ProduktKategoriDTO> GetProduktByKategori()
+        public List<ProduktKategoriDTO> GetProduktByKategori()          //Metod för att hämta produkt efter kategori.
         {
             using (var db = new DataContext())
             {
@@ -130,7 +130,7 @@ namespace DataLayer
 
         //Produktgrupp
 
-        public List<ProduktgruppDTO> GetProduktByGrupp()
+        public List<ProduktgruppDTO> GetProduktByGrupp()        //Metod för att hämta produkt efter produktgrupp.
         {
             using (var db = new DataContext())
             {
@@ -143,7 +143,7 @@ namespace DataLayer
         }
 
         //Avdelning
-        public List<AvdelningDTO> GetProduktByAvdelning()
+        public List<AvdelningDTO> GetProduktByAvdelning()           //Metod för att hämta produkt efter avdelning
         {
             using (var db = new DataContext())
             {
@@ -154,7 +154,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProduktGrupp(string namn)
+        public void AddProduktGrupp(string namn)            //Metod för att lägga till produktgrupp.
         {
             using (var db = new DataContext())
             {               
@@ -164,7 +164,7 @@ namespace DataLayer
             }
         }
         
-        public void AddProduktKategori(string namn)
+        public void AddProduktKategori(string namn)         //Metod för att lägga till Produktkategori
         {
             using (var db = new DataContext())
             {
@@ -174,7 +174,7 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktDTO> GetProdukterBySearch(string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning)
+        public List<ProduktDTO> GetProdukterBySearch(string produktID, string namn, string produktKategori, string produktGrupp, string produktAvdelning) //Metod för sökfunktionen inom produkter
         {
             using (var db = new DataContext())
             {
@@ -200,7 +200,7 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktDTO> GetProduktByNamn(string produktnamn)
+        public List<ProduktDTO> GetProduktByNamn(string produktnamn)            //Metod för att hämta produkter efter namn.
         {
             using (var db = new DataContext())
             {

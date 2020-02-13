@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class BehörighetRepository
     {
-        public List<BehörighetDTO> GetAllBehörighet()
+        public List<BehörighetDTO> GetAllBehörighet() //Hämtar samtliga behörigheter
         {
             using (var db = new DataContext())
             {
@@ -19,7 +19,7 @@ namespace DataLayer
             }
         }
 
-        public List<BehörighetDTO> GetBehörighetByPersnr(string persnr)
+        public List<BehörighetDTO> GetBehörighetByPersnr(string persnr) //Hämtar behörigheter efter vald personnummer
         {
             using (var db = new DataContext())
             {
@@ -31,7 +31,7 @@ namespace DataLayer
             }
         }
 
-        public List<VisaBehörighetDTO> GetBehörighet(string persnr)
+        public List<VisaBehörighetDTO> GetBehörighet(string persnr) 
         {
             using (var db = new DataContext())
             {
@@ -43,7 +43,7 @@ namespace DataLayer
             }
         }
 
-        public List<BehörighetDTO> GetBehörighetByNamn(string namn)
+        public List<BehörighetDTO> GetBehörighetByNamn(string namn) //Hämtar behörighet efer vald namn
         {
             using (var db = new DataContext())
             {
@@ -55,7 +55,7 @@ namespace DataLayer
             }
         }
 
-        public void Addbehörighet(string tempBehör, string tempPersnr)
+        public void Addbehörighet(string tempBehör, string tempPersnr) //Lägger till ny behörighet
         {
             using (var db = new DataContext())
             {
@@ -66,7 +66,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveBehörighet(string tempBehör, string tempPersnr)
+        public void RemoveBehörighet(string tempBehör, string tempPersnr) //Raderar behörighet
         {
             using (var db = new DataContext())
             {

@@ -8,7 +8,7 @@ namespace DataLayer
 {
     public class SchablonRepository
     {
-        public List<SchablonDTO> GetAllSchablon()
+        public List<SchablonDTO> GetAllSchablon() //Hämtar samtliga konton
         {
             using (var db = new DataContext())
             {
@@ -19,7 +19,7 @@ namespace DataLayer
             }
         }
 
-        public List<SchablonDTO> GetSchablonById(int id)
+        public List<SchablonDTO> GetSchablonById(int id) //Hämtar konto efter vald konto-ID
         {
             using (var db = new DataContext())
             {
@@ -31,7 +31,7 @@ namespace DataLayer
             }
         }
 
-        public List<SchablonDTO> GetSchablonByBenämning(string benämning)
+        public List<SchablonDTO> GetSchablonByBenämning(string benämning) //Hämtar konto efter vald kontobenämning
         {
             using (var db = new DataContext())
             {
@@ -43,7 +43,7 @@ namespace DataLayer
             }
         }
 
-        public void AddSchablon(string kostnad, SchablonDTO schablon)
+        public void AddSchablon(string kostnad, SchablonDTO schablon) //Lägg till ny schablonkostnad efter vald konto
         {
             using (var db = new DataContext())
             {
@@ -70,7 +70,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveKonto(SchablonDTO schablon)
+        public void RemoveKonto(SchablonDTO schablon) //Radera vald konto
         {
             using (var db = new DataContext())
             {
@@ -87,7 +87,7 @@ namespace DataLayer
             }
         }
 
-        public void UpdateKonto(SchablonDTO oldSchablon, int kontot, string benämning )
+        public void UpdateKonto(SchablonDTO oldSchablon, int kontot, string benämning ) //Uppdaterar kontodatabasen
         {
             using (var db = new DataContext())
             {
@@ -111,7 +111,7 @@ namespace DataLayer
             }
         }
 
-        public void CreateKonto (int kontot, string benämning)
+        public void CreateKonto (int kontot, string benämning) //Lägg till ny konto
         {
             using (var db = new DataContext())
             {
@@ -130,7 +130,7 @@ namespace DataLayer
             }
         }
 
-        public void CreateAvkastning(int avkastning)
+        public void CreateAvkastning(int avkastning) 
         {
             using (var db = new DataContext())
             {

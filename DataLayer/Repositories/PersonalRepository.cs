@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class PersonalRepository
     {
-        public Personal Login(string användarnamn, string lösenord)     //Metoden för inloggning till hela systemet/programmet.
+        public Personal Login(string användarnamn, string lösenord)     //Metoden för inloggning till hela systemet/programmet. 
         {
             using (var db = new DataContext())
             {

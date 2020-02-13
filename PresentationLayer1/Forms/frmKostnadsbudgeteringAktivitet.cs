@@ -19,10 +19,16 @@ namespace PresentationLayer1.Forms
         private List<AktivitetDTO> aktivitets;
         private List<KonstnadsbudgetPersonalDTO> personals;
         private List<AvdelningDTO> avdelnings;
+
+        public bool IsLåst { get; private set; }
+
         public frmKostnadsbudgeteringAktivitet()
         {
             InitializeComponent();
             Load();
+            HideFromUser();
+            CheckLås();
+            HideAfterLock();
         }
 
         public void Load()
@@ -41,6 +47,30 @@ namespace PresentationLayer1.Forms
             {
                 cmbAvdelning.Items.Add(item.Namn);
             }
+        }
+        private void CheckLås()
+        {
+            if(Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef") && businessManager.GetDriftLås())
+            {
+                IsLåst = true;
+            }
+
+            else { IsLåst = false; }
+
+            if (Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") && businessManager.GetUtvFörvLås())
+            {
+                IsLåst = true;
+            }
+
+            else { IsLåst = false; }
+
+
+            if ( Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef") && businessManager.GetAffoLås())
+            {
+                IsLåst = true;
+            }
+
+            else { IsLåst = false; }
         }
 
         private void btnLäggTill_Click(object sender, EventArgs e)
@@ -85,6 +115,53 @@ namespace PresentationLayer1.Forms
             personals = businessManager.GetKostnadsbudgetPersonal();
             businessManager.Kalkylering(personals);
             dgvÖvre.DataSource = personals;
+        }
+        private void HideFromUser()
+        {
+            if (Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef") || Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") || Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef"))
+            {
+
+                btnLåsBudget.Show();
+
+            }
+            else
+            {
+                btnLåsBudget.Hide();
+            }
+        }
+        private void btnLåsBudget_Click(object sender, EventArgs e)
+        {
+
+            if (IsLåst)
+            {
+                MessageBox.Show("Budget är redan låst");
+            }
+
+            else if (MessageBox.Show("Är du säker på att du vill låsa budgeten?", "Lås budget", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef"))
+                {
+                    businessManager.SetDriftLås(true);
+                }
+                else if (Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef"))
+                {
+                    businessManager.SetUtvFörvLås(true);
+                }
+                else if (Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef"))
+                {
+                    businessManager.SetAffoLås(true);
+                }
+                HideAfterLock();
+            }
+        }
+        private void HideAfterLock()
+        {
+            if (IsLåst)
+            {
+                btnLäggTill.Hide();
+                btnLåsBudget.Hide();
+                btnTaBort.Hide();
+            }
         }
     }
 }

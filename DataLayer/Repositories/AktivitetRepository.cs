@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class AktivitetRepository
     {
-        public List<AktivitetDTO> GetAllAktiviteter()
+        public List<AktivitetDTO> GetAllAktiviteter() //Hämtar samtliga aktiviteter
         {
             using (var db = new DataContext())
             {
@@ -19,7 +19,7 @@ namespace DataLayer
             }
         }
 
-        public List<AktivitetDTO> GetAktivitetById(string aktivitetId)
+        public List<AktivitetDTO> GetAktivitetById(string aktivitetId)  //Hämtar aktiviteter efter vald aktivtiets-ID
         {
             using (var db = new DataContext())
             {
@@ -31,7 +31,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveAktivitet(AktivitetDTO aktivitet)
+        public void RemoveAktivitet(AktivitetDTO aktivitet)  //Raderar aktivitet
         {
             using (var db = new DataContext())
             {
@@ -41,7 +41,7 @@ namespace DataLayer
             }
         }
 
-        public List<AktivitetDTO> GetAktivitetByNamn(string aktivitetNamn)
+        public List<AktivitetDTO> GetAktivitetByNamn(string aktivitetNamn) //Hämtar aktiviteter efter vald aktivitetsnamn
         {
             using (var db = new DataContext())
             {
@@ -53,7 +53,7 @@ namespace DataLayer
             }
         }
 
-        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
+        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning) //Uppdaterar aktivitetsdatabasen
         {
             using (var db = new DataContext())
             {
@@ -72,7 +72,7 @@ namespace DataLayer
             }
         }
 
-        public void AddAktivitet(string aktvitetsId, string namn, string avdelning)
+        public void AddAktivitet(string aktvitetsId, string namn, string avdelning) //Lägger till ny aktivitet
         {
             using (var db = new DataContext())
             {
@@ -86,7 +86,7 @@ namespace DataLayer
             }
         }
 
-        public List<AktivitetDTO> GetAktivitetByAvdelning(string avdelning)
+        public List<AktivitetDTO> GetAktivitetByAvdelning(string avdelning) //Hämtar aktiviteter efter vald aktivitetsavdelning
         {
             using (var db = new DataContext())
             {
@@ -98,7 +98,7 @@ namespace DataLayer
             }
         }
 
-        public void AddAvdelning(string namn)
+        public void AddAvdelning(string namn) //Lägger till ny avdelning
         {
             using (var db = new DataContext())
             {
@@ -112,7 +112,7 @@ namespace DataLayer
             }
         }
 
-        public List<AvdelningDTO> GetAllAvdelningar()
+        public List<AvdelningDTO> GetAllAvdelningar() //Hämtar samtliga avldelningar
         {
             using (var db = new DataContext())
             {

@@ -182,6 +182,7 @@
             this.btnLåsBudget.TabIndex = 87;
             this.btnLåsBudget.Text = "Lås Budget";
             this.btnLåsBudget.UseVisualStyleBackColor = true;
+            this.btnLåsBudget.Click += new System.EventHandler(this.btnLåsBudget_Click);
             // 
             // ucMeny1
             // 

@@ -54,7 +54,7 @@ namespace PresentationLayer1.Forms
 
         public void LaddaRegister()    //laddar in data från textfil
         {
-            prognoser = businessManager.LaddaRegister();
+            prognoser = businessManager.LaddaRegister(); 
             dgvPrognostiseringIntäkter.DataSource = prognoser;
         }
 

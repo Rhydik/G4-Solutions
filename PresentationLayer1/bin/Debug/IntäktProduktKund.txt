@@ -1,13 +1,13 @@
 ProduktID	Produkt	KundID	Kund	Datum	0	0	0	Månad	0	0	0	0	0
-SERVSH	Serverhotell	N113	SDN Askim	20190115	-23500	0	0	Månad	0	0	0	0	0
-PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190118	-12500	0	0	Månad	0	0	0	0	0
-DAGREÖ	Dagrapport	K740	Borås Kommum	20190210	-57300	0	0	Månad	0	0	0	0	0
-SERVSH	Serverhotell	N113	SDN Askim	20190215	-23500	0	0	Månad	0	0	0	0	0
-SERVSH	Serverhotell	N106	SDN Örgryte	20190215	-23500	0	0	Månad	0	0	0	0	0
-PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190218	-12500	0	0	Månad	0	0	0	0	0
-PJDBWE	Projektdatabas	K740	Borås Kommum	20190210	-83750	0	0	Månad	0	0	0	0	0
-PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190318	-22500	0	0	Månad	0	0	0	0	0
-TEKOTK	Teknisk konsulting	X539	Högskolan i Borås	20190425	-45000	0	0	Månad	0	0	0	0	0
-NYPRSH	Ny produkt	K740	Borås Kommun	20190425	-10000	0	0	Månad	0	0	0	0	0
-TFUKSH	TFU-kommun	K950	Örebro Kommun	20191025	-15000	0	0	Månad	0	0	0	0	0
-VFUKSH	VFU-kommun	K975	Lysekil Kommun	20191025	-10000	0	0	Månad	0	0	0	0	0
+SERVSH	Serverhotell	N113	SDN Askim	20190115	-23500	0	0	januari	0	0	0	0	0
+PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190118	-12500	0	0	januari	0	0	0	0	0
+DAGREÖ	Dagrapport	K740	Borås Kommum	20190210	-57300	0	0	februari	0	0	0	0	0
+SERVSH	Serverhotell	N113	SDN Askim	20190215	-23500	0	0	februari	0	0	0	0	0
+SERVSH	Serverhotell	N106	SDN Örgryte	20190215	-23500	0	0	februari	0	0	0	0	0
+PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190218	-12500	0	0	februari	0	0	0	0	0
+PJDBWE	Projektdatabas	K740	Borås Kommum	20190210	-83750	0	0	februari	0	0	0	0	0
+PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190318	-22500	0	0	mars	0	0	0	0	0
+TEKOTK	Teknisk konsulting	X539	Högskolan i Borås	20190425	-45000	0	0	april	0	0	0	0	0
+NYPRSH	Ny produkt	K740	Borås Kommun	20190425	-10000	0	0	april	0	0	0	0	0
+TFUKSH	TFU-kommun	K950	Örebro Kommun	20191025	-15000	0	0	oktober	0	0	0	0	0
+VFUKSH	VFU-kommun	K975	Lysekil Kommun	20191025	-10000	0	0	oktober	0	0	0	0	0

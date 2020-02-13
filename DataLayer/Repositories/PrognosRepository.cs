@@ -122,7 +122,7 @@ namespace DataLayer.Repositories
 
                     m.UtfallMån = 0;
                     m.UtfallAcc = 0;
-                    m.Månad = "Månad";
+                    m.Månad = DetermineMånad(m.Datum);
                     m.Upparbetat = 0;
                     m.Trend = 0;
                     m.FöregPrognos = 0;
@@ -192,7 +192,7 @@ namespace DataLayer.Repositories
                     if (readLine[8] == null) m.Månad = "null";
                     else
                     {
-                        m.Månad = readLine[8];
+                        m.Månad = DetermineMånad(m.Datum);
                     }
 
 
@@ -253,6 +253,32 @@ namespace DataLayer.Repositories
             return lästFilPrognoser;
         }
 
+        private string DetermineMånad(string datum)
+        {
+            if (datum.Equals("Datum"))
+            {
+                return null;
+            }
+            var key = datum.Substring(4, 2);
+
+            Dictionary<string, string> datummånad = new Dictionary<string, string>()
+            {
+                { "01", "januari" },
+                { "02", "februari" },
+                { "03", "mars" },
+                { "04", "april" },
+                { "05", "maj" },
+                { "06", "juni" },
+                { "07", "juli" },
+                { "08", "augusti" },
+                { "09", "september" },
+                { "10", "oktober" },
+                { "11", "november" },
+                { "12", "december" }
+            };
+
+            return datummånad[key];
+        }
         public LästFilPrognos RäknaUtBudgetPrognos(List<LästFilPrognos> prognoser)      /*Budgeträkning Prognostisering*/
         {
             LästFilPrognos totalPrognos = new LästFilPrognos();

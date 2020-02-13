@@ -10,7 +10,7 @@ namespace DataLayer
 {
     public class IntäktsRepository
     {
-        public List<IntäktsbudgetKundDTO> GetAllKundProdukter(string kundId)
+        public List<IntäktsbudgetKundDTO> GetAllKundProdukter(string kundId) //Sätter ihop Kundlistan med Produktlistan
         {
             using (var db = new DataContext())
             {
@@ -34,7 +34,7 @@ namespace DataLayer
             }
         }
 
-        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId)
+        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId) //Lägg till ny produkt hos vald kund
         {
             using (var db = new DataContext())
             {
@@ -80,7 +80,7 @@ namespace DataLayer
             }
         }
 
-        public List<IntäktsbudgetProduktDTO> GetAllProduktKunder(string produktId)
+        public List<IntäktsbudgetProduktDTO> GetAllProduktKunder(string produktId) //Slår ihop produktlistan med kundlistan
         {
             using (var db = new DataContext())
             {
@@ -104,7 +104,7 @@ namespace DataLayer
             }
         }
 
-        public void ExportTillFil()
+        public void ExportTillFil() //Exporterar produktlistan och kundlistan till en excelfil
         {
             List<List<string>> intäktsbudget = new List<List<string>>();
             using (var db = new DataContext())
@@ -138,7 +138,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
+        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID) //Lägg till kund hos vald produkt
         {
             using (var db = new DataContext())
             {
@@ -164,7 +164,7 @@ namespace DataLayer
 
         }
 
-        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten, string kundId)
+        public void RemoveKundProdukt(IntäktsbudgetKundDTO produkten, string kundId) //Raderar produkt hos vald kund
         {
             using (var db = new DataContext())
             {
@@ -187,7 +187,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveProduktKund(IntäktsbudgetProduktDTO kunden, string produktID)
+        public void RemoveProduktKund(IntäktsbudgetProduktDTO kunden, string produktID) //Raderar kund hos vald produkt
         {
             using (var db = new DataContext())
             {
@@ -210,7 +210,7 @@ namespace DataLayer
             }
         }
 
-        public List<KundIntäktsbudget> GetAllKundID(string kundid)
+        public List<KundIntäktsbudget> GetAllKundID(string kundid) //Hämtar intäktsbudget efter vald Kund-ID
         {
             using (var db = new DataContext())
             {
@@ -219,7 +219,7 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktDTO> GetProduktWithoutIntäkt()
+        public List<ProduktDTO> GetProduktWithoutIntäkt() //Hämtar produktlista
         {
             using (var db = new DataContext())
             {
@@ -236,7 +236,7 @@ namespace DataLayer
                 return difference.ToList();
             }
         }
-        public void ExportTillTxtfil(List<List<string>> lista)
+        public void ExportTillTxtfil(List<List<string>> lista) //Exporterar vald lista till till txtfil.
         {
             string rootFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
             string textfil = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BudgetProduktKund.txt");

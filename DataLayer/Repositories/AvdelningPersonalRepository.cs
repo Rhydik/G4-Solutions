@@ -8,7 +8,7 @@ namespace DataLayer.Repositories
 {
     public class AvdelningPersonalRepository
     {
-        public void SetAvdelningPersonal(string avdelningnamn, string personNr, int placering)
+        public void SetAvdelningPersonal(string avdelningnamn, string personNr, int placering) //Sätter ihop personallistan med avdelningslistan.
         {
             using (var db = new DataContext()) 
             {

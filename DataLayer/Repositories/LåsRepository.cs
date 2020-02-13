@@ -9,7 +9,7 @@ namespace DataLayer.Repositories
 {
     public class LåsRepository
     {
-        public bool GetIntäktsLås()
+        public bool GetIntäktsLås() //Metod för att låsa intäkter
         {
 
             using (var db = new DataContext())
@@ -23,7 +23,7 @@ namespace DataLayer.Repositories
 
         }
 
-        public void SetIntäktsLås(bool boolean)
+        public void SetIntäktsLås(bool boolean) //Metod för att låsa intäkter
         {
             using (var db = new DataContext())
             {
@@ -32,7 +32,7 @@ namespace DataLayer.Repositories
                 db.SaveChanges();
             }
         }
-        public bool GetKostnadsLås(int id)
+        public bool GetKostnadsLås(int id) //Metod för att låsa kostnader
         {
             using (var db = new DataContext())
             {
@@ -43,7 +43,7 @@ namespace DataLayer.Repositories
                 return query.FirstOrDefault();
             }
         }
-        public void SetKostnadsLås(bool boolean)
+        public void SetKostnadsLås(bool boolean) //Metod för att låsa kostnader
         {
             using (var db = new DataContext())
             {

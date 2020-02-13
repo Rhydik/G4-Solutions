@@ -10,7 +10,7 @@ namespace DataLayer
     public class KundRepository
     {
 
-        public List<KundDTO> GetKunderByID(string id) 
+        public List<KundDTO> GetKunderByID(string id)  //Hämtar kund efter vald kund-ID
         { 
             using (var db = new DataContext())
             {
@@ -21,7 +21,7 @@ namespace DataLayer
                 return query.ToList();
             }
         }
-        public List<KundDTO> GetKunderByNamn(string namn)
+        public List<KundDTO> GetKunderByNamn(string namn) //Hämtar kund efter vald kundnamn
         {
             using (var db = new DataContext())
             {
@@ -33,7 +33,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveKund(string kundId)
+        public void RemoveKund(string kundId) //Raderar vald kund
         {
             using (var db = new DataContext())
             {
@@ -43,7 +43,7 @@ namespace DataLayer
             }
         }
 
-        public List<KundDTO> GetKunderByKategori(string kategori)
+        public List<KundDTO> GetKunderByKategori(string kategori) //Hämtar kund efter vald kategori
         {
             using (var db = new DataContext())
             {
@@ -54,7 +54,7 @@ namespace DataLayer
                 return query.ToList();
             }
         }
-        public List<KundDTO> GetKunderBySearch(string id, string namn, string kategori)
+        public List<KundDTO> GetKunderBySearch(string id, string namn, string kategori) //Hämtar kund efter sökfält
         {
             using (var db = new DataContext())
             {
@@ -74,7 +74,7 @@ namespace DataLayer
                 return query.ToList();
             }
         }
-        public List<KundDTO> GetAllKunder()
+        public List<KundDTO> GetAllKunder() //Hämtar kundlista
         {
             using (var db = new DataContext())
             {
@@ -85,7 +85,7 @@ namespace DataLayer
             }                
         }
 
-        public void AddKund(string id, string namn, string kategori)
+        public void AddKund(string id, string namn, string kategori) //Lägg till ny kund
         {
             using (var db = new DataContext())
             {
@@ -99,7 +99,7 @@ namespace DataLayer
                 db.SaveChanges();
             }
         }
-        public void UpdateKund(KundDTO oldKund, string id, string namn, string kategori)
+        public void UpdateKund(KundDTO oldKund, string id, string namn, string kategori) //Uppdaterar kundlista
         {
             using (var db = new DataContext())
             {
@@ -119,7 +119,7 @@ namespace DataLayer
             }
         }
 
-        public List<KundKategoriDTO> GetAllKundKategori()
+        public List<KundKategoriDTO> GetAllKundKategori() //Hämta samtliga kunder efter vald kategori
         {
             using (var db = new DataContext())
             {
@@ -130,7 +130,7 @@ namespace DataLayer
             }
         }
 
-        public void AddKundKategori(string namn)
+        public void AddKundKategori(string namn) //Lägg till ny kundkategori
         {
             using (var db = new DataContext())
             {

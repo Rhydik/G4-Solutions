@@ -552,13 +552,39 @@ namespace BusinessLayer
         {
             repositoryFacade.låsRepository.SetIntäktsLås(boolean);
         }
-        public bool GetKostnadsLås()
+        public bool GetAffoLås()
         {
             return repositoryFacade.låsRepository.GetIntäktsLås();
         }
-        public void SetKostnadsLås(bool boolean)
+        public void SetAffoLås(bool boolean)
         {
-            repositoryFacade.låsRepository.SetKostnadsLås(boolean);
+            repositoryFacade.låsRepository.SetAffoLås(boolean);
+        }
+
+        public bool GetDriftLås()
+        {
+            return repositoryFacade.låsRepository.GetIntäktsLås();
+        }
+        public void SetDriftLås(bool boolean)
+        {
+            repositoryFacade.låsRepository.SetDriftLås(boolean);
+        }
+        public bool GetUtvFörvLås()
+        {
+            return repositoryFacade.låsRepository.GetIntäktsLås();
+        }
+        public void SetUtvFörvLås(bool boolean)
+        {
+            repositoryFacade.låsRepository.SetUtvFörvLås(boolean);
+        }
+
+        public bool GetProgLås()
+        {
+            return repositoryFacade.låsRepository.GetIntäktsLås();
+        }
+        public void SetProgLås(bool boolean)
+        {
+            repositoryFacade.låsRepository.SetProgLås(boolean);
         }
 
         public void SparaFilMetod(List<LästFilPrognos> prognoser)

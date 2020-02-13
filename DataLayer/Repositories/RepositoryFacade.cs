@@ -26,7 +26,7 @@ namespace DataLayer
         public KostnadsbudgetRepository kostnadsbudgetRepository { get; set; }
         public LåsRepository låsRepository { get; set; }
 
-        private RepositoryFacade()
+        private RepositoryFacade()              /*Ny instans av respektive Repository*/
         {
             kundRepository = new KundRepository();
             aktivitetRepository = new AktivitetRepository();
@@ -42,7 +42,7 @@ namespace DataLayer
             avdelningPersonalRepository = new AvdelningPersonalRepository();
         }
 
-        public static RepositoryFacade Instance()
+        public static RepositoryFacade Instance()       /*Låsning*/
         {
             if (instance == null)
             {

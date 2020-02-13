@@ -12,9 +12,9 @@ namespace DataLayer.Repositories
     public class PrognosRepository
     {
 
-        public List<LästFilPrognos> lästFilPrognoser = new List<LästFilPrognos>();
+        public List<LästFilPrognos> lästFilPrognoser = new List<LästFilPrognos>();  /*Inläsning av fil*/
 
-        public List<PrognosDTO> GetAllPrognoser()
+        public List<PrognosDTO> GetAllPrognoser() /*Hämtar alla prognoser*/
         {
             using (var db = new DataContext())
             {
@@ -25,7 +25,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public void SparaFilMetod(List<LästFilPrognos> prognoser)
+        public void SparaFilMetod(List<LästFilPrognos> prognoser)   /*Metod för att spara fil*/
         {
             using (StreamWriter utfil = new StreamWriter("IntäktProduktKund.txt"))
             {
@@ -38,7 +38,7 @@ namespace DataLayer.Repositories
             }
         }
 
-        public List<LästFilPrognos> LaddaRegister()
+        public List<LästFilPrognos> LaddaRegister()     /*Metod för att läsa in register*/
         {
             StreamReader infil = new StreamReader("IntäktProduktKund.txt");
             List<LästFilPrognos> lästFilPrognoser = new List<LästFilPrognos>();
@@ -55,7 +55,7 @@ namespace DataLayer.Repositories
 
        
 
-                LästFilPrognos m = new LästFilPrognos();
+                LästFilPrognos m = new LästFilPrognos();        /*Åtgärd efter inläsning av prognos*/
 
                 if (readLine.Count == 6)
                 {
@@ -226,10 +226,10 @@ namespace DataLayer.Repositories
             return lästFilPrognoser;
         }
 
-        public LästFilPrognos RäknaUtBudgetPrognos(List<LästFilPrognos> prognoser)
+        public LästFilPrognos RäknaUtBudgetPrognos(List<LästFilPrognos> prognoser)      /*Budgeträkning Prognostisering*/
         {
             LästFilPrognos totalPrognos = new LästFilPrognos();
-            foreach (var item in prognoser) //sammanräkning av alla attribut i ett objekt.  Objektet för det "totala" visas i datagridview1 sedan.
+            foreach (var item in prognoser) //Sammanräkning av alla attribut i ett objekt.  Objektet för det "totala" visas i datagridview1 sedan.
             {
                 decimal resultatBudget;
                 resultatBudget = item.Budget;
@@ -297,7 +297,7 @@ namespace DataLayer.Repositories
             return totalPrognos;
         }
 
-        public List<LästFilPrognos> FörberedaExport(LästFilPrognos transfer, List<LästFilPrognos> prognoser)
+        public List<LästFilPrognos> FörberedaExport(LästFilPrognos transfer, List<LästFilPrognos> prognoser)    //Förebereder Export av Prognos
         {
             List<LästFilPrognos> förberedLista = new List<LästFilPrognos>();
 

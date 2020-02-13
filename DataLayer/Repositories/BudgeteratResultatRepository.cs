@@ -9,13 +9,39 @@ namespace DataLayer
 {
     public class BudgeteratResultatRepository
     {
+        decimal lön;
+        decimal andel;
+        decimal lönresultat;
+        decimal beräknadschablon;
+        private IQueryable<PersonalProdukt> personalkostnad;
+        decimal totalandel;
+        decimal kostnader;
+        decimal pålägg;
+        private Produkt produkten;
+        decimal noll;
+        decimal resultat;
+        decimal säljavd;
+        decimal adminavd;
+        decimal direktkostnadersälj;
+        decimal direktkostnaderadmin;
+        private IQueryable<Personal> årsarbete;
+        private decimal årsarbeteresultat;
+        private IQueryable<schablonkostnad> schablonskonstnad;
+        private decimal schablonresultat;
+        private decimal avkastningskrav;
+        private IQueryable<DirektkostnadAktivitet> querykostnadadmin;
+        private IQueryable<DirektkostnadAktivitet> querykostnadsälj;
+        private IQueryable<AvdelningPersonalxRef> queryadmin;
+        private IQueryable<AvdelningPersonalxRef> querysälj;
+        private IQueryable<DirektkostnadProdukt> dkprodukter;
+
         public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt) //Sätter ihop Produktlistan med Intäktslistan
         {
             using (var db = new DataContext())
             {
-                var query = from x in db.ProduktIntäktsbudget.AsParallel()
+                var query = from x in db.ProduktIntäktsbudget
                             where x.Produkt_ProduktID == produkt.ProduktID
-                            join y in db.Intäktsbudget.AsParallel() on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                            join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
                             select new ProduktSummeringDTO { Budget = y.Budget };
 
                 return query.ToList();
@@ -26,10 +52,10 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var query = from x in db.Produkt.AsParallel()
+                var query = from x in db.Produkt
                             where x.Produktgrupp_ProduktgruppID == produktgruppDTO.ProduktgruppID
-                            join y in db.ProduktIntäktsbudget.AsParallel() on x.ProduktID equals y.Produkt_ProduktID
-                            join p in db.Intäktsbudget.AsParallel() on y.Intäktsbudget_IntäktsbudgetID equals p.IntäktsbudgetID
+                            join y in db.ProduktIntäktsbudget on x.ProduktID equals y.Produkt_ProduktID
+                            join p in db.Intäktsbudget on y.Intäktsbudget_IntäktsbudgetID equals p.IntäktsbudgetID
                             select new ProduktSummeringDTO { Budget = p.Budget };
 
                 return query.ToList();
@@ -40,10 +66,10 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var query = from x in db.Produkt.AsParallel()
+                var query = from x in db.Produkt
                             where x.Avdelning_AvdelningID == avdelningDTO.AvdelningsID
-                            join y in db.ProduktIntäktsbudget.AsParallel() on x.ProduktID equals y.Produkt_ProduktID
-                            join p in db.Intäktsbudget.AsParallel() on y.Intäktsbudget_IntäktsbudgetID equals p.IntäktsbudgetID
+                            join y in db.ProduktIntäktsbudget on x.ProduktID equals y.Produkt_ProduktID
+                            join p in db.Intäktsbudget on y.Intäktsbudget_IntäktsbudgetID equals p.IntäktsbudgetID
                             select new ProduktSummeringDTO { Budget = p.Budget };
 
                 return query.ToList();
@@ -54,7 +80,7 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var query = from x in db.Intäktsbudget.AsParallel()
+                var query = from x in db.Intäktsbudget
                             select new ProduktSummeringDTO { Budget = x.Budget };
 
                 return query.ToList();
@@ -65,32 +91,32 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                decimal lön = 0;
-                decimal andel = 0;
-                decimal lönresultat = 0;
-                decimal beräknadschablon = 0;
-                decimal totalandel = 0;
-                decimal kostnader = 0;
-                decimal pålägg = 0;
-                var produkten = (from x in db.Produkt.AsParallel()
+                lön = 0;
+                andel = 0;
+                lönresultat = 0;
+                beräknadschablon = 0;
+                totalandel = 0;
+                kostnader = 0;
+                pålägg = 0;
+                produkten = (from x in db.Produkt
                                  where x.ProduktID == produkt
                                  select x).FirstOrDefault();
 
                 beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
 
-                var personalkostnad = from x in db.PersonalProdukt.AsParallel()
-                                      join y in db.Personal.AsParallel() on x.Personal_PersonalID equals y.PersonalID
+                personalkostnad = from x in db.PersonalProdukt
+                                      join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                       where x.Produkt_ProduktID == produkten.ProduktID
                                       select x;
 
-                Parallel.ForEach(personalkostnad, (item) =>
+                foreach(var item in personalkostnad)
                 {
                     lön = item.Personal.Månadslön;
                     andel = item.Placeringsandel;
                     andel = (decimal)andel / 100;
                     lönresultat += lön * andel;
                     totalandel += andel;
-                });
+                }
 
                 if (totalandel != 0)
                 {
@@ -106,21 +132,21 @@ namespace DataLayer
                     pålägg = BeräknaTB(produkten) / kostnader;
                 }
 
-                var resultat = kostnader * pålägg;
+                resultat = kostnader * pålägg;
 
                 return kostnader + resultat;
             }
         }
         public decimal GetDirektKostnaderProdukt(string produkten)
         {
-            decimal noll = 0;
-            decimal resultat = 0;
+            noll = 0;
+            resultat = 0;
             using (var db = new DataContext())
             {
-                var query = from x in db.DirektkostnadProdukt
+                dkprodukter = from x in db.DirektkostnadProdukt
                             where x.Produkt_ProduktID == produkten
                             select x;
-                foreach (var item in query)
+                foreach (var item in dkprodukter)
                 {
                     resultat += item.Belopp;
                 }
@@ -136,38 +162,38 @@ namespace DataLayer
         }
         public decimal BeräknaTB(Produkt produkt)
         {
-            decimal säljavd = 0;
-            decimal adminavd = 0;
-            decimal direktkostnadersälj = 0;
-            decimal direktkostnaderadmin = 0;
+            säljavd = 0;
+            adminavd = 0;
+            direktkostnadersälj = 0;
+            direktkostnaderadmin = 0;
 
             using (var db = new DataContext())
             {
-                var querysälj = from x in db.Personal.AsParallel()
-                                join y in db.AvdelningPersonalxRef.AsParallel() on x.PersonalID equals y.Personal_PersonalID
+                querysälj = from x in db.Personal
+                                join y in db.AvdelningPersonalxRef on x.PersonalID equals y.Personal_PersonalID
                                 where y.Avdelning_AvdelningID == 2
                                 select y;
                 if (querysälj.Count() != 0)
                 {
-                    Parallel.ForEach(querysälj, (item) =>
+                    foreach(var item in querysälj)
                     {
                         säljavd += item.Personal.Månadslön * ((decimal)item.Placering / 100);
-                    });
+                    }
                 }
-                var queryadmin = from x in db.AvdelningPersonalxRef.AsParallel()
-                                 join y in db.Personal.AsParallel() on x.Personal_PersonalID equals y.PersonalID
+                queryadmin = from x in db.AvdelningPersonalxRef
+                                 join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                  where x.Avdelning_AvdelningID == 3
                                  select x;
                 if (queryadmin.Count() != 0)
                 {
-                    Parallel.ForEach(queryadmin, (item) =>
+                    foreach(var item in queryadmin)
                     {
                         adminavd += item.Personal.Månadslön * ((decimal)item.Placering / 100);
-                    });
+                    }
                 }
 
-                var querykostnadsälj= from x in db.DirektkostnadAktivitet.AsParallel()
-                                      join y in db.Aktivitet.AsParallel() on x.Aktivitet_AktivitetID equals y.AktivitetID
+                querykostnadsälj= from x in db.DirektkostnadAktivitet
+                                      join y in db.Aktivitet on x.Aktivitet_AktivitetID equals y.AktivitetID
                                   where y.Avdelning_AvdelningID == 2
                                   select x;
                 if (querykostnadsälj.Count() != 0)
@@ -175,8 +201,8 @@ namespace DataLayer
                     direktkostnadersälj = querykostnadsälj.Sum(x => x.Belopp);
                 }
 
-                var querykostnadadmin = from x in db.DirektkostnadAktivitet.AsParallel()
-                                        join y in db.Aktivitet.AsParallel() on x.Aktivitet_AktivitetID equals y.AktivitetID
+                querykostnadadmin = from x in db.DirektkostnadAktivitet
+                                        join y in db.Aktivitet on x.Aktivitet_AktivitetID equals y.AktivitetID
                                        where y.Avdelning_AvdelningID == 3
                                        select x;
                 if (querykostnadadmin.Count() != 0)
@@ -184,7 +210,7 @@ namespace DataLayer
                     direktkostnaderadmin = querykostnadadmin.Sum(x => x.Belopp);
                 }
 
-                var avkastningskrav = (from x in db.schablonkostnad
+                avkastningskrav = (from x in db.schablonkostnad
                                        where x.Konto.konto1 == 9999
                                     select x.Belopp).FirstOrDefault();
 
@@ -197,10 +223,10 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var schablonskonstnad = from x in db.schablonkostnad
+                schablonskonstnad = from x in db.schablonkostnad
                                         where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
                                         select x;
-                var schablonresultat = schablonskonstnad.Sum(x => x.Belopp);
+                schablonresultat = schablonskonstnad.Sum(x => x.Belopp);
 
                 return schablonresultat;
             }
@@ -209,9 +235,9 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var årsarbete = from x in db.Personal
+                årsarbete = from x in db.Personal
                                 select x;
-                var årsarbeteresultat = årsarbete.Sum(x => x.Årsarbete) / 100;
+                årsarbeteresultat = årsarbete.Sum(x => x.Årsarbete) / 100;
 
                 return årsarbeteresultat;
             }

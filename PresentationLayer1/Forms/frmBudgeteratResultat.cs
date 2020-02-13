@@ -39,7 +39,7 @@ namespace PresentationLayer1.Forms
         private void Load()
         {
             produkter = businessManager.GetAllProdukter();
-            Parallel.ForEach(produkter, (produkt) =>
+            foreach(var produkt in produkter)
             {
                 decimal beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
 
@@ -66,7 +66,7 @@ namespace PresentationLayer1.Forms
                 {
                     produktAvdelningDict[produkt.Avdelning].Add(beräkning);
                 }
-            });
+            }
 
             dgvBudgeteratResultat.DataSource = produkter;
         }

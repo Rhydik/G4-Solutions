@@ -16,6 +16,7 @@ namespace PresentationLayer1.Forms
 
         private BusinessManager businessManager = new BusinessManager();
         public List<LästFilPrognos> prognoser = new List<LästFilPrognos>(); //listan populeras av textfilen,används också i gridviewen
+        private List<LästFilPrognos> utvaldMånad;
 
         public LästFilPrognos transfer { get; set; }
         /*
@@ -74,7 +75,14 @@ namespace PresentationLayer1.Forms
         public void RäknaUtBudgetPrognos()
         {
             LästFilPrognos totalPrognos = new LästFilPrognos();
-            totalPrognos = businessManager.RäknaUtBudgetPrognos(prognoser);
+
+            if(cmbMånad.Text == "Alla Månader" || cmbMånad.Text == "")
+            {
+                totalPrognos = businessManager.RäknaUtBudgetPrognos(prognoser);
+            } else
+            {
+                totalPrognos = businessManager.RäknaUtBudgetPrognos(prognoser.Where(p => p.Månad == cmbMånad.Text).ToList());
+            }
 
 
             totalPrognos.Produkt = "Totalt";
@@ -136,7 +144,7 @@ namespace PresentationLayer1.Forms
         {
             if (cmbMånad.Text != null) //logik för att visa resultat utifrån vald månad helt enkelt
             {
-                List<LästFilPrognos> utvaldMånad = new List<LästFilPrognos>(prognoser.Where(p => p.Månad == cmbMånad.Text));
+                utvaldMånad = new List<LästFilPrognos>(prognoser.Where(p => p.Månad == cmbMånad.Text));
                 dgvPrognostiseringIntäkter.DataSource = utvaldMånad;
             }
             if (cmbMånad.Text == "Alla Månader")

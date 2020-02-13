@@ -57,16 +57,8 @@ namespace PresentationLayer1.Forms
             DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill låsa Prognostiseringen?", "Varning", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                dgvPrognostiseringIntäkter.ReadOnly = true;  //logiken här låser alla grids för redigering, och gör dem utgråade
-                dataGridView1.ReadOnly = true;
-                dgvPrognostiseringIntäkter.DefaultCellStyle.BackColor = SystemColors.Control;
-                dgvPrognostiseringIntäkter.DefaultCellStyle.ForeColor = SystemColors.GrayText;
-                dgvPrognostiseringIntäkter.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
-                dgvPrognostiseringIntäkter.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.GrayText;
-                dataGridView1.DefaultCellStyle.BackColor = SystemColors.Control;
-                dataGridView1.DefaultCellStyle.ForeColor = SystemColors.GrayText;
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.GrayText;
+                Lås();
+                businessManager.SetProgLås(true);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -148,6 +140,19 @@ namespace PresentationLayer1.Forms
 
         }
 
+        private void Lås()
+        {
+            dgvPrognostiseringIntäkter.ReadOnly = true;  //logiken här låser alla grids för redigering, och gör dem utgråade
+            dataGridView1.ReadOnly = true;
+            dgvPrognostiseringIntäkter.DefaultCellStyle.BackColor = SystemColors.Control;
+            dgvPrognostiseringIntäkter.DefaultCellStyle.ForeColor = SystemColors.GrayText;
+            dgvPrognostiseringIntäkter.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+            dgvPrognostiseringIntäkter.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.GrayText;
+            dataGridView1.DefaultCellStyle.BackColor = SystemColors.Control;
+            dataGridView1.DefaultCellStyle.ForeColor = SystemColors.GrayText;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = SystemColors.GrayText;
+        }
         private void ucMeny_Enter(object sender, EventArgs e)
         {
             businessManager.SparaFilMetod(prognoser);

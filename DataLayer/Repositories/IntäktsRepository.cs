@@ -238,7 +238,6 @@ namespace DataLayer
         }
         public void ExportTillTxtfil(List<List<string>> lista)
         {
-            string message = "";
             string rootFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
             string textfil = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "BudgetProduktKund.txt");
 

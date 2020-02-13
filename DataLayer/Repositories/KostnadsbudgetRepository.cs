@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class KostnadsbudgetRepository
     {
-        public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal()
+        public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal() //Hämtar personalkostnadslista
         {
             using (var db = new DataContext())
             {
@@ -20,7 +20,7 @@ namespace DataLayer
             }
         }
 
-        public List<KostnadsbudgetProduktDTO> GetKostnadsbudgetProdukt()
+        public List<KostnadsbudgetProduktDTO> GetKostnadsbudgetProdukt() //Hämtar kostnadsbudgeteringproduktlista
         {
             using (var db = new DataContext())
             {
@@ -32,7 +32,7 @@ namespace DataLayer
 
         }
 
-        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, string andel)
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, string andel) //Lägg till aktivitet
         {
             using (var db = new DataContext())
             {
@@ -54,7 +54,7 @@ namespace DataLayer
             }
         }
 
-        public List<DirektkostnadProduktDTO> GetAllDirektKostnadProdukt()
+        public List<DirektkostnadProduktDTO> GetAllDirektKostnadProdukt() //Hämtar direktakostnaderprodukt
         {
             using (var db = new DataContext())
             {
@@ -65,7 +65,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveDirektKostnadAktivitet(DirektkostnadAktivitetDTO direktkostnad)
+        public void RemoveDirektKostnadAktivitet(DirektkostnadAktivitetDTO direktkostnad) //Raderar vald kostnadsaktivitet
         {
             using (var db = new DataContext())
             {
@@ -78,7 +78,7 @@ namespace DataLayer
             }
         }
 
-        public void RemoveDirektKostnadProdukt(DirektkostnadProduktDTO direktkostnad)
+        public void RemoveDirektKostnadProdukt(DirektkostnadProduktDTO direktkostnad) //Raderar vald produktkostnad
         {
             using (var db = new DataContext())
             {
@@ -91,7 +91,7 @@ namespace DataLayer
             }
         }
 
-        public List<DirektkostnadAktivitetDTO> GetAllDirektkostnadAktivitet()
+        public List<DirektkostnadAktivitetDTO> GetAllDirektkostnadAktivitet() //Hämtar kostnadsaktivitetslista
         {
             using (var db = new DataContext())
             {
@@ -102,7 +102,7 @@ namespace DataLayer
             }
         }
 
-        public void AddDirektkostnadProdukt(string prod, string konto, string belopp)
+        public void AddDirektkostnadProdukt(string prod, string konto, string belopp) //Lägg till ny kostnad efter vald produkt
         {
             using (var db = new DataContext())
             {
@@ -125,7 +125,7 @@ namespace DataLayer
             }
         }
 
-        public List<Produkt> GetProduktByProduktGrupp(ProduktgruppDTO produktgruppDTO)
+        public List<Produkt> GetProduktByProduktGrupp(ProduktgruppDTO produktgruppDTO) //Hämtar produkt efter vald grupp
         {
             using (var db = new DataContext())
             {
@@ -137,7 +137,7 @@ namespace DataLayer
             }
         }
 
-        public void AddDirektkostnadAktivitet(string akti, string konto, string belopp)
+        public void AddDirektkostnadAktivitet(string akti, string konto, string belopp) //Lägg till ny kostnad efter vald aktivitet
         {
             using (var db = new DataContext())
             {
@@ -160,7 +160,7 @@ namespace DataLayer
             }
         }
 
-        public List<PersonalAktivitetDTO> GetAllPersonalAktivitet()
+        public List<PersonalAktivitetDTO> GetAllPersonalAktivitet() //Hämtar personallista
         {
             using (var db = new DataContext())
             {
@@ -173,7 +173,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel) //Raderar vald placeringsaktivitet
         {
             using (var db = new DataContext())
             {
@@ -214,7 +214,7 @@ namespace DataLayer
 
         }
 
-        public decimal GetFördeladAndel(int personal)
+        public decimal GetFördeladAndel(int personal) //Beräknar placerings andel efter vald personal
         {
             using (var db = new DataContext())
             {
@@ -239,7 +239,7 @@ namespace DataLayer
             }
         }
 
-        public List<DTO.BudgetKontoDTO> GetAllKonton()
+        public List<DTO.BudgetKontoDTO> GetAllKonton() //Hämtar kontolista
         {
             using (var db = new DataContext())
             {
@@ -250,7 +250,7 @@ namespace DataLayer
             }
         }
 
-        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel)
+        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel) //Lägg till placering efter vald produkt
         {
             using (var db = new DataContext())
             {
@@ -272,7 +272,7 @@ namespace DataLayer
             }
         }
 
-        public List<PersonalProduktDTO> GetAllPersonalProdukt()
+        public List<PersonalProduktDTO> GetAllPersonalProdukt() //Hämtar personal efter vald produkt
         {
             using (var db = new DataContext())
             {
@@ -284,7 +284,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringsProdukt(string pers, string produkt, int andel)
+        public void RemovePlaceringsProdukt(string pers, string produkt, int andel) //Raderar vald produktplacering
         {
             using (var db = new DataContext())
             {

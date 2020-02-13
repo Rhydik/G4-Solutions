@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class BudgeteratResultatRepository
     {
-        public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt)
+        public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt) //Sätter ihop Produktlistan med Intäktslistan
         {
             using (var db = new DataContext())
             {
@@ -22,7 +22,7 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktSummeringDTO> GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
+        public List<ProduktSummeringDTO> GetGruppIntäkter(ProduktgruppDTO produktgruppDTO) //Sätter ihop Produktlistan med Intäktsbudgetlista.
         {
             using (var db = new DataContext())
             {
@@ -36,7 +36,7 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktSummeringDTO> GetAvdelningIntäkter(AvdelningDTO avdelningDTO)
+        public List<ProduktSummeringDTO> GetAvdelningIntäkter(AvdelningDTO avdelningDTO) //Sätter ihop Avdelningslistan med Intäktslistan
         {
             using (var db = new DataContext())
             {
@@ -50,7 +50,7 @@ namespace DataLayer
             }   
         }
 
-        public List<ProduktSummeringDTO> GetKontorIntäkter()
+        public List<ProduktSummeringDTO> GetKontorIntäkter() //Hämtar kontointäkter.
         {
             using (var db = new DataContext())
             {
@@ -61,7 +61,7 @@ namespace DataLayer
             }
         }
 
-        public decimal GetProduktKostnader(string produkt)
+        public decimal GetProduktKostnader(string produkt) 
         {
             using (var db = new DataContext())
             {

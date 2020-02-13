@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class PersonalRepository
     {
-        public Personal Login(string användarnamn, string lösenord)
+        public Personal Login(string användarnamn, string lösenord)     //Metoden för inloggning till hela systemet/programmet.
         {
             using (var db = new DataContext())
             {
@@ -20,7 +20,7 @@ namespace DataLayer
             }
         }
 
-        public List<PersonalDTO> GetAllPersonal()
+        public List<PersonalDTO> GetAllPersonal()           //Metod för att hämta personal.
         {
             using (var db = new DataContext())
             {
@@ -31,7 +31,7 @@ namespace DataLayer
             }
         }
 
-        public List<PlaceringsDTO> GetAllAVdelningarFördelning()
+        public List<PlaceringsDTO> GetAllAVdelningarFördelning()        //Metod för att hantera avdelningsplacerad personal.
         {
             using (var db = new DataContext())
             {
@@ -42,7 +42,7 @@ namespace DataLayer
             }
         }
 
-        public List<PersonalDTO> GetPersonalByPersNr(string persNr)
+        public List<PersonalDTO> GetPersonalByPersNr(string persNr)        //Metod för att hämta personal efter personnummers.
         {
             using (var db = new DataContext())
             {
@@ -54,7 +54,7 @@ namespace DataLayer
             }
         }
 
-        public List<PersonalDTO> GetPersonalByNamn(string namn)
+        public List<PersonalDTO> GetPersonalByNamn(string namn)         //Metod för att hämta personal efter namn.
         {
             using (var db = new DataContext())
             {
@@ -66,7 +66,7 @@ namespace DataLayer
             }
         }
 
-        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, decimal årsarbetare, string roll)
+        public void AddPersonal(int sysselsättningsgrad, string namn, string personNr, int vakansavdrag, string lösenord, int månadslön, decimal årsarbetare, string roll)              //Metod för att lägga till ny personal.
         {
             using (var db = new DataContext())
             {
@@ -91,7 +91,7 @@ namespace DataLayer
             }
         }
 
-        public List<KonstnadsbudgetPersonalDTO> GetPersonalByAvdelning(string avdelning)
+        public List<KonstnadsbudgetPersonalDTO> GetPersonalByAvdelning(string avdelning)                //Metod för att hämta personal efter avdelning.
         {
             using (var db = new DataContext())
             {
@@ -104,7 +104,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePersonal(PersonalDTO personal)
+        public void RemovePersonal(PersonalDTO personal)        //Metod för att radera personal ur databasen/registret.
         {
             using (var db = new DataContext())
             {
@@ -122,7 +122,7 @@ namespace DataLayer
             }
         }
 
-        public void UpdatePersonal(PersonalDTO personal)
+        public void UpdatePersonal(PersonalDTO personal)                //Metod för att ändra personaluppgifter.
         {
             using (var db = new DataContext())
             {

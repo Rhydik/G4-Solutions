@@ -51,6 +51,7 @@
             this.tbÅrsarbetare = new System.Windows.Forms.TextBox();
             this.dgvPlacering = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblÖverbelaggd = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlacering)).BeginInit();
             this.SuspendLayout();
             // 
@@ -260,12 +261,23 @@
             this.label4.TabIndex = 80;
             this.label4.Text = "Avdelning";
             // 
+            // lblÖverbelaggd
+            // 
+            this.lblÖverbelaggd.AutoSize = true;
+            this.lblÖverbelaggd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblÖverbelaggd.Location = new System.Drawing.Point(408, 183);
+            this.lblÖverbelaggd.Name = "lblÖverbelaggd";
+            this.lblÖverbelaggd.Size = new System.Drawing.Size(178, 18);
+            this.lblÖverbelaggd.TabIndex = 81;
+            this.lblÖverbelaggd.Text = "Placering överbelaggd!";
+            // 
             // frmRegistreraNyPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(767, 543);
+            this.Controls.Add(this.lblÖverbelaggd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvPlacering);
             this.Controls.Add(this.label3);
@@ -322,5 +334,6 @@
         private System.Windows.Forms.TextBox tbÅrsarbetare;
         private System.Windows.Forms.DataGridView dgvPlacering;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblÖverbelaggd;
     }
 }

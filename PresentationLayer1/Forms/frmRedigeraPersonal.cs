@@ -35,6 +35,7 @@ namespace PresentationLayer1.Forms
         public void btnTaBortPersonal_Click(object sender, EventArgs e)
         {
             businessManager.RemovePersonal(personal);
+            MessageBox.Show("Personal borttagen");
         }
 
         private void btnAvbrytPersonal_Click(object sender, EventArgs e)

@@ -277,7 +277,8 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var query = from x in db.PersonalProdukt
-                            from y in db.Produkt where y.ProduktID == x.Produkt_ProduktID
+                            from y in db.Produkt
+                            where y.ProduktID == x.Produkt_ProduktID
                             select new PersonalProduktDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Produkt = y.Namn };
 
                 return query.ToList();

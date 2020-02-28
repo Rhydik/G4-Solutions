@@ -174,9 +174,17 @@ namespace PresentationLayer1.Forms
 
         public void RefreshData()
         {
-            kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
+            if (lblValdProduktID.Text == "Ej vald")
+            {
+                produkter = businessManager.GetAllProdukter();
+                dgvIntäktsbudgeteringProdukt.DataSource = produkter;
+            }
+            else
+            {
+                kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
 
-            dgvIntäktsbudgeteringProdukt.DataSource = kunder;
+                dgvIntäktsbudgeteringProdukt.DataSource = kunder;
+            }
         }
 
         private void HideFromUser()

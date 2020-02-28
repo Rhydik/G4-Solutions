@@ -26,7 +26,7 @@ namespace PresentationLayer1.Forms
 
         public new void Load()
         {
-            tbKundID.Text = kund.KundID.Substring(0, kund.KundID.Length - 2);
+            tbKundID.Text = kund.KundID;
             tbKundNamn.Text = kund.Namn;
 
             var kategori = businessManager.GetAllKundKategori();

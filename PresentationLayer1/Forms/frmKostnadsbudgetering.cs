@@ -31,6 +31,7 @@ namespace PresentationLayer1.Forms
         private List<BudgetKontoDTO> konton;
         public List<KostnadsbudgetProduktDTO> allaProdukter;
         private List<AvdelningDTO> avdelnings;
+        private List<PersonalProduktDTO> personalProdukts;
 
         public bool IsLåst { get; private set; }
 
@@ -137,14 +138,23 @@ namespace PresentationLayer1.Forms
             var produkt = cbProdukt.SelectedItem.ToString();
             var andel = tbAndel.Text;
 
-            businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
-            Update();
-            UpdatePersonal();
+            if (personal.Diff >= decimal.Parse(andel))
+            {
+                businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
+                Update();
+                UpdatePersonal();
+            }
+            else
+            {
+                MessageBox.Show("Placering överstiger tillåtet värde");
+            }
         }
 
         public void Update()
         {
-            dgvNedre.DataSource = businessManager.GetAllPersonalProdukt();
+            personalProdukts = businessManager.GetAllPersonalProdukt();
+            personalProdukts.Reverse();
+            dgvNedre.DataSource = personalProdukts;
         }
 
         private void btnTaBort_Click(object sender, EventArgs e)
@@ -161,9 +171,19 @@ namespace PresentationLayer1.Forms
 
         public void UpdatePersonal()
         {
-            personals = businessManager.GetKostnadsbudgetPersonal();
-            businessManager.Kalkylering(personals);
-            dgvÖvre.DataSource = personals;
+            var avdelning = cmbAvdelning.Text;
+            if (avdelning == "")
+            {
+                personals = businessManager.GetKostnadsbudgetPersonal();
+                businessManager.Kalkylering(personals);
+                dgvÖvre.DataSource = personals;
+            }
+            else
+            {
+                personals = businessManager.GetPersonalByAvdelning(avdelning);
+                businessManager.Kalkylering(personals);
+                dgvÖvre.DataSource = personals;
+            }
         }
         private void HideFromUser()
         {

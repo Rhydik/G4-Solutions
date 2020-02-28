@@ -18,10 +18,12 @@ namespace PresentationLayer1.Forms
         BusinessManager businessManager = new BusinessManager();
         private List<PlaceringsDTO> avdelnings;
         private List<RollDTO> rolls;
+        private bool PlaceringOk = true;
         int årsarbete;
         public frmRegistreraNyPersonal()
         {
             InitializeComponent();
+            lblÖverbelaggd.Visible = false;
             avdelnings = businessManager.GetAllAvdelningarFördelning();
             dgvPlacering.DataSource = avdelnings;
             dgvPlacering.CellValueChanged += DgvPlacering_CellValueChanged;
@@ -44,19 +46,41 @@ namespace PresentationLayer1.Forms
             var lösenord = tbLösenord.Text;
             var roll = cbRoll.SelectedItem.ToString();
             var årsarbetare = decimal.Parse(tbÅrsarbetare.Text);
-            MessageBox.Show("Personal sparad!");
+            
 
-            businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);
-
-            foreach(var avdelning in avdelnings)
+            if (PlaceringOk == true)
             {
-                businessManager.SetPlacering(avdelning.Avdelning, personNr, avdelning.Fördelning);
+                businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);
+
+                foreach (var avdelning in avdelnings)
+                {
+                    businessManager.SetPlacering(avdelning.Avdelning, personNr, avdelning.Fördelning);
+                }
+                MessageBox.Show("Personal sparad!");
+            }
+            else
+            {
+                MessageBox.Show("Placering överbelaggd");
             }
         }
 
         private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
+            var placerat = 0;
+            foreach (var item in avdelnings)
+            {
+                placerat += item.Fördelning;
+            }
+            if (placerat > int.Parse(tbÅrsarbetare.Text))
+            {
+                lblÖverbelaggd.Visible = true;
+                PlaceringOk = false;
+            }
+            else
+            {
+                lblÖverbelaggd.Visible = false;
+                PlaceringOk = true;
+            }
         }
 
         private void tbVakansavdrag_TextChanged(object sender, EventArgs e)

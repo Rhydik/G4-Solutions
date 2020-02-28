@@ -33,10 +33,9 @@ namespace PresentationLayer1.Forms
         {
             var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
+            var kundid = tbKundID.Text;
             
-
-            string id = businessManager.SkapaID(kundNamn, kundKategori);
-            businessManager.AddKund(id, kundNamn, kundKategori);
+            businessManager.AddKund(kundid, kundNamn, kundKategori);
 
             MessageBox.Show(kundNamn + " sparad.", "Spara kund", MessageBoxButtons.OK);
 

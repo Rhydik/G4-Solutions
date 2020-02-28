@@ -28,8 +28,9 @@ namespace PresentationLayer1.Forms
             btnLåsBudget.Show();
 
             CheckLås();
-            kunds = businessManager.GetAllKunder();
-            dgvIntäktsbudgeteringKund.DataSource = kunds;
+            RefreshData();
+            //kunds = businessManager.GetAllKunder();
+            //dgvIntäktsbudgeteringKund.DataSource = kunds;
             ucSökFältKund.SetGridView(this.dgvIntäktsbudgeteringKund);
         }
 
@@ -163,9 +164,17 @@ namespace PresentationLayer1.Forms
         }
         public void RefreshData()
         {
-            produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
+            if (lblValdKundID.Text == "Ej vald")
+            {
+                kunds = businessManager.GetAllKunder();
+                dgvIntäktsbudgeteringKund.DataSource = kunds;
+            }
+            else
+            {
+                produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
 
-            dgvIntäktsbudgeteringKund.DataSource = produkts;
+                dgvIntäktsbudgeteringKund.DataSource = produkts;
+            }
         }
 
         private void HideFromUser()
@@ -182,7 +191,6 @@ namespace PresentationLayer1.Forms
             {
                 btnLåsBudget.Hide();
             }
-
         }
 
         private void btnLåsBudget_Click(object sender, EventArgs e)
@@ -199,7 +207,11 @@ namespace PresentationLayer1.Forms
                 businessManager.SetIntäktsLås(IsLåst);
                 btnLåsBudget.Hide();
             }
-            
+        }
+
+        private void frmIntäktsbudgeteringKund_Click(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }

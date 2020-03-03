@@ -224,10 +224,9 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                schablonskonstnad = from x in db.schablonkostnad
+                schablonresultat = (from x in db.schablonkostnad
                                         where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
-                                        select x;
-                schablonresultat = schablonskonstnad.Sum(x => x.Belopp);
+                                        select x.Belopp).Sum();
 
                 return schablonresultat;
             }
@@ -236,9 +235,8 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                årsarbete = from x in db.Personal
-                                select x;
-                årsarbeteresultat = årsarbete.Sum(x => x.Årsarbete) / 100;
+                årsarbeteresultat = (from x in db.Personal
+                                select x.Årsarbete).Sum() / 100;
 
                 return årsarbeteresultat;
             }

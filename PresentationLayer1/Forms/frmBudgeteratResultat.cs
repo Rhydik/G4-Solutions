@@ -12,6 +12,8 @@ using BusinessLayer;
 using DataLayer.DTO;
 using System.Diagnostics;
 using System.Threading;
+using System.Runtime.InteropServices;
+using Excel = Microsoft.Office.Interop.Excel; 
 
 namespace PresentationLayer1.Forms
 {
@@ -197,6 +199,45 @@ namespace PresentationLayer1.Forms
             lblSök.Show();
             tbSök.Show();
             btnRensa.Show();
+        }
+
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
+            Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            if (xlApp == null)
+            {
+                MessageBox.Show("Excel är ej korrekt installerat!");
+                return;
+            }
+
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+
+            xlWorkSheet.Cells[1, 1] = "Budgeterade Intäkter";
+            xlWorkSheet.Cells[1, 2] = "Budgeterade Kostnader";
+            xlWorkSheet.Cells[1, 3] = "Budgeterat Resultat";
+            xlWorkSheet.Cells[2, 1] = lblBudgeteradeIntäkter.Text;
+            xlWorkSheet.Cells[2, 2] = lblBudgetKostnader.Text;
+            xlWorkSheet.Cells[2, 3] = lblResultat.Text;
+            xlWorkSheet.Columns.AutoFit();
+
+
+            xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
+
+            Marshal.ReleaseComObject(xlWorkSheet);
+            Marshal.ReleaseComObject(xlWorkBook);
+            Marshal.ReleaseComObject(xlApp);
+
+            MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
+
         }
     }
 }

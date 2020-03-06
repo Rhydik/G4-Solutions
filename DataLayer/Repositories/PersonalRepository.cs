@@ -130,6 +130,7 @@ namespace DataLayer
 
                 query.PersonNr = personal.PersonNr;
                 query.Namn = personal.Namn;
+                query.Månadslön = (int)personal.Månadslön;
                 query.Sysselsättningsgrad = personal.Sysselsättningsgrad;
                 query.Vakansavdrag = personal.Vakansavdrag;
 

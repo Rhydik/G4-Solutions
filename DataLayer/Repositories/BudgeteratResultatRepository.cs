@@ -128,9 +128,11 @@ namespace DataLayer
 
                 kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
 
+                var tb = BeräknaTB(produkten);
+
                 if (kostnader != 0)
                 {
-                    pålägg = BeräknaTB(produkten) / kostnader;
+                    pålägg =  tb / kostnader;
                 }
 
                 resultat = kostnader * pålägg;

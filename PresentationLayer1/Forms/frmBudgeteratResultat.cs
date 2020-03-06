@@ -38,8 +38,11 @@ namespace PresentationLayer1.Forms
             cmbKategori.SelectedItem = "Produkt";
         }
 
+
         private void Load()
         {
+            businessManager.GetProduktKostnaderAvdelning(1);
+
             produkter = businessManager.GetAllProdukter();
 
             foreach(var produkt in produkter)

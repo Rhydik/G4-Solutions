@@ -99,6 +99,11 @@ namespace BusinessLayer
             return repositoryFacade.behörighetRepository.GetAllBehörighet();
         }
 
+        public decimal GetProduktKostnaderAvdelning(int avdelningsID)
+        {
+            return repositoryFacade.budgeteratResultatRepository.GetProduktKostnaderAvdelning(avdelningsID);
+        }
+
         public decimal GetProduktKostnader(string produkt)
         {
             return repositoryFacade.budgeteratResultatRepository.GetProduktKostnader(produkt);

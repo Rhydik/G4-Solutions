@@ -134,13 +134,13 @@ namespace DataLayer
             }
         }
 
-        public decimal GetProduktKostnaderAvdelning(Avdelning avdelning)
+        public decimal GetProduktKostnaderAvdelning(int avdelningID)
         {
             using (var db = new DataContext())
             {
                 decimal kostnader = 0;
                 var query = from x in db.Produkt
-                            where x.Avdelning.AvdelningID == avdelning.AvdelningID
+                            where x.Avdelning.AvdelningID == avdelningID
                             select x;
 
                 foreach(var produkt in query)

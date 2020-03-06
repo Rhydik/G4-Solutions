@@ -30,6 +30,7 @@ namespace PresentationLayer1.Forms
             tbPersNr.Text = personal.PersonNr;
             tbSysselsättningsgrad.Text = personal.Sysselsättningsgrad.ToString();
             tbVakansavdrag.Text = personal.Vakansavdrag.ToString();
+            tbMånadslön.Text = personal.Månadslön.ToString();
         }
 
         public void btnTaBortPersonal_Click(object sender, EventArgs e)

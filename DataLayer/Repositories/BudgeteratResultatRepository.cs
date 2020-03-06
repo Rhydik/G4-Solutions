@@ -128,17 +128,37 @@ namespace DataLayer
 
                 kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
 
-                var tb = BeräknaTB(produkten);
+                var tb = kostnader * pålägg;
+
+                return kostnader + tb;
+            }
+        }
+
+        public decimal GetProduktKostnaderAvdelning(Avdelning avdelning)
+        {
+            using (var db = new DataContext())
+            {
+                decimal kostnader = 0;
+                var query = from x in db.Produkt
+                            where x.Avdelning.AvdelningID == avdelning.AvdelningID
+                            select x;
+
+                foreach(var produkt in query)
+                {
+                    kostnader += GetProduktKostnader(produkt.ProduktID);
+                }
+
+                var tb = BeräknaTB();
 
                 if (kostnader != 0)
                 {
-                    pålägg =  tb / kostnader;
+                    pålägg = tb / kostnader;
                 }
 
-                resultat = kostnader * pålägg;
+                var resultat = kostnader * pålägg;
 
                 return kostnader + resultat;
-            }
+            } 
         }
         public decimal GetDirektKostnaderProdukt(string produkten)
         {
@@ -163,7 +183,7 @@ namespace DataLayer
                 }
             }
         }
-        public decimal BeräknaTB(Produkt produkt)
+        public decimal BeräknaTB()
         {
             säljavd = 0;
             adminavd = 0;

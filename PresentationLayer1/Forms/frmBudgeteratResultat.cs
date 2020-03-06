@@ -41,6 +41,7 @@ namespace PresentationLayer1.Forms
         private void Load()
         {
             produkter = businessManager.GetAllProdukter();
+
             foreach(var produkt in produkter)
             {
                 decimal beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);

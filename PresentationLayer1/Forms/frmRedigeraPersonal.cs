@@ -51,6 +51,7 @@ namespace PresentationLayer1.Forms
             personal.PersonNr = tbPersNr.Text;
             personal.Namn = tbNamn.Text;
             personal.Sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
+            personal.Månadslön = int.Parse(tbMånadslön.Text);
             personal.Vakansavdrag = int.Parse(tbVakansavdrag.Text);
             MessageBox.Show("Personal uppdaterad!");
             businessManager.UpdatePersonal(personal);

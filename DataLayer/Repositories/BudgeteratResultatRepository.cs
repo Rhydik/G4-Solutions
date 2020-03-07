@@ -10,6 +10,8 @@ namespace DataLayer
 {
     public class BudgeteratResultatRepository
     {
+        decimal totaltillverkningskostnad;
+        decimal sistaberäknadschablon;
         decimal lön;
         decimal andel;
         decimal lönresultat;
@@ -92,6 +94,8 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
+                totaltillverkningskostnad = 0;
+                sistaberäknadschablon = 0;
                 lön = 0;
                 andel = 0;
                 lönresultat = 0;
@@ -100,17 +104,19 @@ namespace DataLayer
                 kostnader = 0;
                 pålägg = 0;
                 produkten = (from x in db.Produkt
-                                 where x.ProduktID == produkt
-                                 select x).FirstOrDefault();
+                             where x.ProduktID == produkt
+                             select x).FirstOrDefault();
 
-                beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
+                //beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
+
+
 
                 personalkostnad = from x in db.PersonalProdukt
-                                      join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
-                                      where x.Produkt_ProduktID == produkten.ProduktID
-                                      select x;
+                                  join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
+                                  where x.Produkt_ProduktID == produkten.ProduktID
+                                  select x;
 
-                foreach(var item in personalkostnad)
+                foreach (var item in personalkostnad)
                 {
                     lön = item.Personal.Månadslön;
                     andel = item.Placeringsandel;
@@ -119,18 +125,46 @@ namespace DataLayer
                     totalandel += andel;
                 }
 
+                
+
+                //if (totalandel != 0)
+                //{
+                //    beräknadschablon = beräknadschablon * totalandel; //vad händer här egentligen? *********************************************************
+                //}
+
                 if (totalandel != 0)
                 {
-                    beräknadschablon = beräknadschablon * totalandel;
+                    beräknadschablon = (BeräknaSchablon() / totalandel);
+                    sistaberäknadschablon = (beräknadschablon / BeräknaÅrsarbetare());
                 }
-               
-                kostnader = lönresultat + beräknadschablon;
+
+                kostnader = lönresultat + sistaberäknadschablon; ;
+
 
                 kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
 
-                var tb = kostnader * pålägg;
 
-                return kostnader + tb;
+                totaltillverkningskostnad = kostnader;
+
+
+                if (totaltillverkningskostnad != 0)
+                {
+                    pålägg = (BeräknaTB() / totaltillverkningskostnad);
+                }
+
+
+                var totalkostnad = totaltillverkningskostnad + pålägg;
+
+                Console.WriteLine("*kostnad: " + kostnader + "**");
+                Console.WriteLine("totaltk " + totaltillverkningskostnad + "*");
+                Console.WriteLine("pålägg: " + pålägg + "****");
+                Console.WriteLine("totalkostnad: " + totalkostnad + "***");
+                Console.WriteLine("produkten: " + produkten.Namn + "***");
+
+                return kostnader + totalkostnad;
+
+
+
             }
         }
 
@@ -203,6 +237,7 @@ namespace DataLayer
                         säljavd += item.Personal.Månadslön * ((decimal)item.Placering / 100);
                     }
                 }
+
                 queryadmin = from x in db.AvdelningPersonalxRef
                                  join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                  where x.Avdelning_AvdelningID == 3
@@ -237,7 +272,10 @@ namespace DataLayer
                                        where x.Konto.konto1 == 9999
                                     select x.Belopp).FirstOrDefault();
 
+                Console.WriteLine("säljavd " + säljavd + " adminavd " + adminavd + " direktkostnadsälj " + direktkostnadersälj + " direktkostadmin " + direktkostnaderadmin + " avkastningskrav" + avkastningskrav);
+
                 return (säljavd + adminavd + direktkostnadersälj + direktkostnaderadmin+ avkastningskrav);
+
 
             }
                 

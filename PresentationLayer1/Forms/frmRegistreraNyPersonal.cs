@@ -45,12 +45,12 @@ namespace PresentationLayer1.Forms
             var vakansavdrag = int.Parse(tbVakansavdrag.Text);
             var lösenord = tbLösenord.Text;
             var roll = cbRoll.SelectedItem.ToString();
-            var årsarbetare = decimal.Parse(tbÅrsarbetare.Text);
+            //var årsarbetare = decimal.Parse(tbÅrsarbetare.Text);
             
 
             if (PlaceringOk == true)
             {
-                businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, årsarbetare, roll);
+                businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, roll);
 
                 foreach (var avdelning in avdelnings)
                 {
@@ -87,6 +87,11 @@ namespace PresentationLayer1.Forms
         {
             årsarbete = int.Parse(tbSysselsättningsgrad.Text) - int.Parse(tbVakansavdrag.Text);
             tbÅrsarbetare.Text = årsarbete.ToString();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

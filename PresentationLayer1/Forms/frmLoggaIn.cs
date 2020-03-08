@@ -22,12 +22,16 @@ namespace PresentationLayer1
             t.Start();
             t.Join();
             InitializeComponent();
+
+
+
         }
 
         public void Load()
         {
             businessManager = new BusinessManager();
             var aktiviter = businessManager.GetAllKunder();
+
         }
 
 
@@ -35,6 +39,10 @@ namespace PresentationLayer1
         {
             string användarnamn = txtAnvändarnamn.Text;
             string lösenord = txtLösenord.Text;
+
+            this.txtLösenord.GotFocus += OnFocus;
+
+
             if (businessManager.Login(användarnamn, lösenord) != null)
             {
                 Globals.CurrentPersonal = businessManager.Login(användarnamn, lösenord);
@@ -48,6 +56,10 @@ namespace PresentationLayer1
                 txtLösenord.Clear();
                 txtLösenord.Focus();
             }
+        }
+        private void OnFocus(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnLoggaIn;
         }
 
         private void btnAvbrytLoggaIn_Click(object sender, EventArgs e)

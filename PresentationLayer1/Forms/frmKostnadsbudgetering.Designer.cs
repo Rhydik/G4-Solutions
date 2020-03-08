@@ -46,6 +46,7 @@
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             this.lblSök = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.varning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvÖvre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNedre)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +136,7 @@
             // lblprodukt
             // 
             this.lblprodukt.AutoSize = true;
-            this.lblprodukt.Location = new System.Drawing.Point(817, 121);
+            this.lblprodukt.Location = new System.Drawing.Point(817, 103);
             this.lblprodukt.Name = "lblprodukt";
             this.lblprodukt.Size = new System.Drawing.Size(44, 13);
             this.lblprodukt.TabIndex = 79;
@@ -160,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(744, 121);
+            this.label2.Location = new System.Drawing.Point(744, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 83;
@@ -213,11 +214,24 @@
             this.label4.TabIndex = 90;
             this.label4.Text = "Välj Produkt";
             // 
+            // varning
+            // 
+            this.varning.AutoSize = true;
+            this.varning.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.varning.ForeColor = System.Drawing.Color.Red;
+            this.varning.Location = new System.Drawing.Point(975, 149);
+            this.varning.Name = "varning";
+            this.varning.Size = new System.Drawing.Size(298, 44);
+            this.varning.TabIndex = 91;
+            this.varning.Text = "ARBETSANDEL/PLACERING ÄR \r\nALLTID 0-100% OAVSETT ÅRSARBETARE.";
+            this.varning.Click += new System.EventHandler(this.varning_Click);
+            // 
             // frmKostnadsbudgetering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 584);
+            this.Controls.Add(this.varning);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblSök);
             this.Controls.Add(this.ucMeny1);
@@ -265,5 +279,6 @@
         private ucMeny ucMeny1;
         private System.Windows.Forms.Label lblSök;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label varning;
     }
 }

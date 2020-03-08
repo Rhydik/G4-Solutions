@@ -138,7 +138,7 @@ namespace PresentationLayer1.Forms
             var produkt = cbProdukt.SelectedItem.ToString();
             var andel = tbAndel.Text;
 
-            if (personal.Diff >= decimal.Parse(andel))
+            if (101 > decimal.Parse(andel))
             {
                 businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
                 Update();
@@ -146,7 +146,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                MessageBox.Show("Placering överstiger tillåtet värde");
+                MessageBox.Show("Kebab Placering överstiger tillåtet värde");
             }
         }
 
@@ -232,6 +232,11 @@ namespace PresentationLayer1.Forms
                 btnLåsBudget.Hide();
                 btnTaBort.Hide();
             }
+        }
+
+        private void varning_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

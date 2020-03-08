@@ -53,6 +53,16 @@ namespace PresentationLayer1.Forms
             personal.Sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
             personal.Månadslön = int.Parse(tbMånadslön.Text);
             personal.Vakansavdrag = int.Parse(tbVakansavdrag.Text);
+
+            decimal s = int.Parse(tbSysselsättningsgrad.Text);
+            decimal v = int.Parse(tbVakansavdrag.Text);
+
+            Console.WriteLine("s: " + s);
+            Console.WriteLine("v: " + v);
+
+            personal.Årsarbete = s - v;
+            Console.WriteLine("års " + personal.Årsarbete);
+
             MessageBox.Show("Personal uppdaterad!");
             businessManager.UpdatePersonal(personal);
         }

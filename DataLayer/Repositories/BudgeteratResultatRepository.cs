@@ -28,6 +28,7 @@ namespace DataLayer
         decimal direktkostnadersälj;
         decimal direktkostnaderadmin;
         private IQueryable<Personal> årsarbete;
+        private IQueryable<Personal> till5021;
         private decimal årsarbeteresultat;
         private IQueryable<schablonkostnad> schablonskonstnad;
         private decimal schablonresultat;
@@ -123,6 +124,20 @@ namespace DataLayer
                     andel = (decimal)andel / 100;
                     lönresultat += lön * andel;
                     totalandel += andel;
+
+                    var currentSchablon = (from x in db.schablonkostnad
+                                           where x.Konto.Benämning == "5021"
+                                           select x).FirstOrDefault();
+
+                        if (currentSchablon != null)
+                    {
+                        var newschablon = new schablonkostnad { Belopp = lönresultat, Konto = currentSchablon.Konto, Konto_KontoID = currentSchablon.Konto_KontoID };
+                        Console.WriteLine("NYtill5021 " + newschablon + "  " + produkten.Namn);
+                        //db.schablonkostnad.Remove(currentSchablon);
+                        //db.schablonkostnad.Add(newschablon);
+                        //db.SaveChanges();
+                    }
+
                 }
 
                 
@@ -144,24 +159,23 @@ namespace DataLayer
                 kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
 
 
-                totaltillverkningskostnad = kostnader;
-
-
-                if (totaltillverkningskostnad != 0)
+                if (kostnader != 0)
                 {
-                    pålägg = (BeräknaTB() / totaltillverkningskostnad);
+                    pålägg = (BeräknaTB() / kostnader);
                 }
 
 
-                var totalkostnad = totaltillverkningskostnad + pålägg;
-
-                Console.WriteLine("*kostnad: " + kostnader + "**");
-                Console.WriteLine("totaltk " + totaltillverkningskostnad + "*");
+                var totalkostnad = kostnader + pålägg;
+                Console.WriteLine("________________");
+                Console.WriteLine("produkten: " + produkten.Namn + "***");
+                Console.WriteLine("lönekostnader: " + lönresultat);
+                Console.WriteLine("schablon: " + sistaberäknadschablon);
+                Console.WriteLine("totaltk " + kostnader + "*");
                 Console.WriteLine("pålägg: " + pålägg + "****");
                 Console.WriteLine("totalkostnad: " + totalkostnad + "***");
-                Console.WriteLine("produkten: " + produkten.Namn + "***");
+                Console.WriteLine("________________");
 
-                return kostnader + totalkostnad;
+                return totalkostnad;
 
 
 
@@ -284,9 +298,14 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
+                //schablonresultat = (from x in db.schablonkostnad
+                //                        where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
+                //                        select x.Belopp).Sum();
+
                 schablonresultat = (from x in db.schablonkostnad
-                                        where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
-                                        select x.Belopp).Sum();
+                                    where x.Konto.konto1 != 5021
+                                    select x.Belopp).Sum();
+
 
                 return schablonresultat;
             }

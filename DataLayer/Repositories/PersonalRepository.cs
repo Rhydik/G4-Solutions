@@ -133,6 +133,7 @@ namespace DataLayer
                 query.Månadslön = (int)personal.Månadslön;
                 query.Sysselsättningsgrad = personal.Sysselsättningsgrad;
                 query.Vakansavdrag = personal.Vakansavdrag;
+                query.Årsarbete = personal.Årsarbete;
 
                 db.SaveChanges();
             }

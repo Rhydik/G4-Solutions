@@ -205,10 +205,13 @@ namespace DataLayer
             {
                 //vi ska uppdatera logiken här, detta är bara tillfälligt
                 item.Fpp = GetFördeladAndel(item.PersonalID);
-                item.Andel = 100;
+                
+                //item.Andel = 100;
+                
                 item.Totalt = item.Årsarbetare;
                 item.Diff = item.Totalt - GetFördeladAndel(item.PersonalID);
-                item.GemAdm = 0;
+
+                //item.GemAdm = 0;
             }
             return personals;
 
@@ -218,7 +221,7 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                var total = 0;
+                decimal total = 0;
 
                 var andelaktivitet = from x in db.PersonalAktivitet
                             where x.Personal_PersonalID == personal
@@ -252,6 +255,12 @@ namespace DataLayer
 
         public void LäggTillPlaceringProdukt(int personal, string produkt, string andel) //Lägg till placering efter vald produkt
         {
+            decimal räknaprocent;
+            decimal räkna2;
+            decimal r2;
+            decimal n;
+            int k4;
+
             using (var db = new DataContext())
             {
                 var pers = (from x in db.Personal
@@ -263,7 +272,28 @@ namespace DataLayer
 
                 PersonalProdukt temp = new PersonalProdukt();
                 temp.Personal = pers;
-                temp.Placeringsandel = int.Parse(andel);
+
+                räkna2 = Decimal.Parse(andel);
+                räknaprocent = räkna2 / 100m;
+
+                Console.WriteLine("_____________________________");
+                Console.WriteLine(" räknaprocent: " + räknaprocent);
+
+                n = pers.Årsarbete; /*(pers.Årsarbete) / 100;*/
+
+                Console.WriteLine("namn " + pers.Namn);
+                Console.WriteLine(" årsarbete: " + n);
+
+                r2 = räknaprocent * n;
+
+                Console.WriteLine("r2: " + r2);
+
+                k4 = Decimal.ToInt32(r2);
+
+                temp.Placeringsandel = k4;
+
+                Console.WriteLine("_____________________________");
+
                 temp.Produkt_ProduktID = prod.ProduktID;
 
                 db.PersonalProdukt.Add(temp);

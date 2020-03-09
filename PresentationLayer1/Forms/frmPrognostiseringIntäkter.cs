@@ -156,6 +156,7 @@ namespace PresentationLayer1.Forms
 
         private void Lås()
         {
+            
             dgvPrognostiseringIntäkter.ReadOnly = true;  //logiken här låser alla grids för redigering, och gör dem utgråade
             dataGridView1.ReadOnly = true;
             dgvPrognostiseringIntäkter.DefaultCellStyle.BackColor = SystemColors.Control;

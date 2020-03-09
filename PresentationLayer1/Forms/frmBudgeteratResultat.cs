@@ -140,6 +140,9 @@ namespace PresentationLayer1.Forms
         {
             dgvBudgeteratResultat.ClearSelection();
             ProduktgruppDTO produktgruppDTO = new ProduktgruppDTO();
+            dgvBudgeteratResultat.Rows[1].ReadOnly = true;
+            dgvBudgeteratResultat.Rows[2].ReadOnly = true;
+
             produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
 
             decimal gruppintäkter = businessManager.GetGruppIntäkter(produktgruppDTO);
@@ -155,6 +158,13 @@ namespace PresentationLayer1.Forms
             dgvBudgeteratResultat.ClearSelection();
             AvdelningDTO avdelningDTO = new AvdelningDTO();
             avdelningDTO = (AvdelningDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            if (avdelningDTO.AvdelningsID == 2 || avdelningDTO.AvdelningsID == 3)
+            {
+                lblBudgeteradeIntäkter.Text = "0";
+                lblBudgetKostnader.Text = "0";
+
+                return;
+            }
             decimal avdelningIntäkter = businessManager.GetAvdelningIntäkter(avdelningDTO);
             decimal avdelningKostnader = produktAvdelningDict[avdelningDTO.Namn].Sum();
             lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString("0.00");

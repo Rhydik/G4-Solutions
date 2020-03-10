@@ -122,11 +122,11 @@ namespace DataLayer
                     lön = item.Personal.Månadslön;
                     andel = item.Placeringsandel;
                     andel = (decimal)andel / 100;
-                    lönresultat += lön * andel;
+                    lönresultat += lön * andel;                     ////SE ÖVER///////////////////////////////////
                     totalandel += andel;
 
                     var currentSchablon = (from x in db.schablonkostnad
-                                           where x.Konto.Benämning == "5021"
+                                           where x.Konto.Benämning == 5021.ToString()
                                            select x).FirstOrDefault();
 
                         if (currentSchablon != null)

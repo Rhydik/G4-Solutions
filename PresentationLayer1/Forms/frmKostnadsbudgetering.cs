@@ -137,7 +137,8 @@ namespace PresentationLayer1.Forms
             var pers = personal.PersonalID;
             var produkt = cbProdukt.SelectedItem.ToString();
             var andel = tbAndel.Text;
-            
+
+
 
             if (101 > decimal.Parse(andel))
             {

@@ -137,6 +137,7 @@ namespace PresentationLayer1.Forms
             var pers = personal.PersonalID;
             var produkt = cbProdukt.SelectedItem.ToString();
             var andel = tbAndel.Text;
+            
 
             if (101 > decimal.Parse(andel))
             {
@@ -146,7 +147,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                MessageBox.Show("Kebab Placering överstiger tillåtet värde");
+                MessageBox.Show("Placering överstiger tillåtet värde");
             }
         }
 

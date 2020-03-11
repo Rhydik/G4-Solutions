@@ -625,5 +625,11 @@ namespace BusinessLayer
         {
             repositoryFacade.avdelningPersonalRepository.SetAvdelningPersonal(avdelningsnamn, personNr, placering);
         }
+
+        public decimal GetDiff(List<KonstnadsbudgetPersonalDTO> personals)
+        {
+            decimal Diffen = repositoryFacade.kostnadsbudgetRepository.GetDiff(personals);
+            return Diffen;
+        }
     }
 }

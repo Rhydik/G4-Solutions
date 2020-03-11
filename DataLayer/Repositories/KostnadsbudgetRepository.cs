@@ -9,6 +9,9 @@ namespace DataLayer
 {
     public class KostnadsbudgetRepository
     {
+        public decimal PlaceringDiff;
+
+
         public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal() //Hämtar personalkostnadslista
         {
             using (var db = new DataContext())
@@ -211,13 +214,25 @@ namespace DataLayer
                 item.Totalt = item.Årsarbetare;
                 item.Diff = item.Totalt - GetFördeladAndel(item.PersonalID);
 
+                PlaceringDiff = item.Diff;
+
+                Console.WriteLine(PlaceringDiff);
+
                 //item.GemAdm = 0;
             }
             return personals;
 
         }
 
-        public decimal GetFördeladAndel(int personal) //Beräknar placerings andel efter vald personal
+        public decimal GetDiff(List<KonstnadsbudgetPersonalDTO> personals)
+        {
+            decimal Diffen;
+            Diffen = PlaceringDiff;
+
+            return Diffen;
+        }
+
+    public decimal GetFördeladAndel(int personal) //Beräknar placerings andel efter vald personal
         {
             using (var db = new DataContext())
             {
@@ -273,33 +288,50 @@ namespace DataLayer
                 PersonalProdukt temp = new PersonalProdukt();
                 temp.Personal = pers;
 
-                räkna2 = Decimal.Parse(andel);
-                räknaprocent = räkna2 / 100m;
 
-                Console.WriteLine("_____________________________");
-                Console.WriteLine(" räknaprocent: " + räknaprocent);
 
-                n = pers.Årsarbete; /*(pers.Årsarbete) / 100;*/
+                if (pers.Årsarbete > GetFördeladAndel(personal))
+                {
 
-                Console.WriteLine("namn " + pers.Namn);
-                Console.WriteLine(" årsarbete: " + n);
+                    räkna2 = Decimal.Parse(andel);
+                    räknaprocent = räkna2 / 100m;
 
-                r2 = räknaprocent * n;
+                    //Console.WriteLine("_____________________________");
+                    //Console.WriteLine(" räknaprocent: " + räknaprocent);
 
-                Console.WriteLine("r2: " + r2);
+                    n = pers.Årsarbete;
 
-                k4 = Decimal.ToInt32(r2);
+                    //Console.WriteLine("namn " + pers.Namn);
+                    //Console.WriteLine(" årsarbete: " + n);
 
-                temp.Placeringsandel = k4;
+                    r2 = räknaprocent * n;
 
-                Console.WriteLine("_____________________________");
+                    //Console.WriteLine("r2: " + r2);
 
-                temp.Produkt_ProduktID = prod.ProduktID;
+                    k4 = Decimal.ToInt32(r2);
 
-                db.PersonalProdukt.Add(temp);
+                    temp.Placeringsandel = k4;
 
-                db.SaveChanges();
+                    //Console.WriteLine("_____________________________");
+
+                    temp.Produkt_ProduktID = prod.ProduktID;
+
+
+                    db.PersonalProdukt.Add(temp);
+                    db.SaveChanges();
+                }
+
+                else
+                {
+                    return;
+                }
+
+
+
+
             }
+
+            
         }
 
         public List<PersonalProduktDTO> GetAllPersonalProdukt() //Hämtar personal efter vald produkt

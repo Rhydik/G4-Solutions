@@ -34,7 +34,7 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
-        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, string andel)
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, decimal andel)
         {
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
         }
@@ -217,7 +217,7 @@ namespace BusinessLayer
             return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalProdukt();
         }
 
-        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel)
+        public void LäggTillPlaceringProdukt(int personal, string produkt, decimal andel)
         {
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringProdukt(personal, produkt, andel);
         }
@@ -227,7 +227,7 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
         }
 
-        public void RemovePlaceringProdukt(string pers, string produkt, int andel)
+        public void RemovePlaceringProdukt(string pers, string produkt, decimal andel)
         {
             repositoryFacade.kostnadsbudgetRepository.RemovePlaceringsProdukt(pers, produkt, andel);
         }
@@ -626,10 +626,9 @@ namespace BusinessLayer
             repositoryFacade.avdelningPersonalRepository.SetAvdelningPersonal(avdelningsnamn, personNr, placering);
         }
 
-        public decimal GetDiff(List<KonstnadsbudgetPersonalDTO> personals)
+        public decimal GetFördeladAndel(int personal)
         {
-            decimal Diffen = repositoryFacade.kostnadsbudgetRepository.GetDiff(personals);
-            return Diffen;
+            return repositoryFacade.kostnadsbudgetRepository.GetFördeladAndel(personal);
         }
     }
 }

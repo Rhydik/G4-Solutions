@@ -136,11 +136,62 @@ namespace PresentationLayer1.Forms
             KonstnadsbudgetPersonalDTO personal = (KonstnadsbudgetPersonalDTO)dgvÖvre.CurrentRow.DataBoundItem;
             var pers = personal.PersonalID;
             var produkt = cbProdukt.SelectedItem.ToString();
-            var andel = tbAndel.Text;
+            decimal andel = decimal.Parse(tbAndel.Text);
+
+            var pp = businessManager.GetAllPersonal();
+
+            var query = (from x in pp
+                         where x.PersonalID == pers
+                         select x.Årsarbete).FirstOrDefault();
 
 
 
-            if (101 > decimal.Parse(andel))
+            //***********************************Behöver räknas för placeringen********************
+
+            decimal räknaprocent;
+            decimal räkna2;
+            decimal r2;
+            decimal n;
+            decimal nyplaceringsandel;
+
+
+            räkna2 = andel;
+            räknaprocent = räkna2 / 100m;
+
+            n = query;
+
+            r2 = räknaprocent * n;
+
+            nyplaceringsandel = r2;
+
+            Console.WriteLine("OSOSOSOSOSOSOSOSOSOSOOSOS  " + nyplaceringsandel + "  OSOSOSOS");
+
+
+
+            //**************************************************************************************
+
+
+            Console.WriteLine("dd" + query + "dd");
+
+            var fördeladandel = businessManager.GetFördeladAndel(pers);
+
+
+
+                Console.WriteLine("*** fördeladandel= " + fördeladandel + "***");
+
+
+
+
+            decimal nyandeltest = fördeladandel + nyplaceringsandel;      /* DENNA FÅR INTE VARA MINUS */   
+            
+
+
+                         Console.WriteLine("*** redan fördelat + ny input andel= " + nyandeltest + "***");
+
+
+            Console.WriteLine("Årsarbetare: " + query);
+
+            if (101 > andel && query >= nyandeltest && nyandeltest > 0)
             {
                 businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
                 Update();
@@ -148,7 +199,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                MessageBox.Show("Placering överstiger tillåtet värde");
+                MessageBox.Show("Placeringen överstiger den anställdas tid.", "Fel");
             }
         }
 
@@ -163,7 +214,7 @@ namespace PresentationLayer1.Forms
         {
             PersonalProduktDTO perspro = (PersonalProduktDTO)dgvNedre.CurrentRow.DataBoundItem;
             var pers = perspro.Personal;
-            var andel = perspro.Placeringsandel;
+            decimal andel = perspro.Placeringsandel;
             var produkt = perspro.Produkt;
 
             businessManager.RemovePlaceringProdukt(pers, produkt, andel);

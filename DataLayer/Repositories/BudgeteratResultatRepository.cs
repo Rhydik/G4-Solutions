@@ -117,12 +117,12 @@ namespace DataLayer
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
 
-                foreach (var item in personalkostnad)
+                foreach (var item in personalkostnad)               ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
                 {
                     lön = item.Personal.Månadslön;
-                    andel = item.Placeringsandel;
+                    andel = item.Placeringsandel;                   ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
                     andel = (decimal)andel / 100;
-                    lönresultat += lön * andel;                     ////SE ÖVER///////////////////////////////////
+                    lönresultat += lön * andel;                     ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
                     totalandel += andel;
 
                     var currentSchablon = (from x in db.schablonkostnad
@@ -133,9 +133,9 @@ namespace DataLayer
                     {
                         var newschablon = new schablonkostnad { Belopp = lönresultat, Konto = currentSchablon.Konto, Konto_KontoID = currentSchablon.Konto_KontoID };
                         Console.WriteLine("NYtill5021 " + newschablon + "  " + produkten.Namn);
-                        //db.schablonkostnad.Remove(currentSchablon);
-                        //db.schablonkostnad.Add(newschablon);
-                        //db.SaveChanges();
+                        db.schablonkostnad.Remove(currentSchablon);
+                        db.schablonkostnad.Add(newschablon);
+                        db.SaveChanges();
                     }
 
                 }

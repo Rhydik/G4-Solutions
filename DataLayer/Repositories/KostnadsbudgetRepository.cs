@@ -35,7 +35,7 @@ namespace DataLayer
 
         }
 
-        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, string andel) //Lägg till aktivitet
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, decimal andel) //Lägg till aktivitet
         {
             using (var db = new DataContext())
             {
@@ -46,12 +46,56 @@ namespace DataLayer
                             where x.Namn == aktivitet
                             select x).FirstOrDefault();
 
+                //PersonalAktivitet temp = new PersonalAktivitet();
+                //temp.Aktivitet_AktivitetID = akti.AktivitetID;
+                //temp.Personal = perso;
+                //temp.Personal_PersonalID = perso.PersonalID;
+                //temp.Aktivitet = akti;
+                //temp.Placeringsandel = andel;
+                //db.PersonalAktivitet.Add(temp);
+                //db.SaveChanges();
+
+
+
+                //*********************************************
+
+                decimal räknaprocent;
+                decimal räkna2;
+                decimal r2;
+                decimal n;
+                int k4;
+
                 PersonalAktivitet temp = new PersonalAktivitet();
+
+
+                //if (pers.Årsarbete > GetFördeladAndel(personal))
+                //{
+
+                räkna2 = andel;
+                räknaprocent = räkna2 / 100m;
+
+                //Console.WriteLine("_____________________________");
+                //Console.WriteLine(" räknaprocent: " + räknaprocent);
+
+                n = perso.Årsarbete;
+
+                //Console.WriteLine("namn " + pers.Namn);
+                //Console.WriteLine(" årsarbete: " + n);
+
+                r2 = räknaprocent * n;
+
+                //Console.WriteLine("r2: " + r2);
+
+                k4 = Decimal.ToInt32(r2);
+
+                temp.Placeringsandel = k4;
+
+                //Console.WriteLine("_____________________________");
+
                 temp.Aktivitet_AktivitetID = akti.AktivitetID;
                 temp.Personal = perso;
                 temp.Personal_PersonalID = perso.PersonalID;
                 temp.Aktivitet = akti;
-                temp.Placeringsandel = int.Parse(andel);
                 db.PersonalAktivitet.Add(temp);
                 db.SaveChanges();
             }
@@ -268,7 +312,7 @@ namespace DataLayer
             }
         }
 
-        public void LäggTillPlaceringProdukt(int personal, string produkt, string andel) //Lägg till placering efter vald produkt
+        public void LäggTillPlaceringProdukt(int personal, string produkt, decimal andel) //Lägg till placering efter vald produkt
         {
             decimal räknaprocent;
             decimal räkna2;
@@ -290,10 +334,10 @@ namespace DataLayer
 
 
 
-                if (pers.Årsarbete > GetFördeladAndel(personal))
-                {
+                //if (pers.Årsarbete > GetFördeladAndel(personal))
+                //{
 
-                    räkna2 = Decimal.Parse(andel);
+                    räkna2 = andel;
                     räknaprocent = räkna2 / 100m;
 
                     //Console.WriteLine("_____________________________");
@@ -319,12 +363,12 @@ namespace DataLayer
 
                     db.PersonalProdukt.Add(temp);
                     db.SaveChanges();
-                }
+                //}
 
-                else
-                {
-                    return; 
-                }
+                //else
+                //{
+                //    return; 
+                //}
 
 
 
@@ -347,7 +391,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringsProdukt(string pers, string produkt, int andel) //Raderar vald produktplacering
+        public void RemovePlaceringsProdukt(string pers, string produkt, decimal andel) //Raderar vald produktplacering
         {
             using (var db = new DataContext())
             {

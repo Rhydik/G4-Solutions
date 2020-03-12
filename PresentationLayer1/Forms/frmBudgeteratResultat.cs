@@ -13,7 +13,7 @@ using DataLayer.DTO;
 using System.Diagnostics;
 using System.Threading;
 using System.Runtime.InteropServices;
-using Excel = Microsoft.Office.Interop.Excel; 
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace PresentationLayer1.Forms
 {
@@ -46,7 +46,7 @@ namespace PresentationLayer1.Forms
 
             produkter = businessManager.GetAllProdukter();
 
-            foreach(var produkt in produkter)
+            foreach (var produkt in produkter)
             {
                 decimal beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
 
@@ -185,16 +185,16 @@ namespace PresentationLayer1.Forms
         }
         private void tbSök_TextChanged(object sender, EventArgs e)
         {
-                if (tbSök.TextLength == 0)
-                {
-                    produkter = businessManager.GetAllProdukter();
-                    dgvBudgeteratResultat.DataSource = produkter;
-                }
-                else
-                {
-                    produkter = businessManager.GetProduktByNamn(tbSök.Text);
-                    dgvBudgeteratResultat.DataSource = produkter;
-                }
+            if (tbSök.TextLength == 0)
+            {
+                produkter = businessManager.GetAllProdukter();
+                dgvBudgeteratResultat.DataSource = produkter;
+            }
+            else
+            {
+                produkter = businessManager.GetProduktByNamn(tbSök.Text);
+                dgvBudgeteratResultat.DataSource = produkter;
+            }
         }
 
         private void btnRensa_Click(object sender, EventArgs e)
@@ -235,9 +235,13 @@ namespace PresentationLayer1.Forms
                 return;
             }
 
+
             ProduktDTO produkter = new ProduktDTO();
             produkter = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
             string prodnamn = produkter.Namn;
+            string prodgrupp = produkter.Produktgrupp;
+            string prodkat = produkter.Produktkategori;
+            string prodavd = produkter.Avdelning;
 
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
@@ -251,10 +255,17 @@ namespace PresentationLayer1.Forms
             xlWorkSheet.Cells[1, 2] = "Budgeterade Intäkter";
             xlWorkSheet.Cells[1, 3] = "Budgeterade Kostnader";
             xlWorkSheet.Cells[1, 4] = "Budgeterat Resultat";
+            xlWorkSheet.Cells[1, 5] = " - ";
+            xlWorkSheet.Cells[1, 6] = "Produktgrupp";
+            xlWorkSheet.Cells[1, 7] = "Produktkategori";
+            xlWorkSheet.Cells[1, 8] = "Avdelning";
             xlWorkSheet.Cells[2, 1] = prodnamn;
             xlWorkSheet.Cells[2, 2] = lblBudgeteradeIntäkter.Text;
             xlWorkSheet.Cells[2, 3] = lblBudgetKostnader.Text;
             xlWorkSheet.Cells[2, 4] = lblResultat.Text;
+            xlWorkSheet.Cells[2, 6] = prodgrupp;
+            xlWorkSheet.Cells[2, 7] = prodkat;
+            xlWorkSheet.Cells[2, 8] = prodavd;
             xlWorkSheet.Columns.AutoFit();
 
             xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
@@ -266,9 +277,9 @@ namespace PresentationLayer1.Forms
             Marshal.ReleaseComObject(xlApp);
 
             MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
-
         }
     }
+}   
 
 
         //private void btnExportera_Click(object sender, EventArgs e)
@@ -310,4 +321,4 @@ namespace PresentationLayer1.Forms
 
         //}
     //}
-}
+

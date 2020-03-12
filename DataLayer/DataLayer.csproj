@@ -130,6 +130,10 @@
     <Compile Include="Migrations\202002131730349_prognostisering.designer.cs">
       <DependentUpon>202002131730349_prognostisering.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003121629051_test.cs" />
+    <Compile Include="Migrations\202003121629051_test.designer.cs">
+      <DependentUpon>202003121629051_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DBKlasser\Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -227,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002131730349_prognostisering.resx">
       <DependentUpon>202002131730349_prognostisering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003121629051_test.resx">
+      <DependentUpon>202003121629051_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

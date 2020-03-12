@@ -27,6 +27,11 @@ namespace BusinessLayer
             return repositoryFacade.personalRepository.GetAllAVdelningarFördelning();
         }
 
+        public void Konto5021()
+        {
+            repositoryFacade.kostnadsbudgetRepository.Konto5021();
+        }
+
         //Kunder
         public List<KundDTO> GetAllKunder()
         {

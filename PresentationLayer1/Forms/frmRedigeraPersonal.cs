@@ -36,6 +36,7 @@ namespace PresentationLayer1.Forms
         public void btnTaBortPersonal_Click(object sender, EventArgs e)
         {
             businessManager.RemovePersonal(personal);
+            businessManager.Konto5021();
             MessageBox.Show("Personal borttagen");
         }
 
@@ -65,6 +66,7 @@ namespace PresentationLayer1.Forms
 
             MessageBox.Show("Personal uppdaterad!");
             businessManager.UpdatePersonal(personal);
+            businessManager.Konto5021();
         }
     }
 }

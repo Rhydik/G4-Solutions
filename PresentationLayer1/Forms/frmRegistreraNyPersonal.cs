@@ -62,6 +62,7 @@ namespace PresentationLayer1.Forms
             {
                 MessageBox.Show("Placering överbelaggd");
             }
+            businessManager.Konto5021();
         }
 
         private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)

@@ -348,7 +348,7 @@ namespace DataLayer
             decimal räkna2;
             decimal r2;
             decimal n;
-            int k4;
+            decimal k4;
 
             using (var db = new DataContext())
             {
@@ -382,7 +382,7 @@ namespace DataLayer
 
                     //Console.WriteLine("r2: " + r2);
 
-                    k4 = Decimal.ToInt32(r2);
+                    k4 = r2;
 
                     temp.Placeringsandel = k4;
 

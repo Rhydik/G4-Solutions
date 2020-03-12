@@ -36,6 +36,7 @@ namespace PresentationLayer1.Forms
             t.Join();
 
             cmbKategori.SelectedItem = "Produkt";
+
         }
 
 
@@ -215,32 +216,46 @@ namespace PresentationLayer1.Forms
             btnRensa.Show();
         }
 
+
+        private void copyAlltoClipboard()
+        {
+            dgvBudgeteratResultat.SelectAll();
+            DataObject dataObj = dgvBudgeteratResultat.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
         private void btnExportera_Click(object sender, EventArgs e)
         {
-            Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            copyAlltoClipboard();
 
+            Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
             if (xlApp == null)
             {
                 MessageBox.Show("Excel är ej korrekt installerat!");
                 return;
             }
 
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
+            ProduktDTO produkter = new ProduktDTO();
+            produkter = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            string prodnamn = produkter.Namn;
+
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
             object misValue = System.Reflection.Missing.Value;
 
             xlWorkBook = xlApp.Workbooks.Add(misValue);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
 
-            xlWorkSheet.Cells[1, 1] = "Budgeterade Intäkter";
-            xlWorkSheet.Cells[1, 2] = "Budgeterade Kostnader";
-            xlWorkSheet.Cells[1, 3] = "Budgeterat Resultat";
-            xlWorkSheet.Cells[2, 1] = lblBudgeteradeIntäkter.Text;
-            xlWorkSheet.Cells[2, 2] = lblBudgetKostnader.Text;
-            xlWorkSheet.Cells[2, 3] = lblResultat.Text;
+            xlWorkSheet.Cells[1, 1] = "Produkt";
+            xlWorkSheet.Cells[1, 2] = "Budgeterade Intäkter";
+            xlWorkSheet.Cells[1, 3] = "Budgeterade Kostnader";
+            xlWorkSheet.Cells[1, 4] = "Budgeterat Resultat";
+            xlWorkSheet.Cells[2, 1] = prodnamn;
+            xlWorkSheet.Cells[2, 2] = lblBudgeteradeIntäkter.Text;
+            xlWorkSheet.Cells[2, 3] = lblBudgetKostnader.Text;
+            xlWorkSheet.Cells[2, 4] = lblResultat.Text;
             xlWorkSheet.Columns.AutoFit();
-
 
             xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
@@ -254,4 +269,45 @@ namespace PresentationLayer1.Forms
 
         }
     }
+
+
+        //private void btnExportera_Click(object sender, EventArgs e)
+        //{
+        //    //Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+        //    //if (xlApp == null)
+        //    //{
+        //    //    MessageBox.Show("Excel är ej korrekt installerat!");
+        //    //    return;
+        //    //}
+
+        //    //Excel.Workbook xlWorkBook;
+        //    //Excel.Worksheet xlWorkSheet;
+        //    //object misValue = System.Reflection.Missing.Value;
+
+        //    //xlWorkBook = xlApp.Workbooks.Add(misValue);
+        //    //xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+
+        //    //xlWorkSheet.Cells[1, 1] = "Budgeterade Intäkter";
+        //    //xlWorkSheet.Cells[1, 2] = "Budgeterade Kostnader";
+        //    //xlWorkSheet.Cells[1, 3] = "Budgeterat Resultat";
+        //    //xlWorkSheet.Cells[2, 1] = lblBudgeteradeIntäkter.Text;
+        //    //xlWorkSheet.Cells[2, 2] = lblBudgetKostnader.Text;
+        //    //xlWorkSheet.Cells[2, 3] = lblResultat.Text;
+        //    //xlWorkSheet.Columns.AutoFit();
+
+
+        //    //xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+        //    //xlWorkBook.Close(true, misValue, misValue);
+        //    //xlApp.Quit();
+
+        //    //Marshal.ReleaseComObject(xlWorkSheet);
+        //    //Marshal.ReleaseComObject(xlWorkBook);
+        //    //Marshal.ReleaseComObject(xlApp);
+
+        //    //MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
+
+        //}
+    //}
 }

@@ -20,6 +20,8 @@ namespace PresentationLayer1.Forms
 
     public partial class frmBudgeteratResultat : Form
     {
+        public List<ProduktDTO> ProduktDTOer; //för export funktionen, /Marcus
+
         BusinessManager businessManager = new BusinessManager();
         private List<ProduktDTO> produkter;
         private List<ProduktgruppDTO> produktgrupp;
@@ -237,6 +239,36 @@ namespace PresentationLayer1.Forms
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
         }
+
+        /// <summary>
+        /// ExportMetoden tar i nuläget hand om bara ProduktDTO klassen, och exporterar allt sådant.
+        /// Jag märker nu i efterhand att man säkert vill ha en "custom" klass för vad ni ska exportera.
+        /// Så förslagsvis skapar ni en sådan, och skickar in i ExportMetoden. 
+        /// Filtrera ut allt först ur er lista så allt ni vill ha är kvar, och skicka in i metoden nedan
+        /// </summary>
+        public void ExportMetoden()  //Marcus                         
+        {
+            List<ProduktDTO> ProduktDTOer = new List<ProduktDTO>();
+
+            SaveFileDialog save = new SaveFileDialog();
+            string filename = save.FileName;
+
+            save.DefaultExt = ".xls";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                List<ProduktDTO> FörberedaProduktDTOer = businessManager.FörberedaExportProduktDTO(ProduktDTOer);
+
+                shadowGridBudget.DataSource = FörberedaProduktDTOer;
+                /*
+                 shadowGridBudget är en osynlig datagridview som 
+                 används för att sammanställa alla värden och sedan skriva ut excel blad
+                */
+
+                businessManager.Exportera(shadowGridBudget, save.FileName);
+                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
+            }
+        }
+
         private void btnExportera_Click(object sender, EventArgs e)
         {
             copyAlltoClipboard();

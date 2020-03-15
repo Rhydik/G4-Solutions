@@ -46,7 +46,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucMeny = new PresentationLayer1.Forms.ucMeny();
             this.btnExportAllt = new System.Windows.Forms.Button();
+            this.shadowGridBudget = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shadowGridBudget)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSök
@@ -54,7 +56,7 @@
             this.lblSök.AutoSize = true;
             this.lblSök.Location = new System.Drawing.Point(361, 41);
             this.lblSök.Name = "lblSök";
-            this.lblSök.Size = new System.Drawing.Size(114, 15);
+            this.lblSök.Size = new System.Drawing.Size(100, 13);
             this.lblSök.TabIndex = 40;
             this.lblSök.Text = "Sök på produktnam";
             // 
@@ -63,7 +65,7 @@
             this.lblKategori.AutoSize = true;
             this.lblKategori.Location = new System.Drawing.Point(207, 41);
             this.lblKategori.Name = "lblKategori";
-            this.lblKategori.Size = new System.Drawing.Size(53, 15);
+            this.lblKategori.Size = new System.Drawing.Size(46, 13);
             this.lblKategori.TabIndex = 39;
             this.lblKategori.Text = "Kategori";
             // 
@@ -131,7 +133,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(204, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 29);
+            this.label1.Size = new System.Drawing.Size(45, 24);
             this.label1.TabIndex = 84;
             this.label1.Text = "Sök";
             // 
@@ -141,7 +143,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(211, 362);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 15);
+            this.label2.Size = new System.Drawing.Size(107, 13);
             this.label2.TabIndex = 85;
             this.label2.Text = "Budgeterade Intäkter";
             // 
@@ -151,7 +153,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(211, 384);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 15);
+            this.label3.Size = new System.Drawing.Size(119, 13);
             this.label3.TabIndex = 86;
             this.label3.Text = "Budgeterade Kostnader";
             // 
@@ -161,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(211, 419);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 87;
             this.label4.Text = "Budgeterat Resultat";
             // 
@@ -171,7 +173,7 @@
             this.lblBudgeteradeIntäkter.AutoSize = true;
             this.lblBudgeteradeIntäkter.Location = new System.Drawing.Point(361, 362);
             this.lblBudgeteradeIntäkter.Name = "lblBudgeteradeIntäkter";
-            this.lblBudgeteradeIntäkter.Size = new System.Drawing.Size(14, 15);
+            this.lblBudgeteradeIntäkter.Size = new System.Drawing.Size(13, 13);
             this.lblBudgeteradeIntäkter.TabIndex = 88;
             this.lblBudgeteradeIntäkter.Text = "0";
             // 
@@ -181,7 +183,7 @@
             this.lblBudgetKostnader.AutoSize = true;
             this.lblBudgetKostnader.Location = new System.Drawing.Point(361, 384);
             this.lblBudgetKostnader.Name = "lblBudgetKostnader";
-            this.lblBudgetKostnader.Size = new System.Drawing.Size(14, 15);
+            this.lblBudgetKostnader.Size = new System.Drawing.Size(13, 13);
             this.lblBudgetKostnader.TabIndex = 89;
             this.lblBudgetKostnader.Text = "0";
             // 
@@ -191,7 +193,7 @@
             this.lblResultat.AutoSize = true;
             this.lblResultat.Location = new System.Drawing.Point(361, 419);
             this.lblResultat.Name = "lblResultat";
-            this.lblResultat.Size = new System.Drawing.Size(14, 15);
+            this.lblResultat.Size = new System.Drawing.Size(13, 13);
             this.lblResultat.TabIndex = 90;
             this.lblResultat.Text = "0";
             // 
@@ -224,11 +226,21 @@
             this.btnExportAllt.UseVisualStyleBackColor = true;
             this.btnExportAllt.Click += new System.EventHandler(this.btnExporteraAllt);
             // 
+            // shadowGridBudget
+            // 
+            this.shadowGridBudget.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.shadowGridBudget.Location = new System.Drawing.Point(785, 41);
+            this.shadowGridBudget.Name = "shadowGridBudget";
+            this.shadowGridBudget.Size = new System.Drawing.Size(27, 26);
+            this.shadowGridBudget.TabIndex = 93;
+            this.shadowGridBudget.Visible = false;
+            // 
             // frmBudgeteratResultat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.shadowGridBudget);
             this.Controls.Add(this.btnExportAllt);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblResultat);
@@ -251,6 +263,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budgeterat Resultat | G4 Solutions Economy System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBudgeteratResultat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shadowGridBudget)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +287,6 @@
         private System.Windows.Forms.Label lblResultat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExportAllt;
+        private System.Windows.Forms.DataGridView shadowGridBudget;
     }
 }

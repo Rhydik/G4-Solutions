@@ -320,5 +320,17 @@ namespace DataLayer
                 return årsarbeteresultat;
             }
         }
+
+        public List<ProduktDTO> FörberedaExportProduktDTO(List<ProduktDTO> ProduktDTOer)    //Förebereder Export av ProduktDTOer
+        {
+            List<ProduktDTO> FörberedaProduktDTOer = new List<ProduktDTO>();
+
+            foreach (var item in ProduktDTOer)
+            {
+                FörberedaProduktDTOer.Add(item);
+            }
+
+            return FörberedaProduktDTOer;
+        }
     }
 }

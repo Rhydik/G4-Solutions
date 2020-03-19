@@ -528,7 +528,7 @@ namespace BusinessLayer
                 }
             }
 
-
+            xlWorkSheet.Columns.AutoFit();
             xlWorkBook.SaveAs(filename, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
@@ -620,9 +620,9 @@ namespace BusinessLayer
             return förberdaPrognoser;
         }
 
-        public List<ProduktDTO> FörberedaExportProduktDTO(List<ProduktDTO> ProduktDTOer) //för produktDTO
+        public List<string> FörberedaExportProduktDTO(List<string> hejsan) //för produktDTO
         {
-            List<ProduktDTO> FörberedaProduktDTOer = repositoryFacade.budgeteratResultatRepository.FörberedaExportProduktDTO(ProduktDTOer);
+            List<string> FörberedaProduktDTOer = repositoryFacade.budgeteratResultatRepository.FörberedaExportProduktDTO(hejsan);
             return FörberedaProduktDTOer;
         }
 

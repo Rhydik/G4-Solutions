@@ -166,14 +166,14 @@ namespace DataLayer
 
 
                 var totalkostnad = kostnader + pålägg;
-                Console.WriteLine("________________");
-                Console.WriteLine("produkten: " + produkten.Namn + "***");
-                Console.WriteLine("lönekostnader: " + lönresultat);
-                Console.WriteLine("schablon: " + sistaberäknadschablon);
-                Console.WriteLine("totaltk " + kostnader + "*");
-                Console.WriteLine("pålägg: " + pålägg + "****");
-                Console.WriteLine("totalkostnad: " + totalkostnad + "***");
-                Console.WriteLine("________________");
+                //Console.WriteLine("________________");
+                //Console.WriteLine("produkten: " + produkten.Namn + "***");
+                //Console.WriteLine("lönekostnader: " + lönresultat);
+                //Console.WriteLine("schablon: " + sistaberäknadschablon);
+                //Console.WriteLine("totaltk " + kostnader + "*");
+                //Console.WriteLine("pålägg: " + pålägg + "****");
+                //Console.WriteLine("totalkostnad: " + totalkostnad + "***");
+                //Console.WriteLine("________________");
 
                 return totalkostnad;
 
@@ -298,10 +298,6 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                //schablonresultat = (from x in db.schablonkostnad
-                //                        where x.Konto.konto1 > 5021 & x.Konto.konto1 < 8572
-                //                        select x.Belopp).Sum();
-
                 schablonresultat = (from x in db.schablonkostnad
                                     where x.Konto.konto1 != 5021
                                     select x.Belopp).Sum();
@@ -321,9 +317,9 @@ namespace DataLayer
             }
         }
 
-        public List<ProduktDTO> FörberedaExportProduktDTO(List<ProduktDTO> ProduktDTOer)    //Förebereder Export av ProduktDTOer
+        public List<string> FörberedaExportProduktDTO(List<string> ProduktDTOer)    //Förebereder Export av ProduktDTOer
         {
-            List<ProduktDTO> FörberedaProduktDTOer = new List<ProduktDTO>();
+            List<string> FörberedaProduktDTOer = new List<string>();
 
             foreach (var item in ProduktDTOer)
             {
@@ -332,5 +328,21 @@ namespace DataLayer
 
             return FörberedaProduktDTOer;
         }
+
+        //public void GetAllBudgeteratResultatExport()
+        //{
+        //    ProduktRepository instans = new ProduktRepository();
+        //    instans.GetAllProdukter();
+
+        //    List<string> budreslist = new List<string>();
+        //    //budreslist.Add(instans.GetAllProdukter().ToString());
+
+            
+        //    var produkt = instans.GetProduktByNamn("gasell");
+
+        //    budreslist.Add(GetProduktIntäkter(produkt).ToString());
+
+
+        //}
     }
 }

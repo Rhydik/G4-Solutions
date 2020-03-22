@@ -620,11 +620,11 @@ namespace BusinessLayer
             return förberdaPrognoser;
         }
 
-        public List<string> FörberedaExportProduktDTO(List<string> hejsan) //för produktDTO
-        {
-            List<string> FörberedaProduktDTOer = repositoryFacade.budgeteratResultatRepository.FörberedaExportProduktDTO(hejsan);
-            return FörberedaProduktDTOer;
-        }
+        //public List<string> FörberedaExportProduktDTO(List<ProduktDTO> produktDTOs) //för produktDTO
+        //{
+        //    List<string> FörberedaProduktDTOer = repositoryFacade.budgeteratResultatRepository.FörberedaExportProduktDTO(ProduktDTO);
+        //    return FörberedaProduktDTOer;
+        //}
 
         public List<KonstnadsbudgetPersonalDTO> Kalkylering(List<KonstnadsbudgetPersonalDTO> personals)
         {

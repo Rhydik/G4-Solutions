@@ -251,28 +251,28 @@ namespace PresentationLayer1.Forms
         /// Så förslagsvis skapar ni en sådan, och skickar in i ExportMetoden. 
         /// Filtrera ut allt först ur er lista så allt ni vill ha är kvar, och skicka in i metoden nedan
         /// </summary>
-        public void ExportMetoden()  //Marcus                         
-        {
-            List<ProduktDTO> ProduktDTOer = new List<ProduktDTO>();
+        //public void ExportMetoden()  //Marcus                         
+        //{
+        //    List<ProduktDTO> ProduktDTOer = new List<ProduktDTO>();
 
-            SaveFileDialog save = new SaveFileDialog();
-            string filename = save.FileName;
+        //    SaveFileDialog save = new SaveFileDialog();
+        //    string filename = save.FileName;
 
-            save.DefaultExt = ".xls";
-            if (save.ShowDialog() == DialogResult.OK)
-            {
-                List<ProduktDTO> FörberedaProduktDTOer = businessManager.FörberedaExportProduktDTO(ProduktDTOer);
+        //    save.DefaultExt = ".xls";
+        //    if (save.ShowDialog() == DialogResult.OK)
+        //    {
+        //        List<ProduktDTO> FörberedaProduktDTOer = businessManager.FörberedaExportProduktDTO(ProduktDTOer);
 
-                shadowGridBudget.DataSource = FörberedaProduktDTOer;
-                /*
-                 shadowGridBudget är en osynlig datagridview som 
-                 används för att sammanställa alla värden och sedan skriva ut excel blad
-                */
+        //        shadowGridBudget.DataSource = FörberedaProduktDTOer;
+        //        /*
+        //         shadowGridBudget är en osynlig datagridview som 
+        //         används för att sammanställa alla värden och sedan skriva ut excel blad
+        //        */
 
-                businessManager.Exportera(shadowGridBudget, save.FileName);
-                MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
-            }
-        }
+        //        businessManager.Exportera(shadowGridBudget, save.FileName);
+        //        MessageBox.Show(filename + " är sparad på " + save.FileName + ".");
+        //    }
+        //}
 
         private void btnExportera_Click(object sender, EventArgs e)
         {
@@ -334,8 +334,9 @@ namespace PresentationLayer1.Forms
 
         private void btnExporteraAllt(object sender, EventArgs e)
         {
-            ExportMetoden();
-
+            //ExportMetoden();
+            
+           // --------------------------------------------------------------------------------------    
 
             //copyAlltoClipboard();
 

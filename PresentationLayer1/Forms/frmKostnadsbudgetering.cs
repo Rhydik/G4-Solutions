@@ -63,7 +63,9 @@ namespace PresentationLayer1.Forms
             }
 
             GömKolumnerFörAvdelningar();
-        }
+
+
+    }
         private void CheckLås()
         {
             if (Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef") && businessManager.GetDriftLås())

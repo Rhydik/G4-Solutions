@@ -316,7 +316,7 @@ namespace PresentationLayer1.Forms
             xlWorkSheet.Cells[2, 8] = prodavd;
             xlWorkSheet.Columns.AutoFit();
 
-            xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.SaveAs("Valt_objekt_Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
 
@@ -324,7 +324,7 @@ namespace PresentationLayer1.Forms
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);
 
-            MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
+            MessageBox.Show("Valt_objekt_Budgeterat_Resultat_Excel_G4Solutions.xls");
         }
 
         private void btnExporteraAllt(object sender, EventArgs e)
@@ -479,7 +479,7 @@ namespace PresentationLayer1.Forms
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);
 
-            MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
+            MessageBox.Show("Excelfil skapad, du hittar den i mina dokument med namnet Budgeterat_Resultat_Excel_G4Solutions.xls");
 
         }
 

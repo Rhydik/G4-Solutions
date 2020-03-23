@@ -28,14 +28,17 @@ namespace PresentationLayer1.Forms
         {
             //prognoser = businessManager.GetAllPrognoser();
 
+
+
+            InitializeComponent();
+            LaddaRegister();
+            dgvPrognostiseringIntäkter.DataSource = prognoser; 
+            
             if (businessManager.GetProgLås())
             {
                 Lås();
             }
 
-            InitializeComponent();
-            LaddaRegister();
-            dgvPrognostiseringIntäkter.DataSource = prognoser;
             dgvPrognostiseringIntäkter.Columns["ProduktID"].Visible = false; //gömmer onödiga fält
             dgvPrognostiseringIntäkter.Columns["KundID"].Visible = false;
             dgvPrognostiseringIntäkter.Columns["Kund"].Visible = false;
@@ -64,8 +67,8 @@ namespace PresentationLayer1.Forms
             DialogResult dialogResult = MessageBox.Show("Är du säker på att du vill låsa Prognostiseringen?", "Varning", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Lås();
                 businessManager.SetProgLås(true);
+                Lås();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -93,7 +96,7 @@ namespace PresentationLayer1.Forms
             totalPrognos.ProduktID = "";
 
             dataGridView1.DataSource = totalPrognos; //datagridview 1 är en grid som visar summorna av diverse kolumner
-            dgvPrognostiseringIntäkter.DataSource = null;
+            //dgvPrognostiseringIntäkter.DataSource = null;
             dgvPrognostiseringIntäkter.DataSource = prognoser;
 
             dataGridView1.DataSource = new List<LästFilPrognos> { totalPrognos };

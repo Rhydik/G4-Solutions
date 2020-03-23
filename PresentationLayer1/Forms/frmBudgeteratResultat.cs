@@ -41,7 +41,6 @@ namespace PresentationLayer1.Forms
             cmbKategori.SelectedItem = "Produkt";
 
 
-
         }
 
 
@@ -79,7 +78,9 @@ namespace PresentationLayer1.Forms
                     produktAvdelningDict[produkt.Avdelning].Add(beräkning);
                 }
             }
-
+            produktgrupp = businessManager.GetProduktByGrupp();
+            produktAvdelning = businessManager.GetProduktByAvdelning();
+            kontor = businessManager.GetKontor();
             dgvBudgeteratResultat.DataSource = produkter;
 
         }
@@ -88,25 +89,21 @@ namespace PresentationLayer1.Forms
         {
             if (cmbKategori.Text == "Produkt")
             {
-                produkter = businessManager.GetAllProdukter();
                 dgvBudgeteratResultat.DataSource = produkter;
                 Show();
             }
             if (cmbKategori.Text == "Produktgrupp")
             {
-                produktgrupp = businessManager.GetProduktByGrupp();
                 dgvBudgeteratResultat.DataSource = produktgrupp;
                 Hide();
             }
             if (cmbKategori.Text == "Produktionsavdelning")
             {
-                produktAvdelning = businessManager.GetProduktByAvdelning();
                 dgvBudgeteratResultat.DataSource = produktAvdelning;
                 Hide();
             }
             if (cmbKategori.Text == "Kontoret")
             {
-                kontor = businessManager.GetKontor();
                 dgvBudgeteratResultat.DataSource = kontor;
                 Hide();
             }
@@ -156,8 +153,6 @@ namespace PresentationLayer1.Forms
         {
             dgvBudgeteratResultat.ClearSelection();
             ProduktgruppDTO produktgruppDTO = new ProduktgruppDTO();
-            dgvBudgeteratResultat.Rows[1].ReadOnly = true;
-            dgvBudgeteratResultat.Rows[2].ReadOnly = true;
 
             produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
 
@@ -334,105 +329,157 @@ namespace PresentationLayer1.Forms
 
         private void btnExporteraAllt(object sender, EventArgs e)
         {
-            //ExportMetoden();
+            Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            if (xlApp == null)
+            {
+                MessageBox.Show("Excel är ej korrekt installerat!");
+                return;
+            }
+
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet produktSheet;
+            Microsoft.Office.Interop.Excel.Worksheet produktGruppSheet;
+            Microsoft.Office.Interop.Excel.Worksheet produktAvdSheet;
+            Microsoft.Office.Interop.Excel.Worksheet kontorSheet;
+            object misValue = System.Reflection.Missing.Value;
+
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+
+            kontorSheet = (Excel.Worksheet)xlWorkBook.Worksheets.Add();
+            kontorSheet.Name = "Kontor";
+
+            produktAvdSheet = (Excel.Worksheet)xlWorkBook.Worksheets.Add();
+            produktAvdSheet.Name = "Produkt Avdelning";
+
+            produktGruppSheet = (Excel.Worksheet)xlWorkBook.Worksheets.Add();
+            produktGruppSheet.Name = "Produkt Grupp";
+
+            produktSheet = (Excel.Worksheet)xlWorkBook.Worksheets.Add();
+            produktSheet.Name = "Produkt";
+
+            int row = 1;
+
+            produktSheet.Cells[1, 1] = "Produkt";
+            produktSheet.Cells[1, 2] = "Budgeterade Intäkter";
+            produktSheet.Cells[1, 3] = "Budgeterade Kostnader";
+            produktSheet.Cells[1, 4] = "Budgeterat Resultat";
+
+            row++;
             
-           // --------------------------------------------------------------------------------------    
+            foreach (var produkt in produkter)
+            {
+                decimal prodintäkter = businessManager.GetProduktIntäkter(produkt);
+                decimal prodKostnader = produktDict[produkt.ProduktID];
+                decimal resultatprod = prodintäkter - prodKostnader;
 
-            //copyAlltoClipboard();
+                produktSheet.Cells[row, 1] = produkt.Namn;
+                produktSheet.Cells[row, 2] = prodintäkter;
+                produktSheet.Cells[row, 3] = prodKostnader;
+                produktSheet.Cells[row, 4] = resultatprod;
 
-            //Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            //if (xlApp == null)
-            //{
-            //    MessageBox.Show("Excel är ej korrekt installerat!");
-            //    return;
-            //}
+                row++;
+            }
 
-            //dgvBudgeteratResultat.Rows[0].Selected = true;
+            produktSheet.Columns.AutoFit();
 
-            //ProduktDTO produkter = new ProduktDTO();
-            //produkter = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
+            row = 1;
 
-            //string prodnamn = produkter.Namn;
-            //string prodgrupp = produkter.Produktgrupp;
-            //string prodkat = produkter.Produktkategori;
-            //string prodavd = produkter.Avdelning;
-            //decimal prodintäkter = businessManager.GetProduktIntäkter(produkter);
-            //decimal prodKostnader = produktDict[produkter.ProduktID];
-            //decimal resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            produktGruppSheet.Cells[1, 1] = "Produkt Grupp";
+            produktGruppSheet.Cells[1, 2] = "Budgeterade Intäkter";
+            produktGruppSheet.Cells[1, 3] = "Budgeterade Kostnader";
+            produktGruppSheet.Cells[1, 4] = "Budgeterat Resultat";
 
-            //Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            //Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            //object misValue = System.Reflection.Missing.Value;
+            row++;
+            
+            foreach (var produktgrupp in produktgrupp)
+            {
+                decimal prodintäkter = businessManager.GetGruppIntäkter(produktgrupp);
+                decimal prodKostnader = produktgruppDict[produktgrupp.Namn].Sum();
+                decimal resultatprod = prodintäkter - prodKostnader;
 
-            //xlWorkBook = xlApp.Workbooks.Add(misValue);
-            //xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                produktGruppSheet.Cells[row, 1] = produktgrupp.Namn;
+                produktGruppSheet.Cells[row, 2] = prodintäkter;
+                produktGruppSheet.Cells[row, 3] = prodKostnader;
+                produktGruppSheet.Cells[row, 4] = resultatprod;
 
-            //int col1 = 1;
+                row++;
+            }
 
-            //xlWorkSheet.Cells[1, 1] = "Produkt";
-            //xlWorkSheet.Cells[1, 2] = "Budgeterade Intäkter";
-            //xlWorkSheet.Cells[1, 3] = "Budgeterade Kostnader";
-            //xlWorkSheet.Cells[1, 4] = "Budgeterat Resultat";
-            //xlWorkSheet.Cells[1, 5] = " - ";
-            //xlWorkSheet.Cells[1, 6] = "Produktgrupp";
-            //xlWorkSheet.Cells[1, 7] = "Produktkategori";
-            //xlWorkSheet.Cells[1, 8] = "Avdelning";
+            produktGruppSheet.Columns.AutoFit();
 
-            //int totprod = 0;
-            //totprod = dgvBudgeteratResultat.Rows.Count;
+            row = 1;
 
-            //dgvBudgeteratResultat.Rows[0].Selected = true;
+            produktAvdSheet.Cells[1, 1] = "Produkt Avdelning";
+            produktAvdSheet.Cells[1, 2] = "Budgeterade Intäkter";
+            produktAvdSheet.Cells[1, 3] = "Budgeterade Kostnader";
+            produktAvdSheet.Cells[1, 4] = "Budgeterat Resultat";
 
-            //foreach (DataGridViewRow row in dgvBudgeteratResultat.Rows)
-            //{
-            //    //string hej;
-            //    //string prod4;
+            row++;
+            
+            foreach (var produktAvd in produktAvdelning)
+            {
 
-            //    //hej = row.Cells["namn"].Value.ToString();
-            //    //prod4 = row.Cells["produktgrupp"].Value.ToString();
+                decimal prodintäkter = businessManager.GetAvdelningIntäkter(produktAvd);
 
+                decimal prodKostnader = 0;
 
+                if (produktAvd.AvdelningsID == 2 || produktAvd.AvdelningsID == 3)
+                {
+                    prodKostnader = 0;
+                }
+                else
+                {
+                    prodKostnader = produktAvdelningDict[produktAvd.Namn].Sum();
+                }
 
-            //    //Console.WriteLine("pPpPp  " + hej + "  PpPpP");
-            //    //Console.WriteLine("pPpPp  " + prod4 + "  PpPpP");
-
-            //    //decimal intäktprod = 0;
-            //    //decimal kostnadprod = 0;
-
-            //        decimal prodintäkter2 = businessManager.GetProduktIntäkter(produkter);
-            //        decimal prodKostnader2 = produktDict[produkter.ProduktID];
-            //        decimal resultatprod2 = prodintäkter2 - prodKostnader2;
-            //        Console.WriteLine("KEBAB " + produkter.Namn + " KEBAB"); ;
-
-
-            //        xlWorkSheet.Cells[col1, 1] = row.Cells["namn"].Value;
-            //        xlWorkSheet.Cells[col1, 2] = prodintäkter2;
-            //        xlWorkSheet.Cells[col1, 3] = prodKostnader2;
-            //        xlWorkSheet.Cells[col1, 4] = resultatprod2;
-            //        xlWorkSheet.Cells[col1, 6] = row.Cells["produktgrupp"].Value;
-            //        xlWorkSheet.Cells[col1, 7] = row.Cells["produktkategori"].Value;
-            //        xlWorkSheet.Cells[col1, 8] = row.Cells["avdelning"].Value;
-
-            //    col1 = col1 + 1;
+                decimal resultatprod = prodintäkter - prodKostnader;
 
 
-            //    int plus = 0;
-            //    plus = plus + 1;
-            //    dgvBudgeteratResultat.Rows[plus].Selected = true;
-            //}
 
+                produktAvdSheet.Cells[row, 1] = produktAvd.Namn;
+                produktAvdSheet.Cells[row, 2] = prodintäkter;
+                produktAvdSheet.Cells[row, 3] = prodKostnader;
+                produktAvdSheet.Cells[row, 4] = resultatprod;
 
-            //xlWorkSheet.Columns.AutoFit();
+                row++;
+            }
 
-            //xlWorkBook.SaveAs("d:\\Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            //xlWorkBook.Close(true, misValue, misValue);
-            //xlApp.Quit();
+            produktAvdSheet.Columns.AutoFit();
 
-            //Marshal.ReleaseComObject(xlWorkSheet);
-            //Marshal.ReleaseComObject(xlWorkBook);
-            //Marshal.ReleaseComObject(xlApp);
+            row = 1;
 
-            //MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
+            kontorSheet.Cells[1, 1] = "Kontor";
+            kontorSheet.Cells[1, 2] = "Budgeterade Intäkter";
+            kontorSheet.Cells[1, 3] = "Budgeterade Kostnader";
+            kontorSheet.Cells[1, 4] = "Budgeterat Resultat";
+
+            row++;
+            
+            foreach (var kontor in kontor)
+            {
+                decimal prodintäkter = businessManager.GetKontorIntäkter();
+                decimal prodKostnader = produktDict.Sum(x => x.Value);
+                decimal resultatprod = prodintäkter - prodKostnader;
+
+                kontorSheet.Cells[row, 1] = kontor.Kontor;
+                kontorSheet.Cells[row, 2] = prodintäkter;
+                kontorSheet.Cells[row, 3] = prodKostnader;
+                kontorSheet.Cells[row, 4] = resultatprod;
+
+                row++;
+            }
+
+            kontorSheet.Columns.AutoFit();
+
+            xlWorkBook.SaveAs("Budgeterat_Resultat_Excel_G4Solutions.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
+
+            Marshal.ReleaseComObject(produktSheet);
+            Marshal.ReleaseComObject(xlWorkBook);
+            Marshal.ReleaseComObject(xlApp);
+
+            MessageBox.Show("Excelfil skapad, du hittar den d:\\Budgeterat_Resultat_Excel_G4Solutions.xls");
 
         }
 

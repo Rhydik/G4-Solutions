@@ -38,61 +38,195 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            var personNr = tbPersonnummer.Text;
-            var namn = tbNamn.Text;
-            var månadslön = int.Parse(tbMånadslön.Text);
-            var sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
-            var vakansavdrag = int.Parse(tbVakansavdrag.Text);
-            var lösenord = tbLösenord.Text;
-            var roll = cbRoll.SelectedItem.ToString();
-            //var årsarbetare = decimal.Parse(tbÅrsarbetare.Text);
-            
+            var månadslön = 0;
+            var vakansavdrag = 0;
+            var sysselsättningsgrad = 0;
 
-            if (PlaceringOk == true)
-            {
-                businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, roll);
+                var personNr = tbPersonnummer.Text;
+                var namn = tbNamn.Text;
+                månadslön = int.Parse(tbMånadslön.Text);
+                sysselsättningsgrad = int.Parse(tbSysselsättningsgrad.Text);
+                vakansavdrag = int.Parse(tbVakansavdrag.Text);
+                var lösenord = tbLösenord.Text;
+                var roll = cbRoll.SelectedItem.ToString();
 
-                foreach (var avdelning in avdelnings)
+
+
+                if (!String.IsNullOrEmpty(personNr) && !String.IsNullOrEmpty(lösenord) && !String.IsNullOrEmpty(namn) && !String.IsNullOrEmpty(månadslön.ToString()) )
                 {
-                    businessManager.SetPlacering(avdelning.Avdelning, personNr, avdelning.Fördelning);
+
+                    if (PlaceringOk == true)
+                    {
+                        businessManager.AddPersonal(sysselsättningsgrad, namn, personNr, vakansavdrag, lösenord, månadslön, roll);
+
+                        foreach (var avdelning in avdelnings)
+                        {
+                            businessManager.SetPlacering(avdelning.Avdelning, personNr, avdelning.Fördelning);
+                        }
+
+                        MessageBox.Show("Ny Personal tillagd!", "Klart", MessageBoxButtons.OK);
+                     if (DialogResult == DialogResult.OK)
+                    {
+                        this.Visible = !this.Visible;
+                        frmPersonal frmPersonal = new frmPersonal();
+                        frmPersonal.Show();
+                    }
+
+
+
+
+
                 }
-                MessageBox.Show("Personal sparad!");
-            }
-            else
+                    else
+                    {
+                        MessageBox.Show("Placering överbelaggd");
+                    }
+
+                    businessManager.Konto5021();
+                }
+                else
+                {
+                    MessageBox.Show("Namn, Personnummer och lösenord får inte vara blankt.", "Fel",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            
+        }
+
+
+        private void tbVakansavdrag_TextChanged(object sender, EventArgs e)
+        {
+            int syss = 0;
+            int vaka = 0;
+            int annars = 0;
+
+            if (int.TryParse(tbSysselsättningsgrad.Text, out annars) && int.TryParse(tbVakansavdrag.Text, out annars))
             {
-                MessageBox.Show("Placering överbelaggd");
+                syss = int.Parse(tbSysselsättningsgrad.Text);
+                vaka = int.Parse(tbVakansavdrag.Text);
+
+                årsarbete = syss - vaka;
+
+                tbÅrsarbetare.Text = årsarbete.ToString();
+
             }
-            businessManager.Konto5021();
+
+            if (årsarbete < 0)
+            {
+                MessageBox.Show("Årsarbetare kan ej vara minus.", "Fel",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void DgvPlacering_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var placerat = 0;
+
+            decimal räknaprocent;
+            decimal räkna2;
+            decimal färdigräknat;
+
+            //för att kunna mata in 0-100% oavsett årsarbetare.
+
+            räknaprocent = placerat / 100m;
+            färdigräknat = räknaprocent * årsarbete;
+
+
+
+
+
             foreach (var item in avdelnings)
             {
                 placerat += item.Fördelning;
             }
-            if (placerat > int.Parse(tbÅrsarbetare.Text))
-            {
-                lblÖverbelaggd.Visible = true;
-                PlaceringOk = false;
-            }
-            else
+            if (101 > placerat && årsarbete >= 0)
             {
                 lblÖverbelaggd.Visible = false;
                 PlaceringOk = true;
             }
-        }
-
-        private void tbVakansavdrag_TextChanged(object sender, EventArgs e)
-        {
-            årsarbete = int.Parse(tbSysselsättningsgrad.Text) - int.Parse(tbVakansavdrag.Text);
-            tbÅrsarbetare.Text = årsarbete.ToString();
+            else
+            {
+                lblÖverbelaggd.Visible = true;
+                PlaceringOk = false;
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void tbSysselsättningsgrad_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void tbVakansavdrag_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if (tbVakansavdrag.Text.StartsWith("1"))
+            {
+                tbVakansavdrag.MaxLength = 3;
+            }
+            else
+            {
+                tbVakansavdrag.MaxLength = 2;
+            }
+
+
+
+        }
+
+        private void tbLösenord_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void tbSysselsättningsgrad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if (tbSysselsättningsgrad.Text.StartsWith("1"))
+            {
+                tbSysselsättningsgrad.MaxLength = 3;
+            }
+            else
+            {
+                tbSysselsättningsgrad.MaxLength = 2;
+            }
+        }
+
+        private void tbMånadslön_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbMånadslön_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            tbMånadslön.MaxLength = 7;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
+    
 }

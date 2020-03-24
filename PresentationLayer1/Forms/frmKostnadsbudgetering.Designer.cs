@@ -58,7 +58,7 @@
             this.dgvÖvre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvÖvre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvÖvre.Location = new System.Drawing.Point(277, 103);
-            this.dgvÖvre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvÖvre.Margin = new System.Windows.Forms.Padding(4);
             this.dgvÖvre.Name = "dgvÖvre";
             this.dgvÖvre.ReadOnly = true;
             this.dgvÖvre.RowHeadersWidth = 62;
@@ -69,7 +69,7 @@
             // 
             this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportera.Location = new System.Drawing.Point(277, 654);
-            this.btnExportera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportera.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportera.Name = "btnExportera";
             this.btnExportera.Size = new System.Drawing.Size(160, 50);
             this.btnExportera.TabIndex = 69;
@@ -80,7 +80,7 @@
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLåsBudget.Location = new System.Drawing.Point(1355, 654);
-            this.btnLåsBudget.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLåsBudget.Margin = new System.Windows.Forms.Padding(4);
             this.btnLåsBudget.Name = "btnLåsBudget";
             this.btnLåsBudget.Size = new System.Drawing.Size(160, 50);
             this.btnLåsBudget.TabIndex = 68;
@@ -92,7 +92,7 @@
             // 
             this.cmbAvdelning.FormattingEnabled = true;
             this.cmbAvdelning.Location = new System.Drawing.Point(276, 68);
-            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbAvdelning.Margin = new System.Windows.Forms.Padding(4);
             this.cmbAvdelning.Name = "cmbAvdelning";
             this.cmbAvdelning.Size = new System.Drawing.Size(160, 24);
             this.cmbAvdelning.TabIndex = 70;
@@ -115,7 +115,7 @@
             this.dgvNedre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNedre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNedre.Location = new System.Drawing.Point(992, 290);
-            this.dgvNedre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvNedre.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNedre.Name = "dgvNedre";
             this.dgvNedre.RowHeadersWidth = 51;
             this.dgvNedre.Size = new System.Drawing.Size(691, 356);
@@ -124,7 +124,7 @@
             // buttonVäljAvdelning
             // 
             this.buttonVäljAvdelning.Location = new System.Drawing.Point(448, 68);
-            this.buttonVäljAvdelning.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVäljAvdelning.Margin = new System.Windows.Forms.Padding(4);
             this.buttonVäljAvdelning.Name = "buttonVäljAvdelning";
             this.buttonVäljAvdelning.Size = new System.Drawing.Size(100, 28);
             this.buttonVäljAvdelning.TabIndex = 76;
@@ -136,7 +136,7 @@
             // 
             this.cbProdukt.FormattingEnabled = true;
             this.cbProdukt.Location = new System.Drawing.Point(991, 52);
-            this.cbProdukt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProdukt.Margin = new System.Windows.Forms.Padding(4);
             this.cbProdukt.Name = "cbProdukt";
             this.cbProdukt.Size = new System.Drawing.Size(299, 24);
             this.cbProdukt.TabIndex = 77;
@@ -165,10 +165,11 @@
             // tbAndel
             // 
             this.tbAndel.Location = new System.Drawing.Point(992, 213);
-            this.tbAndel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAndel.Margin = new System.Windows.Forms.Padding(4);
             this.tbAndel.Name = "tbAndel";
             this.tbAndel.Size = new System.Drawing.Size(299, 22);
             this.tbAndel.TabIndex = 82;
+            this.tbAndel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAndel_KeyPress);
             // 
             // label2
             // 
@@ -183,7 +184,7 @@
             // btnLäggTill
             // 
             this.btnLäggTill.Location = new System.Drawing.Point(1191, 246);
-            this.btnLäggTill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLäggTill.Margin = new System.Windows.Forms.Padding(4);
             this.btnLäggTill.Name = "btnLäggTill";
             this.btnLäggTill.Size = new System.Drawing.Size(100, 28);
             this.btnLäggTill.TabIndex = 84;
@@ -194,7 +195,7 @@
             // btnTaBort
             // 
             this.btnTaBort.Location = new System.Drawing.Point(1583, 654);
-            this.btnTaBort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTaBort.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaBort.Name = "btnTaBort";
             this.btnTaBort.Size = new System.Drawing.Size(100, 28);
             this.btnTaBort.TabIndex = 85;
@@ -205,7 +206,7 @@
             // ucMeny1
             // 
             this.ucMeny1.Location = new System.Drawing.Point(8, 31);
-            this.ucMeny1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucMeny1.Margin = new System.Windows.Forms.Padding(5);
             this.ucMeny1.Name = "ucMeny1";
             this.ucMeny1.Size = new System.Drawing.Size(259, 539);
             this.ucMeny1.TabIndex = 86;
@@ -269,7 +270,7 @@
             this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKostnadsbudgetering";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personalfördelning - Produkt  | G4 Solutions Economy System";

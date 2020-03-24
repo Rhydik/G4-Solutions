@@ -293,5 +293,22 @@ namespace PresentationLayer1.Forms
         {
 
         }
+
+        private void tbAndel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if (tbAndel.Text.StartsWith("1"))
+            {
+                tbAndel.MaxLength = 3;
+            }
+            else
+            {
+                tbAndel.MaxLength = 2;
+            }
+        }
     }
 }

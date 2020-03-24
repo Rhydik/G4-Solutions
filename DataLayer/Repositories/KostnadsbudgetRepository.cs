@@ -250,7 +250,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel) //Raderar vald placeringsaktivitet
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, decimal andel) //Raderar vald placeringsaktivitet
         {
             using (var db = new DataContext())
             {

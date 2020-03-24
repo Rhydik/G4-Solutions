@@ -134,6 +134,10 @@
     <Compile Include="Migrations\202003121629051_test.designer.cs">
       <DependentUpon>202003121629051_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003241349010_intTillDecida.cs" />
+    <Compile Include="Migrations\202003241349010_intTillDecida.designer.cs">
+      <DependentUpon>202003241349010_intTillDecida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DBKlasser\Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -234,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003121629051_test.resx">
       <DependentUpon>202003121629051_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003241349010_intTillDecida.resx">
+      <DependentUpon>202003241349010_intTillDecida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

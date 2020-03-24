@@ -119,7 +119,7 @@ namespace BusinessLayer
             repositoryFacade.schablonRepository.AddSchablon(kostnad, schablon);
         }
 
-        public void RemovePlaceringAktivitet(string pers, string aktivitet, int andel)
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, decimal andel)
         {
             repositoryFacade.kostnadsbudgetRepository.RemovePlaceringAktivitet(pers, aktivitet, andel);
         }

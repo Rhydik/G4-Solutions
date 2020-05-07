@@ -11,6 +11,20 @@ namespace DataLayer
     {
         public decimal PlaceringDiff;
 
+        public List<string> GetAllAnvändaProdukter()
+        {
+            using (var db = new DataContext())
+            {
+                var personalprod = db.PersonalProdukt.Select(x => x.Produkt_ProduktID).Distinct().ToList();
+
+                var direktprod = db.DirektkostnadProdukt.Select(x => x.Produkt_ProduktID).Distinct().ToList();
+
+                personalprod.AddRange(direktprod);
+
+                return personalprod;
+            }
+
+        }
 
         public List<KonstnadsbudgetPersonalDTO> GetKostnadsbudgetPersonal() //Hämtar personalkostnadslista
         {

@@ -49,10 +49,17 @@ namespace PresentationLayer1.Forms
             businessManager.GetProduktKostnaderAvdelning(1);
 
             produkter = businessManager.GetAllProdukter();
+            var produkterAnvända = businessManager.GetAllAnvändaProdukter();
 
             foreach (var produkt in produkter)
             {
-                decimal beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
+                decimal beräkning = 0;
+
+                if (produkterAnvända.Contains(produkt.ProduktID))
+                {
+                    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
+                }
+
 
                 produktDict.Add(produkt.ProduktID, beräkning);
 
@@ -78,6 +85,7 @@ namespace PresentationLayer1.Forms
                     produktAvdelningDict[produkt.Avdelning].Add(beräkning);
                 }
             }
+
             produktgrupp = businessManager.GetProduktByGrupp();
             produktAvdelning = businessManager.GetProduktByAvdelning();
             kontor = businessManager.GetKontor();

@@ -641,5 +641,10 @@ namespace BusinessLayer
         {
             return repositoryFacade.kostnadsbudgetRepository.GetFördeladAndel(personal);
         }
+
+        public List<string> GetAllAnvändaProdukter()
+        {
+            return repositoryFacade.kostnadsbudgetRepository.GetAllAnvändaProdukter();
+        }
     }
 }

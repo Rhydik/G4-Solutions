@@ -98,11 +98,9 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 totaltillverkningskostnad = 0;
-                sistaberäknadschablon = 0;
                 lön = 0;
                 andel = 0;
                 lönresultat = 0;
-               // beräknadschablon = 0;
                 totalandel = 0;
                 kostnader = 0;
                 pålägg = 0;
@@ -110,7 +108,6 @@ namespace DataLayer
                              where x.ProduktID == produkt
                              select x).FirstOrDefault();
 
-                //beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
 
                 decimal årsarbetare = 0;
                 decimal beräknadschablon = 0;
@@ -119,13 +116,6 @@ namespace DataLayer
                                   join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
-
-                foreach (var person in personalkostnad)
-                {
-                    Console.WriteLine(person.Personal.Namn + "|" + person.Personal.Månadslön + "|" + person.Personal.Årsarbete);
-                    Console.WriteLine(person.Placeringsandel);
-                }
-                    
 
                 foreach (var item in personalkostnad)
                 {
@@ -151,68 +141,6 @@ namespace DataLayer
                 kostnader = kostnader + pålägg;
 
                 return kostnader;
-                //foreach (var item in personalkostnad)               ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
-                //{
-                //    lön = item.Personal.Månadslön;
-                //    andel = item.Placeringsandel;                   ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
-                //    andel = (decimal)andel / 100;
-                //    lönresultat += lön * andel;                     ////SE ÖVER///////////////////////////////////////////////////////////////////////////////////
-                //    totalandel += andel;
-
-                //    var currentSchablon = (from x in db.schablonkostnad
-                //                           where x.Konto.Benämning == 5021.ToString()
-                //                           select x).FirstOrDefault();
-
-                //        if (currentSchablon != null)
-                //    {
-                //        var newschablon = new schablonkostnad { Belopp = lönresultat, Konto = currentSchablon.Konto, Konto_KontoID = currentSchablon.Konto_KontoID };
-                //        Console.WriteLine("NYtill5021 " + newschablon + "  " + produkten.Namn);
-                //        db.schablonkostnad.Remove(currentSchablon);
-                //        db.schablonkostnad.Add(newschablon);
-                //        db.SaveChanges();
-                //    }
-
-                //}
-
-                
-
-                ////if (totalandel != 0)
-                ////{
-                ////    beräknadschablon = beräknadschablon * totalandel; //vad händer här egentligen? *********************************************************
-                ////}
-
-                ////if (totalandel != 0)
-                ////{
-                ////    beräknadschablon = (BeräknaSchablon() / totalandel);
-                ////    sistaberäknadschablon = (beräknadschablon / BeräknaÅrsarbetare());
-                ////}
-
-                //kostnader = lönresultat + sistaberäknadschablon; ;
-
-
-                //kostnader += GetDirektKostnaderProdukt(produkten.ProduktID);
-
-
-                //if (kostnader != 0)
-                //{
-                //    pålägg = (BeräknaTB() / kostnader);
-                //}
-
-
-                //var totalkostnad = kostnader + pålägg;
-                ////Console.WriteLine("________________");
-                ////Console.WriteLine("produkten: " + produkten.Namn + "***");
-                ////Console.WriteLine("lönekostnader: " + lönresultat);
-                ////Console.WriteLine("schablon: " + sistaberäknadschablon);
-                ////Console.WriteLine("totaltk " + kostnader + "*");
-                ////Console.WriteLine("pålägg: " + pålägg + "****");
-                ////Console.WriteLine("totalkostnad: " + totalkostnad + "***");
-                ////Console.WriteLine("________________");
-
-                //return totalkostnad;
-
-
-
             }
         }
 
@@ -327,12 +255,6 @@ namespace DataLayer
                     direktkostnaderadmin += item.Belopp;
                 }
 
-                //avkastningskrav = (from x in db.schablonkostnad
-                //                       where x.Konto.konto1 == 9999
-                //                    select x.Belopp).FirstOrDefault();
-
-                //Console.WriteLine("säljavd " + säljavd + " adminavd " + adminavd + " direktkostnadsälj " + direktkostnadersälj + " direktkostadmin " + direktkostnaderadmin + " avkastningskrav" + avkastningskrav);
-
                 decimal tb;
                 return tb = (säljavd + direktkostnadersälj) + (adminavd + direktkostnaderadmin);
 
@@ -356,14 +278,7 @@ namespace DataLayer
                         sum += item.Belopp;
                     }
                 }
-
                 return sum;
-                //schablonresultat = (from x in db.schablonkostnad
-                //                    where x.Konto.konto1 != 5021
-                //                    select x.Belopp).Sum();
-
-
-                //return schablonresultat;
             }
         }
         public decimal BeräknaÅrsarbetare()

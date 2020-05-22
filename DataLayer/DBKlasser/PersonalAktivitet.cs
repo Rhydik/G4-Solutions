@@ -21,7 +21,7 @@ namespace DataLayer
         [StringLength(128)]
         public string Aktivitet_AktivitetID { get; set; }
 
-        public decimal Placeringsandel { get; set; }
+        public double Placeringsandel { get; set; }
 
         public virtual Personal Personal { get; set; }
         public virtual Aktivitet Aktivitet { get; set; }

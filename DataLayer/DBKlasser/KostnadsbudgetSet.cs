@@ -20,7 +20,7 @@ namespace DataLayer
         [Key]
         public int KostnadsbudgetID { get; set; }
 
-        public decimal Summering { get; set; }
+        public double Summering { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AktivitetKostnadsbudget> AktivitetKostnadsbudget { get; set; }

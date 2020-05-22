@@ -105,10 +105,10 @@ namespace PresentationLayer1.Forms
 
         private void Update()
         {
-            decimal sumAvtal = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Avtal");
-            decimal sumTillägg = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Tillägg");
-            decimal sumBudget = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Budget");
-            decimal sumTim = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Tim");
+            double sumAvtal = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Avtal");
+            double sumTillägg = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Tillägg");
+            double sumBudget = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Budget");
+            double sumTim = GetSum(businessManager.GetAllKundProdukter(lblValdKundID.Text), "Tim");
             produkts = businessManager.GetAllKundProdukter(lblValdKundID.Text);
             lblAvtal.Text = sumAvtal.ToString();
             lblTIllägg.Text = sumTillägg.ToString();
@@ -129,9 +129,9 @@ namespace PresentationLayer1.Forms
             businessManager.ExportToFile();
         }
 
-        private decimal GetSum(List<IntäktsbudgetKundDTO> produkts, string sak)
+        private double GetSum(List<IntäktsbudgetKundDTO> produkts, string sak)
         {
-            decimal sum = 0;
+            double sum = 0;
             if (sak == "Avtal")
             {
                 foreach (var item in produkts)

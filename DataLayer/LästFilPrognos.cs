@@ -13,16 +13,16 @@ namespace DataLayer
         public string KundID { get; set; }
         public string Kund { get; set; }
         public string Datum { get; set; }
-        public decimal Budget { get; set; }
+        public double Budget { get; set; }
 
-        public decimal UtfallMån { get; set; }
-        public decimal UtfallAcc { get; set; }
+        public double UtfallMån { get; set; }
+        public double UtfallAcc { get; set; }
         public string Månad { get; set; }
-        public decimal Upparbetat { get; set; }
-        public decimal Trend { get; set; }
-        public decimal FöregPrognos { get; set; }
-        public decimal Prognos { get; set; }
-        public decimal PrognosBudget { get; set; }
+        public double Upparbetat { get; set; }
+        public double Trend { get; set; }
+        public double FöregPrognos { get; set; }
+        public double Prognos { get; set; }
+        public double PrognosBudget { get; set; }
         
     }
 }

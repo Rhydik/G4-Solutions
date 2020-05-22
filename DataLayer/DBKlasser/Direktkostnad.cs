@@ -19,6 +19,6 @@ namespace DataLayer
         [StringLength(128)]
         public string Produkt_ProduktID { get; set; }
         public virtual Produkt Produkt { get; set; }
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
     }
 }

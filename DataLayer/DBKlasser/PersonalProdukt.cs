@@ -18,7 +18,7 @@ namespace DataLayer
         [Column(Order = 1)]
         public string Produkt_ProduktID { get; set; }
 
-        public decimal Placeringsandel { get; set; }
+        public double Placeringsandel { get; set; }
 
         public virtual Personal Personal { get; set; }
     }

@@ -120,13 +120,13 @@ namespace PresentationLayer1.Forms
         {
             var placerat = 0;
 
-            decimal räknaprocent;
-            decimal räkna2;
-            decimal färdigräknat;
+            double räknaprocent;
+            double räkna2;
+            double färdigräknat;
 
             //för att kunna mata in 0-100% oavsett årsarbetare.
 
-            räknaprocent = placerat / 100m;
+            räknaprocent = (double) (placerat / 100m);
             färdigräknat = räknaprocent * årsarbete;
 
 

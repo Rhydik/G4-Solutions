@@ -20,6 +20,6 @@ namespace DataLayer
         [Column(Order = 1)]
         public int Personal_PersonalID { get; set; }
         public virtual Personal Personal { get; set; }
-        public decimal Placering { get;set; }
+        public double Placering { get;set; }
     }
 }

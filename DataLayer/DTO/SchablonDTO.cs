@@ -10,6 +10,6 @@ namespace DataLayer
     {
         public int Konto { get; set; }
         public string Kontobenämning { get; set; }
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
     }
 }

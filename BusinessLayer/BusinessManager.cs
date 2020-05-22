@@ -34,7 +34,7 @@ namespace BusinessLayer
             return repositoryFacade.kundRepository.GetAllKunder();
         }
 
-        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, decimal andel)
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, double andel)
         {
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
         }
@@ -114,7 +114,7 @@ namespace BusinessLayer
             repositoryFacade.schablonRepository.AddSchablon(kostnad, schablon);
         }
 
-        public void RemovePlaceringAktivitet(string pers, string aktivitet, decimal andel)
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, double andel)
         {
             repositoryFacade.kostnadsbudgetRepository.RemovePlaceringAktivitet(pers, aktivitet, andel);
         }
@@ -178,9 +178,9 @@ namespace BusinessLayer
             return repositoryFacade.produktRepository.CheckAvdelning(avdelning);
         }
 
-        public decimal GetProduktIntäkter(ProduktDTO produkt)
+        public double GetProduktIntäkter(ProduktDTO produkt)
         {
-            decimal budget = 0;
+            double budget = 0;
             
             var list = repositoryFacade.budgeteratResultatRepository.GetProduktIntäkter(produkt);
             foreach (var item in list)
@@ -195,14 +195,14 @@ namespace BusinessLayer
             repositoryFacade.produktRepository.CreateAvdelning(avdelning);
         }
 
-        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId)
+        public void AddKundProdukt(ProduktDTO produkt, double avtal, double tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId)
         {
             repositoryFacade.intäktsRepository.AddKundProdukt(produkt, avtal, tillägg, gradT, gradA, tim, kommentar, kundId);
         }
 
-        public decimal GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
+        public double GetGruppIntäkter(ProduktgruppDTO produktgruppDTO)
         {
-            decimal budget = 0;
+            double budget = 0;
 
             var list = repositoryFacade.budgeteratResultatRepository.GetGruppIntäkter(produktgruppDTO);
             foreach (var item in list)
@@ -217,7 +217,7 @@ namespace BusinessLayer
             return repositoryFacade.kostnadsbudgetRepository.GetAllPersonalProdukt();
         }
 
-        public void LäggTillPlaceringProdukt(int personal, string produkt, decimal andel)
+        public void LäggTillPlaceringProdukt(int personal, string produkt, double andel)
         {
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringProdukt(personal, produkt, andel);
         }
@@ -227,14 +227,14 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.Addbehörighet(tempBehör, tempPersnr);
         }
 
-        public void RemovePlaceringProdukt(string pers, string produkt, decimal andel)
+        public void RemovePlaceringProdukt(string pers, string produkt, double andel)
         {
             repositoryFacade.kostnadsbudgetRepository.RemovePlaceringsProdukt(pers, produkt, andel);
         }
 
-        public decimal GetAvdelningIntäkter(AvdelningDTO avdelningDTO)
+        public double GetAvdelningIntäkter(AvdelningDTO avdelningDTO)
         {
-            decimal budget = 0;
+            double budget = 0;
 
             var list = repositoryFacade.budgeteratResultatRepository.GetAvdelningIntäkter(avdelningDTO);
             foreach (var item in list)
@@ -249,9 +249,9 @@ namespace BusinessLayer
             repositoryFacade.behörighetRepository.RemoveBehörighet(tempBehör, tempPersnr);
         }
 
-        public decimal GetKontorIntäkter()
+        public double GetKontorIntäkter()
         {
-            decimal budget = 0;
+            double budget = 0;
 
             var list = repositoryFacade.budgeteratResultatRepository.GetKontorIntäkter();
             foreach (var item in list)
@@ -283,7 +283,7 @@ namespace BusinessLayer
             repositoryFacade.intäktsRepository.RemoveProduktKund(kunden, ProduktID);
         }
 
-        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
+        public void AddProduktKund(KundDTO kund, double avtal, double tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID)
         {
             repositoryFacade.intäktsRepository.AddProduktKund(kund, avtal, tillägg, gradT, gradA, tim, kommentar, produktID);
         }
@@ -632,7 +632,7 @@ namespace BusinessLayer
             repositoryFacade.avdelningPersonalRepository.SetAvdelningPersonal(avdelningsnamn, personNr, placering);
         }
 
-        public decimal GetFördeladAndel(int personal)
+        public double GetFördeladAndel(int personal)
         {
             return repositoryFacade.kostnadsbudgetRepository.GetFördeladAndel(personal);
         }

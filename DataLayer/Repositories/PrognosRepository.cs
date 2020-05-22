@@ -111,13 +111,13 @@ namespace DataLayer.Repositories
                         m.Datum = readLine[4];
                     }
 
-                    if (!decimal.TryParse(readLine[5], out decimal belopp))
+                    if (!double.TryParse(readLine[5], out double belopp))
                     {
                         m.Budget = belopp;
                     }
                     else
                     {
-                        m.Budget = decimal.Parse(readLine[5]);
+                        m.Budget = double.Parse(readLine[5]);
                     }
 
                     m.UtfallMån = 0;
@@ -161,31 +161,31 @@ namespace DataLayer.Repositories
                         m.Datum = readLine[4];
                     }
 
-                    if (!decimal.TryParse(readLine[5], out decimal belopp))
+                    if (!double.TryParse(readLine[5], out double belopp))
                     {
                         m.Budget = belopp;
                     }
                     else
                     {
-                        m.Budget = decimal.Parse(readLine[5]);
+                        m.Budget = double.Parse(readLine[5]);
                     }
 
-                    if (!decimal.TryParse(readLine[6], out decimal utfallMån))
+                    if (!double.TryParse(readLine[6], out double utfallMån))
                     {
                         m.UtfallMån = utfallMån;
                     }
                     else
                     {
-                        m.UtfallMån = decimal.Parse(readLine[6]);
+                        m.UtfallMån = double.Parse(readLine[6]);
                     }
 
-                    if (!decimal.TryParse(readLine[7], out decimal utfallAcc))
+                    if (!double.TryParse(readLine[7], out double utfallAcc))
                     {
                         m.UtfallAcc = utfallAcc;
                     }
                     else
                     {
-                        m.UtfallAcc = decimal.Parse(readLine[7]);
+                        m.UtfallAcc = double.Parse(readLine[7]);
                     }
 
 
@@ -196,49 +196,49 @@ namespace DataLayer.Repositories
                     }
 
 
-                    if (!decimal.TryParse(readLine[9], out decimal upparbetat))
+                    if (!double.TryParse(readLine[9], out double upparbetat))
                     {
                         m.Upparbetat = upparbetat;
                     }
                     else
                     {
-                        m.Upparbetat = decimal.Parse(readLine[9]);
+                        m.Upparbetat = double.Parse(readLine[9]);
                     }
 
-                    if (!decimal.TryParse(readLine[10], out decimal trend))
+                    if (!double.TryParse(readLine[10], out double trend))
                     {
                         m.Trend = trend;
                     }
                     else
                     {
-                        m.Trend = decimal.Parse(readLine[10]);
+                        m.Trend = double.Parse(readLine[10]);
                     }
 
-                    if (!decimal.TryParse(readLine[11], out decimal föregPrognos))
+                    if (!double.TryParse(readLine[11], out double föregPrognos))
                     {
                         m.FöregPrognos = föregPrognos;
                     }
                     else
                     {
-                        m.FöregPrognos = decimal.Parse(readLine[11]);
+                        m.FöregPrognos = double.Parse(readLine[11]);
                     }
 
-                    if (!decimal.TryParse(readLine[12], out decimal prognos))
+                    if (!double.TryParse(readLine[12], out double prognos))
                     {
                         m.Prognos = prognos;
                     }
                     else
                     {
-                        m.Prognos = decimal.Parse(readLine[12]);
+                        m.Prognos = double.Parse(readLine[12]);
                     }
 
-                    if (!decimal.TryParse(readLine[13], out decimal prognosBudget))
+                    if (!double.TryParse(readLine[13], out double prognosBudget))
                     {
                         m.PrognosBudget = prognosBudget;
                     }
                     else
                     {
-                        m.PrognosBudget = decimal.Parse(readLine[13]);
+                        m.PrognosBudget = double.Parse(readLine[13]);
                     }
                 }
 
@@ -284,45 +284,45 @@ namespace DataLayer.Repositories
             LästFilPrognos totalPrognos = new LästFilPrognos();
             foreach (var item in prognoser) //Sammanräkning av alla attribut i ett objekt.  Objektet för det "totala" visas i datagridview1 sedan.
             {
-                decimal resultatBudget;
+                double resultatBudget;
                 resultatBudget = item.Budget;
                 totalPrognos.Budget = totalPrognos.Budget + resultatBudget;
 
-                decimal resultatPrognos;
+                double resultatPrognos;
                 resultatPrognos = item.Prognos;
                 totalPrognos.Prognos = totalPrognos.Prognos + resultatPrognos;
 
-                decimal resultatUtfallAcc;
+                double resultatUtfallAcc;
                 resultatUtfallAcc = item.UtfallAcc;
                 totalPrognos.UtfallAcc = totalPrognos.UtfallAcc + resultatUtfallAcc;
 
-                decimal resultatUtfallMån;
+                double resultatUtfallMån;
                 resultatUtfallMån = item.UtfallMån;
                 totalPrognos.UtfallMån = totalPrognos.UtfallMån + resultatUtfallMån;
 
-                decimal resultatUpparbetat;
+                double resultatUpparbetat;
                 resultatUpparbetat = item.Upparbetat;
                 totalPrognos.Upparbetat = totalPrognos.Upparbetat + resultatUpparbetat;
 
-                decimal resultatTrend;
+                double resultatTrend;
                 resultatTrend = item.Trend;
                 totalPrognos.Trend = totalPrognos.Trend + resultatTrend;
 
-                decimal resultatFöregPrognos;
+                double resultatFöregPrognos;
                 resultatFöregPrognos = item.FöregPrognos;
                 totalPrognos.FöregPrognos = totalPrognos.FöregPrognos + resultatFöregPrognos;
 
-                decimal resultatPrognosBudget;
+                double resultatPrognosBudget;
                 resultatPrognosBudget = item.PrognosBudget;
                 totalPrognos.PrognosBudget = totalPrognos.PrognosBudget + resultatPrognosBudget;
 
                 foreach (LästFilPrognos lästFil in prognoser)
                 {
-                    decimal.TryParse(lästFil.UtfallAcc.ToString(), out decimal Grade10);
-                    decimal.TryParse(lästFil.Upparbetat.ToString(), out decimal Grade20);
+                    double.TryParse(lästFil.UtfallAcc.ToString(), out double Grade10);
+                    double.TryParse(lästFil.Upparbetat.ToString(), out double Grade20);
 
-                    decimal dela = new decimal();
-                    decimal total = new decimal();
+                    double dela = new double();
+                    double total = new double();
                     dela = int.Parse(DateTime.Now.Month.ToString()) * 12;
                     total = Grade10 + Grade20;
 

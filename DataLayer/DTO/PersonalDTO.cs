@@ -11,9 +11,9 @@ namespace DataLayer.DTO
         public int PersonalID { get; set; }
         public string PersonNr { get; set; }
         public string Namn { get; set; }
-        public decimal Månadslön { get; set; }
-        public decimal Sysselsättningsgrad { get; set; }
-        public decimal Vakansavdrag { get; set; }
-        public decimal Årsarbete { get; set; }
+        public double Månadslön { get; set; }
+        public double Sysselsättningsgrad { get; set; }
+        public double Vakansavdrag { get; set; }
+        public double Årsarbete { get; set; }
     }
 }

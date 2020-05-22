@@ -42,8 +42,8 @@ namespace PresentationLayer1.Forms
             var tim = 0;
             var kommentar = " ";
             var produkt = (ProduktDTO)dgvProdukter.CurrentRow.DataBoundItem;
-            var avtal = decimal.Parse(tbAvtal.Text);
-            var tillägg = decimal.Parse(tbTilägg.Text);
+            var avtal = double.Parse(tbAvtal.Text);
+            var tillägg = double.Parse(tbTilägg.Text);
             var gradT = bool.Parse(cmbGradT.Text = cmbGradT.Text == "Säker" ? "true" : "False"); ;
             var gradA = bool.Parse(cmbGradA.Text = cmbGradA.Text == "Säker" ? "true" : "False"); ;
             if (tbTimmar.Text.Length == 0)

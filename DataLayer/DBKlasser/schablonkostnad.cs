@@ -11,7 +11,7 @@ namespace DataLayer
     {
         public int schablonkostnadID { get; set; }
 
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
 
         public int Konto_KontoID { get; set; }
 

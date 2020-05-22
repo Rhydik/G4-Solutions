@@ -49,22 +49,22 @@ namespace PresentationLayer1.Forms
             businessManager.GetProduktKostnaderAvdelning(1);
 
             produkter = businessManager.GetAllProdukter();
-            //var produkterAnvända = businessManager.GetProduktByNamn("Dagrapport");
-            var produkterAnvända = businessManager.GetAllAnvändaProdukter();
+            var produkterAnvända = businessManager.GetProduktByNamn("TFU-kommun");
+            //var produkterAnvända = businessManager.GetAllAnvändaProdukter();
 
             foreach (var produkt in produkter)
             {
                 double beräkning = 0;
 
-                if (produkterAnvända.Contains(produkt.ProduktID))
-                {
-                    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
-                }
-
-                //if (produkterAnvända.FirstOrDefault().ProduktID == produkt.ProduktID)
+                //if (produkterAnvända.Contains(produkt.ProduktID))
                 //{
                 //    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
                 //}
+
+                if (produkterAnvända.FirstOrDefault().ProduktID == produkt.ProduktID)
+                {
+                    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
+                }
 
                 produktDict.Add(produkt.ProduktID, beräkning);
 
@@ -174,7 +174,7 @@ namespace PresentationLayer1.Forms
 
             lblBudgeteradeIntäkter.Text = gruppintäkter.ToString("0.00");
             lblBudgetKostnader.Text = gruppKostnader.ToString("0.00");
-            var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            var resultat = double.Parse(lblBudgeteradeIntäkter.Text) - double.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }
         public void CalculateProduktKategori()
@@ -193,7 +193,7 @@ namespace PresentationLayer1.Forms
             double avdelningKostnader = produktAvdelningDict[avdelningDTO.Namn].Sum();
             lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString("0.00");
             lblBudgetKostnader.Text = avdelningKostnader.ToString("0.00");
-            var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            var resultat = double.Parse(lblBudgeteradeIntäkter.Text) - double.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }
         public void CalculateKontor()
@@ -203,7 +203,7 @@ namespace PresentationLayer1.Forms
             double kontorKostnader = produktDict.Sum(x => x.Value);
             lblBudgeteradeIntäkter.Text = kontorIntäkter.ToString("0.00");
             lblBudgetKostnader.Text = kontorKostnader.ToString("0.00");
-            var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            var resultat = double.Parse(lblBudgeteradeIntäkter.Text) - double.Parse(lblBudgetKostnader.Text);
             lblResultat.Text = resultat.ToString();
         }
         private void tbSök_TextChanged(object sender, EventArgs e)
@@ -302,7 +302,7 @@ namespace PresentationLayer1.Forms
             string prodavd = produkter.Avdelning;
             double prodintäkter = (double) businessManager.GetProduktIntäkter(produkter);
             double prodKostnader = produktDict[produkter.ProduktID];
-            double resultat = (double) (decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text));
+            double resultat =  (double.Parse(lblBudgeteradeIntäkter.Text) - double.Parse(lblBudgetKostnader.Text));
 
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;

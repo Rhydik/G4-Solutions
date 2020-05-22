@@ -8,6 +8,6 @@ namespace DataLayer
 {
     public class ProduktSummeringDTO
     {
-        public decimal Budget { get; set; }
+        public double Budget { get; set; }
     }
 }

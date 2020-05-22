@@ -73,7 +73,7 @@ namespace PresentationLayer1.Forms
             KonstnadsbudgetPersonalDTO personal = (KonstnadsbudgetPersonalDTO)dgvÖvre.CurrentRow.DataBoundItem;
             var pers = personal.PersonalID;
             var aktivitet = cbAktivitet.SelectedItem.ToString();
-            decimal andel = decimal.Parse(tbAndel.Text);
+            double andel = double.Parse(tbAndel.Text);
 
            
             //Update();
@@ -89,15 +89,15 @@ namespace PresentationLayer1.Forms
 
             //***********************************Behöver räknas för placeringen********************
 
-            decimal räknaprocent;
-            decimal räkna2;
-            decimal r2;
-            decimal n;
-            decimal nyplaceringsandel;
+            double räknaprocent;
+            double räkna2;
+            double r2;
+            double n;
+            double nyplaceringsandel;
 
 
             räkna2 = andel;
-            räknaprocent = räkna2 / 100m;
+            räknaprocent = räkna2 / (double) 100m;
 
             n = query;
 
@@ -123,7 +123,7 @@ namespace PresentationLayer1.Forms
 
 
 
-            decimal nyandeltest = fördeladandel + nyplaceringsandel;      /* DENNA FÅR INTE VARA MINUS */
+            double nyandeltest = fördeladandel + nyplaceringsandel;      /* DENNA FÅR INTE VARA MINUS */
 
 
 

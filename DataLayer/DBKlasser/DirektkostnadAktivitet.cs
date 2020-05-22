@@ -21,6 +21,6 @@ namespace DataLayer
         [StringLength(128)]
         public string Aktivitet_AktivitetID { get; set; }
         public virtual Aktivitet Aktivitet { get; set; }
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
     }
 }

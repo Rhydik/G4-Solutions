@@ -29,10 +29,10 @@ namespace DataLayer
 
         public int Månadslön { get; set; }
 
-        public decimal Sysselsättningsgrad { get; set; }
+        public double Sysselsättningsgrad { get; set; }
 
-        public decimal Vakansavdrag { get; set; }
-        public decimal Årsarbete { get; set; }
+        public double Vakansavdrag { get; set; }
+        public double Årsarbete { get; set; }
 
         [Required]
         public string Lösenord { get; set; }

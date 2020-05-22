@@ -42,8 +42,8 @@ namespace PresentationLayer1.Forms
         private void btnSpara_Click(object sender, EventArgs e)
         {
             var kund = (KundDTO)dgv.CurrentRow.DataBoundItem;
-            var avtal = decimal.Parse(tbAvtal.Text);
-            var tillägg = decimal.Parse(tbTillägg.Text);
+            var avtal = double.Parse(tbAvtal.Text);
+            var tillägg = double.Parse(tbTillägg.Text);
             var gradT = bool.Parse(cmbGradT.Text = cmbGradT.Text == "Säker" ? "true" : "False"); ;
             var gradA = bool.Parse(cmbGradA.Text = cmbGradA.Text == "Säker" ? "true" : "False"); ;
             var tim = int.Parse(tbTimmar.Text);

@@ -11,6 +11,6 @@ namespace DataLayer
         public string Personnummer { get; set; }
         public string Personal { get; set; }
         public string Produkt { get; set; }
-        public decimal Placeringsandel { get; set; }
+        public double Placeringsandel { get; set; }
     }
 }

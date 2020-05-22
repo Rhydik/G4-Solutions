@@ -138,6 +138,10 @@
     <Compile Include="Migrations\202003241349010_intTillDecida.designer.cs">
       <DependentUpon>202003241349010_intTillDecida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005221659570_decimal-to-double.cs" />
+    <Compile Include="Migrations\202005221659570_decimal-to-double.designer.cs">
+      <DependentUpon>202005221659570_decimal-to-double.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="DBKlasser\Personal.cs" />
     <Compile Include="DTO\PlaceringsDTO.cs" />
@@ -240,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003241349010_intTillDecida.resx">
       <DependentUpon>202003241349010_intTillDecida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005221659570_decimal-to-double.resx">
+      <DependentUpon>202005221659570_decimal-to-double.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

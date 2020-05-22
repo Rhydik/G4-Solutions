@@ -54,8 +54,8 @@ namespace PresentationLayer1.Forms
             personal.Månadslön = int.Parse(tbMånadslön.Text);
             personal.Vakansavdrag = int.Parse(tbVakansavdrag.Text);
 
-            decimal s = int.Parse(tbSysselsättningsgrad.Text);
-            decimal v = int.Parse(tbVakansavdrag.Text);
+            double s = int.Parse(tbSysselsättningsgrad.Text);
+            double v = int.Parse(tbVakansavdrag.Text);
 
             Console.WriteLine("s: " + s);
             Console.WriteLine("v: " + v);

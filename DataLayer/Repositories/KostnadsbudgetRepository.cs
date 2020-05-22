@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class KostnadsbudgetRepository
     {
-        public decimal PlaceringDiff;
+        public double PlaceringDiff;
 
         public List<string> GetAllAnvändaProdukter()
         {
@@ -50,7 +50,7 @@ namespace DataLayer
         }
 
         
-        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, decimal andel) //Lägg till aktivitet
+        public void LäggTillPlaceringAktivitet(int pers, string aktivitet, double andel) //Lägg till aktivitet
         {
             using (var db = new DataContext())
             {
@@ -74,10 +74,10 @@ namespace DataLayer
 
                 //*********************************************
 
-                decimal räknaprocent;
-                decimal räkna2;
-                decimal r2;
-                decimal n;
+                double räknaprocent;
+                double räkna2;
+                double r2;
+                double n;
                 int k4;
 
                 PersonalAktivitet temp = new PersonalAktivitet();
@@ -87,7 +87,7 @@ namespace DataLayer
                 //{
 
                 räkna2 = andel;
-                räknaprocent = räkna2 / 100m;
+                räknaprocent = räkna2 / (double) 100m;
 
                 //Console.WriteLine("_____________________________");
                 //Console.WriteLine(" räknaprocent: " + räknaprocent);
@@ -101,7 +101,6 @@ namespace DataLayer
 
                 //Console.WriteLine("r2: " + r2);
 
-                k4 = Decimal.ToInt32(r2);
 
                 temp.Placeringsandel = andel;
 
@@ -180,7 +179,7 @@ namespace DataLayer
                 DKP.Produkt_ProduktID = produkt.ProduktID;
                 DKP.Konto = kontot;
                 DKP.Konto_KontoID = kontot.KontoID;
-                DKP.Belopp = decimal.Parse(belopp);
+                DKP.Belopp = double.Parse(belopp);
 
                 db.DirektkostnadProdukt.Add(DKP);
                 db.SaveChanges();
@@ -213,7 +212,7 @@ namespace DataLayer
                 DirektkostnadAktivitet DKA = new DirektkostnadAktivitet();
                 DKA.Aktivitet = akitvitet;
                 DKA.Aktivitet_AktivitetID = akitvitet.AktivitetID;
-                DKA.Belopp = decimal.Parse(belopp);
+                DKA.Belopp = double.Parse(belopp);
                 DKA.Konto = kontot;
                 DKA.Konto_KontoID = kontot.KontoID;
 
@@ -235,7 +234,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringAktivitet(string pers, string aktivitet, decimal andel) //Raderar vald placeringsaktivitet
+        public void RemovePlaceringAktivitet(string pers, string aktivitet, double andel) //Raderar vald placeringsaktivitet
         {
             using (var db = new DataContext())
             {
@@ -283,19 +282,19 @@ namespace DataLayer
 
         }
 
-        public decimal GetDiff(List<KonstnadsbudgetPersonalDTO> personals)
+        public double GetDiff(List<KonstnadsbudgetPersonalDTO> personals)
         {
-            decimal Diffen;
+            double Diffen;
             Diffen = PlaceringDiff;
 
             return Diffen;
         }
 
-    public decimal GetFördeladAndel(int personal) //Beräknar placerings andel efter vald personal
+    public double GetFördeladAndel(int personal) //Beräknar placerings andel efter vald personal
         {
             using (var db = new DataContext())
             {
-                decimal total = 0;
+                double total = 0;
 
                 var andelaktivitet = from x in db.PersonalAktivitet
                             where x.Personal_PersonalID == personal
@@ -312,7 +311,7 @@ namespace DataLayer
                     total += item;
                 }
 
-                return (decimal)total;
+                return total;
             }
         }
 
@@ -327,13 +326,13 @@ namespace DataLayer
             }
         }
 
-        public void LäggTillPlaceringProdukt(int personal, string produkt, decimal andel) //Lägg till placering efter vald produkt
+        public void LäggTillPlaceringProdukt(int personal, string produkt, double andel) //Lägg till placering efter vald produkt
         {
-            decimal räknaprocent;
-            decimal räkna2;
-            decimal r2;
-            decimal n;
-            decimal k4;
+            double räknaprocent;
+            double räkna2;
+            double r2;
+            double n;
+            double k4;
 
             using (var db = new DataContext())
             {
@@ -353,7 +352,7 @@ namespace DataLayer
                 //{
 
                     räkna2 = andel;
-                    räknaprocent = räkna2 / 100m;
+                    räknaprocent = räkna2 / (double) 100m;
 
                     //Console.WriteLine("_____________________________");
                     //Console.WriteLine(" räknaprocent: " + räknaprocent);
@@ -406,7 +405,7 @@ namespace DataLayer
             }
         }
 
-        public void RemovePlaceringsProdukt(string pers, string produkt, decimal andel) //Raderar vald produktplacering
+        public void RemovePlaceringsProdukt(string pers, string produkt, double andel) //Raderar vald produktplacering
         {
             using (var db = new DataContext())
             {

@@ -11,11 +11,11 @@ namespace DataLayer.DTO
         public int IntäktsbudgetID { get; set; }
         public string KundID { get; set; }
         public string KundNamn { get; set; }
-        public decimal Avtal { get; set; }
+        public double Avtal { get; set; }
         public bool GradA { get; set; }
-        public decimal Tillägg { get; set; }
+        public double Tillägg { get; set; }
         public bool GradT { get; set; }
-        public decimal Budget { get; set; }
+        public double Budget { get; set; }
         public int Tim { get; set; }
         public string Kommentar { get; set; }
     }

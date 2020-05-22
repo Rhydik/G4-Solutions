@@ -34,7 +34,7 @@ namespace DataLayer
             }
         }
 
-        public void AddKundProdukt(ProduktDTO produkt, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId) //Lägg till ny produkt hos vald kund
+        public void AddKundProdukt(ProduktDTO produkt, double avtal, double tillägg, bool gradT, bool gradA, int tim, string kommentar, string kundId) //Lägg till ny produkt hos vald kund
         {
             using (var db = new DataContext())
             {
@@ -138,7 +138,7 @@ namespace DataLayer
             }
         }
 
-        public void AddProduktKund(KundDTO kund, decimal avtal, decimal tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID) //Lägg till kund hos vald produkt
+        public void AddProduktKund(KundDTO kund, double avtal, double tillägg, bool gradT, bool gradA, int tim, string kommentar, string produktID) //Lägg till kund hos vald produkt
         {
             using (var db = new DataContext())
             {

@@ -15,7 +15,7 @@ namespace DataLayer
 
         public DateTime Datum { get; set; }
 
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
 
         public int Intäktsbudget_IntäktsbudgetID { get; set; }
 

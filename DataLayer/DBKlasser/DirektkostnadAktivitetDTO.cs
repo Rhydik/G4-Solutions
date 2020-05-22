@@ -12,7 +12,7 @@ namespace DataLayer
         public string Konto { get; set; }
         public string AktivitetID { get; set; }
         public string Aktivitet { get; set; }
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
 
     }
 }

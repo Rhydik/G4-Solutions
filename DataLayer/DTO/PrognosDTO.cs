@@ -10,7 +10,7 @@ namespace DataLayer.DTO
     {
         public int PrognosID { get; set; }
         public string Namn { get; set; }
-        public decimal Belopp { get; set; }
+        public double Belopp { get; set; }
 
     }
 }

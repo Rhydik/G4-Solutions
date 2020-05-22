@@ -59,16 +59,13 @@
 
 
             modelBuilder.Entity<Intäktsbudget>()
-                .Property(e => e.Avtal)
-                .HasPrecision(18, 0);
+                .Property(e => e.Avtal);
 
             modelBuilder.Entity<Intäktsbudget>()
-                .Property(e => e.Tillägg)
-                .HasPrecision(18, 0);
+                .Property(e => e.Tillägg);
 
             modelBuilder.Entity<Intäktsbudget>()
-                .Property(e => e.Budget)
-                .HasPrecision(18, 0);
+                .Property(e => e.Budget);
 
             modelBuilder.Entity<Intäktsbudget>()
                 .HasMany(e => e.KundIntäktsbudget)
@@ -101,8 +98,7 @@
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KostnadsbudgetSet>()
-                .Property(e => e.Summering)
-                .HasPrecision(18, 0);
+                .Property(e => e.Summering);
 
             modelBuilder.Entity<KostnadsbudgetSet>()
                 .HasMany(e => e.AktivitetKostnadsbudget)
@@ -128,12 +124,10 @@
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Personal>()
-                .Property(e => e.Sysselsättningsgrad)
-                .HasPrecision(18, 0);
+                .Property(e => e.Sysselsättningsgrad);
 
             modelBuilder.Entity<Personal>()
-                .Property(e => e.Vakansavdrag)
-                .HasPrecision(18, 0);
+                .Property(e => e.Vakansavdrag);
 
             modelBuilder.Entity<Personal>()
                 .HasMany(e => e.AntalTimmar)
@@ -160,12 +154,10 @@
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Prognos>()
-                .Property(e => e.Belopp)
-                .HasPrecision(18, 0);
+                .Property(e => e.Belopp);
 
             modelBuilder.Entity<schablonkostnad>()
-                .Property(e => e.Belopp)
-                .HasPrecision(18, 0);
+                .Property(e => e.Belopp);
         }
     }
 }

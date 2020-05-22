@@ -10,14 +10,14 @@ namespace DataLayer
     {
         public int PersonalID { get; set; }
         public string Namn { get; set; }
-        public decimal Sysselsättningsgrad { get; set; }
-        public decimal Vakansavdrag { get; set; }
-        public decimal Årsarbetare { get; set; }
-        public decimal Andel { get; set; } //Konto 521 Andel i budget % 
-        public decimal Diff { get; set; } //Differens
-        public decimal Totalt { get; set; } //Totalt 
-        public decimal GemAdm { get; set; } //Gem. Adm.
-        public decimal Fpp { get; set; } //Fördelat På Produkter
+        public double Sysselsättningsgrad { get; set; }
+        public double Vakansavdrag { get; set; }
+        public double Årsarbetare { get; set; }
+        public double Andel { get; set; } //Konto 521 Andel i budget % 
+        public double Diff { get; set; } //Differens
+        public double Totalt { get; set; } //Totalt 
+        public double GemAdm { get; set; } //Gem. Adm.
+        public double Fpp { get; set; } //Fördelat På Produkter
 
     }
 }

@@ -233,7 +233,8 @@ namespace DataLayer
                 {
                     foreach(var item in querysälj)
                     {
-                        säljavd += (double) (item.Personal.Månadslön * (item.Placering / 100));
+                        säljavd += (item.Personal.Månadslön * (item.Personal.Årsarbete / 100));
+                        Console.WriteLine(item.Personal.Namn);
                     }
                 }
 
@@ -245,7 +246,7 @@ namespace DataLayer
                 {
                     foreach(var item in queryadmin)
                     {
-                        adminavd += (double) (item.Personal.Månadslön * (item.Placering / 100));
+                        adminavd += (double) (item.Personal.Månadslön * (item.Personal.Årsarbete / 100));
                     }
                 }
 

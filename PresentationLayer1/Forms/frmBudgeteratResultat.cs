@@ -49,6 +49,7 @@ namespace PresentationLayer1.Forms
             businessManager.GetProduktKostnaderAvdelning(1);
 
             produkter = businessManager.GetAllProdukter();
+            //var produkterAnvända = businessManager.GetProduktByNamn("Dagrapport");
             var produkterAnvända = businessManager.GetAllAnvändaProdukter();
 
             foreach (var produkt in produkter)
@@ -60,6 +61,10 @@ namespace PresentationLayer1.Forms
                     beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
                 }
 
+                //if (produkterAnvända.FirstOrDefault().ProduktID == produkt.ProduktID)
+                //{
+                //    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
+                //}
 
                 produktDict.Add(produkt.ProduktID, beräkning);
 

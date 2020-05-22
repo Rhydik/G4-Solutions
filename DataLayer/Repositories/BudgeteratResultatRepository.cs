@@ -120,10 +120,17 @@ namespace DataLayer
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
 
+                foreach (var person in personalkostnad)
+                {
+                    Console.WriteLine(person.Personal.Namn + "|" + person.Personal.Månadslön + "|" + person.Personal.Årsarbete);
+                    Console.WriteLine(person.Placeringsandel);
+                }
+                    
+
                 foreach (var item in personalkostnad)
                 {
-                    lön += (item.Personal.Månadslön * (item.Personal.Årsarbete/100));
-                    årsarbetare += (item.Personal.Årsarbete/100);
+                    lön += (item.Personal.Månadslön * (item.Placeringsandel / 100));
+                    årsarbetare += (item.Placeringsandel / 100);
                 }
 
                 if (årsarbetare != 0)

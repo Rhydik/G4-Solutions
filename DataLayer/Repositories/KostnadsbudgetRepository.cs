@@ -103,7 +103,7 @@ namespace DataLayer
 
                 k4 = Decimal.ToInt32(r2);
 
-                temp.Placeringsandel = k4;
+                temp.Placeringsandel = andel;
 
                 //Console.WriteLine("_____________________________");
 
@@ -400,7 +400,7 @@ namespace DataLayer
                 var query = from x in db.PersonalProdukt
                             from y in db.Produkt
                             where y.ProduktID == x.Produkt_ProduktID
-                            select new PersonalProduktDTO { Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Produkt = y.Namn };
+                            select new PersonalProduktDTO { Personnummer = x.Personal.PersonNr, Personal = x.Personal.Namn, Placeringsandel = x.Placeringsandel, Produkt = y.Namn };
 
                 return query.ToList();
             }

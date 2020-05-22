@@ -27,9 +27,9 @@ namespace PresentationLayer1.Forms
         private List<ProduktgruppDTO> produktgrupp;
         private List<AvdelningDTO> produktAvdelning;
         private List<KontorDTO> kontor;
-        private Dictionary<string, decimal> produktDict = new Dictionary<string, decimal>();
-        private Dictionary<string, List<decimal>> produktgruppDict = new Dictionary<string, List<decimal>>();
-        private Dictionary<string, List<decimal>> produktAvdelningDict = new Dictionary<string, List<decimal>>();
+        private Dictionary<string, double> produktDict = new Dictionary<string, double>();
+        private Dictionary<string, List<double>> produktgruppDict = new Dictionary<string, List<double>>();
+        private Dictionary<string, List<double>> produktAvdelningDict = new Dictionary<string, List<double>>();
 
         public frmBudgeteratResultat()
         {
@@ -54,7 +54,7 @@ namespace PresentationLayer1.Forms
 
             foreach (var produkt in produkter)
             {
-                decimal beräkning = 0;
+                double beräkning = 0;
 
                 if (produkterAnvända.Contains(produkt.ProduktID))
                 {
@@ -70,7 +70,7 @@ namespace PresentationLayer1.Forms
 
                 if (!produktgruppDict.ContainsKey(produkt.Produktgrupp))
                 {
-                    var list = new List<decimal>();
+                    var list = new List<double>();
                     list.Add(beräkning);
                     produktgruppDict.Add(produkt.Produktgrupp, list);
                 }
@@ -81,7 +81,7 @@ namespace PresentationLayer1.Forms
 
                 if (!produktAvdelningDict.ContainsKey(produkt.Avdelning))
                 {
-                    var list = new List<decimal>();
+                    var list = new List<double>();
                     list.Add(beräkning);
                     produktAvdelningDict.Add(produkt.Avdelning, list);
                 }
@@ -155,11 +155,11 @@ namespace PresentationLayer1.Forms
             dgvBudgeteratResultat.ClearSelection();
             ProduktDTO produkt = new ProduktDTO();
             produkt = (ProduktDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
-            decimal prodintäkter = businessManager.GetProduktIntäkter(produkt);
-            decimal prodKostnader = produktDict[produkt.ProduktID];
+            double prodintäkter = (double) businessManager.GetProduktIntäkter(produkt);
+            double prodKostnader = produktDict[produkt.ProduktID];
             lblBudgeteradeIntäkter.Text = prodintäkter.ToString("0.00");
             lblBudgetKostnader.Text = prodKostnader.ToString("0.00");
-            decimal resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            double resultat = (double.Parse(lblBudgeteradeIntäkter.Text) - double.Parse(lblBudgetKostnader.Text));
             lblResultat.Text = resultat.ToString("0.00");
         }
         public void CalculateProduktGrupp()
@@ -169,8 +169,8 @@ namespace PresentationLayer1.Forms
 
             produktgruppDTO = (ProduktgruppDTO)dgvBudgeteratResultat.CurrentRow.DataBoundItem;
 
-            decimal gruppintäkter = businessManager.GetGruppIntäkter(produktgruppDTO);
-            decimal gruppKostnader = produktgruppDict[produktgruppDTO.Namn].Sum();
+            double gruppintäkter = (double) businessManager.GetGruppIntäkter(produktgruppDTO);
+            double gruppKostnader = produktgruppDict[produktgruppDTO.Namn].Sum();
 
             lblBudgeteradeIntäkter.Text = gruppintäkter.ToString("0.00");
             lblBudgetKostnader.Text = gruppKostnader.ToString("0.00");
@@ -189,8 +189,8 @@ namespace PresentationLayer1.Forms
 
                 return;
             }
-            decimal avdelningIntäkter = businessManager.GetAvdelningIntäkter(avdelningDTO);
-            decimal avdelningKostnader = produktAvdelningDict[avdelningDTO.Namn].Sum();
+            double avdelningIntäkter = (double) businessManager.GetAvdelningIntäkter(avdelningDTO);
+            double avdelningKostnader = produktAvdelningDict[avdelningDTO.Namn].Sum();
             lblBudgeteradeIntäkter.Text = avdelningIntäkter.ToString("0.00");
             lblBudgetKostnader.Text = avdelningKostnader.ToString("0.00");
             var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
@@ -199,8 +199,8 @@ namespace PresentationLayer1.Forms
         public void CalculateKontor()
         {
             dgvBudgeteratResultat.ClearSelection();
-            decimal kontorIntäkter = businessManager.GetKontorIntäkter();
-            decimal kontorKostnader = produktDict.Sum(x => x.Value);
+            double kontorIntäkter = (double) businessManager.GetKontorIntäkter();
+            double kontorKostnader = produktDict.Sum(x => x.Value);
             lblBudgeteradeIntäkter.Text = kontorIntäkter.ToString("0.00");
             lblBudgetKostnader.Text = kontorKostnader.ToString("0.00");
             var resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
@@ -300,9 +300,9 @@ namespace PresentationLayer1.Forms
             string prodgrupp = produkter.Produktgrupp;
             string prodkat = produkter.Produktkategori;
             string prodavd = produkter.Avdelning;
-            decimal prodintäkter = businessManager.GetProduktIntäkter(produkter);
-            decimal prodKostnader = produktDict[produkter.ProduktID];
-            decimal resultat = decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text);
+            double prodintäkter = (double) businessManager.GetProduktIntäkter(produkter);
+            double prodKostnader = produktDict[produkter.ProduktID];
+            double resultat = (double) (decimal.Parse(lblBudgeteradeIntäkter.Text) - decimal.Parse(lblBudgetKostnader.Text));
 
             Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
             Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
@@ -381,9 +381,9 @@ namespace PresentationLayer1.Forms
             
             foreach (var produkt in produkter)
             {
-                decimal prodintäkter = businessManager.GetProduktIntäkter(produkt);
-                decimal prodKostnader = produktDict[produkt.ProduktID];
-                decimal resultatprod = prodintäkter - prodKostnader;
+                double prodintäkter = (double) businessManager.GetProduktIntäkter(produkt);
+                double prodKostnader = produktDict[produkt.ProduktID];
+                double resultatprod = prodintäkter - prodKostnader;
 
                 produktSheet.Cells[row, 1] = produkt.Namn;
                 produktSheet.Cells[row, 2] = prodintäkter;
@@ -406,9 +406,9 @@ namespace PresentationLayer1.Forms
             
             foreach (var produktgrupp in produktgrupp)
             {
-                decimal prodintäkter = businessManager.GetGruppIntäkter(produktgrupp);
-                decimal prodKostnader = produktgruppDict[produktgrupp.Namn].Sum();
-                decimal resultatprod = prodintäkter - prodKostnader;
+                double prodintäkter = (double) businessManager.GetGruppIntäkter(produktgrupp);
+                double prodKostnader = produktgruppDict[produktgrupp.Namn].Sum();
+                double resultatprod = prodintäkter - prodKostnader;
 
                 produktGruppSheet.Cells[row, 1] = produktgrupp.Namn;
                 produktGruppSheet.Cells[row, 2] = prodintäkter;
@@ -432,9 +432,9 @@ namespace PresentationLayer1.Forms
             foreach (var produktAvd in produktAvdelning)
             {
 
-                decimal prodintäkter = businessManager.GetAvdelningIntäkter(produktAvd);
+                double prodintäkter = (double) businessManager.GetAvdelningIntäkter(produktAvd);
 
-                decimal prodKostnader = 0;
+                double prodKostnader = 0;
 
                 if (produktAvd.AvdelningsID == 2 || produktAvd.AvdelningsID == 3)
                 {
@@ -445,7 +445,7 @@ namespace PresentationLayer1.Forms
                     prodKostnader = produktAvdelningDict[produktAvd.Namn].Sum();
                 }
 
-                decimal resultatprod = prodintäkter - prodKostnader;
+                double resultatprod = prodintäkter - prodKostnader;
 
 
 
@@ -470,9 +470,9 @@ namespace PresentationLayer1.Forms
             
             foreach (var kontor in kontor)
             {
-                decimal prodintäkter = businessManager.GetKontorIntäkter();
-                decimal prodKostnader = produktDict.Sum(x => x.Value);
-                decimal resultatprod = prodintäkter - prodKostnader;
+                double prodintäkter = (double) businessManager.GetKontorIntäkter();
+                double prodKostnader = produktDict.Sum(x => x.Value);
+                double resultatprod = prodintäkter - prodKostnader;
 
                 kontorSheet.Cells[row, 1] = kontor.Kontor;
                 kontorSheet.Cells[row, 2] = prodintäkter;

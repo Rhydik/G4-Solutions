@@ -27,12 +27,7 @@ namespace BusinessLayer
             return repositoryFacade.personalRepository.GetAllAVdelningarFördelning();
         }
 
-        public void Konto5021()
-        {
-            repositoryFacade.kostnadsbudgetRepository.Konto5021();
-        }
-
-        //Kunder
+                //Kunder
         public List<KundDTO> GetAllKunder()
         {
             //repositoryFacade.kundRepository.AddKund();   för testning//Leo

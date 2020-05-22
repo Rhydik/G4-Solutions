@@ -49,36 +49,7 @@ namespace DataLayer
 
         }
 
-        public void Konto5021()
-        {
-            using (var db = new DataContext())
-            {
-                decimal resultat = 0;
-                decimal temp = 0;
-                var lön = from x in db.Personal
-                          select x;
-
-                foreach (var item in lön)
-                {
-                    temp = item.Månadslön * (item.Årsarbete/100);
-                    resultat = resultat + temp;
-                }
-
-                var current = (from x in db.schablonkostnad
-                             where x.Konto.konto1 == 5021
-                             select x).FirstOrDefault();
-
-                schablonkostnad ny = new schablonkostnad();
-                ny.Belopp = resultat;
-                ny.Konto = current.Konto;
-                ny.Konto_KontoID = current.Konto_KontoID;
-
-                db.schablonkostnad.Remove(current);
-                db.schablonkostnad.Add(ny);
-                db.SaveChanges();
-            }
-        }
-
+        
         public void LäggTillPlaceringAktivitet(int pers, string aktivitet, decimal andel) //Lägg till aktivitet
         {
             using (var db = new DataContext())

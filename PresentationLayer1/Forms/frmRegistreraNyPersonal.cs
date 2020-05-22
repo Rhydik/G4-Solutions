@@ -82,7 +82,6 @@ namespace PresentationLayer1.Forms
                         MessageBox.Show("Placering överbelaggd");
                     }
 
-                    businessManager.Konto5021();
                 }
                 else
                 {

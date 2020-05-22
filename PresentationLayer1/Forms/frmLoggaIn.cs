@@ -22,8 +22,6 @@ namespace PresentationLayer1
             t.Start();
             t.Join();
             InitializeComponent();
-            businessManager.Konto5021();
-
 
         }
 

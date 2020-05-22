@@ -171,7 +171,6 @@
     <Compile Include="DTO\ProduktKategoriDTO.cs" />
     <Compile Include="DBKlasser\PersonalProdukt.cs" />
     <Compile Include="Repositories\AktivitetRepository.cs" />
-    <Compile Include="DataManager.cs" />
     <Compile Include="Repositories\KundRepository.cs" />
     <Compile Include="Repositories\LåsRepository.cs" />
     <Compile Include="Repositories\PersonalRepository.cs" />

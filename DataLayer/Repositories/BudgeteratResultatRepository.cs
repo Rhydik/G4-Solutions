@@ -226,8 +226,8 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 querysälj = from x in db.Personal
-                                join y in db.AvdelningPersonalxRef on x.PersonalID equals y.Personal_PersonalID
-                                where y.Avdelning_AvdelningID == 2
+                            join y in db.AvdelningPersonalxRef on x.PersonalID equals y.Personal_PersonalID
+                            where y.Avdelning_AvdelningID == 2 && y.Placering > 0
                                 select y;
                 if (querysälj.Count() != 0)
                 {
@@ -240,7 +240,7 @@ namespace DataLayer
 
                 queryadmin = from x in db.AvdelningPersonalxRef
                                  join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
-                                 where x.Avdelning_AvdelningID == 3
+                                 where x.Avdelning_AvdelningID == 3 && x.Placering > 0
                                  select x;
                 if (queryadmin.Count() != 0)
                 {
@@ -267,15 +267,7 @@ namespace DataLayer
                     direktkostnaderadmin += (double) item.Belopp;
                 }
 
-                //avkastningskrav = (from x in db.schablonkostnad
-                //                       where x.Konto.konto1 == 9999
-                //                    select x.Belopp).FirstOrDefault();
-
-                //Console.WriteLine("säljavd " + säljavd + " adminavd " + adminavd + " direktkostnadsälj " + direktkostnadersälj + " direktkostadmin " + direktkostnaderadmin + " avkastningskrav" + avkastningskrav);
-
                 return (säljavd + direktkostnadersälj) + (adminavd + direktkostnaderadmin);
-
-
             }
                 
         }

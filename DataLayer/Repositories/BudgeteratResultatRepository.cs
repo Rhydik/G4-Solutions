@@ -147,7 +147,7 @@ namespace DataLayer
                 }
                 pålägg = (tb + HämtaAvkastning()) / kostnader;
 
-                kostnader += pålägg;
+                kostnader += kostnader + pålägg;
 
                 return kostnader;
                 
@@ -233,8 +233,8 @@ namespace DataLayer
                 {
                     foreach(var item in querysälj)
                     {
-                        säljavd += (item.Personal.Månadslön * (item.Personal.Årsarbete / 100));
-                        Console.WriteLine(item.Personal.Namn);
+                        säljavd += (item.Personal.Månadslön * (item.Placering / 100));
+                        Console.WriteLine(item.Personal.Namn + " " + (item.Personal.Månadslön * (item.Placering/100)));
                     }
                 }
 
@@ -246,7 +246,7 @@ namespace DataLayer
                 {
                     foreach(var item in queryadmin)
                     {
-                        adminavd += (double) (item.Personal.Månadslön * (item.Personal.Årsarbete / 100));
+                        adminavd += (double) (item.Personal.Månadslön * (item.Placering / 100));
                     }
                 }
 

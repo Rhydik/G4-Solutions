@@ -40,7 +40,6 @@
             this.lblAvdelning = new System.Windows.Forms.Label();
             this.cmbAvdelning = new System.Windows.Forms.ComboBox();
             this.dgvÖvre = new System.Windows.Forms.DataGridView();
-            this.btnExportera = new System.Windows.Forms.Button();
             this.btnLåsBudget = new System.Windows.Forms.Button();
             this.ucMeny1 = new PresentationLayer1.Forms.ucMeny();
             this.lblSök = new System.Windows.Forms.Label();
@@ -163,16 +162,6 @@
             this.dgvÖvre.Size = new System.Drawing.Size(530, 441);
             this.dgvÖvre.TabIndex = 86;
             // 
-            // btnExportera
-            // 
-            this.btnExportera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportera.Location = new System.Drawing.Point(201, 527);
-            this.btnExportera.Name = "btnExportera";
-            this.btnExportera.Size = new System.Drawing.Size(120, 41);
-            this.btnExportera.TabIndex = 88;
-            this.btnExportera.Text = "Exportera";
-            this.btnExportera.UseVisualStyleBackColor = true;
-            // 
             // btnLåsBudget
             // 
             this.btnLåsBudget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -231,7 +220,6 @@
             this.Controls.Add(this.lblAvdelning);
             this.Controls.Add(this.cmbAvdelning);
             this.Controls.Add(this.dgvÖvre);
-            this.Controls.Add(this.btnExportera);
             this.Controls.Add(this.btnLåsBudget);
             this.Name = "frmKostnadsbudgeteringAktivitet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -257,7 +245,6 @@
         private System.Windows.Forms.Label lblAvdelning;
         private System.Windows.Forms.ComboBox cmbAvdelning;
         private System.Windows.Forms.DataGridView dgvÖvre;
-        private System.Windows.Forms.Button btnExportera;
         private System.Windows.Forms.Button btnLåsBudget;
         private ucMeny ucMeny1;
         private System.Windows.Forms.Label lblSök;

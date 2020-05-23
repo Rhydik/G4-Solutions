@@ -120,32 +120,19 @@ namespace PresentationLayer1.Forms
         {
             var placerat = 0;
 
-            double räknaprocent;
-            double räkna2;
-            double färdigräknat;
-
-            //för att kunna mata in 0-100% oavsett årsarbetare.
-
-            räknaprocent = (double) (placerat / 100m);
-            färdigräknat = räknaprocent * årsarbete;
-
-
-
-
-
             foreach (var item in avdelnings)
             {
                 placerat += item.Fördelning;
             }
-            if (101 > placerat && årsarbete >= 0)
-            {
-                lblÖverbelaggd.Visible = false;
-                PlaceringOk = true;
-            }
-            else
+            if (placerat > årsarbete)
             {
                 lblÖverbelaggd.Visible = true;
                 PlaceringOk = false;
+            }
+            else
+            {
+                lblÖverbelaggd.Visible = false;
+                PlaceringOk = true;
             }
         }
 

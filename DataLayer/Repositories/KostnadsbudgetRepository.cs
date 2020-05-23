@@ -61,51 +61,8 @@ namespace DataLayer
                             where x.Namn == aktivitet
                             select x).FirstOrDefault();
 
-                //PersonalAktivitet temp = new PersonalAktivitet();
-                //temp.Aktivitet_AktivitetID = akti.AktivitetID;
-                //temp.Personal = perso;
-                //temp.Personal_PersonalID = perso.PersonalID;
-                //temp.Aktivitet = akti;
-                //temp.Placeringsandel = andel;
-                //db.PersonalAktivitet.Add(temp);
-                //db.SaveChanges();
-
-
-
-                //*********************************************
-
-                double räknaprocent;
-                double räkna2;
-                double r2;
-                double n;
-                int k4;
-
                 PersonalAktivitet temp = new PersonalAktivitet();
-
-
-                //if (pers.Årsarbete > GetFördeladAndel(personal))
-                //{
-
-                räkna2 = andel;
-                räknaprocent = räkna2 / (double) 100m;
-
-                //Console.WriteLine("_____________________________");
-                //Console.WriteLine(" räknaprocent: " + räknaprocent);
-
-                n = perso.Årsarbete;
-
-                //Console.WriteLine("namn " + pers.Namn);
-                //Console.WriteLine(" årsarbete: " + n);
-
-                r2 = räknaprocent * n;
-
-                //Console.WriteLine("r2: " + r2);
-
-
                 temp.Placeringsandel = andel;
-
-                //Console.WriteLine("_____________________________");
-
                 temp.Aktivitet_AktivitetID = akti.AktivitetID;
                 temp.Personal = perso;
                 temp.Personal_PersonalID = perso.PersonalID;
@@ -328,12 +285,6 @@ namespace DataLayer
 
         public void LäggTillPlaceringProdukt(int personal, string produkt, double andel) //Lägg till placering efter vald produkt
         {
-            double räknaprocent;
-            double räkna2;
-            double r2;
-            double n;
-            double k4;
-
             using (var db = new DataContext())
             {
                 var pers = (from x in db.Personal
@@ -345,51 +296,12 @@ namespace DataLayer
 
                 PersonalProdukt temp = new PersonalProdukt();
                 temp.Personal = pers;
+                temp.Placeringsandel = andel;
+                temp.Produkt_ProduktID = prod.ProduktID;
 
-
-
-                //if (pers.Årsarbete > GetFördeladAndel(personal))
-                //{
-
-                    räkna2 = andel;
-                    räknaprocent = räkna2 / (double) 100m;
-
-                    //Console.WriteLine("_____________________________");
-                    //Console.WriteLine(" räknaprocent: " + räknaprocent);
-
-                    n = pers.Årsarbete;
-
-                    //Console.WriteLine("namn " + pers.Namn);
-                    //Console.WriteLine(" årsarbete: " + n);
-
-                    r2 = räknaprocent * n;
-
-                    //Console.WriteLine("r2: " + r2);
-
-                    k4 = r2;
-
-                    temp.Placeringsandel = k4;
-
-                    //Console.WriteLine("_____________________________");
-
-                    temp.Produkt_ProduktID = prod.ProduktID;
-
-
-                    db.PersonalProdukt.Add(temp);
-                    db.SaveChanges();
-                //}
-
-                //else
-                //{
-                //    return; 
-                //}
-
-
-
-
+                db.PersonalProdukt.Add(temp);
+                db.SaveChanges();
             }
-
-            
         }
 
         public List<PersonalProduktDTO> GetAllPersonalProdukt() //Hämtar personal efter vald produkt

@@ -140,68 +140,15 @@ namespace PresentationLayer1.Forms
             var produkt = cbProdukt.SelectedItem.ToString();
             double andel = double.Parse(tbAndel.Text);
 
-            var pp = businessManager.GetAllPersonal();
-
-            var query = (from x in pp
-                         where x.PersonalID == pers
-                         select x.Årsarbete).FirstOrDefault();
-
-
-
-            //***********************************Behöver räknas för placeringen********************
-
-            double räknaprocent;
-            double räkna2;
-            double r2;
-            double n;
-            double nyplaceringsandel;
-
-
-            räkna2 = andel;
-            räknaprocent = räkna2 / (double) 100m;
-
-            n = query;
-
-            r2 = räknaprocent * n;
-
-            nyplaceringsandel = r2;
-
-            Console.WriteLine("OSOSOSOSOSOSOSOSOSOSOOSOS  " + nyplaceringsandel + "  OSOSOSOS");
-
-
-
-            //**************************************************************************************
-
-
-            Console.WriteLine("dd" + query + "dd");
-
-            var fördeladandel = businessManager.GetFördeladAndel(pers);
-
-
-
-                Console.WriteLine("*** fördeladandel= " + fördeladandel + "***");
-
-
-
-
-                double nyandeltest = fördeladandel + nyplaceringsandel;      /* DENNA FÅR INTE VARA MINUS */   
-            
-
-
-                         Console.WriteLine("*** redan fördelat + ny input andel= " + nyandeltest + "***");
-
-
-            Console.WriteLine("Årsarbetare: " + query);
-
-            if (101 > andel && query >= nyandeltest && nyandeltest > 0)
+            if (andel > personal.Diff)
+            {
+                MessageBox.Show("Personal överbelagd!");
+            }
+            else
             {
                 businessManager.LäggTillPlaceringProdukt(pers, produkt, andel);
                 Update();
                 UpdatePersonal();
-            }
-            else
-            {
-                MessageBox.Show("Placeringen överstiger den anställdas tid.", "Fel");
             }
         }
 
@@ -309,6 +256,11 @@ namespace PresentationLayer1.Forms
             {
                 tbAndel.MaxLength = 2;
             }
+        }
+
+        private void btnExportera_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

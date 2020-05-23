@@ -105,20 +105,16 @@ namespace PresentationLayer1.Forms
 
             nyplaceringsandel = r2;
 
-            Console.WriteLine("OSOSOSOSOSOSOSOSOSOSOOSOS  " + nyplaceringsandel + "  OSOSOSOS");
 
 
 
             //**************************************************************************************
 
 
-            Console.WriteLine("dd" + query + "dd");
-
             var fördeladandel = businessManager.GetFördeladAndel(pers);
 
 
 
-            Console.WriteLine("*** fördeladandel= " + fördeladandel + "***");
 
 
 
@@ -127,10 +123,7 @@ namespace PresentationLayer1.Forms
 
 
 
-            Console.WriteLine("*** redan fördelat + ny input andel= " + nyandeltest + "***");
 
-
-            Console.WriteLine("Årsarbetare: " + query);
 
             if (101 > andel && query >= nyandeltest && nyandeltest > 0)
             {

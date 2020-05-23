@@ -49,22 +49,22 @@ namespace PresentationLayer1.Forms
             businessManager.GetProduktKostnaderAvdelning(1);
 
             produkter = businessManager.GetAllProdukter();
-            var produkterAnvända = businessManager.GetProduktByNamn("TFU-kommun");
-            //var produkterAnvända = businessManager.GetAllAnvändaProdukter();
+            //var produkterAnvända = businessManager.GetProduktByNamn("Serverhotell");
+            var produkterAnvända = businessManager.GetAllAnvändaProdukter();
 
             foreach (var produkt in produkter)
             {
                 double beräkning = 0;
 
-                //if (produkterAnvända.Contains(produkt.ProduktID))
-                //{
-                //    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
-                //}
-
-                if (produkterAnvända.FirstOrDefault().ProduktID == produkt.ProduktID)
+                if (produkterAnvända.Contains(produkt.ProduktID))
                 {
                     beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
                 }
+
+                //if (produkterAnvända.FirstOrDefault().ProduktID == produkt.ProduktID)
+                //{
+                //    beräkning = businessManager.GetProduktKostnader(produkt.ProduktID);
+                //}
 
                 produktDict.Add(produkt.ProduktID, beräkning);
 

@@ -145,7 +145,9 @@ namespace DataLayer
                 {
                     return 0;
                 }
-                pålägg = (tb + HämtaAvkastning()) / kostnader;
+                pålägg = GetPålägg(produkten.Avdelning_AvdelningID);
+
+                    (tb + HämtaAvkastning()) / kostnader;
 
                 kostnader += kostnader + pålägg;
 
@@ -153,6 +155,22 @@ namespace DataLayer
                 
 
             }
+        }
+
+        private double GetPålägg(int avdelningsId)
+        {
+            using (var db = new DataContext())
+            {
+                var prod = from x in db.Produkt
+                           where x.Avdelning_AvdelningID == avdelningsId
+                           select x;
+
+                foreach (var item in prod)
+                {
+
+                }
+            }
+            return 0;
         }
 
         private double HämtaAvkastning()

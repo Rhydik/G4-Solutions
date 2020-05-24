@@ -120,7 +120,7 @@ namespace PresentationLayer1.Forms
         }
         private void HideFromUser()
         {
-            if (Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef") || Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") || Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Driftavdelningschef") || Globals.CurrentPersonal.Behörighet.Equals("Utvecklingsavdelningsschef") || Globals.CurrentPersonal.Behörighet.Equals("Administrativaavdelningschef") || Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
             {
 
                 btnLåsBudget.Show();

@@ -96,18 +96,6 @@
     <Compile Include="Forms\frmBudgeteratResultat.Designer.cs">
       <DependentUpon>frmBudgeteratResultat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDirektaKostnaderAktvitet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmDirektaKostnaderAktvitet.Designer.cs">
-      <DependentUpon>frmDirektaKostnaderAktvitet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmDirektaKostnaderProdukt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmDirektaKostnaderProdukt.Designer.cs">
-      <DependentUpon>frmDirektaKostnaderProdukt.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmKostnadsbudgetering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,12 +296,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBudgeteratResultat.resx">
       <DependentUpon>frmBudgeteratResultat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDirektaKostnaderAktvitet.resx">
-      <DependentUpon>frmDirektaKostnaderAktvitet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDirektaKostnaderProdukt.resx">
-      <DependentUpon>frmDirektaKostnaderProdukt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmKostnadsbudgetering.resx">
       <DependentUpon>frmKostnadsbudgetering.cs</DependentUpon>

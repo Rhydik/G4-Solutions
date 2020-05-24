@@ -25,7 +25,6 @@ namespace PresentationLayer1.Forms
             InitializeComponent();
             Hide();
             HideFromUser();
-            btnLåsBudget.Show();
 
             CheckLås();
             RefreshData();
@@ -181,7 +180,7 @@ namespace PresentationLayer1.Forms
         {
             if (Globals.CurrentPersonal == null) return;
 
-            if (Globals.CurrentPersonal.Behörighet.Equals("Försäljning- och marknadsavdelningschef"))
+            if (Globals.CurrentPersonal.Behörighet.Equals("Försäljning- och marknadsavdelningschef") || Globals.CurrentPersonal.Behörighet.Equals("Systemansvarig"))
             {
 
                 btnLåsBudget.Show();

@@ -92,7 +92,7 @@ namespace PresentationLayer1.Forms
         private void btnAddProdukt_Click(object sender, EventArgs e)
         {
             
-            string namn = newProduktNametxt.Text;
+            string namn = tbDelProduktID.Text;
 
             var kategori = comboBox1.GetItemText(comboBox1.SelectedItem);
 

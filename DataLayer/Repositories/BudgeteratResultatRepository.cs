@@ -129,7 +129,7 @@ namespace DataLayer
 
                 if (årsarbetare != 0)
                 {
-                    beräknadschablon = BeräknaSchablon() / årsarbetare;
+                    beräknadschablon = (BeräknaSchablon()) / årsarbetare;
                 }
 
                 kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);

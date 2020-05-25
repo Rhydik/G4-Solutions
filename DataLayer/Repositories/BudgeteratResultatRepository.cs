@@ -127,9 +127,10 @@ namespace DataLayer
                     årsarbetare += (double)(item.Placeringsandel / 100);
                 }
 
+
                 if (årsarbetare != 0)
                 {
-                    beräknadschablon = (BeräknaSchablon()) / årsarbetare;
+                    beräknadschablon = BeräknaSchablon() * årsarbetare;
                 }
 
                 kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);
@@ -294,11 +295,24 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
+                double totalÅrsarbete = 0;
+                double totalSchablon = 0;
                 var konton = from x in db.schablonkostnad
                              orderby x.Konto.konto1
                              select x;
 
-                return Enumerable.Sum(konton.Where(item => item.Konto.konto1 != 9999 && item.Konto.konto1 != 5021), item => (double)item.Belopp);
+                var totalÅrsarbetare = from x in db.PersonalProdukt
+                                       join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
+                                       where x.Placeringsandel > 0
+                                       select x;
+
+                foreach (var item in totalÅrsarbetare)
+                {
+                    totalÅrsarbete += (item.Placeringsandel / 100);
+                }
+                totalSchablon = Enumerable.Sum(konton.Where(item => item.Konto.konto1 != 9999 && item.Konto.konto1 != 5021), item => (double)item.Belopp);
+
+                return totalSchablon / totalÅrsarbete;
             }
         }
         public double BeräknaÅrsarbetare()

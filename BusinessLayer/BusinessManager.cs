@@ -499,6 +499,30 @@ namespace BusinessLayer
             }
             else
             {
+                if (Kategori == "Kommunikation")
+                {
+                    idEnd = "KO";
+                }
+                else if (Kategori == "LIS")
+                {
+                    idEnd = "LI";
+                }
+                else if (Kategori == "Verksamhetsspecifika system")
+                {
+                    idEnd = "VS";
+                }
+                else if (Kategori == "ASP")
+                {
+                    idEnd = "AS";
+                }
+                else if (Kategori == "Övriga notesprodukter")
+                {
+                    idEnd = "NÖ";
+                }
+                else if (Kategori == "Generella system")
+                {
+                    idEnd = "GS";
+                }
                 idEnd = Kategori.Substring(0, 2).ToUpper();
                 id = namn + idEnd;
             }

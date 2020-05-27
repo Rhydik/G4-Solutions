@@ -13,15 +13,9 @@ namespace DataLayer
 {
     public class BudgeteratResultatRepository
     {
-        double totaltillverkningskostnad;
-        double sistaberäknadschablon;
         double lön;
-        double andel;
-        double lönresultat;
         private IQueryable<PersonalProdukt> personalkostnad;
-        double totalandel;
         double kostnader;
-        double totalkostnad;
         double pålägg;
         private Produkt produkten;
         double noll;
@@ -30,11 +24,7 @@ namespace DataLayer
         double adminavd;
         double direktkostnadersälj;
         double direktkostnaderadmin;
-        private IQueryable<Personal> årsarbete;
-        private IQueryable<Personal> till5021;
         private double årsarbeteresultat;
-        private IQueryable<schablonkostnad> schablonskonstnad;
-        private double schablonresultat;
         private double avkastningskrav;
         private IQueryable<DirektkostnadAktivitet> querykostnadadmin;
         private IQueryable<DirektkostnadAktivitet> querykostnadsälj;
@@ -98,20 +88,13 @@ namespace DataLayer
         {
             using (var db = new DataContext())
             {
-                totaltillverkningskostnad = 0;
-                sistaberäknadschablon = 0;
                 lön = 0;
-                andel = 0;
-                lönresultat = 0;
-                // beräknadschablon = 0;
-                totalandel = 0;
                 kostnader = 0;
                 pålägg = 0;
                 produkten = (from x in db.Produkt
                              where x.ProduktID == produkt
                              select x).FirstOrDefault();
 
-                //beräknadschablon = (BeräknaSchablon() / BeräknaÅrsarbetare());
 
                 double årsarbetare = 0;
                 double beräknadschablon = 0;
@@ -289,7 +272,6 @@ namespace DataLayer
 
                 return (säljavd + direktkostnadersälj) + (adminavd + direktkostnaderadmin);
             }
-
         }
         public double BeräknaSchablon()
         {
@@ -297,6 +279,7 @@ namespace DataLayer
             {
                 double totalÅrsarbete = 0;
                 double totalSchablon = 0;
+
                 var konton = from x in db.schablonkostnad
                              orderby x.Konto.konto1
                              select x;

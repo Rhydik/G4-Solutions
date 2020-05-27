@@ -36,6 +36,11 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var aktiviteten = db.Aktivitet.Where(x => x.AktivitetID == aktivitet.AktivitetID).FirstOrDefault();
+                var aktivitetsKostnad = db.DirektkostnadAktivitet.Where(x => x.Aktivitet_AktivitetID == aktiviteten.AktivitetID);
+                var personalFördelningAktivitet = db.PersonalAktivitet.Where(x => x.Aktivitet_AktivitetID == aktiviteten.AktivitetID);
+
+                db.PersonalAktivitet.RemoveRange(personalFördelningAktivitet);
+                db.DirektkostnadAktivitet.RemoveRange(aktivitetsKostnad);
                 db.Aktivitet.Remove(aktiviteten);
                 db.SaveChanges();
             }

@@ -46,11 +46,6 @@ namespace PresentationLayer1.Forms
             cmbAvdelning.SelectedIndex = 0;
         }
 
-        public void btnTaBortProdukt_Click(object sender, EventArgs e)
-        {
-            businessManager.RemoveProdukt(produkten);
-        }
-
         private void btnAvbrytProdukt_Click(object sender, EventArgs e)
         {
             this.Visible = !this.Visible;

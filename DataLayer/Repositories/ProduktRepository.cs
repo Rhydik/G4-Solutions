@@ -107,11 +107,16 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var produkten = db.Produkt.Where(x => x.ProduktID == produkt.ProduktID).FirstOrDefault();
-                var kostnadProdukt = (from x in db.DirektkostnadProdukt
+                var kostnadProdukt = from x in db.DirektkostnadProdukt
                                       where x.Produkt.ProduktID == produkt.ProduktID
-                                      select x).FirstOrDefault();
+                                      select x;
 
-                db.DirektkostnadProdukt.Remove(kostnadProdukt);
+                var personalFördelningProdukt = from x in db.PersonalProdukt
+                                                where x.Produkt_ProduktID == produkten.ProduktID
+                                                select x;
+
+                db.PersonalProdukt.RemoveRange(personalFördelningProdukt);
+                db.DirektkostnadProdukt.RemoveRange(kostnadProdukt);
                 db.Produkt.Remove(produkten);
                 db.SaveChanges();
             }

@@ -91,14 +91,15 @@ namespace PresentationLayer1.Forms
 
         private void btnAddProdukt_Click(object sender, EventArgs e)
         {
-            
-            string namn = tbDelProduktID.Text;
+            string namn = newProduktNametxt.Text;
+
+            string delID = tbDelProduktID.Text;
 
             var kategori = comboBox1.GetItemText(comboBox1.SelectedItem);
 
             var grupp = comboBox2.GetItemText(comboBox2.SelectedItem);
 
-            string produktID = businessManager.SkapaID(namn, grupp);
+            string produktID = businessManager.SkapaID(delID, grupp);
 
             var avdelning = comboBox3.GetItemText(comboBox3.SelectedItem);
             if (businessManager.CheckAvdelning(comboBox3.Text) == true)
@@ -120,6 +121,7 @@ namespace PresentationLayer1.Forms
             comboBox2.SelectedIndex = -1;
             comboBox3.SelectedIndex = -1;
             newProduktNametxt.Clear();
+            tbDelProduktID.Clear();
 
         }
 

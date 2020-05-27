@@ -502,29 +502,143 @@ namespace BusinessLayer
                 if (Kategori == "Kommunikation")
                 {
                     idEnd = "KO";
+                    id = namn + idEnd;
                 }
                 else if (Kategori == "LIS")
                 {
                     idEnd = "LI";
+                    id = namn + idEnd;
                 }
                 else if (Kategori == "Verksamhetsspecifika system")
                 {
                     idEnd = "VS";
+                    id = namn + idEnd;
                 }
                 else if (Kategori == "ASP")
                 {
                     idEnd = "AS";
+                    id = namn + idEnd;
                 }
                 else if (Kategori == "Övriga notesprodukter")
                 {
                     idEnd = "NÖ";
+                    id = namn + idEnd;
                 }
                 else if (Kategori == "Generella system")
                 {
                     idEnd = "GS";
+                    id = namn + idEnd;
                 }
-                idEnd = Kategori.Substring(0, 2).ToUpper();
-                id = namn + idEnd;
+                else if (Kategori == "PA-produkter")
+                {
+                    idEnd = "PA";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Ekonomiprodukter, övriga")
+                {
+                    idEnd = "EÖ";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Webbhotell - verksamhet")
+                {
+                    idEnd = "WE";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Domino")
+                {
+                    idEnd = "DO";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Notesprodukter")
+                {
+                    idEnd = "NP";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Elektronisk handel")
+                {
+                    idEnd = "EH";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Gasell")
+                {
+                    idEnd = "GA";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Horisonten")
+                {
+                    idEnd = "HO";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Inköp externt")
+                {
+                    idEnd = "IE";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "IT-säkerhet")
+                {
+                    idEnd = "SÄ";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Kunskapsnätet")
+                {
+                    idEnd = "KN";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Kundservice kund")
+                {
+                    idEnd = "KS";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Perla")
+                {
+                    idEnd = "PE";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Procapita")
+                {
+                    idEnd = "PC";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Projekt, tekniska")
+                {
+                    idEnd = "PT";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "S/390")
+                {
+                    idEnd = "S3";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Serverhotell")
+                {
+                    idEnd = "SH";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Teknisk konsulting")
+                {
+                    idEnd = "TK";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Telefoni")
+                {
+                    idEnd = "TE";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Utdatatjänster")
+                {
+                    idEnd = "UT";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "Webbplats")
+                {
+                    idEnd = "WH";
+                    id = namn + idEnd;
+                }
+                else if (Kategori == "WebbSotis")
+                {
+                    idEnd = "SD";
+                    id = namn + idEnd;
+                }
             }
             
             return id.ToUpper();

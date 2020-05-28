@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer.DTO;
+using DataLayer.Migrations;
 
 
 namespace DataLayer
@@ -31,6 +32,7 @@ namespace DataLayer
         private IQueryable<AvdelningPersonalxRef> queryadmin;
         private IQueryable<AvdelningPersonalxRef> querysälj;
         private IQueryable<DirektkostnadProdukt> dkprodukter;
+        private Testdata.Testdata testdata = new Testdata.Testdata();
 
         public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt) //Sätter ihop Produktlistan med Intäktslistan
         {
@@ -104,19 +106,27 @@ namespace DataLayer
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
 
-                foreach (var item in personalkostnad)
-                {
-                    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
-                    årsarbetare += (double)(item.Placeringsandel / 100);
-                }
+                //foreach (var item in personalkostnad)
+                //{
+                //    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
+                //    årsarbetare += (double)(item.Placeringsandel / 100);
+                //}
 
+                foreach (var item in testdata.ProduktY)
+                {
+                    lön += (double)(item.Månadslön * (item.Placering / 100));
+                    årsarbetare += (double)(item.Placering / 100);
+                } 
 
                 if (årsarbetare != 0)
                 {
-                    beräknadschablon = BeräknaSchablon() * årsarbetare;
+                    //beräknadschablon = BeräknaSchablon() * årsarbetare;
+                    beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
                 }
 
-                kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);
+                //kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);
+                kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
+
 
                 return kostnader;
             }

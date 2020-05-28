@@ -8,28 +8,29 @@ namespace DataLayer.Testdata
 {
     public class Testdata
     {
-        public List<Tuple<string, double, double>> Persons = new List<Tuple<string, double, double>>
+        public List<Person> Persons = new List<Person>
         {
-            new Tuple<string, double, double>("Person A", 25000, 1),
-            new Tuple<string, double, double>("Person B", 30000, 0.5),
-            new Tuple<string, double, double>("Person C", 20000, 0.5),
-            new Tuple<string, double, double>("Person D", 35000, 0.5),
+            new Person() {Månadslön = 25000, Namn = "Person A", Placering = 100, Produkt = "ProduktX"},
+            new Person() {Månadslön = 30000, Namn = "Person B", Placering = 50, Produkt = "ProduktY"},
+            new Person() {Månadslön = 20000, Namn = "Person C", Placering = 50, Produkt = "ProduktY"},
+            new Person() {Månadslön = 35000, Namn = "Person D", Placering = 50, Produkt = "ProduktX"},
         };
 
-        public Dictionary<string, double> ProduktX = new Dictionary<string, double>
+        public List<Person> ProduktX = new List<Person>
         {
-            {"Person A", 1},
-            {"Person D", 0.5}
+            new Person() {Månadslön = 25000, Namn = "Person A", Placering = 100, Produkt = "ProduktX"},
+            new Person() {Månadslön = 35000, Namn = "Person D", Placering = 50, Produkt = "ProduktX"}
         };
 
-        public Dictionary<string, double> ProduktY = new Dictionary<string, double>
+        public List<Person> ProduktY = new List<Person>
         {
-            {"Person B", 0.5},
-            {"Person C", 0.5}
+            new Person() {Månadslön = 30000, Namn = "Person B", Placering = 50, Produkt = "ProduktY"},
+            new Person() {Månadslön = 20000, Namn = "Person C", Placering = 50, Produkt = "ProduktY"},
         };
 
-        public double SchablonKostnad => 13000 * Persons.Sum(x => x.Item3);
-        public double Konto5021 => Persons.Sum(x => x.Item2 * x.Item3);
+        public double SchablonKostnadBas => 13000;
+        public double SchablonKostnad => 13000 * Persons.Sum(x => x.Placering);
+        public double Konto5021 => Persons.Sum(x => x.Månadslön * x.Placering);
         public double PersRelateradKostnad => SchablonKostnad + Konto5021;
         public double DirektKostnadProduktX => 30000;
         public double DirektKostnadProduktY => 20000;
@@ -51,8 +52,8 @@ namespace DataLayer.Testdata
         public void ResultatAvdelning() => Console.WriteLine(Totalkostnad);
 
         public double TillvKostnadX =>
-            ((ProduktX.Sum(x => x.Value) / Persons.Sum(x => x.Item3)) * PersRelateradKostnad) + DirektKostnadProduktX;
-        public double TillvKostnadY => ((ProduktY.Sum(x => x.Value) / Persons.Sum(x => x.Item3)) * PersRelateradKostnad) + DirektKostnadProduktY;
+            ((ProduktX.Sum(x => x.Placering) / Persons.Sum(x => x.Placering)) * PersRelateradKostnad) + DirektKostnadProduktX;
+        public double TillvKostnadY => ((ProduktY.Sum(x => x.Placering) / Persons.Sum(x => x.Placering)) * PersRelateradKostnad) + DirektKostnadProduktY;
 
         public double TBX => Pålägg * TillvKostnadX;
         public double TBY => Pålägg * TillvKostnadY;
@@ -62,5 +63,13 @@ namespace DataLayer.Testdata
         public void ResultatProduktX() => Console.WriteLine(TotalKostnadX);
 
         public void ResultatProduktY() => Console.WriteLine(TotalKostnadY);
+
+        public class Person
+        {
+            public string Namn { get; set; }
+            public double Månadslön { get; set; }
+            public double Placering { get; set; }
+            public string Produkt { get; set; }
+    }
     }
 }

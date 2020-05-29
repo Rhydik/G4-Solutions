@@ -310,7 +310,6 @@ namespace DataLayer
         }
         public double GetDirektKostnaderProdukt(string produkten)
         {
-            noll = 0;
             resultat = 0;
             using (var db = new DataContext())
             {
@@ -321,14 +320,7 @@ namespace DataLayer
                 {
                     resultat += (double)item.Belopp;
                 }
-                if (resultat != 0)
-                {
-                    return resultat;
-                }
-                else
-                {
-                    return noll;
-                }
+                return resultat;
             }
         }
         public double BeräknaTB()

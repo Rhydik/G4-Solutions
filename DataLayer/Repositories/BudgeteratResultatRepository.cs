@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Sockets;
@@ -16,10 +17,12 @@ namespace DataLayer
     {
         double lön;
         private IQueryable<PersonalProdukt> personalkostnad;
+        private IQueryable<PersonalProdukt> PersonalPåAvdelning;
         double kostnader;
         double pålägg;
         private Produkt produkten;
         double noll;
+        double ÅrsarbeteAvdelning;
         double resultat;
         double säljavd;
         double adminavd;
@@ -93,10 +96,11 @@ namespace DataLayer
                 lön = 0;
                 kostnader = 0;
                 pålägg = 0;
+                ÅrsarbeteAvdelning = 0;
                 produkten = (from x in db.Produkt
                              where x.ProduktID == produkt
                              select x).FirstOrDefault();
-
+                List<string> test = new List<string>();
 
                 double årsarbetare = 0;
                 double beräknadschablon = 0;
@@ -106,26 +110,35 @@ namespace DataLayer
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
 
-                //foreach (var item in personalkostnad)
-                //{
-                //    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
-                //    årsarbetare += (double)(item.Placeringsandel / 100);
-                //}
+                PersonalPåAvdelning =     from x in db.Produkt
+                                          join y in db.PersonalProdukt on x.ProduktID equals y.Produkt_ProduktID
+                                          where x.Avdelning_AvdelningID == produkten.Avdelning_AvdelningID
+                                          select y;
 
-                foreach (var item in testdata.ProduktY)
+                foreach (var item in personalkostnad)
                 {
-                    lön += (double)(item.Månadslön * (item.Placering / 100));
-                    årsarbetare += (double)(item.Placering / 100);
-                } 
+                    årsarbetare += (double)(item.Placeringsandel / 100);
+                }
+                foreach (var item in PersonalPåAvdelning)
+                {
+                    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
+                    ÅrsarbeteAvdelning += (double)(item.Placeringsandel / 100);
+                }
+
+                //foreach (var item in testdata.ProduktY)
+                //{
+                //    lön += (double)(item.Månadslön * (item.Placering / 100));
+                //    årsarbetare += (double)(item.Placering / 100);
+                //} 
 
                 if (årsarbetare != 0)
                 {
-                    //beräknadschablon = BeräknaSchablon() * årsarbetare;
-                    beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
+                    beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
+                    //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
                 }
 
-                //kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);
-                kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
+                kostnader = (årsarbetare / ÅrsarbeteAvdelning) * (lön + beräknadschablon) + GetDirektKostnaderProdukt(produkt);
+                //kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
 
 
                 return kostnader;

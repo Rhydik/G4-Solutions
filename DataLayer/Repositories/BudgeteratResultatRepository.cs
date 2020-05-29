@@ -36,8 +36,7 @@ namespace DataLayer
         private IQueryable<AvdelningPersonalxRef> querysälj;
         private IQueryable<DirektkostnadProdukt> dkprodukter;
         private Testdata.Testdata testdata = new Testdata.Testdata();
-
-        public double TotalTillverkningsKostnad { get; private set; }
+        public double TotalTillverkningsKostnad => KalkyleraKontor();
 
         public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt) //Sätter ihop Produktlistan med Intäktslistan
         {
@@ -105,7 +104,6 @@ namespace DataLayer
                 List<string> test = new List<string>();
 
                 double årsarbetare = 0;
-                double beräknadschablon = 0;
 
                 personalkostnad = from x in db.PersonalProdukt
                                   join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
@@ -133,12 +131,6 @@ namespace DataLayer
                 //    årsarbetare += (double)(item.Placering / 100);
                 //} 
 
-                if (årsarbetare != 0)
-                {
-                    beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
-                    //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
-                }
-
                 double perskostnadavd = BeräknaPersRelKostnad(db, produkten.Avdelning);
 
                 kostnader = (årsarbetare / ÅrsarbeteAvdelning) * perskostnadavd + GetDirektKostnaderProdukt(produkt);
@@ -149,7 +141,7 @@ namespace DataLayer
             }
         }
 
-        public void KalkyleraKontor()
+        public double KalkyleraKontor()
         {
             using (var db = new DataContext())
             {
@@ -162,8 +154,8 @@ namespace DataLayer
                    kostnader += BeräknaAvdelningskostnad(db, avdelning);
 
                 }
-                TotalTillverkningsKostnad = kostnader;
             }
+            return kostnader;
         }
         private double BeräknaPersRelKostnad(DataContext db, Avdelning avdelning)
         {
@@ -174,7 +166,6 @@ namespace DataLayer
 
             List<string> test = new List<string>();
 
-            double årsarbetare = 0;
             double beräknadschablon = 0;
 
             PersonalPåAvdelning = from x in db.Produkt
@@ -194,7 +185,7 @@ namespace DataLayer
             //    årsarbetare += (double)(item.Placering / 100);
             //} 
 
-            if (årsarbetare != 0)
+            if (ÅrsarbeteAvdelning != 0)
             {
                 beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
                 //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
@@ -234,7 +225,7 @@ namespace DataLayer
             //    årsarbetare += (double)(item.Placering / 100);
             //} 
 
-            if (årsarbetare != 0)
+            if (ÅrsarbeteAvdelning != 0)
             {
                 beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
                 //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
@@ -258,10 +249,7 @@ namespace DataLayer
 
         public double GetProduktKostnader(string produkt)
         {
-            KalkyleraKontor();
-
             var kostnad = GetProduktKostnaderPre(produkt);
-
 
             if (kostnad == 0)
             {

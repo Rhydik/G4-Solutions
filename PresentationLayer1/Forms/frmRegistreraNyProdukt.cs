@@ -40,7 +40,7 @@ namespace PresentationLayer1.Forms
             comboBox2.ValueMember = "Namn";
             comboBox2.DisplayMember = "Namn";
 
-            comboBox3.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
+            comboBox3.Items.Insert(0, "Utv/Förv");
             comboBox3.Items.Insert(1, "Driftavdelning");
             comboBox3.SelectedIndex = 0;
         }
@@ -123,6 +123,7 @@ namespace PresentationLayer1.Forms
             newProduktNametxt.Clear();
             tbDelProduktID.Clear();
 
+            MessageBox.Show("Produkt skapad");
         }
 
         private void label5_Click(object sender, EventArgs e)

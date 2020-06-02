@@ -9,5 +9,5 @@ PJDBWE	Projektdatabas	K740	Borås Kommum	20190210	-83750	0	0	februari	0	0	0	0	0
 PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190318	-22500	0	0	mars	0	0	0	0	0
 TEKOTK	Teknisk konsulting	X539	Högskolan i Borås	20190425	-45000	0	0	april	0	0	0	0	0
 NYPRSH	Ny produkt	K740	Borås Kommun	20190425	-10000	0	0	april	0	0	0	0	0
-TFUKSH	TFU-kommun	K950	Örebro Kommun	20191025	-15000	0	0	oktober	100000	1666,67	0	0	0
+TFUKSH	TFU-kommun	K950	Örebro Kommun	20191025	-15000	0	0	oktober	100000	1388,89	0	0	0
 VFUKSH	VFU-kommun	K975	Lysekil Kommun	20191025	-10000	0	0	oktober	0	0	0	0	0

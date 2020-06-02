@@ -54,15 +54,15 @@ namespace PresentationLayer1.Forms
 
 
             DialogResult resultat = MessageBox.Show(schablon.Kontobenämning + " uppdaterad.", "Uppdatera Konto", MessageBoxButtons.OK);
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Visible = !this.Visible;
         }
 
         private void btnAvbryt_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.Visible = !this.Visible;
-
+            if (Application.OpenForms["frmSchablonkostnad"] != null)
+            {
+                (Application.OpenForms["frmSchablonkostnad"] as Forms.frmSchablonkostnad).RefreshData();
+            }
+            Close();
         }
     }
 }

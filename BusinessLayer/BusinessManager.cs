@@ -313,9 +313,9 @@ namespace BusinessLayer
             repositoryFacade.kundRepository.RemoveKund(kundId);
         }
 
-        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning)
+        public void UpdateAktivitet(string newAktiId, string oldAktiId, string aktinamn, string aktiAvdelning)
         {
-            repositoryFacade.aktivitetRepository.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
+            repositoryFacade.aktivitetRepository.UpdateAktivitet(newAktiId, oldAktiId, aktinamn, aktiAvdelning);
         }
 
         public void UpdateKonto(SchablonDTO oldSchablon, int konto, string benämning )

@@ -41,7 +41,7 @@ namespace PresentationLayer1.Forms
             cmbProduktgrupp.ValueMember = "Namn";
             cmbProduktgrupp.DisplayMember = "Namn";
 
-            cmbAvdelning.Items.Insert(0, "Utvecklings- och förvaltningsavdelning");
+            cmbAvdelning.Items.Insert(0, "Utv/Förv");
             cmbAvdelning.Items.Insert(1, "Driftavdelning");
             cmbAvdelning.SelectedIndex = 0;
         }
@@ -83,6 +83,8 @@ namespace PresentationLayer1.Forms
             var Produktavdelning = cmbAvdelning.Text;
 
             businessManager.UpdateProdukt(produkten, ProduktID, ProduktNamn, Produktkategori, Produktgrupp, Produktavdelning);
+
+            MessageBox.Show("Produkt Ändrad");
         }
 
         private void btnSkapaNyProdukGrupp_Click(object sender, EventArgs e)

@@ -70,7 +70,7 @@ namespace PresentationLayer1.Forms
         {
             if (Application.OpenForms["frmIntäktsbudgeteringKund"] != null)
             {
-                (Application.OpenForms["frmIntäktsbudgeteringKund"] as frmIntäktsbudgeteringKund).RefreshData();
+                (Application.OpenForms["frmIntäktsbudgeteringKund"] as frmIntäktsbudgeteringKund).RefreshData(kundID);
             }
             Close();
         }

@@ -23,10 +23,15 @@ namespace PresentationLayer1.Forms
         {
             InitializeComponent();
 
-            aktiviteter = businessManager.GetAllAktiviteter();
-            dgvAktiviteter.DataSource = aktiviteter;
+            RefreshData();
 
             HideFromUser();
+        }
+
+        public void RefreshData()
+        {
+            aktiviteter = businessManager.GetAllAktiviteter();
+            dgvAktiviteter.DataSource = aktiviteter;
         }
 
         private void tbAktivitetsID_TextChanged(object sender, EventArgs e)

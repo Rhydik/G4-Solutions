@@ -115,6 +115,25 @@ namespace DataLayer
                                                 where x.Produkt_ProduktID == produkten.ProduktID
                                                 select x;
 
+                var kundIntäkt = from x in db.KundIntäktsbudget
+                                 join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                                 join p in db.ProduktIntäktsbudget on y.IntäktsbudgetID equals p.Intäktsbudget_IntäktsbudgetID
+                                 where p.Produkt_ProduktID == produkten.ProduktID
+                                 select x;
+
+                var produktIntäkt = from x in db.ProduktIntäktsbudget
+                                    where x.Produkt_ProduktID == produkten.ProduktID
+                                    select x;
+
+                var intäktsbudget = from x in db.Intäktsbudget
+                                    join y in db.ProduktIntäktsbudget on x.IntäktsbudgetID equals y.Intäktsbudget_IntäktsbudgetID
+                                    join p in db.Produkt on y.Produkt_ProduktID equals p.ProduktID
+                                    where p.ProduktID == produkten.ProduktID
+                                    select x;
+
+                db.ProduktIntäktsbudget.RemoveRange(produktIntäkt);
+                db.KundIntäktsbudget.RemoveRange(kundIntäkt);
+                db.Intäktsbudget.RemoveRange(intäktsbudget);
                 db.PersonalProdukt.RemoveRange(personalFördelningProdukt);
                 db.DirektkostnadProdukt.RemoveRange(kostnadProdukt);
                 db.Produkt.Remove(produkten);

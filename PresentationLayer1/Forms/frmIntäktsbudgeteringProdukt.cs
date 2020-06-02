@@ -172,7 +172,7 @@ namespace PresentationLayer1.Forms
             Update();
         }
 
-        public void RefreshData()
+        public void RefreshData(string produktID)
         {
             if (lblValdProduktID.Text == "Ej vald")
             {
@@ -181,7 +181,7 @@ namespace PresentationLayer1.Forms
             }
             else
             {
-                kunder = businessManager.GetAllProduktKunder(lblValdProduktID.Text);
+                kunder = businessManager.GetAllProduktKunder(produktID);
 
                 dgvIntäktsbudgeteringProdukt.DataSource = kunder;
             }

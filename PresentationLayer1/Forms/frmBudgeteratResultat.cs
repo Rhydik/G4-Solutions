@@ -46,8 +46,6 @@ namespace PresentationLayer1.Forms
 
         private void Load()
         {
-            businessManager.GetProduktKostnaderAvdelning(1);
-
             produkter = businessManager.GetAllProdukter();
             //var produkterAnvända = businessManager.GetProduktByNamn("Serverhotell");
             var produkterAnvända = businessManager.GetAllAnvändaProdukter();

@@ -58,19 +58,19 @@ namespace DataLayer
             }
         }
 
-        public void UpdateAktivitet(string aktiId, string aktinamn, string aktiAvdelning) //Uppdaterar aktivitetsdatabasen
+        public void UpdateAktivitet(string newAktiId, string oldAktiId, string aktinamn, string aktiAvdelning) //Uppdaterar aktivitetsdatabasen
         {
             using (var db = new DataContext())
             {
                 var tempAkti = (from x in db.Aktivitet
-                           where x.AktivitetID == aktiId
+                           where x.AktivitetID == oldAktiId
                            select x).FirstOrDefault();
 
                 var avdelning = (from x in db.Avdelning
                                  where x.Namn == aktiAvdelning
                                  select x).FirstOrDefault();
 
-                var akti = new Aktivitet { AktivitetID = aktiId, Namn = aktinamn, Avdelning = avdelning, Avdelning_AvdelningID = avdelning.AvdelningID };
+                var akti = new Aktivitet { AktivitetID = newAktiId, Namn = aktinamn, Avdelning = avdelning, Avdelning_AvdelningID = avdelning.AvdelningID };
                 db.Aktivitet.Remove(tempAkti);
                 db.Aktivitet.Add(akti);
                 db.SaveChanges();

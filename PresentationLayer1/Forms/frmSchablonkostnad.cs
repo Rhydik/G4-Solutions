@@ -21,12 +21,10 @@ namespace PresentationLayer1.Forms
         public frmSchablonkostnad()
         {
             InitializeComponent();
-
-            schablons = businessManager.GetAllSchablon();
-            gvSchablonkostnad.DataSource = schablons;
-
+            RefreshData();
             HideFromUser();
         }
+
 
         private void btnKunder_Click(object sender, EventArgs e)
         {
@@ -105,7 +103,7 @@ namespace PresentationLayer1.Forms
             
         }
 
-        private void Update()
+        public void RefreshData()
         {
             schablons = businessManager.GetAllSchablon();
             gvSchablonkostnad.DataSource = schablons.OrderBy(o => o.Konto).ToList();
@@ -184,13 +182,6 @@ namespace PresentationLayer1.Forms
         {
             frmRegistreraNySchablon frmRegistreraNySchablon = new frmRegistreraNySchablon((SchablonDTO)gvSchablonkostnad.CurrentRow.DataBoundItem);
             frmRegistreraNySchablon.Show();
-        }
-
-        public void RefreshData()
-        {
-            schablons = businessManager.GetAllSchablon();
-
-            gvSchablonkostnad.DataSource = schablons;
         }
     }
 }

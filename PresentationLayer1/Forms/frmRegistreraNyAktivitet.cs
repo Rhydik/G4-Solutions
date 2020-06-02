@@ -37,6 +37,11 @@ namespace PresentationLayer1.Forms
                 businessManager.AddAktivitet(aktivitetID, namn, avdelning);
             }
 
+            if (Application.OpenForms["frmAktiviteter"] != null)
+            {
+                (Application.OpenForms["frmAktiviteter"] as frmAktiviteter).RefreshData();
+            }
+
             this.Visible = !this.Visible;
         }
 

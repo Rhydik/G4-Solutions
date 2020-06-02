@@ -33,6 +33,10 @@ namespace PresentationLayer1.Forms
         private void btnTaBortAktivitet_Click(object sender, EventArgs e)
         {
             businessManager.RemoveAktivitet(aktivitet);
+            if (Application.OpenForms["frmAktiviteter"] != null)
+            {
+                (Application.OpenForms["frmAktiviteter"] as frmAktiviteter).RefreshData();
+            }
 
             this.Visible = !this.Visible;
         }
@@ -44,12 +48,36 @@ namespace PresentationLayer1.Forms
 
         private void btnSpara_Click(object sender, EventArgs e)
         {
-            var aktiId = tbAktivitetsID.Text;
+            var oldAktiId = tbAktivitetsID.Text;
             var aktinamn = tbBenämning.Text;
             var aktiAvdelning = cmbAvdelning.Text;
-            businessManager.UpdateAktivitet(aktiId, aktinamn, aktiAvdelning);
+            var newAktiId = ChangeID(oldAktiId, aktiAvdelning);
+            businessManager.UpdateAktivitet(newAktiId, oldAktiId, aktinamn, aktiAvdelning);
             MessageBox.Show("Aktivitet uppdaterad!");
+            if (Application.OpenForms["frmAktiviteter"] != null)
+            {
+                (Application.OpenForms["frmAktiviteter"] as frmAktiviteter).RefreshData();
+            }
             Close();
+        }
+
+        private string ChangeID(string aktiID, string aktiAvdelning)
+        {
+            var result = "";
+            var idEnd = "";
+            aktiID.ToArray();
+            var temp = aktiID.Remove(aktiID.Length - 2);
+            if (aktiAvdelning == "Administrativa avdelningen")
+            {
+                idEnd = "AO";
+                result = temp + idEnd;
+            }
+            else if (aktiAvdelning == "Försäljnings- och marknadsavdelningen")
+            {
+                idEnd = "FO";
+                result = temp + idEnd;
+            }
+            return result;
         }
     }
 }

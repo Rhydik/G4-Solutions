@@ -29,8 +29,8 @@ namespace DataLayer.Testdata
         };
 
         public double SchablonKostnadBas => 13000;
-        public double SchablonKostnad => 13000 * Persons.Sum(x => x.Placering);
-        public double Konto5021 => Persons.Sum(x => x.Månadslön * x.Placering);
+        public double SchablonKostnad => 13000 * Persons.Sum(x => x.Placering / 100);
+        public double Konto5021 => Persons.Sum(x => x.Månadslön * x.Placering / 100);
         public double PersRelateradKostnad => SchablonKostnad + Konto5021;
         public double DirektKostnadProduktX => 30000;
         public double DirektKostnadProduktY => 20000;
@@ -52,8 +52,8 @@ namespace DataLayer.Testdata
         public void ResultatAvdelning() => Console.WriteLine(Totalkostnad);
 
         public double TillvKostnadX =>
-            ((ProduktX.Sum(x => x.Placering) / Persons.Sum(x => x.Placering)) * PersRelateradKostnad) + DirektKostnadProduktX;
-        public double TillvKostnadY => ((ProduktY.Sum(x => x.Placering) / Persons.Sum(x => x.Placering)) * PersRelateradKostnad) + DirektKostnadProduktY;
+            ((ProduktX.Sum(x => x.Placering / 100) / Persons.Sum(x => x.Placering / 100)) * PersRelateradKostnad) + DirektKostnadProduktX;
+        public double TillvKostnadY => ((ProduktY.Sum(x => x.Placering / 100) / Persons.Sum(x => x.Placering / 100)) * PersRelateradKostnad) + DirektKostnadProduktY;
 
         public double TBX => Pålägg * TillvKostnadX;
         public double TBY => Pålägg * TillvKostnadY;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core.Mapping;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Sockets;
@@ -16,10 +17,12 @@ namespace DataLayer
     {
         double lön;
         private IQueryable<PersonalProdukt> personalkostnad;
+        private IQueryable<PersonalProdukt> PersonalPåAvdelning;
         double kostnader;
         double pålägg;
         private Produkt produkten;
         double noll;
+        double ÅrsarbeteAvdelning;
         double resultat;
         double säljavd;
         double adminavd;
@@ -33,6 +36,7 @@ namespace DataLayer
         private IQueryable<AvdelningPersonalxRef> querysälj;
         private IQueryable<DirektkostnadProdukt> dkprodukter;
         private Testdata.Testdata testdata = new Testdata.Testdata();
+        public double TotalTillverkningsKostnad => KalkyleraKontor();
 
         public List<ProduktSummeringDTO> GetProduktIntäkter(ProduktDTO produkt) //Sätter ihop Produktlistan med Intäktslistan
         {
@@ -93,49 +97,159 @@ namespace DataLayer
                 lön = 0;
                 kostnader = 0;
                 pålägg = 0;
+                ÅrsarbeteAvdelning = 0;
                 produkten = (from x in db.Produkt
                              where x.ProduktID == produkt
                              select x).FirstOrDefault();
-
+                List<string> test = new List<string>();
 
                 double årsarbetare = 0;
-                double beräknadschablon = 0;
 
                 personalkostnad = from x in db.PersonalProdukt
                                   join y in db.Personal on x.Personal_PersonalID equals y.PersonalID
                                   where x.Produkt_ProduktID == produkten.ProduktID
                                   select x;
 
-                //foreach (var item in personalkostnad)
-                //{
-                //    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
-                //    årsarbetare += (double)(item.Placeringsandel / 100);
-                //}
+                PersonalPåAvdelning =     from x in db.Produkt
+                                          join y in db.PersonalProdukt on x.ProduktID equals y.Produkt_ProduktID
+                                          where x.Avdelning_AvdelningID == produkten.Avdelning_AvdelningID
+                                          select y;
 
-                foreach (var item in testdata.ProduktY)
+                foreach (var item in personalkostnad)
                 {
-                    lön += (double)(item.Månadslön * (item.Placering / 100));
-                    årsarbetare += (double)(item.Placering / 100);
-                } 
-
-                if (årsarbetare != 0)
+                    årsarbetare += (double)(item.Placeringsandel / 100);
+                }
+                foreach (var item in PersonalPåAvdelning)
                 {
-                    //beräknadschablon = BeräknaSchablon() * årsarbetare;
-                    beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
+                    lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
+                    ÅrsarbeteAvdelning += (double)(item.Placeringsandel / 100);
                 }
 
-                //kostnader = lön + beräknadschablon + GetDirektKostnaderProdukt(produkt);
-                kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
+                //foreach (var item in testdata.ProduktY)
+                //{
+                //    lön += (double)(item.Månadslön * (item.Placering / 100));
+                //    årsarbetare += (double)(item.Placering / 100);
+                //} 
+
+                double perskostnadavd = BeräknaPersRelKostnad(db, produkten.Avdelning);
+
+                kostnader = (årsarbetare / ÅrsarbeteAvdelning) * perskostnadavd + GetDirektKostnaderProdukt(produkt);
+                //kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
 
 
                 return kostnader;
             }
         }
 
+        public double KalkyleraKontor()
+        {
+            using (var db = new DataContext())
+            {
+                var avdelningar = (from x in db.Avdelning
+                                   where x.AvdelningID == 1 || x.AvdelningID == 4
+                                   select x).ToList();
+
+                foreach(var avdelning in avdelningar)
+                {
+                   kostnader += BeräknaAvdelningskostnad(db, avdelning);
+
+                }
+            }
+            return kostnader;
+        }
+        private double BeräknaPersRelKostnad(DataContext db, Avdelning avdelning)
+        {
+            lön = 0;
+            kostnader = 0;
+            pålägg = 0;
+            ÅrsarbeteAvdelning = 0;
+
+            List<string> test = new List<string>();
+
+            double beräknadschablon = 0;
+
+            PersonalPåAvdelning = from x in db.Produkt
+                                  join y in db.PersonalProdukt on x.ProduktID equals y.Produkt_ProduktID
+                                  where x.Avdelning_AvdelningID == avdelning.AvdelningID
+                                  select y;
+
+            foreach (var item in PersonalPåAvdelning)
+            {
+                lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
+                ÅrsarbeteAvdelning += (double)(item.Placeringsandel / 100);
+            }
+
+            //foreach (var item in testdata.ProduktY)
+            //{
+            //    lön += (double)(item.Månadslön * (item.Placering / 100));
+            //    årsarbetare += (double)(item.Placering / 100);
+            //} 
+
+            if (ÅrsarbeteAvdelning != 0)
+            {
+                beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
+                //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
+            }
+
+            kostnader = lön + beräknadschablon;
+            //kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
+            return kostnader;
+        }
+
+        private double BeräknaAvdelningskostnad(DataContext db, Avdelning avdelning)
+        {
+            lön = 0;
+            kostnader = 0;
+            pålägg = 0;
+            ÅrsarbeteAvdelning = 0;
+
+            List<string> test = new List<string>();
+
+            double årsarbetare = 0;
+            double beräknadschablon = 0;
+
+            PersonalPåAvdelning = from x in db.Produkt
+                                  join y in db.PersonalProdukt on x.ProduktID equals y.Produkt_ProduktID
+                                  where x.Avdelning_AvdelningID == avdelning.AvdelningID
+                                  select y;
+
+            foreach (var item in PersonalPåAvdelning)
+            {
+                lön += (double)(item.Personal.Månadslön * (item.Placeringsandel / 100));
+                ÅrsarbeteAvdelning += (double)(item.Placeringsandel / 100);
+            }
+
+            //foreach (var item in testdata.ProduktY)
+            //{
+            //    lön += (double)(item.Månadslön * (item.Placering / 100));
+            //    årsarbetare += (double)(item.Placering / 100);
+            //} 
+
+            if (ÅrsarbeteAvdelning != 0)
+            {
+                beräknadschablon = BeräknaSchablon() * ÅrsarbeteAvdelning;
+                //beräknadschablon = testdata.SchablonKostnadBas * årsarbetare;
+            }
+
+            double direktkostnadavd = 0;
+
+            List<string> produkter = PersonalPåAvdelning.Select(x => x.Produkt_ProduktID).ToList();
+
+            foreach (var produkt in produkter)
+            {
+                direktkostnadavd += GetDirektKostnaderProdukt(produkt);
+            }
+
+            kostnader = lön + beräknadschablon + direktkostnadavd;
+            //kostnader = lön + beräknadschablon + testdata.DirektKostnadProduktY;
+            return kostnader;
+        }
+
+
+
         public double GetProduktKostnader(string produkt)
         {
             var kostnad = GetProduktKostnaderPre(produkt);
-
 
             if (kostnad == 0)
             {
@@ -149,22 +263,9 @@ namespace DataLayer
 
         private double GetPålägg()
         {
-            double total = 0;
-            using (var db = new DataContext())
-            {
-
-                var prod = from x in db.Produkt
-                           select x;
-
-                foreach (var item in prod)
-                {
-                    total += GetProduktKostnaderPre(item.ProduktID);
-                }
-            }
-
             var tb = BeräknaTB() + HämtaAvkastning();
 
-            var resultat = tb / total;
+            var resultat = tb / TotalTillverkningsKostnad;
 
             return resultat;
         }
@@ -209,7 +310,6 @@ namespace DataLayer
         }
         public double GetDirektKostnaderProdukt(string produkten)
         {
-            noll = 0;
             resultat = 0;
             using (var db = new DataContext())
             {
@@ -220,14 +320,7 @@ namespace DataLayer
                 {
                     resultat += (double)item.Belopp;
                 }
-                if (resultat != 0)
-                {
-                    return resultat;
-                }
-                else
-                {
-                    return noll;
-                }
+                return resultat;
             }
         }
         public double BeräknaTB()

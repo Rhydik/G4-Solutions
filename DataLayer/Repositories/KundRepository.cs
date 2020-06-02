@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +39,25 @@ namespace DataLayer
             using (var db = new DataContext())
             {
                 var kunden = db.Kund.Where(x => x.KundID == kundId).FirstOrDefault();
+                var kundIntäkt = from x in db.KundIntäktsbudget
+                                 where x.Kund_KundID == kunden.KundID
+                                 select x;
+
+                var produktIntäkt = from x in db.ProduktIntäktsbudget
+                                    join y in db.Intäktsbudget on x.Intäktsbudget_IntäktsbudgetID equals y.IntäktsbudgetID
+                                    join p in db.KundIntäktsbudget on y.IntäktsbudgetID equals p.Intäktsbudget_IntäktsbudgetID
+                                    where p.Kund_KundID == kunden.KundID
+                                    select x;
+
+                var intäktsbudget = from x in db.Intäktsbudget
+                                    join y in db.KundIntäktsbudget on x.IntäktsbudgetID equals y.Intäktsbudget_IntäktsbudgetID
+                                    join p in db.Kund on y.Kund_KundID equals p.KundID
+                                    where p.KundID == kunden.KundID
+                                    select x;
+
+                db.KundIntäktsbudget.RemoveRange(kundIntäkt);
+                db.ProduktIntäktsbudget.RemoveRange(produktIntäkt);
+                db.Intäktsbudget.RemoveRange(intäktsbudget);
                 db.Kund.Remove(kunden);
                 db.SaveChanges();
             }

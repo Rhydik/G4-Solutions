@@ -73,13 +73,12 @@ namespace PresentationLayer1.Forms
             var kundNamn = tbKundNamn.Text;
             var kundKategori = cmbKundkategori.Text;
 
-            string id = businessManager.SkapaID(kundId, kundKategori);
 
             try
             {
                 if (kundId.Length == 4)
                 {
-                    businessManager.UpdateKund(kund, id, kundNamn, kundKategori);
+                    businessManager.UpdateKund(kund, kundId, kundNamn, kundKategori);
 
                     DialogResult resultat = MessageBox.Show(kund.Namn + " uppdaterad.", "Uppdatera kund", MessageBoxButtons.OK);
 

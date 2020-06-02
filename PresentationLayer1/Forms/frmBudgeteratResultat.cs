@@ -39,6 +39,7 @@ namespace PresentationLayer1.Forms
             t.Join();
 
             cmbKategori.SelectedItem = "Produkt";
+            btnExportera.Hide();
 
 
         }

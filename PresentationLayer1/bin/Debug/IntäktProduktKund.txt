@@ -1,6 +1,6 @@
 ProduktID	Produkt	KundID	Kund	Datum	0	0	0	Månad	0	0	0	0	0
 SERVSH	Serverhotell	N113	SDN Askim	20190115	-23500	0	0	januari	0	0	0	0	0
-PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190118	-12500	0	0	januari	0	0	0	0	0
+PCPLAS	PC-plattformen	B540	Skandiahamnen AB	20190118	-12500	0	0	januari	4000	55,56	0	35	0
 DAGREÖ	Dagrapport	K740	Borås Kommum	20190210	-57300	0	0	februari	0	0	0	0	0
 SERVSH	Serverhotell	N113	SDN Askim	20190215	-23500	0	0	februari	0	0	0	0	0
 SERVSH	Serverhotell	N106	SDN Örgryte	20190215	-23500	0	0	februari	0	0	0	0	0

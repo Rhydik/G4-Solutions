@@ -34,7 +34,7 @@ namespace PresentationLayer1.Forms
         {
             if (Application.OpenForms["frmIntäktsbudgeteringProdukt"] != null)
             {
-                (Application.OpenForms["frmIntäktsbudgeteringProdukt"] as frmIntäktsbudgeteringProdukt).RefreshData();
+                (Application.OpenForms["frmIntäktsbudgeteringProdukt"] as frmIntäktsbudgeteringProdukt).RefreshData(produktID);
             }
             Close();
         }

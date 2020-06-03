@@ -26,5 +26,18 @@ namespace DataLayer.Repositories
                 db.SaveChanges();
             }
         }
+
+        public List<PlaceringsDTO> GetPersonalFördelning(DTO.PersonalDTO personal)
+        {
+            using (var db = new DataContext())
+            {
+                var avdelningsfördelning =  from x in db.AvdelningPersonalxRef
+                                            where x.Personal_PersonalID == personal.PersonalID
+                                            select new PlaceringsDTO { Avdelning = x.Avdelning.Namn, Fördelning = (int)x.Placering };
+
+
+                return avdelningsfördelning.ToList();
+            }
+        }
     }
 }

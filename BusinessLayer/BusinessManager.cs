@@ -39,6 +39,11 @@ namespace BusinessLayer
             repositoryFacade.kostnadsbudgetRepository.LäggTillPlaceringAktivitet(pers, aktivitet, andel);
         }
 
+        public List<PlaceringsDTO> getPersonalFördelning(PersonalDTO personal)
+        {
+            return repositoryFacade.avdelningPersonalRepository.GetPersonalFördelning(personal);
+        }
+
         public List<DirektkostnadProduktDTO> GetAllDirektKostnadProdukt()
         {
             return repositoryFacade.kostnadsbudgetRepository.GetAllDirektKostnadProdukt();

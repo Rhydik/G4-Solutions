@@ -17,6 +17,7 @@ namespace PresentationLayer1.Forms
     {
         BusinessManager businessManager = new BusinessManager();
         PersonalDTO personal = new PersonalDTO();
+        List<PlaceringsDTO> personalPlacering = new List<PlaceringsDTO>();
         public frmRedigeraPersonal(PersonalDTO personalen)
         {
             InitializeComponent();
@@ -28,9 +29,13 @@ namespace PresentationLayer1.Forms
         {
             tbNamn.Text = personal.Namn;
             tbPersNr.Text = personal.PersonNr;
+            tbLösenord.Text = personal.Lösenord;
+            tbÅrsarbete.Text = personal.Årsarbete.ToString();
             tbSysselsättningsgrad.Text = personal.Sysselsättningsgrad.ToString();
             tbVakansavdrag.Text = personal.Vakansavdrag.ToString();
             tbMånadslön.Text = personal.Månadslön.ToString();
+            personalPlacering = businessManager.getPersonalFördelning(personal);
+            dgvAvdelning.DataSource = personalPlacering;
         }
 
         public void btnTaBortPersonal_Click(object sender, EventArgs e)

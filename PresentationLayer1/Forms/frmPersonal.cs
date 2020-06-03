@@ -25,6 +25,7 @@ namespace PresentationLayer1.Forms
             personal = businessManager.GetAllPersonal();
             gvPersonal.DataSource = personal;
             gvPersonal.Columns["PersonalID"].Visible = false;
+            gvPersonal.Columns["Lösenord"].Visible = false;
             HideFromUser();
         }
 

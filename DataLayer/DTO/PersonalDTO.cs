@@ -15,5 +15,6 @@ namespace DataLayer.DTO
         public double Sysselsättningsgrad { get; set; }
         public double Vakansavdrag { get; set; }
         public double Årsarbete { get; set; }
+        public string Lösenord { get; set; }
     }
 }

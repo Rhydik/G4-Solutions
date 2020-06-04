@@ -130,6 +130,7 @@ namespace PresentationLayer1.Forms
         private void btnExportera_Click(object sender, EventArgs e)
         {
             businessManager.ExportToFile();
+            MessageBox.Show("Intäktsbudget exporterad till skrivbordet");
         }
         private double GetSum(List<IntäktsbudgetProduktDTO> produkts, string sak)
         {

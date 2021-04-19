@@ -68,6 +68,7 @@
             this.btnRensa.TabIndex = 28;
             this.btnRensa.Text = "Rensa";
             this.btnRensa.UseVisualStyleBackColor = true;
+            this.btnRensa.Click += new System.EventHandler(this.btnRensa_Click);
             // 
             // tbPersonal
             // 
@@ -135,7 +136,7 @@
             // ucMeny
             // 
             this.ucMeny.Location = new System.Drawing.Point(8, 8);
-            this.ucMeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucMeny.Margin = new System.Windows.Forms.Padding(4);
             this.ucMeny.Name = "ucMeny";
             this.ucMeny.Size = new System.Drawing.Size(194, 438);
             this.ucMeny.TabIndex = 5;

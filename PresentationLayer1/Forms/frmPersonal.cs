@@ -96,5 +96,11 @@ namespace PresentationLayer1.Forms
                 this.gvPersonal.Columns["Årsarbete"].Visible = false;
             }
         }
+
+        private void btnRensa_Click(object sender, EventArgs e)
+        {
+            tbPersonal.Clear();
+            tbPersonnummer.Clear();
+        }
     }
 }
